@@ -150,5 +150,99 @@ test('live data/catalog.json passes full structural, policy, and unique offer.id
   const report = validateCatalogStructure(catalog);
   assert.equal(report.nonAmazonNonBonus, 0);
   assert.deepEqual(report.errors, []);
-  assert.ok(report.totalItems >= 75);
+  assert.ok(report.totalItems >= 100);
+  const r18Count = catalog.items.filter((i) => i.category === 'r18').length;
+  assert.ok(r18Count >= 35, `Expected >=35 R18 items, got ${r18Count}`);
 });
+
+test('calculateScarcityScore ranks 3000-copy limited, signed, and exclusive-cover releases strictly above standard titles', async () => {
+  const { calculateScarcityScore, getUrgentRadarItems } = await import('../src/scarcity-score.js');
+
+  const limitedTopStar = {
+    id: 'test-limited',
+    title: '小野六花 写真集『RIKKA!!』（豪華愛蔵版3000部限定）',
+    category: 'r18',
+    releaseDate: '2026-12-25',
+    coverTalents: ['小野六花'],
+    offers: [
+      {
+        id: 'o-1',
+        store: 'amazon',
+        hasStoreExclusiveBonus: false,
+        edition: 'Amazon 通常版',
+        bonusTypes: ['standard'],
+        bonusText: '豪華愛蔵版3000部限定',
+        status: 'preorder',
+        url: 'https://www.amazon.co.jp/',
+      },
+    ],
+  };
+
+  const plainStandard = {
+    id: 'test-plain',
+    title: '一般誌 2027年1月号',
+    category: 'weekly',
+    releaseDate: '2026-12-25',
+    coverTalents: ['新星モデル'],
+    offers: [
+      {
+        id: 'o-2',
+        store: 'amazon',
+        hasStoreExclusiveBonus: false,
+        edition: 'Amazon 通常版',
+        bonusTypes: ['standard'],
+        bonusText: '通常版',
+        status: 'preorder',
+        url: 'https://www.amazon.co.jp/',
+      },
+    ],
+  };
+
+  const oldPastItem = {
+    ...limitedTopStar,
+    id: 'test-old',
+    releaseDate: '2026-09-01',
+  };
+
+  const forecastItem = {
+    id: 'test-2027-03-forecast',
+    title: '乃木坂46 表紙予定誌【解禁ウォッチ】',
+    category: 'idol',
+    releaseDate: '2027-01-22',
+    coverTalents: ['乃木坂46'],
+    offers: [
+      {
+        id: 'o-f',
+        store: 'amazon',
+        hasStoreExclusiveBonus: false,
+        edition: '予約解禁ウォッチ',
+        bonusTypes: ['standard'],
+        status: 'forecast',
+        url: 'https://www.amazon.co.jp/',
+      },
+    ],
+  };
+
+  const sLimited = calculateScarcityScore(limitedTopStar, { referenceDate: '2026-11-21' });
+  const sPlain = calculateScarcityScore(plainStandard, { referenceDate: '2026-11-21' });
+  const sOld = calculateScarcityScore(oldPastItem, { referenceDate: '2026-11-21' });
+  const sForecast = calculateScarcityScore(forecastItem, {
+    referenceDate: '2026-11-21',
+    oshiKeywords: ['乃木坂46'],
+  });
+
+  assert.equal(sLimited.rank, 'S');
+  assert.ok(sLimited.score >= 68);
+  assert.ok(sLimited.score > sPlain.score);
+  assert.equal(sOld.inWindow, false);
+  assert.equal(sForecast.rank, 'B');
+  assert.ok(sForecast.score <= 44);
+
+  const radar = getUrgentRadarItems([plainStandard, oldPastItem, limitedTopStar, forecastItem], {
+    referenceDate: '2026-11-21',
+    oshiKeywords: ['乃木坂46'],
+  });
+  assert.equal(radar[0].item.id, 'test-limited');
+  assert.ok(!radar.some((r) => r.item.id === 'test-old'));
+});
+

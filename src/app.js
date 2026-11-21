@@ -1,4 +1,5 @@
 import { createEditorialCoverDataUri, createGalleryPhotoFallbackDataUri } from './cover-art.js';
+import { getUrgentRadarItems } from './scarcity-score.js';
 import {
   PHOTO_KIND_META,
   buildTalentPromoLinks,
@@ -87,9 +88,13 @@ const QUICK_HUB_KEYWORDS = [
   '長濱ねる 2027 カレンダー',
   'グラビアアクション vol.1',
   'SPA! 2026年12月16日号',
-  'DOLCE Vol.24',
   'BUBKA 2027年1月号',
   'BOMB 2027年1月号',
+  '小野六花 RIKKA!!',
+  '初美なのか - ubu -',
+  '河北彩伽 2027 カレンダー',
+  '宮下玲奈 Pellicule',
+  '園梨音 LOVE ESCAPE',
   '瀬戸環奈 写真集',
   '石川澪 写真集',
   '月刊FANZA',
@@ -162,6 +167,9 @@ const state = {
   bonusOnly: false,
   hideSkipped: false,
   sortBy: 'soon',
+  urgentRankFilter: 'all', // 'all' | 'S' | 'A' | 'B' | 'secured'
+  urgentTopicFilter: 'all', // 'all' | 'limited' | 'cover' | 'oshi' | 'r18' | 'calendar'
+  urgentUnreservedOnly: true,
   calendarMonth: 'upcoming', // 'upcoming' | '2026-11' | '2026-12' | '2027-01' | '2027-02' | 'past'
   calendarSubFilter: 'all', // 'all' | 'marked' | 'bonus' | 'pending' | 'calendar' | 'photobook' | 'r18'
   shelfFilter: 'all', // 'all' | 'considering' | 'want' | 'reserved' | 'owned' | 'skip'
@@ -287,6 +295,14 @@ function isItemFullySkipped(item) {
   return getItemStatusSummary(item).allSkipped;
 }
 
+function isItemSecured(item) {
+  const summary = getItemStatusSummary(item);
+  if (summary.mode === 'offers') {
+    return summary.markedOffers.some((m) => m.status === 'reserved' || m.status === 'owned');
+  }
+  return summary.primaryStatus === 'reserved' || summary.primaryStatus === 'owned';
+}
+
 /**
  * Returns every marked edition across the entire catalog (or legacy item-level fallback).
  * Used as the single source of truth for Tab 3 Shelf, Monthly Budget Meter, and Bulk .ics export.
@@ -327,6 +343,7 @@ function syncAfterStatusChange(affectedItemId) {
   renderCountdownStrip();
   renderFilterChips();
   renderMagazineGrid();
+  renderUrgentRadar();
   renderCalendar();
   renderOshiAndShelf();
 
@@ -811,18 +828,43 @@ function renderStatusMarkButton(item, compact = false, offerId = null) {
 
 function renderCountdownStrip() {
   const container = document.getElementById('countdownStrip');
+  const radarEntries = getUrgentRadarItems(getAllItems(), {
+    referenceDate: state.referenceDate,
+    oshiKeywords: state.oshiKeywords,
+  });
+  const unreservedS = radarEntries.filter(
+    ({ item, scarcity }) =>
+      scarcity.rank === 'S' && !isItemSecured(item) && !isItemFullySkipped(item)
+  ).length;
+  const unreservedSA = radarEntries.filter(
+    ({ item, scarcity }) =>
+      (scarcity.rank === 'S' || scarcity.rank === 'A') &&
+      !isItemSecured(item) &&
+      !isItemFullySkipped(item)
+  ).length;
+
+  const urgentJumpChip =
+    unreservedSA > 0
+      ? `<button class="countdown-urgent-jump" type="button" data-jump-tab="urgent">
+          <span class="countdown-urgent-jump-title">🔥 早め予約・争奪戦 →</span>
+          <span class="countdown-urgent-jump-sub">🔴Sランク ${unreservedS}件 / 要確保 ${unreservedSA}件</span>
+        </button>`
+      : '';
+
   const upcoming = getAllItems()
     .filter((item) => diffDays(item.releaseDate) >= 0 && !isItemFullySkipped(item))
     .sort((a, b) => diffDays(a.releaseDate) - diffDays(b.releaseDate))
     .slice(0, 10);
 
-  container.innerHTML = upcoming
-    .map((item) => {
-      const cd = formatCountdown(item.releaseDate);
-      const specialCount = getItemSpecialBonusCount(item);
-      const summary = getItemStatusSummary(item);
-      const stIcon = summary.primaryStatus ? `${SHELF_STATUS_META[summary.primaryStatus].icon} ` : '';
-      return `
+  container.innerHTML =
+    urgentJumpChip +
+    upcoming
+      .map((item) => {
+        const cd = formatCountdown(item.releaseDate);
+        const specialCount = getItemSpecialBonusCount(item);
+        const summary = getItemStatusSummary(item);
+        const stIcon = summary.primaryStatus ? `${SHELF_STATUS_META[summary.primaryStatus].icon} ` : '';
+        return `
         <button class="countdown-chip" type="button" data-open-id="${escapeHtml(item.id)}">
           <span class="countdown-days ${cd.type === 'today' ? 'today' : ''}">${escapeHtml(cd.text)}</span>
           <div class="countdown-meta">
@@ -831,8 +873,8 @@ function renderCountdownStrip() {
           </div>
         </button>
       `;
-    })
-    .join('');
+      })
+      .join('');
 }
 
 function renderFilterChips() {
@@ -1264,6 +1306,272 @@ function renderMagazineGrid() {
       `;
     })
     .join('');
+}
+
+/* =========================================================
+   Tab 2: Urgent Pre-Order & Sell-Out Radar
+   ========================================================= */
+function updateUrgentNavBadge(unreservedSACount) {
+  const badge = document.getElementById('urgentNavBadge');
+  if (!badge) return;
+  if (unreservedSACount > 0) {
+    badge.textContent = unreservedSACount > 99 ? '99+' : String(unreservedSACount);
+    badge.hidden = false;
+  } else {
+    badge.hidden = true;
+  }
+}
+
+function renderUrgentRadar() {
+  const container = document.getElementById('urgentRadarContainer');
+  const allRadar = getUrgentRadarItems(getAllItems(), {
+    referenceDate: state.referenceDate,
+    oshiKeywords: state.oshiKeywords,
+    minScore: 30,
+  });
+
+  const activeUnreserved = allRadar.filter(
+    ({ item }) => !isItemSecured(item) && !isItemFullySkipped(item)
+  );
+  const securedList = allRadar.filter(({ item }) => isItemSecured(item));
+
+  const countS = activeUnreserved.filter((e) => e.scarcity.rank === 'S').length;
+  const countA = activeUnreserved.filter((e) => e.scarcity.rank === 'A').length;
+  const countB = activeUnreserved.filter((e) => e.scarcity.rank === 'B').length;
+  const countSecured = securedList.length;
+
+  updateUrgentNavBadge(countS + countA);
+  if (!container) return;
+
+  // Apply rank / secured + unreservedOnly + topic filters
+  let filtered = allRadar.filter(({ item, scarcity }) => {
+    const secured = isItemSecured(item);
+    const skipped = isItemFullySkipped(item);
+
+    if (state.urgentRankFilter === 'secured') {
+      if (!secured) return false;
+    } else {
+      if (state.urgentUnreservedOnly && (secured || skipped)) return false;
+      if (state.urgentRankFilter !== 'all' && scarcity.rank !== state.urgentRankFilter) {
+        return false;
+      }
+    }
+
+    if (state.urgentTopicFilter === 'limited' && !scarcity.hasSignedOrLimited) return false;
+    if (state.urgentTopicFilter === 'cover' && !scarcity.hasExclusiveCover) return false;
+    if (state.urgentTopicFilter === 'oshi' && !scarcity.hasOshiHit) return false;
+    if (state.urgentTopicFilter === 'r18' && item.category !== 'r18') return false;
+    if (state.urgentTopicFilter === 'calendar' && !scarcity.isCalendarTitle) return false;
+    return true;
+  });
+
+  const topicChoices = [
+    { id: 'all', label: '🔥 すべて' },
+    { id: 'limited', label: '💎 部数・サイン・数量限' },
+    { id: 'cover', label: '✨ ストア限定表紙' },
+    { id: 'oshi', label: '💖 推しヒット' },
+    { id: 'r18', label: '🔞 R18争奪' },
+    { id: 'calendar', label: '🗓 カレンダー' },
+  ];
+
+  const kpiHtml = `
+    <div class="urgent-summary-grid" role="group" aria-label="売り切れ警戒ランク絞り込み">
+      <button class="urgent-kpi-btn kpi-s ${state.urgentRankFilter === 'S' ? 'active' : ''}" type="button" data-urgent-rank="${state.urgentRankFilter === 'S' ? 'all' : 'S'}">
+        <span class="urgent-kpi-label">🔴 Sランク・即予約</span>
+        <span class="urgent-kpi-num">${countS}</span>
+        <span class="urgent-kpi-sub">未予約の超警戒枠</span>
+      </button>
+      <button class="urgent-kpi-btn kpi-a ${state.urgentRankFilter === 'A' ? 'active' : ''}" type="button" data-urgent-rank="${state.urgentRankFilter === 'A' ? 'all' : 'A'}">
+        <span class="urgent-kpi-label">🟠 Aランク・早め確保</span>
+        <span class="urgent-kpi-num">${countA}</span>
+        <span class="urgent-kpi-sub">発売日前に確保推奨</span>
+      </button>
+      <button class="urgent-kpi-btn kpi-b ${state.urgentRankFilter === 'B' ? 'active' : ''}" type="button" data-urgent-rank="${state.urgentRankFilter === 'B' ? 'all' : 'B'}">
+        <span class="urgent-kpi-label">🟡 Bランク・注目枠</span>
+        <span class="urgent-kpi-num">${countB}</span>
+        <span class="urgent-kpi-sub">動向＆絵柄ウォッチ</span>
+      </button>
+      <button class="urgent-kpi-btn kpi-ok ${state.urgentRankFilter === 'secured' ? 'active' : ''}" type="button" data-urgent-rank="${state.urgentRankFilter === 'secured' ? 'all' : 'secured'}">
+        <span class="urgent-kpi-label">✅ 確保済み</span>
+        <span class="urgent-kpi-num">${countSecured}</span>
+        <span class="urgent-kpi-sub">予約済・購入済</span>
+      </button>
+    </div>
+  `;
+
+  const toolbarHtml = `
+    <div class="urgent-toolbar">
+      <div class="urgent-toolbar-top">
+        <div class="urgent-count-text">
+          ${
+            state.urgentRankFilter === 'secured'
+              ? `✅ 確保済み <strong>${filtered.length}</strong>件`
+              : `🚨 要チェック <strong>${filtered.length}</strong>件（全${allRadar.length}件中）`
+          }
+        </div>
+        <label class="toggle-inline">
+          <input
+            type="checkbox"
+            data-urgent-unreserved-toggle
+            ${state.urgentUnreservedOnly ? 'checked' : ''}
+            ${state.urgentRankFilter === 'secured' ? 'disabled' : ''}
+          />
+          <span>🚨 未予約のみ表示</span>
+        </label>
+      </div>
+      <div class="chip-scroll" style="padding-top:0;">
+        ${topicChoices
+          .map(
+            (c) => `
+          <button
+            class="filter-chip ${state.urgentTopicFilter === c.id ? 'active' : ''}"
+            type="button"
+            data-urgent-topic="${c.id}"
+          >${escapeHtml(c.label)}</button>
+        `
+          )
+          .join('')}
+      </div>
+    </div>
+  `;
+
+  const cardsHtml = filtered.length
+    ? `<div class="urgent-list">
+        ${filtered
+          .map(({ item, scarcity }) => {
+            const cd = formatCountdown(item.releaseDate);
+            const secured = isItemSecured(item);
+            const r18Class = item.category === 'r18' ? 'is-r18-media' : '';
+            const catMeta = CATEGORY_META[item.category] || { label: '雑誌' };
+            const primaryHotOffer = scarcity.hotOffers[0] || getVisibleOffers(item)[0] || null;
+            const visibleCount = getVisibleOffers(item).length;
+
+            const reasonsHtml = scarcity.reasons
+              .slice(0, 5)
+              .map(
+                (r) => `
+              <span class="urgent-reason-pill tone-${r.tone}">
+                ${r.icon} ${escapeHtml(r.label)}${r.points > 0 ? ` +${r.points}` : ''}
+              </span>
+            `
+              )
+              .join('');
+
+            const buyButtonsHtml = scarcity.hotOffers
+              .map((offer) => {
+                const st = STORES[offer.store] || { shortName: offer.store, name: offer.store };
+                const isBonus = offer.hasStoreExclusiveBonus === true;
+                const actionWord =
+                  offer.status === 'available'
+                    ? '在庫確認'
+                    : offer.status === 'forecast'
+                      ? '解禁確認'
+                      : '即予約';
+                const editionHint = (offer.bonusTypes || []).includes('signed')
+                  ? 'サイン本'
+                  : (offer.bonusTypes || []).includes('cover')
+                    ? '限定表紙'
+                    : isBonus
+                      ? '限定特典'
+                      : 'Amazon';
+                return `
+                  <a
+                    class="urgent-buy-btn store-${escapeHtml(offer.store)}"
+                    href="${escapeHtml(offer.url)}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-stop-prop="1"
+                    title="${escapeHtml(offer.edition)} — ${escapeHtml(offer.bonusText || '')}"
+                  >🛒 ${escapeHtml(st.shortName)}（${escapeHtml(editionHint)}）${actionWord} ↗</a>
+                `;
+              })
+              .join('');
+
+            const quickReserveBtn = secured
+              ? `<span class="urgent-secured-pill">✅ 確保済み</span>`
+              : primaryHotOffer
+                ? `<button
+                    class="urgent-mark-reserved-btn"
+                    type="button"
+                    data-quick-reserve-item="${escapeHtml(item.id)}"
+                    data-quick-reserve-offer="${escapeHtml(primaryHotOffer.id)}"
+                    title="この最優先版をワンタップで「🛒 予約済」に記録"
+                  >✓ 予約済にする</button>`
+                : '';
+
+            return `
+              <article class="urgent-card ${scarcity.rankMeta.colorClass} ${secured ? 'is-secured' : ''}">
+                <div class="urgent-card-main">
+                  <div class="urgent-cover-wrap ${r18Class}" data-quick-preview="${escapeHtml(item.id)}" title="タップして表紙＆特典写真を確認">
+                    ${renderCoverImg(item)}
+                    <span class="urgent-cover-cat ${item.category === 'r18' ? 'is-r18' : ''}">
+                      ${item.category === 'r18' ? '🔞R18' : escapeHtml(catMeta.label.replace(/^[^\s]+\s/, ''))}
+                    </span>
+                  </div>
+                  <div class="urgent-info">
+                    <div class="urgent-rank-row">
+                      <span class="urgent-rank-badge ${scarcity.rankMeta.colorClass}">
+                        ${escapeHtml(scarcity.rankMeta.badge)}
+                      </span>
+                      <span class="urgent-score-meter" title="売り切れ警戒スコア ${scarcity.score}/100">
+                        <span class="urgent-score-track">
+                          <span class="urgent-score-fill ${scarcity.rankMeta.colorClass}" style="width:${scarcity.score}%"></span>
+                        </span>
+                        <span>${scarcity.score}pt</span>
+                      </span>
+                    </div>
+
+                    <h3 class="urgent-title" data-open-id="${escapeHtml(item.id)}">${escapeHtml(item.title)}</h3>
+                    <div class="urgent-meta-line">
+                      <span class="urgent-date-pill">${escapeHtml(formatDateLabel(item.releaseDate))}（${escapeHtml(cd.text)}）</span>
+                      <span>${escapeHtml((item.coverTalents || []).join(' / '))}</span>
+                      <span>¥${(item.price || 0).toLocaleString()}</span>
+                    </div>
+
+                    <div class="urgent-reasons">${reasonsHtml}</div>
+                  </div>
+                </div>
+
+                <div class="urgent-action-strip">
+                  <div class="urgent-preorder-links">${buyButtonsHtml}</div>
+                  <div class="urgent-secondary-actions">
+                    ${quickReserveBtn}
+                    <button class="quick-preview-icon-btn" type="button" data-quick-preview="${escapeHtml(item.id)}">🔍 確認</button>
+                    <button class="quick-preview-icon-btn" type="button" data-open-status-picker="${escapeHtml(item.id)}">🏷 版別</button>
+                    ${
+                      visibleCount > 1
+                        ? `<button class="detail-trigger-btn" type="button" data-open-id="${escapeHtml(item.id)}">全${visibleCount}版比較</button>`
+                        : `<button class="detail-trigger-btn" type="button" data-open-id="${escapeHtml(item.id)}">詳細</button>`
+                    }
+                  </div>
+                </div>
+              </article>
+            `;
+          })
+          .join('')}
+      </div>`
+    : `<div class="empty-state">
+        <strong>${
+          state.urgentRankFilter === 'secured'
+            ? 'まだ確保済みの争奪タイトルはありません'
+            : 'この条件の未予約アラートはすべてクリア済みです！🎉'
+        }</strong>
+        <p>${
+          state.urgentRankFilter === 'secured'
+            ? '気になる注目作を予約したら「✓ 予約済にする」をタップして管理しましょう。'
+            : 'フィルターを「すべて」に戻すか、「未予約のみ表示」をオフにすると確保済みも確認できます。'
+        }</p>
+      </div>`;
+
+  const securedBannerHtml =
+    state.urgentRankFilter !== 'secured' && state.urgentUnreservedOnly && countSecured > 0
+      ? `<div class="urgent-secured-banner">
+          <span>✅ <strong>${countSecured}件</strong>の争奪注目作はすでに予約済／購入済です！</span>
+          <button class="quick-preview-icon-btn" type="button" data-urgent-rank="secured">確保済みを見る →</button>
+        </div>`
+      : '';
+
+  container.innerHTML = kpiHtml + toolbarHtml + cardsHtml + securedBannerHtml;
 }
 
 /* =========================================================
@@ -2807,6 +3115,7 @@ function switchTab(tabId) {
     btn.classList.toggle('active', btn.dataset.tab === tabId);
   });
 
+  if (tabId === 'urgent') renderUrgentRadar();
   if (tabId === 'calendar') renderCalendar();
   if (tabId === 'oshi') renderOshiAndShelf();
   if (tabId === 'hub') renderHubLauncher();
@@ -2818,6 +3127,7 @@ function renderAll() {
   renderCountdownStrip();
   renderFilterChips();
   renderMagazineGrid();
+  renderUrgentRadar();
   renderCalendar();
   renderOshiAndShelf();
   renderHubLauncher();
@@ -2911,10 +3221,15 @@ function bindEvents() {
     renderMagazineGrid();
   });
 
-  // Budget custom input change (delegated across Tab 2 & Tab 3)
+  // Delegated input changes (Budget input & Urgent Radar unreserved toggle)
   document.addEventListener('change', (e) => {
     if (e.target && e.target.matches('[data-budget-input]')) {
       setMonthlyBudget(e.target.value);
+      return;
+    }
+    if (e.target && e.target.matches('[data-urgent-unreserved-toggle]')) {
+      state.urgentUnreservedOnly = e.target.checked;
+      renderUrgentRadar();
     }
   });
 
@@ -2922,6 +3237,37 @@ function bindEvents() {
   document.addEventListener('click', (e) => {
     if (e.target.closest('[data-stop-prop]')) {
       e.stopPropagation();
+      return;
+    }
+
+    const jumpTabBtn = e.target.closest('[data-jump-tab]');
+    if (jumpTabBtn) {
+      switchTab(jumpTabBtn.dataset.jumpTab);
+      return;
+    }
+
+    const urgentRankBtn = e.target.closest('[data-urgent-rank]');
+    if (urgentRankBtn) {
+      state.urgentRankFilter = urgentRankBtn.dataset.urgentRank;
+      renderUrgentRadar();
+      return;
+    }
+
+    const urgentTopicBtn = e.target.closest('[data-urgent-topic]');
+    if (urgentTopicBtn) {
+      state.urgentTopicFilter = urgentTopicBtn.dataset.urgentTopic;
+      renderUrgentRadar();
+      return;
+    }
+
+    const quickReserveBtn = e.target.closest('[data-quick-reserve-offer]');
+    if (quickReserveBtn) {
+      e.stopPropagation();
+      setOfferStatus(
+        quickReserveBtn.dataset.quickReserveOffer,
+        'reserved',
+        quickReserveBtn.dataset.quickReserveItem || null
+      );
       return;
     }
 
@@ -3010,6 +3356,8 @@ function bindEvents() {
       const kw = removeOshiBtn.dataset.removeOshi;
       state.oshiKeywords = state.oshiKeywords.filter((item) => item !== kw);
       saveJson(STORAGE_KEYS.oshi, state.oshiKeywords);
+      renderCountdownStrip();
+      renderUrgentRadar();
       renderOshiAndShelf();
       renderMagazineGrid();
       return;
@@ -3038,6 +3386,8 @@ function bindEvents() {
       saveJson(STORAGE_KEYS.oshi, state.oshiKeywords);
     }
     input.value = '';
+    renderCountdownStrip();
+    renderUrgentRadar();
     renderOshiAndShelf();
     renderMagazineGrid();
   });

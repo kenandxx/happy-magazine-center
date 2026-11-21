@@ -6,7 +6,7 @@
     <title>Happy Magazine Center｜アイドル雑誌・写真集・カレンダー 特典＆3ヶ月発売予定ダッシュボード</title>
     <meta
       name="description"
-      content="B.L.T.、BOMB、アップトゥボーイ、週刊誌ポスター、写真集、2027年カレンダーのセブンネット・楽天ブックス・HMV・Amazon限定特典と3ヶ月先までの発売予定をスマホでワンタップ確認。"
+      content="B.L.T.、BOMB、アップトゥボーイ、週刊誌ポスター、写真集、2027年カレンダー、🔞R18の限定特典・3ヶ月発売予定・売り切れ警戒（早め予約レーダー）をスマホでワンタップ確認。"
     />
     <meta name="theme-color" content="#E11D48" />
     <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
@@ -93,7 +93,35 @@
         <div id="magazineGrid" class="compact-grid"></div>
       </section>
 
-      <!-- Tab 2: 3-Month Upcoming Excitement Corner -->
+      <!-- Tab 2: Urgent Pre-Order & Sell-Out Radar -->
+      <section id="tab-urgent" class="tab-panel" aria-label="早め予約・売り切れ警戒レーダー">
+        <div class="panel-card urgent-hero-card">
+          <div class="urgent-hero-top">
+            <h2 class="panel-heading">🔥 早め予約・争奪戦レーダー（直近〜3ヶ月）</h2>
+            <span class="urgent-hero-pill">自動スコア判定</span>
+          </div>
+          <p class="panel-desc">
+            直近〜今後2〜3ヶ月（-14日〜+100日）の中から、<strong>部数限定・サイン本・ストア限定表紙・超人気タレント・推しワード連動・限定特典の多さ・発売締切</strong>を自動スコア化し、<strong>すぐ予約しないと消える注目作</strong>だけを優先ハイライトします。
+          </p>
+          <details class="urgent-logic-details">
+            <summary>📊 売り切れ警戒スコア（100点満点）の判定ロジックを見る</summary>
+            <ul class="urgent-logic-list">
+              <li><strong>✒️ 直筆サイン本 (+36) / 💎 3000部限定など豪華愛蔵版 (+35) / ⚡ 数量限定・初回枠 (+20)</strong></li>
+              <li><strong>✨ ストア限定表紙 (+24)</strong>（再販されず初動で完売しやすい）</li>
+              <li><strong>🌟 超人気タレント・主要グループ (+20) / 🔥 注目人気 (+12)</strong></li>
+              <li><strong>💖 あなたの登録「推しワード」連動 (+14)</strong></li>
+              <li><strong>🏪 ストア限定特典の種数 (+6〜+16) / 🗓 2027カレンダー初回生産 (+10)</strong></li>
+              <li><strong>⏰ 発売タイミング緊急度 (+8〜+18) / 🖼 特典絵柄解禁スパイク (+6)</strong></li>
+            </ul>
+            <p class="urgent-logic-note">
+              68点以上＝<strong>🔴 Sランク（即予約推奨）</strong> ／ 48〜67点＝<strong>🟠 Aランク（早め確保）</strong> ／ 30〜47点＝<strong>🟡 Bランク（注目枠）</strong>
+            </p>
+          </details>
+        </div>
+        <div id="urgentRadarContainer"></div>
+      </section>
+
+      <!-- Tab 3: 3-Month Upcoming Excitement Corner -->
       <section id="tab-calendar" class="tab-panel" aria-label="これから3ヶ月のお楽しみコーナー">
         <div class="panel-card excitement-header-card">
           <h2 class="panel-heading">🎉 これから3ヶ月のお楽しみコーナー</h2>
@@ -218,12 +246,17 @@
       </footer>
     </main>
 
-    <!-- Bottom Navigation -->
+    <!-- Bottom Navigation (5 Tabs) -->
     <nav class="bottom-nav" aria-label="メインナビゲーション">
       <div class="bottom-nav-inner">
         <button class="nav-btn active" data-tab="discover" type="button">
           <span class="nav-icon" aria-hidden="true">📚</span>
-          <span>一覧・検索</span>
+          <span>一覧</span>
+        </button>
+        <button class="nav-btn nav-btn-urgent" data-tab="urgent" type="button">
+          <span class="nav-icon" aria-hidden="true">🔥</span>
+          <span id="urgentNavBadge" class="nav-alert-badge" hidden>0</span>
+          <span>早め予約</span>
         </button>
         <button class="nav-btn" data-tab="calendar" type="button">
           <span class="nav-icon" aria-hidden="true">🎉</span>

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T14:30:00+09:00",
+  "updatedAt": "2026-11-21T16:30:00+09:00",
   "referenceDate": "2026-11-21",
   "policy": "Amazonは基本購入先として常に表示。Amazon以外のストア（セブンネット・楽天ブックス・HMV・TSUTAYA）は確認済みのストア限定特典が付く場合のみ表示。",
   "items": [
@@ -6250,7 +6250,7 @@
       "publisher": "双葉社",
       "category": "r18",
       "releaseDate": "2026-11-18",
-      "price": 3960,
+      "price": 4180,
       "coverTalents": [
         "藤森里穂"
       ],
@@ -6265,7 +6265,7 @@
       ],
       "includedBonuses": [],
       "printOnlyNote": "18歳以上対象（R18・成人向けヘアヌード写真集）。電車内ではヘッダーの「🚃 ぼかし」ONが便利です。",
-      "summary": "人気セクシー女優・藤森里穂の待望2ndヘアヌード写真集。双葉社より好評発売中（ISBN: 9784575321227）。",
+      "summary": "藤森里穂2ndヘアヌード写真集『Unfold』（双葉社・ISBN 9784575321227）。2026年12月26日には書泉ブックタワー発売記念イベントも開催予定。",
       "gallery": [
         {
           "url": "https://shop.r10s.jp/book/cabinet/1227/9784575321227_1_2.jpg",
@@ -6287,7 +6287,7 @@
           ],
           "bonusText": "Amazonで購入（双葉社・ISBN 9784575321227）",
           "talent": "藤森里穂",
-          "price": 3960,
+          "price": 4180,
           "status": "on_sale",
           "artworkStatus": "revealed",
           "url": "https://www.amazon.co.jp/s?k=%E8%97%A4%E6%A3%AE%E9%87%8C%E7%A9%82+Unfold&i=stripbooks",
@@ -6303,7 +6303,7 @@
       "publisher": "竹書房",
       "category": "r18",
       "releaseDate": "2026-11-20",
-      "price": 3850,
+      "price": 4840,
       "coverTalents": [
         "金松季歩"
       ],
@@ -6318,7 +6318,7 @@
       ],
       "includedBonuses": [],
       "printOnlyNote": "18歳以上対象（R18・成人向け写真集）。",
-      "summary": "元AKB48研究生・金松季歩の最新写真集『美の余韻』（竹書房・ISBN 9784801995581）。",
+      "summary": "元AKB48・グラビア出身で人気急上昇中の金松季歩、待望のヘアヌード写真集『美の余韻』（竹書房・ISBN 9784801995581）。",
       "gallery": [
         {
           "url": "https://shop.r10s.jp/book/cabinet/5581/9784801995581_1_2.jpg",
@@ -6340,7 +6340,7 @@
           ],
           "bonusText": "Amazonで購入（竹書房・ISBN 9784801995581）",
           "talent": "金松季歩",
-          "price": 3850,
+          "price": 4840,
           "status": "on_sale",
           "artworkStatus": "revealed",
           "url": "https://www.amazon.co.jp/s?k=%E9%87%91%E6%9D%BE%E5%AD%A3%E6%AD%A9+%E7%BE%8E%E3%81%AE%E4%BD%99%E9%9F%BB&i=stripbooks",
@@ -6356,7 +6356,7 @@
       "publisher": "双葉社",
       "category": "r18",
       "releaseDate": "2026-10-21",
-      "price": 3850,
+      "price": 4400,
       "coverTalents": [
         "瀬戸環奈"
       ],
@@ -6393,7 +6393,7 @@
           ],
           "bonusText": "Amazonで購入（双葉社・ISBN 9784575321104）",
           "talent": "瀬戸環奈",
-          "price": 3850,
+          "price": 4400,
           "status": "on_sale",
           "artworkStatus": "revealed",
           "url": "https://www.amazon.co.jp/s?k=%E7%80%AC%E6%88%B8%E7%92%B0%E5%A5%88+%E3%81%9D%E3%81%B0%E3%81%AB%E3%81%84%E3%81%9F%E3%81%84&i=stripbooks",
@@ -6409,7 +6409,7 @@
       "publisher": "徳間書店",
       "category": "r18",
       "releaseDate": "2026-10-05",
-      "price": 3850,
+      "price": 5555,
       "coverTalents": [
         "石川澪"
       ],
@@ -6425,10 +6425,10 @@
       "includedBonuses": [
         {
           "type": "postcard",
-          "label": "初回封入特典：ポストカード1枚（全5種よりランダム）"
+          "label": "初回封入特典：ポストカード（全5種よりランダム1枚）"
         }
       ],
-      "printOnlyNote": "18歳以上対象（R18）。封入ポストカードは紙書籍のみ付属。",
+      "printOnlyNote": "初回封入ポストカード（全5種ランダム1枚）あり。基本購入先はAmazon（ISBN 9784198662882）。",
       "summary": "トップ人気を誇る石川澪のデビュー5周年記念写真集『BELLEZA』。全5種ランダムポストカード封入！",
       "gallery": [
         {
@@ -6451,7 +6451,7 @@
           ],
           "bonusText": "Amazonで購入（初回封入ポストカード1枚ランダム・ISBN 9784198662882）",
           "talent": "石川澪",
-          "price": 3850,
+          "price": 5555,
           "status": "on_sale",
           "artworkStatus": "revealed",
           "url": "https://www.amazon.co.jp/s?k=%E7%9F%B3%E5%B7%9D%E6%BE%AA+BELLEZA&i=stripbooks",
@@ -6464,10 +6464,10 @@
       "title": "小野六花 写真集『RIKKA!!』（豪華愛蔵版3000部限定）",
       "series": "セクシー写真集",
       "issueLabel": "豪華愛蔵版（3000部限定）",
-      "publisher": "ジーオーティー",
+      "publisher": "彩文館出版",
       "category": "r18",
       "releaseDate": "2026-12-25",
-      "price": 4400,
+      "price": 4620,
       "coverTalents": [
         "小野六花"
       ],
@@ -6481,7 +6481,7 @@
       ],
       "includedBonuses": [],
       "printOnlyNote": "18歳以上対象（R18・3000部限定生産）。書影・店舗特典解禁待ち。",
-      "summary": "総フォロワー数100万人超・小野六花が3000部限定の豪華愛蔵版ヘアヌード写真集シリーズに初登場！12月25日発売予定。",
+      "summary": "小野六花写真集『RIKKA!!』（彩文館出版・ISBN 9784775607022）。豪華愛蔵版3000部限定のため予約完売・プレミア化しやすい注目作。",
       "gallery": [],
       "pressArticles": [],
       "offers": [
@@ -6495,7 +6495,7 @@
           ],
           "bonusText": "Amazonで予約確認（ISBN 9784775607022）",
           "talent": "小野六花",
-          "price": 4400,
+          "price": 4620,
           "status": "preorder",
           "artworkStatus": "pending",
           "url": "https://www.amazon.co.jp/s?k=%E5%B0%8F%E9%87%8E%E5%85%AD%E8%8A%B1+RIKKA&i=stripbooks"
@@ -6785,7 +6785,1636 @@
           "url": "https://www.amazon.co.jp/s?k=%E6%9C%88%E5%88%8AFANZA+2027%E5%B9%B43%E6%9C%88%E5%8F%B7&i=stripbooks"
         }
       ]
+    },
+    {
+      "id": "r18-hatsumi-nanoka-ubu",
+      "title": "初美なのか 写真集『- ubu -』（豪華愛蔵版3000部限定）",
+      "series": "彩文館出版 豪華愛蔵版写真集",
+      "issueLabel": "豪華愛蔵版 3000部限定",
+      "publisher": "彩文館出版",
+      "category": "r18",
+      "releaseDate": "2026-11-27",
+      "price": 4620,
+      "coverTalents": [
+        "初美なのか"
+      ],
+      "featuredTalents": [
+        "初美なのか"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/7015/9784775607015_1_3.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "豪華愛蔵版3000部限定（ISBN 9784775607015・撮影：GOTA SUZUKI）。初版売り切れ注意のため早め予約推奨。",
+      "summary": "透明感あふれる注目美少女・初美なのかの豪華愛蔵版3000部限定ヌード写真集『- ubu -』（彩文館出版）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "初美なのか 写真集『- ubu -』公式表紙",
+          "source": "彩文館出版 / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/7015/9784775607015_1_3.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784775607015%20%E5%88%9D%E7%BE%8E%E3%81%AA%E3%81%AE%E3%81%8B%20ubu"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-hatsumi-nanoka-ubu-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（豪華愛蔵版3000部限定）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "豪華愛蔵版3000部限定・Amazonで予約（ISBN 9784775607015）",
+          "talent": "初美なのか",
+          "price": 4620,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/7015/9784775607015_1_3.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784775607015%20%E5%88%9D%E7%BE%8E%E3%81%AA%E3%81%AE%E3%81%8B%20ubu"
+        }
+      ]
+    },
+    {
+      "id": "r18-kojima-minami-passage",
+      "title": "小島みなみ 15周年記念写真集『Passage of Time』",
+      "series": "徳間書店 写真集",
+      "issueLabel": "15周年記念写真集",
+      "publisher": "徳間書店",
+      "category": "r18",
+      "releaseDate": "2026-11-27",
+      "price": 4620,
+      "coverTalents": [
+        "小島みなみ"
+      ],
+      "featuredTalents": [
+        "小島みなみ"
+      ],
+      "palette": [
+        "#701A75",
+        "#A21CAF",
+        "#FAE8FF"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/2752/9784198662752_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "15周年記念メモリアル写真集（ISBN 9784198662752）。2026年12月5日に書泉ブックタワー発売記念イベント開催（数量限定先着枠あり）。",
+      "summary": "デビュー15周年を迎えたレジェンド人気女優・小島みなみの記念ヌード写真集『Passage of Time』（徳間書店）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "小島みなみ『Passage of Time』公式表紙",
+          "source": "徳間書店 / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/2752/9784198662752_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784198662752%20%E5%B0%8F%E5%B3%B6%E3%81%BF%E3%81%AA%E3%81%BF%20Passage%20of%20Time"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-kojima-minami-passage-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（15周年記念）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・在庫チェック（ISBN 9784198662752）",
+          "talent": "小島みなみ",
+          "price": 4620,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2752/9784198662752_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784198662752%20%E5%B0%8F%E5%B3%B6%E3%81%BF%E3%81%AA%E3%81%BF%20Passage%20of%20Time"
+        }
+      ]
+    },
+    {
+      "id": "r18-sono-rion-love-escape",
+      "title": "園梨音 ファースト写真集『LOVE ESCAPE』",
+      "series": "徳間書店 写真集",
+      "issueLabel": "1st オールヌード写真集",
+      "publisher": "徳間書店",
+      "category": "r18",
+      "releaseDate": "2026-11-28",
+      "price": 4620,
+      "coverTalents": [
+        "園梨音"
+      ],
+      "featuredTalents": [
+        "園梨音"
+      ],
+      "palette": [
+        "#881337",
+        "#E11D48",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/2868/9784198662868_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "国体出場スイマー出身・S1専属1位デビュー超大型新人の1stオールヌード112P（ISBN 9784198662868・撮影：GOTA SUZUKI）。",
+      "summary": "S1専属1位デビューで話題沸騰の大型新人・園梨音の1stオールヌード写真集『LOVE ESCAPE』（徳間書店）。初版争奪の注目枠！",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "園梨音 1st写真集『LOVE ESCAPE』公式表紙",
+          "source": "徳間書店 / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/2868/9784198662868_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784198662868%20%E5%9C%92%E6%A2%A8%E9%9F%B3%20LOVE%20ESCAPE"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-sono-rion-love-escape-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約（ISBN 9784198662868）",
+          "talent": "園梨音",
+          "price": 4620,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2868/9784198662868_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784198662868%20%E5%9C%92%E6%A2%A8%E9%9F%B3%20LOVE%20ESCAPE"
+        }
+      ]
+    },
+    {
+      "id": "r18-maki-kyoko-raw",
+      "title": "真木今日子 写真集『.RAW』",
+      "series": "ジーウォーク 写真集",
+      "issueLabel": "最新写真集",
+      "publisher": "ジーウォーク",
+      "category": "r18",
+      "releaseDate": "2026-11-26",
+      "price": 4400,
+      "coverTalents": [
+        "真木今日子"
+      ],
+      "featuredTalents": [
+        "真木今日子"
+      ],
+      "palette": [
+        "#450A0A",
+        "#991B1B",
+        "#FEE2E2"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/1101/9784868491101_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784868491101（撮影：篠原潔）。発売記念イベント（LivePocket先着受付）あり。",
+      "summary": "圧倒的な色気と表現力で支持される真木今日子の最新写真集『.RAW』（ジーウォーク）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "真木今日子 写真集『.RAW』公式表紙",
+          "source": "ジーウォーク / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/1101/9784868491101_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784868491101%20%E7%9C%9F%E6%9C%A8%E4%BB%8A%E6%97%A5%E5%AD%90%20RAW"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-maki-kyoko-raw-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約（ISBN 9784868491101）",
+          "talent": "真木今日子",
+          "price": 4400,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/1101/9784868491101_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784868491101%20%E7%9C%9F%E6%9C%A8%E4%BB%8A%E6%97%A5%E5%AD%90%20RAW"
+        }
+      ]
+    },
+    {
+      "id": "r18-ito-mayuki-page",
+      "title": "伊藤舞雪 写真集『Page.』",
+      "series": "徳間書店 写真集",
+      "issueLabel": "バリ島ロケ第3作",
+      "publisher": "徳間書店",
+      "category": "r18",
+      "releaseDate": "2026-11-18",
+      "price": 4620,
+      "coverTalents": [
+        "伊藤舞雪"
+      ],
+      "featuredTalents": [
+        "伊藤舞雪"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/3100/9784198663100_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784198663100。2026年12月5日に書泉グランデで発売記念イベント開催予定。",
+      "summary": "トップ人気を誇る伊藤舞雪の最新ヘアヌード写真集『Page.』（徳間書店）。バリ島ロケシリーズ第3作。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "伊藤舞雪 写真集『Page.』公式表紙",
+          "source": "徳間書店 / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/3100/9784198663100_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784198663100%20%E4%BC%8A%E8%97%A4%E8%88%9E%E9%9B%AA%20Page"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-ito-mayuki-page-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認（ISBN 9784198663100）",
+          "talent": "伊藤舞雪",
+          "price": 4620,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/3100/9784198663100_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784198663100%20%E4%BC%8A%E8%97%A4%E8%88%9E%E9%9B%AA%20Page"
+        }
+      ]
+    },
+    {
+      "id": "r18-miyoshi-yuka-first-glow",
+      "title": "三好佑香 写真集『First Glow.』",
+      "series": "徳間書店 写真集",
+      "issueLabel": "1st ヌード写真集",
+      "publisher": "徳間書店",
+      "category": "r18",
+      "releaseDate": "2026-11-20",
+      "price": 4950,
+      "coverTalents": [
+        "三好佑香"
+      ],
+      "featuredTalents": [
+        "三好佑香"
+      ],
+      "palette": [
+        "#9D174D",
+        "#EC4899",
+        "#FCE7F3"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/3155/9784198663155.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784198663155。オールヌード112ページの1st写真集。",
+      "summary": "清楚と官能の振り幅で注目を集める三好佑香のファーストヌード写真集『First Glow.』（徳間書店・112P）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "三好佑香 写真集『First Glow.』公式表紙",
+          "source": "徳間書店 / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/3155/9784198663155.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784198663155%20%E4%B8%89%E5%A5%BD%E4%BD%91%E9%A6%99%20First%20Glow"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-miyoshi-yuka-first-glow-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認（ISBN 9784198663155）",
+          "talent": "三好佑香",
+          "price": 4950,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/3155/9784198663155.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784198663155%20%E4%B8%89%E5%A5%BD%E4%BD%91%E9%A6%99%20First%20Glow"
+        }
+      ]
+    },
+    {
+      "id": "r18-misumi-nene-sumiwataru",
+      "title": "三澄寧々 写真集『澄みわたる、ねね。』",
+      "series": "竹書房 写真集",
+      "issueLabel": "最新写真集",
+      "publisher": "竹書房",
+      "category": "r18",
+      "releaseDate": "2026-11-20",
+      "price": 4840,
+      "coverTalents": [
+        "三澄寧々"
+      ],
+      "featuredTalents": [
+        "三澄寧々"
+      ],
+      "palette": [
+        "#881337",
+        "#E11D48",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/5598/9784801995598_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784801995598（撮影：GOTA SUZUKI）。発売記念イベントあり。12月には2027年カレンダーも発売予定。",
+      "summary": "透明感あふれるビジュアルで人気急上昇中の三澄寧々、最新写真集『澄みわたる、ねね。』（竹書房）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "三澄寧々 写真集『澄みわたる、ねね。』公式表紙",
+          "source": "竹書房 / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/5598/9784801995598_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784801995598%20%E4%B8%89%E6%BE%84%E5%AF%A7%E3%80%85%20%E6%BE%84%E3%81%BF%E3%82%8F%E3%81%9F%E3%82%8B"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-misumi-nene-sumiwataru-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認（ISBN 9784801995598）",
+          "talent": "三澄寧々",
+          "price": 4840,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/5598/9784801995598_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784801995598%20%E4%B8%89%E6%BE%84%E5%AF%A7%E3%80%85%20%E6%BE%84%E3%81%BF%E3%82%8F%E3%81%9F%E3%82%8B"
+        }
+      ]
+    },
+    {
+      "id": "r18-kinoshita-ririko-iyashi",
+      "title": "木下凛々子 写真集『癒しのカンケイ』",
+      "series": "双葉社 写真集",
+      "issueLabel": "デビュー6周年最新作",
+      "publisher": "双葉社",
+      "category": "r18",
+      "releaseDate": "2026-12-16",
+      "price": 4180,
+      "coverTalents": [
+        "木下凛々子"
+      ],
+      "featuredTalents": [
+        "木下凛々子"
+      ],
+      "palette": [
+        "#581C87",
+        "#9333EA",
+        "#F3E8FF"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784575321289（撮影：上野勇）。12月発売の双葉社注目ヌード写真集（表紙解禁待ち）。",
+      "summary": "デビュー6周年を迎えたトップ美熟女・木下凛々子の最新ヌード写真集『癒しのカンケイ』（双葉社）。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-kinoshita-ririko-iyashi-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（予約受付中）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで先行予約（ISBN 9784575321289）",
+          "talent": "木下凛々子",
+          "price": 4180,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=9784575321289%20%E6%9C%A8%E4%B8%8B%E5%87%9B%E3%80%85%E5%AD%90%20%E7%99%92%E3%81%97%E3%81%AE%E3%82%AB%E3%83%B3%E3%82%B1%E3%82%A4"
+        }
+      ]
+    },
+    {
+      "id": "r18-kawakami-yu-kokyu",
+      "title": "川上ゆう 写真集『呼吸』",
+      "series": "双葉社 写真集",
+      "issueLabel": "20周年目前メモリアル",
+      "publisher": "双葉社",
+      "category": "r18",
+      "releaseDate": "2026-12-16",
+      "price": 4180,
+      "coverTalents": [
+        "川上ゆう"
+      ],
+      "featuredTalents": [
+        "川上ゆう"
+      ],
+      "palette": [
+        "#7F1D1D",
+        "#B91C1C",
+        "#FEE2E2"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784575321296（撮影：富田恭透）。2027年20周年を目前にした集大成写真集（表紙解禁待ち）。",
+      "summary": "2007年デビュー・レジェンド美熟女・川上ゆうの20周年目前最新ヌード写真集『呼吸』（双葉社）。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-kawakami-yu-kokyu-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（予約受付中）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで先行予約（ISBN 9784575321296）",
+          "talent": "川上ゆう",
+          "price": 4180,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=9784575321296%20%E5%B7%9D%E4%B8%8A%E3%82%86%E3%81%86%20%E5%91%BC%E5%90%B8"
+        }
+      ]
+    },
+    {
+      "id": "r18-yayoi-mizuki-churari",
+      "title": "弥生みづき 写真集『ちゅらり。』",
+      "series": "竹書房 写真集",
+      "issueLabel": "最新写真集",
+      "publisher": "竹書房",
+      "category": "r18",
+      "releaseDate": "2026-12-18",
+      "price": 4840,
+      "coverTalents": [
+        "弥生みづき"
+      ],
+      "featuredTalents": [
+        "弥生みづき"
+      ],
+      "palette": [
+        "#881337",
+        "#F43F5E",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/5857/9784801995857_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784801995857（撮影：吉場正和）。12月発売・表紙公開済みで予約加速中。",
+      "summary": "圧倒的な人気と作品数を誇る弥生みづきの最新ヘアヌード写真集『ちゅらり。』（竹書房）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "弥生みづき 写真集『ちゅらり。』公式表紙",
+          "source": "竹書房 / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/5857/9784801995857_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784801995857%20%E5%BC%A5%E7%94%9F%E3%81%BF%E3%81%A5%E3%81%8D%20%E3%81%A1%E3%82%85%E3%82%89%E3%82%8A"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-yayoi-mizuki-churari-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（予約受付中）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで先行予約（ISBN 9784801995857）",
+          "talent": "弥生みづき",
+          "price": 4840,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/5857/9784801995857_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784801995857%20%E5%BC%A5%E7%94%9F%E3%81%BF%E3%81%A5%E3%81%8D%20%E3%81%A1%E3%82%85%E3%82%89%E3%82%8A"
+        }
+      ]
+    },
+    {
+      "id": "r18-yoshine-yuria-m-yuwaku",
+      "title": "吉根ゆりあ 3rdオールヌード写真集『Mの誘惑』",
+      "series": "ジーウォーク 写真集",
+      "issueLabel": "3rd オールヌード",
+      "publisher": "ジーウォーク",
+      "category": "r18",
+      "releaseDate": "2026-12-23",
+      "price": 4400,
+      "coverTalents": [
+        "吉根ゆりあ"
+      ],
+      "featuredTalents": [
+        "吉根ゆりあ"
+      ],
+      "palette": [
+        "#7C2D12",
+        "#C2410C",
+        "#FFEDD5"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784868491149（撮影：SATOSHI）。Mカップ3年ぶりの待望3rdオールヌード（表紙解禁待ち）。",
+      "summary": "圧倒的Mカップボディ・吉根ゆりあ、3年ぶり待望の3rdオールヌード写真集『Mの誘惑』（ジーウォーク）。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-yoshine-yuria-m-yuwaku-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（予約受付中）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで先行予約（ISBN 9784868491149）",
+          "talent": "吉根ゆりあ",
+          "price": 4400,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=9784868491149%20%E5%90%89%E6%A0%B9%E3%82%86%E3%82%8A%E3%81%82%20M%E3%81%AE%E8%AA%98%E6%83%91"
+        }
+      ]
+    },
+    {
+      "id": "r18-itoi-ruka-rukatabi",
+      "title": "糸井瑠花 1stオールヌード写真集『るか旅』",
+      "series": "ジーウォーク 写真集",
+      "issueLabel": "1st オールヌード",
+      "publisher": "ジーウォーク",
+      "category": "r18",
+      "releaseDate": "2026-12-23",
+      "price": 4400,
+      "coverTalents": [
+        "糸井瑠花"
+      ],
+      "featuredTalents": [
+        "糸井瑠花"
+      ],
+      "palette": [
+        "#881337",
+        "#DB2777",
+        "#FCE7F3"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784868491156（撮影：SATOSHI）。2027年1月9日に書泉ブックタワーで発売記念イベント開催決定！",
+      "summary": "ショートカット×Gカップ美少女・糸井瑠花の待望1stオールヌード写真集『るか旅』（ジーウォーク）。晩秋の温泉旅行テーマ。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-itoi-ruka-rukatabi-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（予約受付中）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで先行予約（ISBN 9784868491156）",
+          "talent": "糸井瑠花",
+          "price": 4400,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=9784868491156%20%E7%B3%B8%E4%BA%95%E7%91%A0%E8%8A%B1%20%E3%82%8B%E3%81%8B%E6%97%85"
+        }
+      ]
+    },
+    {
+      "id": "r18-miyashita-rena-pellicule",
+      "title": "宮下玲奈 写真集『Pellicule』",
+      "series": "ジーオーティー 写真集",
+      "issueLabel": "最新写真集",
+      "publisher": "ジーオーティー",
+      "category": "r18",
+      "releaseDate": "2026-12-24",
+      "price": 4400,
+      "coverTalents": [
+        "宮下玲奈"
+      ],
+      "featuredTalents": [
+        "宮下玲奈"
+      ],
+      "palette": [
+        "#881337",
+        "#E11D48",
+        "#FFE4E6"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784823611803（撮影：LUCKMAN）。超人気トップ女優の年末最新写真集のため予約集中必至（表紙解禁待ち）。",
+      "summary": "トップクラスの人気を誇る宮下玲奈×LUCKMAN撮影の最新ヌード写真集『Pellicule』（ジーオーティー）。クリスマスイブ発売の超注目作！",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-miyashita-rena-pellicule-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（予約受付中）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで先行予約（ISBN 9784823611803）",
+          "talent": "宮下玲奈",
+          "price": 4400,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=9784823611803%20%E5%AE%AE%E4%B8%8B%E7%8E%B2%E5%A5%88%20Pellicule"
+        }
+      ]
+    },
+    {
+      "id": "r18-konno-shiori-2nd",
+      "title": "紺野栞 2nd写真集（仮）",
+      "series": "竹書房 写真集",
+      "issueLabel": "2027年1月新刊",
+      "publisher": "竹書房",
+      "category": "r18",
+      "releaseDate": "2027-01-22",
+      "price": 4620,
+      "coverTalents": [
+        "紺野栞"
+      ],
+      "featuredTalents": [
+        "紺野栞"
+      ],
+      "palette": [
+        "#701A75",
+        "#C026D3",
+        "#FAE8FF"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784801996090（撮影：小池大介）。105cm Hカップ・セクシーの臨界点に挑む2027年1月注目新刊。",
+      "summary": "105cm Hカップ・紺野栞の待望2nd写真集（竹書房・2027年1月22日発売予定）。2ヶ月先の楽しみ枠として早めチェック！",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-konno-shiori-2nd-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（予約受付中）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで先行予約（ISBN 9784801996090）",
+          "talent": "紺野栞",
+          "price": 4620,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=9784801996090%20%E7%B4%BA%E9%87%8E%E6%A0%9E%20%E5%86%99%E7%9C%9F%E9%9B%86"
+        }
+      ]
+    },
+    {
+      "id": "r18-kimura-ako-heart",
+      "title": "木村愛心 写真集『Heart in Overflow』（豪華愛蔵版3000部限定）",
+      "series": "彩文館出版 豪華愛蔵版写真集",
+      "issueLabel": "豪華愛蔵版 3000部限定",
+      "publisher": "彩文館出版",
+      "category": "r18",
+      "releaseDate": "2026-10-28",
+      "price": 4620,
+      "coverTalents": [
+        "木村愛心"
+      ],
+      "featuredTalents": [
+        "木村愛心"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/7008/9784775607008_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "豪華愛蔵版3000部限定（ISBN 9784775607008）。2027年1月16日に書泉ブックタワー発売記念イベントも開催予定。",
+      "summary": "Lカップの圧巻スタイル・木村愛心の豪華愛蔵版3000部限定ヌード写真集『Heart in Overflow』（彩文館出版）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "木村愛心『Heart in Overflow』公式表紙",
+          "source": "彩文館出版 / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/7008/9784775607008_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784775607008%20%E6%9C%A8%E6%9D%91%E6%84%9B%E5%BF%83%20Heart%20in%20Overflow"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-kimura-ako-heart-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（豪華愛蔵版3000部限定）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "豪華愛蔵版3000部限定・Amazonで在庫確認（ISBN 9784775607008）",
+          "talent": "木村愛心",
+          "price": 4620,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/7008/9784775607008_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784775607008%20%E6%9C%A8%E6%9D%91%E6%84%9B%E5%BF%83%20Heart%20in%20Overflow"
+        }
+      ]
+    },
+    {
+      "id": "r18-satsuki-nao-mitsugetsu",
+      "title": "彩月七緒 写真集『蜜月』（豪華愛蔵版4000部限定）",
+      "series": "彩文館出版 豪華愛蔵版写真集",
+      "issueLabel": "豪華愛蔵版 4000部限定",
+      "publisher": "彩文館出版",
+      "category": "r18",
+      "releaseDate": "2026-09-30",
+      "price": 4620,
+      "coverTalents": [
+        "彩月七緒"
+      ],
+      "featuredTalents": [
+        "彩月七緒"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/6995/9784775606995_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "豪華愛蔵版4000部限定（ISBN 9784775606995・撮影：稲田喬晃）。限定部数のため在庫薄に注意。",
+      "summary": "人気急上昇の彩月七緒、豪華愛蔵版4000部限定ヘアヌード写真集『蜜月』（彩文館出版）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "彩月七緒 写真集『蜜月』公式表紙",
+          "source": "彩文館出版 / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/6995/9784775606995_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784775606995%20%E5%BD%A9%E6%9C%88%E4%B8%83%E7%B7%92%20%E8%9C%9C%E6%9C%88"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-satsuki-nao-mitsugetsu-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（豪華愛蔵版4000部限定）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで在庫確認（ISBN 9784775606995）",
+          "talent": "彩月七緒",
+          "price": 4620,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/6995/9784775606995_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784775606995%20%E5%BD%A9%E6%9C%88%E4%B8%83%E7%B7%92%20%E8%9C%9C%E6%9C%88"
+        }
+      ]
+    },
+    {
+      "id": "r18-pose-inoue-momo",
+      "title": "プレミアムヌードポーズブック 井上もも",
+      "series": "プレミアムヌードポーズブック",
+      "issueLabel": "人気ポーズブック最新作",
+      "publisher": "ジーオーティー",
+      "category": "r18",
+      "releaseDate": "2026-11-30",
+      "price": 3630,
+      "coverTalents": [
+        "井上もも"
+      ],
+      "featuredTalents": [
+        "井上もも"
+      ],
+      "palette": [
+        "#4C1D95",
+        "#7C3AED",
+        "#EDE9FE"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/1629/9784823611629_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784823611629。次世代天然美少女・井上もものプレミアムヌードポーズブック。",
+      "summary": "人気シリーズ「プレミアムヌードポーズブック」に大注目の天然美少女・井上ももが登場（ジーオーティー）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "プレミアムヌードポーズブック 井上もも 公式表紙",
+          "source": "ジーオーティー / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/1629/9784823611629_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784823611629%20%E3%83%97%E3%83%AC%E3%83%9F%E3%82%A2%E3%83%A0%E3%83%8C%E3%83%BC%E3%83%89%E3%83%9D%E3%83%BC%E3%82%BA%E3%83%96%E3%83%83%E3%82%AF%20%E4%BA%95%E4%B8%8A%E3%82%82%E3%82%82"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-pose-inoue-momo-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約（ISBN 9784823611629）",
+          "talent": "井上もも",
+          "price": 3630,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/1629/9784823611629_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784823611629%20%E3%83%97%E3%83%AC%E3%83%9F%E3%82%A2%E3%83%A0%E3%83%8C%E3%83%BC%E3%83%89%E3%83%9D%E3%83%BC%E3%82%BA%E3%83%96%E3%83%83%E3%82%AF%20%E4%BA%95%E4%B8%8A%E3%82%82%E3%82%82"
+        }
+      ]
+    },
+    {
+      "id": "r18-pose-shinohara-iyo",
+      "title": "プレミアムヌードポーズブック 篠原いよ",
+      "series": "プレミアムヌードポーズブック",
+      "issueLabel": "人気ポーズブック",
+      "publisher": "ジーオーティー",
+      "category": "r18",
+      "releaseDate": "2026-10-30",
+      "price": 3630,
+      "coverTalents": [
+        "篠原いよ"
+      ],
+      "featuredTalents": [
+        "篠原いよ"
+      ],
+      "palette": [
+        "#4C1D95",
+        "#7C3AED",
+        "#EDE9FE"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/1216/9784823611216_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784823611216（撮影：田村浩章）。",
+      "summary": "人気シリーズ「プレミアムヌードポーズブック」篠原いよ編（ジーオーティー）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "プレミアムヌードポーズブック 篠原いよ 公式表紙",
+          "source": "ジーオーティー / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/1216/9784823611216_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784823611216%20%E3%83%97%E3%83%AC%E3%83%9F%E3%82%A2%E3%83%A0%E3%83%8C%E3%83%BC%E3%83%89%E3%83%9D%E3%83%BC%E3%82%BA%E3%83%96%E3%83%83%E3%82%AF%20%E7%AF%A0%E5%8E%9F%E3%81%84%E3%82%88"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-pose-shinohara-iyo-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認（ISBN 9784823611216）",
+          "talent": "篠原いよ",
+          "price": 3630,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/1216/9784823611216_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784823611216%20%E3%83%97%E3%83%AC%E3%83%9F%E3%82%A2%E3%83%A0%E3%83%8C%E3%83%BC%E3%83%89%E3%83%9D%E3%83%BC%E3%82%BA%E3%83%96%E3%83%83%E3%82%AF%20%E7%AF%A0%E5%8E%9F%E3%81%84%E3%82%88"
+        }
+      ]
+    },
+    {
+      "id": "r18-cal-kawakita-saika-2027",
+      "title": "河北彩伽（河北彩花）2027年カレンダー（壁掛け / 卓上）",
+      "series": "2027年カレンダー（R18）",
+      "issueLabel": "2027年 壁掛け＆卓上",
+      "publisher": "わくわく製作所",
+      "category": "r18",
+      "releaseDate": "2026-11-23",
+      "price": 3850,
+      "coverTalents": [
+        "河北彩伽",
+        "河北彩花"
+      ],
+      "featuredTalents": [
+        "河北彩伽",
+        "河北彩花"
+      ],
+      "palette": [
+        "#881337",
+        "#E11D48",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/2554/4573650112554_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "超人気トップ女優の2027年カレンダー。発売記念イベントもあり初回生産分は即品薄になりやすいため早め確保推奨！",
+      "summary": "業界トップクラスの絶対的人気を誇る河北彩伽（河北彩花）の2027年壁掛け・卓上カレンダー。初回生産限りのため予約必須枠！",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "河北彩伽 2027年壁掛けカレンダー公式表紙",
+          "source": "わくわく製作所 / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/2554/4573650112554_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E6%B2%B3%E5%8C%97%E5%BD%A9%E4%BC%BD%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-cal-kawakita-wall-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 壁掛けカレンダー（B2・8枚）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "壁掛け版（JAN 4573650112554）・Amazonで予約",
+          "talent": "河北彩伽",
+          "price": 3850,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2554/4573650112554_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E6%B2%B3%E5%8C%97%E5%BD%A9%E4%BC%BD%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        },
+        {
+          "id": "r18-cal-kawakita-desk-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 卓上カレンダー",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "卓上版・Amazonで予約",
+          "talent": "河北彩伽",
+          "price": 3630,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=%E6%B2%B3%E5%8C%97%E5%BD%A9%E4%BC%BD%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%8D%93%E4%B8%8A"
+        }
+      ]
+    },
+    {
+      "id": "r18-cal-mikami-yua-2027",
+      "title": "三上悠亜 2027年カレンダー（壁掛け / 卓上）",
+      "series": "2027年カレンダー（R18）",
+      "issueLabel": "2027年 壁掛け＆卓上",
+      "publisher": "ハゴロモ",
+      "category": "r18",
+      "releaseDate": "2026-11-09",
+      "price": 3850,
+      "coverTalents": [
+        "三上悠亜"
+      ],
+      "featuredTalents": [
+        "三上悠亜"
+      ],
+      "palette": [
+        "#9D174D",
+        "#EC4899",
+        "#FCE7F3"
+      ],
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/6/2/521.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "HMV&BOOKS SHIBUYA発売記念イベント開催。壁掛け・卓上の2形態で完売スピードが速い定番人気カレンダー。",
+      "summary": "圧倒的カリスマ人気を誇る三上悠亜の2027年壁掛け・卓上カレンダー（ハゴロモ）。壁掛け・卓上で別カット表紙！",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "三上悠亜 2027年壁掛けカレンダー公式表紙",
+          "source": "ハゴロモ / HMV&BOOKS",
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000172/6/2/521.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E4%B8%89%E4%B8%8A%E6%82%A0%E4%BA%9C%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        },
+        {
+          "kind": "limited_cover",
+          "caption": "三上悠亜 2027年卓上カレンダー公式表紙",
+          "source": "ハゴロモ / HMV&BOOKS",
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000172/3/9/921.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E4%B8%89%E4%B8%8A%E6%82%A0%E4%BA%9C%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-cal-mikami-wall-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 壁掛けカレンダー",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "壁掛け版・Amazonで在庫確認",
+          "talent": "三上悠亜",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/6/2/521.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E4%B8%89%E4%B8%8A%E6%82%A0%E4%BA%9C%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        },
+        {
+          "id": "r18-cal-mikami-desk-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 卓上カレンダー",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "卓上版・Amazonで在庫確認",
+          "talent": "三上悠亜",
+          "price": 3630,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/3/9/921.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E4%B8%89%E4%B8%8A%E6%82%A0%E4%BA%9C%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%8D%93%E4%B8%8A"
+        }
+      ]
+    },
+    {
+      "id": "r18-cal-hatano-yui-2027",
+      "title": "波多野結衣 2027年カレンダー（壁掛け / 卓上）",
+      "series": "2027年カレンダー（R18）",
+      "issueLabel": "2027年 壁掛け＆卓上",
+      "publisher": "トライエックス",
+      "category": "r18",
+      "releaseDate": "2026-11-28",
+      "price": 3080,
+      "coverTalents": [
+        "波多野結衣"
+      ],
+      "featuredTalents": [
+        "波多野結衣"
+      ],
+      "palette": [
+        "#7F1D1D",
+        "#DC2626",
+        "#FEE2E2"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/2903/4968855272903_1_3.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "壁掛け（27CL-1702・B2/8枚）と卓上（27CL-1711・JAN 4968855272903）の2形態。",
+      "summary": "国内外で絶大な人気を誇るレジェンド・波多野結衣の2027年壁掛け・卓上カレンダー（トライエックス）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "波多野結衣 2027年卓上カレンダー公式表紙",
+          "source": "トライエックス / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/2903/4968855272903_1_3.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E6%B3%A2%E5%A4%9A%E9%87%8E%E7%B5%90%E8%A1%A3%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%8D%93%E4%B8%8A"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-cal-hatano-desk-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 卓上カレンダー（27CL-1711）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "卓上版（JAN 4968855272903）・Amazonで予約",
+          "talent": "波多野結衣",
+          "price": 2970,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2903/4968855272903_1_3.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E6%B3%A2%E5%A4%9A%E9%87%8E%E7%B5%90%E8%A1%A3%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%8D%93%E4%B8%8A"
+        },
+        {
+          "id": "r18-cal-hatano-wall-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 壁掛けカレンダー（27CL-1702）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "壁掛け版（B2・8枚）・Amazonで予約",
+          "talent": "波多野結衣",
+          "price": 3080,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=%E6%B3%A2%E5%A4%9A%E9%87%8E%E7%B5%90%E8%A1%A3%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        }
+      ]
+    },
+    {
+      "id": "r18-cal-takimoto-shizuha-2027",
+      "title": "瀧本雫葉 2027年カレンダー（壁掛け / 卓上）",
+      "series": "2027年カレンダー（R18）",
+      "issueLabel": "2027年 壁掛け＆卓上",
+      "publisher": "トライエックス",
+      "category": "r18",
+      "releaseDate": "2026-11-30",
+      "price": 3850,
+      "coverTalents": [
+        "瀧本雫葉"
+      ],
+      "featuredTalents": [
+        "瀧本雫葉"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/3/3/366.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "2026年12月12日に書泉ブックタワー発売記念イベント（直筆サイン入りセット枠あり）開催予定！",
+      "summary": "人気急上昇中の瀧本雫葉、2027年壁掛け・卓上カレンダー（27CL-1705）。壁掛け・卓上で異なる撮り下ろし表紙！",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "瀧本雫葉 2027年壁掛けカレンダー公式表紙",
+          "source": "トライエックス / HMV&BOOKS",
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000172/3/3/366.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E7%80%A7%E6%9C%AC%E9%9B%AB%E8%91%89%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        },
+        {
+          "kind": "limited_cover",
+          "caption": "瀧本雫葉 2027年卓上カレンダー公式表紙",
+          "source": "トライエックス / HMV&BOOKS",
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000172/3/3/370.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E7%80%A7%E6%9C%AC%E9%9B%AB%E8%91%89%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-cal-takimoto-wall-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 壁掛けカレンダー",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "壁掛け版・Amazonで予約",
+          "talent": "瀧本雫葉",
+          "price": 3850,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/3/3/366.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E7%80%A7%E6%9C%AC%E9%9B%AB%E8%91%89%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        },
+        {
+          "id": "r18-cal-takimoto-desk-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 卓上カレンダー",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "卓上版・Amazonで予約",
+          "talent": "瀧本雫葉",
+          "price": 3630,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/3/3/370.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E7%80%A7%E6%9C%AC%E9%9B%AB%E8%91%89%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%8D%93%E4%B8%8A"
+        }
+      ]
+    },
+    {
+      "id": "r18-cal-nagahama-mitsuri-2027",
+      "title": "長浜みつり 2027年カレンダー（壁掛け / 卓上）",
+      "series": "2027年カレンダー（R18）",
+      "issueLabel": "2027年 壁掛け＆卓上",
+      "publisher": "トライエックス",
+      "category": "r18",
+      "releaseDate": "2026-12-05",
+      "price": 3390,
+      "coverTalents": [
+        "長浜みつり"
+      ],
+      "featuredTalents": [
+        "長浜みつり"
+      ],
+      "palette": [
+        "#881337",
+        "#F43F5E",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/2873/4968855272873_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "壁掛け（27CL-1704・JAN 4968855272873）。2026年12月12日に書泉ブックタワー発売記念イベントも開催予定。",
+      "summary": "人気女優・長浜みつりの2027年壁掛け・卓上カレンダー（トライエックス）。12月上旬発売で予約締切に注意！",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "長浜みつり 2027年壁掛けカレンダー公式表紙",
+          "source": "トライエックス / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/2873/4968855272873_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E9%95%B7%E6%B5%9C%E3%81%BF%E3%81%A4%E3%82%8A%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-cal-nagahama-wall-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 壁掛けカレンダー（27CL-1704）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "壁掛け版（JAN 4968855272873）・Amazonで予約",
+          "talent": "長浜みつり",
+          "price": 3390,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2873/4968855272873_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E9%95%B7%E6%B5%9C%E3%81%BF%E3%81%A4%E3%82%8A%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        },
+        {
+          "id": "r18-cal-nagahama-desk-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 卓上カレンダー",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "卓上版・Amazonで予約",
+          "talent": "長浜みつり",
+          "price": 3190,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=%E9%95%B7%E6%B5%9C%E3%81%BF%E3%81%A4%E3%82%8A%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%8D%93%E4%B8%8A"
+        }
+      ]
+    },
+    {
+      "id": "r18-cal-nijimura-yumi-2027",
+      "title": "虹村ゆみ 2027年カレンダー（壁掛け / 卓上）",
+      "series": "2027年カレンダー（R18）",
+      "issueLabel": "2027年 壁掛け＆卓上",
+      "publisher": "トライエックス",
+      "category": "r18",
+      "releaseDate": "2026-12-12",
+      "price": 3520,
+      "coverTalents": [
+        "虹村ゆみ"
+      ],
+      "featuredTalents": [
+        "虹村ゆみ"
+      ],
+      "palette": [
+        "#701A75",
+        "#A21CAF",
+        "#FAE8FF"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/2897/4968855272897_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "壁掛け（JAN 4968855272897）＆卓上（JAN 4968855272941）の2形態。12月中旬発売。",
+      "summary": "注目女優・虹村ゆみの2027年壁掛け＆卓上カレンダー（トライエックス）。壁掛け・卓上の両表紙を公開中！",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "虹村ゆみ 2027年壁掛けカレンダー公式表紙",
+          "source": "トライエックス / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/2897/4968855272897_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E8%99%B9%E6%9D%91%E3%82%86%E3%81%BF%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        },
+        {
+          "kind": "limited_cover",
+          "caption": "虹村ゆみ 2027年卓上カレンダー公式表紙",
+          "source": "トライエックス / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/2941/4968855272941_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E8%99%B9%E6%9D%91%E3%82%86%E3%81%BF%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-cal-nijimura-wall-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 壁掛けカレンダー",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "壁掛け版（JAN 4968855272897）・Amazonで予約",
+          "talent": "虹村ゆみ",
+          "price": 3520,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2897/4968855272897_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E8%99%B9%E6%9D%91%E3%82%86%E3%81%BF%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        },
+        {
+          "id": "r18-cal-nijimura-desk-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 卓上カレンダー",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "卓上版（JAN 4968855272941）・Amazonで予約",
+          "talent": "虹村ゆみ",
+          "price": 3300,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2941/4968855272941_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E8%99%B9%E6%9D%91%E3%82%86%E3%81%BF%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%8D%93%E4%B8%8A"
+        }
+      ]
+    },
+    {
+      "id": "r18-cal-misumi-nene-2027",
+      "title": "三澄寧々 2027年カレンダー",
+      "series": "2027年カレンダー（R18）",
+      "issueLabel": "2027年 カレンダー",
+      "publisher": "ハゴロモ",
+      "category": "r18",
+      "releaseDate": "2026-12-19",
+      "price": 3520,
+      "coverTalents": [
+        "三澄寧々"
+      ],
+      "featuredTalents": [
+        "三澄寧々"
+      ],
+      "palette": [
+        "#881337",
+        "#E11D48",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/2989/4968855272989_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "JAN 4968855272989。写真集『澄みわたる、ねね。』に続く12月発売の2027年カレンダー。",
+      "summary": "注目人気女優・三澄寧々の2027年カレンダー（ハゴロモ・12月19日発売予定）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "三澄寧々 2027年カレンダー公式表紙",
+          "source": "ハゴロモ / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/2989/4968855272989_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E4%B8%89%E6%BE%84%E5%AF%A7%E3%80%85%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-cal-misumi-nene-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（2027年カレンダー）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約（JAN 4968855272989）",
+          "talent": "三澄寧々",
+          "price": 3520,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2989/4968855272989_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E4%B8%89%E6%BE%84%E5%AF%A7%E3%80%85%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ]
+    },
+    {
+      "id": "r18-cal-miyashita-rena-2027",
+      "title": "宮下玲奈 2027年カレンダー（壁掛け / 卓上）",
+      "series": "2027年カレンダー（R18）",
+      "issueLabel": "2027年 壁掛け＆卓上",
+      "publisher": "わくわく製作所",
+      "category": "r18",
+      "releaseDate": "2026-10-31",
+      "price": 3850,
+      "coverTalents": [
+        "宮下玲奈"
+      ],
+      "featuredTalents": [
+        "宮下玲奈"
+      ],
+      "palette": [
+        "#881337",
+        "#EC4899",
+        "#FCE7F3"
+      ],
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000173/0/7/664.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "12月発売の写真集『Pellicule』と合わせて揃えたい2027年壁掛け＆卓上カレンダー。",
+      "summary": "トップ人気女優・宮下玲奈の2027年壁掛け・卓上カレンダー（わくわく製作所）。壁掛け・卓上別表紙！",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "宮下玲奈 2027年壁掛けカレンダー公式表紙",
+          "source": "わくわく製作所 / HMV&BOOKS",
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000173/0/7/664.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E5%AE%AE%E4%B8%8B%E7%8E%B2%E5%A5%88%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        },
+        {
+          "kind": "limited_cover",
+          "caption": "宮下玲奈 2027年卓上カレンダー公式表紙",
+          "source": "わくわく製作所 / HMV&BOOKS",
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000173/0/7/687.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E5%AE%AE%E4%B8%8B%E7%8E%B2%E5%A5%88%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-cal-miyashita-wall-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 壁掛けカレンダー",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "壁掛け版・Amazonで在庫確認",
+          "talent": "宮下玲奈",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000173/0/7/664.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E5%AE%AE%E4%B8%8B%E7%8E%B2%E5%A5%88%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        },
+        {
+          "id": "r18-cal-miyashita-desk-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 卓上カレンダー",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "卓上版（JAN 4573650113162）・Amazonで在庫確認",
+          "talent": "宮下玲奈",
+          "price": 3630,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000173/0/7/687.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E5%AE%AE%E4%B8%8B%E7%8E%B2%E5%A5%88%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%8D%93%E4%B8%8A"
+        }
+      ]
+    },
+    {
+      "id": "r18-cal-yatsugake-umi-2027",
+      "title": "八掛うみ 2027年カレンダー",
+      "series": "2027年カレンダー（R18）",
+      "issueLabel": "2027年 カレンダー",
+      "publisher": "わくわく製作所",
+      "category": "r18",
+      "releaseDate": "2026-10-31",
+      "price": 3850,
+      "coverTalents": [
+        "八掛うみ"
+      ],
+      "featuredTalents": [
+        "八掛うみ"
+      ],
+      "palette": [
+        "#881337",
+        "#E11D48",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/2578/4573650112578.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "JAN 4573650112578。プレステージ専属の人気女優・八掛うみの2027年カレンダー。",
+      "summary": "抜群の透明感と美ボディで支持される八掛うみの2027年カレンダー（わくわく製作所）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "八掛うみ 2027年カレンダー公式表紙",
+          "source": "わくわく製作所 / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/2578/4573650112578.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E5%85%AB%E6%8E%9B%E3%81%86%E3%81%BF%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-cal-yatsugake-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（2027年カレンダー）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで在庫確認（JAN 4573650112578）",
+          "talent": "八掛うみ",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2578/4573650112578.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E5%85%AB%E6%8E%9B%E3%81%86%E3%81%BF%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ]
+    },
+    {
+      "id": "r18-cal-mori-hinako-2027",
+      "title": "森日向子 2027年カレンダー（壁掛け / 卓上）",
+      "series": "2027年カレンダー（R18）",
+      "issueLabel": "2027年 壁掛け＆卓上",
+      "publisher": "わくわく製作所",
+      "category": "r18",
+      "releaseDate": "2026-10-10",
+      "price": 3850,
+      "coverTalents": [
+        "森日向子"
+      ],
+      "featuredTalents": [
+        "森日向子"
+      ],
+      "palette": [
+        "#701A75",
+        "#C026D3",
+        "#FAE8FF"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/2851/4573650112851_1_2.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "2026年11月29日に書泉ブックタワー発売記念イベント開催予定。壁掛け（JAN 4573650112851）＆卓上（JAN 4573650113360）。",
+      "summary": "長身スレンダーで熱狂的ファンを持つ森日向子の2027年壁掛け＆卓上カレンダー（わくわく製作所）。",
+      "gallery": [
+        {
+          "kind": "cover",
+          "caption": "森日向子 2027年壁掛けカレンダー公式表紙",
+          "source": "わくわく製作所 / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/2851/4573650112851_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E6%A3%AE%E6%97%A5%E5%90%91%E5%AD%90%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        },
+        {
+          "kind": "limited_cover",
+          "caption": "森日向子 2027年卓上カレンダー公式表紙",
+          "source": "わくわく製作所 / 楽天ブックス",
+          "url": "https://shop.r10s.jp/book/cabinet/3360/4573650113360_1_2.jpg",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E6%A3%AE%E6%97%A5%E5%90%91%E5%AD%90%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-cal-mori-wall-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 壁掛けカレンダー",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "壁掛け版（JAN 4573650112851）・Amazonで在庫確認",
+          "talent": "森日向子",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2851/4573650112851_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E6%A3%AE%E6%97%A5%E5%90%91%E5%AD%90%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%A3%81%E6%8E%9B%E3%81%91"
+        },
+        {
+          "id": "r18-cal-mori-desk-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 卓上カレンダー",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "卓上版（JAN 4573650113360）・Amazonで在庫確認",
+          "talent": "森日向子",
+          "price": 3630,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/3360/4573650113360_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E6%A3%AE%E6%97%A5%E5%90%91%E5%AD%90%202027%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%20%E5%8D%93%E4%B8%8A"
+        }
+      ]
+    },
+    {
+      "id": "r18-bachelor-2027-01",
+      "title": "BACHELOR（バチェラー）2027年1月号",
+      "series": "BACHELOR",
+      "issueLabel": "2027年1月号",
+      "publisher": "ダイアプレス",
+      "category": "r18",
+      "releaseDate": "2026-11-19",
+      "price": 1620,
+      "coverTalents": [
+        "グラビア特集"
+      ],
+      "featuredTalents": [
+        "グラビア特集"
+      ],
+      "palette": [
+        "#450A0A",
+        "#991B1B",
+        "#FEE2E2"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "老舗R18グラビア専門誌。基本購入先はAmazon（ノイズゼロ方針）。",
+      "summary": "老舗R18アダルトグラビア専門誌『BACHELOR（バチェラー）』2027年1月号（ダイアプレス）。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-bachelor-2027-01-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認",
+          "talent": "グラビア特集",
+          "price": 1620,
+          "status": "available",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=BACHELOR%20%E3%83%90%E3%83%81%E3%82%A7%E3%83%A9%E3%83%BC%202027%E5%B9%B41%E6%9C%88%E5%8F%B7"
+        }
+      ]
     }
   ],
-  "lastAutoCheckedAt": "2026-11-21T14:36:51+09:00"
+  "lastAutoCheckedAt": "2026-11-21T16:30:00+09:00"
 }

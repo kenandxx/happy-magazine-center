@@ -787,7 +787,7 @@ async function runDailyCatalogUpdate() {
     );
   }
 
-  // 6) Refresh live multi-store stock & review status for 2024-2026 Hall-of-Fame Masterpieces
+  // 6) Refresh live multi-store stock & review status for 2022-2026 Hall-of-Fame Masterpieces
   let refreshedMasterpieces = 0;
   if (Array.isArray(catalog.masterpieces) && catalog.masterpieces.length > 0) {
     try {
@@ -796,7 +796,7 @@ async function runDailyCatalogUpdate() {
       catalog.masterpiecesCheckedAt = timestampJst;
       console.log(
         `[collect:update] Masterpieces live stock check -> ${refreshedMasterpieces} title(s) refreshed${
-          mpRes.rakutenBackedOff ? ' (Rakuten backed off; used Maruzen/7net)' : ''
+          mpRes.rakutenBackedOff ? ' (Rakuten backed off; used Kinokuniya/7net)' : ''
         }`
       );
     } catch (err) {
@@ -848,7 +848,7 @@ async function runDailyCatalogUpdate() {
     `- **版元ドットコム 10主要写真集・R18版元＋openBD**: +${addedHanmotoItems} 新刊`,
     `- **セブンネット限定表紙・サイン本・特典**: +${addedSevenNetItems} 新刊 / +${addedSevenNetOffers} 限定特典追加`,
     `- **HMV&BOOKS RSS ＋ B.L.T.web RSS**: +${addedPressArticles} 記事 / 合計 +${addedBonusOffers} 特典`,
-    `- **🏆 名作・殿堂（2024〜2026）ライブ在庫チェック**: ${refreshedMasterpieces} 作品を楽天・7net・丸善ジュンク堂で更新`,
+    `- **🏆 名作・殿堂（2022〜2026）ライブ在庫チェック**: ${refreshedMasterpieces} 作品を紀伊國屋ウェブストア・楽天ブックス・7netで更新`,
     `- **楽天ブックスAPI (2026 OpenAPI)**: ${
       rakutenReady
         ? `✅ 連携稼働中 (+${addedRakutenItems} 新刊)`

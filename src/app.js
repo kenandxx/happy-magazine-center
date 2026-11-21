@@ -204,7 +204,7 @@ const state = {
   urgentTopicFilter: 'all', // 'all' | 'auto' | 'limited' | 'cover' | 'oshi' | 'r18' | 'calendar'
   urgentUnreservedOnly: true,
   mpGroup: 'all', // 'all' | 'idol_pb' | 'gravure_pb' | 'r18_pb' | 'magazine_bn'
-  mpYear: 'all', // 'all' | '2026' | '2025' | '2024'
+  mpYear: 'all', // 'all' | '2026' | '2025' | '2024' | '2023' | '2022'
   mpStock: 'all', // 'all' | 'in_stock' | 'low_stock' | 'out_of_stock'
   mpSort: 'rank', // 'rank' | 'scarce' | 'newest' | 'oldest' | 'rating'
   mpShowOwned: false,
@@ -2025,7 +2025,7 @@ function getUpcomingPlannedEntries() {
 }
 
 /* =========================================================
-   Tab: 2024-2026 Must-Buy Masterpieces & Hall of Fame (v1.2)
+   Tab: 2022-2026 Must-Buy Masterpieces & Hall of Fame (v1.3)
    ========================================================= */
 const MASTERPIECE_GROUP_META = {
   all: { label: '🏆 すべて', short: 'すべて' },
@@ -2446,7 +2446,7 @@ function renderMasterpiecesListOnly() {
     const allCleared = !state.mpShowOwned && !state.mpConsideringOnly && ownedCount === all.length && all.length > 0;
     listHost.innerHTML = `
       <div class="mp-empty-state">
-        <strong>${allCleared ? '🎉 2024〜2026 名作・殿堂をすべてチェック完了しました！' : '該当する名作がありません'}</strong>
+        <strong>${allCleared ? '🎉 2022〜2026 名作・殿堂をすべてチェック完了しました！' : '該当する名作がありません'}</strong>
         <p style="margin:0 0 10px;">
           ${
             allCleared
@@ -2522,10 +2522,12 @@ function renderMasterpieces() {
 
   const groupKeys = ['all', 'idol_pb', 'gravure_pb', 'r18_pb', 'magazine_bn'];
   const yearKeys = [
-    { key: 'all', label: '全期間 (2024〜2026)' },
+    { key: 'all', label: '全期間 (2022〜2026)' },
     { key: '2026', label: '2026年' },
     { key: '2025', label: '2025年' },
     { key: '2024', label: '2024年' },
+    { key: '2023', label: '2023年' },
+    { key: '2022', label: '2022年' },
   ];
 
   container.innerHTML = `
@@ -2571,15 +2573,23 @@ function renderMasterpieces() {
 
       <div class="chip-scroll" aria-label="発売年絞り込み">
         ${yearKeys
-          .map(
-            (y) => `
+          .map((y) => {
+            const cnt =
+              y.key === 'all'
+                ? all.filter((it) => state.mpShowOwned || !isMasterpieceDismissed(it)).length
+                : all.filter(
+                    (it) =>
+                      String(it.releaseYear || String(it.releaseDate || '').slice(0, 4)) === y.key &&
+                      (state.mpShowOwned || !isMasterpieceDismissed(it))
+                  ).length;
+            return `
             <button
               class="filter-chip ${state.mpYear === y.key ? 'active' : ''}"
               type="button"
               data-mp-year="${y.key}"
-            >${escapeHtml(y.label)}</button>
-          `
-          )
+            >${escapeHtml(y.label)} (${cnt})</button>
+          `;
+          })
           .join('')}
       </div>
 
@@ -2599,7 +2609,7 @@ function renderMasterpieces() {
           <option value="rank" ${state.mpSort === 'rank' ? 'selected' : ''}>👑 殿堂おすすめ順</option>
           <option value="scarce" ${state.mpSort === 'scarce' ? 'selected' : ''}>⚠️ 品薄・完売優先</option>
           <option value="newest" ${state.mpSort === 'newest' ? 'selected' : ''}>📅 新しい順</option>
-          <option value="oldest" ${state.mpSort === 'oldest' ? 'selected' : ''}>📅 2024年から古い順</option>
+          <option value="oldest" ${state.mpSort === 'oldest' ? 'selected' : ''}>📅 2022年から古い順</option>
           <option value="rating" ${state.mpSort === 'rating' ? 'selected' : ''}>⭐ 高評価・レビュー順</option>
         </select>
       </div>
@@ -3941,7 +3951,7 @@ function renderDetailSheetBody(item) {
             return `
               <div class="sheet-mp-banner">
                 <div class="sheet-mp-banner-title">
-                  🏆 ${escapeHtml(item.acclaimBadge || '2024〜2026 殿堂名作')}
+                  🏆 ${escapeHtml(item.acclaimBadge || '2022〜2026 殿堂名作')}
                   ${
                     item.reviewStats && item.reviewStats.rating > 0 && item.reviewStats.reviewCount > 0
                       ? `<span class="mp-rating-pill" style="margin-left:4px;">★${Number(item.reviewStats.rating).toFixed(1)} (${item.reviewStats.reviewCount}件)</span>`

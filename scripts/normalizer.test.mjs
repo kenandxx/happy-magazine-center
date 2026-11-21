@@ -750,13 +750,14 @@ test('multisite-ingestor parses Hanmoto RSS, 7net JSON-LD, HMV RSS, and B.L.T.we
   assert.deepEqual(check.errors, []);
 });
 
-test('masterpieces-checker parses Rakuten, 7net, Maruzen availability and computes unified stock status', async () => {
+test('masterpieces-checker parses Kinokuniya exact inventory, Rakuten, 7net, Maruzen availability and computes unified stock status', async () => {
   const fs = await import('node:fs');
   const {
     upgradeRakutenCoverUrl,
     parseRakutenBookDetailHtml,
     parseSevenNetProductAvailability,
     parseMaruzenAvailability,
+    parseKinokuniyaAvailability,
     computeUnifiedStockStatus,
   } = await import('./masterpieces-checker.mjs');
   const { validateCatalogStructure } = await import('./validate-catalog.mjs');
@@ -788,53 +789,91 @@ test('masterpieces-checker parses Rakuten, 7net, Maruzen availability and comput
   assert.equal(rParsed.releaseDate, '2025-04-22');
   assert.ok(rParsed.coverImageUrl.includes('_ex=600x600'));
 
+  const rakuten2022Html = `<p>ISBN: 9784103545712 発売日 2022年6月7日</p><span class="status-text">在庫あり</span>`;
+  assert.equal(parseRakutenBookDetailHtml(rakuten2022Html).releaseDate, '2022-06-07');
+
   const sevenHtml = `<script type="application/ld+json">{"@type":"Product","offers":{"availability":"https://schema.org/OutOfStock","price":2400}}</script>`;
   assert.deepEqual(parseSevenNetProductAvailability(sevenHtml), {
     availability: 'OutOfStock',
     price: 2400,
   });
 
+  // Kinokuniya Web Store exact copy-count parser (ignores boilerplate after 【ご注意事項】 & respects age gates)
+  const kinoInHtml = `<div class="right_box"><p>ウェブストア専用在庫が14冊ございます。</p><div class="inCart"><button class="intoCartButton">カート</button></div><p>【ご注意事項】お取り寄せとなり日数がかかります</p></div>`;
+  assert.deepEqual(parseKinokuniyaAvailability(kinoInHtml), { state: 'in', count: 14, text: '在庫14冊' });
+
+  const kinoLowHtml = `<div class="right_box"><p>ウェブストアに2冊在庫がございます。</p><p>【ご注意事項】</p></div>`;
+  assert.deepEqual(parseKinokuniyaAvailability(kinoLowHtml), { state: 'low', count: 2, text: '残り2冊' });
+
+  const kinoOutHtml = `<div class="right_box"><p>ただいまウェブストアではご注文を受け付けておりません。</p></div>`;
+  assert.deepEqual(parseKinokuniyaAvailability(kinoOutHtml), { state: 'out', count: 0, text: '注文不可（在庫なし）' });
+
+  const kinoAgeGateHtml = `<html><body><h1>年齢確認</h1><p>18歳未満の方は閲覧できません。</p></body></html>`;
+  assert.equal(parseKinokuniyaAvailability(kinoAgeGateHtml), null);
+
   assert.equal(parseMaruzenAvailability('{"product":{"available":true}}'), true);
   assert.equal(parseMaruzenAvailability('{"product":{"available":false}}'), false);
 
   const stIn = computeUnifiedStockStatus({
+    kinokuniyaStatus: '在庫14冊',
     rakutenStatus: '在庫あり',
-    maruzenAvailable: true,
+    sevenNetStatus: 'OutOfStock',
     checkedAt: '2026-11-21',
   });
   assert.equal(stIn.status, 'in_stock');
+  assert.ok(stIn.detail.includes('紀伊國屋: 在庫14冊'));
 
   const stLow = computeUnifiedStockStatus({
+    kinokuniyaStatus: '残り2冊',
+    rakutenStatus: '在庫あり',
+    checkedAt: '2026-11-21',
+  });
+  assert.equal(stLow.status, 'low_stock');
+
+  const stLowLegacy = computeUnifiedStockStatus({
     rakutenStatus: 'ご注文できない商品',
     maruzenAvailable: true,
     checkedAt: '2026-11-21',
   });
-  assert.equal(stLow.status, 'low_stock');
-  assert.ok(stLow.detail.includes('楽天ブックス') && stLow.detail.includes('丸善ジュンク堂'));
+  assert.equal(stLowLegacy.status, 'low_stock');
+  assert.ok(stLowLegacy.detail.includes('楽天ブックス') && stLowLegacy.detail.includes('丸善ジュンク堂'));
 
   const stOut = computeUnifiedStockStatus({
+    kinokuniyaStatus: '注文不可（在庫なし）',
     rakutenStatus: 'ご注文できない商品',
     sevenNetStatus: 'OutOfStock',
-    maruzenAvailable: false,
     checkedAt: '2026-11-21',
   });
   assert.equal(stOut.status, 'out_of_stock');
 
-  // Verify live catalog.masterpieces structure & audit fixes
+  // Verify live catalog.masterpieces structure & 2022-2026 expansion
   const catalog = JSON.parse(fs.readFileSync(new URL('../data/catalog.json', import.meta.url), 'utf8'));
   const mps = catalog.masterpieces || [];
-  assert.ok(mps.length >= 35, `Expected >=35 masterpieces, got ${mps.length}`);
+  assert.ok(mps.length >= 68, `Expected >=68 masterpieces (2022-2026), got ${mps.length}`);
   assert.ok(
     mps.every((m) => m.isMasterpiece === true && ['in_stock', 'low_stock', 'out_of_stock'].includes(m.stockInfo?.status)),
     'Every masterpiece must have isMasterpiece=true and a valid stockInfo.status'
   );
   assert.ok(
-    mps.every((m) => m.releaseDate >= '2024-01-01' && m.releaseDate <= '2026-12-31'),
-    'Every masterpiece releaseDate must be within 2024-2026'
+    mps.every((m) => m.releaseDate >= '2022-01-01' && m.releaseDate <= '2026-12-31'),
+    'Every masterpiece releaseDate must be within 2022-2026'
   );
+  for (const year of ['2022', '2023', '2024', '2025', '2026']) {
+    assert.ok(
+      mps.some((m) => m.releaseDate.startsWith(year)),
+      `Expected at least one masterpiece from ${year}`
+    );
+  }
   const tri02 = mps.find((m) => m.id === 'mp-triangle-02');
   assert.equal(tri02?.isbn, '9784065347737');
   assert.equal(tri02?.offers?.[0]?.url, 'https://www.amazon.co.jp/dp/4065347734');
+
+  const saito = mps.find((m) => m.id === 'mp-saito-museum');
+  assert.equal(saito?.isbn, '9784065317020');
+  const kaki = mps.find((m) => m.id === 'mp-kaki-massara');
+  assert.equal(kaki?.isbn, '9784103545712');
+  const nogi03 = mps.find((m) => m.id === 'mp-nogisatsu-03');
+  assert.equal(nogi03?.isbn, '9784065308080');
 
   const report = validateCatalogStructure(catalog);
   assert.equal(report.nonAmazonNonBonus, 0);

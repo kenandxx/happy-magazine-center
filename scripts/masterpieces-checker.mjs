@@ -1,10 +1,10 @@
 /**
- * Live Multi-Store Stock & Review Checker for Hall-of-Fame Masterpieces (v1.2)
+ * Live Multi-Store Stock & Review Checker for Hall-of-Fame Masterpieces (v1.3)
  *
  * Verifies live stock availability and public review stats across zero-login
- * Japanese bookstore pages (Rakuten Books, 7net, Maruzen Junkudo) so backlist
- * masterpieces (2024-01-01 to present) always show accurate new-stock vs
- * low-stock vs out-of-print/secondhand indicators.
+ * Japanese bookstore pages (Kinokuniya Web Store exact copy counts, Rakuten
+ * Books, 7net) so backlist masterpieces (2022-01-01 to present) always show
+ * accurate new-stock vs low-stock vs out-of-print/secondhand indicators.
  */
 
 function decodeHtmlEntities(str = '') {
@@ -79,7 +79,7 @@ export function parseRakutenBookDetailHtml(html = '') {
   }
 
   const ogImg = ((raw.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) || [])[1] || '').trim();
-  const pubMatch = raw.match(/発売日[\s\S]{0,160}?(202[4567])年\s*(\d{1,2})月\s*(\d{1,2})日/);
+  const pubMatch = raw.match(/発売日[\s\S]{0,160}?(202[2-7])年\s*(\d{1,2})月\s*(\d{1,2})日/);
   const releaseDate = pubMatch ? `${pubMatch[1]}-${pad2(pubMatch[2])}-${pad2(pubMatch[3])}` : '';
 
   return {
@@ -123,12 +123,67 @@ export function parseSevenNetProductAvailability(html = '') {
 
 /**
  * Parses Maruzen Junkudo product page availability (`"available":true` / `false`).
+ * Retained for compatibility; Kinokuniya Web Store provides exact copy counts.
  */
 export function parseMaruzenAvailability(html = '') {
   const raw = String(html || '');
   if (!raw) return null;
   if (/"available"\s*:\s*true/i.test(raw)) return true;
   if (/"available"\s*:\s*false/i.test(raw)) return false;
+  return null;
+}
+
+/**
+ * Parses Kinokuniya Web Store (`https://www.kinokuniya.co.jp/f/dsg-01-<ISBN13>`)
+ * real-time server-rendered webstore inventory (exact copy count, backorder, or out-of-stock).
+ * Respects age-gated pages by returning null without bypassing.
+ */
+export function parseKinokuniyaAvailability(html = '') {
+  const raw = String(html || '');
+  if (!raw) return null;
+  if ((raw.includes('年齢確認') || raw.includes('18歳未満')) && !raw.includes('class="inCart"')) {
+    return null;
+  }
+
+  // Isolate the primary product status text BEFORE the generic boilerplate notes ("【ご注意事項】")
+  const rightIdx = raw.indexOf('right_box');
+  const focusRaw = rightIdx >= 0 ? raw.slice(rightIdx, rightIdx + 3000) : raw;
+  const noticeIdx = focusRaw.indexOf('【ご注意事項】');
+  const mainBlock = (noticeIdx >= 0 ? focusRaw.slice(0, noticeIdx) : focusRaw)
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ');
+
+  const countMatch = mainBlock.match(/ウェブストア(?:専用在庫が|に)(\d+)冊(?:在庫が)?ございます/);
+  if (countMatch) {
+    const count = Number(countMatch[1]);
+    if (count >= 5) {
+      return { state: 'in', count, text: `在庫${count}冊` };
+    }
+    if (count >= 1) {
+      return { state: 'low', count, text: `残り${count}冊` };
+    }
+  }
+
+  if (
+    /ただいまウェブストアではご注文を受け付けておりません|ウェブストアではお取り扱いできません|出版社品切|品切れ|重版未定|絶版/.test(
+      mainBlock
+    )
+  ) {
+    return { state: 'out', count: 0, text: '注文不可（在庫なし）' };
+  }
+
+  if (/お取り寄せ|メーカー取り寄せ|入荷待ち/.test(mainBlock)) {
+    return { state: 'low', count: 0, text: 'お取り寄せ（品薄）' };
+  }
+
+  if (raw.includes('class="inCart"')) {
+    if (raw.includes('intoCartButton')) {
+      return { state: 'in', count: null, text: '在庫あり' };
+    }
+    return { state: 'out', count: 0, text: '注文不可（在庫なし）' };
+  }
+
   return null;
 }
 
@@ -150,20 +205,40 @@ function classifySevenNetStatus(avail = '') {
   return 'unknown';
 }
 
+function classifyKinokuniyaStatus(kinoText = '') {
+  const s = String(kinoText || '').trim();
+  if (!s) return 'unknown';
+  if (/注文不可|在庫なし|品切|絶版/.test(s)) return 'out';
+  if (/残り\d+冊|お取り寄せ|品薄|わずか/.test(s)) return 'low';
+  if (/在庫\d+冊|在庫あり/.test(s)) return 'in';
+  return 'unknown';
+}
+
 /**
  * Combines live store checks into a single transparent stock status object.
  */
 export function computeUnifiedStockStatus({
   rakutenStatus = '',
   sevenNetStatus = '',
+  kinokuniyaStatus = '',
   maruzenAvailable = null,
   checkedAt = '2026-11-21',
 } = {}) {
   const rClass = classifyRakutenStatus(rakutenStatus);
   const sClass = classifySevenNetStatus(sevenNetStatus);
-  const mClass = maruzenAvailable === true ? 'in' : maruzenAvailable === false ? 'out' : 'unknown';
+  const kClass = classifyKinokuniyaStatus(kinokuniyaStatus);
+  // Only rely on Maruzen fallback if Kinokuniya didn't report a status
+  const mClass =
+    kClass === 'unknown'
+      ? maruzenAvailable === true
+        ? 'in'
+        : maruzenAvailable === false
+          ? 'out'
+          : 'unknown'
+      : 'unknown';
 
   const parts = [];
+  if (kinokuniyaStatus) parts.push(`紀伊國屋: ${kinokuniyaStatus}`);
   if (rakutenStatus) parts.push(`楽天ブックス: ${rakutenStatus}`);
   if (sevenNetStatus) {
     const sJa =
@@ -176,10 +251,12 @@ export function computeUnifiedStockStatus({
             : sevenNetStatus;
     parts.push(`7net: ${sJa}`);
   }
-  if (maruzenAvailable === true) parts.push('丸善ジュンク堂: 在庫あり');
-  else if (maruzenAvailable === false) parts.push('丸善ジュンク堂: 品切れ');
+  if (!kinokuniyaStatus) {
+    if (maruzenAvailable === true) parts.push('丸善ジュンク堂: 掲載あり');
+    else if (maruzenAvailable === false) parts.push('丸善ジュンク堂: 品切れ');
+  }
 
-  const classes = [rClass, sClass, mClass].filter((c) => c !== 'unknown');
+  const classes = [kClass, rClass, sClass, mClass].filter((c) => c !== 'unknown');
   const inCount = classes.filter((c) => c === 'in').length;
   const lowCount = classes.filter((c) => c === 'low').length;
   const outCount = classes.filter((c) => c === 'out').length;
@@ -187,13 +264,13 @@ export function computeUnifiedStockStatus({
   let status = 'in_stock';
   let label = '✅ 新品在庫あり';
 
-  if (inCount >= 2) {
+  if (inCount >= 2 && lowCount === 0) {
     status = 'in_stock';
     label = '✅ 新品在庫あり';
-  } else if (inCount === 1 && outCount >= 1) {
+  } else if (inCount >= 1 && (outCount >= 1 || lowCount >= 1)) {
     status = 'low_stock';
     label = '⚠️ 品薄・一部ストアのみ';
-  } else if (inCount === 1) {
+  } else if (inCount >= 1) {
     status = 'in_stock';
     label = '✅ 新品在庫あり';
   } else if (lowCount >= 1) {
@@ -212,9 +289,10 @@ export function computeUnifiedStockStatus({
     label,
     detail: parts.join(' ／ ') || '主要書店で最新在庫を確認してください',
     checkedAt,
+    ...(kinokuniyaStatus ? { kinokuniyaStatus } : {}),
     ...(rakutenStatus ? { rakutenStatus } : {}),
     ...(sevenNetStatus ? { sevenNetStatus } : {}),
-    ...(maruzenAvailable !== null ? { maruzenAvailable } : {}),
+    ...(maruzenAvailable !== null && !kinokuniyaStatus ? { maruzenAvailable } : {}),
   };
 }
 
@@ -225,14 +303,41 @@ export async function refreshMasterpiecesLiveStatus(masterpieces = [], { dateStr
   let updatedCount = 0;
   let rakutenConsecutiveFailures = 0;
   let rakutenBackedOff = false;
+  let kinoConsecutiveFailures = 0;
+  let kinoBackedOff = false;
 
   for (const item of masterpieces) {
     let rakutenStatus = item.stockInfo?.rakutenStatus || '';
     let sevenNetStatus = item.stockInfo?.sevenNetStatus || '';
-    let maruzenAvailable =
-      typeof item.stockInfo?.maruzenAvailable === 'boolean' ? item.stockInfo.maruzenAvailable : null;
+    let kinokuniyaStatus = item.stockInfo?.kinokuniyaStatus || '';
+    // Do not carry over legacy static Maruzen Shopify available:true flags; rely on live Kinokuniya / Rakuten / 7net.
+    const maruzenAvailable = null;
 
-    // 1. Rakuten Books live detail check (stock + rating + reviewCount) with polite rate-limit backoff
+    // 1. Kinokuniya Web Store live exact-copy-count ISBN check (polite pacing + 429 backoff)
+    if (item.isbn && /^9784\d{9}$/.test(item.isbn) && !kinoBackedOff) {
+      try {
+        const res = await fetch(`https://www.kinokuniya.co.jp/f/dsg-01-${item.isbn}`, {
+          headers: { 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+          signal: AbortSignal.timeout(8500),
+        });
+        if (res.ok) {
+          kinoConsecutiveFailures = 0;
+          const html = await res.text();
+          const parsed = parseKinokuniyaAvailability(html);
+          if (parsed?.text) kinokuniyaStatus = parsed.text;
+        } else if (res.status === 429 || res.status === 403 || res.status >= 500) {
+          kinoConsecutiveFailures += 1;
+        }
+      } catch {
+        kinoConsecutiveFailures += 1;
+      }
+      if (kinoConsecutiveFailures >= 2) {
+        kinoBackedOff = true;
+      }
+      await sleep(750);
+    }
+
+    // 2. Rakuten Books live detail check (stock + rating + reviewCount) with polite rate-limit backoff
     if (item.rakutenUrl && !rakutenBackedOff) {
       try {
         const res = await fetch(item.rakutenUrl, {
@@ -262,10 +367,10 @@ export async function refreshMasterpiecesLiveStatus(masterpieces = [], { dateStr
       if (rakutenConsecutiveFailures >= 2) {
         rakutenBackedOff = true;
       }
-      await sleep(160);
+      await sleep(180);
     }
 
-    // 2. 7net live detail check (if direct 7net detail URL recorded)
+    // 3. 7net live detail check (if direct 7net detail URL recorded)
     if (item.sevenNetUrl) {
       try {
         const res = await fetch(item.sevenNetUrl, {
@@ -283,27 +388,8 @@ export async function refreshMasterpiecesLiveStatus(masterpieces = [], { dateStr
       await sleep(110);
     }
 
-    // 3. Maruzen Junkudo live ISBN check (fast Shopify product page)
-    if (item.isbn && /^9784\d{9}$/.test(item.isbn)) {
-      try {
-        const res = await fetch(`https://www.maruzenjunkudo.co.jp/products/${item.isbn}`, {
-          headers: { 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
-          signal: AbortSignal.timeout(8000),
-        });
-        if (res.ok) {
-          const html = await res.text();
-          const avail = parseMaruzenAvailability(html);
-          if (avail !== null) maruzenAvailable = avail;
-        } else if (res.status === 404) {
-          maruzenAvailable = false;
-        }
-      } catch {
-        // Non-fatal
-      }
-      await sleep(90);
-    }
-
     item.stockInfo = computeUnifiedStockStatus({
+      kinokuniyaStatus,
       rakutenStatus,
       sevenNetStatus,
       maruzenAvailable,

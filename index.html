@@ -375,8 +375,8 @@
     <div id="detailSheet" class="sheet-backdrop" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
       <div class="sheet-dialog">
         <div class="sheet-header">
-          <h3 id="sheetTitle" class="sheet-header-title">特典＆ストア比較</h3>
           <button id="sheetCloseBtn" class="sheet-close-btn" type="button" aria-label="閉じる">✕</button>
+          <h3 id="sheetTitle" class="sheet-header-title">特典＆ストア比較</h3>
         </div>
         <div id="sheetBody" class="sheet-body"></div>
       </div>
@@ -386,19 +386,19 @@
     <div id="statusPickerSheet" class="sheet-backdrop status-picker-backdrop" role="dialog" aria-modal="true" aria-labelledby="statusPickerTitle">
       <div class="quick-status-dialog">
         <div class="quick-status-header">
+          <button id="statusPickerCloseBtn" class="sheet-close-btn" type="button" aria-label="閉じる">✕</button>
           <div id="statusPickerItemMeta" class="quick-status-item-meta">
             <h3 id="statusPickerTitle" class="sheet-header-title">表紙・特典別にステータスを選択</h3>
           </div>
-          <button id="statusPickerCloseBtn" class="sheet-close-btn" type="button" aria-label="閉じる">✕</button>
         </div>
         <div id="statusPickerEditionWrap" class="status-picker-editions"></div>
         <div id="statusPickerGrid" class="quick-status-grid"></div>
         <div class="quick-status-footer">
-          <button id="statusPickerClearBtn" class="quick-status-clear-btn" type="button">この版のマーク解除</button>
           <div style="display:flex;gap:6px;">
-            <button id="statusPickerDoneBtn" class="quick-status-clear-btn" type="button">閉じる</button>
-            <button id="statusPickerOpenDetailBtn" class="detail-trigger-btn" type="button">詳細・特典比較 →</button>
+            <button id="statusPickerDoneBtn" class="quick-status-clear-btn" type="button">✕ 閉じる</button>
+            <button id="statusPickerClearBtn" class="quick-status-clear-btn" type="button">マーク解除</button>
           </div>
+          <button id="statusPickerOpenDetailBtn" class="detail-trigger-btn" type="button">詳細・特典比較 →</button>
         </div>
       </div>
     </div>
@@ -406,11 +406,11 @@
     <!-- Fullscreen 1-Tap Quick-Check Photo Lightbox -->
     <div id="photoLightbox" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="ワンタップ写真＆特典ビューア">
       <div class="lightbox-top">
+        <button id="lightboxCloseBtn" class="lightbox-close" type="button" aria-label="拡大表示を閉じる">✕</button>
         <div class="lightbox-top-left">
           <span id="lightboxCounter" class="lightbox-counter">1 / 1</span>
           <span id="lightboxTitleBadge" class="lightbox-title-badge"></span>
         </div>
-        <button id="lightboxCloseBtn" class="lightbox-close" type="button" aria-label="拡大表示を閉じる">✕</button>
       </div>
       <div id="lightboxStage" class="lightbox-stage">
         <button id="lightboxPrevBtn" class="lightbox-nav-btn prev" type="button" aria-label="前の写真">‹</button>

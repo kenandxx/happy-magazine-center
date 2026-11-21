@@ -1085,8 +1085,9 @@ a {
 .sheet-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 14px 16px;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -1094,16 +1095,24 @@ a {
   font-size: 15px;
   font-weight: 800;
   margin: 0;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .sheet-close-btn {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
   border-radius: 999px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-strong);
   background: var(--bg);
+  color: var(--ink);
   cursor: pointer;
   font-size: 16px;
+  font-weight: 800;
   display: grid;
   place-items: center;
 }
@@ -1566,7 +1575,7 @@ a {
 .lightbox-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 10px;
 }
 
@@ -1574,16 +1583,21 @@ a {
   font-size: 12px;
   font-weight: 800;
   color: rgba(255, 255, 255, 0.85);
+  flex-shrink: 0;
 }
 
 .lightbox-close {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.14);
   color: #ffffff;
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
   cursor: pointer;
 }
 
@@ -2421,7 +2435,7 @@ a {
 .quick-status-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 10px;
   margin-bottom: 12px;
 }
@@ -2431,6 +2445,7 @@ a {
   align-items: center;
   gap: 10px;
   min-width: 0;
+  flex: 1;
 }
 
 .quick-status-thumb {
@@ -2560,6 +2575,7 @@ a {
   align-items: center;
   gap: 8px;
   min-width: 0;
+  flex: 1;
 }
 
 .lightbox-title-badge {
@@ -2569,7 +2585,8 @@ a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 65vw;
+  min-width: 0;
+  flex: 1;
 }
 
 .lightbox-stage img {

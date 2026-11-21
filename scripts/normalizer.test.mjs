@@ -246,3 +246,66 @@ test('calculateScarcityScore ranks 3000-copy limited, signed, and exclusive-cove
   assert.ok(!radar.some((r) => r.item.id === 'test-old'));
 });
 
+test('custom VIP S-Rank tier (+30pt) and configurable 3-step Oshi Boost (+14/+24/+34) boost matching items accurately', async () => {
+  const { calculateScarcityScore, OSHI_BOOST_PRESETS, POPULAR_TALENT_PRESETS } = await import(
+    '../src/scarcity-score.js'
+  );
+
+  const sampleItem = {
+    id: 'test-vip-actress',
+    title: '新人スター ファースト写真集',
+    category: 'r18',
+    releaseDate: '2026-11-28',
+    coverTalents: ['サンプル女優A'],
+    offers: [
+      {
+        id: 'o-vip',
+        store: 'amazon',
+        hasStoreExclusiveBonus: false,
+        edition: 'Amazon 通常版',
+        bonusTypes: ['standard'],
+        status: 'preorder',
+        url: 'https://www.amazon.co.jp/',
+      },
+    ],
+  };
+
+  const base = calculateScarcityScore(sampleItem, { referenceDate: '2026-11-21' });
+  const oshiStd = calculateScarcityScore(sampleItem, {
+    referenceDate: '2026-11-21',
+    oshiKeywords: ['サンプル女優A'],
+    oshiBoostMode: 'standard',
+  });
+  const oshiStrong = calculateScarcityScore(sampleItem, {
+    referenceDate: '2026-11-21',
+    oshiKeywords: ['サンプル女優A'],
+    oshiBoostMode: 'strong',
+  });
+  const oshiMax = calculateScarcityScore(sampleItem, {
+    referenceDate: '2026-11-21',
+    oshiKeywords: ['サンプル女優A'],
+    oshiBoostMode: 'max',
+  });
+  const vipAndOshi = calculateScarcityScore(sampleItem, {
+    referenceDate: '2026-11-21',
+    oshiKeywords: ['サンプル女優A'],
+    vipTalents: ['サンプル女優A'],
+    oshiBoostMode: 'strong',
+  });
+
+  assert.equal(oshiStd.score - base.score, OSHI_BOOST_PRESETS.standard.points);
+  assert.equal(oshiStrong.score - base.score, OSHI_BOOST_PRESETS.strong.points);
+  assert.equal(oshiMax.score - base.score, OSHI_BOOST_PRESETS.max.points);
+  assert.equal(vipAndOshi.hasVipHit, true);
+  assert.equal(vipAndOshi.rank, 'S');
+  assert.ok(vipAndOshi.score >= 72);
+
+  // Verify 1-tap talent presets have unique names across all 4 groups
+  const names = POPULAR_TALENT_PRESETS.map((p) => p.name);
+  assert.equal(new Set(names).size, names.length);
+  for (const grp of ['idol', 'gravure', 'r18', 'bonus']) {
+    assert.ok(POPULAR_TALENT_PRESETS.some((p) => p.group === grp), `Missing preset group ${grp}`);
+  }
+});
+
+

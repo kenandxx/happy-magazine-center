@@ -1,5 +1,9 @@
 import { createEditorialCoverDataUri, createGalleryPhotoFallbackDataUri } from './cover-art.js';
-import { getUrgentRadarItems } from './scarcity-score.js';
+import {
+  OSHI_BOOST_PRESETS,
+  POPULAR_TALENT_PRESETS,
+  getUrgentRadarItems,
+} from './scarcity-score.js';
 import {
   PHOTO_KIND_META,
   buildTalentPromoLinks,
@@ -15,6 +19,8 @@ import {
 
 const STORAGE_KEYS = {
   oshi: 'hmc_oshi_keywords_v1',
+  vipTalents: 'hmc_vip_talents_v1',
+  oshiBoost: 'hmc_oshi_boost_v1',
   shelf: 'hmc_shelf_status_v1',
   offerShelf: 'hmc_offer_shelf_v1',
   customItems: 'hmc_custom_items_v1',
@@ -138,6 +144,11 @@ function loadNormalizedStatusMap(key, fallback) {
   return out;
 }
 
+function loadValidBoostMode() {
+  const raw = loadJson(STORAGE_KEYS.oshiBoost, 'strong');
+  return OSHI_BOOST_PRESETS[raw] ? raw : 'strong';
+}
+
 const state = {
   referenceDate: '2026-11-21',
   lastAutoCheckedAt: '',
@@ -151,11 +162,16 @@ const state = {
     '一ノ瀬瑠菜',
     'えなこ',
   ]),
+  vipTalents: loadJson(STORAGE_KEYS.vipTalents, []),
+  oshiBoostMode: loadValidBoostMode(), // 'standard' (+14) | 'strong' (+24) | 'max' (+34)
   shelfMap: loadNormalizedStatusMap(STORAGE_KEYS.shelf, {}),
   offerShelfMap: loadNormalizedStatusMap(STORAGE_KEYS.offerShelf, DEFAULT_OFFER_SHELF),
   monthlyBudget: Number(loadJson(STORAGE_KEYS.budget, 15000)) || 15000,
   privacyBlur: Boolean(loadJson(STORAGE_KEYS.privacyBlur, false)),
   activeTab: 'discover',
+  oshiSubTab: 'oshi', // 'oshi' | 'shelf' | 'tools'
+  paletteGroup: 'all', // 'all' | 'idol' | 'gravure' | 'r18' | 'bonus'
+  paletteSearch: '',
   viewMode: 'compact', // 'compact' | 'cards' | 'wall'
   offerCompareLayout: 'scroll', // 'scroll' | 'grid'
   search: '',
@@ -164,6 +180,7 @@ const state = {
   storeFilter: 'all',
   artworkFilter: 'all', // 'all' | 'revealed' | 'pending'
   statusFilter: 'all', // 'all' | 'unmarked' | 'considering' | 'want' | 'reserved' | 'owned' | 'skip'
+  oshiOnly: false,
   bonusOnly: false,
   hideSkipped: false,
   sortBy: 'soon',
@@ -627,9 +644,75 @@ function openQuickPreview(itemId, startIndex = 0) {
   openLightbox(slides, startIndex);
 }
 
-function itemMatchesOshi(item) {
-  if (!state.oshiKeywords.length) return [];
-  const haystack = [
+function syncAfterOshiOrVipChange() {
+  saveJson(STORAGE_KEYS.oshi, state.oshiKeywords);
+  saveJson(STORAGE_KEYS.vipTalents, state.vipTalents);
+  saveJson(STORAGE_KEYS.oshiBoost, state.oshiBoostMode);
+  renderCountdownStrip();
+  renderFilterChips();
+  renderMagazineGrid();
+  renderUrgentRadar();
+  renderOshiAndShelf();
+  if (state.selectedItemId) {
+    const item = getItemById(state.selectedItemId);
+    if (item) renderDetailSheetBody(item);
+  }
+}
+
+function toggleOshiKeyword(rawName, forceAdd = false) {
+  const kw = String(rawName || '').trim();
+  if (!kw) return;
+  const exists = state.oshiKeywords.includes(kw);
+  if (exists && !forceAdd) {
+    state.oshiKeywords = state.oshiKeywords.filter((k) => k !== kw);
+  } else if (!exists) {
+    state.oshiKeywords.unshift(kw);
+  }
+  syncAfterOshiOrVipChange();
+}
+
+function toggleVipTalent(rawName, forceAdd = false) {
+  const kw = String(rawName || '').trim();
+  if (!kw) return;
+  const exists = state.vipTalents.includes(kw);
+  if (exists && !forceAdd) {
+    state.vipTalents = state.vipTalents.filter((k) => k !== kw);
+  } else if (!exists) {
+    state.vipTalents.unshift(kw);
+    if (!state.oshiKeywords.includes(kw)) {
+      state.oshiKeywords.unshift(kw);
+    }
+  }
+  syncAfterOshiOrVipChange();
+}
+
+function setOshiBoostMode(mode) {
+  if (!OSHI_BOOST_PRESETS[mode]) return;
+  state.oshiBoostMode = mode;
+  syncAfterOshiOrVipChange();
+}
+
+function extractCleanTalentNames(item) {
+  const out = [];
+  const seen = new Set();
+  const skipPattern = /解禁待ち|グラビア特集|合併号|特別グラビア|例月\d+日|袋とじ/;
+  for (const raw of item.coverTalents || []) {
+    const str = String(raw || '').trim();
+    if (!str || skipPattern.test(str)) continue;
+    // Split e.g. "川﨑桜（乃木坂46）" into ["川﨑桜", "乃木坂46"]
+    const match = str.match(/^([^（(]+)[（(]([^）)]+)[）)]$/);
+    const parts = match ? [match[1].trim(), match[2].trim()] : [str];
+    for (const p of parts) {
+      if (!p || p.length < 2 || skipPattern.test(p) || seen.has(p)) continue;
+      seen.add(p);
+      out.push(p);
+    }
+  }
+  return out.slice(0, 6);
+}
+
+function buildItemHaystackLower(item) {
+  return [
     item.title,
     item.series,
     item.publisher,
@@ -641,8 +724,103 @@ function itemMatchesOshi(item) {
   ]
     .join(' ')
     .toLowerCase();
+}
 
-  return state.oshiKeywords.filter((kw) => haystack.includes(kw.toLowerCase()));
+function countItemsMatchingKeyword(kw) {
+  const q = String(kw || '').trim().toLowerCase();
+  if (!q) return 0;
+  let cnt = 0;
+  for (const item of getAllItems()) {
+    if (buildItemHaystackLower(item).includes(q)) cnt++;
+  }
+  return cnt;
+}
+
+function itemMatchesOshi(item) {
+  const combined = [...new Set([...state.vipTalents, ...state.oshiKeywords])];
+  if (!combined.length) return [];
+  const haystack = buildItemHaystackLower(item);
+  return combined.filter((kw) => kw && haystack.includes(kw.toLowerCase()));
+}
+
+function exportUserDataBackup() {
+  const payload = {
+    app: 'Happy Magazine Center',
+    version: '0.8',
+    exportedAt: new Date().toISOString(),
+    data: {
+      oshiKeywords: state.oshiKeywords,
+      vipTalents: state.vipTalents,
+      oshiBoostMode: state.oshiBoostMode,
+      offerShelfMap: state.offerShelfMap,
+      shelfMap: state.shelfMap,
+      monthlyBudget: state.monthlyBudget,
+      privacyBlur: state.privacyBlur,
+      customItems: state.customItems,
+    },
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `happy-magazine-backup-${state.referenceDate}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  const msg = document.getElementById('backupStatusMsg');
+  if (msg) {
+    msg.textContent = `✅ バックアップを保存しました（推し ${state.oshiKeywords.length}件・VIP ${state.vipTalents.length}件・マーク ${Object.keys(state.offerShelfMap).length}版）`;
+  }
+}
+
+function importUserDataBackup(file) {
+  const msg = document.getElementById('backupStatusMsg');
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const parsed = JSON.parse(String(reader.result || '{}'));
+      const d = parsed.data || parsed;
+      if (Array.isArray(d.oshiKeywords)) state.oshiKeywords = d.oshiKeywords.filter(Boolean);
+      if (Array.isArray(d.vipTalents)) state.vipTalents = d.vipTalents.filter(Boolean);
+      if (d.oshiBoostMode && OSHI_BOOST_PRESETS[d.oshiBoostMode]) {
+        state.oshiBoostMode = d.oshiBoostMode;
+      }
+      if (d.offerShelfMap && typeof d.offerShelfMap === 'object') {
+        state.offerShelfMap = d.offerShelfMap;
+      }
+      if (d.shelfMap && typeof d.shelfMap === 'object') {
+        state.shelfMap = d.shelfMap;
+      }
+      if (Number(d.monthlyBudget) >= 1000) {
+        state.monthlyBudget = Number(d.monthlyBudget);
+      }
+      if (typeof d.privacyBlur === 'boolean') {
+        state.privacyBlur = d.privacyBlur;
+      }
+      if (Array.isArray(d.customItems)) {
+        state.customItems = d.customItems;
+      }
+      saveJson(STORAGE_KEYS.oshi, state.oshiKeywords);
+      saveJson(STORAGE_KEYS.vipTalents, state.vipTalents);
+      saveJson(STORAGE_KEYS.oshiBoost, state.oshiBoostMode);
+      saveJson(STORAGE_KEYS.offerShelf, state.offerShelfMap);
+      saveJson(STORAGE_KEYS.shelf, state.shelfMap);
+      saveJson(STORAGE_KEYS.budget, state.monthlyBudget);
+      saveJson(STORAGE_KEYS.privacyBlur, state.privacyBlur);
+      saveJson(STORAGE_KEYS.customItems, state.customItems);
+      renderAll();
+      if (msg) {
+        msg.textContent = `✅ バックアップを復元しました！（推し ${state.oshiKeywords.length}件・VIP ${state.vipTalents.length}件・マーク ${Object.keys(state.offerShelfMap).length}版）`;
+      }
+    } catch {
+      if (msg) {
+        msg.textContent = '⚠️ JSONファイルの読み込みに失敗しました。バックアップファイルを確認してください。';
+      }
+    }
+  };
+  reader.readAsText(file);
 }
 
 function getItemBonusTypes(item) {
@@ -689,6 +867,7 @@ function getFilteredItems() {
     if (state.hideSkipped && isItemFullySkipped(item) && state.statusFilter !== 'skip') return false;
     if (!itemHasStatusInBucket(item, state.statusFilter)) return false;
 
+    if (state.oshiOnly && itemMatchesOshi(item).length === 0) return false;
     if (state.bonusOnly && getItemSpecialBonusCount(item) === 0) return false;
 
     if (q) {
@@ -831,6 +1010,8 @@ function renderCountdownStrip() {
   const radarEntries = getUrgentRadarItems(getAllItems(), {
     referenceDate: state.referenceDate,
     oshiKeywords: state.oshiKeywords,
+    vipTalents: state.vipTalents,
+    oshiBoostMode: state.oshiBoostMode,
   });
   const unreservedS = radarEntries.filter(
     ({ item, scarcity }) =>
@@ -879,6 +1060,15 @@ function renderCountdownStrip() {
 
 function renderFilterChips() {
   const allItems = getAllItems();
+  const oshiMatchCount = allItems.filter((it) => itemMatchesOshi(it).length > 0).length;
+  const oshiOnlyLabel = document.getElementById('oshiOnlyLabel');
+  if (oshiOnlyLabel) {
+    oshiOnlyLabel.textContent = `💖 推しのみ (${oshiMatchCount})`;
+  }
+  const oshiOnlyToggle = document.getElementById('oshiOnlyToggle');
+  if (oshiOnlyToggle) {
+    oshiOnlyToggle.checked = state.oshiOnly;
+  }
 
   document.getElementById('categoryChips').innerHTML = Object.entries(CATEGORY_META)
     .map(([id, meta]) => {
@@ -1327,6 +1517,8 @@ function renderUrgentRadar() {
   const allRadar = getUrgentRadarItems(getAllItems(), {
     referenceDate: state.referenceDate,
     oshiKeywords: state.oshiKeywords,
+    vipTalents: state.vipTalents,
+    oshiBoostMode: state.oshiBoostMode,
     minScore: 30,
   });
 
@@ -1369,7 +1561,7 @@ function renderUrgentRadar() {
     { id: 'all', label: '🔥 すべて' },
     { id: 'limited', label: '💎 部数・サイン・数量限' },
     { id: 'cover', label: '✨ ストア限定表紙' },
-    { id: 'oshi', label: '💖 推しヒット' },
+    { id: 'oshi', label: '💖 推し・VIPヒット' },
     { id: 'r18', label: '🔞 R18争奪' },
     { id: 'calendar', label: '🗓 カレンダー' },
   ];
@@ -1399,6 +1591,19 @@ function renderUrgentRadar() {
     </div>
   `;
 
+  const boostPillsHtml = Object.values(OSHI_BOOST_PRESETS)
+    .map(
+      (p) => `
+      <button
+        class="urgent-boost-mini ${state.oshiBoostMode === p.id ? 'active' : ''}"
+        type="button"
+        data-set-oshi-boost="${p.id}"
+        title="${escapeHtml(p.desc)}"
+      >${escapeHtml(p.shortLabel)}</button>
+    `
+    )
+    .join('');
+
   const toolbarHtml = `
     <div class="urgent-toolbar">
       <div class="urgent-toolbar-top">
@@ -1418,6 +1623,15 @@ function renderUrgentRadar() {
           />
           <span>🚨 未予約のみ表示</span>
         </label>
+      </div>
+      <div class="urgent-boost-strip">
+        <div class="urgent-boost-pills">
+          <span style="font-size:10px;font-weight:900;color:var(--ink-secondary);">🚀 推し加点:</span>
+          ${boostPillsHtml}
+        </div>
+        <button class="quick-preview-icon-btn" type="button" data-jump-oshi-corner="1">
+          💖 推し・👑VIP編集 (${state.oshiKeywords.length}${state.vipTalents.length ? `/👑${state.vipTalents.length}` : ''}) →
+        </button>
       </div>
       <div class="chip-scroll" style="padding-top:0;">
         ${topicChoices
@@ -1967,24 +2181,235 @@ function renderCalendar() {
 }
 
 /* =========================================================
-   Tab 3: Per-Edition Status Corner & Shelf
+   Tab 4: 💖 Oshi Corner (1-Tap Palette & VIP) + Per-Edition Shelf
    ========================================================= */
-function renderOshiAndShelf() {
+function switchOshiSubTab(subTab) {
+  state.oshiSubTab = subTab;
+  const subNav = document.getElementById('oshiSubNav');
+  if (subNav) {
+    subNav.querySelectorAll('[data-oshi-subtab]').forEach((btn) => {
+      btn.classList.toggle('active', btn.dataset.oshiSubtab === subTab);
+    });
+  }
+  const map = {
+    oshi: 'oshiPaneOshi',
+    shelf: 'oshiPaneShelf',
+    tools: 'oshiPaneTools',
+  };
+  for (const [k, id] of Object.entries(map)) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('active', k === subTab);
+  }
+}
+
+function renderOshiCorner() {
+  // 1. Oshi Boost 3-step selector
+  const boostSeg = document.getElementById('oshiBoostSegment');
+  if (boostSeg) {
+    boostSeg.innerHTML = Object.values(OSHI_BOOST_PRESETS)
+      .map(
+        (p) => `
+        <button
+          class="oshi-boost-btn ${state.oshiBoostMode === p.id ? 'active' : ''}"
+          type="button"
+          data-set-oshi-boost="${p.id}"
+          title="${escapeHtml(p.desc)}"
+        >${escapeHtml(p.label)}</button>
+      `
+      )
+      .join('');
+  }
+
+  // 2. Registered Oshi keywords (with 1-tap VIP crown promote toggle)
   const cloud = document.getElementById('oshiTagCloud');
-  cloud.innerHTML = state.oshiKeywords.length
-    ? state.oshiKeywords
-        .map(
-          (kw) => `
-          <span class="oshi-tag">
-            <span>🔥 ${escapeHtml(kw)}</span>
-            <button type="button" data-remove-oshi="${escapeHtml(kw)}" aria-label="${escapeHtml(kw)}を削除">×</button>
-          </span>
-        `
-        )
-        .join('')
-    : '<span style="font-size:12px;color:var(--ink-muted);">まだ推しワードが登録されていません。</span>';
+  if (cloud) {
+    cloud.innerHTML = state.oshiKeywords.length
+      ? state.oshiKeywords
+          .map((kw) => {
+            const isVip = state.vipTalents.includes(kw);
+            return `
+            <span class="oshi-tag ${isVip ? 'is-vip-tag' : ''}">
+              <span>${isVip ? '👑' : '💖'} ${escapeHtml(kw)}</span>
+              <button
+                class="oshi-tag-vip-btn ${isVip ? 'active' : ''}"
+                type="button"
+                data-toggle-vip="${escapeHtml(kw)}"
+                title="${isVip ? 'VIP超人気枠から外す' : '👑 Sランク超人気VIP枠(+30pt)へ昇格'}"
+              >👑${isVip ? 'VIP中' : 'VIP'}</button>
+              <button type="button" data-remove-oshi="${escapeHtml(kw)}" aria-label="${escapeHtml(kw)}を削除">×</button>
+            </span>
+          `;
+          })
+          .join('')
+      : '<span style="font-size:12px;color:var(--ink-muted);">下の人気タレント一覧からタップするだけで簡単に登録できます！</span>';
+  }
+
+  // 3. Custom S-Rank VIP Talents (+30pt)
+  const vipCloud = document.getElementById('vipTagCloud');
+  if (vipCloud) {
+    vipCloud.innerHTML = state.vipTalents.length
+      ? state.vipTalents
+          .map(
+            (kw) => `
+            <span class="oshi-tag is-vip-tag">
+              <span>👑 ${escapeHtml(kw)}（+30pt）</span>
+              <button type="button" data-toggle-vip="${escapeHtml(kw)}" aria-label="${escapeHtml(kw)}をVIPから解除">×</button>
+            </span>
+          `
+          )
+          .join('')
+      : '<span style="font-size:11px;color:var(--ink-muted);">まだ未登録です。推しや下のパレットの「👑」を押すと、その女優・アイドルが Sランク超人気枠（+30pt）に入ります！</span>';
+  }
+
+  // 4. 1-Tap Popular Talent Registration Palette
+  const paletteGroups = [
+    { id: 'all', label: '✨ すべて' },
+    { id: 'idol', label: '🎤 アイドル' },
+    { id: 'gravure', label: '👙 グラビア' },
+    { id: 'r18', label: '🔞 R18女優' },
+    { id: 'bonus', label: '🎁 特典ワード' },
+  ];
+  const groupTabs = document.getElementById('paletteGroupTabs');
+  if (groupTabs) {
+    groupTabs.innerHTML = paletteGroups
+      .map((g) => {
+        const cnt =
+          g.id === 'all'
+            ? POPULAR_TALENT_PRESETS.length
+            : POPULAR_TALENT_PRESETS.filter((p) => p.group === g.id).length;
+        return `
+          <button
+            class="filter-chip ${state.paletteGroup === g.id ? 'active' : ''}"
+            type="button"
+            data-palette-group="${g.id}"
+          >${escapeHtml(g.label)} (${cnt})</button>
+        `;
+      })
+      .join('');
+  }
+
+  const paletteGrid = document.getElementById('popularTalentPalette');
+  if (paletteGrid) {
+    const pq = state.paletteSearch.trim().toLowerCase();
+    const filteredPresets = POPULAR_TALENT_PRESETS.filter((p) => {
+      if (state.paletteGroup !== 'all' && p.group !== state.paletteGroup) return false;
+      if (pq && !`${p.name} ${p.tag}`.toLowerCase().includes(pq)) return false;
+      return true;
+    });
+
+    paletteGrid.innerHTML = filteredPresets.length
+      ? filteredPresets
+          .map((p) => {
+            const isOshi = state.oshiKeywords.includes(p.name);
+            const isVip = state.vipTalents.includes(p.name);
+            const hits = countItemsMatchingKeyword(p.name);
+            return `
+              <div class="talent-pick-item ${isOshi ? 'is-oshi' : ''} ${isVip ? 'is-vip' : ''}">
+                <button
+                  class="talent-pick-main"
+                  type="button"
+                  data-toggle-oshi="${escapeHtml(p.name)}"
+                  aria-pressed="${isOshi ? 'true' : 'false'}"
+                  title="${isOshi ? 'タップで推し解除' : 'タップで💖推し登録'}"
+                >
+                  <span class="talent-pick-name">${isOshi ? '💖 ' : '＋ '}${escapeHtml(p.name)}</span>
+                  <span class="talent-pick-sub">
+                    <span>${escapeHtml(p.tag)}</span>
+                    ${hits > 0 ? `<span class="talent-pick-count">${hits}件</span>` : ''}
+                  </span>
+                </button>
+                <button
+                  class="talent-pick-vip-btn ${isVip ? 'active' : ''}"
+                  type="button"
+                  data-toggle-vip="${escapeHtml(p.name)}"
+                  aria-pressed="${isVip ? 'true' : 'false'}"
+                  title="${isVip ? '👑 VIP超人気枠から外す' : '👑 Sランク超人気VIP枠(+30pt)に追加'}"
+                >👑</button>
+              </div>
+            `;
+          })
+          .join('')
+      : '<p style="font-size:12px;color:var(--ink-muted);grid-column:1/-1;margin:4px 0;">該当する名前がありません。上の自由入力からそのまま追加できます！</p>';
+  }
+
+  // 5. Live Oshi-Hit Releases Feed
+  const oshiHitItems = getAllItems()
+    .filter((item) => itemMatchesOshi(item).length > 0 && !isItemFullySkipped(item))
+    .sort((a, b) => {
+      const da = diffDays(a.releaseDate);
+      const db = diffDays(b.releaseDate);
+      const aUp = da >= 0 ? 0 : 1;
+      const bUp = db >= 0 ? 0 : 1;
+      if (aUp !== bUp) return aUp - bUp;
+      return aUp === 0 ? da - db : db - da;
+    });
+
+  const hitsHeading = document.getElementById('oshiHitsHeading');
+  if (hitsHeading) {
+    hitsHeading.textContent = `💖 あなたの推しヒット作品（${oshiHitItems.length}件）`;
+  }
+
+  const hitsFeed = document.getElementById('oshiHitsFeed');
+  if (hitsFeed) {
+    if (!oshiHitItems.length) {
+      hitsFeed.innerHTML =
+        '<p style="font-size:12px;color:var(--ink-muted);margin:0;">上の人気タレント名をタップして登録すると、ここにあなたの推し作品がずらっと集まります！</p>';
+    } else {
+      hitsFeed.innerHTML = oshiHitItems
+        .slice(0, 14)
+        .map((item) => {
+          const cd = formatCountdown(item.releaseDate);
+          const hits = itemMatchesOshi(item);
+          const r18Class = item.category === 'r18' ? 'is-r18-media' : '';
+          const visibleCount = getVisibleOffers(item).length;
+          return `
+            <div class="timeline-item" data-open-id="${escapeHtml(item.id)}">
+              <div class="${r18Class}" style="flex-shrink:0;border-radius:8px;">
+                ${renderCoverImg(item, 'timeline-thumb')}
+              </div>
+              <div class="timeline-body">
+                <div class="shelf-edition-badges">
+                  <span class="oshi-badge">💖 ${escapeHtml(hits[0])}</span>
+                  ${item.category === 'r18' ? '<span class="cat-badge is-r18">🔞R18</span>' : ''}
+                  <span style="font-size:10px;font-weight:800;color:var(--accent);">${escapeHtml(cd.text)}</span>
+                </div>
+                <h4 class="timeline-title">${escapeHtml(item.title)}</h4>
+                <p class="timeline-sub">
+                  ${escapeHtml(formatDateLabel(item.releaseDate))} ・ ¥${(item.price || 0).toLocaleString()}${
+                    visibleCount > 1 ? ` ・ 🎁${visibleCount}版` : ''
+                  }
+                </p>
+              </div>
+              <div class="timeline-actions">
+                ${renderStatusMarkButton(item, false)}
+                <button class="quick-preview-icon-btn" type="button" data-quick-preview="${escapeHtml(item.id)}">🔍 確認</button>
+              </div>
+            </div>
+          `;
+        })
+        .join('');
+    }
+  }
+}
+
+function renderOshiAndShelf() {
+  switchOshiSubTab(state.oshiSubTab);
+  renderOshiCorner();
 
   const trackedEntries = getAllMarkedEntries();
+
+  // Keep sub-tab counts live
+  const subNav = document.getElementById('oshiSubNav');
+  if (subNav) {
+    const oshiBtn = subNav.querySelector('[data-oshi-subtab="oshi"]');
+    const shelfBtn = subNav.querySelector('[data-oshi-subtab="shelf"]');
+    if (oshiBtn) {
+      oshiBtn.textContent = `💖 推しコーナー (${state.oshiKeywords.length})`;
+    }
+    if (shelfBtn) {
+      shelfBtn.textContent = `🏷 マーク棚 (${trackedEntries.length})`;
+    }
+  }
 
   const countByBucket = {
     all: trackedEntries.length,
@@ -2797,6 +3222,34 @@ function renderDetailSheetBody(item) {
             📅 カレンダー登録 (.ics)
           </button>
         </div>
+        ${(() => {
+          const cleanTalents = extractCleanTalentNames(item);
+          if (!cleanTalents.length) return '';
+          return `<div class="sheet-talent-oshi-bar" aria-label="この作品のタレントをワンタップ推し登録">
+            ${cleanTalents
+              .map((name) => {
+                const isOshi = state.oshiKeywords.includes(name);
+                const isVip = state.vipTalents.includes(name);
+                return `
+                  <span class="sheet-talent-pill ${isOshi ? 'is-oshi' : ''} ${isVip ? 'is-vip' : ''}">
+                    <button
+                      class="sheet-talent-pill-btn"
+                      type="button"
+                      data-toggle-oshi="${escapeHtml(name)}"
+                      title="${isOshi ? '推し登録中（タップで解除）' : 'タップで💖推し登録'}"
+                    >${isOshi ? '💖' : '＋'} ${escapeHtml(name)}</button>
+                    <button
+                      class="sheet-talent-vip-btn ${isVip ? 'active' : ''}"
+                      type="button"
+                      data-toggle-vip="${escapeHtml(name)}"
+                      title="${isVip ? '👑 VIP超人気枠から解除' : '👑 Sランク超人気VIP枠(+30pt)へ追加'}"
+                    >👑</button>
+                  </span>
+                `;
+              })
+              .join('')}
+          </div>`;
+        })()}
       </div>
     </div>
 
@@ -3160,6 +3613,14 @@ function bindEvents() {
     renderMagazineGrid();
   });
 
+  const oshiOnlyToggle = document.getElementById('oshiOnlyToggle');
+  if (oshiOnlyToggle) {
+    oshiOnlyToggle.addEventListener('change', (e) => {
+      state.oshiOnly = e.target.checked;
+      renderMagazineGrid();
+    });
+  }
+
   document.getElementById('bonusOnlyToggle').addEventListener('change', (e) => {
     state.bonusOnly = e.target.checked;
     renderMagazineGrid();
@@ -3169,6 +3630,39 @@ function bindEvents() {
     state.hideSkipped = e.target.checked;
     renderMagazineGrid();
   });
+
+  const paletteSearchInput = document.getElementById('paletteSearchInput');
+  if (paletteSearchInput) {
+    paletteSearchInput.addEventListener('input', (e) => {
+      state.paletteSearch = e.target.value;
+      renderOshiCorner();
+    });
+  }
+
+  const addVipDirectBtn = document.getElementById('addVipDirectBtn');
+  if (addVipDirectBtn) {
+    addVipDirectBtn.addEventListener('click', () => {
+      const input = document.getElementById('oshiInput');
+      const kw = input.value.trim();
+      if (!kw) return;
+      toggleVipTalent(kw, true);
+      input.value = '';
+    });
+  }
+
+  const exportBackupBtn = document.getElementById('exportBackupBtn');
+  if (exportBackupBtn) {
+    exportBackupBtn.addEventListener('click', exportUserDataBackup);
+  }
+
+  const importBackupInput = document.getElementById('importBackupInput');
+  if (importBackupInput) {
+    importBackupInput.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (file) importUserDataBackup(file);
+      e.target.value = '';
+    });
+  }
 
   document.querySelectorAll('[data-view-mode]').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -3237,6 +3731,57 @@ function bindEvents() {
   document.addEventListener('click', (e) => {
     if (e.target.closest('[data-stop-prop]')) {
       e.stopPropagation();
+      return;
+    }
+
+    const oshiSubBtn = e.target.closest('[data-oshi-subtab]');
+    if (oshiSubBtn) {
+      switchOshiSubTab(oshiSubBtn.dataset.oshiSubtab);
+      return;
+    }
+
+    const jumpOshiCorner = e.target.closest('[data-jump-oshi-corner]');
+    if (jumpOshiCorner) {
+      state.oshiSubTab = 'oshi';
+      switchTab('oshi');
+      return;
+    }
+
+    const filterOshiDiscover = e.target.closest('[data-filter-oshi-discover]');
+    if (filterOshiDiscover) {
+      state.oshiOnly = true;
+      state.category = 'all';
+      renderFilterChips();
+      renderMagazineGrid();
+      switchTab('discover');
+      return;
+    }
+
+    const boostBtn = e.target.closest('[data-set-oshi-boost]');
+    if (boostBtn) {
+      e.stopPropagation();
+      setOshiBoostMode(boostBtn.dataset.setOshiBoost);
+      return;
+    }
+
+    const paletteGrpBtn = e.target.closest('[data-palette-group]');
+    if (paletteGrpBtn) {
+      state.paletteGroup = paletteGrpBtn.dataset.paletteGroup;
+      renderOshiCorner();
+      return;
+    }
+
+    const toggleOshiBtn = e.target.closest('[data-toggle-oshi]');
+    if (toggleOshiBtn) {
+      e.stopPropagation();
+      toggleOshiKeyword(toggleOshiBtn.dataset.toggleOshi);
+      return;
+    }
+
+    const toggleVipBtn = e.target.closest('[data-toggle-vip]');
+    if (toggleVipBtn) {
+      e.stopPropagation();
+      toggleVipTalent(toggleVipBtn.dataset.toggleVip);
       return;
     }
 
@@ -3353,13 +3898,10 @@ function bindEvents() {
 
     const removeOshiBtn = e.target.closest('[data-remove-oshi]');
     if (removeOshiBtn) {
+      e.stopPropagation();
       const kw = removeOshiBtn.dataset.removeOshi;
       state.oshiKeywords = state.oshiKeywords.filter((item) => item !== kw);
-      saveJson(STORAGE_KEYS.oshi, state.oshiKeywords);
-      renderCountdownStrip();
-      renderUrgentRadar();
-      renderOshiAndShelf();
-      renderMagazineGrid();
+      syncAfterOshiOrVipChange();
       return;
     }
 
@@ -3381,15 +3923,8 @@ function bindEvents() {
     const input = document.getElementById('oshiInput');
     const kw = input.value.trim();
     if (!kw) return;
-    if (!state.oshiKeywords.includes(kw)) {
-      state.oshiKeywords.unshift(kw);
-      saveJson(STORAGE_KEYS.oshi, state.oshiKeywords);
-    }
+    toggleOshiKeyword(kw, true);
     input.value = '';
-    renderCountdownStrip();
-    renderUrgentRadar();
-    renderOshiAndShelf();
-    renderMagazineGrid();
   });
 
   document.getElementById('manualAddForm').addEventListener('submit', (e) => {

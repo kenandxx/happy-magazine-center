@@ -74,6 +74,10 @@
         <div class="results-bar">
           <div id="resultsCount" class="results-count"></div>
           <div class="results-controls">
+            <label class="toggle-inline toggle-oshi-pill">
+              <input id="oshiOnlyToggle" type="checkbox" />
+              <span id="oshiOnlyLabel">💖 推しのみ</span>
+            </label>
             <label class="toggle-inline">
               <input id="bonusOnlyToggle" type="checkbox" />
               <span>特典・ポスターのみ</span>
@@ -101,15 +105,16 @@
             <span class="urgent-hero-pill">自動スコア判定</span>
           </div>
           <p class="panel-desc">
-            直近〜今後2〜3ヶ月（-14日〜+100日）の中から、<strong>部数限定・サイン本・ストア限定表紙・超人気タレント・推しワード連動・限定特典の多さ・発売締切</strong>を自動スコア化し、<strong>すぐ予約しないと消える注目作</strong>だけを優先ハイライトします。
+            直近〜今後2〜3ヶ月（-14日〜+100日）の中から、<strong>部数限定・サイン本・ストア限定表紙・マイVIP超人気枠・推しワード連動・限定特典の多さ・発売締切</strong>を自動スコア化し、<strong>すぐ予約しないと消える注目作</strong>だけを優先ハイライトします。
           </p>
           <details class="urgent-logic-details">
             <summary>📊 売り切れ警戒スコア（100点満点）の判定ロジックを見る</summary>
             <ul class="urgent-logic-list">
               <li><strong>✒️ 直筆サイン本 (+36) / 💎 3000部限定など豪華愛蔵版 (+35) / ⚡ 数量限定・初回枠 (+20)</strong></li>
               <li><strong>✨ ストア限定表紙 (+24)</strong>（再販されず初動で完売しやすい）</li>
-              <li><strong>🌟 超人気タレント・主要グループ (+20) / 🔥 注目人気 (+12)</strong></li>
-              <li><strong>💖 あなたの登録「推しワード」連動 (+14)</strong></li>
+              <li><strong>👑 マイVIP超人気枠 (+30)</strong>（推しコーナーから任意の女優・アイドルを自在追加！）</li>
+              <li><strong>🌟 標準・超人気タレント (+20) / 🔥 注目人気 (+12)</strong></li>
+              <li><strong>💖 あなたの「推しワード」連動ブースト (+14 / +24 / +34 切替可)</strong></li>
               <li><strong>🏪 ストア限定特典の種数 (+6〜+16) / 🗓 2027カレンダー初回生産 (+10)</strong></li>
               <li><strong>⏰ 発売タイミング緊急度 (+8〜+18) / 🖼 特典絵柄解禁スパイク (+6)</strong></li>
             </ul>
@@ -132,83 +137,176 @@
         <div id="calendarContainer"></div>
       </section>
 
-      <!-- Tab 3: Oshi & Status Corner Shelf -->
-      <section id="tab-oshi" class="tab-panel" aria-label="推しワードとマークコーナー">
-        <div class="panel-card">
-          <h2 class="panel-heading">🏷 表紙・特典別マークコーナー＆マイ棚</h2>
-          <p class="panel-desc">
-            同じ雑誌でも<strong>どの表紙・どのストア特典</strong>かを個別に「🤔 検討中」「👀 買う予定」「🛒 予約済」「✅ 購入済」「🙅 買わない」で管理できます。
-          </p>
-          <div id="shelfCornerGrid" class="status-corner-grid"></div>
-          <div id="shelfStats" class="stats-row"></div>
-          <div id="shelfActionsBar" class="shelf-actions-bar"></div>
-          <div id="shelfBudgetPanel"></div>
-          <div id="shelfList" class="timeline-list"></div>
+      <!-- Tab 4: Oshi Corner (1-Tap Registration & VIP) + Per-Edition Shelf -->
+      <section id="tab-oshi" class="tab-panel" aria-label="推しコーナーとマーク棚">
+        <div id="oshiSubNav" class="oshi-subnav" role="tablist" aria-label="推し・棚セクション切替">
+          <button class="oshi-subnav-btn active" type="button" data-oshi-subtab="oshi">💖 推しコーナー</button>
+          <button class="oshi-subnav-btn" type="button" data-oshi-subtab="shelf">🏷 マーク棚・予算</button>
+          <button class="oshi-subnav-btn" type="button" data-oshi-subtab="tools">➕ メモ・保存</button>
         </div>
 
-        <div class="panel-card">
-          <h2 class="panel-heading">🔥 推しワード・注目キーワード</h2>
-          <p class="panel-desc">
-            好きなタレント名・グループ名・雑誌名・特典（例：ポスター、乃木坂46、東雲うみ）を登録すると、一覧で自動ハイライトされます。
-          </p>
-          <form id="oshiForm" class="inline-form">
-            <input
-              id="oshiInput"
-              class="text-input"
-              type="text"
-              placeholder="例：乃木坂46 / 東雲うみ / 一ノ瀬瑠菜 / ポスター"
-            />
-            <button class="primary-btn" type="submit">追加</button>
-          </form>
-          <div id="oshiTagCloud" class="tag-cloud"></div>
-        </div>
-
-        <div class="panel-card">
-          <h2 class="panel-heading">➕ 見つけた雑誌・写真集・カレンダー・R18をメモ登録</h2>
-          <p class="panel-desc">
-            Xやニュースで見つけた新刊をその場で追加できます（Amazon基本＋特典メモに書いたストアのみノイズゼロ登録）。
-          </p>
-          <form id="manualAddForm" class="form-grid">
-            <label class="field-label">
-              タイトル（必須）
-              <input id="addTitle" class="text-input" type="text" required placeholder="例：ヤングマガジン 2026年52号" />
-            </label>
-            <label class="field-label">
-              表紙・特典タレント
-              <input id="addTalent" class="text-input" type="text" placeholder="例：沢口愛華" />
-            </label>
-            <label class="field-label">
-              発売予定日
-              <input id="addDate" class="text-input" type="date" value="2026-12-01" />
-            </label>
-            <label class="field-label">
-              カテゴリ
-              <select id="addCategory" class="text-input">
-                <option value="idol">アイドル専門誌</option>
-                <option value="gravure">グラビア・ムック</option>
-                <option value="weekly">週刊誌・コミック誌</option>
-                <option value="fashion">女性誌・アイドル表紙</option>
-                <option value="photobook">写真集</option>
-                <option value="calendar">🗓 カレンダー</option>
-                <option value="r18">🔞 アダルト・R18</option>
-              </select>
-            </label>
-            <label class="field-label">
-              特典・付録メモ
-              <input id="addBonus" class="text-input" type="text" placeholder="例：セブン限定ポストカード / 綴じ込みポスター" />
-            </label>
-            <label class="field-label">
-              定価（税込・円）
-              <input id="addPrice" class="text-input" type="number" min="0" step="10" value="1400" />
-            </label>
-            <div>
-              <button class="primary-btn" type="submit">ダッシュボードに追加</button>
+        <!-- Sub-panel A: 💖 推しコーナー (Default Visible!) -->
+        <div id="oshiPaneOshi" class="oshi-subpane active">
+          <div class="panel-card oshi-hero-card">
+            <div class="urgent-hero-top">
+              <h2 class="panel-heading">💖 推しコーナー＆👑 Sランク超人気枠（VIP）</h2>
+              <button class="oshi-jump-discover-btn" type="button" data-filter-oshi-discover="1">
+                📚 一覧で推しだけ見る →
+              </button>
             </div>
-          </form>
+            <p class="panel-desc">
+              下の人気アイドル・グラビア・🔞R18女優の名前を<strong>タップするだけ</strong>で即「💖 推し登録」！さらに<strong>👑 VIP</strong>をONにすると「🔥 早め予約」で<strong>+30pt（超人気Sランク枠）</strong>へ即昇格します。
+            </p>
+
+            <!-- Oshi Boost Strength Selector -->
+            <div class="oshi-boost-box">
+              <div class="oshi-boost-head">
+                <span class="oshi-boost-title">🚀 推しワード連動の加点ブースト（早め予約スコア連動）</span>
+              </div>
+              <div id="oshiBoostSegment" class="oshi-boost-segment" role="group" aria-label="推し加点ブースト強度"></div>
+            </div>
+
+            <!-- Current Registered Oshi + VIP Chips -->
+            <div class="oshi-registered-section">
+              <div class="oshi-section-mini-label">
+                <span>💖 登録中の推しワード（👑タップでSランク超人気VIPへ昇格）</span>
+              </div>
+              <div id="oshiTagCloud" class="tag-cloud"></div>
+            </div>
+
+            <div class="oshi-registered-section">
+              <div class="oshi-section-mini-label">
+                <span>👑 マイVIP・Sランク超人気枠（+30pt 自動加算）</span>
+              </div>
+              <div id="vipTagCloud" class="tag-cloud"></div>
+            </div>
+
+            <!-- Free-text Add for ANY idol / actress -->
+            <form id="oshiForm" class="oshi-custom-form">
+              <input
+                id="oshiInput"
+                class="text-input"
+                type="text"
+                placeholder="一覧にない女優・アイドル名も自由入力（例：賀喜遥香 / 桜空もも）"
+              />
+              <div class="oshi-custom-btns">
+                <button class="primary-btn" type="submit" data-add-mode="oshi">💖 推し追加</button>
+                <button class="vip-add-btn" type="button" id="addVipDirectBtn">👑 VIP枠に追加</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- 1-Tap Popular Talent Registration Palette -->
+          <div class="panel-card">
+            <div class="palette-header">
+              <div>
+                <h2 class="panel-heading">✨ 人気アイドル・グラビア・🔞R18女優 1タップ登録</h2>
+                <p class="panel-desc" style="margin-bottom:0;">
+                  名前をタップで<strong>💖 推しON/OFF</strong>、右端の<strong>👑</strong>で<strong>Sランク超人気VIP</strong>に即追加（カッコ内は現在の収録作品数）。
+                </p>
+              </div>
+            </div>
+            <div id="paletteGroupTabs" class="chip-scroll" style="margin-top:8px;"></div>
+            <div class="palette-search-row">
+              <input
+                id="paletteSearchInput"
+                class="text-input"
+                type="search"
+                placeholder="パレット内を名前で絞り込み（例：乃木坂 / 瀬戸 / 沢口）"
+              />
+            </div>
+            <div id="popularTalentPalette" class="talent-palette-grid"></div>
+          </div>
+
+          <!-- Live Oshi-Hit Releases Feed -->
+          <div class="panel-card">
+            <div class="urgent-hero-top" style="margin-bottom:6px;">
+              <h2 class="panel-heading" id="oshiHitsHeading">💖 あなたの推しヒット新刊</h2>
+              <button class="detail-trigger-btn" type="button" data-filter-oshi-discover="1">一覧で全件見る →</button>
+            </div>
+            <div id="oshiHitsFeed" class="timeline-list"></div>
+          </div>
+        </div>
+
+        <!-- Sub-panel B: 🏷 マーク棚・予算 -->
+        <div id="oshiPaneShelf" class="oshi-subpane">
+          <div class="panel-card">
+            <h2 class="panel-heading">🏷 表紙・特典別マークコーナー＆マイ棚</h2>
+            <p class="panel-desc">
+              同じ雑誌でも<strong>どの表紙・どのストア特典</strong>かを個別に「🤔 検討中」「👀 買う予定」「🛒 予約済」「✅ 購入済」「🙅 買わない」で管理できます。
+            </p>
+            <div id="shelfCornerGrid" class="status-corner-grid"></div>
+            <div id="shelfStats" class="stats-row"></div>
+            <div id="shelfActionsBar" class="shelf-actions-bar"></div>
+            <div id="shelfBudgetPanel"></div>
+            <div id="shelfList" class="timeline-list"></div>
+          </div>
+        </div>
+
+        <!-- Sub-panel C: ➕ 新刊メモ & 💾 バックアップ・復元 -->
+        <div id="oshiPaneTools" class="oshi-subpane">
+          <div class="panel-card">
+            <h2 class="panel-heading">💾 推し設定＆マイ棚のバックアップ・スマホ引き継ぎ</h2>
+            <p class="panel-desc">
+              ログイン不要・端末内保存のため、機種変更やブラウザ履歴クリア前に<strong>1タップでJSONファイル保存</strong>しておくと、推しリスト・VIP枠・予約済み棚・月予算をいつでも復元できます。
+            </p>
+            <div class="backup-actions-row">
+              <button id="exportBackupBtn" class="primary-btn" type="button">💾 設定＆棚を保存 (.json)</button>
+              <label class="backup-import-label">
+                📂 バックアップから復元
+                <input id="importBackupInput" type="file" accept="application/json,.json" hidden />
+              </label>
+            </div>
+            <p id="backupStatusMsg" class="backup-status-msg" aria-live="polite"></p>
+          </div>
+
+          <div class="panel-card">
+            <h2 class="panel-heading">➕ 見つけた雑誌・写真集・カレンダー・R18をメモ登録</h2>
+            <p class="panel-desc">
+              Xやニュースで見つけた新刊をその場で追加できます（Amazon基本＋特典メモに書いたストアのみノイズゼロ登録）。
+            </p>
+            <form id="manualAddForm" class="form-grid">
+              <label class="field-label">
+                タイトル（必須）
+                <input id="addTitle" class="text-input" type="text" required placeholder="例：ヤングマガジン 2026年52号" />
+              </label>
+              <label class="field-label">
+                表紙・特典タレント
+                <input id="addTalent" class="text-input" type="text" placeholder="例：沢口愛華" />
+              </label>
+              <label class="field-label">
+                発売予定日
+                <input id="addDate" class="text-input" type="date" value="2026-12-01" />
+              </label>
+              <label class="field-label">
+                カテゴリ
+                <select id="addCategory" class="text-input">
+                  <option value="idol">アイドル専門誌</option>
+                  <option value="gravure">グラビア・ムック</option>
+                  <option value="weekly">週刊誌・コミック誌</option>
+                  <option value="fashion">女性誌・アイドル表紙</option>
+                  <option value="photobook">写真集</option>
+                  <option value="calendar">🗓 カレンダー</option>
+                  <option value="r18">🔞 アダルト・R18</option>
+                </select>
+              </label>
+              <label class="field-label">
+                特典・付録メモ
+                <input id="addBonus" class="text-input" type="text" placeholder="例：セブン限定ポストカード / 綴じ込みポスター" />
+              </label>
+              <label class="field-label">
+                定価（税込・円）
+                <input id="addPrice" class="text-input" type="number" min="0" step="10" value="1400" />
+              </label>
+              <div>
+                <button class="primary-btn" type="submit">ダッシュボードに追加</button>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
 
-      <!-- Tab 4: Cross-Store Search Launcher -->
+      <!-- Tab 5: Cross-Store Search Launcher -->
       <section id="tab-hub" class="tab-panel" aria-label="全ストア横断検索ハブ">
         <div class="panel-card">
           <h2 class="panel-heading">⚡ 全ストア特典・横断検索ハブ</h2>
@@ -263,8 +361,8 @@
           <span>3ヶ月予定</span>
         </button>
         <button class="nav-btn" data-tab="oshi" type="button">
-          <span class="nav-icon" aria-hidden="true">🏷</span>
-          <span>マーク・棚</span>
+          <span class="nav-icon" aria-hidden="true">💖</span>
+          <span>推し・棚</span>
         </button>
         <button class="nav-btn" data-tab="hub" type="button">
           <span class="nav-icon" aria-hidden="true">⚡</span>

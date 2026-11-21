@@ -4141,3 +4141,433 @@ body.privacy-blur-r18 .is-r18-media::after {
   margin-top: 2px;
 }
 
+/* =========================================================
+   v0.8 Oshi Corner, 1-Tap Popular Talent Palette, VIP & Boost
+   ========================================================= */
+.toggle-oshi-pill {
+  background: #fdf2f8;
+  border: 1px solid #f9a8d4;
+  color: #be185d;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.oshi-subnav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 12px;
+  background: var(--surface);
+  padding: 5px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.oshi-subnav-btn {
+  border: none;
+  background: transparent;
+  color: var(--ink-secondary);
+  font-size: 11px;
+  font-weight: 900;
+  padding: 9px 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.oshi-subnav-btn.active {
+  background: linear-gradient(135deg, #e11d48, #be185d);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(225, 29, 72, 0.28);
+}
+
+.oshi-subpane {
+  display: none;
+}
+
+.oshi-subpane.active {
+  display: block;
+}
+
+.oshi-hero-card {
+  background: linear-gradient(180deg, #fff1f5 0%, #ffffff 42%);
+  border-color: #fbcfe8;
+}
+
+.oshi-jump-discover-btn {
+  border: 1px solid #f472b6;
+  background: #ffffff;
+  color: #be185d;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.oshi-jump-discover-btn:hover {
+  background: #be185d;
+  color: #ffffff;
+}
+
+.oshi-boost-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 9px 10px;
+  margin-bottom: 12px;
+}
+
+.oshi-boost-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.oshi-boost-title {
+  font-size: 11px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.oshi-boost-segment {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.oshi-boost-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink-secondary);
+  border-radius: 10px;
+  padding: 7px 6px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.14s ease;
+}
+
+.oshi-boost-btn.active {
+  background: linear-gradient(135deg, #be185d, #e11d48);
+  color: #ffffff;
+  border-color: #be185d;
+  box-shadow: 0 2px 6px rgba(190, 24, 93, 0.25);
+}
+
+.oshi-registered-section {
+  margin-bottom: 11px;
+}
+
+.oshi-section-mini-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--ink-secondary);
+  margin-bottom: 6px;
+}
+
+.oshi-tag.is-vip-tag {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e;
+  border: 1px solid #f59e0b;
+}
+
+.oshi-tag-vip-btn {
+  border: none;
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 900;
+  cursor: pointer;
+  color: #92400e;
+}
+
+.oshi-tag-vip-btn.active {
+  background: #f59e0b;
+  color: #ffffff;
+}
+
+.oshi-custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+@media (min-width: 560px) {
+  .oshi-custom-form {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.oshi-custom-btns {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.vip-add-btn {
+  border: 1px solid #d97706;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 9px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.vip-add-btn:hover {
+  opacity: 0.92;
+}
+
+/* 1-Tap Popular Talent Registration Palette */
+.palette-search-row {
+  margin: 8px 0 10px;
+}
+
+.talent-palette-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+@media (min-width: 560px) {
+  .talent-palette-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 820px) {
+  .talent-palette-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.talent-pick-item {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--bg);
+  overflow: hidden;
+  transition: border-color 0.14s ease, background-color 0.14s ease;
+}
+
+.talent-pick-item.is-oshi {
+  border-color: #f472b6;
+  background: #fdf2f8;
+}
+
+.talent-pick-item.is-vip {
+  border-color: #f59e0b;
+  background: linear-gradient(135deg, #fffbeb, #fdf2f8);
+  box-shadow: 0 1px 4px rgba(245, 158, 11, 0.2);
+}
+
+.talent-pick-main {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  padding: 7px 7px 7px 9px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.talent-pick-name {
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.talent-pick-item.is-oshi .talent-pick-name {
+  color: #be185d;
+}
+
+.talent-pick-sub {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.talent-pick-count {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.talent-pick-vip-btn {
+  width: 32px;
+  flex-shrink: 0;
+  border: none;
+  border-left: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a8a29e;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.talent-pick-vip-btn:hover {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.talent-pick-vip-btn.active {
+  background: #f59e0b;
+  color: #ffffff;
+  border-left-color: #f59e0b;
+}
+
+/* Urgent Radar Inline Boost & Oshi Shortcut Bar */
+.urgent-boost-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 8px 0 6px;
+  margin-bottom: 6px;
+  border-top: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--border);
+}
+
+.urgent-boost-pills {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.urgent-boost-mini {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--ink-secondary);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.urgent-boost-mini.active {
+  background: #be185d;
+  color: #ffffff;
+  border-color: #be185d;
+}
+
+/* Detail Sheet 1-Tap Talent Oshi/VIP Quick Row */
+.sheet-talent-oshi-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.sheet-talent-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  overflow: hidden;
+  font-size: 11px;
+}
+
+.sheet-talent-pill.is-oshi {
+  border-color: #f472b6;
+  background: #fdf2f8;
+}
+
+.sheet-talent-pill.is-vip {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.sheet-talent-pill-btn {
+  border: none;
+  background: transparent;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.sheet-talent-pill.is-oshi .sheet-talent-pill-btn {
+  color: #be185d;
+}
+
+.sheet-talent-vip-btn {
+  border: none;
+  border-left: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 4px 7px;
+  font-size: 11px;
+  cursor: pointer;
+  color: #a8a29e;
+}
+
+.sheet-talent-vip-btn.active {
+  background: #f59e0b;
+  color: #ffffff;
+}
+
+/* Backup / Restore Controls */
+.backup-actions-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.backup-import-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 9px 13px;
+  border-radius: 10px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.backup-import-label:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.backup-status-msg {
+  margin: 8px 0 0;
+  font-size: 11px;
+  font-weight: 800;
+  color: #047857;
+  min-height: 16px;
+}
+
+

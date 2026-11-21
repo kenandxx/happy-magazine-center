@@ -3997,6 +3997,10 @@ function renderAutoSourcesStatus() {
 
   const src = state.autoSources || {
     prtimesPublishers: 15,
+    hanmotoPublishers: 10,
+    sevenNetLive: true,
+    hmvRssLive: true,
+    bltWebRssLive: true,
     rakutenApiConnected: false,
     lastRunAt: state.lastAutoCheckedAt || '',
     lastRunSummary: '',
@@ -4005,9 +4009,9 @@ function renderAutoSourcesStatus() {
 
   if (pill) {
     pill.textContent = src.rakutenApiConnected
-      ? '✅ PR TIMES 15社＋楽天API稼働中'
-      : 'PR TIMES 15社稼働中 / 楽天API未設定';
-    pill.classList.toggle('is-connected', Boolean(src.rakutenApiConnected));
+      ? '✅ 5系統＋楽天APIフル稼働中'
+      : '✅ キー不要5系統フル稼働中';
+    pill.classList.add('is-connected');
   }
 
   if (box) {
@@ -4017,24 +4021,38 @@ function renderAutoSourcesStatus() {
         <span class="auto-source-dot is-on"></span>
         <div>
           <strong>PR TIMES 公式RSS（主要${src.prtimesPublishers || 15}出版社）</strong>
-          <span>稼働中 ・ 現在 🆕自動発見 <strong>${autoCount}作品</strong> 収録（最終チェック: ${escapeHtml(checked)}）</span>
+          <span>稼働中 ・ プレスリリース本文から発売日・書影・各ストア限定特典を自動抽出</span>
         </div>
       </div>
       <div class="auto-source-row">
         <span class="auto-source-dot is-on"></span>
         <div>
-          <strong>openBD ライブ書誌取得（amzn.asia自動展開 / /dp/ URL / ISBN）</strong>
-          <span>稼働中 ・ ブラウザ直結で書影・定価・早め予約スコアを即判定</span>
+          <strong>版元ドットコム近刊RSS（${src.hanmotoPublishers || 10}主要写真集・🔞R18版元）＋ openBD</strong>
+          <span>稼働中 ・ 彩文館・ジーウォーク・ジーオーティー・双葉社・竹書房・講談社・集英社等の近刊ISBN＆書影を自動収集</span>
+        </div>
+      </div>
+      <div class="auto-source-row">
+        <span class="auto-source-dot is-on"></span>
+        <div>
+          <strong>セブンネット公式ライブ巡回（限定表紙・直筆サイン本・ポストカード）</strong>
+          <span>稼働中 ・ 既存雑誌への新規特典追加＆サイン本などの新刊を自動キャッチ</span>
+        </div>
+      </div>
+      <div class="auto-source-row">
+        <span class="auto-source-dot is-on"></span>
+        <div>
+          <strong>HMV&BOOKS 公式RSS ＋ B.L.T.web 公式RSS ＋ スマホ共有（amzn.asia自動展開）</strong>
+          <span>稼働中 ・ 現在 🆕自動発見 <strong>${autoCount}作品</strong> 収録（最終チェック: ${escapeHtml(checked)}）</span>
         </div>
       </div>
       <div class="auto-source-row">
         <span class="auto-source-dot ${src.rakutenApiConnected ? 'is-on' : 'is-optional'}"></span>
         <div>
-          <strong>楽天ブックスAPI（16主要誌・写真集・🔞R18・2027カレンダー・限定特典）</strong>
+          <strong>楽天ブックスAPI（任意・2026 OpenAPI対応済）</strong>
           <span>${
             src.rakutenApiConnected
-              ? '✅ 連携稼働中！毎朝07:00に楽天ブックス新刊＆限定特典を自動流入'
-              : '🔑 未設定（下の無料3ステップで RAKUTEN_APP_ID を入れるだけで自動有効化）'
+              ? '✅ 連携稼働中！毎朝07:00に楽天ブックス新刊＆限定特典を追加流入'
+              : '🔑 任意（未設定でも上の5系統が毎朝07:00に全自動稼働します）'
           }</span>
         </div>
       </div>
@@ -5039,8 +5057,8 @@ async function init() {
     if (autoEl && state.lastAutoCheckedAt) {
       const checkedLabel = state.lastAutoCheckedAt.slice(0, 16).replace('T', ' ');
       const sourceLabel = state.autoSources?.rakutenApiConnected
-        ? '15出版社PR TIMES＋楽天API＋openBD'
-        : '15出版社PR TIMES＋openBD';
+        ? 'PR TIMES 15社＋版元10社＋7net＋HMV＋B.L.T.web＋楽天API'
+        : 'PR TIMES 15社＋版元10社＋7net＋HMV＋B.L.T.web';
       autoEl.textContent = `🤖 ${sourceLabel} 自動収集（最終チェック: ${checkedLabel}）`;
     }
   } catch (err) {

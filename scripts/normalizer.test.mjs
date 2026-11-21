@@ -623,6 +623,133 @@ test('rakuten-ingestor normalizes Rakuten Books dates/images, filters noise, and
   assert.deepEqual(check.errors, []);
 });
 
+test('multisite-ingestor parses Hanmoto RSS, 7net JSON-LD, HMV RSS, and B.L.T.web RSS while enforcing noise-free policy', async () => {
+  const {
+    HANMOTO_PUBLISHER_FEEDS,
+    buildHanmotoRssUrl,
+    parseHanmotoRssXml,
+    isRelevantHanmotoBook,
+    buildCatalogItemFromHanmoto,
+    isRelevantSevenNetListing,
+    parseSevenNetSearchHtml,
+    parseSevenNetProductHtml,
+    parseHmvRssXml,
+    parseBltWebRssXml,
+  } = await import('./multisite-ingestor.mjs');
+  const { validateCatalogStructure } = await import('./validate-catalog.mjs');
+
+  assert.equal(HANMOTO_PUBLISHER_FEEDS.length, 10);
+  const hmUrl = buildHanmotoRssUrl({
+    queryPub: 'ジーウォーク',
+    fromDate: '2026-11-01',
+    toDate: '2027-03-31',
+  });
+  assert.ok(hmUrl.includes('/title/%E5%86%99%E7%9C%9F%E9%9B%86/publisher/'));
+  assert.ok(hmUrl.endsWith('/vw/rss20'));
+
+  const hmXml = `
+    <rss><channel>
+      <item>
+        <title><![CDATA[夕季ちとせ写真集 - 篠原 潔(写真) | ジーウォーク]]></title>
+        <pubDate>Tue, 26 Jan 2027 00:00:00 +0900</pubDate>
+        <link>https://www.hanmoto.com/bd/isbn/9784868491293</link>
+        <description><![CDATA[発売予定日　2027年1月26日　夕季ちとせ写真集　（ジーウォーク）]]></description>
+      </item>
+    </channel></rss>
+  `;
+  const hmParsed = parseHanmotoRssXml(hmXml);
+  assert.equal(hmParsed.length, 1);
+  assert.equal(hmParsed[0].isbn, '9784868491293');
+  assert.equal(hmParsed[0].cleanTitle, '夕季ちとせ写真集');
+  assert.equal(hmParsed[0].releaseDate, '2027-01-26');
+
+  assert.equal(
+    isRelevantHanmotoBook({ title: '白上咲花 写真集（仮）', description: '' }, { r18Publisher: false }),
+    true
+  );
+  assert.equal(
+    isRelevantHanmotoBook({ title: '中務裕太ファースト写真集', description: '' }, { r18Publisher: false }),
+    false
+  );
+  assert.equal(
+    isRelevantHanmotoBook({ title: 'タイトル未定', description: '' }, { r18Publisher: false }),
+    false
+  );
+
+  const hmItem = buildCatalogItemFromHanmoto({
+    book: {
+      isbn: '9784868491293',
+      title: '夕季ちとせ写真集',
+      talent: '夕季ちとせ',
+      publisher: 'ジーウォーク',
+      releaseDate: '2027-01-26',
+      price: 4180,
+      description: 'ジーウォーク近刊R18写真集',
+    },
+    r18Publisher: true,
+    verifiedCover: '',
+    dateStr: '2026-11-21',
+  });
+  assert.equal(hmItem.category, 'r18');
+  assert.equal(hmItem.releaseDate, '2027-01-26');
+  assert.equal(hmItem.offers.length, 1);
+  assert.equal(hmItem.offers[0].store, 'amazon');
+  assert.equal(hmItem.offers[0].url, 'https://www.amazon.co.jp/dp/4868491296');
+
+  assert.equal(
+    isRelevantSevenNetListing('BUBKA 2027年1月号 セブンネット限定表紙版「AKB48 佐藤綺星ver.」'),
+    true
+  );
+  assert.equal(
+    isRelevantSevenNetListing('JO1 佐藤景瑚写真集【セブンネット限定表紙】'),
+    false
+  );
+  const snSearchHtml = `
+    <a href="/detail/1107790672.html">BUBKA 2027年1月号 セブンネット限定表紙版「AKB48 佐藤綺星ver.」【セブンネット限定特典：佐藤綺星 ポストカードＡ 1枚付き】</a>
+    <a href="/detail/1107799999.html">人気男性俳優 写真集【セブンネット限定表紙】</a>
+  `;
+  const snStubs = parseSevenNetSearchHtml(snSearchHtml);
+  assert.equal(snStubs.length, 1);
+  assert.equal(snStubs[0].sku, '1107790672');
+
+  const snDetailHtml = `
+    <html><head>
+      <script type="application/ld+json">{
+        "@context":"https://schema.org",
+        "@type":"Product",
+        "name":"BUBKA 2027年1月号 セブンネット限定表紙版「AKB48 佐藤綺星ver.」【セブンネット限定特典：佐藤綺星 ポストカードＡ 1枚付き】",
+        "sku":"1107790672",
+        "image":["https://7net.omni7.jp/dw/image/v2/BLHS_PRD/test/1107790672.jpg?sw=1150"],
+        "offers":{"@type":"Offer","price":1400.3}
+      }</script>
+    </head><body><p>発売日 2026年11月30日</p></body></html>
+  `;
+  const snProd = parseSevenNetProductHtml(snDetailHtml, 'https://7net.omni7.jp/detail/1107790672.html');
+  assert.equal(snProd.price, 1400);
+  assert.equal(snProd.releaseDate, '2026-11-30');
+  assert.equal(snProd.category, 'idol');
+  assert.equal(snProd.edition, 'セブンネット限定表紙＋特典');
+  assert.ok(snProd.bonusTypes.includes('cover'));
+  assert.ok(snProd.bonusTypes.includes('postcard'));
+
+  const hmvXml = `<rss><channel>
+    <item><title>沢口愛華 3rd写真集 HMV限定カバー版発売！</title><link>https://www.hmv.co.jp/news/article/261121001/</link></item>
+    <item><title>JO1 メンバーソロ写真集発売</title><link>https://www.hmv.co.jp/news/article/261121002/</link></item>
+  </channel></rss>`;
+  assert.equal(parseHmvRssXml(hmXml).length, 1);
+
+  const bltXml = `<rss><channel>
+    <item><title>B.L.T.2027年1月号の表紙が解禁！乃木坂46 6期生が登場</title><link>https://bltweb.jp/2026/11/21/blt/</link></item>
+    <item><title>【デジタル写真集】サンプルグラビア配信開始</title><link>https://bltweb.jp/2026/11/21/dig/</link></item>
+  </channel></rss>`;
+  const bltItems = parseBltWebRssXml(bltXml);
+  assert.equal(bltItems.length, 1);
+
+  const check = validateCatalogStructure({ items: [hmItem] });
+  assert.equal(check.nonAmazonNonBonus, 0);
+  assert.deepEqual(check.errors, []);
+});
+
 
 
 

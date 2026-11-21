@@ -12,6 +12,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isbn13To10 } from '../src/isbn-lookup.js';
+import {
+  HANMOTO_PUBLISHER_FEEDS,
+  buildCatalogItemFromHanmoto,
+  fetchBltWebRssArticles,
+  fetchHanmotoPhotobookCandidates,
+  fetchHmvBooksRssCandidates,
+  fetchSevenNetExclusiveCandidates,
+} from './multisite-ingestor.mjs';
 import { filterOffersByPolicy, groupStoreOffers, normalizeIssueKey } from './normalizer.mjs';
 import {
   PRTIMES_PUBLISHER_FEEDS,
@@ -175,6 +183,9 @@ async function runDailyCatalogUpdate() {
   let addedPressArticles = 0;
   let addedBonusOffers = 0;
   let addedPrItems = 0;
+  let addedHanmotoItems = 0;
+  let addedSevenNetItems = 0;
+  let addedSevenNetOffers = 0;
   let addedRakutenItems = 0;
 
   // 1) Sweep 15 publishers' public PR TIMES RSS feeds (no login required)
@@ -184,23 +195,89 @@ async function runDailyCatalogUpdate() {
   );
 
   const existingUrls = new Set();
+  const existingOfferUrls = new Set();
   const existingKeys = new Set();
   const existingIsbns = new Set();
   const existingImages = new Set();
-  for (const item of catalog.items || []) {
+  const existingTalentCategory = new Set();
+  const existingPhotobookTalents = new Map();
+
+  const normalizeTalentToken = (t) =>
+    String(t || '')
+      .replace(/（.*?）|\(.*?\)/g, '')
+      .replace(/\s+/g, '')
+      .trim();
+
+  const registerItemForDedup = (item) => {
     existingKeys.add(normalizeIssueKey(item.title));
     if (item.isbn) existingIsbns.add(String(item.isbn).replace(/[^0-9]/g, ''));
+    const rawStr = JSON.stringify(item);
+    for (const m of rawStr.matchAll(/9784\d{9}/g)) {
+      existingIsbns.add(m[0]);
+    }
     if (item.coverImageUrl) existingImages.add(item.coverImageUrl);
-    for (const a of item.pressArticles || []) existingUrls.add(a.url);
+    for (const a of item.pressArticles || []) {
+      if (a.url) existingUrls.add(a.url);
+    }
+    for (const o of item.offers || []) {
+      if (o.url) existingOfferUrls.add(o.url);
+      if (o.imageUrl) existingImages.add(o.imageUrl);
+    }
+    for (const t of item.coverTalents || []) {
+      const cleanT = normalizeTalentToken(t);
+      if (cleanT.length >= 2 && (item.category === 'photobook' || item.category === 'r18' || item.category === 'calendar')) {
+        existingTalentCategory.add(`${cleanT}::${item.releaseDate?.slice(0, 7) || ''}`);
+        if (!existingPhotobookTalents.has(cleanT)) {
+          existingPhotobookTalents.set(cleanT, item);
+        }
+      }
+    }
+  };
+
+  const findExistingItemByTalentOrMagazine = (text, releaseDate = '', category = '') => {
+    const cleanText = String(text || '').replace(/\s+/g, '');
+    // 1. Direct photobook/calendar/r18 talent match
+    if (!category || category === 'photobook' || category === 'r18' || category === 'calendar') {
+      for (const [talent, item] of existingPhotobookTalents.entries()) {
+        if (talent.length >= 2 && cleanText.includes(talent)) {
+          const sameKind =
+            (category === 'calendar') === (item.category === 'calendar');
+          if (sameKind) return item;
+        }
+      }
+    }
+    // 2. Magazine series + releaseDate within ±6 days
+    const magMatch = cleanText.match(
+      /(CanCam|FLASH|FRIDAY|B\.L\.T\.|BUBKA|BOMB|アップトゥボーイ|EX大衆|BRODY|週プレ|週刊プレイボーイ|ヤングマガジン|ヤングジャンプ|チャンピオン|スピリッツ)/i
+    );
+    if (magMatch && releaseDate) {
+      const magToken = magMatch[1].toLowerCase();
+      const targetTs = Date.parse(releaseDate);
+      if (!Number.isNaN(targetTs)) {
+        const hit = (catalog.items || []).find((it) => {
+          if (!String(it.title || '').toLowerCase().includes(magToken)) return false;
+          const itTs = Date.parse(it.releaseDate || '');
+          return !Number.isNaN(itTs) && Math.abs(itTs - targetTs) <= 6 * 86400000;
+        });
+        if (hit) return hit;
+      }
+    }
+    return null;
+  };
+
+  for (const item of catalog.items || []) {
+    registerItemForDedup(item);
   }
 
   for (const pr of prItems) {
     if (existingUrls.has(pr.url)) continue;
 
-    // Attach to existing tracked item if issueKey matches
-    const matchedItem = (catalog.items || []).find(
-      (it) => normalizeIssueKey(it.title) === pr.issueKey && pr.issueKey.length >= 4
-    );
+    // Attach to existing tracked item if issueKey or tracked talent matches
+    const matchedItem =
+      (catalog.items || []).find(
+        (it) => normalizeIssueKey(it.title) === pr.issueKey && pr.issueKey.length >= 4
+      ) || findExistingItemByTalentOrMagazine(pr.title, pr.pubDate);
+
     if (matchedItem) {
       matchedItem.pressArticles = matchedItem.pressArticles || [];
       matchedItem.pressArticles.unshift({
@@ -214,9 +291,9 @@ async function runDailyCatalogUpdate() {
       continue;
     }
 
-    // Auto-discover brand-new photobook / calendar / magazine releases (cap 8 per run)
-    if (addedPrItems >= 8) continue;
-    if (!/(写真集|カレンダー|グラビア|表紙)/.test(pr.title)) continue;
+    // Auto-discover brand-new photobook / calendar / magazine releases (cap 6 per run)
+    if (addedPrItems >= 6) continue;
+    if (!/(写真集|カレンダー)/.test(pr.title)) continue;
 
     try {
       const artRes = await fetch(pr.url, {
@@ -227,6 +304,24 @@ async function runDailyCatalogUpdate() {
       const html = await artRes.text();
       const parsed = parsePrTimesArticleHtml(html, pr);
       if (!parsed.releaseDate || !parsed.title) continue;
+      if (parsed.title.length < 4 || (/！/.test(parsed.title) && parsed.title.length > 36)) continue;
+
+      // Double-check against existing items after extracting full releaseDate & ISBN
+      const matchedAfterParse =
+        (parsed.isbn && (catalog.items || []).find((i) => i.isbn === parsed.isbn)) ||
+        findExistingItemByTalentOrMagazine(`${parsed.title} ${parsed.headline}`, parsed.releaseDate, parsed.category);
+      if (matchedAfterParse) {
+        matchedAfterParse.pressArticles = matchedAfterParse.pressArticles || [];
+        matchedAfterParse.pressArticles.unshift({
+          title: pr.title,
+          source: `PR TIMES（${pr.publisher}）`,
+          url: pr.url,
+          photoCountHint: '自動検出プレスリリース',
+        });
+        existingUrls.add(pr.url);
+        addedPressArticles += 1;
+        continue;
+      }
 
       const newKey = normalizeIssueKey(parsed.title);
       if (existingKeys.has(newKey)) continue;
@@ -323,16 +418,283 @@ async function runDailyCatalogUpdate() {
       };
 
       catalog.items.unshift(newItem);
-      existingKeys.add(newKey);
-      if (parsed.isbn) existingIsbns.add(parsed.isbn);
-      existingUrls.add(pr.url);
+      registerItemForDedup(newItem);
       addedPrItems += 1;
     } catch {
       // Skip transient article errors
     }
   }
 
-  // 2) If RAKUTEN_APP_ID is configured, sweep Rakuten Books API (2026 OpenAPI: 16 magazines + Photobooks + R18 + Calendars + Exclusive Bonuses)
+  // 2) Hanmoto.com (版元ドットコム) 10 major photobook & R18 publishers' upcoming RSS + openBD batch (no login / no API key)
+  try {
+    const hanmotoCandidates = await fetchHanmotoPhotobookCandidates({
+      fromDate: '2026-10-15',
+      toDate: '2027-03-31',
+      todayStr: dateStr,
+    });
+    console.log(
+      `[collect:update] Hanmoto 10-publisher RSS + openBD -> ${hanmotoCandidates.length} relevant photobook/R18 candidate(s)`
+    );
+
+    for (const { book, r18Publisher } of hanmotoCandidates) {
+      if (addedHanmotoItems >= 18) break;
+      const cleanIsbn = String(book.isbn || '').replace(/[^0-9]/g, '');
+      if (!cleanIsbn || existingIsbns.has(cleanIsbn)) continue;
+      const newKey = normalizeIssueKey(book.title);
+      if (existingKeys.has(newKey)) continue;
+
+      const cleanTalent = normalizeTalentToken(book.talent || '');
+      const monthKey = (book.releaseDate || dateStr).slice(0, 7);
+      if (
+        cleanTalent.length >= 2 &&
+        (existingTalentCategory.has(`${cleanTalent}::${monthKey}`) ||
+          existingPhotobookTalents.has(cleanTalent))
+      ) {
+        continue;
+      }
+
+      let verifiedCover = '';
+      if (book.coverImageUrl && !existingImages.has(book.coverImageUrl)) {
+        const check = await verifyImageUrl(book.coverImageUrl);
+        if (check.ok) {
+          verifiedCover = book.coverImageUrl;
+          existingImages.add(verifiedCover);
+        }
+      }
+
+      const createdItem = buildCatalogItemFromHanmoto({
+        book,
+        r18Publisher,
+        verifiedCover,
+        dateStr,
+      });
+      if (!createdItem) continue;
+      if ((catalog.items || []).some((i) => i.id === createdItem.id)) continue;
+
+      catalog.items.unshift(createdItem);
+      registerItemForDedup(createdItem);
+      addedHanmotoItems += 1;
+    }
+  } catch (err) {
+    console.warn('[collect:update] Hanmoto sweep warning:', err?.message || err);
+  }
+
+  // 3) 7net (セブンネット) live search + Schema.org JSON-LD exclusive covers / signed books / postcards (no login / no API key)
+  try {
+    const sevenNetItems = await fetchSevenNetExclusiveCandidates({ maxDetailFetches: 14 });
+    console.log(
+      `[collect:update] 7net live exclusive bonus sweep -> ${sevenNetItems.length} detailed listing(s)`
+    );
+
+    for (const sn of sevenNetItems) {
+      if (!sn.url || existingOfferUrls.has(sn.url)) continue;
+
+      // Check if it attaches to an existing tracked magazine/photobook
+      const matchedItem =
+        (catalog.items || []).find((it) => {
+          if (sn.isbn && it.isbn && sn.isbn === it.isbn) return true;
+          return sn.issueKey && sn.issueKey.length >= 4 && normalizeIssueKey(it.title) === sn.issueKey;
+        }) ||
+        findExistingItemByTalentOrMagazine(sn.cleanBaseTitle, sn.releaseDate, sn.category);
+
+      let verifiedImg = '';
+      if (sn.imageUrl && !existingImages.has(sn.imageUrl)) {
+        const check = await verifyImageUrl(sn.imageUrl);
+        if (check.ok) {
+          verifiedImg = sn.imageUrl;
+          existingImages.add(verifiedImg);
+        }
+      }
+
+      if (matchedItem) {
+        const offerId = `${matchedItem.id}-7net-${sn.sku || Date.now()}`;
+        if ((matchedItem.offers || []).some((o) => o.id === offerId || o.url === sn.url)) continue;
+        matchedItem.offers = matchedItem.offers || [];
+        matchedItem.offers.unshift({
+          id: offerId,
+          store: '7net',
+          hasStoreExclusiveBonus: true,
+          edition: sn.edition,
+          bonusTypes: sn.bonusTypes,
+          bonusText: sn.bonusText,
+          talent: (matchedItem.coverTalents || [])[0] || '',
+          price: Math.round(sn.price || matchedItem.price),
+          status: sn.releaseDate && sn.releaseDate > dateStr ? 'preorder' : 'available',
+          artworkStatus: verifiedImg ? 'revealed' : 'pending',
+          ...(verifiedImg ? { imageUrl: verifiedImg } : {}),
+          url: sn.url,
+        });
+        existingOfferUrls.add(sn.url);
+        addedSevenNetOffers += 1;
+        addedBonusOffers += 1;
+        continue;
+      }
+
+      // Brand-new 7net exclusive title (e.g. signed photobook or new limited-cover release)
+      if (addedSevenNetItems >= 6) continue;
+      if (!sn.releaseDate || !sn.cleanBaseTitle) continue;
+      const newKey = normalizeIssueKey(sn.cleanBaseTitle);
+      if (existingKeys.has(newKey)) continue;
+      if (sn.isbn && existingIsbns.has(sn.isbn)) continue;
+
+      const itemId = `auto-7net-${sn.sku || Date.now()}`;
+      if ((catalog.items || []).some((i) => i.id === itemId)) continue;
+
+      const talent = sn.cleanBaseTitle.split(/写真集|カレンダー|『|「|\(|（|\s/)[0].trim() || '注目タレント';
+      const status = sn.releaseDate > dateStr ? 'preorder' : 'available';
+      const amazonUrl = buildAmazonUrlForBook(sn.isbn || sn.cleanBaseTitle, sn.cleanBaseTitle);
+      const isLimitedCover = sn.bonusTypes.includes('cover');
+
+      const offers = filterOffersByPolicy([
+        {
+          id: `${itemId}-7net`,
+          store: '7net',
+          hasStoreExclusiveBonus: true,
+          edition: sn.edition,
+          bonusTypes: sn.bonusTypes,
+          bonusText: sn.bonusText,
+          talent,
+          price: sn.price,
+          status,
+          artworkStatus: verifiedImg ? 'revealed' : 'pending',
+          ...(verifiedImg ? { imageUrl: verifiedImg } : {}),
+          url: sn.url,
+        },
+        {
+          id: `${itemId}-amazon`,
+          store: 'amazon',
+          hasStoreExclusiveBonus: false,
+          edition: 'Amazon 通常版',
+          bonusTypes: ['standard'],
+          bonusText: sn.isbn
+            ? `Amazonで確認（ISBN ${sn.isbn}）`
+            : `Amazonで「${sn.cleanBaseTitle}」を確認`,
+          talent,
+          price: sn.price,
+          status,
+          artworkStatus: 'pending',
+          url: amazonUrl,
+        },
+      ]);
+
+      const newItem = {
+        id: itemId,
+        ...(sn.isbn ? { isbn: sn.isbn } : {}),
+        title: sn.cleanBaseTitle,
+        series: 'セブンネット限定発見',
+        issueLabel: '7net自動発見',
+        publisher: 'セブンネット掲載',
+        category: sn.category,
+        releaseDate: sn.releaseDate,
+        price: sn.price,
+        coverTalents: [talent],
+        featuredTalents: [talent],
+        palette:
+          sn.category === 'r18'
+            ? ['#881337', '#BE123C', '#FFE4E6']
+            : ['#047857', '#10B981', '#ECFDF5'],
+        ...(verifiedImg && isLimitedCover ? { coverImageUrl: verifiedImg } : {}),
+        autoDiscovered: true,
+        discoveredAt: dateStr,
+        discoveredSource: '7net',
+        includedBonuses: [],
+        printOnlyNote: 'セブンネット公式検索より限定特典・サイン本を自動発見。基本購入先はAmazon＋限定特典ありストアのみ表示。',
+        summary: sn.title,
+        gallery: verifiedImg
+          ? [
+              {
+                url: verifiedImg,
+                caption: `${sn.edition}：${sn.bonusText}`,
+                source: 'セブンネット',
+                kind: isLimitedCover ? 'limited_cover' : 'bonus',
+                articleUrl: sn.url,
+              },
+            ]
+          : [],
+        pressArticles: [],
+        offers,
+      };
+
+      catalog.items.unshift(newItem);
+      registerItemForDedup(newItem);
+      addedSevenNetItems += 1;
+    }
+  } catch (err) {
+    console.warn('[collect:update] 7net sweep warning:', err?.message || err);
+  }
+
+  // 4) HMV&BOOKS official Shift_JIS RSS + B.L.T.web official RSS (no login / no API key)
+  try {
+    const [hmvItems, bltArticles] = await Promise.all([
+      fetchHmvBooksRssCandidates(),
+      fetchBltWebRssArticles(),
+    ]);
+    console.log(
+      `[collect:update] HMV RSS -> ${hmvItems.length} relevant hit(s); B.L.T.web RSS -> ${bltArticles.length} article(s)`
+    );
+
+    for (const hmv of hmvItems) {
+      if (existingUrls.has(hmv.url) || existingOfferUrls.has(hmv.url)) continue;
+      const matched = (catalog.items || []).find(
+        (it) => hmv.issueKey && hmv.issueKey.length >= 4 && normalizeIssueKey(it.title) === hmv.issueKey
+      );
+      if (!matched) continue;
+      if (hmv.hasHmvBonus) {
+        matched.offers = matched.offers || [];
+        matched.offers.unshift({
+          id: `${matched.id}-hmv-rss-${Date.now()}`,
+          store: 'hmv',
+          hasStoreExclusiveBonus: true,
+          edition: 'HMV&BOOKS限定特典',
+          bonusTypes: hmv.bonusTypes,
+          bonusText: hmv.title,
+          talent: (matched.coverTalents || [])[0] || '',
+          price: matched.price,
+          status: hmv.releaseDate && hmv.releaseDate > dateStr ? 'preorder' : 'available',
+          artworkStatus: 'pending',
+          url: hmv.url,
+        });
+        existingOfferUrls.add(hmv.url);
+        addedBonusOffers += 1;
+      } else {
+        matched.pressArticles = matched.pressArticles || [];
+        matched.pressArticles.unshift({
+          title: hmv.title,
+          source: 'HMV&BOOKS公式',
+          url: hmv.url,
+          photoCountHint: '公式特集・特典情報',
+        });
+        existingUrls.add(hmv.url);
+        addedPressArticles += 1;
+      }
+    }
+
+    for (const art of bltArticles) {
+      if (existingUrls.has(art.url)) continue;
+      const matched = (catalog.items || []).find((it) => {
+        if (!/B\.L\.T\.|blt\s*graph|BLT/i.test(it.title)) return false;
+        const talentHit = (it.coverTalents || []).some((t) => {
+          const clean = String(t || '').replace(/（.*?）|\(.*?\)/g, '').trim();
+          return clean.length >= 2 && art.title.includes(clean);
+        });
+        return talentHit || (art.issueKey && normalizeIssueKey(it.title) === art.issueKey);
+      });
+      if (!matched) continue;
+      matched.pressArticles = matched.pressArticles || [];
+      matched.pressArticles.unshift({
+        title: art.title,
+        source: 'B.L.T.web公式',
+        url: art.url,
+        photoCountHint: '編集部公式カット・解禁記事',
+      });
+      existingUrls.add(art.url);
+      addedPressArticles += 1;
+    }
+  } catch (err) {
+    console.warn('[collect:update] HMV/B.L.T.web RSS warning:', err?.message || err);
+  }
+
+  // 5) Optional Rakuten Books API (2026 OpenAPI: activated whenever RAKUTEN_APP_ID + RAKUTEN_ACCESS_KEY are set)
   const rakutenReady = Boolean(appId && accessKey);
   if (appId) {
     console.log(
@@ -415,12 +777,12 @@ async function runDailyCatalogUpdate() {
 
       catalog.items.unshift(createdItem);
       itemByKey.set(g.groupKey, createdItem);
-      if (cleanIsbn) existingIsbns.add(cleanIsbn);
+      registerItemForDedup(createdItem);
       addedRakutenItems += 1;
     }
   } else {
     console.log(
-      '[collect:update] RAKUTEN_APP_ID not set — ran 15-publisher public PR TIMES auto-discovery.'
+      '[collect:update] RAKUTEN_APP_ID not set — ran full zero-key multi-site sweep (PR TIMES 15社 + 版元ドットコム10社 + セブンネット + HMV + B.L.T.web).'
     );
   }
 
@@ -429,17 +791,21 @@ async function runDailyCatalogUpdate() {
     item.offers = filterOffersByPolicy(item.offers || []);
   }
 
-  const totalNewItems = addedPrItems + addedRakutenItems;
+  const totalNewItems = addedPrItems + addedHanmotoItems + addedSevenNetItems + addedRakutenItems;
   catalog.referenceDate = dateStr;
   catalog.lastAutoCheckedAt = timestampJst;
   catalog.autoSources = {
     prtimesPublishers: PRTIMES_PUBLISHER_FEEDS.length,
+    hanmotoPublishers: HANMOTO_PUBLISHER_FEEDS.length,
+    sevenNetLive: true,
+    hmvRssLive: true,
+    bltWebRssLive: true,
     rakutenApiConnected: Boolean(appId),
     rakutenOpenApi2026: rakutenReady,
     lastRunAt: timestampJst,
-    lastRunSummary: appId
-      ? `15出版社PR TIMES (+${addedPrItems}) ＋ 楽天ブックスAPI (+${addedRakutenItems}作品 / +${addedBonusOffers}特典)`
-      : `15出版社PR TIMES自動巡回 (+${addedPrItems}作品 / +${addedPressArticles}記事) ※楽天API未設定`,
+    lastRunSummary: `PR TIMES 15社(+${addedPrItems}) / 版元ドットコム10社(+${addedHanmotoItems}) / 7net(+${addedSevenNetItems}作品・+${addedSevenNetOffers}特典) / HMV・BLT(+${addedPressArticles}記事)${
+      appId ? ` / 楽天API(+${addedRakutenItems})` : ''
+    }`,
   };
   if (addedPressArticles > 0 || addedBonusOffers > 0 || totalNewItems > 0) {
     catalog.updatedAt = timestampJst;
@@ -453,19 +819,20 @@ async function runDailyCatalogUpdate() {
 
   fs.writeFileSync(CATALOG_PATH, `${JSON.stringify(catalog, null, 2)}\n`, 'utf8');
   console.log(
-    `[collect:update] Done! referenceDate=${dateStr}, +${totalNewItems} new items (PR:${addedPrItems}, Rakuten:${addedRakutenItems}), +${addedPressArticles} press, +${addedBonusOffers} bonus offers, nonAmazonNonBonus=${report.nonAmazonNonBonus}`
+    `[collect:update] Done! referenceDate=${dateStr}, +${totalNewItems} new items (PR:${addedPrItems}, Hanmoto:${addedHanmotoItems}, 7net:${addedSevenNetItems}, Rakuten:${addedRakutenItems}), +${addedBonusOffers} bonus offers (7net:${addedSevenNetOffers}), +${addedPressArticles} press, nonAmazonNonBonus=${report.nonAmazonNonBonus}`
   );
 
   writeGitHubStepSummary([
     '## 🤖 Happy Magazine Center Daily Auto-Update Summary',
     `- **基準日 (JST)**: \`${dateStr}\``,
-    `- **PR TIMES 15出版社自動巡回**: +${addedPrItems} 新刊 / +${addedPressArticles} プレスリリース`,
+    `- **PR TIMES 15出版社**: +${addedPrItems} 新刊`,
+    `- **版元ドットコム 10主要写真集・R18版元＋openBD**: +${addedHanmotoItems} 新刊`,
+    `- **セブンネット限定表紙・サイン本・特典**: +${addedSevenNetItems} 新刊 / +${addedSevenNetOffers} 限定特典追加`,
+    `- **HMV&BOOKS RSS ＋ B.L.T.web RSS**: +${addedPressArticles} 記事 / 合計 +${addedBonusOffers} 特典`,
     `- **楽天ブックスAPI (2026 OpenAPI)**: ${
       rakutenReady
-        ? `✅ 連携稼働中 (+${addedRakutenItems} 新刊 / +${addedBonusOffers} 限定特典)`
-        : appId
-          ? '⚠️ RAKUTEN_APP_ID のみ設定済（2026年版は RAKUTEN_ACCESS_KEY も必要です）'
-          : '🔑 未設定（GitHub Secrets に RAKUTEN_APP_ID と RAKUTEN_ACCESS_KEY を登録すると有効化）'
+        ? `✅ 連携稼働中 (+${addedRakutenItems} 新刊)`
+        : '🔑 未設定（無料・任意で後日追加可能）'
     }`,
     `- **カタログ総数**: **${report.totalItems} 作品** / **${report.totalOffers} オファー**（非Amazon無特典: **${report.nonAmazonNonBonus} 件**）`,
   ]);

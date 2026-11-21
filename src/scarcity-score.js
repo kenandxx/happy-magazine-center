@@ -119,6 +119,11 @@ export const POPULAR_TALENT_PRESETS = [
   { name: '井上もも', group: 'r18', tag: 'ポーズ集' },
   { name: '八掛うみ', group: 'r18', tag: 'カレンダー' },
   { name: '森日向子', group: 'r18', tag: 'カレンダー' },
+  { name: '白上咲花', group: 'r18', tag: '1月新刊' },
+  { name: '神宮寺ナオ', group: 'r18', tag: '写真集' },
+  { name: '向井藍', group: 'r18', tag: '写真集' },
+  { name: '夕季ちとせ', group: 'r18', tag: '1月新刊' },
+  { name: '小田さくら', group: 'idol', tag: '写真集' },
 
   // === 🎁 定番特典・注目ワード ===
   { name: '限定表紙', group: 'bonus', tag: '特典' },
@@ -209,6 +214,11 @@ export const TIER2_POPULAR_TALENTS = [
   '森日向子',
   '三好佑香',
   '虹村ゆみ',
+  '白上咲花',
+  '神宮寺ナオ',
+  '向井藍',
+  '夕季ちとせ',
+  '小田さくら',
 ];
 
 const GENERIC_OSHI_KEYWORDS = new Set([

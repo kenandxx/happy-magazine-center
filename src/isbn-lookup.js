@@ -261,7 +261,8 @@ function detectCategoryFromMetadata(title, publisher, description) {
 function extractTalentFromOpenBd(title, authorRaw) {
   // 1. Photobook / Calendar title often contains exact talent name right before "1st写真集" / "写真集" / "カレンダー"
   //    e.g. "ぴ〈ゅ〉あ : 尾崎由香1st写真集" -> "尾崎由香", "松井珠理奈写真集『アイヲシル』" -> "松井珠理奈"
-  const titleTalentMatch = String(title || '').match(
+  const normalizedTitle = String(title || '').normalize('NFKC');
+  const titleTalentMatch = normalizedTitle.match(
     /(?:^|[:：／/\s『「【])([^\s:：／/『』「」【】()（）]{2,14}?)\s*(?:1st|2nd|3rd|4th|5th|ファースト|セカンド|サード|最新|待望の|メモリアル|卒業|202\d年)?\s*(?:写真集|フォトブック|フォトエッセイ|スタイルブック|カレンダー)/i
   );
   if (titleTalentMatch && titleTalentMatch[1]) {

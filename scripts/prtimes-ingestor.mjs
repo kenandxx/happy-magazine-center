@@ -32,7 +32,7 @@ const POSITIVE_SIGNAL_RE =
   /(写真集|グラビア|水着|ランジェリー|ビキニ|B\.L\.T\.|blt\s*graph|BLTISM|BLT\s*MONSTER|BOMB|ボム|BUBKA|BRODY|EX大衆|アップトゥボーイ|FLASH|Platinum\s*FLASH|FRIDAY|週プレ|週刊プレイボーイ|少年チャンピオン|ヤングチャンピオン|グラビアチャンピオン|ヤングマガジン|ヤングジャンプ|スピリッツ|SPA!|ENTAME|グラビアザテレビジョン|グラビアプレス|カレンダー|乃木坂46|櫻坂46|日向坂46|AKB48|SKE48|NMB48|HKT48|NGT48|STU48|FRUITS\s*ZIPPER|=LOVE|≠ME|僕が見たかった青空|CANDY\s*TUNE|ミスマガ|RIZINガール)/i;
 
 const NEGATIVE_NOISE_RE =
-  /(デジタル写真集|デジタル限定|電子写真集|電子書籍|電子版|俳優|男性|ボーイズ|メンズ|MEN'S|JO1|INI|timelesz|M!LK|FANTASTICS|BE:FIRST|SUPER\s*BEAVER|SixTONES|Snow\s*Man|なにわ男子|Travis\s*Japan|A\.B\.C-Z|SHOW-WA|MATSURI|WILD\s*BLUE|仮面ライダー|ウルトラマン|プロレス|野球|サッカー|競馬|将棋|占い|ダイエット|レシピ|カフェメニュー|フェルメール|皇室|パワースポット|ねことペンギン|児童|幼児|絵本|ゲーム攻略|コミック第?\d+巻|単行本\d+巻|スピンオフ|新連載|マンガ|漫画|セール|重版決定|写真展|お渡し会開催のみ|コスメアワード)/i;
+  /(デジタル写真集|デジタル限定|電子写真集|電子書籍|電子版|俳優|男性|ボーイズ|メンズ|MEN'S|JO1|INI|timelesz|M!LK|FANTASTICS|GENERATIONS|EXILE|BE:FIRST|SUPER\s*BEAVER|SixTONES|Snow\s*Man|なにわ男子|Travis\s*Japan|A\.B\.C-Z|Aぇ!\s*group|SHOW-WA|MATSURI|WILD\s*BLUE|ONE\s*N'ONLY|原因は自分にある|超特急|岡本信彦|湯本健一|東啓介|榎田一王|中務裕太|今井竜太郎|永瀬廉|岩瀬洋志|ディーン・フジオカ|石原知哉|羽生結弦|奥野壮|中川翼|新浜レオン|白岩瑠姫|SEVENTEEN|BTS|Stray\s*Kids|TREASURE|NCT|TXT|ENHYPEN|ATEEZ|ZEROBASEONE|今日、好きになりました|仮面ライダー|ウルトラマン|プロレス|野球|サッカー|競馬|将棋|占い|ダイエット|レシピ|カフェメニュー|フェルメール|皇室|パワースポット|ねことペンギン|児童|幼児|絵本|ゲーム攻略|コミック第?\d+巻|単行本\d+巻|スピンオフ|新連載|マンガ|漫画|セール|重版決定|写真展|お渡し会開催のみ|コスメアワード|戦争|軍事|兵器|歴史|図鑑|年表|タイムライン)/i;
 
 /**
  * Determines whether a PR TIMES headline is a genuine physical idol/gravure/photobook/

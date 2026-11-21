@@ -1,8 +1,1090 @@
 {
-  "updatedAt": "2026-11-21T17:20:00+09:00",
+  "updatedAt": "2026-11-21T20:01:26+09:00",
   "referenceDate": "2026-11-21",
   "policy": "Amazonは基本購入先として常に表示。Amazon以外のストア（セブンネット・楽天ブックス・HMV・TSUTAYA）は確認済みのストア限定特典が付く場合のみ表示。",
   "items": [
+    {
+      "id": "auto-hm-9784847087011",
+      "isbn": "9784847087011",
+      "title": "美波那緒写真集 『 みな見な 』 特装版（写真付き）",
+      "series": "ワニブックス",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "ワニブックス",
+      "category": "photobook",
+      "releaseDate": "2026-10-26",
+      "price": 5500,
+      "coverTalents": [
+        "美波那緒"
+      ],
+      "featuredTalents": [
+        "美波那緒"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784847087011.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "ワニブックス近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "ワニブックスより発売の注目写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784847087011.jpg",
+          "caption": "美波那緒写真集 『 みな見な 』 特装版（写真付き） 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4847087011"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "美波那緒写真集 『 みな見な 』 特装版（写真付き）（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784847087011",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784847087011-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784847087011）",
+          "talent": "美波那緒",
+          "price": 5500,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784847087011.jpg",
+          "url": "https://www.amazon.co.jp/dp/4847087011"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784868490999",
+      "isbn": "9784868490999",
+      "title": "向井藍写真集『愛して、藍。』",
+      "series": "ジーウォーク",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "ジーウォーク",
+      "category": "r18",
+      "releaseDate": "2026-10-27",
+      "price": 4400,
+      "coverTalents": [
+        "向井藍"
+      ],
+      "featuredTalents": [
+        "向井藍"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784868490999.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "ジーウォーク近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "ジーウォークより発売の注目R18写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784868490999.jpg",
+          "caption": "向井藍写真集『愛して、藍。』 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4868490990"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "向井藍写真集『愛して、藍。』（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784868490999",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784868490999-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784868490999）",
+          "talent": "向井藍",
+          "price": 4400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784868490999.jpg",
+          "url": "https://www.amazon.co.jp/dp/4868490990"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784868490982",
+      "isbn": "9784868490982",
+      "title": "あんづ杏写真集『境界線』",
+      "series": "ジーウォーク",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "ジーウォーク",
+      "category": "r18",
+      "releaseDate": "2026-10-27",
+      "price": 4400,
+      "coverTalents": [
+        "あんづ杏"
+      ],
+      "featuredTalents": [
+        "あんづ杏"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784868490982.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "ジーウォーク近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "ジーウォークより発売の注目R18写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784868490982.jpg",
+          "caption": "あんづ杏写真集『境界線』 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4868490982"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "あんづ杏写真集『境界線』（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784868490982",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784868490982-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784868490982）",
+          "talent": "あんづ杏",
+          "price": 4400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784868490982.jpg",
+          "url": "https://www.amazon.co.jp/dp/4868490982"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784801995239",
+      "isbn": "9784801995239",
+      "title": "Pause　神宮寺ナオ写真集",
+      "series": "竹書房",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "竹書房",
+      "category": "r18",
+      "releaseDate": "2026-10-30",
+      "price": 4620,
+      "coverTalents": [
+        "神宮寺ナオ"
+      ],
+      "featuredTalents": [
+        "神宮寺ナオ"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784801995239.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "竹書房近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "竹書房より発売の注目R18写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784801995239.jpg",
+          "caption": "Pause　神宮寺ナオ写真集 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4801995233"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "Pause　神宮寺ナオ写真集（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784801995239",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784801995239-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784801995239）",
+          "talent": "神宮寺ナオ",
+          "price": 4620,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784801995239.jpg",
+          "url": "https://www.amazon.co.jp/dp/4801995233"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784823611452",
+      "isbn": "9784823611452",
+      "title": "風間ゆみ写真集『viento』",
+      "series": "ジーオーティー",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "ジーオーティー",
+      "category": "r18",
+      "releaseDate": "2026-10-30",
+      "price": 4180,
+      "coverTalents": [
+        "風間ゆみ"
+      ],
+      "featuredTalents": [
+        "風間ゆみ"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "ジーオーティー近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "重版出来予定 書店発売日 2026年10月30日 風間ゆみ写真集『viento』 （ジーオーティー） 桑島智輝(写真) [ 芸能・タレント ]",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "風間ゆみ写真集『viento』（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784823611452",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784823611452-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784823611452）",
+          "talent": "風間ゆみ",
+          "price": 4180,
+          "status": "available",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/dp/4823611454"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784065453995",
+      "isbn": "9784065453995",
+      "title": "中町綾1st写真集　1／4",
+      "series": "講談社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2026-11-11",
+      "price": 3850,
+      "coverTalents": [
+        "中町綾"
+      ],
+      "featuredTalents": [
+        "中町綾"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784065453995.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "講談社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "講談社より発売の注目写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784065453995.jpg",
+          "caption": "中町綾1st写真集　1／4 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065453992"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "中町綾1st写真集　1／4（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784065453995",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784065453995-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784065453995）",
+          "talent": "中町綾",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784065453995.jpg",
+          "url": "https://www.amazon.co.jp/dp/4065453992"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784847087110",
+      "isbn": "9784847087110",
+      "title": "内田敦子1st写真集 『 好きに生きていい 』",
+      "series": "ワニブックス",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "ワニブックス",
+      "category": "photobook",
+      "releaseDate": "2026-11-16",
+      "price": 3630,
+      "coverTalents": [
+        "内田敦子"
+      ],
+      "featuredTalents": [
+        "内田敦子"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784847087110.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "ワニブックス近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "ワニブックスより発売の注目写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784847087110.jpg",
+          "caption": "内田敦子1st写真集 『 好きに生きていい 』 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4847087119"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "内田敦子1st写真集 『 好きに生きていい 』（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784847087110",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784847087110-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784847087110）",
+          "talent": "内田敦子",
+          "price": 3630,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784847087110.jpg",
+          "url": "https://www.amazon.co.jp/dp/4847087119"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784087902587",
+      "isbn": "9784087902587",
+      "title": "一ノ瀬瑠菜写真集（仮）",
+      "series": "集英社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "集英社",
+      "category": "photobook",
+      "releaseDate": "2027-02-26",
+      "price": 3520,
+      "coverTalents": [
+        "一ノ瀬瑠菜"
+      ],
+      "featuredTalents": [
+        "一ノ瀬瑠菜"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784087902587.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "集英社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "重版出来予定 発売予定日 2027年2月26日 一ノ瀬瑠菜写真集（仮） （集英社） 一ノ瀬 瑠菜(著/文), 前 康輔(写真)",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784087902587.jpg",
+          "caption": "一ノ瀬瑠菜写真集（仮） 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4087902587"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "一ノ瀬瑠菜写真集（仮）（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784087902587",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784087902587-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784087902587）",
+          "talent": "一ノ瀬瑠菜",
+          "price": 3520,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784087902587.jpg",
+          "url": "https://www.amazon.co.jp/dp/4087902587"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784868491309",
+      "isbn": "9784868491309",
+      "title": "北村海智写真集",
+      "series": "ジーウォーク",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "ジーウォーク",
+      "category": "r18",
+      "releaseDate": "2027-01-26",
+      "price": 4180,
+      "coverTalents": [
+        "北村海智"
+      ],
+      "featuredTalents": [
+        "北村海智"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "ジーウォーク近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "重版出来予定 発売予定日 2027年1月26日 北村海智写真集 （ジーウォーク） 篠原 潔(写真) [ 芸能・タレント ]",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "北村海智写真集（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784868491309",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784868491309-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784868491309）",
+          "talent": "北村海智",
+          "price": 4180,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/dp/486849130X"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784868491293",
+      "isbn": "9784868491293",
+      "title": "夕季ちとせ写真集",
+      "series": "ジーウォーク",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "ジーウォーク",
+      "category": "r18",
+      "releaseDate": "2027-01-26",
+      "price": 4180,
+      "coverTalents": [
+        "夕季ちとせ"
+      ],
+      "featuredTalents": [
+        "夕季ちとせ"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "ジーウォーク近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "重版出来予定 発売予定日 2027年1月26日 夕季ちとせ写真集 （ジーウォーク） 篠原 潔(写真) [ 芸能・タレント ]",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "夕季ちとせ写真集（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784868491293",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784868491293-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784868491293）",
+          "talent": "夕季ちとせ",
+          "price": 4180,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/dp/4868491296"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784575321333",
+      "isbn": "9784575321333",
+      "title": "白上咲花 写真集（仮）",
+      "series": "双葉社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "双葉社",
+      "category": "r18",
+      "releaseDate": "2027-01-20",
+      "price": 4180,
+      "coverTalents": [
+        "白上咲花"
+      ],
+      "featuredTalents": [
+        "白上咲花"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "双葉社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "重版出来予定 発売予定日 2027年1月20日 白上咲花 写真集（仮） （双葉社） 田村 浩章(写真) [ 芸能・タレント ]",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "白上咲花 写真集（仮）（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784575321333",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784575321333-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784575321333）",
+          "talent": "白上咲花",
+          "price": 4180,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/dp/4575321338"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784823611827",
+      "isbn": "9784823611827",
+      "title": "ちとせよしの写真集『ひととせ』",
+      "series": "ジーオーティー",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "ジーオーティー",
+      "category": "r18",
+      "releaseDate": "2027-01-08",
+      "price": 4180,
+      "coverTalents": [
+        "ちとせよしの"
+      ],
+      "featuredTalents": [
+        "ちとせよしの"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "ジーオーティー近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "重版出来予定 発売予定日 2027年1月8日 ちとせよしの写真集『ひととせ』 （ジーオーティー） 高橋慶佑(写真) [ 芸能・タレント ]",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "ちとせよしの写真集『ひととせ』（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784823611827",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784823611827-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784823611827）",
+          "talent": "ちとせよしの",
+          "price": 4180,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/dp/4823611829"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784087902426",
+      "isbn": "9784087902426",
+      "title": "清埜きりファースト写真集(仮)",
+      "series": "集英社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "集英社",
+      "category": "photobook",
+      "releaseDate": "2026-12-16",
+      "price": 3960,
+      "coverTalents": [
+        "清埜きり"
+      ],
+      "featuredTalents": [
+        "清埜きり"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784087902426.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "集英社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "集英社より発売の注目写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784087902426.jpg",
+          "caption": "清埜きりファースト写真集(仮) 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4087902420"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "清埜きりファースト写真集(仮)（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784087902426",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784087902426-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784087902426）",
+          "talent": "清埜きり",
+          "price": 3960,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784087902426.jpg",
+          "url": "https://www.amazon.co.jp/dp/4087902420"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784575321302",
+      "isbn": "9784575321302",
+      "title": "高見奈央写真集 Reevaluate",
+      "series": "双葉社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "双葉社",
+      "category": "photobook",
+      "releaseDate": "2026-12-16",
+      "price": 3520,
+      "coverTalents": [
+        "高見奈央"
+      ],
+      "featuredTalents": [
+        "高見奈央"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "双葉社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "重版出来予定 発売予定日 2026年12月16日 高見奈央写真集 Reevaluate （双葉社） 高見 奈央(著/文) [ 芸能・タレント ]",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "高見奈央写真集 Reevaluate（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784575321302",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784575321302-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784575321302）",
+          "talent": "高見奈央",
+          "price": 3520,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/dp/4575321303"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784334111939",
+      "isbn": "9784334111939",
+      "title": "有村藍里2nd写真集 藍",
+      "series": "光文社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "光文社",
+      "category": "photobook",
+      "releaseDate": "2026-12-04",
+      "price": 3520,
+      "coverTalents": [
+        "有村藍里"
+      ],
+      "featuredTalents": [
+        "有村藍里"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784334111939.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "光文社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "重版出来予定 発売予定日 2026年12月4日 有村藍里2nd写真集 藍 （光文社） 有村藍里(著/文) [ 芸能・タレント ]",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784334111939.jpg",
+          "caption": "有村藍里2nd写真集 藍 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4334111939"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "有村藍里2nd写真集 藍（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784334111939",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784334111939-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784334111939）",
+          "talent": "有村藍里",
+          "price": 3520,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784334111939.jpg",
+          "url": "https://www.amazon.co.jp/dp/4334111939"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784087902570",
+      "isbn": "9784087902570",
+      "title": "豊島心桜 2nd写真集 『ありのままに。』",
+      "series": "集英社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "集英社",
+      "category": "photobook",
+      "releaseDate": "2026-12-01",
+      "price": 3960,
+      "coverTalents": [
+        "豊島心桜"
+      ],
+      "featuredTalents": [
+        "豊島心桜"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784087902570.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "集英社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "集英社より発売の注目写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784087902570.jpg",
+          "caption": "豊島心桜 2nd写真集 『ありのままに。』 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4087902579"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "豊島心桜 2nd写真集 『ありのままに。』（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784087902570",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784087902570-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784087902570）",
+          "talent": "豊島心桜",
+          "price": 3960,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784087902570.jpg",
+          "url": "https://www.amazon.co.jp/dp/4087902579"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784823611612",
+      "isbn": "9784823611612",
+      "title": "希望みう1st写真集『キボウノミライ』",
+      "series": "ジーオーティー",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "ジーオーティー",
+      "category": "r18",
+      "releaseDate": "2026-11-30",
+      "price": 4180,
+      "coverTalents": [
+        "希望みう"
+      ],
+      "featuredTalents": [
+        "希望みう"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "ジーオーティー近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "重版出来予定 発売予定日 2026年11月30日 希望みう1st写真集『キボウノミライ』 （ジーオーティー） 中山雅文(写真) [ 芸能・タレント ]",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "希望みう1st写真集『キボウノミライ』（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784823611612",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784823611612-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784823611612）",
+          "talent": "希望みう",
+          "price": 4180,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/dp/4823611616"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784065464106",
+      "isbn": "9784065464106",
+      "title": "江下晏梨　1st写真集『ひざしのにおい。』",
+      "series": "講談社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2026-11-25",
+      "price": 3500,
+      "coverTalents": [
+        "江下晏梨"
+      ],
+      "featuredTalents": [
+        "江下晏梨"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784065464106.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "講談社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "講談社より発売の注目写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784065464106.jpg",
+          "caption": "江下晏梨　1st写真集『ひざしのにおい。』 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065464102"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "江下晏梨　1st写真集『ひざしのにおい。』（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784065464106",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784065464106-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784065464106）",
+          "talent": "江下晏梨",
+          "price": 3500,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784065464106.jpg",
+          "url": "https://www.amazon.co.jp/dp/4065464102"
+        }
+      ]
+    },
     {
       "id": "utb-2027-01",
       "title": "アップトゥボーイ 2027年1月号",
@@ -92,6 +1174,54 @@
         }
       ],
       "offers": [
+        {
+          "id": "utb-2027-01-7net-1107785763",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "セブンネット限定特典：川﨑桜（乃木坂46）ポストカードＡ 1枚付き",
+          "talent": "川﨑桜（乃木坂46）",
+          "price": 1540,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw6e3868d5/421699/1107785763.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107785763.html"
+        },
+        {
+          "id": "utb-2027-01-7net-1107785764",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "セブンネット限定特典：川﨑桜（乃木坂46）ポストカードＢ 1枚付き",
+          "talent": "川﨑桜（乃木坂46）",
+          "price": 1540,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw17d9de15/421699/1107785764.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107785764.html"
+        },
+        {
+          "id": "utb-2027-01-7net-1107785765",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "セブンネット限定特典：川﨑桜（乃木坂46）ポストカードＣ 1枚付き",
+          "talent": "川﨑桜（乃木坂46）",
+          "price": 1540,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd92ede09/421699/1107785765.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107785765.html"
+        },
         {
           "id": "utb-2027-01-7net-kanazawa",
           "store": "7net",
@@ -608,6 +1738,56 @@
       ],
       "offers": [
         {
+          "id": "bubka-2027-01-7net-1107790671",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "セブンネット限定特典：高畑結希 ポストカード 1枚付き",
+          "talent": "乃木坂46 6期生",
+          "price": 1400,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwf993d6b7/421699/1107790671.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107790671.html"
+        },
+        {
+          "id": "bubka-2027-01-7net-1107790673",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定表紙＋特典",
+          "bonusTypes": [
+            "postcard",
+            "cover"
+          ],
+          "bonusText": "限定表紙：AKB48 佐藤綺星ver. ＋ セブンネット限定特典：佐藤綺星 ポストカードＢ 1枚付き",
+          "talent": "乃木坂46 6期生",
+          "price": 1400,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw74ba55e1/421699/1107790673.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107790673.html"
+        },
+        {
+          "id": "bubka-2027-01-7net-1107790672",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定表紙＋特典",
+          "bonusTypes": [
+            "postcard",
+            "cover"
+          ],
+          "bonusText": "限定表紙：AKB48 佐藤綺星ver. ＋ セブンネット限定特典：佐藤綺星 ポストカードＡ 1枚付き",
+          "talent": "乃木坂46 6期生",
+          "price": 1400,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwbff933b3/421699/1107790672.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107790672.html"
+        },
+        {
           "id": "bubka-2027-01-7net-a",
           "store": "7net",
           "hasStoreExclusiveBonus": true,
@@ -971,6 +2151,12 @@
         }
       ],
       "pressArticles": [
+        {
+          "title": "プロ雀士・中田花奈が圧倒的なビジュアルで魅せた表紙＆巻頭10P！大西桃香、塩望ももこ、ミスFLASH2026・佐々木明音、石浜芽衣掲載の『FLASH』は11月10日(火)発売",
+          "source": "PR TIMES（光文社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000002538.000021468.html",
+          "photoCountHint": "自動検出プレスリリース"
+        },
         {
           "title": "正源司陽子（日向坂46）表紙『Platinum FLASH Vol.26』HMV限定特典詳細",
           "source": "HMV&BOOKS ニュース",
@@ -1616,7 +2802,20 @@
           "articleUrl": "https://7net.omni7.jp/detail/1107782404.html"
         }
       ],
-      "pressArticles": [],
+      "pressArticles": [
+        {
+          "title": "AKB48佐藤綺星、八木愛月、伊藤百花の最強３人「星月花」が原点・洲埼灯台で青春＆エモーショナル！　EX大衆 表紙＆巻頭に登場！",
+          "source": "PR TIMES（双葉社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000001158.000014531.html",
+          "photoCountHint": "自動検出プレスリリース"
+        },
+        {
+          "title": "11月16日発売の『EX大衆』に≠ME 鈴木瞳美が登場！　羽をまとって魅せる、儚くも愛らしい世界「私らしい私に会いにいく。 ≠MEと写真家たち」",
+          "source": "PR TIMES（双葉社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000001161.000014531.html",
+          "photoCountHint": "自動検出プレスリリース"
+        }
+      ],
       "offers": [
         {
           "id": "ext12-7net-trio",
@@ -2573,7 +3772,14 @@
           "articleUrl": "https://books.rakuten.co.jp/rb/18898224/"
         }
       ],
-      "pressArticles": [],
+      "pressArticles": [
+        {
+          "title": "声優・田中有紀、デビュー10周年記念写真集の発売が決定！ 自然体＆近距離で読者の“となり”に寄り添う一冊に",
+          "source": "PR TIMES（東京ニュース通信社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000003582.000006568.html",
+          "photoCountHint": "自動検出プレスリリース"
+        }
+      ],
       "offers": [
         {
           "id": "tanaka-7net-signed",
@@ -2745,6 +3951,12 @@
         }
       ],
       "pressArticles": [
+        {
+          "title": "これまで以上に自然体で、これまで以上にあでやか--。11月5日（木）発売「週刊少年チャンピオン」49号の表紙＆巻頭グラビアは白濱美兎ちゃん(ハート) 限定QUOカード応募者全員サービス企画も！",
+          "source": "PR TIMES（秋田書店）",
+          "url": "https://prtimes.jp/main/html/rd/p/000000925.000040601.html",
+          "photoCountHint": "自動検出プレスリリース"
+        },
         {
           "title": "大胆な“腕ブラカット”で！白濱美兎2nd写真集『ゆっくり恋をする』発売＆先行カット",
           "source": "ほんのひきだし",
@@ -2961,6 +4173,12 @@
       ],
       "pressArticles": [
         {
+          "title": "11月19日（木）発売「週刊少年チャンピオン」51号の表紙＆巻頭グラビアは姫野ひなのちゃん(ハート) 限定QUOカード応募者全員サービス企画も！",
+          "source": "PR TIMES（秋田書店）",
+          "url": "https://prtimes.jp/main/html/rd/p/000000932.000040601.html",
+          "photoCountHint": "自動検出プレスリリース"
+        },
+        {
           "title": "週刊少年チャンピオン最新号 表紙＆付録ポスター詳細",
           "source": "Fujisan",
           "url": "https://www.fujisan.co.jp/product/1131/new/",
@@ -3092,6 +4310,12 @@
         }
       ],
       "pressArticles": [
+        {
+          "title": "「港区女子モノマネ」で大バズりの女優いわたまありが衝撃のビキニ＆ランジェリー姿をFRIDAYで初解禁！",
+          "source": "PR TIMES（講談社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000009182.000001719.html",
+          "photoCountHint": "自動検出プレスリリース"
+        },
         {
           "title": "FRIDAY 最新号（2026年12月4・11日号）誌面・付録詳細",
           "source": "Fujisan",
@@ -4575,6 +5799,12 @@
       "gallery": [],
       "pressArticles": [
         {
+          "title": "45周年号はCanCamモデル全員表紙(ハート)　山下美月・加藤史帆・小室安未・生見愛瑠 ・白宮みずほ・田鍋梨々花・大野愛実（日向坂46）・ 立花琴未（CANDY TUNE）・川崎 桜（乃木坂46）",
+          "source": "PR TIMES（小学館）",
+          "url": "https://prtimes.jp/main/html/rd/p/000003968.000013640.html",
+          "photoCountHint": "自動検出プレスリリース"
+        },
+        {
           "title": "日向坂46大野愛実、CANDY TUNE立花琴未、乃木坂46川﨑桜ら専属モデル9人が表紙集結",
           "source": "音楽ナタリー",
           "url": "https://natalie.mu/music/news/698019",
@@ -5611,6 +6841,12 @@
       ],
       "pressArticles": [
         {
+          "title": "声優・大熊和奏、ファン待望の写真集を12/25(金)に発売！ ジョージアの地で見せた“大熊和奏の素顔”を収録",
+          "source": "PR TIMES（東京ニュース通信社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000003580.000006568.html",
+          "photoCountHint": "自動検出プレスリリース"
+        },
+        {
           "title": "『大熊和奏 写真集（仮）』発売記念イベント＆先行カット公開",
           "source": "紀伊國屋書店",
           "url": "https://store.kinokuniya.co.jp/event/1794877892/",
@@ -5817,6 +7053,12 @@
         }
       ],
       "pressArticles": [
+        {
+          "title": "声優・紫月杏朱彩さんの1st写真集が2027年2月27日(土)に発売決定！",
+          "source": "PR TIMES（イマジカインフォス）",
+          "url": "https://prtimes.jp/main/html/rd/p/000001828.000007785.html",
+          "photoCountHint": "自動検出プレスリリース"
+        },
         {
           "title": "紫月杏朱彩 1st写真集（仮）2027年2月27日発売決定！",
           "source": "seigura.com",
@@ -9921,11 +11163,16 @@
       ]
     }
   ],
-  "lastAutoCheckedAt": "2026-11-21T17:20:00+09:00",
+  "lastAutoCheckedAt": "2026-11-21T20:01:26+09:00",
   "autoSources": {
     "prtimesPublishers": 15,
+    "hanmotoPublishers": 10,
+    "sevenNetLive": true,
+    "hmvRssLive": true,
+    "bltWebRssLive": true,
     "rakutenApiConnected": false,
-    "lastRunAt": "2026-11-21T18:45:00+09:00",
-    "lastRunSummary": "15出版社PR TIMES自動巡回済（楽天ブックスAPIはRAKUTEN_APP_ID設定で自動有効化）"
+    "rakutenOpenApi2026": false,
+    "lastRunAt": "2026-11-21T20:01:26+09:00",
+    "lastRunSummary": "PR TIMES 15社(+0) / 版元ドットコム10社(+18) / 7net(+0作品・+6特典) / HMV・BLT(+10記事)"
   }
 }

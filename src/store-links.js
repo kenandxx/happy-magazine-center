@@ -77,6 +77,7 @@ export const CATEGORY_META = {
   fashion: { label: '女性誌・アイドル表紙' },
   photobook: { label: '写真集' },
   calendar: { label: '🗓 カレンダー' },
+  r18: { label: '🔞 アダルト・R18' },
 };
 
 export function buildAllStoreSearchLinks(keyword, bonusOnly = true) {

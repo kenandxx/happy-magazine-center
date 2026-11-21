@@ -7,6 +7,9 @@
   "scripts": {
     "dev": "python3 -m http.server 4173",
     "test": "node --test scripts/*.test.mjs",
-    "collect:dry": "node scripts/fetch-catalog.mjs --dry-run"
+    "collect:dry": "node scripts/fetch-catalog.mjs --dry-run",
+    "collect:update": "node scripts/fetch-catalog.mjs --update",
+    "validate": "node scripts/validate-catalog.mjs",
+    "validate:urls": "node scripts/validate-catalog.mjs --check-urls"
   }
 }

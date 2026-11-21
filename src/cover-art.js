@@ -28,18 +28,26 @@ export function createEditorialCoverDataUri(item) {
       ? `${photoCount} PHOTOS`
       : hasPoster
         ? 'BIG POSTER'
-        : item.category === 'photobook'
-          ? 'PHOTOBOOK'
-          : 'NEW ISSUE';
+        : item.category === 'r18'
+          ? 'R18 ADULT'
+          : item.category === 'calendar'
+            ? '2027 CALENDAR'
+            : item.category === 'photobook'
+              ? 'PHOTOBOOK'
+              : 'NEW ISSUE';
 
   const categoryTag =
-    item.category === 'photobook'
-      ? 'PHOTO BOOK'
-      : item.category === 'weekly'
-        ? 'WEEKLY ISSUE'
-        : item.category === 'gravure'
-          ? 'GRAVURE MOOK'
-          : 'IDOL MAGAZINE';
+    item.category === 'r18'
+      ? 'R18 ADULT'
+      : item.category === 'calendar'
+        ? '2027 CALENDAR'
+        : item.category === 'photobook'
+          ? 'PHOTO BOOK'
+          : item.category === 'weekly'
+            ? 'WEEKLY ISSUE'
+            : item.category === 'gravure'
+              ? 'GRAVURE MOOK'
+              : 'IDOL MAGAZINE';
 
   const svg = `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="300" height="400">

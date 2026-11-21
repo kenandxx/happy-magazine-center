@@ -15,17 +15,21 @@ import {
 const STORAGE_KEYS = {
   oshi: 'hmc_oshi_keywords_v1',
   shelf: 'hmc_shelf_status_v1',
+  offerShelf: 'hmc_offer_shelf_v1',
   customItems: 'hmc_custom_items_v1',
+  budget: 'hmc_monthly_budget_v1',
+  privacyBlur: 'hmc_privacy_blur_v1',
 };
 
-const SHELF_STATUS_ORDER = [
-  'considering',
-  'want',
-  'reserved_7net',
-  'reserved_other',
-  'owned',
-  'skip',
-];
+const SHELF_STATUS_ORDER = ['considering', 'want', 'reserved', 'owned', 'skip'];
+
+const SHELF_STATUS_PRIORITY = {
+  owned: 5,
+  reserved: 4,
+  want: 3,
+  considering: 2,
+  skip: 1,
+};
 
 const SHELF_STATUS_META = {
   considering: {
@@ -39,37 +43,40 @@ const SHELF_STATUS_META = {
     icon: '👀',
     label: '👀 買う予定',
     short: '買う予定',
-    hint: '発売日に買う・予約予定',
+    hint: '発売日に買う・これから予約',
     colorClass: 'st-want',
   },
-  reserved_7net: {
+  reserved: {
     icon: '🛒',
-    label: '🛒 7net予約済',
-    short: '7net予約',
-    hint: 'セブンネット等で予約済み',
-    colorClass: 'st-reserved',
-  },
-  reserved_other: {
-    icon: '🛍',
-    label: '🛍 他店予約済',
-    short: '他店予約',
-    hint: 'Amazon・楽天・HMVで予約済',
+    label: '🛒 予約済',
+    short: '予約済',
+    hint: 'この表紙・特典で予約済み',
     colorClass: 'st-reserved',
   },
   owned: {
     icon: '✅',
     label: '✅ 購入済',
     short: '購入済',
-    hint: '購入・受け取り完了',
+    hint: 'この表紙・特典を購入完了',
     colorClass: 'st-owned',
   },
   skip: {
     icon: '🙅',
     label: '🙅 買わない',
     short: '買わない',
-    hint: '見送り（カードを薄く表示）',
+    hint: 'この版は見送り',
     colorClass: 'st-skip',
   },
+};
+
+const BUDGET_PRESETS = [5000, 10000, 15000, 20000, 30000];
+
+const DEFAULT_OFFER_SHELF = {
+  'utb-2027-01-7net-kanazawa': 'want',
+  'utb-2027-01-amazon': 'considering',
+  'blt-2027-01-7net-1': 'reserved',
+  'ga1-7net-ichinose': 'considering',
+  'cal-oguri-7net-wall': 'want',
 };
 
 const QUICK_HUB_KEYWORDS = [
@@ -83,54 +90,13 @@ const QUICK_HUB_KEYWORDS = [
   'DOLCE Vol.24',
   'BUBKA 2027年1月号',
   'BOMB 2027年1月号',
-  'Platinum FLASH Vol.26',
-  'ar 2027年1月号',
-  'CanCam 2027年1月号',
-  'ヤングマガジン',
+  '瀬戸環奈 写真集',
+  '石川澪 写真集',
+  '月刊FANZA',
   '乃木坂46',
   '東雲うみ',
   '一ノ瀬瑠菜',
 ];
-
-const state = {
-  referenceDate: '2026-11-20',
-  baseItems: [],
-  customItems: loadJson(STORAGE_KEYS.customItems, []),
-  oshiKeywords: loadJson(STORAGE_KEYS.oshi, [
-    '乃木坂46',
-    'ポスター',
-    '東雲うみ',
-    '沢口愛華',
-    '一ノ瀬瑠菜',
-    'えなこ',
-  ]),
-  shelfMap: loadJson(STORAGE_KEYS.shelf, {
-    'utb-2027-01': 'want',
-    'blt-2027-01': 'reserved_7net',
-    'gravure-action-1': 'considering',
-    'cal-oguri-yui-2027': 'want',
-  }),
-  activeTab: 'discover',
-  viewMode: 'compact', // 'compact' | 'cards' | 'wall'
-  offerCompareLayout: 'scroll', // 'scroll' | 'grid'
-  search: '',
-  category: 'all',
-  bonusType: 'all',
-  storeFilter: 'all',
-  statusFilter: 'all', // 'all' | 'unmarked' | 'considering' | 'want' | 'reserved' | 'owned' | 'skip'
-  bonusOnly: false,
-  hideSkipped: false,
-  sortBy: 'soon',
-  calendarMonth: 'upcoming', // 'upcoming' | '2026-11' | '2026-12' | '2027-01' | '2027-02' | 'past'
-  calendarSubFilter: 'all', // 'all' | 'marked' | 'bonus' | 'calendar' | 'photobook'
-  shelfFilter: 'all', // 'all' | 'considering' | 'want' | 'reserved' | 'owned' | 'skip'
-  selectedItemId: null,
-  selectedOfferStore: 'all',
-  selectedPhotoKind: 'all',
-  statusPickerItemId: null,
-  lightboxPhotos: [],
-  lightboxIndex: 0,
-};
 
 function loadJson(key, fallback) {
   try {
@@ -148,6 +114,65 @@ function saveJson(key, value) {
     // Ignore storage quota errors in restricted environments
   }
 }
+
+function normalizeStatus(raw) {
+  if (!raw) return '';
+  if (raw === 'reserved_7net' || raw === 'reserved_other') return 'reserved';
+  return SHELF_STATUS_META[raw] ? raw : '';
+}
+
+function loadNormalizedStatusMap(key, fallback) {
+  const raw = loadJson(key, fallback);
+  const out = {};
+  if (raw && typeof raw === 'object') {
+    for (const [k, v] of Object.entries(raw)) {
+      const norm = normalizeStatus(v);
+      if (norm) out[k] = norm;
+    }
+  }
+  return out;
+}
+
+const state = {
+  referenceDate: '2026-11-21',
+  lastAutoCheckedAt: '',
+  baseItems: [],
+  customItems: loadJson(STORAGE_KEYS.customItems, []),
+  oshiKeywords: loadJson(STORAGE_KEYS.oshi, [
+    '乃木坂46',
+    'ポスター',
+    '東雲うみ',
+    '沢口愛華',
+    '一ノ瀬瑠菜',
+    'えなこ',
+  ]),
+  shelfMap: loadNormalizedStatusMap(STORAGE_KEYS.shelf, {}),
+  offerShelfMap: loadNormalizedStatusMap(STORAGE_KEYS.offerShelf, DEFAULT_OFFER_SHELF),
+  monthlyBudget: Number(loadJson(STORAGE_KEYS.budget, 15000)) || 15000,
+  privacyBlur: Boolean(loadJson(STORAGE_KEYS.privacyBlur, false)),
+  activeTab: 'discover',
+  viewMode: 'compact', // 'compact' | 'cards' | 'wall'
+  offerCompareLayout: 'scroll', // 'scroll' | 'grid'
+  search: '',
+  category: 'all',
+  bonusType: 'all',
+  storeFilter: 'all',
+  artworkFilter: 'all', // 'all' | 'revealed' | 'pending'
+  statusFilter: 'all', // 'all' | 'unmarked' | 'considering' | 'want' | 'reserved' | 'owned' | 'skip'
+  bonusOnly: false,
+  hideSkipped: false,
+  sortBy: 'soon',
+  calendarMonth: 'upcoming', // 'upcoming' | '2026-11' | '2026-12' | '2027-01' | '2027-02' | 'past'
+  calendarSubFilter: 'all', // 'all' | 'marked' | 'bonus' | 'pending' | 'calendar' | 'photobook' | 'r18'
+  shelfFilter: 'all', // 'all' | 'considering' | 'want' | 'reserved' | 'owned' | 'skip'
+  selectedItemId: null,
+  selectedOfferStore: 'all',
+  selectedPhotoKind: 'all',
+  statusPickerItemId: null,
+  statusPickerOfferId: null,
+  lightboxPhotos: [],
+  lightboxIndex: 0,
+};
 
 function escapeHtml(str = '') {
   return String(str)
@@ -186,34 +211,8 @@ function formatCountdown(dateStr) {
   return { text: `${Math.abs(diff)}日前発売`, type: 'past', days: diff };
 }
 
-function getShelfStatus(itemId) {
-  const st = state.shelfMap[itemId];
-  return st && SHELF_STATUS_META[st] ? st : '';
-}
-
-function setShelfStatus(itemId, status) {
-  if (!itemId) return;
-  if (!status || state.shelfMap[itemId] === status) {
-    delete state.shelfMap[itemId];
-  } else {
-    state.shelfMap[itemId] = status;
-  }
-  saveJson(STORAGE_KEYS.shelf, state.shelfMap);
-  renderFilterChips();
-  renderMagazineGrid();
-  renderCalendar();
-  renderOshiAndShelf();
-  if (state.selectedItemId === itemId) {
-    const item = getItemById(itemId);
-    if (item) renderDetailSheetBody(item);
-  }
-  if (document.getElementById('photoLightbox').classList.contains('open')) {
-    renderLightbox();
-  }
-}
-
 function getVisibleOffers(item) {
-  return (item.offers || []).filter((offer) => {
+  return (item?.offers || []).filter((offer) => {
     if (offer.store === 'amazon') return true;
     return offer.hasStoreExclusiveBonus === true;
   });
@@ -224,13 +223,207 @@ function getAmazonBasePrice(item) {
   return amazonOffer?.price || item.price || 0;
 }
 
+/* =========================================================
+   Per-Edition (Offer) & Item Status Helpers
+   ========================================================= */
+function getOfferStatus(offerId) {
+  if (!offerId) return '';
+  return normalizeStatus(state.offerShelfMap[offerId]);
+}
+
+function getLegacyItemStatus(itemId) {
+  if (!itemId) return '';
+  return normalizeStatus(state.shelfMap[itemId]);
+}
+
+function getItemMarkedOffers(item) {
+  const result = [];
+  for (const offer of getVisibleOffers(item)) {
+    const st = getOfferStatus(offer.id);
+    if (st) result.push({ offer, status: st });
+  }
+  return result;
+}
+
+function getItemStatusSummary(item) {
+  const markedOffers = getItemMarkedOffers(item);
+  if (markedOffers.length > 0) {
+    let primaryStatus = markedOffers[0].status;
+    for (const m of markedOffers) {
+      if ((SHELF_STATUS_PRIORITY[m.status] || 0) > (SHELF_STATUS_PRIORITY[primaryStatus] || 0)) {
+        primaryStatus = m.status;
+      }
+    }
+    const activeOffers = markedOffers.filter((m) => m.status !== 'skip');
+    return {
+      mode: 'offers',
+      markedOffers,
+      primaryStatus,
+      activeCount: activeOffers.length,
+      allSkipped: activeOffers.length === 0 && markedOffers.length > 0,
+    };
+  }
+  const legacy = getLegacyItemStatus(item.id);
+  return {
+    mode: legacy ? 'item' : 'none',
+    markedOffers: [],
+    primaryStatus: legacy,
+    activeCount: legacy && legacy !== 'skip' ? 1 : 0,
+    allSkipped: legacy === 'skip',
+  };
+}
+
+function itemHasStatusInBucket(item, filterKey) {
+  const summary = getItemStatusSummary(item);
+  if (filterKey === 'all') return true;
+  if (filterKey === 'unmarked') return summary.mode === 'none';
+  if (summary.mode === 'offers') {
+    return summary.markedOffers.some((m) => m.status === filterKey);
+  }
+  return summary.primaryStatus === filterKey;
+}
+
+function isItemFullySkipped(item) {
+  return getItemStatusSummary(item).allSkipped;
+}
+
+/**
+ * Returns every marked edition across the entire catalog (or legacy item-level fallback).
+ * Used as the single source of truth for Tab 3 Shelf, Monthly Budget Meter, and Bulk .ics export.
+ */
+function getAllMarkedEntries() {
+  const entries = [];
+  for (const item of getAllItems()) {
+    const markedOffers = getItemMarkedOffers(item);
+    if (markedOffers.length > 0) {
+      for (const { offer, status } of markedOffers) {
+        entries.push({
+          key: offer.id,
+          item,
+          offer,
+          status,
+          price: Number(offer.price || item.price) || 0,
+        });
+      }
+    } else {
+      const legacy = getLegacyItemStatus(item.id);
+      if (legacy) {
+        entries.push({
+          key: `item:${item.id}`,
+          item,
+          offer: null,
+          status: legacy,
+          price: Number(item.price) || 0,
+        });
+      }
+    }
+  }
+  return entries;
+}
+
+function syncAfterStatusChange(affectedItemId) {
+  saveJson(STORAGE_KEYS.offerShelf, state.offerShelfMap);
+  saveJson(STORAGE_KEYS.shelf, state.shelfMap);
+  renderCountdownStrip();
+  renderFilterChips();
+  renderMagazineGrid();
+  renderCalendar();
+  renderOshiAndShelf();
+
+  if (state.selectedItemId && (!affectedItemId || state.selectedItemId === affectedItemId)) {
+    const item = getItemById(state.selectedItemId);
+    if (item) renderDetailSheetBody(item);
+  }
+  if (state.statusPickerItemId && (!affectedItemId || state.statusPickerItemId === affectedItemId)) {
+    renderStatusPickerBody();
+  }
+  if (document.getElementById('photoLightbox').classList.contains('open')) {
+    renderLightbox();
+  }
+}
+
+function setOfferStatus(offerId, status, itemId = null) {
+  if (!offerId) return;
+  const norm = normalizeStatus(status);
+  if (!norm || state.offerShelfMap[offerId] === norm) {
+    delete state.offerShelfMap[offerId];
+  } else {
+    state.offerShelfMap[offerId] = norm;
+  }
+  // If user marks at edition level, clear any stale legacy item-level mark on the same item
+  if (itemId && state.shelfMap[itemId]) {
+    delete state.shelfMap[itemId];
+  }
+  syncAfterStatusChange(itemId);
+}
+
+function setLegacyItemStatus(itemId, status) {
+  if (!itemId) return;
+  const norm = normalizeStatus(status);
+  if (!norm || state.shelfMap[itemId] === norm) {
+    delete state.shelfMap[itemId];
+  } else {
+    state.shelfMap[itemId] = norm;
+  }
+  syncAfterStatusChange(itemId);
+}
+
+function formatOfferShortLabel(offer) {
+  if (!offer) return '作品全体';
+  const st = STORES[offer.store]?.shortName || offer.store;
+  const detail = offer.talent && !offer.edition.includes(offer.talent)
+    ? `${offer.edition}（${offer.talent}）`
+    : offer.edition;
+  return `[${st}] ${detail}`;
+}
+
+/* =========================================================
+   Artwork Reveal Watch Helper
+   ========================================================= */
+function getItemArtworkWatch(item) {
+  const visible = getVisibleOffers(item);
+  const bonusOffers = visible.filter((o) => o.hasStoreExclusiveBonus === true);
+  const revealedBonusCount = bonusOffers.filter((o) => Boolean(o.imageUrl)).length;
+  const pendingBonusCount = bonusOffers.filter((o) => !o.imageUrl).length;
+  const hasCover = Boolean(item.coverImageUrl);
+  return {
+    bonusCount: bonusOffers.length,
+    revealedBonusCount,
+    pendingBonusCount,
+    hasCover,
+    hasRevealedBonus: revealedBonusCount > 0,
+    hasPendingWatch: pendingBonusCount > 0 || !hasCover,
+  };
+}
+
+/* =========================================================
+   Privacy Blur Toggle (Train Mode for R18)
+   ========================================================= */
+function applyPrivacyBlur() {
+  document.body.classList.toggle('privacy-blur-r18', state.privacyBlur);
+  const btn = document.getElementById('privacyBlurBtn');
+  if (btn) {
+    btn.classList.toggle('active', state.privacyBlur);
+    btn.setAttribute('aria-pressed', state.privacyBlur ? 'true' : 'false');
+    btn.textContent = state.privacyBlur ? '🚃 R18ぼかし中' : '🚃 電車モード';
+  }
+}
+
+function togglePrivacyBlur() {
+  state.privacyBlur = !state.privacyBlur;
+  saveJson(STORAGE_KEYS.privacyBlur, state.privacyBlur);
+  applyPrivacyBlur();
+}
+
+/* =========================================================
+   Photos & Quick-Preview Slides
+   ========================================================= */
 function getItemPhotos(item) {
   const list = [];
   const seenUrls = new Set();
   const amazonBasePrice = getAmazonBasePrice(item);
   const visibleOffers = getVisibleOffers(item);
-  const defaultOffer =
-    visibleOffers.find((o) => o.hasStoreExclusiveBonus === true) || visibleOffers[0] || null;
+  const amazonOffer = visibleOffers.find((o) => o.store === 'amazon') || visibleOffers[0] || null;
 
   const pushPhoto = (photo) => {
     const key = photo.url || `fallback-${photo.caption}`;
@@ -239,12 +432,13 @@ function getItemPhotos(item) {
     list.push({
       itemId: item.id,
       itemTitle: item.title,
+      itemCategory: item.category,
       url: photo.url || '',
       caption: photo.caption || item.title,
       source: photo.source || item.publisher || '',
       kind: photo.kind || 'cover',
       tabLabel: photo.tabLabel || PHOTO_KIND_META[photo.kind]?.label || '写真',
-      articleUrl: photo.articleUrl || defaultOffer?.url || '#',
+      articleUrl: photo.articleUrl || amazonOffer?.url || '#',
       offer: photo.offer || null,
       isPendingArt: Boolean(photo.isPendingArt),
       amazonBasePrice,
@@ -252,10 +446,18 @@ function getItemPhotos(item) {
     });
   };
 
+  // Match gallery entries with their corresponding offer if URL matches
+  const offerByImg = new Map();
+  for (const offer of visibleOffers) {
+    if (offer.imageUrl && !offerByImg.has(offer.imageUrl)) {
+      offerByImg.set(offer.imageUrl, offer);
+    }
+  }
+
   for (const g of item.gallery || []) {
     pushPhoto({
       ...g,
-      offer: defaultOffer,
+      offer: offerByImg.get(g.url) || amazonOffer,
     });
   }
 
@@ -280,13 +482,14 @@ function getItemPhotos(item) {
     list.push({
       itemId: item.id,
       itemTitle: item.title,
+      itemCategory: item.category,
       url: item.coverImageUrl || coverFallback,
       caption: `${item.title}（${(item.coverTalents || []).join('・')}）`,
       source: item.publisher || '公式書影',
       kind: 'cover',
       tabLabel: '表紙',
-      articleUrl: (item.pressArticles && item.pressArticles[0]?.url) || defaultOffer?.url || '#',
-      offer: defaultOffer,
+      articleUrl: (item.pressArticles && item.pressArticles[0]?.url) || amazonOffer?.url || '#',
+      offer: amazonOffer,
       isPendingArt: false,
       amazonBasePrice,
       fallbackUri: coverFallback,
@@ -296,12 +499,6 @@ function getItemPhotos(item) {
   return list;
 }
 
-/**
- * Builds the 1-tap Quick-Check Lightbox slide list for an item:
- * 1) Real cover (with quick buy CTA)
- * 2) Every visible store-bonus offer (real bonus image OR real cover + honest "絵柄解禁待ち" note)
- * 3) All remaining preview cuts / gallery photos
- */
 function buildQuickPreviewPhotos(item) {
   const slides = [];
   const seenOfferUrls = new Set();
@@ -309,13 +506,12 @@ function buildQuickPreviewPhotos(item) {
   const amazonBasePrice = getAmazonBasePrice(item);
   const coverUrl = item.coverImageUrl || (item.gallery && item.gallery[0]?.url) || '';
   const coverFallback = createEditorialCoverDataUri(item);
-
-  // 1) Bonus offers first if they have real artwork, or cover first then offers
   const amazonOffer = visibleOffers.find((o) => o.store === 'amazon') || visibleOffers[0] || null;
 
   slides.push({
     itemId: item.id,
     itemTitle: item.title,
+    itemCategory: item.category,
     url: coverUrl || coverFallback,
     caption: `${item.title}（${(item.coverTalents || []).join('・')}）`,
     source: `${item.publisher || '公式書影'} ・ ${formatDateLabel(item.releaseDate)}`,
@@ -323,12 +519,35 @@ function buildQuickPreviewPhotos(item) {
     tabLabel: '📘 表紙',
     articleUrl: amazonOffer?.url || '#',
     offer: amazonOffer,
-    isPendingArt: false,
+    isPendingArt: !item.coverImageUrl,
     amazonBasePrice,
     fallbackUri: coverFallback,
   });
 
-  // 2) Store-exclusive bonus variants
+  // Other Amazon variants (e.g. Wall vs Desk calendar)
+  const extraAmazonOffers = visibleOffers.filter(
+    (o) => o.store === 'amazon' && amazonOffer && o.id !== amazonOffer.id
+  );
+  extraAmazonOffers.forEach((offer) => {
+    if (offer.imageUrl) seenOfferUrls.add(offer.imageUrl);
+    slides.push({
+      itemId: item.id,
+      itemTitle: item.title,
+      itemCategory: item.category,
+      url: offer.imageUrl || coverUrl || coverFallback,
+      caption: `Amazon｜${offer.edition}：${offer.bonusText}`,
+      source: 'Amazon',
+      kind: 'limited_cover',
+      tabLabel: `📘 ${offer.edition.replace(/^Amazon\s*/, '')}`,
+      articleUrl: offer.url,
+      offer,
+      isPendingArt: !offer.imageUrl,
+      amazonBasePrice,
+      fallbackUri: coverFallback,
+    });
+  });
+
+  // Store-exclusive bonus variants
   const bonusOffers = visibleOffers.filter((o) => o.hasStoreExclusiveBonus === true);
   bonusOffers.forEach((offer, idx) => {
     const st = STORES[offer.store] || { name: offer.store, shortName: offer.store };
@@ -339,11 +558,12 @@ function buildQuickPreviewPhotos(item) {
     slides.push({
       itemId: item.id,
       itemTitle: item.title,
+      itemCategory: item.category,
       url: offer.imageUrl || coverUrl || coverFallback,
       caption: `${st.name}｜${offer.edition}：${offer.bonusText}`,
       source: hasRealArt ? `${st.name}（特典絵柄公開済）` : `${st.name}（表紙表示・特典絵柄解禁待ち）`,
       kind,
-      tabLabel: `${hasRealArt ? '✨' : '🎁'}${st.shortName}${bonusOffers.length > 1 ? idx + 1 : ''}`,
+      tabLabel: `${hasRealArt ? '✨' : '⏳'}${st.shortName}${bonusOffers.length > 1 ? idx + 1 : ''}`,
       articleUrl: offer.url,
       offer,
       isPendingArt: !hasRealArt,
@@ -356,7 +576,6 @@ function buildQuickPreviewPhotos(item) {
     });
   });
 
-  // 3) Additional gallery cuts (skip duplicates of cover or offer art)
   let previewCount = 0;
   for (const g of item.gallery || []) {
     if (!g.url) continue;
@@ -367,6 +586,7 @@ function buildQuickPreviewPhotos(item) {
     slides.push({
       itemId: item.id,
       itemTitle: item.title,
+      itemCategory: item.category,
       url: g.url,
       caption: g.caption || item.title,
       source: g.source || item.publisher || '公式公開写真',
@@ -429,15 +649,6 @@ function getItemSpecialBonusCount(item) {
   return included + storeSpecials;
 }
 
-function matchesStatusBucket(itemStatus, filterKey) {
-  if (filterKey === 'all') return true;
-  if (filterKey === 'unmarked') return !itemStatus;
-  if (filterKey === 'reserved') {
-    return itemStatus === 'reserved_7net' || itemStatus === 'reserved_other';
-  }
-  return itemStatus === filterKey;
-}
-
 function getFilteredItems() {
   const q = state.search.trim().toLowerCase();
 
@@ -452,9 +663,14 @@ function getFilteredItems() {
       if (!hasStore) return false;
     }
 
-    const itemStatus = getShelfStatus(item.id);
-    if (state.hideSkipped && itemStatus === 'skip' && state.statusFilter !== 'skip') return false;
-    if (!matchesStatusBucket(itemStatus, state.statusFilter)) return false;
+    if (state.artworkFilter !== 'all') {
+      const watch = getItemArtworkWatch(item);
+      if (state.artworkFilter === 'revealed' && !watch.hasRevealedBonus) return false;
+      if (state.artworkFilter === 'pending' && !watch.hasPendingWatch) return false;
+    }
+
+    if (state.hideSkipped && isItemFullySkipped(item) && state.statusFilter !== 'skip') return false;
+    if (!itemHasStatusInBucket(item, state.statusFilter)) return false;
 
     if (state.bonusOnly && getItemSpecialBonusCount(item) === 0) return false;
 
@@ -465,6 +681,7 @@ function getFilteredItems() {
         item.publisher,
         item.summary,
         item.releaseDate,
+        item.category === 'r18' ? 'r18 アダルト ヘアヌード セクシー' : '',
         ...(item.coverTalents || []),
         ...(item.featuredTalents || []),
         ...(item.includedBonuses || []).map((b) => b.label),
@@ -480,8 +697,8 @@ function getFilteredItems() {
   });
 
   filtered.sort((a, b) => {
-    const aSkip = getShelfStatus(a.id) === 'skip' ? 1 : 0;
-    const bSkip = getShelfStatus(b.id) === 'skip' ? 1 : 0;
+    const aSkip = isItemFullySkipped(a) ? 1 : 0;
+    const bSkip = isItemFullySkipped(b) ? 1 : 0;
     if (aSkip !== bSkip && state.statusFilter !== 'skip') return aSkip - bSkip;
 
     const aOshi = itemMatchesOshi(a).length > 0 ? 1 : 0;
@@ -523,6 +740,14 @@ function renderCoverImg(item, className = '') {
   )}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallback}';" />`;
 }
 
+function renderOfferThumbImg(item, offer, className = '') {
+  const fallback = createEditorialCoverDataUri(item);
+  const src = offer?.imageUrl || item.coverImageUrl || (item.gallery && item.gallery[0]?.url) || fallback;
+  return `<img class="${className}" src="${escapeHtml(src)}" alt="${escapeHtml(
+    offer ? `${item.title} ${offer.edition}` : item.title
+  )}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallback}';" />`;
+}
+
 function renderPhotoImg(photo, className = '') {
   const src = photo.url || photo.fallbackUri;
   return `<img class="${className}" src="${escapeHtml(src)}" alt="${escapeHtml(
@@ -530,31 +755,64 @@ function renderPhotoImg(photo, className = '') {
   )}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${photo.fallbackUri}';" />`;
 }
 
-function renderStatusMarkButton(itemId, compact = false) {
-  const st = getShelfStatus(itemId);
-  if (!st) {
+function renderStatusMarkButton(item, compact = false, offerId = null) {
+  if (offerId) {
+    const st = getOfferStatus(offerId);
+    if (!st) {
+      return `<button
+        class="status-mark-btn is-unmarked"
+        type="button"
+        data-open-status-picker="${escapeHtml(item.id)}"
+        data-picker-offer="${escapeHtml(offerId)}"
+        aria-label="この版のステータスをマーク"
+      >${compact ? '🏷＋' : '🏷 マーク'}</button>`;
+    }
+    const meta = SHELF_STATUS_META[st];
+    return `<button
+      class="status-mark-btn ${meta.colorClass}"
+      type="button"
+      data-open-status-picker="${escapeHtml(item.id)}"
+      data-picker-offer="${escapeHtml(offerId)}"
+      aria-label="この版のステータス変更：${escapeHtml(meta.label)}"
+    >${meta.icon}${compact ? '' : ' '}${escapeHtml(meta.short)}</button>`;
+  }
+
+  const summary = getItemStatusSummary(item);
+  if (summary.mode === 'none') {
     return `<button
       class="status-mark-btn is-unmarked"
       type="button"
-      data-open-status-picker="${escapeHtml(itemId)}"
-      aria-label="ステータスをマーク"
-      title="検討中・買う予定・買わないをマーク"
+      data-open-status-picker="${escapeHtml(item.id)}"
+      aria-label="表紙・特典別にステータスをマーク"
+      title="表紙・特典ごとに検討中・買う予定・予約済・購入済をマーク"
     >${compact ? '🏷＋' : '🏷 マーク'}</button>`;
   }
-  const meta = SHELF_STATUS_META[st];
+
+  const meta = SHELF_STATUS_META[summary.primaryStatus];
+  let labelText = meta.short;
+  if (summary.mode === 'offers') {
+    if (summary.markedOffers.length === 1) {
+      const o = summary.markedOffers[0].offer;
+      const storeShort = STORES[o.store]?.shortName || o.store;
+      labelText = compact ? storeShort : `${meta.short}(${storeShort})`;
+    } else {
+      labelText = compact ? `${summary.markedOffers.length}版` : `${meta.short}他${summary.markedOffers.length}版`;
+    }
+  }
+
   return `<button
     class="status-mark-btn ${meta.colorClass}"
     type="button"
-    data-open-status-picker="${escapeHtml(itemId)}"
-    aria-label="ステータス変更：${escapeHtml(meta.label)}"
-    title="${escapeHtml(meta.label)}（タップで変更）"
-  >${meta.icon}${compact ? '' : ' '}${escapeHtml(meta.short)}</button>`;
+    data-open-status-picker="${escapeHtml(item.id)}"
+    aria-label="ステータス変更：${escapeHtml(labelText)}"
+    title="表紙・特典別にマーク管理（タップで切替）"
+  >${meta.icon}${compact ? '' : ' '}${escapeHtml(labelText)}</button>`;
 }
 
 function renderCountdownStrip() {
   const container = document.getElementById('countdownStrip');
   const upcoming = getAllItems()
-    .filter((item) => diffDays(item.releaseDate) >= 0 && getShelfStatus(item.id) !== 'skip')
+    .filter((item) => diffDays(item.releaseDate) >= 0 && !isItemFullySkipped(item))
     .sort((a, b) => diffDays(a.releaseDate) - diffDays(b.releaseDate))
     .slice(0, 10);
 
@@ -562,8 +820,8 @@ function renderCountdownStrip() {
     .map((item) => {
       const cd = formatCountdown(item.releaseDate);
       const specialCount = getItemSpecialBonusCount(item);
-      const st = getShelfStatus(item.id);
-      const stIcon = st ? `${SHELF_STATUS_META[st].icon} ` : '';
+      const summary = getItemStatusSummary(item);
+      const stIcon = summary.primaryStatus ? `${SHELF_STATUS_META[summary.primaryStatus].icon} ` : '';
       return `
         <button class="countdown-chip" type="button" data-open-id="${escapeHtml(item.id)}">
           <span class="countdown-days ${cd.type === 'today' ? 'today' : ''}">${escapeHtml(cd.text)}</span>
@@ -629,6 +887,29 @@ function renderFilterChips() {
     )
     .join('');
 
+  // Artwork Reveal Watch chips
+  const revealedCnt = allItems.filter((it) => getItemArtworkWatch(it).hasRevealedBonus).length;
+  const pendingCnt = allItems.filter((it) => getItemArtworkWatch(it).hasPendingWatch).length;
+  const artworkChoices = [
+    { id: 'all', label: '🖼 絵柄すべて' },
+    { id: 'revealed', label: `✨ 特典絵柄公開済 (${revealedCnt})` },
+    { id: 'pending', label: `⏳ 絵柄・表紙解禁待ち (${pendingCnt})` },
+  ];
+
+  const artEl = document.getElementById('artworkChips');
+  if (artEl) {
+    artEl.innerHTML = artworkChoices
+      .map(
+        (choice) => `
+        <button class="filter-chip ${state.artworkFilter === choice.id ? 'active' : ''}" type="button" data-artwork-filter="${choice.id}">
+          ${escapeHtml(choice.label)}
+        </button>
+      `
+      )
+      .join('');
+  }
+
+  // Status filter chips (reflecting per-edition marks)
   const statusCounts = {
     all: allItems.length,
     unmarked: 0,
@@ -639,10 +920,10 @@ function renderFilterChips() {
     skip: 0,
   };
   for (const it of allItems) {
-    const st = getShelfStatus(it.id);
-    if (!st) statusCounts.unmarked += 1;
-    else if (st === 'reserved_7net' || st === 'reserved_other') statusCounts.reserved += 1;
-    else if (statusCounts[st] !== undefined) statusCounts[st] += 1;
+    if (itemHasStatusInBucket(it, 'unmarked')) statusCounts.unmarked += 1;
+    for (const k of SHELF_STATUS_ORDER) {
+      if (itemHasStatusInBucket(it, k)) statusCounts[k] += 1;
+    }
   }
 
   const statusChoices = [
@@ -693,9 +974,10 @@ function renderPhotoWall(items) {
   grid.innerHTML = allPhotos
     .map((photo, idx) => {
       const kindMeta = PHOTO_KIND_META[photo.kind] || { icon: '📷', label: '関連写真' };
+      const r18Class = photo.itemCategory === 'r18' ? 'is-r18-media' : '';
       return `
         <article class="wall-tile" data-wall-photo-idx="${idx}">
-          <div class="wall-photo-box">
+          <div class="wall-photo-box ${r18Class}">
             ${renderPhotoImg(photo)}
             <span class="wall-kind-tag">${kindMeta.icon} ${escapeHtml(kindMeta.label)}</span>
           </div>
@@ -719,10 +1001,11 @@ function renderCompactGrid(items) {
     .map((item) => {
       const cd = formatCountdown(item.releaseDate);
       const oshiHits = itemMatchesOshi(item);
-      const shelfStatus = getShelfStatus(item.id);
+      const fullySkipped = isItemFullySkipped(item);
       const photos = getItemPhotos(item);
       const visibleOffers = getVisibleOffers(item);
       const bonusOffersCount = visibleOffers.filter((o) => o.hasStoreExclusiveBonus === true).length;
+      const watch = getItemArtworkWatch(item);
 
       const storeBadges = STORE_ORDER.map((storeId) => {
         const offers = visibleOffers.filter((o) => o.store === storeId);
@@ -741,20 +1024,28 @@ function renderCompactGrid(items) {
           }付録</span>`
         : '';
 
+      const watchBadge =
+        watch.bonusCount > 0
+          ? watch.pendingBonusCount === 0
+            ? `<span class="compact-store-pill" style="background:#dcfce7;color:#166534;">✨絵柄公開</span>`
+            : `<span class="compact-store-pill" style="background:#fef3c7;color:#92400e;">⏳絵柄待${watch.pendingBonusCount}</span>`
+          : '';
+
       const dateShort = item.releaseDate.slice(5).replace('-', '/');
+      const r18Class = item.category === 'r18' ? 'is-r18-media' : '';
 
       return `
         <article class="compact-card ${oshiHits.length ? 'oshi-match' : ''} ${
-        shelfStatus === 'skip' ? 'is-skipped' : ''
+        fullySkipped ? 'is-skipped' : ''
       }" data-open-id="${escapeHtml(item.id)}">
-          <div class="compact-cover-box">
-            ${renderPhotoImg(photos[0])}
+          <div class="compact-cover-box ${r18Class}">
+            ${renderCoverImg(item)}
             <div class="compact-top-bar">
               <span class="compact-cd-pill ${cd.type === 'today' ? 'is-today' : ''}">${
                 cd.type === 'today' ? '本日発売' : `${dateShort} ${cd.text}`
               }</span>
               <div class="compact-top-right">
-                ${renderStatusMarkButton(item.id, true)}
+                ${renderStatusMarkButton(item, true)}
               </div>
             </div>
             <button
@@ -766,12 +1057,15 @@ function renderCompactGrid(items) {
             >🔍 確認${photos.length > 1 ? `(${photos.length})` : ''}</button>
             <div class="compact-bottom-scrim">
               ${
-                item.category === 'calendar'
-                  ? `<span class="compact-store-pill" style="background:#312e81;color:#fff;">🗓カレンダー</span>`
-                  : ''
+                item.category === 'r18'
+                  ? `<span class="compact-store-pill r18-pill">🔞R18</span>`
+                  : item.category === 'calendar'
+                    ? `<span class="compact-store-pill" style="background:#312e81;color:#fff;">🗓カレンダー</span>`
+                    : ''
               }
               ${oshiHits.length ? `<span class="compact-store-pill" style="background:var(--accent);color:#fff;">🔥${escapeHtml(oshiHits[0])}</span>` : ''}
               ${storeBadges}
+              ${watchBadge}
               ${includedTag}
             </div>
           </div>
@@ -843,10 +1137,12 @@ function renderMagazineGrid() {
     .map((item) => {
       const cd = formatCountdown(item.releaseDate);
       const oshiHits = itemMatchesOshi(item);
-      const shelfStatus = getShelfStatus(item.id);
+      const fullySkipped = isItemFullySkipped(item);
       const bonusTypes = getItemBonusTypes(item);
       const photos = getItemPhotos(item);
       const pressCount = (item.pressArticles || []).length;
+      const watch = getItemArtworkWatch(item);
+      const r18Class = item.category === 'r18' ? 'is-r18-media' : '';
 
       const visibleOffers = getVisibleOffers(item);
       const storeSummary = STORE_ORDER.map((storeId) => {
@@ -872,7 +1168,7 @@ function renderMagazineGrid() {
                 .map(
                   (photo, pIdx) => `
                   <button
-                    class="strip-thumb-btn"
+                    class="strip-thumb-btn ${r18Class}"
                     type="button"
                     data-item-lightbox="${escapeHtml(item.id)}"
                     data-photo-idx="${pIdx}"
@@ -889,10 +1185,10 @@ function renderMagazineGrid() {
 
       return `
         <article class="mag-card ${oshiHits.length ? 'oshi-match' : ''} ${
-        shelfStatus === 'skip' ? 'is-skipped' : ''
+        fullySkipped ? 'is-skipped' : ''
       }">
           <div class="mag-card-top" data-open-id="${escapeHtml(item.id)}">
-            <div class="cover-wrap">
+            <div class="cover-wrap ${r18Class}">
               ${renderCoverImg(item)}
               <span class="cover-date-tag ${cd.type === 'today' ? 'is-today' : ''}">
                 ${escapeHtml(item.releaseDate.slice(5).replace('-', '/'))} ・ ${escapeHtml(cd.text)}
@@ -902,10 +1198,17 @@ function renderMagazineGrid() {
             <div class="mag-info">
               <div class="meta-top-row">
                 <div style="display:flex;gap:4px;flex-wrap:wrap;">
-                  <span class="cat-badge">${escapeHtml(CATEGORY_META[item.category]?.label || '雑誌')}</span>
+                  <span class="cat-badge ${item.category === 'r18' ? 'is-r18' : ''}">${escapeHtml(CATEGORY_META[item.category]?.label || '雑誌')}</span>
+                  ${
+                    watch.bonusCount > 0
+                      ? watch.pendingBonusCount === 0
+                        ? `<span class="art-watch-badge is-revealed">✨ 絵柄公開済</span>`
+                        : `<span class="art-watch-badge is-pending">⏳ 絵柄待ち${watch.pendingBonusCount}</span>`
+                      : ''
+                  }
                   ${oshiHits.length ? `<span class="oshi-badge">🔥 ${escapeHtml(oshiHits[0])}</span>` : ''}
                 </div>
-                ${renderStatusMarkButton(item.id, false)}
+                ${renderStatusMarkButton(item, false)}
               </div>
 
               <h2 class="mag-title">${escapeHtml(item.title)}</h2>
@@ -963,9 +1266,110 @@ function renderMagazineGrid() {
     .join('');
 }
 
+/* =========================================================
+   Monthly Oshi Budget Meter (Proposal 3)
+   ========================================================= */
+function renderMonthlyBudgetMeterHtml() {
+  const budget = Math.max(1000, Number(state.monthlyBudget) || 15000);
+  const allMarked = getAllMarkedEntries();
+  const months = [
+    { id: '2026-11', label: '2026年11月（今月）' },
+    { id: '2026-12', label: '2026年12月（来月）' },
+    { id: '2027-01', label: '2027年1月（2ヶ月先）' },
+    { id: '2027-02', label: '2027年2月（3ヶ月先）' },
+  ];
+
+  const rowsHtml = months
+    .map((m) => {
+      const mEntries = allMarked.filter((e) => (e.item.releaseDate || '').startsWith(m.id));
+      const confirmed = mEntries
+        .filter((e) => e.status === 'want' || e.status === 'reserved' || e.status === 'owned')
+        .reduce((sum, e) => sum + e.price, 0);
+      const confirmedCnt = mEntries.filter(
+        (e) => e.status === 'want' || e.status === 'reserved' || e.status === 'owned'
+      ).length;
+      const considering = mEntries
+        .filter((e) => e.status === 'considering')
+        .reduce((sum, e) => sum + e.price, 0);
+      const consideringCnt = mEntries.filter((e) => e.status === 'considering').length;
+
+      const total = confirmed + considering;
+      const confirmedPct = Math.min(100, Math.round((confirmed / budget) * 100));
+      const consideringPct = Math.min(100 - confirmedPct, Math.round((considering / budget) * 100));
+      const remaining = budget - confirmed;
+
+      const statusTag =
+        remaining < 0
+          ? `<span class="budget-over-tag">⚠️ 予算超過 +¥${Math.abs(remaining).toLocaleString()}</span>`
+          : `<span class="budget-ok-tag">残り ¥${remaining.toLocaleString()}</span>`;
+
+      return `
+        <div class="budget-month-row">
+          <div class="budget-month-top">
+            <span>${escapeHtml(m.label)}</span>
+            ${statusTag}
+          </div>
+          <div class="budget-bar-track" aria-label="${escapeHtml(m.label)}予算消化率">
+            <div class="budget-bar-confirmed ${remaining >= 0 ? 'is-safe' : ''}" style="width:${confirmedPct}%"></div>
+            <div class="budget-bar-considering" style="width:${consideringPct}%"></div>
+          </div>
+          <div class="budget-month-foot">
+            <span>確定・予定(${confirmedCnt}版): <strong>¥${confirmed.toLocaleString()}</strong></span>
+            <span>${consideringCnt > 0 ? `🤔検討(${consideringCnt}版): ¥${considering.toLocaleString()}` : total === 0 ? 'まだ予定なし' : '検討中なし'}</span>
+          </div>
+        </div>
+      `;
+    })
+    .join('');
+
+  return `
+    <div class="budget-meter-card">
+      <div class="budget-meter-head">
+        <h3 class="budget-meter-title">💰 月別 推し活予算メーター（版別金額で自動集計）</h3>
+        <label class="budget-input-group">
+          <span>月予算 ¥</span>
+          <input
+            class="budget-number-input"
+            type="number"
+            min="1000"
+            step="1000"
+            value="${budget}"
+            data-budget-input
+            aria-label="月あたりの推し活予算上限"
+          />
+        </label>
+      </div>
+      <div class="budget-presets">
+        ${BUDGET_PRESETS.map(
+          (val) => `
+          <button
+            class="budget-preset-btn ${budget === val ? 'active' : ''}"
+            type="button"
+            data-budget-preset="${val}"
+          >¥${val.toLocaleString()}</button>
+        `
+        ).join('')}
+      </div>
+      <div class="budget-months-grid">${rowsHtml}</div>
+    </div>
+  `;
+}
+
+function setMonthlyBudget(val) {
+  const num = Math.max(1000, Math.min(500000, Math.round(Number(val) || 15000)));
+  state.monthlyBudget = num;
+  saveJson(STORAGE_KEYS.budget, num);
+  renderCalendar();
+  renderOshiAndShelf();
+}
+
+/* =========================================================
+   Tab 2: 3-Month Upcoming Excitement Corner
+   ========================================================= */
 function getMonthRoadmapBuckets(items) {
   const upcomingItems = items.filter((it) => diffDays(it.releaseDate) >= 0);
   const pastItems = items.filter((it) => diffDays(it.releaseDate) < 0);
+  const allMarked = getAllMarkedEntries();
 
   const buckets = [
     { id: 'upcoming', tag: '今後3ヶ月', title: '✨ すべて', items: upcomingItems },
@@ -997,21 +1401,32 @@ function getMonthRoadmapBuckets(items) {
   ];
 
   return buckets.map((b) => {
+    const idSet = new Set(b.items.map((x) => x.id));
+    const bucketEntries = allMarked.filter((e) => idSet.has(e.item.id));
     const bonusCount = b.items.filter((it) => getItemSpecialBonusCount(it) > 0).length;
-    const markedPlanned = b.items.filter((it) => {
-      const st = getShelfStatus(it.id);
-      return st === 'want' || st === 'reserved_7net' || st === 'reserved_other';
-    });
-    const consideringCount = b.items.filter((it) => getShelfStatus(it.id) === 'considering').length;
-    const plannedYen = markedPlanned.reduce((sum, it) => sum + (Number(it.price) || 0), 0);
+    const plannedEntries = bucketEntries.filter(
+      (e) => e.status === 'want' || e.status === 'reserved' || e.status === 'owned'
+    );
+    const consideringCount = bucketEntries.filter((e) => e.status === 'considering').length;
+    const plannedYen = plannedEntries.reduce((sum, e) => sum + e.price, 0);
     return {
       ...b,
       bonusCount,
-      plannedCount: markedPlanned.length,
+      plannedCount: plannedEntries.length,
       consideringCount,
       plannedYen,
     };
   });
+}
+
+function getUpcomingPlannedEntries() {
+  return getAllMarkedEntries()
+    .filter(
+      (e) =>
+        diffDays(e.item.releaseDate) >= 0 &&
+        (e.status === 'want' || e.status === 'reserved' || e.status === 'considering')
+    )
+    .sort((a, b) => new Date(a.item.releaseDate) - new Date(b.item.releaseDate));
 }
 
 function renderCalendar() {
@@ -1019,15 +1434,14 @@ function renderCalendar() {
   const allItems = getAllItems();
   const buckets = getMonthRoadmapBuckets(allItems);
 
-  // Pick "Your Next Upcoming Treat" hero item
   const upcomingSorted = allItems
-    .filter((it) => diffDays(it.releaseDate) >= 0 && getShelfStatus(it.id) !== 'skip')
+    .filter((it) => diffDays(it.releaseDate) >= 0 && !isItemFullySkipped(it))
     .sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
 
   const heroItem =
     upcomingSorted.find((it) => {
-      const st = getShelfStatus(it.id);
-      return st === 'want' || st === 'reserved_7net' || st === 'reserved_other' || st === 'considering';
+      const s = getItemStatusSummary(it);
+      return s.primaryStatus && s.primaryStatus !== 'skip';
     }) ||
     upcomingSorted.find((it) => getItemSpecialBonusCount(it) > 0) ||
     upcomingSorted[0] ||
@@ -1036,16 +1450,21 @@ function renderCalendar() {
   let heroHtml = '';
   if (heroItem) {
     const cd = formatCountdown(heroItem.releaseDate);
-    const st = getShelfStatus(heroItem.id);
-    const stText = st ? SHELF_STATUS_META[st].label : '🎁 注目リリース';
+    const summary = getItemStatusSummary(heroItem);
+    const stText = summary.primaryStatus ? SHELF_STATUS_META[summary.primaryStatus].label : '🎁 注目リリース';
     const topBonus =
-      getVisibleOffers(heroItem).find((o) => o.hasStoreExclusiveBonus === true)?.bonusText ||
-      heroItem.includedBonuses?.[0]?.label ||
-      heroItem.summary ||
-      '';
+      summary.markedOffers[0]
+        ? `${formatOfferShortLabel(summary.markedOffers[0].offer)}：${summary.markedOffers[0].offer.bonusText}`
+        : getVisibleOffers(heroItem).find((o) => o.hasStoreExclusiveBonus === true)?.bonusText ||
+          heroItem.includedBonuses?.[0]?.label ||
+          heroItem.summary ||
+          '';
+    const r18Class = heroItem.category === 'r18' ? 'is-r18-media' : '';
     heroHtml = `
       <div class="excitement-hero">
-        ${renderCoverImg(heroItem, 'excitement-hero-thumb')}
+        <div class="${r18Class}" style="flex-shrink:0;border-radius:10px;">
+          ${renderCoverImg(heroItem, 'excitement-hero-thumb')}
+        </div>
         <div class="excitement-hero-body">
           <div class="excitement-hero-kicker">
             <span>💖 次のお楽しみ</span>
@@ -1064,7 +1483,7 @@ function renderCalendar() {
               特典比較・購入 →
             </button>
             <button class="excitement-hero-btn is-ghost" type="button" data-download-ics="${escapeHtml(heroItem.id)}">
-              📅 カレンダー登録
+              📅 この作品を登録
             </button>
           </div>
         </div>
@@ -1072,7 +1491,23 @@ function renderCalendar() {
     `;
   }
 
-  // Roadmap cards
+  const upcomingPlanned = getUpcomingPlannedEntries();
+  const bulkBarHtml = `
+    <div class="shelf-actions-bar" style="margin-top:0;">
+      <span style="font-size:11px;font-weight:700;color:var(--ink-secondary);">
+        📌 発売予定のマーク済み：<strong>${upcomingPlanned.length}版</strong>
+      </span>
+      <button
+        class="bulk-ics-btn"
+        type="button"
+        data-download-bulk-ics="upcoming"
+        ${upcomingPlanned.length === 0 ? 'disabled' : ''}
+      >📅 予定・予約済みをまとめてカレンダー登録 (${upcomingPlanned.length}件)</button>
+    </div>
+  `;
+
+  const budgetHtml = renderMonthlyBudgetMeterHtml();
+
   const roadmapHtml = `
     <div class="month-roadmap-strip" role="tablist" aria-label="月別発売ロードマップ">
       ${buckets
@@ -1085,12 +1520,12 @@ function renderCalendar() {
         >
           <span class="month-pill-tag">${escapeHtml(b.tag)}</span>
           <span class="month-pill-title">${escapeHtml(b.title)}</span>
-          <span class="month-pill-stats">${b.items.length}冊 ・ 🎁${b.bonusCount}</span>
+          <span class="month-pill-stats">${b.items.length}作品 ・ 🎁${b.bonusCount}</span>
           <span class="month-pill-budget">${
             b.plannedCount > 0
-              ? `👀${b.plannedCount}冊 ¥${b.plannedYen.toLocaleString()}`
+              ? `👀${b.plannedCount}版 ¥${b.plannedYen.toLocaleString()}`
               : b.consideringCount > 0
-                ? `🤔検討中 ${b.consideringCount}冊`
+                ? `🤔検討中 ${b.consideringCount}版`
                 : 'まだ未マーク'
           }</span>
         </button>
@@ -1100,13 +1535,14 @@ function renderCalendar() {
     </div>
   `;
 
-  // Sub-filter row
   const subChoices = [
     { id: 'all', label: 'すべて表示' },
     { id: 'marked', label: '💖 予定・検討中のみ' },
     { id: 'bonus', label: '🎁 限定特典あり' },
+    { id: 'pending', label: '⏳ 絵柄解禁待ち' },
     { id: 'calendar', label: '🗓 カレンダー' },
     { id: 'photobook', label: '📸 写真集' },
+    { id: 'r18', label: '🔞 R18' },
   ];
   const subFilterHtml = `
     <div class="calendar-subfilter-row">
@@ -1129,15 +1565,19 @@ function renderCalendar() {
 
   if (state.calendarSubFilter === 'marked') {
     listItems = listItems.filter((it) => {
-      const st = getShelfStatus(it.id);
-      return st === 'want' || st === 'considering' || st === 'reserved_7net' || st === 'reserved_other';
+      const s = getItemStatusSummary(it);
+      return s.activeCount > 0;
     });
   } else if (state.calendarSubFilter === 'bonus') {
     listItems = listItems.filter((it) => getItemSpecialBonusCount(it) > 0);
+  } else if (state.calendarSubFilter === 'pending') {
+    listItems = listItems.filter((it) => getItemArtworkWatch(it).hasPendingWatch);
   } else if (state.calendarSubFilter === 'calendar') {
     listItems = listItems.filter((it) => it.category === 'calendar');
   } else if (state.calendarSubFilter === 'photobook') {
     listItems = listItems.filter((it) => it.category === 'photobook');
+  } else if (state.calendarSubFilter === 'r18') {
+    listItems = listItems.filter((it) => it.category === 'r18');
   }
 
   listItems.sort((a, b) =>
@@ -1167,17 +1607,28 @@ function renderCalendar() {
                   .map((item) => {
                     const specialCount = getItemSpecialBonusCount(item);
                     const photoCount = getItemPhotos(item).length;
-                    const status = getShelfStatus(item.id);
+                    const fullySkipped = isItemFullySkipped(item);
+                    const watch = getItemArtworkWatch(item);
                     const catLabel = CATEGORY_META[item.category]?.label || '雑誌';
+                    const r18Class = item.category === 'r18' ? 'is-r18-media' : '';
                     return `
-                      <div class="timeline-item ${status === 'skip' ? 'is-skipped' : ''}" data-open-id="${escapeHtml(item.id)}">
-                        ${renderCoverImg(item, 'timeline-thumb')}
+                      <div class="timeline-item ${fullySkipped ? 'is-skipped' : ''}" data-open-id="${escapeHtml(item.id)}">
+                        <div class="${r18Class}" style="flex-shrink:0;border-radius:8px;">
+                          ${renderCoverImg(item, 'timeline-thumb')}
+                        </div>
                         <div class="timeline-body">
                           <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:3px;">
-                            <span class="cat-badge">${escapeHtml(catLabel)}</span>
+                            <span class="cat-badge ${item.category === 'r18' ? 'is-r18' : ''}">${escapeHtml(catLabel)}</span>
                             ${
                               specialCount > 0
                                 ? `<span class="oshi-badge">🎁 特典${specialCount}</span>`
+                                : ''
+                            }
+                            ${
+                              watch.bonusCount > 0
+                                ? watch.pendingBonusCount === 0
+                                  ? `<span class="art-watch-badge is-revealed">✨ 絵柄公開</span>`
+                                  : `<span class="art-watch-badge is-pending">⏳ 絵柄待${watch.pendingBonusCount}</span>`
                                 : ''
                             }
                           </div>
@@ -1188,7 +1639,7 @@ function renderCalendar() {
                           </p>
                         </div>
                         <div class="timeline-actions">
-                          ${renderStatusMarkButton(item.id, false)}
+                          ${renderStatusMarkButton(item, false)}
                           <button class="quick-preview-icon-btn" type="button" data-quick-preview="${escapeHtml(item.id)}">
                             🔍 確認
                           </button>
@@ -1204,9 +1655,12 @@ function renderCalendar() {
         .join('')
     : `<div class="empty-state"><strong>この条件の発売予定はありません</strong><p>別の月や絞り込みを切り替えてみてください。</p></div>`;
 
-  container.innerHTML = `${heroHtml}${roadmapHtml}${subFilterHtml}${timelineHtml}`;
+  container.innerHTML = `${heroHtml}${bulkBarHtml}${budgetHtml}${roadmapHtml}${subFilterHtml}${timelineHtml}`;
 }
 
+/* =========================================================
+   Tab 3: Per-Edition Status Corner & Shelf
+   ========================================================= */
 function renderOshiAndShelf() {
   const cloud = document.getElementById('oshiTagCloud');
   cloud.innerHTML = state.oshiKeywords.length
@@ -1222,24 +1676,19 @@ function renderOshiAndShelf() {
         .join('')
     : '<span style="font-size:12px;color:var(--ink-muted);">まだ推しワードが登録されていません。</span>';
 
-  const itemsById = new Map(getAllItems().map((item) => [item.id, item]));
-  const trackedEntries = Object.entries(state.shelfMap)
-    .map(([id, status]) => ({ item: itemsById.get(id), status }))
-    .filter((entry) => Boolean(entry.item) && Boolean(SHELF_STATUS_META[entry.status]));
+  const trackedEntries = getAllMarkedEntries();
 
   const countByBucket = {
     all: trackedEntries.length,
     considering: trackedEntries.filter((e) => e.status === 'considering').length,
     want: trackedEntries.filter((e) => e.status === 'want').length,
-    reserved: trackedEntries.filter(
-      (e) => e.status === 'reserved_7net' || e.status === 'reserved_other'
-    ).length,
+    reserved: trackedEntries.filter((e) => e.status === 'reserved').length,
     owned: trackedEntries.filter((e) => e.status === 'owned').length,
     skip: trackedEntries.filter((e) => e.status === 'skip').length,
   };
 
   const cornerTiles = [
-    { id: 'all', icon: '🏷', label: 'マーク全体', count: countByBucket.all },
+    { id: 'all', icon: '🏷', label: '全マーク版', count: countByBucket.all },
     { id: 'considering', icon: '🤔', label: '検討中', count: countByBucket.considering },
     { id: 'want', icon: '👀', label: '買う予定', count: countByBucket.want },
     { id: 'reserved', icon: '🛒', label: '予約済', count: countByBucket.reserved },
@@ -1267,11 +1716,14 @@ function renderOshiAndShelf() {
   }
 
   const plannedYen = trackedEntries
-    .filter((e) => e.status === 'want' || e.status === 'reserved_7net' || e.status === 'reserved_other')
-    .reduce((sum, e) => sum + (Number(e.item.price) || 0), 0);
+    .filter((e) => e.status === 'want' || e.status === 'reserved')
+    .reduce((sum, e) => sum + e.price, 0);
+  const ownedYen = trackedEntries
+    .filter((e) => e.status === 'owned')
+    .reduce((sum, e) => sum + e.price, 0);
   const consideringYen = trackedEntries
     .filter((e) => e.status === 'considering')
-    .reduce((sum, e) => sum + (Number(e.item.price) || 0), 0);
+    .reduce((sum, e) => sum + e.price, 0);
 
   document.getElementById('shelfStats').innerHTML = `
     <div class="stat-box">
@@ -1283,39 +1735,85 @@ function renderOshiAndShelf() {
       <div class="stat-label">🤔 検討中の合計</div>
     </div>
     <div class="stat-box">
-      <div class="stat-val">${trackedEntries.length} / ${getAllItems().length}</div>
-      <div class="stat-label">判定済み作品</div>
+      <div class="stat-val">¥${ownedYen.toLocaleString()}</div>
+      <div class="stat-label">✅ 購入済 (${countByBucket.owned}版)</div>
     </div>
   `;
 
+  const upcomingPlanned = getUpcomingPlannedEntries();
+  const actionsBar = document.getElementById('shelfActionsBar');
+  if (actionsBar) {
+    actionsBar.innerHTML = `
+      <span style="font-size:11px;color:var(--ink-secondary);font-weight:700;">
+        📚 登録済み：<strong>${trackedEntries.length}エディション</strong>（表紙・特典別管理）
+      </span>
+      <button
+        class="bulk-ics-btn"
+        type="button"
+        data-download-bulk-ics="upcoming"
+        ${upcomingPlanned.length === 0 ? 'disabled' : ''}
+      >📅 発売予定を一括カレンダー登録 (.ics / ${upcomingPlanned.length}件)</button>
+    `;
+  }
+
+  const budgetPanel = document.getElementById('shelfBudgetPanel');
+  if (budgetPanel) {
+    budgetPanel.innerHTML = renderMonthlyBudgetMeterHtml();
+  }
+
   const visibleEntries = trackedEntries
-    .filter((e) => matchesStatusBucket(e.status, state.shelfFilter))
+    .filter((e) => state.shelfFilter === 'all' || e.status === state.shelfFilter)
     .sort((a, b) => new Date(a.item.releaseDate) - new Date(b.item.releaseDate));
 
   const shelfList = document.getElementById('shelfList');
   if (!visibleEntries.length) {
     shelfList.innerHTML =
-      '<p style="font-size:12px;color:var(--ink-muted);margin:0;">このステータスの作品はまだありません。各カードの「🏷 マーク」からワンタップで仕分けできます。</p>';
+      '<p style="font-size:12px;color:var(--ink-muted);margin:0;">このステータスの表紙・特典はまだありません。各カードの「🏷 マーク」または比較画面から表紙・特典単位で登録できます。</p>';
     return;
   }
 
   shelfList.innerHTML = visibleEntries
-    .map(({ item, status }) => {
+    .map(({ item, offer, status, price }) => {
       const cd = formatCountdown(item.releaseDate);
+      const store = offer ? STORES[offer.store] || { shortName: offer.store, badgeClass: 'store-amazon' } : null;
+      const r18Class = item.category === 'r18' ? 'is-r18-media' : '';
       return `
         <div class="timeline-item ${status === 'skip' ? 'is-skipped' : ''}" data-open-id="${escapeHtml(item.id)}">
-          ${renderCoverImg(item, 'timeline-thumb')}
+          <div class="${r18Class}" style="flex-shrink:0;border-radius:8px;">
+            ${renderOfferThumbImg(item, offer, 'timeline-thumb')}
+          </div>
           <div class="timeline-body">
+            <div class="shelf-edition-badges">
+              ${
+                store
+                  ? `<span class="store-badge ${store.badgeClass}" style="font-size:9px;padding:1px 6px;">${escapeHtml(store.shortName)}</span>`
+                  : `<span class="cat-badge">作品全体</span>`
+              }
+              <span class="shelf-edition-label">${escapeHtml(
+                offer ? offer.edition : '通常マーク'
+              )}</span>
+            </div>
             <h4 class="timeline-title">${escapeHtml(item.title)}</h4>
-            <p class="timeline-sub">${escapeHtml(formatDateLabel(item.releaseDate))}（${escapeHtml(cd.text)}） ・ ¥${(
-              item.price || 0
-            ).toLocaleString()}</p>
+            <p class="timeline-sub">
+              ${escapeHtml(offer?.bonusText || (item.coverTalents || []).join('・'))}
+            </p>
+            <p class="timeline-sub" style="margin-top:2px;">
+              ${escapeHtml(formatDateLabel(item.releaseDate))}（${escapeHtml(cd.text)}） ・ <strong>¥${price.toLocaleString()}</strong>
+            </p>
           </div>
           <div class="timeline-actions">
-            ${renderStatusMarkButton(item.id, false)}
-            <button class="quick-preview-icon-btn" type="button" data-quick-preview="${escapeHtml(item.id)}">
-              🔍 確認
-            </button>
+            ${renderStatusMarkButton(item, false, offer ? offer.id : null)}
+            ${
+              offer
+                ? `<a
+                    class="quick-preview-icon-btn"
+                    href="${escapeHtml(offer.url)}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-stop-prop="1"
+                  >購入先 ↗</a>`
+                : `<button class="quick-preview-icon-btn" type="button" data-quick-preview="${escapeHtml(item.id)}">🔍 確認</button>`
+            }
           </div>
         </div>
       `;
@@ -1375,24 +1873,104 @@ function renderHubLauncher() {
 }
 
 /* =========================================================
-   Quick 1-Tap Status Picker Sheet
+   Quick 1-Tap Per-Edition Status Picker Sheet
    ========================================================= */
-function openStatusPicker(itemId) {
+function openStatusPicker(itemId, initialOfferId = null) {
   const item = getItemById(itemId);
   if (!item) return;
 
+  const visibleOffers = getVisibleOffers(item);
   state.statusPickerItemId = itemId;
-  const currentStatus = getShelfStatus(itemId);
+
+  if (initialOfferId && visibleOffers.some((o) => o.id === initialOfferId)) {
+    state.statusPickerOfferId = initialOfferId;
+  } else {
+    const firstMarked = visibleOffers.find((o) => getOfferStatus(o.id));
+    state.statusPickerOfferId = (firstMarked || visibleOffers[0])?.id || null;
+  }
+
+  renderStatusPickerBody();
+  document.getElementById('statusPickerSheet').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function renderStatusPickerBody() {
+  const item = getItemById(state.statusPickerItemId);
+  if (!item) return;
+
+  const visibleOffers = getVisibleOffers(item);
+  const selectedOffer =
+    visibleOffers.find((o) => o.id === state.statusPickerOfferId) || visibleOffers[0] || null;
+  state.statusPickerOfferId = selectedOffer?.id || null;
+
+  const currentStatus = selectedOffer
+    ? getOfferStatus(selectedOffer.id)
+    : getLegacyItemStatus(item.id);
 
   document.getElementById('statusPickerItemMeta').innerHTML = `
-    ${renderCoverImg(item, 'quick-status-thumb')}
+    ${renderOfferThumbImg(item, selectedOffer, 'quick-status-thumb')}
     <div style="min-width:0;">
       <h3 id="statusPickerTitle" class="quick-status-item-title">${escapeHtml(item.title)}</h3>
-      <div class="quick-status-item-sub">${escapeHtml(formatDateLabel(item.releaseDate))} ・ ¥${(
-        item.price || 0
-      ).toLocaleString()}</div>
+      <div class="quick-status-item-sub">
+        ${escapeHtml(formatDateLabel(item.releaseDate))} ・ ¥${(
+          selectedOffer?.price || item.price || 0
+        ).toLocaleString()}
+      </div>
     </div>
   `;
+
+  const edWrap = document.getElementById('statusPickerEditionWrap');
+  if (visibleOffers.length > 1) {
+    edWrap.style.display = 'block';
+    edWrap.innerHTML = `
+      <div class="status-picker-ed-label">
+        📌 どの表紙・特典をマークしますか？（タップして選択・複数版OK）
+      </div>
+      <div class="edition-choice-list">
+        ${visibleOffers
+          .map((offer) => {
+            const st = getOfferStatus(offer.id);
+            const meta = st ? SHELF_STATUS_META[st] : null;
+            const store = STORES[offer.store] || { shortName: offer.store, badgeClass: 'store-amazon' };
+            const isSel = selectedOffer && selectedOffer.id === offer.id;
+            return `
+              <button
+                class="edition-choice-row ${isSel ? 'selected' : ''}"
+                type="button"
+                data-select-picker-offer="${escapeHtml(offer.id)}"
+              >
+                ${renderOfferThumbImg(item, offer, 'edition-choice-thumb')}
+                <div class="edition-choice-info">
+                  <div class="edition-choice-top">
+                    <span class="store-badge ${store.badgeClass}" style="font-size:9px;padding:1px 5px;">${escapeHtml(store.shortName)}</span>
+                    <span>${escapeHtml(offer.edition)}</span>
+                  </div>
+                  <div class="edition-choice-sub">
+                    ${escapeHtml(offer.bonusText)} ・ ¥${(offer.price || item.price || 0).toLocaleString()}
+                  </div>
+                </div>
+                <span class="edition-choice-status ${meta ? meta.colorClass : ''}">
+                  ${meta ? `${meta.icon} ${escapeHtml(meta.short)}` : '未判定'}
+                </span>
+              </button>
+            `;
+          })
+          .join('')}
+      </div>
+    `;
+  } else if (selectedOffer) {
+    const store = STORES[selectedOffer.store] || { shortName: selectedOffer.store, badgeClass: 'store-amazon' };
+    edWrap.style.display = 'block';
+    edWrap.innerHTML = `
+      <div class="status-picker-ed-label">
+        📌 対象版：<span class="store-badge ${store.badgeClass}" style="font-size:9px;padding:1px 6px;">${escapeHtml(store.shortName)}</span>
+        ${escapeHtml(selectedOffer.edition)}
+      </div>
+    `;
+  } else {
+    edWrap.style.display = 'none';
+    edWrap.innerHTML = '';
+  }
 
   document.getElementById('statusPickerGrid').innerHTML = SHELF_STATUS_ORDER.map((key) => {
     const meta = SHELF_STATUS_META[key];
@@ -1412,12 +1990,11 @@ function openStatusPicker(itemId) {
   }).join('');
 
   document.getElementById('statusPickerClearBtn').style.visibility = currentStatus ? 'visible' : 'hidden';
-  document.getElementById('statusPickerSheet').classList.add('open');
-  document.body.style.overflow = 'hidden';
 }
 
 function closeStatusPicker() {
   state.statusPickerItemId = null;
+  state.statusPickerOfferId = null;
   document.getElementById('statusPickerSheet').classList.remove('open');
   if (!state.selectedItemId && !document.getElementById('photoLightbox').classList.contains('open')) {
     document.body.style.overflow = '';
@@ -1462,7 +2039,6 @@ function renderLightbox() {
   const kindMeta = PHOTO_KIND_META[photo.kind] || { icon: '📷', label: '関連写真' };
   document.getElementById('lightboxSource').textContent = `${kindMeta.icon} ${kindMeta.label} ・ ${photo.source}`;
 
-  // Slide switcher pills
   const thumbsEl = document.getElementById('lightboxThumbs');
   if (photos.length > 1) {
     thumbsEl.style.display = 'flex';
@@ -1482,7 +2058,6 @@ function renderLightbox() {
     thumbsEl.innerHTML = '';
   }
 
-  // 1-Tap Offer & Direct Buy CTA bar
   const offerBar = document.getElementById('lightboxOfferBar');
   const offer = photo.offer;
   if (offer) {
@@ -1531,26 +2106,33 @@ function renderLightbox() {
     offerBar.innerHTML = '';
   }
 
-  // 1-Tap Quick Status Bar inside Lightbox
+  // Per-Edition 1-Tap Quick Status Bar inside Lightbox
+  const targetEl = document.getElementById('lightboxStatusTarget');
   const statusBar = document.getElementById('lightboxStatusBar');
   if (photo.itemId) {
-    const currentStatus = getShelfStatus(photo.itemId);
-    const quickKeys = ['considering', 'want', 'reserved_7net', 'owned', 'skip'];
+    const targetOfferId = offer?.id || '';
+    const currentStatus = targetOfferId ? getOfferStatus(targetOfferId) : getLegacyItemStatus(photo.itemId);
+    if (targetEl) {
+      targetEl.style.display = 'flex';
+      targetEl.textContent = targetOfferId
+        ? `📌 マーク対象：${formatOfferShortLabel(offer)}`
+        : `📌 マーク対象：${photo.itemTitle}`;
+    }
     statusBar.style.display = 'flex';
-    statusBar.innerHTML = quickKeys
-      .map((key) => {
-        const meta = SHELF_STATUS_META[key];
-        return `
-          <button
-            class="lightbox-status-btn ${currentStatus === key ? 'active' : ''}"
-            type="button"
-            data-lightbox-status="${key}"
-            data-lightbox-item="${escapeHtml(photo.itemId)}"
-          >${meta.icon} ${escapeHtml(meta.short)}</button>
-        `;
-      })
-      .join('');
+    statusBar.innerHTML = SHELF_STATUS_ORDER.map((key) => {
+      const meta = SHELF_STATUS_META[key];
+      return `
+        <button
+          class="lightbox-status-btn ${currentStatus === key ? 'active' : ''}"
+          type="button"
+          data-lightbox-status="${key}"
+          data-lightbox-item="${escapeHtml(photo.itemId)}"
+          data-lightbox-offer="${escapeHtml(targetOfferId)}"
+        >${meta.icon} ${escapeHtml(meta.short)}</button>
+      `;
+    }).join('');
   } else {
+    if (targetEl) targetEl.style.display = 'none';
     statusBar.style.display = 'none';
     statusBar.innerHTML = '';
   }
@@ -1568,7 +2150,7 @@ function renderLightbox() {
 }
 
 /* =========================================================
-   .ics Release Calendar Reminder Download
+   .ics Release Calendar Download (Single + Bulk Export!)
    ========================================================= */
 function escapeIcsText(text = '') {
   return String(text)
@@ -1578,14 +2160,55 @@ function escapeIcsText(text = '') {
     .replace(/;/g, '\\;');
 }
 
-function downloadReleaseIcs(item) {
-  if (!item || !item.releaseDate) return;
-  const start = item.releaseDate.replace(/-/g, '');
-  const nextDayObj = new Date(`${item.releaseDate}T00:00:00`);
+function buildIcsEventLines({ uid, releaseDate, summary, description, alarmDesc }) {
+  const start = releaseDate.replace(/-/g, '');
+  const nextDayObj = new Date(`${releaseDate}T00:00:00`);
   nextDayObj.setDate(nextDayObj.getDate() + 1);
   const pad = (n) => String(n).padStart(2, '0');
   const end = `${nextDayObj.getFullYear()}${pad(nextDayObj.getMonth() + 1)}${pad(nextDayObj.getDate())}`;
+  const nowStamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
 
+  return [
+    'BEGIN:VEVENT',
+    `UID:${uid}@happy-magazine-center`,
+    `DTSTAMP:${nowStamp}`,
+    `DTSTART;VALUE=DATE:${start}`,
+    `DTEND;VALUE=DATE:${end}`,
+    `SUMMARY:${escapeIcsText(summary)}`,
+    `DESCRIPTION:${escapeIcsText(description)}`,
+    'BEGIN:VALARM',
+    'TRIGGER:-P1D',
+    'ACTION:DISPLAY',
+    `DESCRIPTION:${escapeIcsText(alarmDesc)}`,
+    'END:VALARM',
+    'END:VEVENT',
+  ];
+}
+
+function triggerIcsDownload(eventsLines, filename) {
+  const ics = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Happy Magazine Center//Release Reminder//JA',
+    'CALSCALE:GREGORIAN',
+    'X-WR-CALNAME:Happy Magazine Center 発売予定',
+    ...eventsLines,
+    'END:VCALENDAR',
+  ].join('\r\n');
+
+  const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function downloadReleaseIcs(item) {
+  if (!item || !item.releaseDate) return;
   const visibleOffers = getVisibleOffers(item);
   const bonusLines = visibleOffers
     .filter((o) => o.hasStoreExclusiveBonus)
@@ -1599,37 +2222,49 @@ function downloadReleaseIcs(item) {
     .filter(Boolean)
     .join('\n');
 
-  const nowStamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-  const ics = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'PRODID:-//Happy Magazine Center//Release Reminder//JA',
-    'CALSCALE:GREGORIAN',
-    'BEGIN:VEVENT',
-    `UID:${item.id}@happy-magazine-center`,
-    `DTSTAMP:${nowStamp}`,
-    `DTSTART;VALUE=DATE:${start}`,
-    `DTEND;VALUE=DATE:${end}`,
-    `SUMMARY:${escapeIcsText(`【発売】${item.title}`)}`,
-    `DESCRIPTION:${escapeIcsText(desc)}`,
-    'BEGIN:VALARM',
-    'TRIGGER:-P1D',
-    'ACTION:DISPLAY',
-    `DESCRIPTION:${escapeIcsText(`明日発売：${item.title}`)}`,
-    'END:VALARM',
-    'END:VEVENT',
-    'END:VCALENDAR',
-  ].join('\r\n');
+  const lines = buildIcsEventLines({
+    uid: item.id,
+    releaseDate: item.releaseDate,
+    summary: `【発売】${item.title}`,
+    description: desc,
+    alarmDesc: `明日発売：${item.title}`,
+  });
+  triggerIcsDownload(lines, `release-${item.id}.ics`);
+}
 
-  const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `release-${item.id}.ics`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
+function downloadBulkReleaseIcs(entries) {
+  if (!entries || !entries.length) return;
+  const allEventLines = [];
+  for (const entry of entries) {
+    const { item, offer, status, price } = entry;
+    if (!item?.releaseDate) continue;
+    const stMeta = SHELF_STATUS_META[status] || { icon: '📌', short: '' };
+    const storeName = offer ? STORES[offer.store]?.name || offer.store : '各ストア';
+    const editionSuffix = offer ? `【${STORES[offer.store]?.shortName || offer.store}・${offer.edition}】` : '';
+    const desc = [
+      `ステータス: ${stMeta.icon} ${stMeta.short}`,
+      `作品: ${item.title}`,
+      offer ? `対象エディション: ${storeName} / ${offer.edition}` : '',
+      offer?.bonusText ? `特典内容: ${offer.bonusText}` : '',
+      `金額目安: ¥${price.toLocaleString()}`,
+      offer?.url ? `購入ページ: ${offer.url}` : '',
+    ]
+      .filter(Boolean)
+      .join('\n');
+
+    allEventLines.push(
+      ...buildIcsEventLines({
+        uid: offer ? `${item.id}-${offer.id}` : item.id,
+        releaseDate: item.releaseDate,
+        summary: `${stMeta.icon}【発売】${item.title}${editionSuffix}`,
+        description: desc,
+        alarmDesc: `明日発売：${item.title} ${editionSuffix}`,
+      })
+    );
+  }
+  if (allEventLines.length) {
+    triggerIcsDownload(allEventLines, `happy-magazine-releases-${state.referenceDate}.ics`);
+  }
 }
 
 /* =========================================================
@@ -1718,7 +2353,6 @@ function renderDetailSheetBody(item) {
   document.getElementById('sheetTitle').textContent = item.series || '関連写真＆特典比較';
 
   const cd = formatCountdown(item.releaseDate);
-  const currentStatus = getShelfStatus(item.id);
   const allPhotos = getItemPhotos(item);
   const quickPreviewCount = buildQuickPreviewPhotos(item).length;
   const filteredPhotos = allPhotos.filter(
@@ -1734,22 +2368,112 @@ function renderDetailSheetBody(item) {
   const offers = visibleOffers.filter(
     (o) => state.selectedOfferStore === 'all' || o.store === state.selectedOfferStore
   );
+  const markedOffers = getItemMarkedOffers(item);
+  const watch = getItemArtworkWatch(item);
+  const r18Class = item.category === 'r18' ? 'is-r18-media' : '';
 
   const officialSns = getOfficialSnsForItem(item);
   const talentPromos = buildTalentPromoLinks(item);
   const pressArticles = item.pressArticles || [];
   const itemCoverFallback = item.coverImageUrl || (item.gallery && item.gallery[0]?.url) || '';
 
+  // Per-Edition Marked Summary or Single-Offer Quick Bar
+  let statusSummaryHtml = '';
+  if (visibleOffers.length > 1) {
+    statusSummaryHtml = `
+      <div class="edition-marks-summary">
+        <div class="edition-marks-summary-title">
+          📌 表紙・特典別マーク状況（下の各カードで版ごとに切替できます）
+        </div>
+        <div class="edition-marks-pills">
+          ${
+            markedOffers.length
+              ? markedOffers
+                  .map(({ offer, status }) => {
+                    const meta = SHELF_STATUS_META[status];
+                    return `
+                      <button
+                        class="edition-mark-chip ${meta.colorClass}"
+                        type="button"
+                        data-open-status-picker="${escapeHtml(item.id)}"
+                        data-picker-offer="${escapeHtml(offer.id)}"
+                      >${meta.icon} ${escapeHtml(meta.short)}：${escapeHtml(formatOfferShortLabel(offer))}</button>
+                    `;
+                  })
+                  .join('')
+              : `<span style="font-size:11px;color:var(--ink-muted);">まだ版別マークはありません。下の各表紙・特典カードの「🤔/👀/🛒/✅/🙅」から直接マークできます！</span>`
+          }
+        </div>
+      </div>
+    `;
+  } else {
+    const singleOffer = visibleOffers[0] || null;
+    const currentStatus = singleOffer ? getOfferStatus(singleOffer.id) : getLegacyItemStatus(item.id);
+    statusSummaryHtml = `
+      <div class="status-selector" aria-label="マイステータス">
+        ${SHELF_STATUS_ORDER.map((key) => {
+          const meta = SHELF_STATUS_META[key];
+          return `
+          <button
+            class="status-btn ${meta.colorClass} ${currentStatus === key ? 'active' : ''}"
+            type="button"
+            ${
+              singleOffer
+                ? `data-set-offer-status="${key}" data-offer-id="${escapeHtml(singleOffer.id)}"`
+                : `data-set-status="${key}"`
+            }
+          >${meta.icon} ${escapeHtml(meta.short)}</button>
+        `;
+        }).join('')}
+      </div>
+    `;
+  }
+
+  // Pending Artwork Watch Helper Bar (Proposal 2)
+  let pendingCheckHtml = '';
+  if (watch.hasPendingWatch) {
+    const storeLinks = buildAllStoreSearchLinks(item.title, true);
+    const checkTargets = storeLinks.filter(
+      (l) => l.id === 'amazon' || l.id === '7net' || l.id === 'rakuten'
+    );
+    pendingCheckHtml = `
+      <div class="pending-check-bar">
+        <div>
+          <strong>⏳ 絵柄・表紙解禁ウォッチ中</strong>
+          ${
+            watch.pendingBonusCount > 0
+              ? `（特典絵柄 ${watch.pendingBonusCount}件 未公開）`
+              : '（通常表紙 解禁待ち）'
+          }
+        </div>
+        <div class="pending-check-links">
+          ${checkTargets
+            .map(
+              (l) =>
+                `<a class="pending-check-link" href="${escapeHtml(l.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(l.shortName)}確認 ↗</a>`
+            )
+            .join('')}
+          <a
+            class="pending-check-link"
+            href="https://x.com/search?q=${encodeURIComponent(`${item.title} (表紙 OR 特典 OR 解禁) filter:images`)}&f=live"
+            target="_blank"
+            rel="noopener noreferrer"
+          >𝕏解禁速報 ↗</a>
+        </div>
+      </div>
+    `;
+  }
+
   const body = document.getElementById('sheetBody');
   body.innerHTML = `
     <div class="sheet-hero">
-      <button class="sheet-cover-btn" type="button" data-hero-zoom="${escapeHtml(item.id)}" aria-label="表紙と特典写真を拡大確認">
+      <button class="sheet-cover-btn ${r18Class}" type="button" data-hero-zoom="${escapeHtml(item.id)}" aria-label="表紙と特典写真を拡大確認">
         ${renderCoverImg(item, 'sheet-cover')}
         <span class="sheet-cover-zoom-badge">🔍 拡大(${quickPreviewCount}枚)</span>
       </button>
       <div class="sheet-meta">
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
-          <span class="cat-badge">${escapeHtml(CATEGORY_META[item.category]?.label || '雑誌')}</span>
+          <span class="cat-badge ${item.category === 'r18' ? 'is-r18' : ''}">${escapeHtml(CATEGORY_META[item.category]?.label || '雑誌')}</span>
           <span class="calendar-countdown ${cd.type}">${escapeHtml(formatDateLabel(item.releaseDate))} ・ ${escapeHtml(cd.text)}</span>
         </div>
         <h2>${escapeHtml(item.title)}</h2>
@@ -1769,6 +2493,7 @@ function renderDetailSheetBody(item) {
     </div>
 
     ${renderBonusDigestHtml(item, visibleOffers, amazonBasePrice)}
+    ${pendingCheckHtml}
 
     ${
       item.printOnlyNote
@@ -1778,24 +2503,13 @@ function renderDetailSheetBody(item) {
         : ''
     }
 
-    <div class="status-selector" aria-label="マイステータス">
-      ${SHELF_STATUS_ORDER.map((key) => {
-        const meta = SHELF_STATUS_META[key];
-        return `
-        <button
-          class="status-btn ${meta.colorClass} ${currentStatus === key ? 'active' : ''}"
-          type="button"
-          data-set-status="${key}"
-        >${meta.icon} ${escapeHtml(meta.short)}</button>
-      `;
-      }).join('')}
-    </div>
+    ${statusSummaryHtml}
 
-    <!-- Section 1: Side-by-Side Visual Bonus Variant Comparator -->
+    <!-- Section 1: Side-by-Side Visual Bonus Variant Comparator (with Per-Edition Status!) -->
     <div class="sheet-section">
       <div class="compare-header-bar">
         <div class="sheet-section-title" style="margin:0;">
-          <span>🎁 特典絵柄・店舗 横並び比較（${offers.length}種）</span>
+          <span>🎁 表紙・特典エディション比較＆個別マーク（${offers.length}種）</span>
         </div>
         ${
           offers.length > 1
@@ -1807,7 +2521,7 @@ function renderDetailSheetBody(item) {
         }
       </div>
       <div style="font-size:11px;color:var(--ink-muted);margin-bottom:6px;">
-        ※ Amazon（基本購入先）と限定特典ありストアのみ表示。絵柄タップで拡大＋そのまま購入＆マークできます。
+        ※ 各カード下のボタンで「この表紙・この特典だけ予約済／購入済」と個別に記録できます。
       </div>
 
       ${
@@ -1842,18 +2556,19 @@ function renderDetailSheetBody(item) {
           return {
             itemId: item.id,
             itemTitle: item.title,
+            itemCategory: item.category,
             url: offer.imageUrl || itemCoverFallback || '',
             caption: `${st.name}｜${offer.edition}：${offer.bonusText}`,
             source: hasRealArt
-              ? `${st.name}（特典絵柄公開済）`
+              ? `${st.name}（${offer.store === 'amazon' ? '公式書影' : '特典絵柄公開済'}）`
               : offer.store === 'amazon'
-                ? `${st.name}（表紙）`
+                ? `${st.name}（表紙解禁待ち）`
                 : `${st.name}（表紙表示・特典絵柄解禁待ち）`,
             kind,
-            tabLabel: `${hasRealArt ? '✨' : '📘'}${st.shortName}${offers.length > 1 ? idx + 1 : ''}`,
+            tabLabel: `${hasRealArt ? '✨' : '⏳'}${st.shortName}${offers.length > 1 ? idx + 1 : ''}`,
             articleUrl: offer.url,
             offer,
-            isPendingArt: !hasRealArt && offer.hasStoreExclusiveBonus === true,
+            isPendingArt: !hasRealArt,
             amazonBasePrice,
             fallbackUri: createGalleryPhotoFallbackDataUri(item, {
               caption: `${offer.edition} ${offer.talent || ''}`.trim(),
@@ -1891,16 +2606,28 @@ function renderDetailSheetBody(item) {
               }
 
               const artBadge = offer.imageUrl
-                ? `<span class="compare-art-badge">✨ 特典絵柄</span>`
+                ? offer.store === 'amazon'
+                  ? `<span class="compare-art-badge">📘 公式書影</span>`
+                  : `<span class="compare-art-badge">✨ 特典絵柄</span>`
                 : offer.store === 'amazon'
-                  ? `<span class="compare-art-badge is-pending">📘 表紙</span>`
-                  : `<span class="compare-art-badge is-pending">📘 表紙・絵柄待ち</span>`;
+                  ? `<span class="compare-art-badge is-pending">⏳ 表紙待ち</span>`
+                  : `<span class="compare-art-badge is-pending">⏳ 絵柄待ち</span>`;
+
+              const offerStatus = getOfferStatus(offer.id);
+              const offerStatusMeta = offerStatus ? SHELF_STATUS_META[offerStatus] : null;
 
               return `
-                <article class="compare-card ${offer.hasStoreExclusiveBonus ? 'is-bonus' : ''}">
-                  <button class="compare-img-btn" type="button" data-offer-photo-idx="${idx}" aria-label="${escapeHtml(offer.edition)}を拡大">
+                <article class="compare-card ${offer.hasStoreExclusiveBonus ? 'is-bonus' : ''} ${
+                offerStatus === 'skip' ? 'is-offer-skipped' : ''
+              }">
+                  <button class="compare-img-btn ${r18Class}" type="button" data-offer-photo-idx="${idx}" aria-label="${escapeHtml(offer.edition)}を拡大">
                     ${renderPhotoImg(offerPhotos[idx])}
                     <span class="compare-store-float ${store.badgeClass}">${escapeHtml(store.shortName)}</span>
+                    ${
+                      offerStatusMeta
+                        ? `<span class="compare-status-float ${offerStatusMeta.colorClass}">${offerStatusMeta.icon} ${escapeHtml(offerStatusMeta.short)}</span>`
+                        : ''
+                    }
                     ${artBadge}
                     <span class="compare-zoom-hint">🔍 拡大</span>
                   </button>
@@ -1919,6 +2646,30 @@ function renderDetailSheetBody(item) {
                     >
                       ${escapeHtml(store.shortName)}で買う ↗
                     </a>
+                    <div class="compare-status-bar" role="group" aria-label="${escapeHtml(offer.edition)}のステータス">
+                      ${SHELF_STATUS_ORDER.map((key) => {
+                        const m = SHELF_STATUS_META[key];
+                        const tinyLabel =
+                          key === 'considering'
+                            ? '検討'
+                            : key === 'want'
+                              ? '予定'
+                              : key === 'reserved'
+                                ? '予約'
+                                : key === 'owned'
+                                  ? '購入'
+                                  : '見送';
+                        return `
+                          <button
+                            class="compare-st-btn ${m.colorClass} ${offerStatus === key ? 'active' : ''}"
+                            type="button"
+                            data-set-offer-status="${key}"
+                            data-offer-id="${escapeHtml(offer.id)}"
+                            title="${escapeHtml(offer.edition)}を「${escapeHtml(m.short)}」にする"
+                          >${m.icon}<span>${tinyLabel}</span></button>
+                        `;
+                      }).join('')}
+                    </div>
                   </div>
                 </article>
               `;
@@ -1956,7 +2707,7 @@ function renderDetailSheetBody(item) {
             const kindMeta = PHOTO_KIND_META[photo.kind] || { icon: '📷', label: '写真' };
             return `
               <button class="gallery-thumb" type="button" data-sheet-photo-idx="${idx}">
-                <div class="gallery-thumb-img-wrap">
+                <div class="gallery-thumb-img-wrap ${r18Class}">
                   ${renderPhotoImg(photo)}
                   <span class="wall-kind-tag" style="font-size:9px;padding:1px 6px;">${kindMeta.icon} ${escapeHtml(kindMeta.label)}</span>
                 </div>
@@ -2063,6 +2814,7 @@ function switchTab(tabId) {
 }
 
 function renderAll() {
+  applyPrivacyBlur();
   renderCountdownStrip();
   renderFilterChips();
   renderMagazineGrid();
@@ -2072,6 +2824,11 @@ function renderAll() {
 }
 
 function bindEvents() {
+  const privacyBtn = document.getElementById('privacyBlurBtn');
+  if (privacyBtn) {
+    privacyBtn.addEventListener('click', togglePrivacyBlur);
+  }
+
   const searchInput = document.getElementById('searchInput');
   const clearSearchBtn = document.getElementById('clearSearchBtn');
 
@@ -2135,6 +2892,17 @@ function bindEvents() {
     renderMagazineGrid();
   });
 
+  const artworkChips = document.getElementById('artworkChips');
+  if (artworkChips) {
+    artworkChips.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-artwork-filter]');
+      if (!btn) return;
+      state.artworkFilter = btn.dataset.artworkFilter;
+      renderFilterChips();
+      renderMagazineGrid();
+    });
+  }
+
   document.getElementById('statusChips').addEventListener('click', (e) => {
     const btn = e.target.closest('[data-status-filter]');
     if (!btn) return;
@@ -2143,12 +2911,40 @@ function bindEvents() {
     renderMagazineGrid();
   });
 
+  // Budget custom input change (delegated across Tab 2 & Tab 3)
+  document.addEventListener('change', (e) => {
+    if (e.target && e.target.matches('[data-budget-input]')) {
+      setMonthlyBudget(e.target.value);
+    }
+  });
+
   // Global delegated clicks
   document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-stop-prop]')) {
+      e.stopPropagation();
+      return;
+    }
+
+    const budgetPreset = e.target.closest('[data-budget-preset]');
+    if (budgetPreset) {
+      setMonthlyBudget(Number(budgetPreset.dataset.budgetPreset));
+      return;
+    }
+
+    const bulkIcsBtn = e.target.closest('[data-download-bulk-ics]');
+    if (bulkIcsBtn) {
+      e.stopPropagation();
+      downloadBulkReleaseIcs(getUpcomingPlannedEntries());
+      return;
+    }
+
     const statusPickerTrigger = e.target.closest('[data-open-status-picker]');
     if (statusPickerTrigger) {
       e.stopPropagation();
-      openStatusPicker(statusPickerTrigger.dataset.openStatusPicker);
+      openStatusPicker(
+        statusPickerTrigger.dataset.openStatusPicker,
+        statusPickerTrigger.dataset.pickerOffer || null
+      );
       return;
     }
 
@@ -2275,8 +3071,9 @@ function bindEvents() {
       (l) => l.id === 'amazon' || mentionedStores.includes(l.id)
     );
 
+    const ts = Date.now();
     const newItem = {
-      id: `custom-${Date.now()}`,
+      id: `custom-${ts}`,
       title,
       series: title.split(/\s+/)[0] || title,
       issueLabel: 'マイ登録',
@@ -2286,14 +3083,14 @@ function bindEvents() {
       price,
       coverTalents: [talent],
       featuredTalents: [talent],
-      palette: ['#D92D52', '#FB7185', '#FFE4E6'],
+      palette: category === 'r18' ? ['#881337', '#BE123C', '#FFE4E6'] : ['#D92D52', '#FB7185', '#FFE4E6'],
       includedBonuses: bonusMemo.includes('ポスター') ? [{ type: 'poster', label: bonusMemo }] : [],
       printOnlyNote: bonusMemo || '基本購入先：Amazon（他ストアは特典明記時のみ表示）',
       summary: bonusMemo || 'スマホから手動追加した注目タイトル。',
       gallery: [],
       pressArticles: [],
       offers: selectedLinks.map((link) => ({
-        id: `custom-offer-${link.id}-${Date.now()}`,
+        id: `custom-offer-${link.id}-${ts}`,
         store: link.id,
         hasStoreExclusiveBonus: link.id !== 'amazon',
         edition: link.id === 'amazon' ? 'Amazon 通常版' : `${link.name} 限定特典`,
@@ -2311,9 +3108,12 @@ function bindEvents() {
     };
 
     state.customItems.unshift(newItem);
-    state.shelfMap[newItem.id] = 'want';
+    const primaryOffer = newItem.offers.find((o) => o.hasStoreExclusiveBonus) || newItem.offers[0];
+    if (primaryOffer) {
+      state.offerShelfMap[primaryOffer.id] = 'want';
+      saveJson(STORAGE_KEYS.offerShelf, state.offerShelfMap);
+    }
     saveJson(STORAGE_KEYS.customItems, state.customItems);
-    saveJson(STORAGE_KEYS.shelf, state.shelfMap);
 
     e.target.reset();
     document.getElementById('addDate').value = '2026-12-01';
@@ -2325,23 +3125,47 @@ function bindEvents() {
   document.getElementById('hubQueryInput').addEventListener('input', renderHubLauncher);
   document.getElementById('hubBonusOnly').addEventListener('change', renderHubLauncher);
 
-  // Quick Status Picker events
+  // Quick Per-Edition Status Picker events
   const statusPickerSheet = document.getElementById('statusPickerSheet');
   document.getElementById('statusPickerCloseBtn').addEventListener('click', closeStatusPicker);
+  const doneBtn = document.getElementById('statusPickerDoneBtn');
+  if (doneBtn) doneBtn.addEventListener('click', closeStatusPicker);
+
   statusPickerSheet.addEventListener('click', (e) => {
     if (e.target === statusPickerSheet) closeStatusPicker();
   });
+
+  document.getElementById('statusPickerEditionWrap').addEventListener('click', (e) => {
+    const row = e.target.closest('[data-select-picker-offer]');
+    if (!row) return;
+    state.statusPickerOfferId = row.dataset.selectPickerOffer;
+    renderStatusPickerBody();
+  });
+
   document.getElementById('statusPickerGrid').addEventListener('click', (e) => {
     const btn = e.target.closest('[data-pick-status]');
     if (!btn || !state.statusPickerItemId) return;
-    setShelfStatus(state.statusPickerItemId, btn.dataset.pickStatus);
-    closeStatusPicker();
+    const item = getItemById(state.statusPickerItemId);
+    const visibleOffers = item ? getVisibleOffers(item) : [];
+    if (state.statusPickerOfferId) {
+      setOfferStatus(state.statusPickerOfferId, btn.dataset.pickStatus, state.statusPickerItemId);
+    } else {
+      setLegacyItemStatus(state.statusPickerItemId, btn.dataset.pickStatus);
+    }
+    if (visibleOffers.length <= 1) {
+      closeStatusPicker();
+    }
   });
+
   document.getElementById('statusPickerClearBtn').addEventListener('click', () => {
     if (!state.statusPickerItemId) return;
-    setShelfStatus(state.statusPickerItemId, '');
-    closeStatusPicker();
+    if (state.statusPickerOfferId) {
+      setOfferStatus(state.statusPickerOfferId, '', state.statusPickerItemId);
+    } else {
+      setLegacyItemStatus(state.statusPickerItemId, '');
+    }
   });
+
   document.getElementById('statusPickerOpenDetailBtn').addEventListener('click', () => {
     const id = state.statusPickerItemId;
     closeStatusPicker();
@@ -2365,9 +3189,15 @@ function bindEvents() {
       return;
     }
 
+    const offerStBtn = e.target.closest('[data-set-offer-status]');
+    if (offerStBtn) {
+      setOfferStatus(offerStBtn.dataset.offerId, offerStBtn.dataset.setOfferStatus, item.id);
+      return;
+    }
+
     const statusBtn = e.target.closest('[data-set-status]');
     if (statusBtn) {
-      setShelfStatus(item.id, statusBtn.dataset.setStatus);
+      setLegacyItemStatus(item.id, statusBtn.dataset.setStatus);
       return;
     }
 
@@ -2425,7 +3255,13 @@ function bindEvents() {
     }
     const lbStatusBtn = e.target.closest('[data-lightbox-status]');
     if (lbStatusBtn) {
-      setShelfStatus(lbStatusBtn.dataset.lightboxItem, lbStatusBtn.dataset.lightboxStatus);
+      const offerId = lbStatusBtn.dataset.lightboxOffer;
+      const itemId = lbStatusBtn.dataset.lightboxItem;
+      if (offerId) {
+        setOfferStatus(offerId, lbStatusBtn.dataset.lightboxStatus, itemId);
+      } else {
+        setLegacyItemStatus(itemId, lbStatusBtn.dataset.lightboxStatus);
+      }
     }
   });
 
@@ -2443,7 +3279,6 @@ function bindEvents() {
     if (id) openDetailSheet(id);
   });
 
-  // Smartphone swipe support on Lightbox stage
   let touchStartX = 0;
   const stage = document.getElementById('lightboxStage');
   stage.addEventListener(
@@ -2501,8 +3336,14 @@ async function init() {
     const data = await res.json();
     state.baseItems = data.items || [];
     state.referenceDate = data.referenceDate || state.referenceDate;
+    state.lastAutoCheckedAt = data.lastAutoCheckedAt || data.updatedAt || '';
     const refShort = state.referenceDate.slice(5).replace('-', '/');
     document.getElementById('referenceDateBadge').textContent = `基準日 ${refShort}`;
+    const autoEl = document.getElementById('autoUpdateStatus');
+    if (autoEl && state.lastAutoCheckedAt) {
+      const checkedLabel = state.lastAutoCheckedAt.slice(0, 16).replace('T', ' ');
+      autoEl.textContent = `🤖 毎朝07:00 JST自動更新対応（最終チェック: ${checkedLabel}）`;
+    }
   } catch (err) {
     console.error('Failed to load catalog.json:', err);
   }

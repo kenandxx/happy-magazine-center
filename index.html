@@ -24,7 +24,16 @@
               <p class="brand-sub">Amazon基本＋限定特典ありストアのみ表示</p>
             </div>
           </div>
-          <span id="referenceDateBadge" class="header-pill">基準日 11/20</span>
+          <div class="header-actions">
+            <button
+              id="privacyBlurBtn"
+              class="privacy-toggle-btn"
+              type="button"
+              aria-pressed="false"
+              title="電車内などで🔞R18サムネイルをぼかして表示"
+            >🚃 電車モード</button>
+            <span id="referenceDateBadge" class="header-pill">基準日 11/21</span>
+          </div>
         </div>
       </div>
     </header>
@@ -42,7 +51,7 @@
                 id="searchInput"
                 class="search-input"
                 type="search"
-                placeholder="雑誌名・タレント名・カレンダー・ポスター・特典で検索"
+                placeholder="雑誌名・タレント名・カレンダー・R18・ポスター・特典で検索"
                 autocomplete="off"
               />
               <button id="clearSearchBtn" class="clear-btn" type="button" aria-label="検索をクリア">✕</button>
@@ -58,6 +67,7 @@
           <div id="categoryChips" class="chip-scroll" role="tablist" aria-label="カテゴリ絞り込み"></div>
           <div id="bonusChips" class="chip-scroll" aria-label="特典タイプ絞り込み"></div>
           <div id="storeChips" class="chip-scroll" aria-label="ストア絞り込み"></div>
+          <div id="artworkChips" class="chip-scroll" aria-label="特典絵柄解禁ウォッチ絞り込み"></div>
           <div id="statusChips" class="chip-scroll" aria-label="ステータス絞り込み"></div>
         </div>
 
@@ -88,7 +98,7 @@
         <div class="panel-card excitement-header-card">
           <h2 class="panel-heading">🎉 これから3ヶ月のお楽しみコーナー</h2>
           <p class="panel-desc">
-            今月〜3ヶ月先（2027年2月）までの発売予定を月別ロードマップでチェック！各カードの<strong>🔍</strong>でワンタップ写真＆特典確認、<strong>マークボタン</strong>で「検討中・買う予定・買わない」をすぐ仕分けできます。
+            今月〜3ヶ月先（2027年2月）までの発売予定を月別ロードマップ＆<strong>💰 推し活予算メーター</strong>でチェック！<strong>表紙・特典エディション別</strong>にマーク管理＆まとめてスマホカレンダー登録（.ics）できます。
           </p>
         </div>
         <div id="calendarContainer"></div>
@@ -97,12 +107,14 @@
       <!-- Tab 3: Oshi & Status Corner Shelf -->
       <section id="tab-oshi" class="tab-panel" aria-label="推しワードとマークコーナー">
         <div class="panel-card">
-          <h2 class="panel-heading">🏷 マークコーナー＆マイ棚</h2>
+          <h2 class="panel-heading">🏷 表紙・特典別マークコーナー＆マイ棚</h2>
           <p class="panel-desc">
-            「🤔 検討中」「👀 買う予定」「🛒 予約済」「✅ 購入済」「🙅 買わない」をひと目で管理。下のパネルをタップするとステータス別に絞り込めます。
+            同じ雑誌でも<strong>どの表紙・どのストア特典</strong>かを個別に「🤔 検討中」「👀 買う予定」「🛒 予約済」「✅ 購入済」「🙅 買わない」で管理できます。
           </p>
           <div id="shelfCornerGrid" class="status-corner-grid"></div>
           <div id="shelfStats" class="stats-row"></div>
+          <div id="shelfActionsBar" class="shelf-actions-bar"></div>
+          <div id="shelfBudgetPanel"></div>
           <div id="shelfList" class="timeline-list"></div>
         </div>
 
@@ -124,7 +136,7 @@
         </div>
 
         <div class="panel-card">
-          <h2 class="panel-heading">➕ 見つけた雑誌・写真集・カレンダーをメモ登録</h2>
+          <h2 class="panel-heading">➕ 見つけた雑誌・写真集・カレンダー・R18をメモ登録</h2>
           <p class="panel-desc">
             Xやニュースで見つけた新刊をその場で追加できます（Amazon基本＋特典メモに書いたストアのみノイズゼロ登録）。
           </p>
@@ -150,6 +162,7 @@
                 <option value="fashion">女性誌・アイドル表紙</option>
                 <option value="photobook">写真集</option>
                 <option value="calendar">🗓 カレンダー</option>
+                <option value="r18">🔞 アダルト・R18</option>
               </select>
             </label>
             <label class="field-label">
@@ -172,7 +185,7 @@
         <div class="panel-card">
           <h2 class="panel-heading">⚡ 全ストア特典・横断検索ハブ</h2>
           <p class="panel-desc">
-            週刊誌・コミック誌・マイナー誌・写真集・カレンダーなど、ありとあらゆるタイトルやタレント名を入れるだけで、セブンネット・楽天ブックス・HMV・Amazon・TSUTAYAの検索リンクを一括生成します。
+            週刊誌・コミック誌・マイナー誌・写真集・カレンダー・R18など、ありとあらゆるタイトルやタレント名を入れるだけで、セブンネット・楽天ブックス・HMV・Amazon・TSUTAYAの検索リンクを一括生成します。
           </p>
           <div class="inline-form">
             <input
@@ -193,6 +206,16 @@
           <div id="hubLauncherGrid" class="launcher-grid"></div>
         </div>
       </section>
+
+      <footer class="app-footer">
+        <span id="autoUpdateStatus">🤖 毎朝07:00 JST 自動更新対応（GitHub Actions）</span>
+        <a
+          class="footer-actions-link"
+          href="https://github.com/kenandxx/happy-magazine-center/actions/workflows/daily-catalog-update.yml"
+          target="_blank"
+          rel="noopener noreferrer"
+        >自動更新ログ ↗</a>
+      </footer>
     </main>
 
     <!-- Bottom Navigation -->
@@ -228,19 +251,23 @@
       </div>
     </div>
 
-    <!-- Quick 1-Tap Status Picker Sheet -->
+    <!-- Quick 1-Tap Per-Edition Status Picker Sheet -->
     <div id="statusPickerSheet" class="sheet-backdrop status-picker-backdrop" role="dialog" aria-modal="true" aria-labelledby="statusPickerTitle">
       <div class="quick-status-dialog">
         <div class="quick-status-header">
           <div id="statusPickerItemMeta" class="quick-status-item-meta">
-            <h3 id="statusPickerTitle" class="sheet-header-title">ステータスを選択</h3>
+            <h3 id="statusPickerTitle" class="sheet-header-title">表紙・特典別にステータスを選択</h3>
           </div>
           <button id="statusPickerCloseBtn" class="sheet-close-btn" type="button" aria-label="閉じる">✕</button>
         </div>
+        <div id="statusPickerEditionWrap" class="status-picker-editions"></div>
         <div id="statusPickerGrid" class="quick-status-grid"></div>
         <div class="quick-status-footer">
-          <button id="statusPickerClearBtn" class="quick-status-clear-btn" type="button">マーク解除</button>
-          <button id="statusPickerOpenDetailBtn" class="detail-trigger-btn" type="button">詳細・特典比較 →</button>
+          <button id="statusPickerClearBtn" class="quick-status-clear-btn" type="button">この版のマーク解除</button>
+          <div style="display:flex;gap:6px;">
+            <button id="statusPickerDoneBtn" class="quick-status-clear-btn" type="button">閉じる</button>
+            <button id="statusPickerOpenDetailBtn" class="detail-trigger-btn" type="button">詳細・特典比較 →</button>
+          </div>
         </div>
       </div>
     </div>
@@ -262,7 +289,8 @@
       <div class="lightbox-footer">
         <div id="lightboxThumbs" class="lightbox-thumbs" aria-label="写真切替"></div>
         <div id="lightboxOfferBar" class="lightbox-offer-bar"></div>
-        <div id="lightboxStatusBar" class="lightbox-status-row" aria-label="ワンタップステータス登録"></div>
+        <div id="lightboxStatusTarget" class="lightbox-status-target"></div>
+        <div id="lightboxStatusBar" class="lightbox-status-row" aria-label="エディション別ワンタップステータス登録"></div>
         <div class="lightbox-meta-row">
           <div style="min-width:0;flex:1;">
             <p id="lightboxCaption" class="lightbox-caption"></p>

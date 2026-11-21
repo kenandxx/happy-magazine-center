@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-20T20:38:00+09:00",
-  "referenceDate": "2026-11-20",
+  "updatedAt": "2026-11-21T14:30:00+09:00",
+  "referenceDate": "2026-11-21",
   "policy": "Amazonは基本購入先として常に表示。Amazon以外のストア（セブンネット・楽天ブックス・HMV・TSUTAYA）は確認済みのストア限定特典が付く場合のみ表示。",
   "items": [
     {
@@ -11,7 +11,7 @@
       "publisher": "ワニブックス",
       "category": "idol",
       "releaseDate": "2026-11-24",
-      "price": 1400,
+      "price": 1540,
       "coverTalents": [
         "川﨑桜（乃木坂46）",
         "弓木奈於（乃木坂46）",
@@ -26,7 +26,7 @@
         "小森香乃",
         "吉沢珠璃（22/7）"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwfbc33654/421699/1107785764.jpg?sw=1150",
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000174/0/4/251.jpg",
       "palette": [
         "#E11D48",
         "#FB7185",
@@ -42,11 +42,11 @@
       "summary": "表紙＆巻頭は乃木坂46・川﨑桜、巻末は弓木奈於。セブンネットは限定表紙（金澤亜美）＋ポストカード8種展開、TSUTAYAは古畑奈和の限定表紙版あり！",
       "gallery": [
         {
-          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwfbc33654/421699/1107785764.jpg?sw=1150",
-          "caption": "通常表紙・川﨑桜（乃木坂46）＆セブン特典ビジュアル",
-          "source": "セブンネット",
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000174/0/4/251.jpg",
+          "caption": "通常表紙：川﨑桜（乃木坂46・アップトゥボーイ 2027年1月号 Vol.369）",
+          "source": "公式書影（HMV/ワニブックス）",
           "kind": "cover",
-          "articleUrl": "https://7net.omni7.jp/search?q=%E3%82%A2%E3%83%83%E3%83%97%E3%83%88%E3%82%A5%E3%83%9C%E3%83%BC%E3%82%A4+2027%E5%B9%B41%E6%9C%88%E5%8F%B7"
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E3%82%A2%E3%83%83%E3%83%97%E3%83%88%E3%82%A5%E3%83%9C%E3%83%BC%E3%82%A4+2027%E5%B9%B41%E6%9C%88%E5%8F%B7&i=stripbooks"
         },
         {
           "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw7be25d6e/421699/1107785770.jpg?sw=1150",
@@ -54,6 +54,13 @@
           "source": "セブンネット",
           "kind": "limited_cover",
           "articleUrl": "https://7net.omni7.jp/detail/1107785770.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwfbc33654/421699/1107785764.jpg?sw=1150",
+          "caption": "セブンネット限定特典：川﨑桜（乃木坂46）ポストカードB",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107785764.html"
         },
         {
           "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwfa300ce2/421699/1107785769.jpg?sw=1150",
@@ -68,13 +75,6 @@
           "source": "セブンネット",
           "kind": "bonus",
           "articleUrl": "https://7net.omni7.jp/detail/1107785768.html"
-        },
-        {
-          "url": "https://img.fujisan.co.jp/images/products/74_l.jpg",
-          "caption": "Fujisan 公式誌面イメージ",
-          "source": "Fujisan",
-          "kind": "preview",
-          "articleUrl": "https://www.fujisan.co.jp/product/74/next/"
         }
       ],
       "pressArticles": [
@@ -113,11 +113,11 @@
           "id": "utb-2027-01-7net-kawasaki-abc",
           "store": "7net",
           "hasStoreExclusiveBonus": true,
-          "edition": "セブンネット限定特典（A/B/C選択）",
+          "edition": "セブンネット限定特典：川﨑桜（A/B/C選択）",
           "bonusTypes": [
             "postcard"
           ],
-          "bonusText": "川﨑桜（乃木坂46）ポストカード A / B / C（絵柄指定可）",
+          "bonusText": "川﨑桜（乃木坂46）ポストカード A / B / C（絵柄指定可・画像：B柄）",
           "talent": "川﨑桜",
           "price": 1540,
           "status": "preorder",
@@ -137,7 +137,7 @@
           "talent": "弓木奈於・川端晃菜",
           "price": 1540,
           "status": "preorder",
-          "artworkStatus": "revealed",
+          "artworkStatus": "pending",
           "url": "https://7net.omni7.jp/search?q=%E3%82%A2%E3%83%83%E3%83%97%E3%83%88%E3%82%A5%E3%83%9C%E3%83%BC%E3%82%A4+2027%E5%B9%B41%E6%9C%88%E5%8F%B7"
         },
         {
@@ -182,9 +182,9 @@
           ],
           "bonusText": "TSUTAYA限定「古畑奈和」表紙Ver.（先着・なくなり次第終了）",
           "talent": "古畑奈和",
-          "price": 1400,
+          "price": 1540,
           "status": "preorder",
-          "artworkStatus": "revealed",
+          "artworkStatus": "pending",
           "url": "https://tsutaya.tsite.jp/articles/book-comic-5993"
         },
         {
@@ -197,11 +197,11 @@
           ],
           "bonusText": "Amazonで購入（通常版＋本誌特大両面ポスター付）",
           "talent": "川﨑桜",
-          "price": 1400,
+          "price": 1540,
           "status": "preorder",
           "artworkStatus": "revealed",
           "url": "https://www.amazon.co.jp/s?k=%E3%82%A2%E3%83%83%E3%83%97%E3%83%88%E3%82%A5%E3%83%9C%E3%83%BC%E3%82%A4+2027%E5%B9%B41%E6%9C%88%E5%8F%B7&i=stripbooks",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwfbc33654/421699/1107785764.jpg?sw=1150"
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000174/0/4/251.jpg"
         }
       ]
     },
@@ -229,7 +229,7 @@
         "兵頭百華",
         "一ノ瀬ひかり"
       ],
-      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3579/6568-3579-0d9be26e1f492922b41543578acfdc9b-1800x2700.jpg?width=1200&quality=85&format=jpeg",
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-35451a23ef0a4a61ea9021186ca583af-1909x2700.jpg?width=1200&quality=85&format=jpeg",
       "palette": [
         "#0F766E",
         "#14B8A6",
@@ -245,32 +245,74 @@
       "summary": "表紙は乃木坂46・瀬戸口心月、裏表紙は金川紗耶！セブンネット限定ポストカード全9種＋HMV限定（櫻坂46 四期生）が確定。",
       "gallery": [
         {
-          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3579/6568-3579-0d9be26e1f492922b41543578acfdc9b-1800x2700.jpg?width=1200&quality=85&format=jpeg",
-          "caption": "公式先行グラビア：瀬戸口心月（乃木坂46）富士山ロケーション",
-          "source": "PR TIMES / B.L.T.web",
-          "kind": "preview",
-          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003579.000006568.html"
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-35451a23ef0a4a61ea9021186ca583af-1909x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "通常表紙：瀬戸口心月（乃木坂46・B.L.T. 2027年1月号）",
+          "source": "PR TIMES公式",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003599.000006568.html"
         },
         {
-          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw3317ce10/421699/1107786574.jpg?sw=1150",
-          "caption": "セブン特典⑤：冨里奈央（乃木坂46）ポストカード",
-          "source": "セブンネット",
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-34be121cd0c747bdbc1e66864f000e34-847x1200.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "別冊付録：瀬戸口心月 両面超ビッグポスター（表）",
+          "source": "PR TIMES公式",
+          "kind": "poster",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003599.000006568.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-1d551a45655af7981072c3a888f1b289-1200x847.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "別冊付録：瀬戸口心月 両面超ビッグポスター（裏）",
+          "source": "PR TIMES公式",
+          "kind": "poster",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003599.000006568.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-4307319fd175dac2bbc32c3acd8b6ee9-1824x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "セブン特典①：瀬戸口心月（乃木坂46）ポストカードA",
+          "source": "PR TIMES公式",
           "kind": "bonus",
-          "articleUrl": "https://7net.omni7.jp/detail/1107786574.html"
+          "articleUrl": "https://7net.omni7.jp/detail/1107786570.html"
         },
         {
-          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1eb5629b/421699/1107786573.jpg?sw=1150",
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-ae695084a0b19768370d2125a57a1bd6-1824x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "セブン特典②：瀬戸口心月（乃木坂46）ポストカードB",
+          "source": "PR TIMES公式",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107786571.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-4543dad018ec5de3c6943a939253edb9-1824x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "セブン特典③：瀬戸口心月（乃木坂46）ポストカードC",
+          "source": "PR TIMES公式",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107786572.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-9068664e215a558eda35b28393de40ce-1824x2700.jpg?width=1200&quality=85&format=jpeg",
           "caption": "セブン特典④：金川紗耶（乃木坂46）ポストカード",
-          "source": "セブンネット",
+          "source": "PR TIMES公式",
           "kind": "bonus",
           "articleUrl": "https://7net.omni7.jp/detail/1107786573.html"
         },
         {
-          "url": "https://img.hmv.co.jp/image/jacket/800/0000173/9/2/872.jpg",
-          "caption": "HMV限定特典：勝又春＆目黒陽色（櫻坂46）ポストカード対象",
-          "source": "HMV&BOOKS",
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-e49f753469f24a1ec6de965e44eb1c94-1824x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "セブン特典⑤：冨里奈央（乃木坂46）ポストカード",
+          "source": "PR TIMES公式",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107786574.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-4c00c6414c113ce8339482f248a67272-1824x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "HMV限定特典：勝又春＆目黒陽色（櫻坂46）ポストカード",
+          "source": "PR TIMES公式",
           "kind": "bonus",
           "articleUrl": "https://www.hmv.co.jp/product/detail/17392872"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3579/6568-3579-0d9be26e1f492922b41543578acfdc9b-1800x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "公式先行グラビア：瀬戸口心月（富士山ロケーション）",
+          "source": "PR TIMES公式",
+          "kind": "preview",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003599.000006568.html"
         }
       ],
       "pressArticles": [
@@ -325,7 +367,8 @@
           "price": 1430,
           "status": "preorder",
           "artworkStatus": "revealed",
-          "url": "https://7net.omni7.jp/detail/1107786570.html"
+          "url": "https://7net.omni7.jp/detail/1107786570.html",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-4307319fd175dac2bbc32c3acd8b6ee9-1824x2700.jpg?width=1200&quality=85&format=jpeg"
         },
         {
           "id": "blt-2027-01-7net-2",
@@ -340,7 +383,8 @@
           "price": 1430,
           "status": "preorder",
           "artworkStatus": "revealed",
-          "url": "https://7net.omni7.jp/detail/1107786571.html"
+          "url": "https://7net.omni7.jp/detail/1107786571.html",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-ae695084a0b19768370d2125a57a1bd6-1824x2700.jpg?width=1200&quality=85&format=jpeg"
         },
         {
           "id": "blt-2027-01-7net-3",
@@ -355,7 +399,8 @@
           "price": 1430,
           "status": "preorder",
           "artworkStatus": "revealed",
-          "url": "https://7net.omni7.jp/detail/1107786572.html"
+          "url": "https://7net.omni7.jp/detail/1107786572.html",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-4543dad018ec5de3c6943a939253edb9-1824x2700.jpg?width=1200&quality=85&format=jpeg"
         },
         {
           "id": "blt-2027-01-7net-4",
@@ -371,7 +416,7 @@
           "status": "preorder",
           "artworkStatus": "revealed",
           "url": "https://7net.omni7.jp/detail/1107786573.html",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1eb5629b/421699/1107786573.jpg?sw=1150"
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-9068664e215a558eda35b28393de40ce-1824x2700.jpg?width=1200&quality=85&format=jpeg"
         },
         {
           "id": "blt-2027-01-7net-5",
@@ -387,7 +432,7 @@
           "status": "preorder",
           "artworkStatus": "revealed",
           "url": "https://7net.omni7.jp/detail/1107786574.html",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw3317ce10/421699/1107786574.jpg?sw=1150"
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-e49f753469f24a1ec6de965e44eb1c94-1824x2700.jpg?width=1200&quality=85&format=jpeg"
         },
         {
           "id": "blt-2027-01-7net-6",
@@ -402,7 +447,8 @@
           "price": 1430,
           "status": "preorder",
           "artworkStatus": "revealed",
-          "url": "https://7net.omni7.jp/detail/1107786575.html"
+          "url": "https://7net.omni7.jp/detail/1107786575.html",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-07bf42b340958aa6c9ff072e1e01349d-1824x2700.jpg?width=1200&quality=85&format=jpeg"
         },
         {
           "id": "blt-2027-01-7net-7",
@@ -417,7 +463,8 @@
           "price": 1430,
           "status": "preorder",
           "artworkStatus": "revealed",
-          "url": "https://7net.omni7.jp/detail/1107786576.html"
+          "url": "https://7net.omni7.jp/detail/1107786576.html",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-e8ea53fe8dd513171cbca8a8478bc324-1824x2700.jpg?width=1200&quality=85&format=jpeg"
         },
         {
           "id": "blt-2027-01-7net-8",
@@ -432,7 +479,8 @@
           "price": 1430,
           "status": "preorder",
           "artworkStatus": "revealed",
-          "url": "https://7net.omni7.jp/detail/1107786577.html"
+          "url": "https://7net.omni7.jp/detail/1107786577.html",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-b62c5e49dce3f2d363f5224e5fa4f18b-1824x2700.jpg?width=1200&quality=85&format=jpeg"
         },
         {
           "id": "blt-2027-01-7net-9",
@@ -447,7 +495,8 @@
           "price": 1430,
           "status": "preorder",
           "artworkStatus": "revealed",
-          "url": "https://7net.omni7.jp/detail/1107786578.html"
+          "url": "https://7net.omni7.jp/detail/1107786578.html",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-cba5e000a878c22fabcf09a707301aca-1824x2700.jpg?width=1200&quality=85&format=jpeg"
         },
         {
           "id": "blt-2027-01-hmv",
@@ -463,7 +512,7 @@
           "status": "preorder",
           "artworkStatus": "revealed",
           "url": "https://www.hmv.co.jp/product/detail/17392872",
-          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000173/9/2/872.jpg"
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-4c00c6414c113ce8339482f248a67272-1824x2700.jpg?width=1200&quality=85&format=jpeg"
         },
         {
           "id": "blt-2027-01-amazon",
@@ -479,7 +528,7 @@
           "status": "preorder",
           "artworkStatus": "revealed",
           "url": "https://www.amazon.co.jp/s?k=B.L.T.+2027%E5%B9%B41%E6%9C%88%E5%8F%B7&i=stripbooks",
-          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3579/6568-3579-0d9be26e1f492922b41543578acfdc9b-1800x2700.jpg?width=1200&quality=85&format=jpeg"
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3599/6568-3599-35451a23ef0a4a61ea9021186ca583af-1909x2700.jpg?width=1200&quality=85&format=jpeg"
         }
       ]
     },
@@ -500,7 +549,6 @@
         "乃木坂46 6期生",
         "佐藤綺星（AKB48）"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw261d9df8/421699/1107790668.jpg?sw=1150",
       "palette": [
         "#B45309",
         "#F59E0B",
@@ -636,9 +684,8 @@
           "talent": "乃木坂46 6期生",
           "price": 1400,
           "status": "preorder",
-          "artworkStatus": "revealed",
-          "url": "https://www.amazon.co.jp/s?k=BUBKA+2027%E5%B9%B41%E6%9C%88%E5%8F%B7&i=stripbooks",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw261d9df8/421699/1107790668.jpg?sw=1150"
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=BUBKA+2027%E5%B9%B41%E6%9C%88%E5%8F%B7&i=stripbooks"
         }
       ]
     },
@@ -657,7 +704,6 @@
       "featuredTalents": [
         "伊織もえ"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw460592a0/421699/1107791204.jpg?sw=1150",
       "palette": [
         "#DC2626",
         "#F43F5E",
@@ -705,9 +751,8 @@
           "talent": "伊織もえ",
           "price": 1200,
           "status": "preorder",
-          "artworkStatus": "revealed",
-          "url": "https://www.amazon.co.jp/s?k=FLASH%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AB+%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2BEST+2026&i=stripbooks",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw460592a0/421699/1107791204.jpg?sw=1150"
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=FLASH%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AB+%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2BEST+2026&i=stripbooks"
         }
       ]
     },
@@ -732,7 +777,7 @@
         "大越ひなの",
         "松本日向"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw7acf52d3/421699/1107786565.jpg?sw=1150",
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/400/0000174/0/8/739.jpg",
       "palette": [
         "#DB2777",
         "#F472B6",
@@ -849,7 +894,7 @@
           "status": "preorder",
           "artworkStatus": "pending",
           "url": "https://www.amazon.co.jp/s?k=BOMB+2027%E5%B9%B41%E6%9C%88%E5%8F%B7&i=stripbooks",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw7acf52d3/421699/1107786565.jpg?sw=1150"
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/400/0000174/0/8/739.jpg"
         }
       ]
     },
@@ -1019,8 +1064,7 @@
           "talent": "大西桃香",
           "price": 1430,
           "status": "発売中",
-          "artworkStatus": "公開中",
-          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000173/3/9/294.jpg",
+          "artworkStatus": "pending",
           "url": "https://tsutaya.tsite.jp/articles/book-comic-5976"
         },
         {
@@ -1060,7 +1104,7 @@
         "豊島心桜",
         "岸みゆ"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw0fb5e4ef/421699/1107779439.jpg?sw=1150",
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3566/6568-3566-160e6c03e7aa52e7d1a28ddb191c505f-1909x2700.jpg?width=1200&quality=85&format=jpeg",
       "palette": [
         "#0EA5E9",
         "#F43F5E",
@@ -1071,23 +1115,51 @@
       "summary": "B.L.T.編集部が贈る新水着グラビアムック創刊号！沢口愛華30P＆澄田綾乃20P。セブンネット限定ポストカードと楽天・Amazon限定表紙版のどちらも豪華。",
       "gallery": [
         {
-          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw50b57f9d/421699/1107779438.jpg?sw=1150",
-          "caption": "セブン特典：沢口愛華 ポストカードA",
-          "source": "セブンネット",
-          "kind": "bonus",
-          "articleUrl": "https://7net.omni7.jp/search?q=bltism_vol_1"
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3566/6568-3566-160e6c03e7aa52e7d1a28ddb191c505f-1909x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "通常表紙：沢口愛華（BLTISM VOL.1）",
+          "source": "PR TIMES公式",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003566.000006568.html"
         },
         {
-          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw0fb5e4ef/421699/1107779439.jpg?sw=1150",
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3566/6568-3566-21f53eacd8e640ff6e9c7f4fc88f3c7e-1909x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "Amazon・楽天ブックス限定表紙版：沢口愛華",
+          "source": "PR TIMES公式",
+          "kind": "limited_cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003566.000006568.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3566/6568-3566-e1b82716f3f8863e76b3a8312094baf1-1909x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "通常版裏表紙：澄田綾乃",
+          "source": "PR TIMES公式",
+          "kind": "back_cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003566.000006568.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3566/6568-3566-e8ed8862e38549aea0fa48eb540bb6db-1909x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "限定表紙版裏表紙：澄田綾乃",
+          "source": "PR TIMES公式",
+          "kind": "back_cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003566.000006568.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3566/6568-3566-a54bafa2a85ff6d664e183f0f7c95323-1824x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "セブン特典：沢口愛華 ポストカードA",
+          "source": "PR TIMES公式",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107779438.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3566/6568-3566-ad354ec85698d2e04e8d1006a669581d-1824x2700.jpg?width=1200&quality=85&format=jpeg",
           "caption": "セブン特典：沢口愛華 ポストカードB",
-          "source": "セブンネット",
+          "source": "PR TIMES公式",
           "kind": "bonus",
           "articleUrl": "https://7net.omni7.jp/detail/1107779439.html"
         },
         {
-          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe0e5ff94/421699/1107779441.jpg?sw=1150",
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3566/6568-3566-7035364e60e00364b8962a2743a2bc85-1824x2700.jpg?width=1200&quality=85&format=jpeg",
           "caption": "セブン特典：澄田綾乃 ポストカード",
-          "source": "セブンネット",
+          "source": "PR TIMES公式",
           "kind": "bonus",
           "articleUrl": "https://7net.omni7.jp/detail/1107779441.html"
         }
@@ -1119,8 +1191,8 @@
           "talent": "沢口愛華",
           "price": 1650,
           "status": "発売中",
-          "artworkStatus": "絵柄公開済",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw50b57f9d/421699/1107779438.jpg?sw=1150",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3566/6568-3566-a54bafa2a85ff6d664e183f0f7c95323-1824x2700.jpg?width=1200&quality=85&format=jpeg",
           "url": "https://7net.omni7.jp/detail/1107779438.html"
         },
         {
@@ -1135,8 +1207,8 @@
           "talent": "沢口愛華",
           "price": 1650,
           "status": "発売中",
-          "artworkStatus": "絵柄公開済",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd77012b2/421699/1107779439.jpg?sw=1150",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3566/6568-3566-ad354ec85698d2e04e8d1006a669581d-1824x2700.jpg?width=1200&quality=85&format=jpeg",
           "url": "https://7net.omni7.jp/detail/1107779439.html"
         },
         {
@@ -1151,8 +1223,8 @@
           "talent": "澄田綾乃",
           "price": 1650,
           "status": "発売中",
-          "artworkStatus": "絵柄公開済",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw0cc742a9/421699/1107779441.jpg?sw=1150",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3566/6568-3566-7035364e60e00364b8962a2743a2bc85-1824x2700.jpg?width=1200&quality=85&format=jpeg",
           "url": "https://7net.omni7.jp/detail/1107779441.html"
         },
         {
@@ -1167,8 +1239,9 @@
           "talent": "沢口愛華・澄田綾乃",
           "price": 1650,
           "status": "発売中",
-          "artworkStatus": "公開中",
-          "url": "https://books.rakuten.co.jp/search?sitem=BLTISM+VOL.1+%E9%99%90%E5%AE%9A&g=001"
+          "artworkStatus": "revealed",
+          "url": "https://books.rakuten.co.jp/search?sitem=BLTISM+VOL.1+%E9%99%90%E5%AE%9A&g=001",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3566/6568-3566-21f53eacd8e640ff6e9c7f4fc88f3c7e-1909x2700.jpg?width=1200&quality=85&format=jpeg"
         },
         {
           "id": "bltism1-amazon",
@@ -1182,9 +1255,9 @@
           "talent": "沢口愛華・澄田綾乃",
           "price": 1650,
           "status": "発売中",
-          "artworkStatus": "公開中",
+          "artworkStatus": "revealed",
           "url": "https://www.amazon.co.jp/s?k=BLTISM+VOL.1&i=stripbooks",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw0fb5e4ef/421699/1107779439.jpg?sw=1150"
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3566/6568-3566-160e6c03e7aa52e7d1a28ddb191c505f-1909x2700.jpg?width=1200&quality=85&format=jpeg"
         }
       ]
     },
@@ -1208,7 +1281,7 @@
         "織莉叶（#Mooove!）",
         "天野ちよ"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1eb5629b/421699/1107786573.jpg?sw=640",
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3572/6568-3572-a517e1d5567b21902ae5d970091ba6ea-1907x2700.jpg?width=1200&quality=85&format=jpeg",
       "palette": [
         "#F43F5E",
         "#FB923C",
@@ -1219,11 +1292,53 @@
       "summary": "水着グラビアムック最新弾！通常表紙（溝端葵・白水着）とAmazon/楽天限定表紙（オレンジニット水着）、セブンネット限定で2L判生写真付き。",
       "gallery": [
         {
-          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1eb5629b/421699/1107786573.jpg?sw=640",
-          "caption": "セブンネット限定特典：溝端葵 / 南みゆか 2L判生写真",
-          "source": "セブンネット",
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3572/6568-3572-a517e1d5567b21902ae5d970091ba6ea-1907x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "通常表紙：溝端葵（BLT MONSTER Round 10）",
+          "source": "PR TIMES公式",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003572.000006568.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3572/6568-3572-9f669427e8eb4cbeb6b6e3600fc03e29-1907x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "通常版裏表紙：南みゆか",
+          "source": "PR TIMES公式",
+          "kind": "back_cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003572.000006568.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3572/6568-3572-37ee3165686b6e1717e6b49b68179b68-1907x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "限定表紙版：溝端葵",
+          "source": "PR TIMES公式",
+          "kind": "limited_cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003572.000006568.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3572/6568-3572-31aec3b53d0544b0ed6a10aaec176c05-1907x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "限定表紙版裏表紙：南みゆか",
+          "source": "PR TIMES公式",
+          "kind": "back_cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003572.000006568.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3572/6568-3572-a54cee727a431e8a084a8a030614a315-1935x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "セブン特典：溝端葵 生写真",
+          "source": "PR TIMES公式",
           "kind": "bonus",
-          "articleUrl": "https://7net.omni7.jp/search?q=BLT+MONSTER+Round+10"
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003572.000006568.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3572/6568-3572-4f776544d4edc29c664e33346ceb24d9-1935x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "セブン特典：麻倉瑞季 生写真",
+          "source": "PR TIMES公式",
+          "kind": "bonus",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003572.000006568.html"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3572/6568-3572-65bbb7ae5bab0e5f976a3fc518bc649b-1935x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "セブン特典：南みゆか 生写真",
+          "source": "PR TIMES公式",
+          "kind": "bonus",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003572.000006568.html"
         }
       ],
       "pressArticles": [
@@ -1236,20 +1351,36 @@
       ],
       "offers": [
         {
-          "id": "blt-monster-10-7net",
+          "id": "blt-monster-10-7net-mizobata",
           "store": "7net",
           "hasStoreExclusiveBonus": true,
-          "edition": "セブンネット限定特典",
+          "edition": "セブン特典：溝端葵 生写真",
           "bonusTypes": [
             "photo"
           ],
-          "bonusText": "溝端葵 / 南みゆか 2L判生写真 1枚付き",
-          "talent": "溝端葵・南みゆか",
+          "bonusText": "セブンネット限定特典：溝端葵 2L判生写真1枚付き",
+          "talent": "溝端葵",
           "price": 2400,
-          "status": "available",
+          "status": "on_sale",
           "artworkStatus": "revealed",
-          "url": "https://7net.omni7.jp/search?q=BLT+MONSTER+Round+10",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1eb5629b/421699/1107786573.jpg?sw=640"
+          "url": "https://7net.omni7.jp/search?q=BLT+MONSTER+Round+10+%E6%BA%9D%E7%AB%AF%E8%91%B5",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3572/6568-3572-a54cee727a431e8a084a8a030614a315-1935x2700.jpg?width=1200&quality=85&format=jpeg"
+        },
+        {
+          "id": "blt-monster-10-7net-minami",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：南みゆか 生写真",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "セブンネット限定特典：南みゆか 2L判生写真1枚付き",
+          "talent": "南みゆか",
+          "price": 2400,
+          "status": "on_sale",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/search?q=BLT+MONSTER+Round+10+%E5%8D%97%E3%81%BF%E3%82%86%E3%81%8B",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3572/6568-3572-65bbb7ae5bab0e5f976a3fc518bc649b-1935x2700.jpg?width=1200&quality=85&format=jpeg"
         },
         {
           "id": "blt-monster-10-rakuten",
@@ -1259,28 +1390,29 @@
           "bonusTypes": [
             "cover"
           ],
-          "bonusText": "限定表紙（溝端葵オレンジニット水着 / 裏：南みゆか白レース）",
+          "bonusText": "限定表紙（溝端葵 別Ver.）＋限定裏表紙（南みゆか 別Ver.）",
           "talent": "溝端葵・南みゆか",
           "price": 2400,
-          "status": "available",
+          "status": "on_sale",
           "artworkStatus": "revealed",
-          "url": "https://books.rakuten.co.jp/search?sitem=BLT+MONSTER+Round+10&g=001"
+          "url": "https://books.rakuten.co.jp/search?sitem=BLT+MONSTER+Round+10&g=001",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3572/6568-3572-37ee3165686b6e1717e6b49b68179b68-1907x2700.jpg?width=1200&quality=85&format=jpeg"
         },
         {
           "id": "blt-monster-10-amazon",
           "store": "amazon",
-          "hasStoreExclusiveBonus": true,
-          "edition": "Amazon（限定表紙版 / 通常版）",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
           "bonusTypes": [
-            "cover"
+            "standard"
           ],
-          "bonusText": "Amazon限定表紙版（オレンジニット水着）＆通常版",
-          "talent": "溝端葵・南みゆか",
+          "bonusText": "Amazonで購入（通常表紙：溝端葵 / 裏表紙：南みゆか）",
+          "talent": "溝端葵",
           "price": 2400,
-          "status": "available",
+          "status": "on_sale",
           "artworkStatus": "revealed",
           "url": "https://www.amazon.co.jp/s?k=BLT+MONSTER+Round+10&i=stripbooks",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1eb5629b/421699/1107786573.jpg?sw=640"
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3572/6568-3572-a517e1d5567b21902ae5d970091ba6ea-1907x2700.jpg?width=1200&quality=85&format=jpeg"
         }
       ]
     },
@@ -1337,9 +1469,8 @@
           "talent": "榎原依那",
           "price": 500,
           "status": "available",
-          "artworkStatus": "revealed",
-          "url": "https://7net.omni7.jp/detail/1107774766.html",
-          "imageUrl": "https://cdn-manga-static-file-origin.ldf-static.net/a312b59ft1820b8a6/xxlarge"
+          "artworkStatus": "pending",
+          "url": "https://7net.omni7.jp/detail/1107774766.html"
         },
         {
           "id": "action-1117-amazon",
@@ -1441,7 +1572,7 @@
         "山田あい",
         "宇咲"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8e61929b/421699/1107782402.jpg?sw=1150",
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/400/0000173/8/7/426.jpg",
       "palette": [
         "#D97706",
         "#FBBF24",
@@ -1456,6 +1587,13 @@
       "printOnlyNote": "セブンネット限定ポストカード全7種（AKB48 5種＋山田あい＋宇咲）確定！",
       "summary": "AKB48大特集＆セブンネット限定ポストカード全7種を横並び比較！小栗有以・山田あい・宇咲ほか全直リンク収録。",
       "gallery": [
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/400/0000173/8/7/426.jpg",
+          "caption": "通常表紙：AKB48 佐藤綺星・八木愛月・伊藤百花（EX大衆 2026年12月号）",
+          "source": "公式書影（HMV/双葉社）",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=EX%E5%A4%A7%E8%A1%86+2026%E5%B9%B412%E6%9C%88%E5%8F%B7&i=stripbooks"
+        },
         {
           "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8e61929b/421699/1107782402.jpg?sw=1150",
           "caption": "セブン特典：小栗有以（AKB48）ポストカード",
@@ -1600,9 +1738,9 @@
           "talent": "AKB48",
           "price": 1200,
           "status": "発売中",
-          "artworkStatus": "通常版",
+          "artworkStatus": "revealed",
           "url": "https://www.amazon.co.jp/s?k=EX%E5%A4%A7%E8%A1%86+2026%E5%B9%B412%E6%9C%88%E5%8F%B7&i=stripbooks",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8e61929b/421699/1107782402.jpg?sw=1150"
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/400/0000173/8/7/426.jpg"
         }
       ]
     },
@@ -1625,7 +1763,7 @@
         "下田衣珠季（日向坂46）",
         "小戸森穂花"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1b2a62fb/421699/1107778152.jpg?sw=1150",
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/1265/4912178111265_1_2.jpg",
       "palette": [
         "#1E40AF",
         "#6366F1",
@@ -1640,6 +1778,13 @@
       "printOnlyNote": "セブンネットは五百城茉央ポストカード3種、HMVは日向坂46ペアポストカード付き！",
       "summary": "乃木坂46・五百城茉央のロンググラビア表紙号！セブンネット3絵柄＆HMV限定特典のどちらも高画質で絵柄公開済み。",
       "gallery": [
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/1265/4912178111265_1_2.jpg",
+          "caption": "通常表紙：五百城茉央（乃木坂46・BRODY 2026年12月号）",
+          "source": "公式書影（白夜書房）",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=BRODY+2026%E5%B9%B412%E6%9C%88%E5%8F%B7&i=stripbooks"
+        },
         {
           "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1b2a62fb/421699/1107778152.jpg?sw=1150",
           "caption": "セブン特典：五百城茉央（乃木坂46）ポストカードA",
@@ -1749,7 +1894,7 @@
           "status": "available",
           "artworkStatus": "revealed",
           "url": "https://www.amazon.co.jp/s?k=BRODY+2026%E5%B9%B412%E6%9C%88%E5%8F%B7&i=stripbooks",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1b2a62fb/421699/1107778152.jpg?sw=1150"
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/1265/4912178111265_1_2.jpg"
         }
       ]
     },
@@ -2050,7 +2195,7 @@
       "featuredTalents": [
         "中島瑠菜"
       ],
-      "coverImageUrl": "https://store.tsite.jp/article_img/daikanyama/2026/1793251483626/slider/9784087902600_%E4%B8%AD%E5%B3%B6%E7%91%A0%E8%8F%9C%E5%86%99%E7%9C%9F%E9%9B%86_%E5%B8%AF%E3%81%AA%E3%81%97.jpg_edited.jpg",
+      "coverImageUrl": "https://cdn.tower.jp/za/o/00/tem9784087902600.jpg",
       "palette": [
         "#4F46E5",
         "#818CF8",
@@ -2061,11 +2206,11 @@
       "summary": "“日本アカデミー賞新人賞”中島瑠菜が初水着に挑戦した1st写真集！帯なし高画質カバー・ORICON先行水着カット・セブンネット限定生写真版を収録。",
       "gallery": [
         {
-          "url": "https://store.tsite.jp/article_img/daikanyama/2026/1793251483626/slider/9784087902600_%E4%B8%AD%E5%B3%B6%E7%91%A0%E8%8F%9C%E5%86%99%E7%9C%9F%E9%9B%86_%E5%B8%AF%E3%81%AA%E3%81%97.jpg_edited.jpg",
-          "caption": "公式カバービジュアル（帯なし高画質）",
-          "source": "代官山蔦屋書店",
+          "url": "https://cdn.tower.jp/za/o/00/tem9784087902600.jpg",
+          "caption": "公式書影（帯あり）",
+          "source": "TOWER RECORDS",
           "kind": "cover",
-          "articleUrl": "https://store.tsite.jp/daikanyama/event/humanities/57764-1438221029.html"
+          "articleUrl": "https://tower.jp/article/feature_item/2026/11/02/3004"
         },
         {
           "url": "https://contents.oricon.co.jp/upimg/news/2487000/2486719/20261015_184154_p_o_17905980.jpg",
@@ -2080,13 +2225,6 @@
           "source": "セブンネット",
           "kind": "bonus",
           "articleUrl": "https://7net.omni7.jp/search?q=%E4%B8%AD%E5%B3%B6%E7%91%A0%E8%8F%9C+Luna"
-        },
-        {
-          "url": "https://cdn.tower.jp/za/o/00/tem9784087902600.jpg",
-          "caption": "公式書影（帯あり）",
-          "source": "TOWER RECORDS",
-          "kind": "cover",
-          "articleUrl": "https://tower.jp/article/feature_item/2026/11/02/3004"
         }
       ],
       "pressArticles": [
@@ -2128,7 +2266,7 @@
           "status": "preorder",
           "artworkStatus": "revealed",
           "url": "https://www.amazon.co.jp/dp/4087902609",
-          "imageUrl": "https://store.tsite.jp/article_img/daikanyama/2026/1793251483626/slider/9784087902600_%E4%B8%AD%E5%B3%B6%E7%91%A0%E8%8F%9C%E5%86%99%E7%9C%9F%E9%9B%86_%E5%B8%AF%E3%81%AA%E3%81%97.jpg_edited.jpg"
+          "imageUrl": "https://cdn.tower.jp/za/o/00/tem9784087902600.jpg"
         }
       ]
     },
@@ -2179,8 +2317,7 @@
           "price": 3960,
           "status": "low_stock",
           "artworkStatus": "revealed",
-          "url": "https://7net.omni7.jp/search?q=%E5%8F%A4%E8%B3%80%E7%91%A0+WKGA",
-          "imageUrl": "https://tshop.r10s.jp/book/cabinet/1121/9784868361121_1_2.jpg?downsize=600:*"
+          "url": "https://7net.omni7.jp/search?q=%E5%8F%A4%E8%B3%80%E7%91%A0+WKGA"
         },
         {
           "id": "koga-rui-rakuten",
@@ -2211,8 +2348,7 @@
           "price": 3300,
           "status": "available",
           "artworkStatus": "revealed",
-          "url": "https://www.amazon.co.jp/s?k=%E5%8F%A4%E8%B3%80%E7%91%A0+WKGA+82.2FM&i=stripbooks",
-          "imageUrl": "https://tshop.r10s.jp/book/cabinet/1121/9784868361121_1_2.jpg?downsize=600:*"
+          "url": "https://www.amazon.co.jp/s?k=%E5%8F%A4%E8%B3%80%E7%91%A0+WKGA+82.2FM&i=stripbooks"
         }
       ],
       "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/1121/9784868361121_1_2.jpg?downsize=600:*"
@@ -2423,7 +2559,7 @@
       "summary": "3ストア以上で特典展開！セブン限定直筆サイン本、楽天・Amazon限定のメイキングDVD付き限定表紙版、HMVオンライン特典を比較。",
       "gallery": [
         {
-          "url": "https://img.hmv.co.jp/image/jacket/800/0000174/2/6/303.jpg",
+          "url": "https://img.hmv.co.jp/image/jacket/400/0000174/2/6/303.jpg",
           "caption": "通常版カバー：田中有紀『ゆきのとなり。』",
           "source": "HMV&BOOKS",
           "kind": "cover",
@@ -2451,8 +2587,7 @@
           "talent": "田中有紀",
           "price": 3520,
           "status": "残りわずか",
-          "artworkStatus": "限定枠",
-          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000174/2/6/303.jpg",
+          "artworkStatus": "pending",
           "url": "https://7net.omni7.jp/search?q=%E7%94%B0%E4%B8%AD%E6%9C%89%E7%B4%80+%E3%82%86%E3%81%8D%E3%81%AE%E3%81%A8%E3%81%AA%E3%82%8A"
         },
         {
@@ -2484,8 +2619,7 @@
           "talent": "田中有紀",
           "price": 3520,
           "status": "予約受付中",
-          "artworkStatus": "公開中",
-          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000174/2/6/303.jpg",
+          "artworkStatus": "pending",
           "url": "https://www.hmv.co.jp/product/detail/17426303"
         },
         {
@@ -2501,12 +2635,12 @@
           "talent": "田中有紀",
           "price": 3520,
           "status": "予約受付中",
-          "artworkStatus": "公開中",
-          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000174/2/6/303.jpg",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/400/0000174/2/6/303.jpg",
           "url": "https://www.amazon.co.jp/s?k=%E7%94%B0%E4%B8%AD%E6%9C%89%E7%B4%80+%E3%82%86%E3%81%8D%E3%81%AE%E3%81%A8%E3%81%AA%E3%82%8A&i=stripbooks"
         }
       ],
-      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000174/2/6/303.jpg"
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/400/0000174/2/6/303.jpg"
     },
     {
       "id": "yuina-1st-pb",
@@ -2709,8 +2843,7 @@
           "talent": "平田侑希（AKB48）",
           "price": 3850,
           "status": "予約受付中",
-          "artworkStatus": "絵柄公開済",
-          "imageUrl": "https://tshop.r10s.jp/book/cabinet/8286/9784299068286_2_3.jpg?fitin=560:400&composite-to=*,*|560:400",
+          "artworkStatus": "pending",
           "url": "https://books.rakuten.co.jp/rb/18806132/"
         },
         {
@@ -2803,7 +2936,7 @@
       "featuredTalents": [
         "姫野ひなの"
       ],
-      "coverImageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2864912_o.jpg",
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/400/0000174/0/9/041.jpg",
       "palette": [
         "#EA580C",
         "#FB923C",
@@ -2819,11 +2952,11 @@
       "summary": "人気アイドルの表紙＆両面BIGポスター付録が毎週話題の週刊少年チャンピオン最新51号（表紙：姫野ひなの）。",
       "gallery": [
         {
-          "url": "https://img.fujisan.co.jp/images/products/backnumbers/2864912_o.jpg",
-          "caption": "表紙：姫野ひなの（51号）",
-          "source": "Fujisan",
+          "url": "https://img.hmv.co.jp/image/jacket/400/0000174/0/9/041.jpg",
+          "caption": "表紙：姫野ひなの（週刊少年チャンピオン 51号）",
+          "source": "公式書影（HMV/秋田書店）",
           "kind": "cover",
-          "articleUrl": "https://www.fujisan.co.jp/product/1131/new/"
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8A%E5%B0%91%E5%B9%B4%E3%83%81%E3%83%A3%E3%83%B3%E3%83%94%E3%82%AA%E3%83%B3+2026%E5%B9%B412%E6%9C%883%E6%97%A5%E5%8F%B7&i=stripbooks"
         }
       ],
       "pressArticles": [
@@ -2849,7 +2982,7 @@
           "status": "available",
           "artworkStatus": "revealed",
           "url": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8A%E5%B0%91%E5%B9%B4%E3%83%81%E3%83%A3%E3%83%B3%E3%83%94%E3%82%AA%E3%83%B3+2026%E5%B9%B412%E6%9C%883%E6%97%A5%E5%8F%B7&i=stripbooks",
-          "imageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2864912_o.jpg"
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/400/0000174/0/9/041.jpg"
         }
       ]
     },
@@ -3086,8 +3219,7 @@
           "talent": "FRUITS ZIPPER",
           "price": 3300,
           "status": "発売中",
-          "artworkStatus": "公開中",
-          "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8572/9784063528572.jpg",
+          "artworkStatus": "pending",
           "url": "https://www.hmv.co.jp/search/keyword_FRUITS+ZIPPER+SYNERGY/target_ALL/type_sr/"
         },
         {
@@ -3132,7 +3264,7 @@
         "山田あい",
         "穂波あみ"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd242e966/421699/1107772367.jpg?sw=1150",
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/6027/9784575466027_1_2.jpg",
       "palette": [
         "#DB2777",
         "#F472B6",
@@ -3142,6 +3274,13 @@
       "printOnlyNote": "話題の創刊号！セブンネット限定ポストカード全6種すべて高画質絵柄付きで横並び比較可能",
       "summary": "表紙はグラビア界を席巻中の一ノ瀬瑠菜！セブンネット限定ポストカード6名（一ノ瀬瑠菜・白濱美兎・高見奈央・和田海佑・山田あい・穂波あみ）を高画質画像付きで収録。",
       "gallery": [
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/6027/9784575466027_1_2.jpg",
+          "caption": "公式書影：一ノ瀬瑠菜（グラビアアクション vol.1）",
+          "source": "公式書影（双葉社）",
+          "kind": "cover",
+          "articleUrl": "https://books.rakuten.co.jp/rb/18806892/"
+        },
         {
           "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd242e966/421699/1107772367.jpg?sw=1150",
           "caption": "セブン特典：一ノ瀬瑠菜 ポストカード",
@@ -3295,8 +3434,8 @@
           "talent": "一ノ瀬瑠菜",
           "price": 1650,
           "status": "予約受付中",
-          "artworkStatus": "通常版",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd242e966/421699/1107772367.jpg?sw=1150",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/6027/9784575466027_1_2.jpg",
           "url": "https://www.amazon.co.jp/s?k=%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3+vol.1&i=stripbooks"
         }
       ]
@@ -3318,7 +3457,6 @@
         "えなこ",
         "東雲うみ"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw905c17ab/421699/1107789431.jpg?sw=1150",
       "palette": [
         "#DC2626",
         "#F97316",
@@ -3389,8 +3527,7 @@
           "talent": "えなこ・東雲うみ",
           "price": 770,
           "status": "予約受付中",
-          "artworkStatus": "通常版",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw905c17ab/421699/1107789431.jpg?sw=1150",
+          "artworkStatus": "pending",
           "url": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8ASPA+2026%E5%B9%B412%E6%9C%8816%E6%97%A5%E5%8F%B7&i=stripbooks"
         }
       ]
@@ -3413,7 +3550,7 @@
         "ちとせよしの",
         "江籠裕奈"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwcbed16a3/421699/1107784340.jpg?sw=1150",
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/400/0000173/3/8/881.jpg",
       "palette": [
         "#0F766E",
         "#14B8A6",
@@ -3571,7 +3708,6 @@
         "織莉叶",
         "水野Reta"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd5261dfb/421699/1107786579.jpg?sw=1150",
       "palette": [
         "#BE123C",
         "#F43F5E",
@@ -3688,8 +3824,7 @@
           "talent": "沢口愛華",
           "price": 1870,
           "status": "予約受付中",
-          "artworkStatus": "通常版",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd5261dfb/421699/1107786579.jpg?sw=1150",
+          "artworkStatus": "pending",
           "url": "https://www.amazon.co.jp/s?k=ENTAME36+vol.08&i=stripbooks"
         }
       ]
@@ -3714,7 +3849,7 @@
         "近藤沙樹",
         "AKB48"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw74775da5/421699/1107784983.jpg?sw=1150",
+      "coverImageUrl": "https://store.kadokawa.co.jp/img/goods/5/322603001452.jpg",
       "palette": [
         "#0284C7",
         "#38BDF8",
@@ -3812,24 +3947,10 @@
       "gallery": [
         {
           "url": "https://cdn.tower.jp/za/o/66/9784910031866.jpg",
-          "caption": "表紙：僕が見たかった青空（Vol.23）",
+          "caption": "表紙：僕が見たかった青空（グラビアプレス Vol.23）",
           "source": "公式書影",
           "kind": "cover",
-          "articleUrl": "https://tower.jp/item/8206331"
-        },
-        {
-          "url": "https://shibuyatsutaya.tsite.jp/menu_files/article/000/002/881/article_images/article_resize.gp_Vol.23_H1_fix_RGB.jpg",
-          "caption": "SHIBUYA TSUTAYA 先着特典キャンペーンビジュアル",
-          "source": "TSUTAYA公式",
-          "kind": "bonus",
-          "articleUrl": "https://shibuyatsutaya.tsite.jp/article/2881.html"
-        },
-        {
-          "url": "https://img.fujisan.co.jp/images/products/backnumbers/2879209_o.jpg",
-          "caption": "裏表紙＆松本日向ブロマイド特典案内",
-          "source": "Fujisan",
-          "kind": "preview",
-          "articleUrl": "https://www.fujisan.co.jp/product/1281706844/next/"
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%83%97%E3%83%AC%E3%82%B9+Vol.23&i=stripbooks"
         }
       ],
       "pressArticles": [
@@ -3853,8 +3974,7 @@
           "talent": "僕が見たかった青空",
           "price": 1500,
           "status": "予約受付中",
-          "artworkStatus": "公開中",
-          "imageUrl": "https://cdn.tower.jp/za/o/66/9784910031866.jpg",
+          "artworkStatus": "pending",
           "url": "https://www.hmv.co.jp/artist_%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%83%97%E3%83%AC%E3%82%B9%E7%B7%A8%E9%9B%86%E9%83%A8_000000000802220/item_%E3%80%90%E7%89%B9%E5%85%B8-%E5%83%95%E3%81%8C%E8%A6%8B%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F%E9%9D%92%E7%A9%BA-%E3%83%9D%E3%82%B9%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89%E3%80%91%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%83%97%E3%83%AC%E3%82%B9-Vol-23_17408732"
         },
         {
@@ -3869,8 +3989,7 @@
           "talent": "僕が見たかった青空",
           "price": 1500,
           "status": "予約受付中",
-          "artworkStatus": "絵柄公開済",
-          "imageUrl": "https://shibuyatsutaya.tsite.jp/menu_files/article/000/002/881/article_images/article_resize.gp_Vol.23_H1_fix_RGB.jpg",
+          "artworkStatus": "pending",
           "url": "https://shibuyatsutaya.tsite.jp/article/2881.html"
         },
         {
@@ -3885,8 +4004,7 @@
           "talent": "松本日向",
           "price": 1500,
           "status": "予約受付中",
-          "artworkStatus": "公開中",
-          "imageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2879209_o.jpg",
+          "artworkStatus": "pending",
           "url": "https://search.rakuten.co.jp/search/mall/%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%83%97%E3%83%AC%E3%82%B9+Vol.23+%E7%89%B9%E5%85%B8/"
         },
         {
@@ -3927,7 +4045,7 @@
         "小川彩",
         "瀬戸口心月"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw08919574/421699/1107781936.jpg?sw=1150",
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/0541/9784253020541_1_19.jpg",
       "palette": [
         "#7C3AED",
         "#A855F7",
@@ -3938,11 +4056,11 @@
       "summary": "秋田書店の人気グラビア専門誌！乃木坂46・賀喜遥香A/B、瀬戸口心月、小川彩のセブン限定ポストカード4種を並べてチェック。",
       "gallery": [
         {
-          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw08919574/421699/1107781936.jpg?sw=1150",
-          "caption": "表紙：賀喜遥香（乃木坂46）",
-          "source": "セブンネット",
+          "url": "https://shop.r10s.jp/book/cabinet/0541/9784253020541_1_19.jpg",
+          "caption": "通常表紙：賀喜遥香（乃木坂46・グラビアチャンピオン VOL.14）",
+          "source": "公式書影（秋田書店）",
           "kind": "cover",
-          "articleUrl": "https://7net.omni7.jp/detail/1107781936.html"
+          "articleUrl": "https://books.rakuten.co.jp/rb/18715678/"
         },
         {
           "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw5a381c42/421699/1107775360.jpg?sw=1150",
@@ -4028,8 +4146,7 @@
           "talent": "小川彩（乃木坂46）",
           "price": 1760,
           "status": "発売中",
-          "artworkStatus": "公開中",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw08919574/421699/1107781936.jpg?sw=1150",
+          "artworkStatus": "pending",
           "url": "https://7net.omni7.jp/detail/1107775363.html"
         },
         {
@@ -4044,8 +4161,8 @@
           "talent": "賀喜遥香（乃木坂46）",
           "price": 1760,
           "status": "発売中",
-          "artworkStatus": "通常表紙",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw08919574/421699/1107781936.jpg?sw=1150",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/0541/9784253020541_1_19.jpg",
           "url": "https://www.amazon.co.jp/s?k=%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%83%81%E3%83%A3%E3%83%B3%E3%83%94%E3%82%AA%E3%83%B3+VOL.14&i=stripbooks"
         }
       ]
@@ -4065,7 +4182,7 @@
       "featuredTalents": [
         "えなこ"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1ba570c1/114036/1107778975.jpg?sw=1150",
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/400/0000173/8/9/415.jpg",
       "palette": [
         "#B45309",
         "#F59E0B",
@@ -4075,6 +4192,13 @@
       "printOnlyNote": "青年コミック誌の隠れ特典！セブンネット限定「えなこ 生写真1枚付き」¥510",
       "summary": "青年コミック誌でもセブンネット限定生写真が付く代表例！えなこ生写真付きが通常価格と同じ¥510。",
       "gallery": [
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/400/0000173/8/9/415.jpg",
+          "caption": "通常表紙：えなこ（ビッグコミックスペリオール 2026年11月27日号）",
+          "source": "公式書影（HMV/小学館）",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E3%83%93%E3%83%83%E3%82%B0%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%AA%E3%82%AA%E3%83%BC%E3%83%AB+2026%E5%B9%B411%E6%9C%8827%E6%97%A5%E5%8F%B7&i=stripbooks"
+        },
         {
           "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1ba570c1/114036/1107778975.jpg?sw=1150",
           "caption": "セブン限定：えなこ 生写真1枚付き",
@@ -4113,8 +4237,8 @@
           "talent": "えなこ",
           "price": 510,
           "status": "発売中",
-          "artworkStatus": "通常版",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1ba570c1/114036/1107778975.jpg?sw=1150",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/400/0000173/8/9/415.jpg",
           "url": "https://www.amazon.co.jp/s?k=%E3%83%93%E3%83%83%E3%82%B0%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%AA%E3%82%AA%E3%83%BC%E3%83%AB+2026%E5%B9%B411%E6%9C%8827%E6%97%A5%E5%8F%B7&i=stripbooks"
         }
       ]
@@ -4270,7 +4394,7 @@
       "featuredTalents": [
         "東雲うみ"
       ],
-      "coverImageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2865018_o.jpg",
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/400/0000174/1/9/708.jpg",
       "palette": [
         "#1D4ED8",
         "#3B82F6",
@@ -4286,11 +4410,11 @@
       "summary": "週刊ヤングジャンプ最新号！東雲うみのグラビア＆特別付録小冊子収録。",
       "gallery": [
         {
-          "url": "https://img.fujisan.co.jp/images/products/backnumbers/2865018_o.jpg",
-          "caption": "週刊ヤングジャンプ 2026年12/3号 表紙",
-          "source": "Fujisan",
+          "url": "https://img.hmv.co.jp/image/jacket/400/0000174/1/9/708.jpg",
+          "caption": "表紙：週刊ヤングジャンプ 2026年No.51（巻頭グラビア：水野Reta）",
+          "source": "公式書影（HMV/集英社）",
           "kind": "cover",
-          "articleUrl": "https://www.fujisan.co.jp/product/2680/new/"
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8A%E3%83%A4%E3%83%B3%E3%82%B0%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%97+2026%E5%B9%B412%E6%9C%883%E6%97%A5%E5%8F%B7&i=stripbooks"
         }
       ],
       "pressArticles": [],
@@ -4307,8 +4431,8 @@
           "talent": "東雲うみ",
           "price": 490,
           "status": "発売中",
-          "artworkStatus": "通常表紙",
-          "imageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2865018_o.jpg",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/400/0000174/1/9/708.jpg",
           "url": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8A%E3%83%A4%E3%83%B3%E3%82%B0%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%97+2026%E5%B9%B412%E6%9C%883%E6%97%A5%E5%8F%B7&i=stripbooks"
         }
       ]
@@ -4382,7 +4506,6 @@
         "一ノ瀬美空",
         "小川彩"
       ],
-      "coverImageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2854801_o.jpg",
       "palette": [
         "#EC4899",
         "#F472B6",
@@ -4391,15 +4514,7 @@
       "includedBonuses": [],
       "printOnlyNote": "アイドル表紙の注目女性誌！乃木坂46 5期生ペア表紙（ストア独自特典なしのためAmazon基本表示）",
       "summary": "乃木坂46の一ノ瀬美空×小川彩が女性ファッション誌『ar』表紙にペア登場！「愛がダダ漏れな2人」大特集。",
-      "gallery": [
-        {
-          "url": "https://img.fujisan.co.jp/images/products/backnumbers/2854801_o.jpg",
-          "caption": "ar（アール）誌面ビジュアル",
-          "source": "Fujisan",
-          "kind": "cover",
-          "articleUrl": "https://furoku.net/ar-2027-01/"
-        }
-      ],
+      "gallery": [],
       "pressArticles": [
         {
           "title": "ar（アール）2027年1月号 表紙：一ノ瀬美空×小川彩（乃木坂46）特集詳細",
@@ -4421,8 +4536,7 @@
           "talent": "一ノ瀬美空・小川彩（乃木坂46）",
           "price": 810,
           "status": "予約受付中",
-          "artworkStatus": "予約受付中",
-          "imageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2854801_o.jpg",
+          "artworkStatus": "pending",
           "url": "https://www.amazon.co.jp/s?k=ar+2027%E5%B9%B41%E6%9C%88%E5%8F%B7&i=stripbooks"
         }
       ]
@@ -4506,7 +4620,7 @@
         "乃木坂46",
         "日向坂46"
       ],
-      "coverImageUrl": "https://img-nonno.hpplus.jp/wp-content/uploads/magazine_2601-02_cover1-1.png",
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/0279/4912072830279_1_3.jpg",
       "palette": [
         "#E11D48",
         "#FB7185",
@@ -4517,11 +4631,11 @@
       "summary": "出口夏希表紙＆乃木坂46遠藤さくら・日向坂46小坂菜緒ら専属モデルの冬ファッション大特集。",
       "gallery": [
         {
-          "url": "https://img-nonno.hpplus.jp/wp-content/uploads/magazine_2601-02_cover1-1.png",
-          "caption": "公式表紙：non-no 2027年1・2月合併号",
-          "source": "non-no web",
+          "url": "https://shop.r10s.jp/book/cabinet/0279/4912072830279_1_3.jpg",
+          "caption": "公式表紙：出口夏希（non-no 2027年1・2月合併号）",
+          "source": "公式書影（集英社）",
           "kind": "cover",
-          "articleUrl": "https://nonno.hpplus.jp/magazine/"
+          "articleUrl": "https://books.rakuten.co.jp/rb/18867634/"
         }
       ],
       "pressArticles": [
@@ -4545,8 +4659,8 @@
           "talent": "出口夏希・遠藤さくら・小坂菜緒",
           "price": 1070,
           "status": "発売中",
-          "artworkStatus": "通常表紙",
-          "imageUrl": "https://img-nonno.hpplus.jp/wp-content/uploads/magazine_2601-02_cover1-1.png",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/0279/4912072830279_1_3.jpg",
           "url": "https://www.amazon.co.jp/s?k=non-no+2027%E5%B9%B41%E3%83%BB2%E6%9C%88%E5%90%88%E4%BD%B5%E5%8F%B7&i=stripbooks"
         }
       ]
@@ -4566,7 +4680,7 @@
       "featuredTalents": [
         "与田祐希"
       ],
-      "coverImageUrl": "https://img.fujisan.co.jp/images/products/2734_l.jpg",
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/1263/4912082551263_1_2.jpg",
       "palette": [
         "#9D174D",
         "#EC4899",
@@ -4577,11 +4691,11 @@
       "summary": "与田祐希が通常版表紙を飾るMAQUIA 12月号！公式Webに撮り下ろしビューティーカット公開中。",
       "gallery": [
         {
-          "url": "https://img.fujisan.co.jp/images/products/2734_l.jpg",
-          "caption": "表紙：与田祐希（MAQUIA 2026年12月号）",
-          "source": "Fujisan",
+          "url": "https://shop.r10s.jp/book/cabinet/1263/4912082551263_1_2.jpg",
+          "caption": "公式表紙：与田祐希（MAQUIA 2026年12月号）",
+          "source": "公式書影（集英社）",
           "kind": "cover",
-          "articleUrl": "https://maquia.hpplus.jp/life/news/maquia-magazine-202612/"
+          "articleUrl": "https://books.rakuten.co.jp/rb/18809492/"
         }
       ],
       "pressArticles": [
@@ -4605,8 +4719,8 @@
           "talent": "与田祐希",
           "price": 980,
           "status": "発売中",
-          "artworkStatus": "通常表紙",
-          "imageUrl": "https://img.fujisan.co.jp/images/products/2734_l.jpg",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/1263/4912082551263_1_2.jpg",
           "url": "https://www.amazon.co.jp/s?k=MAQUIA+2026%E5%B9%B412%E6%9C%88%E5%8F%B7+%E4%B8%8E%E7%94%B0%E7%A5%90%E5%B8%8C&i=stripbooks"
         }
       ]
@@ -4627,7 +4741,7 @@
         "AKB48",
         "小栗有以"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe3932815/212960/1107773305.jpg?sw=1150",
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/7/2/547.jpg",
       "palette": [
         "#DB2777",
         "#F472B6",
@@ -4637,6 +4751,13 @@
       "printOnlyNote": "明日発売！セブン限定（壁掛け柄/卓上柄ポストカード）＋楽天限定（ミニカレンダー）の豪華特典対決",
       "summary": "AKB48・小栗有以の2027年カレンダー！壁掛けと卓上で別柄のセブン限定ポストカード＆楽天限定ミニカレンダーを横並び比較。",
       "gallery": [
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000172/7/2/547.jpg",
+          "caption": "公式表紙：小栗有以（AKB48）2027年カレンダー",
+          "source": "公式書影（HMV）",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E5%B0%8F%E6%A0%97%E6%9C%89%E4%BB%A5+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        },
         {
           "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe3932815/212960/1107773305.jpg?sw=1150",
           "caption": "壁掛け版＋セブン限定「壁掛け限定柄ポストカード」",
@@ -4721,8 +4842,8 @@
           "talent": "小栗有以（AKB48）",
           "price": 3520,
           "status": "予約受付中",
-          "artworkStatus": "通常版",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe3932815/212960/1107773305.jpg?sw=1150",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/7/2/547.jpg",
           "url": "https://www.amazon.co.jp/s?k=%E5%B0%8F%E6%A0%97%E6%9C%89%E4%BB%A5+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
         }
       ]
@@ -4742,7 +4863,7 @@
       "featuredTalents": [
         "江籠裕奈"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw6ef0518b/212960/1107734481.jpg?sw=1150",
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/0/1/746.jpg",
       "palette": [
         "#7C3AED",
         "#A855F7",
@@ -4752,6 +4873,13 @@
       "printOnlyNote": "セブンネット限定ミニカレンダー1枚付き＋HMV限定ミニカレンダー付き！",
       "summary": "元SKE48・江籠裕奈の2027年カレンダー！セブンネットとHMVの両ストアで限定ミニカレンダー特典が展開。",
       "gallery": [
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000172/0/1/746.jpg",
+          "caption": "公式表紙：江籠裕奈 2027年カレンダー",
+          "source": "公式書影（HMV）",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E6%B1%9F%E7%B1%A0%E8%A3%95%E5%A5%88+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        },
         {
           "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw6ef0518b/212960/1107734481.jpg?sw=1150",
           "caption": "江籠裕奈 2027年カレンダー＋セブン限定ミニカレンダー",
@@ -4790,8 +4918,7 @@
           "talent": "江籠裕奈",
           "price": 4620,
           "status": "予約受付中",
-          "artworkStatus": "公開中",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw6ef0518b/212960/1107734481.jpg?sw=1150",
+          "artworkStatus": "pending",
           "url": "https://www.hmv.co.jp/search/keyword_%E6%B1%9F%E7%B1%A0%E8%A3%95%E5%A5%88+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/target_ALL/type_sr/"
         },
         {
@@ -4806,8 +4933,8 @@
           "talent": "江籠裕奈",
           "price": 4620,
           "status": "予約受付中",
-          "artworkStatus": "通常版",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw6ef0518b/212960/1107734481.jpg?sw=1150",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/0/1/746.jpg",
           "url": "https://www.amazon.co.jp/s?k=%E6%B1%9F%E7%B1%A0%E8%A3%95%E5%A5%88+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
         }
       ]
@@ -4919,8 +5046,7 @@
           "talent": "長濱ねる",
           "price": 3300,
           "status": "予約受付中",
-          "artworkStatus": "絵柄公開済",
-          "imageUrl": "https://img.hmv.co.jp/image/jacket/400/0000171/8/6/464.jpg",
+          "artworkStatus": "revealed",
           "url": "https://www.hmv.co.jp/artist_%E9%95%B7%E6%BF%B1%E3%81%AD%E3%82%8B_000000000732828/item_%E3%80%8A%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%BF%9C%E5%8B%9F%E6%8A%BD%E9%81%B8%E3%80%8BNeru-Nagahama-MEMORIAL-CALENDAR-2027-1-2027-12-%E2%80%BB%E5%85%A8%E9%A1%8D%E5%86%85%E9%87%91_17186464"
         },
         {
@@ -4956,7 +5082,7 @@
       "featuredTalents": [
         "古畑奈和"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw64b2bcc7/212960/1107772320.jpg?sw=1150",
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/6/6/019.jpg",
       "palette": [
         "#BE123C",
         "#F43F5E",
@@ -4966,6 +5092,13 @@
       "printOnlyNote": "セブンネット限定特典：ミニカレンダー 1枚付き！",
       "summary": "古畑奈和の2027年カレンダー。セブンネット限定ミニカレンダー1枚付きで予約受付中。",
       "gallery": [
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000172/6/6/019.jpg",
+          "caption": "公式表紙：古畑奈和 2027年カレンダー",
+          "source": "公式書影（HMV）",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E5%8F%A4%E7%95%91%E5%A5%88%E5%92%8C+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        },
         {
           "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw64b2bcc7/212960/1107772320.jpg?sw=1150",
           "caption": "古畑奈和 2027年カレンダー（セブン限定ミニカレンダー付）",
@@ -5004,8 +5137,8 @@
           "talent": "古畑奈和",
           "price": 3520,
           "status": "予約受付中",
-          "artworkStatus": "通常版",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw64b2bcc7/212960/1107772320.jpg?sw=1150",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/6/6/019.jpg",
           "url": "https://www.amazon.co.jp/s?k=%E5%8F%A4%E7%95%91%E5%A5%88%E5%92%8C+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
         }
       ]
@@ -5143,7 +5276,7 @@
       "featuredTalents": [
         "田中美久"
       ],
-      "coverImageUrl": "https://tshop.r10s.jp/zokke/cabinet/27cl002/27cl-0263.jpg?fitin=208:208",
+      "coverImageUrl": "https://tshop.r10s.jp/zokke/cabinet/27cl002/27cl-0263.jpg",
       "palette": [
         "#E11D48",
         "#FB7185",
@@ -5154,7 +5287,7 @@
       "summary": "大人気グラビア女優・田中美久の2027年卓上カレンダー。",
       "gallery": [
         {
-          "url": "https://tshop.r10s.jp/zokke/cabinet/27cl002/27cl-0263.jpg?fitin=208:208",
+          "url": "https://tshop.r10s.jp/zokke/cabinet/27cl002/27cl-0263.jpg",
           "caption": "表紙：田中美久 2027年 卓上カレンダー",
           "source": "公式書影",
           "kind": "cover",
@@ -5175,8 +5308,8 @@
           "talent": "田中美久",
           "price": 3300,
           "status": "予約受付中",
-          "artworkStatus": "絵柄公開済",
-          "imageUrl": "https://tshop.r10s.jp/zokke/cabinet/27cl002/27cl-0263.jpg?fitin=208:208",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/zokke/cabinet/27cl002/27cl-0263.jpg",
           "url": "https://www.amazon.co.jp/s?k=%E7%94%B0%E4%B8%AD%E7%BE%8E%E4%B9%85+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
         }
       ]
@@ -5289,8 +5422,7 @@
           "talent": "桜井日奈子",
           "price": 3300,
           "status": "発売中",
-          "artworkStatus": "絵柄公開済",
-          "imageUrl": "https://tshop.r10s.jp/book/cabinet/3119/2100015123119_1_3.jpg?fitin=560:400&composite-to=*,*|560:400",
+          "artworkStatus": "revealed",
           "url": "https://www.amazon.co.jp/s?k=%E6%A1%9C%E4%BA%95%E6%97%A5%E5%A5%88%E5%AD%90+2027%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%E3%83%96%E3%83%83%E3%82%AF"
         }
       ]
@@ -5310,7 +5442,6 @@
       "featuredTalents": [
         "瀬戸みるか"
       ],
-      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8bb49499/421699/1107771491.jpg?sw=1150",
       "palette": [
         "#EC4899",
         "#F97316",
@@ -5365,8 +5496,7 @@
           "talent": "瀬戸みるか",
           "price": 3850,
           "status": "予約受付中",
-          "artworkStatus": "絵柄公開済",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8bb49499/421699/1107771491.jpg?sw=1150",
+          "artworkStatus": "pending",
           "url": "https://books.rakuten.co.jp/rb/18805768/"
         },
         {
@@ -5381,8 +5511,7 @@
           "talent": "瀬戸みるか",
           "price": 3850,
           "status": "予約受付中",
-          "artworkStatus": "通常表紙",
-          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8bb49499/421699/1107771491.jpg?sw=1150",
+          "artworkStatus": "pending",
           "url": "https://www.amazon.co.jp/s?k=%E7%80%AC%E6%88%B8%E3%81%BF%E3%82%8B%E3%81%8B+TOYBOX&i=stripbooks"
         }
       ]
@@ -5522,7 +5651,7 @@
       "featuredTalents": [
         "出口夏希"
       ],
-      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000136/5/2/147.jpg",
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/400/0000173/9/2/707.jpg",
       "palette": [
         "#2563EB",
         "#60A5FA",
@@ -5531,7 +5660,15 @@
       "includedBonuses": [],
       "printOnlyNote": "3ヶ月先の2月大目玉！フィンランドロケ2nd写真集＆カレンダー同時発売＋HMVイベント対象",
       "summary": "25歳の出口夏希が熱望したフィンランドロケ！2027年2月3日に写真集＆スクールカレンダーが同時発売。HMVイベント応募対象あり。",
-      "gallery": [],
+      "gallery": [
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/400/0000173/9/2/707.jpg",
+          "caption": "公式先行カット：出口夏希 2nd写真集（フィンランドロケ）",
+          "source": "公式先行カット（HMV/集英社）",
+          "kind": "preview",
+          "articleUrl": "https://www.hmv.co.jp/product/detail/17392707"
+        }
+      ],
       "pressArticles": [
         {
           "title": "出口夏希、2nd写真集＆カレンダー同時発売決定 自然体な姿・大人の色気",
@@ -5574,8 +5711,9 @@
           "talent": "出口夏希",
           "price": 3300,
           "status": "予約受付中",
-          "artworkStatus": "絵柄解禁待ち",
-          "url": "https://www.amazon.co.jp/s?k=%E5%87%BA%E5%8F%A3%E5%A4%8F%E5%B8%8C+2nd%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks"
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E5%87%BA%E5%8F%A3%E5%A4%8F%E5%B8%8C+2nd%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/400/0000173/9/2/707.jpg"
         }
       ]
     },
@@ -6103,6 +6241,551 @@
           "url": "https://www.amazon.co.jp/s?k=B.L.T.+2027%E5%B9%B44%E6%9C%88%E5%8F%B7&i=stripbooks"
         }
       ]
+    },
+    {
+      "id": "r18-fujimori-riho-unfold",
+      "title": "藤森里穂 2ndヘアヌード写真集『Unfold』",
+      "series": "セクシー写真集",
+      "issueLabel": "2ndヘアヌード写真集",
+      "publisher": "双葉社",
+      "category": "r18",
+      "releaseDate": "2026-11-18",
+      "price": 3960,
+      "coverTalents": [
+        "藤森里穂"
+      ],
+      "featuredTalents": [
+        "藤森里穂"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/1227/9784575321227_1_2.jpg",
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "18歳以上対象（R18・成人向けヘアヌード写真集）。電車内ではヘッダーの「🚃 ぼかし」ONが便利です。",
+      "summary": "人気セクシー女優・藤森里穂の待望2ndヘアヌード写真集。双葉社より好評発売中（ISBN: 9784575321227）。",
+      "gallery": [
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/1227/9784575321227_1_2.jpg",
+          "caption": "公式表紙：藤森里穂 2nd写真集『Unfold』",
+          "source": "公式書影（双葉社）",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E8%97%A4%E6%A3%AE%E9%87%8C%E7%A9%82+Unfold&i=stripbooks"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-fujimori-riho-unfold-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（紙書籍）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（双葉社・ISBN 9784575321227）",
+          "talent": "藤森里穂",
+          "price": 3960,
+          "status": "on_sale",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E8%97%A4%E6%A3%AE%E9%87%8C%E7%A9%82+Unfold&i=stripbooks",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/1227/9784575321227_1_2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "r18-kanematsu-kiho-bi",
+      "title": "金松季歩 写真集『美の余韻』",
+      "series": "セクシー写真集",
+      "issueLabel": "最新写真集",
+      "publisher": "竹書房",
+      "category": "r18",
+      "releaseDate": "2026-11-20",
+      "price": 3850,
+      "coverTalents": [
+        "金松季歩"
+      ],
+      "featuredTalents": [
+        "金松季歩"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/5581/9784801995581_1_2.jpg",
+      "palette": [
+        "#701A75",
+        "#A21CAF",
+        "#FAE8FF"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "18歳以上対象（R18・成人向け写真集）。",
+      "summary": "元AKB48研究生・金松季歩の最新写真集『美の余韻』（竹書房・ISBN 9784801995581）。",
+      "gallery": [
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/5581/9784801995581_1_2.jpg",
+          "caption": "公式表紙：金松季歩 写真集『美の余韻』",
+          "source": "公式書影（竹書房）",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E9%87%91%E6%9D%BE%E5%AD%A3%E6%AD%A9+%E7%BE%8E%E3%81%AE%E4%BD%99%E9%9F%BB&i=stripbooks"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-kanematsu-kiho-bi-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（紙書籍）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（竹書房・ISBN 9784801995581）",
+          "talent": "金松季歩",
+          "price": 3850,
+          "status": "on_sale",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E9%87%91%E6%9D%BE%E5%AD%A3%E6%AD%A9+%E7%BE%8E%E3%81%AE%E4%BD%99%E9%9F%BB&i=stripbooks",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/5581/9784801995581_1_2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "r18-seto-kanna-soba",
+      "title": "瀬戸環奈 写真集『そばにいたい』",
+      "series": "セクシー写真集",
+      "issueLabel": "最新写真集",
+      "publisher": "双葉社",
+      "category": "r18",
+      "releaseDate": "2026-10-21",
+      "price": 3850,
+      "coverTalents": [
+        "瀬戸環奈"
+      ],
+      "featuredTalents": [
+        "瀬戸環奈"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/1104/9784575321104_1_2.jpg",
+      "palette": [
+        "#9F1239",
+        "#E11D48",
+        "#FFE4E6"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "18歳以上対象（R18・成人向け写真集）。",
+      "summary": "話題の大型新人・瀬戸環奈の最新写真集『そばにいたい』（双葉社・ISBN 9784575321104）。",
+      "gallery": [
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/1104/9784575321104_1_2.jpg",
+          "caption": "公式表紙：瀬戸環奈 写真集『そばにいたい』",
+          "source": "公式書影（双葉社）",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E7%80%AC%E6%88%B8%E7%92%B0%E5%A5%88+%E3%81%9D%E3%81%B0%E3%81%AB%E3%81%84%E3%81%9F%E3%81%84&i=stripbooks"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-seto-kanna-soba-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（紙書籍）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（双葉社・ISBN 9784575321104）",
+          "talent": "瀬戸環奈",
+          "price": 3850,
+          "status": "on_sale",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E7%80%AC%E6%88%B8%E7%92%B0%E5%A5%88+%E3%81%9D%E3%81%B0%E3%81%AB%E3%81%84%E3%81%9F%E3%81%84&i=stripbooks",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/1104/9784575321104_1_2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "r18-ishikawa-mio-belleza",
+      "title": "石川澪 5周年写真集『BELLEZA』",
+      "series": "セクシー写真集",
+      "issueLabel": "デビュー5周年記念",
+      "publisher": "徳間書店",
+      "category": "r18",
+      "releaseDate": "2026-10-05",
+      "price": 3850,
+      "coverTalents": [
+        "石川澪"
+      ],
+      "featuredTalents": [
+        "石川澪"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/2882/9784198662882_1_2.jpg",
+      "palette": [
+        "#831843",
+        "#DB2777",
+        "#FCE7F3"
+      ],
+      "includedBonuses": [
+        {
+          "type": "postcard",
+          "label": "初回封入特典：ポストカード1枚（全5種よりランダム）"
+        }
+      ],
+      "printOnlyNote": "18歳以上対象（R18）。封入ポストカードは紙書籍のみ付属。",
+      "summary": "トップ人気を誇る石川澪のデビュー5周年記念写真集『BELLEZA』。全5種ランダムポストカード封入！",
+      "gallery": [
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/2882/9784198662882_1_2.jpg",
+          "caption": "公式表紙：石川澪 5周年写真集『BELLEZA』",
+          "source": "公式書影（徳間書店）",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E7%9F%B3%E5%B7%9D%E6%BE%AA+BELLEZA&i=stripbooks"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-ishikawa-mio-belleza-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（封入ポストカード付）",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "Amazonで購入（初回封入ポストカード1枚ランダム・ISBN 9784198662882）",
+          "talent": "石川澪",
+          "price": 3850,
+          "status": "on_sale",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E7%9F%B3%E5%B7%9D%E6%BE%AA+BELLEZA&i=stripbooks",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2882/9784198662882_1_2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "r18-ono-rikka-rikka",
+      "title": "小野六花 写真集『RIKKA!!』（豪華愛蔵版3000部限定）",
+      "series": "セクシー写真集",
+      "issueLabel": "豪華愛蔵版（3000部限定）",
+      "publisher": "ジーオーティー",
+      "category": "r18",
+      "releaseDate": "2026-12-25",
+      "price": 4400,
+      "coverTalents": [
+        "小野六花"
+      ],
+      "featuredTalents": [
+        "小野六花"
+      ],
+      "palette": [
+        "#7C2D12",
+        "#C2410C",
+        "#FFEDD5"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "18歳以上対象（R18・3000部限定生産）。書影・店舗特典解禁待ち。",
+      "summary": "総フォロワー数100万人超・小野六花が3000部限定の豪華愛蔵版ヘアヌード写真集シリーズに初登場！12月25日発売予定。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-ono-rikka-rikka-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 予約枠（3000部限定愛蔵版）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約確認（ISBN 9784775607022）",
+          "talent": "小野六花",
+          "price": 4400,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=%E5%B0%8F%E9%87%8E%E5%85%AD%E8%8A%B1+RIKKA&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "r18-cal-seto-kanna-2027",
+      "title": "瀬戸環奈 2027年カレンダー（壁掛け / 卓上）",
+      "series": "R18 2027カレンダー",
+      "issueLabel": "2027年1月始まり",
+      "publisher": "ハゴロモ",
+      "category": "r18",
+      "releaseDate": "2026-12-19",
+      "price": 3520,
+      "coverTalents": [
+        "瀬戸環奈"
+      ],
+      "featuredTalents": [
+        "瀬戸環奈"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/2965/4968855272965_1_2.jpg",
+      "palette": [
+        "#881337",
+        "#F43F5E",
+        "#FFE4E6"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "18歳以上対象（R18）。壁掛け版と卓上版で別カット仕様のため、各エディション単位でステータス管理できます！",
+      "summary": "瀬戸環奈の2027年カレンダー。迫力の壁掛け版と飾りやすい卓上版の2形態で12月19日発売予定！",
+      "gallery": [
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/2965/4968855272965_1_2.jpg",
+          "caption": "壁掛け版 表紙：瀬戸環奈 2027年カレンダー",
+          "source": "公式書影（ハゴロモ）",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E7%80%AC%E6%88%B8%E7%92%B0%E5%A5%88+2027+%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        },
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/2996/4968855272996_1_2.jpg",
+          "caption": "卓上版 表紙：瀬戸環奈 2027年カレンダー",
+          "source": "公式書影（ハゴロモ）",
+          "kind": "limited_cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E5%8D%93%E4%B8%8A+%E7%80%AC%E6%88%B8%E7%92%B0%E5%A5%88+2027+%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-cal-seto-kanna-2027-amazon-wall",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 壁掛け版（B2サイズ）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "壁掛けカレンダー（JAN 4968855272965）",
+          "talent": "瀬戸環奈",
+          "price": 3520,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E7%80%AC%E6%88%B8%E7%92%B0%E5%A5%88+2027+%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC+%E5%A3%81%E6%8E%9B%E3%81%91",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2965/4968855272965_1_2.jpg"
+        },
+        {
+          "id": "r18-cal-seto-kanna-2027-amazon-desk",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 卓上版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "卓上カレンダー（JAN 4968855272996）",
+          "talent": "瀬戸環奈",
+          "price": 2970,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E5%8D%93%E4%B8%8A+%E7%80%AC%E6%88%B8%E7%92%B0%E5%A5%88+2027+%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2996/4968855272996_1_2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "r18-cal-ishikawa-mio-2027",
+      "title": "石川澪 2027年カレンダー（壁掛け / 卓上）",
+      "series": "R18 2027カレンダー",
+      "issueLabel": "2027年1月始まり",
+      "publisher": "わくわく製作所",
+      "category": "r18",
+      "releaseDate": "2026-11-07",
+      "price": 3300,
+      "coverTalents": [
+        "石川澪"
+      ],
+      "featuredTalents": [
+        "石川澪"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/2707/4573650112707_1_2.jpg",
+      "palette": [
+        "#9D174D",
+        "#EC4899",
+        "#FCE7F3"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "18歳以上対象（R18）。壁掛け版と卓上版を別々にマーク管理可能。",
+      "summary": "石川澪の2027年公式カレンダー（壁掛け／卓上）。どちらも別カットで構成！",
+      "gallery": [
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/2707/4573650112707_1_2.jpg",
+          "caption": "壁掛け版 表紙：石川澪 2027年カレンダー",
+          "source": "公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E7%9F%B3%E5%B7%9D%E6%BE%AA+2027+%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        },
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/3216/4573650113216_1_2.jpg",
+          "caption": "卓上版 表紙：石川澪 2027年カレンダー",
+          "source": "公式書影",
+          "kind": "limited_cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E5%8D%93%E4%B8%8A+%E7%9F%B3%E5%B7%9D%E6%BE%AA+2027+%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-cal-ishikawa-mio-2027-amazon-wall",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 壁掛け版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "壁掛けカレンダー（JAN 4573650112707）",
+          "talent": "石川澪",
+          "price": 3300,
+          "status": "on_sale",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E7%9F%B3%E5%B7%9D%E6%BE%AA+2027+%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC+%E5%A3%81%E6%8E%9B%E3%81%91",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/2707/4573650112707_1_2.jpg"
+        },
+        {
+          "id": "r18-cal-ishikawa-mio-2027-amazon-desk",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 卓上版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "卓上カレンダー（JAN 4573650113216）",
+          "talent": "石川澪",
+          "price": 2750,
+          "status": "on_sale",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E5%8D%93%E4%B8%8A+%E7%9F%B3%E5%B7%9D%E6%BE%AA+2027+%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/3216/4573650113216_1_2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "r18-fanza-2027-01",
+      "title": "月刊FANZA 2027年1月号",
+      "series": "月刊FANZA",
+      "issueLabel": "2027年1月号",
+      "publisher": "ジーオーティー",
+      "category": "r18",
+      "releaseDate": "2026-11-19",
+      "price": 990,
+      "coverTalents": [
+        "月刊FANZA 注目セクシー女優特集"
+      ],
+      "featuredTalents": [
+        "瀬戸環奈",
+        "石川澪",
+        "藤森里穂"
+      ],
+      "palette": [
+        "#4C0519",
+        "#9F1239",
+        "#FFE4E6"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "本誌グラビア＆袋とじ・付録企画"
+        }
+      ],
+      "printOnlyNote": "18歳以上対象（R18・月刊成人向けグラビア＆情報誌）。毎月22日前後発売。",
+      "summary": "ジーオーティー刊の王道セクシーグラビア＆最新リリース情報誌。袋とじ・撮り下ろしグラビア多数収録。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-fanza-2027-01-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 紙版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで月刊FANZA 2027年1月号をチェック",
+          "talent": "月刊FANZA",
+          "price": 990,
+          "status": "on_sale",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=%E6%9C%88%E5%88%8AFANZA+2027%E5%B9%B41%E6%9C%88%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "r18-fanza-2027-02-forecast",
+      "title": "月刊FANZA 2027年2月号【次号解禁ウォッチ】",
+      "series": "月刊FANZA",
+      "issueLabel": "2027年2月号（次号予定）",
+      "publisher": "ジーオーティー",
+      "category": "r18",
+      "releaseDate": "2026-12-22",
+      "price": 990,
+      "coverTalents": [
+        "表紙・袋とじ解禁待ち"
+      ],
+      "featuredTalents": [],
+      "palette": [
+        "#500724",
+        "#BE185D",
+        "#FCE7F3"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "18歳以上対象（R18）。発売約2週間前に表紙・特集が解禁されます。",
+      "summary": "12月下旬発売予定の月刊FANZA 2月号ウォッチ枠。解禁され次第、自動チェック対象。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-fanza-2027-02-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 予約チェック",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約解禁をチェック",
+          "talent": "解禁待ち",
+          "price": 990,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=%E6%9C%88%E5%88%8AFANZA+2027%E5%B9%B42%E6%9C%88%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "r18-fanza-2027-03-forecast",
+      "title": "月刊FANZA 2027年3月号【1月お楽しみ・解禁ウォッチ】",
+      "series": "月刊FANZA",
+      "issueLabel": "2027年3月号（予定）",
+      "publisher": "ジーオーティー",
+      "category": "r18",
+      "releaseDate": "2027-01-22",
+      "price": 990,
+      "coverTalents": [
+        "表紙・袋とじ解禁待ち"
+      ],
+      "featuredTalents": [],
+      "palette": [
+        "#3B0764",
+        "#9333EA",
+        "#F3E8FF"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "18歳以上対象（R18）。2027年1月の注目R18号ウォッチ枠。",
+      "summary": "2027年1月下旬発売予定の月刊FANZA 3月号ウォッチ枠。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "r18-fanza-2027-03-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 予約チェック",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約解禁をチェック",
+          "talent": "解禁待ち",
+          "price": 990,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=%E6%9C%88%E5%88%8AFANZA+2027%E5%B9%B43%E6%9C%88%E5%8F%B7&i=stripbooks"
+        }
+      ]
     }
-  ]
+  ],
+  "lastAutoCheckedAt": "2026-11-21T14:36:51+09:00"
 }

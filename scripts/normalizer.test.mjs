@@ -105,3 +105,50 @@ test('filterOffersByPolicy keeps Amazon always and drops non-Amazon offers witho
     ['7net', 'amazon']
   );
 });
+
+test('validateCatalogStructure rejects Amazon reusing a 7net bonus postcard and dynamic/403 URLs', async () => {
+  const { validateCatalogStructure, isSuspiciousImageUrl } = await import('./validate-catalog.mjs');
+
+  assert.ok(isSuspiciousImageUrl('https://img.fujisan.co.jp/images/products/74_l.jpg'));
+  assert.ok(isSuspiciousImageUrl('https://store.tsite.jp/example.jpg'));
+  assert.equal(isSuspiciousImageUrl('https://img.hmv.co.jp/image/jacket/800/0000174/0/4/251.jpg'), null);
+
+  const badCatalog = {
+    items: [
+      {
+        id: 'utb-test',
+        releaseDate: '2026-11-24',
+        coverImageUrl: 'https://7net.omni7.jp/1107785764.jpg',
+        offers: [
+          {
+            id: 'offer-7net',
+            store: '7net',
+            hasStoreExclusiveBonus: true,
+            bonusTypes: ['postcard'],
+            imageUrl: 'https://7net.omni7.jp/1107785764.jpg',
+          },
+          {
+            id: 'offer-amazon',
+            store: 'amazon',
+            hasStoreExclusiveBonus: false,
+            bonusTypes: ['standard'],
+            imageUrl: 'https://7net.omni7.jp/1107785764.jpg',
+          },
+        ],
+      },
+    ],
+  };
+
+  const report = validateCatalogStructure(badCatalog);
+  assert.ok(report.errors.length >= 2);
+});
+
+test('live data/catalog.json passes full structural, policy, and unique offer.id validation', async () => {
+  const fs = await import('node:fs');
+  const { validateCatalogStructure } = await import('./validate-catalog.mjs');
+  const catalog = JSON.parse(fs.readFileSync(new URL('../data/catalog.json', import.meta.url), 'utf8'));
+  const report = validateCatalogStructure(catalog);
+  assert.equal(report.nonAmazonNonBonus, 0);
+  assert.deepEqual(report.errors, []);
+  assert.ok(report.totalItems >= 75);
+});

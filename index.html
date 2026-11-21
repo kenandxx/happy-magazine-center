@@ -78,6 +78,10 @@
               <input id="oshiOnlyToggle" type="checkbox" />
               <span id="oshiOnlyLabel">💖 推しのみ</span>
             </label>
+            <label class="toggle-inline toggle-new-pill">
+              <input id="newAutoOnlyToggle" type="checkbox" />
+              <span id="newAutoOnlyLabel">🆕 自動発見</span>
+            </label>
             <label class="toggle-inline">
               <input id="bonusOnlyToggle" type="checkbox" />
               <span>特典・ポスターのみ</span>
@@ -142,7 +146,7 @@
         <div id="oshiSubNav" class="oshi-subnav" role="tablist" aria-label="推し・棚セクション切替">
           <button class="oshi-subnav-btn active" type="button" data-oshi-subtab="oshi">💖 推しコーナー</button>
           <button class="oshi-subnav-btn" type="button" data-oshi-subtab="shelf">🏷 マーク棚・予算</button>
-          <button class="oshi-subnav-btn" type="button" data-oshi-subtab="tools">➕ メモ・保存</button>
+          <button class="oshi-subnav-btn" type="button" data-oshi-subtab="tools">⚡ 取込・保存</button>
         </div>
 
         <!-- Sub-panel A: 💖 推しコーナー (Default Visible!) -->
@@ -243,8 +247,43 @@
           </div>
         </div>
 
-        <!-- Sub-panel C: ➕ 新刊メモ & 💾 バックアップ・復元 -->
+        <!-- Sub-panel C: ⚡ Amazon URL/ISBN自動取込 & ➕ 新刊メモ & 💾 バックアップ・復元 -->
         <div id="oshiPaneTools" class="oshi-subpane">
+          <div id="isbnImportCard" class="panel-card isbn-import-card">
+            <div class="urgent-hero-top">
+              <h2 class="panel-heading">⚡ Amazon URL / ISBN → 1タップ自動取込＆早め予約判定</h2>
+              <span class="isbn-live-badge">openBD直結</span>
+            </div>
+            <p class="panel-desc">
+              Amazonで見つけた写真集・カレンダー・R18の商品URL（<code>/dp/…</code>）またはISBNを貼るだけ！書誌DB（openBD）から<strong>公式書影・発売日・定価を自動取得</strong>し、即「🔥 早め予約スコア」へ投入できます。
+            </p>
+            <form id="isbnLookupForm" class="isbn-lookup-form">
+              <input
+                id="isbnImportInput"
+                class="text-input"
+                type="text"
+                placeholder="Amazon URL（例：https://www.amazon.co.jp/dp/4299065926）またはISBN13"
+                autocomplete="off"
+              />
+              <div class="isbn-lookup-btns">
+                <button id="isbnLookupBtn" class="primary-btn" type="submit">🔍 書影＆書誌を自動取得</button>
+                <button id="isbnSampleBtn" class="quick-preview-icon-btn" type="button">🧪 試す（松井珠理奈）</button>
+              </div>
+            </form>
+            <div id="isbnLookupStatus" class="isbn-lookup-status" aria-live="polite"></div>
+            <div id="isbnPreviewBox" class="isbn-preview-box" hidden></div>
+            <div class="isbn-request-bar">
+              <span>📮 ダッシュボード未収録の本を全端末の公式カタログへ追加依頼：</span>
+              <a
+                id="githubRequestIssueLink"
+                class="isbn-request-link"
+                href="https://github.com/kenandxx/happy-magazine-center/issues/new?title=%E3%80%90%E5%8F%8E%E9%8C%B2%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%80%91&body=Amazon%20URL%E3%81%BE%E3%81%9F%E3%81%AF%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%EF%BC%9A%0A%E7%89%B9%E5%85%B8%E3%83%A1%E3%83%A2%EF%BC%9A"
+                target="_blank"
+                rel="noopener noreferrer"
+              >GitHub収録リクエスト ↗</a>
+            </div>
+          </div>
+
           <div class="panel-card">
             <h2 class="panel-heading">💾 推し設定＆マイ棚のバックアップ・スマホ引き継ぎ</h2>
             <p class="panel-desc">
@@ -331,16 +370,26 @@
           <div id="hubQuickKeywords" class="quick-keywords"></div>
           <div id="hubLauncherGrid" class="launcher-grid"></div>
         </div>
+
+        <div class="panel-card hub-import-callout">
+          <div class="urgent-hero-top">
+            <h3 class="panel-heading" style="margin:0;">⚡ Amazonで見つけた本をダッシュボードへ即取込</h3>
+            <button class="primary-btn" type="button" data-jump-isbn-import="1">URL / ISBN 自動取込 →</button>
+          </div>
+          <p class="panel-desc" style="margin:6px 0 0;">
+            横断検索やAmazonで見つけた商品URL（<code>/dp/…</code>）を貼るだけで、openBDから公式書影・発売日・定価を取得し「🔥 早め予約スコア」へ即投入できます。
+          </p>
+        </div>
       </section>
 
       <footer class="app-footer">
-        <span id="autoUpdateStatus">🤖 毎朝07:00 JST 自動更新対応（GitHub Actions）</span>
+        <span id="autoUpdateStatus">🤖 15出版社PR TIMES＋openBD 毎朝07:00 JST自動収集対応</span>
         <a
           class="footer-actions-link"
           href="https://github.com/kenandxx/happy-magazine-center/actions/workflows/daily-catalog-update.yml"
           target="_blank"
           rel="noopener noreferrer"
-        >自動更新ログ ↗</a>
+        >自動収集ログ・手動実行 ↗</a>
       </footer>
     </main>
 

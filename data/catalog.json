@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T16:30:00+09:00",
+  "updatedAt": "2026-11-21T17:20:00+09:00",
   "referenceDate": "2026-11-21",
   "policy": "Amazonは基本購入先として常に表示。Amazon以外のストア（セブンネット・楽天ブックス・HMV・TSUTAYA）は確認済みのストア限定特典が付く場合のみ表示。",
   "items": [
@@ -8414,7 +8414,1512 @@
           "url": "https://www.amazon.co.jp/s?k=BACHELOR%20%E3%83%90%E3%83%81%E3%82%A7%E3%83%A9%E3%83%BC%202027%E5%B9%B41%E6%9C%88%E5%8F%B7"
         }
       ]
+    },
+    {
+      "id": "pb-matsui-jurina-aiwoshiru",
+      "title": "松井珠理奈 2nd写真集『アイヲシル』",
+      "series": "宝島社 写真集",
+      "issueLabel": "10年ぶり2nd写真集（2026/9デジタル増量版も配信）",
+      "publisher": "宝島社",
+      "category": "photobook",
+      "releaseDate": "2025-09-09",
+      "price": 3850,
+      "coverTalents": [
+        "松井珠理奈"
+      ],
+      "featuredTalents": [
+        "松井珠理奈",
+        "SKE48"
+      ],
+      "palette": [
+        "#BE123C",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/5926/9784299065926_1_2.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784299065926（撮影：鈴木ゴータ）。2026年9月3日には30P増量デジタル豪華版も発売されAmazonランキング再注目中！セブンネット（ポストカード）・楽天ブックス（A2ポスター）の限定特典あり。",
+      "summary": "元SKE48・松井珠理奈の1stから10年ぶりとなる2nd写真集『アイヲシル』（宝島社）。地元・東海地方で撮影された20代ラストの大人の魅力満載の一冊！",
+      "gallery": [
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/5926/9784299065926_1_2.jpg",
+          "caption": "松井珠理奈 2nd写真集『アイヲシル』通常表紙",
+          "source": "宝島社 / 楽天ブックス",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4299065926"
+        },
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/5069/2300/5069-2300-2a764b7e16fbd64e244e07c2afcf77c8-1910x2700.jpg",
+          "caption": "松井珠理奈『アイヲシル』公式高画質表紙ビジュアル",
+          "source": "PR TIMES（宝島社）",
+          "kind": "preview",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000002300.000005069.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "松井珠理奈10年ぶりの写真集『アイヲシル』表紙決定！",
+          "source": "PR TIMES（宝島社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000002300.000005069.html",
+          "photoCountHint": "公式表紙＆先行カット"
+        }
+      ],
+      "offers": [
+        {
+          "id": "pb-matsui-jurina-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定ポストカード付き",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "セブンネットショッピング限定特典：ポストカード 1枚付き",
+          "talent": "松井珠理奈",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "pending",
+          "url": "https://7net.omni7.jp/detail/1107628033"
+        },
+        {
+          "id": "pb-matsui-jurina-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天ブックス限定A2ポスター付き",
+          "bonusTypes": [
+            "poster"
+          ],
+          "bonusText": "楽天ブックス限定特典：A2ポスター（四つ折り／ランダム50名直筆サイン入り抽選）",
+          "talent": "松井珠理奈",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "pending",
+          "url": "https://books.rakuten.co.jp/rb/18310224/"
+        },
+        {
+          "id": "pb-matsui-jurina-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（ISBN 9784299065926）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認（デジタル豪華版30P増も検索可）",
+          "talent": "松井珠理奈",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/5926/9784299065926_1_2.jpg",
+          "url": "https://www.amazon.co.jp/dp/4299065926"
+        }
+      ]
+    },
+    {
+      "id": "pb-kodama-haruka-youwillsee",
+      "title": "兒玉遥 3rd写真集『You will see』",
+      "series": "光文社 写真集",
+      "issueLabel": "4年ぶり3rd写真集（限定表紙あり）",
+      "publisher": "光文社",
+      "category": "photobook",
+      "releaseDate": "2026-11-26",
+      "price": 3630,
+      "coverTalents": [
+        "兒玉遥"
+      ],
+      "featuredTalents": [
+        "兒玉遥",
+        "HKT48"
+      ],
+      "palette": [
+        "#9D174D",
+        "#EC4899",
+        "#FCE7F3"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/1922/9784334111922_1_2.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784334111922（撮影：佐藤佑一）。セブンネット限定アザーカバー版＋セブン限定生写真＋楽天限定生写真＋HMV限定特典の全5エディション！東京・福岡で発売記念イベント開催。",
+      "summary": "元HKT48・女優の兒玉遥、4年ぶり待望の3rd写真集『You will see』（光文社）。セブンネット限定表紙版＆各ストア生写真特典が勢揃い！",
+      "gallery": [
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/1922/9784334111922_1_2.jpg",
+          "caption": "兒玉遥 3rd写真集『You will see』通常表紙",
+          "source": "光文社 / 楽天ブックス",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784334111922%20%E5%85%92%E7%8E%89%E9%81%A5%20You%20will%20see&i=stripbooks"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwbaccb988/421699/1107773699.jpg?sw=1150",
+          "caption": "セブンネット限定アザーカバー版 表紙",
+          "source": "セブンネットショッピング",
+          "kind": "limited_cover",
+          "articleUrl": "https://7net.omni7.jp/detail/1107773699.html"
+        },
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/6224/2100015216224_1_2.jpg",
+          "caption": "楽天ブックス限定特典：生写真付きビジュアル",
+          "source": "楽天ブックス",
+          "kind": "bonus",
+          "articleUrl": "https://books.rakuten.co.jp/rb/18817354/"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "兒玉遥 3rd写真集『You will see』独占先行公開（FLASH 11/17発売号）",
+          "source": "PR TIMES（光文社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000002542.000021468.html",
+          "photoCountHint": "公式先行カット＆限定表紙情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "pb-kodama-7net-altcover",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定アザーカバー版",
+          "bonusTypes": [
+            "cover"
+          ],
+          "bonusText": "セブンネットショッピング限定アザーカバー（別表紙）版",
+          "talent": "兒玉遥",
+          "price": 3630,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwbaccb988/421699/1107773699.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107773699.html"
+        },
+        {
+          "id": "pb-kodama-7net-photo",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定生写真1枚付き（通常版）",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "通常表紙＋セブンネット限定特典：生写真 1枚付き",
+          "talent": "兒玉遥",
+          "price": 3630,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwa424d31d/421699/1107773700.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107773700.html"
+        },
+        {
+          "id": "pb-kodama-rakuten-photo",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天ブックス限定生写真付き",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "楽天ブックス限定特典：生写真 1枚付き",
+          "talent": "兒玉遥",
+          "price": 3630,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/6224/2100015216224_1_2.jpg",
+          "url": "https://books.rakuten.co.jp/rb/18817354/"
+        },
+        {
+          "id": "pb-kodama-hmv",
+          "store": "hmv",
+          "hasStoreExclusiveBonus": true,
+          "edition": "HMV&BOOKS限定特典付き",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "HMV&BOOKS限定特典画像公開済み（渋谷・博多イベント開催）",
+          "talent": "兒玉遥",
+          "price": 3630,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.hmv.co.jp/artist_%E5%85%92%E7%8E%89%E9%81%A5_000000000539643/item_%E5%85%92%E7%8E%89%E9%81%A5%E5%86%99%E7%9C%9F%E9%9B%86-You-will-see_17274797"
+        },
+        {
+          "id": "pb-kodama-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約（ISBN 9784334111922）",
+          "talent": "兒玉遥",
+          "price": 3630,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/1922/9784334111922_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784334111922%20%E5%85%92%E7%8E%89%E9%81%A5%20You%20will%20see&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "pb-takasaki-kanami-3rd",
+      "title": "高崎かなみ 3rd写真集（仮）",
+      "series": "秋田書店 写真集",
+      "issueLabel": "2027年2月新刊（特典あり）",
+      "publisher": "秋田書店",
+      "category": "photobook",
+      "releaseDate": "2027-02-12",
+      "price": 3960,
+      "coverTalents": [
+        "高崎かなみ"
+      ],
+      "featuredTalents": [
+        "高崎かなみ"
+      ],
+      "palette": [
+        "#BE123C",
+        "#F43F5E",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/40601/923/40601-923-dd8243329615ed9708ef95aaa86c014e-1800x2700.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "撮影：大辻隆広。セブンネット・楽天ブックスそれぞれ異なるオリジナル生写真特典付き！3ヶ月先のお楽しみ＆早め予約注目作。",
+      "summary": "“無敵のグラドル”高崎かなみ、待望の3rd写真集が2027年2月12日に秋田書店より発売決定！セブンネット＆楽天ブックス限定生写真特典あり。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/40601/923/40601-923-dd8243329615ed9708ef95aaa86c014e-1800x2700.jpg",
+          "caption": "高崎かなみ 3rd写真集 公式先行解禁カット",
+          "source": "PR TIMES（秋田書店）",
+          "kind": "preview",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000000923.000040601.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "“無敵のグラドル”高崎かなみ、待望の3rd写真集が2027年2月12日発売決定！",
+          "source": "PR TIMES（秋田書店）",
+          "url": "https://prtimes.jp/main/html/rd/p/000000923.000040601.html",
+          "photoCountHint": "公式先行カット7枚＆特典情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "pb-takasaki-3rd-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定生写真付き",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "セブンネットショッピング限定特典：オリジナル生写真 1種",
+          "talent": "高崎かなみ",
+          "price": 3960,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://7net.omni7.jp/search/?keyword=%E9%AB%98%E5%B4%8E%E3%81%8B%E3%81%AA%E3%81%BF+3rd%E5%86%99%E7%9C%9F%E9%9B%86"
+        },
+        {
+          "id": "pb-takasaki-3rd-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天ブックス限定ブロマイド付き",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "楽天ブックス限定特典：限定絵柄ブロマイド・生写真 1枚",
+          "talent": "高崎かなみ",
+          "price": 3960,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://books.rakuten.co.jp/search?sitem=%E9%AB%98%E5%B4%8E%E3%81%8B%E3%81%AA%E3%81%BF+3rd%E5%86%99%E7%9C%9F%E9%9B%86"
+        },
+        {
+          "id": "pb-takasaki-3rd-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで先行予約",
+          "talent": "高崎かなみ",
+          "price": 3960,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/40601/923/40601-923-dd8243329615ed9708ef95aaa86c014e-1800x2700.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E9%AB%98%E5%B4%8E%E3%81%8B%E3%81%AA%E3%81%BF%203rd%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "pb-nitta-hina-mermaid",
+      "title": "新田妃奈 1st写真集『Mermaid』",
+      "series": "光文社 写真集",
+      "issueLabel": "1st写真集（RIZINガール2026）",
+      "publisher": "光文社",
+      "category": "photobook",
+      "releaseDate": "2026-11-13",
+      "price": 3850,
+      "coverTalents": [
+        "新田妃奈"
+      ],
+      "featuredTalents": [
+        "新田妃奈"
+      ],
+      "palette": [
+        "#0369A1",
+        "#0EA5E9",
+        "#E0F2FE"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/1656/9784334111656_1_2.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784334111656。「RIZINガール2026」“令和の完売クイーン”Hカップ1st写真集。楽天ブックス限定絵柄生写真特典あり。",
+      "summary": "ハワイ・オアフ島で撮影されたHカップ・新田妃奈の待望1st写真集『Mermaid』（光文社）。楽天ブックス限定生写真特典付き！",
+      "gallery": [
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/1656/9784334111656_1_2.jpg",
+          "caption": "新田妃奈 1st写真集『Mermaid』公式表紙",
+          "source": "光文社 / 楽天ブックス",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=9784334111656%20%E6%96%B0%E7%94%B0%E5%A6%83%E5%A5%88%20Mermaid&i=stripbooks"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "「RIZINガール2026」新田妃奈が1st写真集からヌーディカット披露（FLASH）",
+          "source": "PR TIMES（光文社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000002533.000021468.html",
+          "photoCountHint": "公式先行カット"
+        }
+      ],
+      "offers": [
+        {
+          "id": "pb-nitta-mermaid-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天ブックス限定絵柄生写真付き",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "楽天ブックス限定特典：限定絵柄生写真 1枚付き",
+          "talent": "新田妃奈",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "pending",
+          "url": "https://books.rakuten.co.jp/rb/18780353/"
+        },
+        {
+          "id": "pb-nitta-mermaid-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認（ISBN 9784334111656）",
+          "talent": "新田妃奈",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/1656/9784334111656_1_2.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784334111656%20%E6%96%B0%E7%94%B0%E5%A6%83%E5%A5%88%20Mermaid&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "pb-ioki-io-ion",
+      "title": "五百木いお ファースト写真集『IO：N』",
+      "series": "ワニブックス 写真集",
+      "issueLabel": "1st写真集",
+      "publisher": "ワニブックス",
+      "category": "photobook",
+      "releaseDate": "2026-11-20",
+      "price": 3850,
+      "coverTalents": [
+        "五百木いお"
+      ],
+      "featuredTalents": [
+        "五百木いお"
+      ],
+      "palette": [
+        "#9D174D",
+        "#F472B6",
+        "#FCE7F3"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/129409/508/129409-508-a8219cab0406f4bbd1945800ca432074-1000x1415.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "A4判・96P（ワニブックス）。2026年11月20日発売の最新1st写真集。",
+      "summary": "透明感あふれる注目株・五百木いおの待望ファースト写真集『IO：N』（ワニブックス）。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/129409/508/129409-508-a8219cab0406f4bbd1945800ca432074-1000x1415.jpg",
+          "caption": "五百木いお 1st写真集『IO：N』公式表紙",
+          "source": "PR TIMES（ワニブックス）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000000508.000129409.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "五百木いおファースト写真集『IO：N』11月20日発売！",
+          "source": "PR TIMES（ワニブックス）",
+          "url": "https://prtimes.jp/main/html/rd/p/000000508.000129409.html",
+          "photoCountHint": "公式表紙＆アザーカット"
+        }
+      ],
+      "offers": [
+        {
+          "id": "pb-ioki-io-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認",
+          "talent": "五百木いお",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/129409/508/129409-508-a8219cab0406f4bbd1945800ca432074-1000x1415.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E4%BA%94%E7%99%BE%E6%9C%A8%E3%81%84%E3%81%8A%20IO%3AN%20%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "pb-sumita-ayano-kasumiso",
+      "title": "澄田綾乃 写真集『花澄想』",
+      "series": "ワン・パブリッシング 写真集",
+      "issueLabel": "最新写真集",
+      "publisher": "ワン・パブリッシング",
+      "category": "photobook",
+      "releaseDate": "2026-10-22",
+      "price": 3960,
+      "coverTalents": [
+        "澄田綾乃"
+      ],
+      "featuredTalents": [
+        "澄田綾乃"
+      ],
+      "palette": [
+        "#881337",
+        "#E11D48",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/60318/1326/60318-1326-ee94438556bce5975596da7a090b78d9-848x1200.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784651206295。セブンネット限定特典・HMV&BOOKS限定特典＆イベントあり。",
+      "summary": "“令和最強のメリハリボディ”澄田綾乃の最新写真集『花澄想』（ワン・パブリッシング）。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/60318/1326/60318-1326-ee94438556bce5975596da7a090b78d9-848x1200.jpg",
+          "caption": "澄田綾乃 写真集『花澄想』公式表紙",
+          "source": "PR TIMES（ワン・パブリッシング）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000001326.000060318.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "澄田綾乃写真集『花澄想』発売！先行カット大公開！！",
+          "source": "PR TIMES（ワン・パブリッシング）",
+          "url": "https://prtimes.jp/main/html/rd/p/000001326.000060318.html",
+          "photoCountHint": "公式先行カット"
+        }
+      ],
+      "offers": [
+        {
+          "id": "pb-sumita-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典付き",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "セブンネットショッピング限定特典付き版",
+          "talent": "澄田綾乃",
+          "price": 3960,
+          "status": "available",
+          "artworkStatus": "pending",
+          "url": "https://7net.omni7.jp/detail/1107728456/"
+        },
+        {
+          "id": "pb-sumita-hmv",
+          "store": "hmv",
+          "hasStoreExclusiveBonus": true,
+          "edition": "HMV&BOOKS限定特典付き",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "HMV&BOOKS限定特典付き（渋谷・なんば発売記念イベントあり）",
+          "talent": "澄田綾乃",
+          "price": 3960,
+          "status": "available",
+          "artworkStatus": "pending",
+          "url": "https://www.hmv.co.jp/product/detail/17108053/"
+        },
+        {
+          "id": "pb-sumita-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（ISBN 9784651206295）",
+          "talent": "澄田綾乃",
+          "price": 3960,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/60318/1326/60318-1326-ee94438556bce5975596da7a090b78d9-848x1200.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784651206295%20%E6%BE%84%E7%94%B0%E7%B6%BE%E4%B9%83%20%E8%8A%B1%E6%BE%84%E6%83%B3&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "pb-han-seungyeon-inside",
+      "title": "ハン・スンヨン（KARA）写真集『Inside You, Inside Me』",
+      "series": "宝島社 写真集",
+      "issueLabel": "KARA20周年・10年ぶり写真集",
+      "publisher": "宝島社",
+      "category": "photobook",
+      "releaseDate": "2026-12-10",
+      "price": 4950,
+      "coverTalents": [
+        "ハン・スンヨン",
+        "KARA"
+      ],
+      "featuredTalents": [
+        "ハン・スンヨン",
+        "KARA"
+      ],
+      "palette": [
+        "#7C3AED",
+        "#A78BFA",
+        "#EDE9FE"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/5069/2522/5069-2522-1a74cb06ee5fb4a1bac44189bbd1117b-1333x2000.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "楽天ブックス限定特典（サイン入り抽選ラッキードローあり）！12月10日発売予定。",
+      "summary": "KARA20周年に向けたハン・スンヨン10年ぶりの写真集『Inside You, Inside Me』（宝島社）。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/5069/2522/5069-2522-1a74cb06ee5fb4a1bac44189bbd1117b-1333x2000.jpg",
+          "caption": "ハン・スンヨン 写真集 公式先行カット",
+          "source": "PR TIMES（宝島社）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000002522.000005069.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "KARA20周年に向けた10年ぶりの写真集『ハン・スンヨン写真集』12/10発売！",
+          "source": "PR TIMES（宝島社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000002522.000005069.html",
+          "photoCountHint": "公式先行カット6枚"
+        }
+      ],
+      "offers": [
+        {
+          "id": "pb-seungyeon-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天ブックス限定ラッキードロー特典付き",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "楽天ブックス限定特典：ラッキードロー（A賞サイン入り特典抽選）",
+          "talent": "ハン・スンヨン",
+          "price": 4950,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://books.rakuten.co.jp/rb/18845143/"
+        },
+        {
+          "id": "pb-seungyeon-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約",
+          "talent": "ハン・スンヨン",
+          "price": 4950,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/5069/2522/5069-2522-1a74cb06ee5fb4a1bac44189bbd1117b-1333x2000.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E3%83%8F%E3%83%B3%E3%83%BB%E3%82%B9%E3%83%B3%E3%83%A8%E3%83%B3%20%E5%86%99%E7%9C%9F%E9%9B%86%20Inside%20You%20Inside%20Me&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "pb-oshima-rino-rino",
+      "title": "大島璃乃 1st写真集『RiNo』",
+      "series": "講談社 写真集",
+      "issueLabel": "ミスマガ出身・1st写真集",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2026-11-04",
+      "price": 3740,
+      "coverTalents": [
+        "大島璃乃"
+      ],
+      "featuredTalents": [
+        "大島璃乃"
+      ],
+      "palette": [
+        "#0E7490",
+        "#22D3EE",
+        "#CFFAFE"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/1719/9023/1719-9023-344b1847ff2df55eb8cb917117ab60bd-1909x2700.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784065446775（撮影：西條彰仁）。東京お渡し会2時間完売につき12/12大阪・梅田蔦屋書店追加イベント決定！",
+      "summary": "ミスマガジン2021出身・大島璃乃の待望1st写真集『RiNo』（講談社）。ビキニ・ランジェリー・初ヌーディー挑戦の話題作！",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/1719/9023/1719-9023-344b1847ff2df55eb8cb917117ab60bd-1909x2700.jpg",
+          "caption": "大島璃乃 1st写真集『RiNo』公式表紙",
+          "source": "PR TIMES（講談社）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000009023.000001719.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "ミスマガ出身女優・大島璃乃、待望の1st写真集『RiNo』表紙＆タイトル公開！",
+          "source": "PR TIMES（講談社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000009023.000001719.html",
+          "photoCountHint": "公式表紙カット"
+        }
+      ],
+      "offers": [
+        {
+          "id": "pb-oshima-rino-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（ISBN 9784065446775）",
+          "talent": "大島璃乃",
+          "price": 3740,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/1719/9023/1719-9023-344b1847ff2df55eb8cb917117ab60bd-1909x2700.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784065446775%20%E5%A4%A7%E5%B3%B6%E7%92%83%E4%B9%83%20RiNo&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "pb-nanase-tsumugi-tsumugi",
+      "title": "七瀬つむぎ 1st写真集『つむぎ』",
+      "series": "イマジカインフォス 声優写真集",
+      "issueLabel": "1st写真集（特典3ストア）",
+      "publisher": "イマジカインフォス",
+      "category": "photobook",
+      "releaseDate": "2026-10-30",
+      "price": 3960,
+      "coverTalents": [
+        "七瀬つむぎ"
+      ],
+      "featuredTalents": [
+        "七瀬つむぎ"
+      ],
+      "palette": [
+        "#BE185D",
+        "#F472B6",
+        "#FCE7F3"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/7785/1807/7785-1807-e56946b023c252a673e9d52e7a5360fc-1909x2700.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "セブンネット・楽天ブックス・HMVそれぞれ異なるL判ブロマイド特典付き！",
+      "summary": "注目女性声優・七瀬つむぎの初写真集『つむぎ』（イマジカインフォス）。各ストア限定L判ブロマイド絵柄公開済み！",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/7785/1807/7785-1807-e56946b023c252a673e9d52e7a5360fc-1909x2700.jpg",
+          "caption": "七瀬つむぎ 1st写真集『つむぎ』公式表紙",
+          "source": "PR TIMES（イマジカインフォス）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000001807.000007785.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "声優・七瀬つむぎの初写真集『つむぎ』特典画像が一挙解禁!!",
+          "source": "PR TIMES（イマジカインフォス）",
+          "url": "https://prtimes.jp/main/html/rd/p/000001807.000007785.html",
+          "photoCountHint": "公式特典画像22枚"
+        }
+      ],
+      "offers": [
+        {
+          "id": "pb-nanase-tsumugi-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定L判ブロマイド付き",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "セブンネット限定特典：L判ブロマイド 1枚",
+          "talent": "七瀬つむぎ",
+          "price": 3960,
+          "status": "available",
+          "artworkStatus": "pending",
+          "url": "https://7net.omni7.jp/search/?keyword=%E4%B8%83%E7%80%AC%E3%81%A4%E3%82%80%E3%81%8E+%E5%86%99%E7%9C%9F%E9%9B%86"
+        },
+        {
+          "id": "pb-nanase-tsumugi-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天ブックス限定L判ブロマイド付き",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "楽天ブックス限定特典：L判ブロマイド 1枚",
+          "talent": "七瀬つむぎ",
+          "price": 3960,
+          "status": "available",
+          "artworkStatus": "pending",
+          "url": "https://books.rakuten.co.jp/search?sitem=%E4%B8%83%E7%80%AC%E3%81%A4%E3%82%80%E3%81%8E+%E5%86%99%E7%9C%9F%E9%9B%86"
+        },
+        {
+          "id": "pb-nanase-tsumugi-hmv",
+          "store": "hmv",
+          "hasStoreExclusiveBonus": true,
+          "edition": "HMV限定L判ブロマイド付き",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "HMV&BOOKS限定特典：L判ブロマイド 1枚",
+          "talent": "七瀬つむぎ",
+          "price": 3960,
+          "status": "available",
+          "artworkStatus": "pending",
+          "url": "https://www.hmv.co.jp/search/keyword_%E4%B8%83%E7%80%AC%E3%81%A4%E3%82%80%E3%81%8E+%E5%86%99%E7%9C%9F%E9%9B%86/target_ALL/type_sr/"
+        },
+        {
+          "id": "pb-nanase-tsumugi-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認",
+          "talent": "七瀬つむぎ",
+          "price": 3960,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/7785/1807/7785-1807-e56946b023c252a673e9d52e7a5360fc-1909x2700.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E4%B8%83%E7%80%AC%E3%81%A4%E3%82%80%E3%81%8E%20%E5%86%99%E7%9C%9F%E9%9B%86%20%E3%81%A4%E3%82%80%E3%81%8E&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "pb-miyano-seri-1st",
+      "title": "宮野芹 1st写真集（仮）",
+      "series": "イマジカインフォス 声優写真集",
+      "issueLabel": "2027年1月新刊",
+      "publisher": "イマジカインフォス",
+      "category": "photobook",
+      "releaseDate": "2027-01-06",
+      "price": 4950,
+      "coverTalents": [
+        "宮野芹"
+      ],
+      "featuredTalents": [
+        "宮野芹"
+      ],
+      "palette": [
+        "#1D4ED8",
+        "#60A5FA",
+        "#DBEAFE"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/7785/1829/7785-1829-240d3c4bff851ddf388c876c48d1b83f-911x1366.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "『イキヅライブ！LOVELIVE! BLUEBIRD』五桐玲役・宮野芹の待望1st写真集。2027年1月6日発売予定。",
+      "summary": "ラブライブ！新シリーズで活躍中の注目声優・宮野芹の1st写真集（イマジカインフォス・2027年1月6日発売）。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/7785/1829/7785-1829-240d3c4bff851ddf388c876c48d1b83f-911x1366.jpg",
+          "caption": "宮野芹 1st写真集 公式先行カット",
+          "source": "PR TIMES（イマジカインフォス）",
+          "kind": "preview",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000001829.000007785.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "『イキヅライブ！』五桐玲役・宮野芹 1st写真集が2027年1月6日発売決定！",
+          "source": "PR TIMES（イマジカインフォス）",
+          "url": "https://prtimes.jp/main/html/rd/p/000001829.000007785.html",
+          "photoCountHint": "公式先行カット3枚"
+        }
+      ],
+      "offers": [
+        {
+          "id": "pb-miyano-seri-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約受付中",
+          "talent": "宮野芹",
+          "price": 4950,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/7785/1829/7785-1829-240d3c4bff851ddf388c876c48d1b83f-911x1366.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E5%AE%AE%E9%87%8E%E8%8A%B9%201st%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "pb-nomura-miyo-hoteishiki",
+      "title": "SKE48 野村実代 1st写真集『美しい方程式』",
+      "series": "KADOKAWA 写真集",
+      "issueLabel": "大ヒット3刷重版（12/19イベント）",
+      "publisher": "KADOKAWA",
+      "category": "photobook",
+      "releaseDate": "2026-06-15",
+      "price": 3520,
+      "coverTalents": [
+        "野村実代（SKE48）"
+      ],
+      "featuredTalents": [
+        "野村実代",
+        "SKE48"
+      ],
+      "palette": [
+        "#D97706",
+        "#FBBF24",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/7006/20671/7006-20671-a4c88ff980cfed7757455f6033715cf0-1157x1637.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "ISBN 9784047382497。大好評につき3刷重版決定！2026年12月19日TSUTAYA EBISUBASHIで重版記念お渡し会開催。",
+      "summary": "SKE48・野村実代1st写真集『美しい方程式』（KADOKAWA）。異例の3刷重版＆12/19追加イベント決定の超人気作！",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/7006/20671/7006-20671-a4c88ff980cfed7757455f6033715cf0-1157x1637.jpg",
+          "caption": "野村実代 1st写真集『美しい方程式』公式ビジュアル",
+          "source": "PR TIMES（KADOKAWA）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000020671.000007006.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "『SKE48野村実代1st写真集 美しい方程式』3刷重版決定＆12/19追加イベント！",
+          "source": "PR TIMES（KADOKAWA）",
+          "url": "https://prtimes.jp/main/html/rd/p/000020671.000007006.html",
+          "photoCountHint": "公式重版カット6枚"
+        }
+      ],
+      "offers": [
+        {
+          "id": "pb-nomura-miyo-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（ISBN 9784047382497）",
+          "talent": "野村実代",
+          "price": 3520,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/7006/20671/7006-20671-a4c88ff980cfed7757455f6033715cf0-1157x1637.jpg",
+          "url": "https://www.amazon.co.jp/s?k=9784047382497%20%E9%87%8E%E6%9D%91%E5%AE%9F%E4%BB%A3%20%E7%BE%8E%E3%81%97%E3%81%84%E6%96%B9%E7%A8%8B%E5%BC%8F&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "gravure-friday-gold-2026-winter",
+      "title": "FRIDAY GOLD 2026 Winter",
+      "series": "FRIDAY GOLD",
+      "issueLabel": "2026 Winter号",
+      "publisher": "講談社",
+      "category": "gravure",
+      "releaseDate": "2026-11-10",
+      "price": 1300,
+      "coverTalents": [
+        "加藤玲菜"
+      ],
+      "featuredTalents": [
+        "加藤玲菜"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/1719/9135/1719-9135-77ce0254590a76bdd17fbc35d8bd5403-1365x2048.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "講談社グラビアムック『FRIDAY GOLD』最新冬号。注目ルーキー加藤玲菜が表紙＆巻頭大特集！",
+      "summary": "破竹の勢いのNEWヒロイン・加藤玲菜が表紙＆巻頭を飾る講談社グラビアムック『FRIDAY GOLD 2026 Winter』。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/1719/9135/1719-9135-77ce0254590a76bdd17fbc35d8bd5403-1365x2048.jpg",
+          "caption": "FRIDAY GOLD 2026 Winter 加藤玲菜 公式カット",
+          "source": "PR TIMES（講談社）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000009135.000001719.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "加藤玲菜が表紙＆巻頭『FRIDAY GOLD 2026 Winter』11月10日発売！",
+          "source": "PR TIMES（講談社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000009135.000001719.html",
+          "photoCountHint": "公式新規カット解禁"
+        }
+      ],
+      "offers": [
+        {
+          "id": "gravure-friday-gold-2026w-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認",
+          "talent": "加藤玲菜",
+          "price": 1300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/1719/9135/1719-9135-77ce0254590a76bdd17fbc35d8bd5403-1365x2048.jpg",
+          "url": "https://www.amazon.co.jp/s?k=FRIDAY%20GOLD%202026%20Winter%20%E5%8A%A0%E8%97%A4%E7%8E%B2%E8%8F%9C&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "cal-yoshine-kyoko-2027",
+      "title": "芳根京子 カレンダー 2027",
+      "series": "2027年カレンダー",
+      "issueLabel": "2027年カレンダー",
+      "publisher": "ワニブックス",
+      "category": "calendar",
+      "releaseDate": "2026-12-07",
+      "price": 3850,
+      "coverTalents": [
+        "芳根京子"
+      ],
+      "featuredTalents": [
+        "芳根京子"
+      ],
+      "palette": [
+        "#312E81",
+        "#6366F1",
+        "#E0E7FF"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/129409/480/129409-480-514879ef1380d663c6de84239ab3d019-875x1241.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "撮影：長友善行（ワニブックス）。2026年12月7日発売予定の2027年カレンダー。",
+      "summary": "人気女優・芳根京子の大人の魅力を詰め込んだ『芳根京子カレンダー2027』（ワニブックス）。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/129409/480/129409-480-514879ef1380d663c6de84239ab3d019-875x1241.jpg",
+          "caption": "芳根京子カレンダー2027 公式表紙",
+          "source": "PR TIMES（ワニブックス）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000000480.000129409.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "『芳根京子カレンダー2027』12月7日発売決定！",
+          "source": "PR TIMES（ワニブックス）",
+          "url": "https://prtimes.jp/main/html/rd/p/000000480.000129409.html",
+          "photoCountHint": "公式先行ビジュアル"
+        }
+      ],
+      "offers": [
+        {
+          "id": "cal-yoshine-2027-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約",
+          "talent": "芳根京子",
+          "price": 3850,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/129409/480/129409-480-514879ef1380d663c6de84239ab3d019-875x1241.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E8%8A%B3%E6%A0%B9%E4%BA%AC%E5%AD%90%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%202027&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "cal-kimura-fumino-2027",
+      "title": "木村文乃 カレンダー 2027「Timeless Beauty」",
+      "series": "2027年カレンダー",
+      "issueLabel": "2027年カレンダー",
+      "publisher": "ワニブックス",
+      "category": "calendar",
+      "releaseDate": "2026-11-23",
+      "price": 3850,
+      "coverTalents": [
+        "木村文乃"
+      ],
+      "featuredTalents": [
+        "木村文乃"
+      ],
+      "palette": [
+        "#1E3A8A",
+        "#3B82F6",
+        "#DBEAFE"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/129409/456/129409-456-977389cd65e247b68c4fb74835e87765-3036x2142.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "撮影：西田幸樹（ワニブックス）。11月23日（いいふみの日）発売！",
+      "summary": "30代最後の木村文乃が魅せる『木村文乃カレンダー2027』（ワニブックス・11/23発売）。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/129409/456/129409-456-977389cd65e247b68c4fb74835e87765-3036x2142.jpg",
+          "caption": "木村文乃カレンダー2027 公式ビジュアル",
+          "source": "PR TIMES（ワニブックス）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000000456.000129409.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "『木村文乃カレンダー2027』11月23日発売！",
+          "source": "PR TIMES（ワニブックス）",
+          "url": "https://prtimes.jp/main/html/rd/p/000000456.000129409.html",
+          "photoCountHint": "公式ビジュアル3枚"
+        }
+      ],
+      "offers": [
+        {
+          "id": "cal-kimura-fumino-2027-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約（あと2日！）",
+          "talent": "木村文乃",
+          "price": 3850,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/129409/456/129409-456-977389cd65e247b68c4fb74835e87765-3036x2142.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E6%9C%A8%E6%9D%91%E6%96%87%E4%B9%83%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%202027&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "cal-imai-haruka-2027",
+      "title": "今井春花×日本遺産カレンダー 2027",
+      "series": "2027年カレンダー",
+      "issueLabel": "2027年カレンダー（初カレンダー）",
+      "publisher": "KADOKAWA",
+      "category": "calendar",
+      "releaseDate": "2026-12-26",
+      "price": 2750,
+      "coverTalents": [
+        "今井春花"
+      ],
+      "featuredTalents": [
+        "今井春花"
+      ],
+      "palette": [
+        "#047857",
+        "#10B981",
+        "#D1FAE5"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/7006/20583/7006-20583-82d4958a1224adac662a407d442f9920-2500x1666.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "テレビ朝日『グッド！モーニング』お天気キャスター今井春花の初カレンダー！12/26・1/11・1/16に発売記念イベント開催。",
+      "summary": "人気お天気キャスター・今井春花の初カレンダー『今井春花×日本遺産カレンダー2027』（KADOKAWA）。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/7006/20583/7006-20583-82d4958a1224adac662a407d442f9920-2500x1666.jpg",
+          "caption": "今井春花 2027年カレンダー 公式カット",
+          "source": "PR TIMES（KADOKAWA）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000020583.000007006.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "お天気キャスター・今井春花、初のカレンダー12月26日発売決定！",
+          "source": "PR TIMES（KADOKAWA）",
+          "url": "https://prtimes.jp/main/html/rd/p/000020583.000007006.html",
+          "photoCountHint": "公式先行カット3枚"
+        }
+      ],
+      "offers": [
+        {
+          "id": "cal-imai-haruka-2027-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約受付中",
+          "talent": "今井春花",
+          "price": 2750,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/7006/20583/7006-20583-82d4958a1224adac662a407d442f9920-2500x1666.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E4%BB%8A%E4%BA%95%E6%98%A5%E8%8A%B1%20%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%202027&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "weekly-champion-2026-50",
+      "title": "週刊少年チャンピオン 2026年50号",
+      "series": "週刊少年チャンピオン",
+      "issueLabel": "2026年50号（桃月なしこ表紙）",
+      "publisher": "秋田書店",
+      "category": "weekly",
+      "releaseDate": "2026-11-12",
+      "price": 400,
+      "coverTalents": [
+        "桃月なしこ"
+      ],
+      "featuredTalents": [
+        "桃月なしこ"
+      ],
+      "palette": [
+        "#DC2626",
+        "#F87171",
+        "#FEE2E2"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/40601/929/40601-929-e935fdeec9e0b70a9e1af326429600d5-1570x2262.png",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "表紙＆巻頭グラビア：桃月なしこ。限定QUOカード応募者全員サービス企画あり。",
+      "summary": "桃月なしこが表紙＆巻頭グラビアに登場した『週刊少年チャンピオン』2026年50号（秋田書店）。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/40601/929/40601-929-e935fdeec9e0b70a9e1af326429600d5-1570x2262.png",
+          "caption": "週刊少年チャンピオン 50号 桃月なしこ表紙",
+          "source": "PR TIMES（秋田書店）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000000929.000040601.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "「週刊少年チャンピオン」50号の表紙＆巻頭グラビアは桃月なしこ！",
+          "source": "PR TIMES（秋田書店）",
+          "url": "https://prtimes.jp/main/html/rd/p/000000929.000040601.html",
+          "photoCountHint": "公式表紙＆カット5枚"
+        }
+      ],
+      "offers": [
+        {
+          "id": "weekly-champion-50-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認",
+          "talent": "桃月なしこ",
+          "price": 400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/40601/929/40601-929-e935fdeec9e0b70a9e1af326429600d5-1570x2262.png",
+          "url": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8A%E5%B0%91%E5%B9%B4%E3%83%81%E3%83%A3%E3%83%B3%E3%83%94%E3%82%AA%E3%83%B3%202026%E5%B9%B450%E5%8F%B7%20%E6%A1%83%E6%9C%88%E3%81%AA%E3%81%97%E3%81%93&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "weekly-champion-2026-48",
+      "title": "週刊少年チャンピオン 2026年48号",
+      "series": "週刊少年チャンピオン",
+      "issueLabel": "2026年48号（櫻坂46 浅井恋乃未＆BIGポスター）",
+      "publisher": "秋田書店",
+      "category": "weekly",
+      "releaseDate": "2026-10-29",
+      "price": 400,
+      "coverTalents": [
+        "浅井恋乃未（櫻坂46）"
+      ],
+      "featuredTalents": [
+        "浅井恋乃未",
+        "櫻坂46"
+      ],
+      "palette": [
+        "#DB2777",
+        "#F472B6",
+        "#FCE7F3"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/40601/921/40601-921-63f902a5640fafdade8ec95241ef1a93-1386x1982.png",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "本誌付録：櫻坂46 浅井恋乃未 両面BIGポスター"
+        }
+      ],
+      "printOnlyNote": "表紙＆巻頭グラビア＆両面BIGポスター付録：櫻坂46 四期生・浅井恋乃未！",
+      "summary": "櫻坂46 四期生・浅井恋乃未が表紙＆巻頭グラビア＋両面BIGポスター付録で登場の『週刊少年チャンピオン』48号！",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/40601/921/40601-921-63f902a5640fafdade8ec95241ef1a93-1386x1982.png",
+          "caption": "週刊少年チャンピオン 48号 櫻坂46・浅井恋乃未 表紙",
+          "source": "PR TIMES（秋田書店）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000000921.000040601.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "「週刊少年チャンピオン」48号 表紙＆巻頭は櫻坂46 浅井恋乃未！両面BIGポスター付録",
+          "source": "PR TIMES（秋田書店）",
+          "url": "https://prtimes.jp/main/html/rd/p/000000921.000040601.html",
+          "photoCountHint": "公式表紙＆カット5枚"
+        }
+      ],
+      "offers": [
+        {
+          "id": "weekly-champion-48-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（両面BIGポスター付）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "本誌付録：浅井恋乃未 両面BIGポスター・Amazonで確認",
+          "talent": "浅井恋乃未",
+          "price": 400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/40601/921/40601-921-63f902a5640fafdade8ec95241ef1a93-1386x1982.png",
+          "url": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8A%E5%B0%91%E5%B9%B4%E3%83%81%E3%83%A3%E3%83%B3%E3%83%94%E3%82%AA%E3%83%B3%202026%E5%B9%B448%E5%8F%B7%20%E6%B5%85%E4%BA%95%E6%81%8B%E4%B9%83%E6%9C%AA&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "weekly-flash-2026-1117",
+      "title": "FLASH 2026年11月17日発売号（兒玉遥 独占写真集表紙）",
+      "series": "FLASH",
+      "issueLabel": "2026年11月17日発売号",
+      "publisher": "光文社",
+      "category": "weekly",
+      "releaseDate": "2026-11-17",
+      "price": 750,
+      "coverTalents": [
+        "兒玉遥"
+      ],
+      "featuredTalents": [
+        "兒玉遥",
+        "安井南",
+        "桃田うた",
+        "はのんまゆ",
+        "竹内カンナ"
+      ],
+      "palette": [
+        "#DC2626",
+        "#EF4444",
+        "#FEE2E2"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/21468/2542/21468-2542-fa719eb10c0e6e4f67b4e8ae84d20a16-1080x1422.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "11/26発売・兒玉遥3rd写真集『You will see』から独占公開＆巻頭10P！安井南・桃田うた・はのんまゆ・竹内カンナも掲載。",
+      "summary": "兒玉遥が表紙＆巻頭10Pで話題の3rd写真集カットを独占先行公開した『FLASH』11月17日発売号（光文社）。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/21468/2542/21468-2542-fa719eb10c0e6e4f67b4e8ae84d20a16-1080x1422.jpg",
+          "caption": "FLASH 11/17発売号 兒玉遥 公式表紙",
+          "source": "PR TIMES（光文社）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000002542.000021468.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "兒玉遥の表紙＆巻頭10P！『FLASH』11月17日発売号",
+          "source": "PR TIMES（光文社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000002542.000021468.html",
+          "photoCountHint": "公式カット20枚"
+        }
+      ],
+      "offers": [
+        {
+          "id": "weekly-flash-20261117-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認",
+          "talent": "兒玉遥",
+          "price": 750,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/21468/2542/21468-2542-fa719eb10c0e6e4f67b4e8ae84d20a16-1080x1422.jpg",
+          "url": "https://www.amazon.co.jp/s?k=FLASH%202026%E5%B9%B412%E6%9C%881%E6%97%A5%E5%8F%B7%20%E5%85%92%E7%8E%89%E9%81%A5&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "fashion-biteki-2026-12-inoue",
+      "title": "美的 2026年12月号（表紙：乃木坂46 井上和）",
+      "series": "美的",
+      "issueLabel": "2026年12月号（井上和 初表紙）",
+      "publisher": "小学館",
+      "category": "fashion",
+      "releaseDate": "2026-10-22",
+      "price": 1680,
+      "coverTalents": [
+        "井上和（乃木坂46）"
+      ],
+      "featuredTalents": [
+        "井上和",
+        "乃木坂46"
+      ],
+      "palette": [
+        "#DB2777",
+        "#F472B6",
+        "#FCE7F3"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/13640/3920/13640-3920-9945b57580e7d601bce8ce366a505617-2109x2700.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "乃木坂46のエース・井上和が『美的』初表紙を飾った記念号！",
+      "summary": "乃木坂46・井上和が『美的』初表紙に登場！大人のピンクメイク＆ロングインタビュー掲載（小学館）。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/13640/3920/13640-3920-9945b57580e7d601bce8ce366a505617-2109x2700.jpg",
+          "caption": "美的 2026年12月号 乃木坂46・井上和 初表紙",
+          "source": "PR TIMES（小学館）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003920.000013640.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "井上和（乃木坂46）大人のピンクメイクで『美的』初表紙!!",
+          "source": "PR TIMES（小学館）",
+          "url": "https://prtimes.jp/main/html/rd/p/000003920.000013640.html",
+          "photoCountHint": "公式表紙＆カット6枚"
+        }
+      ],
+      "offers": [
+        {
+          "id": "fashion-biteki-202612-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認",
+          "talent": "井上和",
+          "price": 1680,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/13640/3920/13640-3920-9945b57580e7d601bce8ce366a505617-2109x2700.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E7%BE%8E%E7%9A%84%202026%E5%B9%B412%E6%9C%88%E5%8F%B7%20%E4%BA%95%E4%B8%8A%E5%92%8C&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "weekly-kindai-mahjong-2026-12",
+      "title": "近代麻雀 2026年12月号（表紙＆巻頭グラビア：ちとせよしの）",
+      "series": "近代麻雀",
+      "issueLabel": "2026年12月号",
+      "publisher": "竹書房",
+      "category": "weekly",
+      "releaseDate": "2026-10-30",
+      "price": 1000,
+      "coverTalents": [
+        "ちとせよしの"
+      ],
+      "featuredTalents": [
+        "ちとせよしの"
+      ],
+      "palette": [
+        "#065F46",
+        "#10B981",
+        "#D1FAE5"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/109856/649/109856-649-64b4d174eed59aaae23249f08db984f3-1000x1415.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-21",
+      "includedBonuses": [],
+      "printOnlyNote": "麻雀最強戦2026アシスタント・ちとせよしの表紙＆巻頭グラビア掲載号（竹書房）。",
+      "summary": "Hカップ人気グラドル・ちとせよしの表紙＆巻頭グラビアの『近代麻雀』2026年12月号（竹書房）。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/109856/649/109856-649-64b4d174eed59aaae23249f08db984f3-1000x1415.jpg",
+          "caption": "近代麻雀 2026年12月号 ちとせよしの表紙",
+          "source": "PR TIMES（竹書房）",
+          "kind": "cover",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000000649.000109856.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "『近代麻雀』2026年12月号 表紙＆巻頭グラビアはちとせよしの!!",
+          "source": "PR TIMES（竹書房）",
+          "url": "https://prtimes.jp/main/html/rd/p/000000649.000109856.html",
+          "photoCountHint": "公式カット20枚"
+        }
+      ],
+      "offers": [
+        {
+          "id": "weekly-kindai-202612-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入・在庫確認",
+          "talent": "ちとせよしの",
+          "price": 1000,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/109856/649/109856-649-64b4d174eed59aaae23249f08db984f3-1000x1415.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E8%BF%91%E4%BB%A3%E9%BA%BB%E9%9B%80%202026%E5%B9%B412%E6%9C%88%E5%8F%B7%20%E3%81%A1%E3%81%A8%E3%81%9B%E3%82%88%E3%81%97%E3%81%AE&i=stripbooks"
+        }
+      ]
     }
   ],
-  "lastAutoCheckedAt": "2026-11-21T16:30:00+09:00"
+  "lastAutoCheckedAt": "2026-11-21T17:20:00+09:00"
 }

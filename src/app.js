@@ -1,7 +1,9 @@
 import { createEditorialCoverDataUri, createGalleryPhotoFallbackDataUri } from './cover-art.js';
+import { lookupBookByIsbnOrUrl } from './isbn-lookup.js';
 import {
   OSHI_BOOST_PRESETS,
   POPULAR_TALENT_PRESETS,
+  calculateScarcityScore,
   getUrgentRadarItems,
 } from './scarcity-score.js';
 import {
@@ -87,6 +89,9 @@ const DEFAULT_OFFER_SHELF = {
 };
 
 const QUICK_HUB_KEYWORDS = [
+  '松井珠理奈 アイヲシル',
+  '兒玉遥 You will see',
+  '高崎かなみ 写真集',
   'B.L.T. 2027年1月号',
   'アップトゥボーイ 2027年1月号',
   '小栗有以 2027 カレンダー',
@@ -181,11 +186,12 @@ const state = {
   artworkFilter: 'all', // 'all' | 'revealed' | 'pending'
   statusFilter: 'all', // 'all' | 'unmarked' | 'considering' | 'want' | 'reserved' | 'owned' | 'skip'
   oshiOnly: false,
+  newAutoOnly: false,
   bonusOnly: false,
   hideSkipped: false,
   sortBy: 'soon',
   urgentRankFilter: 'all', // 'all' | 'S' | 'A' | 'B' | 'secured'
-  urgentTopicFilter: 'all', // 'all' | 'limited' | 'cover' | 'oshi' | 'r18' | 'calendar'
+  urgentTopicFilter: 'all', // 'all' | 'auto' | 'limited' | 'cover' | 'oshi' | 'r18' | 'calendar'
   urgentUnreservedOnly: true,
   calendarMonth: 'upcoming', // 'upcoming' | '2026-11' | '2026-12' | '2027-01' | '2027-02' | 'past'
   calendarSubFilter: 'all', // 'all' | 'marked' | 'bonus' | 'pending' | 'calendar' | 'photobook' | 'r18'
@@ -197,6 +203,7 @@ const state = {
   statusPickerOfferId: null,
   lightboxPhotos: [],
   lightboxIndex: 0,
+  isbnLookupPreview: null,
 };
 
 function escapeHtml(str = '') {
@@ -746,7 +753,7 @@ function itemMatchesOshi(item) {
 function exportUserDataBackup() {
   const payload = {
     app: 'Happy Magazine Center',
-    version: '0.8',
+    version: '0.9',
     exportedAt: new Date().toISOString(),
     data: {
       oshiKeywords: state.oshiKeywords,
@@ -868,6 +875,7 @@ function getFilteredItems() {
     if (!itemHasStatusInBucket(item, state.statusFilter)) return false;
 
     if (state.oshiOnly && itemMatchesOshi(item).length === 0) return false;
+    if (state.newAutoOnly && !item.autoDiscovered) return false;
     if (state.bonusOnly && getItemSpecialBonusCount(item) === 0) return false;
 
     if (q) {
@@ -1068,6 +1076,16 @@ function renderFilterChips() {
   const oshiOnlyToggle = document.getElementById('oshiOnlyToggle');
   if (oshiOnlyToggle) {
     oshiOnlyToggle.checked = state.oshiOnly;
+  }
+
+  const autoDiscoveredCount = allItems.filter((it) => Boolean(it.autoDiscovered)).length;
+  const newAutoOnlyLabel = document.getElementById('newAutoOnlyLabel');
+  if (newAutoOnlyLabel) {
+    newAutoOnlyLabel.textContent = `🆕 自動発見 (${autoDiscoveredCount})`;
+  }
+  const newAutoOnlyToggle = document.getElementById('newAutoOnlyToggle');
+  if (newAutoOnlyToggle) {
+    newAutoOnlyToggle.checked = state.newAutoOnly;
   }
 
   document.getElementById('categoryChips').innerHTML = Object.entries(CATEGORY_META)
@@ -1288,6 +1306,7 @@ function renderCompactGrid(items) {
               title="ワンタップで写真＆特典確認"
             >🔍 確認${photos.length > 1 ? `(${photos.length})` : ''}</button>
             <div class="compact-bottom-scrim">
+              ${item.autoDiscovered ? `<span class="compact-store-pill new-auto-pill">🆕自動発見</span>` : ''}
               ${
                 item.category === 'r18'
                   ? `<span class="compact-store-pill r18-pill">🔞R18</span>`
@@ -1334,15 +1353,28 @@ function renderMagazineGrid() {
   if (!items.length) {
     grid.className = 'mag-grid';
     const q = state.search.trim();
+    const issueUrl = `https://github.com/kenandxx/happy-magazine-center/issues/new?title=${encodeURIComponent(
+      `【収録リクエスト】${q || '新刊追加'}`
+    )}&body=${encodeURIComponent(
+      `作品名・タレント名：${q}\nAmazon URL または ISBN：\n特典メモ：`
+    )}`;
     grid.innerHTML = `
       <div class="empty-state" style="grid-column: 1 / -1;">
         <strong>条件に合う雑誌・写真集・カレンダーがありません</strong>
         <p>${
           q
-            ? `「${escapeHtml(q)}」をセブンネット・楽天ブックス・HMV・Amazonで横断検索してみましょう！`
-            : 'フィルターを緩めるか、「横断検索」タブから任意のタイトルを探せます。'
+            ? `「${escapeHtml(q)}」をAmazon URL / ISBNから1タップ自動取込するか、全5ストア横断検索で探せます！`
+            : 'フィルターを緩めるか、Amazon URL / ISBN自動取込・横断検索タブから任意のタイトルを追加できます。'
         }</p>
-        <button class="primary-btn" type="button" id="jumpToHubBtn">⚡ 全ストア横断検索へ</button>
+        <div class="empty-state-actions">
+          <button class="primary-btn" type="button" data-jump-isbn-import="1">⚡ Amazon URL / ISBN 自動取込</button>
+          <button class="quick-preview-icon-btn" type="button" id="jumpToHubBtn">🔍 全ストア横断検索へ</button>
+          ${
+            q
+              ? `<a class="isbn-request-link" href="${escapeHtml(issueUrl)}" target="_blank" rel="noopener noreferrer">📮 「${escapeHtml(q)}」を公式収録依頼 ↗</a>`
+              : ''
+          }
+        </div>
       </div>
     `;
     const jumpBtn = document.getElementById('jumpToHubBtn');
@@ -1430,6 +1462,7 @@ function renderMagazineGrid() {
             <div class="mag-info">
               <div class="meta-top-row">
                 <div style="display:flex;gap:4px;flex-wrap:wrap;">
+                  ${item.autoDiscovered ? `<span class="new-auto-badge">🆕 自動発見</span>` : ''}
                   <span class="cat-badge ${item.category === 'r18' ? 'is-r18' : ''}">${escapeHtml(CATEGORY_META[item.category]?.label || '雑誌')}</span>
                   ${
                     watch.bonusCount > 0
@@ -1549,6 +1582,7 @@ function renderUrgentRadar() {
       }
     }
 
+    if (state.urgentTopicFilter === 'auto' && !item.autoDiscovered) return false;
     if (state.urgentTopicFilter === 'limited' && !scarcity.hasSignedOrLimited) return false;
     if (state.urgentTopicFilter === 'cover' && !scarcity.hasExclusiveCover) return false;
     if (state.urgentTopicFilter === 'oshi' && !scarcity.hasOshiHit) return false;
@@ -1557,8 +1591,10 @@ function renderUrgentRadar() {
     return true;
   });
 
+  const autoRadarCount = activeUnreserved.filter(({ item }) => Boolean(item.autoDiscovered)).length;
   const topicChoices = [
     { id: 'all', label: '🔥 すべて' },
+    { id: 'auto', label: `🆕 自動発見 (${autoRadarCount})` },
     { id: 'limited', label: '💎 部数・サイン・数量限' },
     { id: 'cover', label: '✨ ストア限定表紙' },
     { id: 'oshi', label: '💖 推し・VIPヒット' },
@@ -1629,9 +1665,14 @@ function renderUrgentRadar() {
           <span style="font-size:10px;font-weight:900;color:var(--ink-secondary);">🚀 推し加点:</span>
           ${boostPillsHtml}
         </div>
-        <button class="quick-preview-icon-btn" type="button" data-jump-oshi-corner="1">
-          💖 推し・👑VIP編集 (${state.oshiKeywords.length}${state.vipTalents.length ? `/👑${state.vipTalents.length}` : ''}) →
-        </button>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;">
+          <button class="quick-preview-icon-btn" type="button" data-jump-isbn-import="1">
+            ⚡ URL/ISBN取込
+          </button>
+          <button class="quick-preview-icon-btn" type="button" data-jump-oshi-corner="1">
+            💖 推し・👑VIP (${state.oshiKeywords.length}${state.vipTalents.length ? `/👑${state.vipTalents.length}` : ''}) →
+          </button>
+        </div>
       </div>
       <div class="chip-scroll" style="padding-top:0;">
         ${topicChoices
@@ -1724,9 +1765,12 @@ function renderUrgentRadar() {
                   </div>
                   <div class="urgent-info">
                     <div class="urgent-rank-row">
-                      <span class="urgent-rank-badge ${scarcity.rankMeta.colorClass}">
-                        ${escapeHtml(scarcity.rankMeta.badge)}
-                      </span>
+                      <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;">
+                        <span class="urgent-rank-badge ${scarcity.rankMeta.colorClass}">
+                          ${escapeHtml(scarcity.rankMeta.badge)}
+                        </span>
+                        ${item.autoDiscovered ? `<span class="new-auto-badge">🆕 自動発見</span>` : ''}
+                      </div>
                       <span class="urgent-score-meter" title="売り切れ警戒スコア ${scarcity.score}/100">
                         <span class="urgent-score-track">
                           <span class="urgent-score-fill ${scarcity.rankMeta.colorClass}" style="width:${scarcity.score}%"></span>
@@ -2140,6 +2184,7 @@ function renderCalendar() {
                         </div>
                         <div class="timeline-body">
                           <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:3px;">
+                            ${item.autoDiscovered ? `<span class="new-auto-badge">🆕 自動発見</span>` : ''}
                             <span class="cat-badge ${item.category === 'r18' ? 'is-r18' : ''}">${escapeHtml(catLabel)}</span>
                             ${
                               specialCount > 0
@@ -3575,6 +3620,338 @@ function switchTab(tabId) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function buildGitHubIssueRequestUrl(titleOrQuery = '', rawUrlOrIsbn = '') {
+  const cleanTitle = String(titleOrQuery || '').trim();
+  const cleanRef = String(rawUrlOrIsbn || '').trim();
+  const issueTitle = `【収録リクエスト】${cleanTitle || cleanRef || '新刊追加'}`;
+  const issueBody = [
+    `作品名・タレント名：${cleanTitle}`,
+    `Amazon URL または ISBN：${cleanRef}`,
+    '限定特典メモ（あれば）：',
+  ].join('\n');
+  return `https://github.com/kenandxx/happy-magazine-center/issues/new?title=${encodeURIComponent(
+    issueTitle
+  )}&body=${encodeURIComponent(issueBody)}`;
+}
+
+function buildDraftItemFromOpenBd(book, extracted, bonusMemo = '', idSuffix = 'preview') {
+  const releaseDate = book.releaseDate || state.referenceDate;
+  const price = Number(book.price) || 3300;
+  const category = book.category || 'photobook';
+  const talent = book.talent || '注目タレント';
+  const memo = String(bonusMemo || '').trim();
+
+  const detectedTypes = [];
+  if (memo.includes('ポスター')) detectedTypes.push('poster');
+  if (memo.includes('ポストカード')) detectedTypes.push('postcard');
+  if (memo.includes('生写真') || memo.includes('ブロマイド')) detectedTypes.push('photo');
+  if (/限定表紙|別カバー|アザーカバー/.test(memo)) detectedTypes.push('cover');
+  if (/サイン本|直筆サイン/.test(memo)) detectedTypes.push('signed');
+  if (memo.includes('DVD')) detectedTypes.push('dvd');
+  if (!detectedTypes.length) detectedTypes.push('photo');
+
+  const amazonUrl = extracted?.isbn10
+    ? `https://www.amazon.co.jp/dp/${extracted.isbn10}`
+    : `https://www.amazon.co.jp/s?k=${encodeURIComponent(book.isbn || book.title)}&i=stripbooks`;
+
+  const storeLinks = buildAllStoreSearchLinks(book.title, true);
+  const mentionedStores = [];
+  if (/セブン|7net/i.test(memo)) mentionedStores.push('7net');
+  if (/楽天/i.test(memo)) mentionedStores.push('rakuten');
+  if (/hmv|loppi/i.test(memo)) mentionedStores.push('hmv');
+  if (/tsutaya|蔦屋/i.test(memo)) mentionedStores.push('tsutaya');
+
+  const statusVal = diffDays(releaseDate) > 0 ? 'preorder' : 'available';
+  const offers = [];
+
+  for (const sid of mentionedStores) {
+    const linkObj = storeLinks.find((l) => l.id === sid);
+    const storeName = STORES[sid]?.name || sid;
+    offers.push({
+      id: `custom-isbn-${book.isbn || 'book'}-${sid}-${idSuffix}`,
+      store: sid,
+      hasStoreExclusiveBonus: true,
+      edition: `${storeName} 限定特典`,
+      bonusTypes: detectedTypes,
+      bonusText: memo || `${storeName}限定特典`,
+      talent,
+      price,
+      status: statusVal,
+      artworkStatus: 'pending',
+      url: linkObj?.url || amazonUrl,
+    });
+  }
+
+  offers.push({
+    id: `custom-isbn-${book.isbn || 'book'}-amazon-${idSuffix}`,
+    store: 'amazon',
+    hasStoreExclusiveBonus: false,
+    edition: 'Amazon 通常版',
+    bonusTypes: ['standard'],
+    bonusText: `Amazonで確認（ISBN ${book.isbn || '取得済'}）`,
+    talent,
+    price,
+    status: statusVal,
+    artworkStatus: book.coverImageUrl ? 'revealed' : 'pending',
+    ...(book.coverImageUrl ? { imageUrl: book.coverImageUrl } : {}),
+    url: amazonUrl,
+  });
+
+  return {
+    id: `custom-isbn-${book.isbn || 'book'}-${idSuffix}`,
+    isbn: book.isbn || '',
+    title: book.title,
+    series: book.publisher || 'openBD自動取込',
+    issueLabel: 'URL/ISBN自動取込',
+    publisher: book.publisher || '出版社公式',
+    category,
+    releaseDate,
+    price,
+    coverTalents: [talent],
+    featuredTalents: [talent],
+    palette:
+      category === 'r18'
+        ? ['#881337', '#BE123C', '#FFE4E6']
+        : ['#E11D48', '#FB7185', '#FFE4E6'],
+    ...(book.coverImageUrl ? { coverImageUrl: book.coverImageUrl } : {}),
+    autoDiscovered: true,
+    discoveredAt: state.referenceDate,
+    includedBonuses: memo.includes('ポスター') ? [{ type: 'poster', label: memo }] : [],
+    printOnlyNote: memo || 'Amazon URL / ISBNからopenBD公式書誌を自動取込。',
+    summary: book.description || `${book.publisher}より発売の注目タイトル（openBD自動取得）。`,
+    gallery: book.coverImageUrl
+      ? [
+          {
+            url: book.coverImageUrl,
+            caption: `${book.title} 公式書影`,
+            source: 'openBD / 版元ドットコム',
+            kind: 'cover',
+            articleUrl: amazonUrl,
+          },
+        ]
+      : [],
+    pressArticles: [],
+    offers,
+  };
+}
+
+function renderIsbnPreviewScoreHtml(draftItem) {
+  const scarcity = calculateScarcityScore(draftItem, {
+    referenceDate: state.referenceDate,
+    oshiKeywords: state.oshiKeywords,
+    vipTalents: state.vipTalents,
+    oshiBoostMode: state.oshiBoostMode,
+  });
+  const reasonsHtml = scarcity.reasons
+    .slice(0, 4)
+    .map(
+      (r) =>
+        `<span class="urgent-reason-pill tone-${r.tone}">${r.icon} ${escapeHtml(r.label)}${
+          r.points > 0 ? ` +${r.points}` : ''
+        }</span>`
+    )
+    .join('');
+  const windowNote = scarcity.inWindow
+    ? '🔥 直近〜3ヶ月枠のため「早め予約レーダー」へ即時反映されます！'
+    : '📚 一覧・推しコーナー・マーク棚へ即登録されます';
+  return `
+    <div class="isbn-score-preview">
+      <div class="urgent-rank-row">
+        <span class="urgent-rank-badge ${scarcity.rankMeta.colorClass}">
+          ${escapeHtml(scarcity.rankMeta.badge)}
+        </span>
+        <span class="urgent-score-meter">
+          <span class="urgent-score-track">
+            <span class="urgent-score-fill ${scarcity.rankMeta.colorClass}" style="width:${scarcity.score}%"></span>
+          </span>
+          <span>${scarcity.score}pt</span>
+        </span>
+      </div>
+      <div class="urgent-reasons" style="margin-top:6px;">${
+        reasonsHtml || '<span class="urgent-reason-pill tone-neutral">📘 通常枠（推し／VIP登録で即スコアUP）</span>'
+      }</div>
+      <p class="isbn-window-note">${windowNote}</p>
+    </div>
+  `;
+}
+
+function renderIsbnPreviewBox() {
+  const box = document.getElementById('isbnPreviewBox');
+  if (!box) return;
+  if (!state.isbnLookupPreview) {
+    box.hidden = true;
+    box.innerHTML = '';
+    return;
+  }
+
+  const { book, extracted } = state.isbnLookupPreview;
+  const draftItem = buildDraftItemFromOpenBd(book, extracted, '');
+  const catLabel = CATEGORY_META[draftItem.category]?.label || '写真集';
+  const existingItem = getAllItems().find(
+    (it) =>
+      (book.isbn && (it.isbn === book.isbn || JSON.stringify(it).includes(book.isbn))) ||
+      it.title === book.title
+  );
+  const amazonOffer = draftItem.offers.find((o) => o.store === 'amazon');
+  const issueUrl = buildGitHubIssueRequestUrl(book.title, book.isbn || amazonOffer?.url || '');
+
+  box.hidden = false;
+  box.innerHTML = `
+    ${
+      existingItem
+        ? `<div class="isbn-dup-banner">
+            <span>✅ この作品はすでにダッシュボードに収録済みです！</span>
+            <button class="detail-trigger-btn" type="button" data-open-id="${escapeHtml(existingItem.id)}">収録済みを開く →</button>
+          </div>`
+        : ''
+    }
+    <div class="isbn-preview-main">
+      <div class="isbn-preview-cover ${draftItem.category === 'r18' ? 'is-r18-media' : ''}">
+        ${renderCoverImg(draftItem)}
+      </div>
+      <div class="isbn-preview-meta">
+        <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px;">
+          <span class="new-auto-badge">🆕 openBD自動取得</span>
+          <span class="cat-badge ${draftItem.category === 'r18' ? 'is-r18' : ''}">${escapeHtml(catLabel)}</span>
+        </div>
+        <h3 class="isbn-preview-title">${escapeHtml(draftItem.title)}</h3>
+        <p class="isbn-preview-sub">
+          ${escapeHtml(draftItem.coverTalents.join(' / '))} ・ ${escapeHtml(draftItem.publisher)}
+        </p>
+        <p class="isbn-preview-sub">
+          📅 ${
+            book.releaseDate
+              ? escapeHtml(formatDateLabel(book.releaseDate))
+              : 'openBD発売日未記載（下で変更可）'
+          } ・ <strong>¥${draftItem.price.toLocaleString()}</strong> ・ ISBN ${escapeHtml(book.isbn)}
+        </p>
+      </div>
+    </div>
+    <div id="isbnLiveScoreSlot">${renderIsbnPreviewScoreHtml(draftItem)}</div>
+    <div class="isbn-preview-fields">
+      <label class="field-label">
+        <span>📅 発売予定日${book.releaseDate ? '' : '（未記載のため確認・変更可）'}</span>
+        <input
+          id="isbnDateInput"
+          class="text-input"
+          type="date"
+          value="${escapeHtml(draftItem.releaseDate)}"
+        />
+      </label>
+      <label class="field-label">
+        <span>🎁 限定特典メモ（任意・書いたストアのみ追加）</span>
+        <input
+          id="isbnBonusMemoInput"
+          class="text-input"
+          type="text"
+          placeholder="例：セブンネット限定表紙・生写真 / 楽天ポスター / サイン本"
+        />
+      </label>
+    </div>
+    <div class="isbn-preview-actions">
+      <button id="isbnConfirmImportBtn" class="primary-btn" type="button">
+        🚀 ダッシュボード＆早め予約に即投入！
+      </button>
+      ${
+        amazonOffer
+          ? `<a class="quick-preview-icon-btn" href="${escapeHtml(amazonOffer.url)}" target="_blank" rel="noopener noreferrer">Amazonで確認 ↗</a>`
+          : ''
+      }
+      <a class="isbn-request-link" href="${escapeHtml(issueUrl)}" target="_blank" rel="noopener noreferrer">📮 公式収録依頼 ↗</a>
+    </div>
+  `;
+}
+
+async function handleIsbnLookup(rawInput) {
+  const statusEl = document.getElementById('isbnLookupStatus');
+  const btn = document.getElementById('isbnLookupBtn');
+  const reqLink = document.getElementById('githubRequestIssueLink');
+  const q = String(rawInput || '').trim();
+
+  if (reqLink && q) {
+    reqLink.href = buildGitHubIssueRequestUrl('', q);
+  }
+  if (!q) {
+    if (statusEl) {
+      statusEl.className = 'isbn-lookup-status is-error';
+      statusEl.textContent = '⚠️ Amazonの商品URL（/dp/…）またはISBN（10桁/13桁）を貼り付けてください。';
+    }
+    return;
+  }
+
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = '⏳ openBD照会中...';
+  }
+  if (statusEl) {
+    statusEl.className = 'isbn-lookup-status';
+    statusEl.textContent = '🔍 日本の公式書誌DB（openBD）から書影・発売日・定価を取得しています...';
+  }
+
+  const res = await lookupBookByIsbnOrUrl(q);
+
+  if (btn) {
+    btn.disabled = false;
+    btn.textContent = '🔍 書影＆書誌を自動取得';
+  }
+
+  if (!res.ok) {
+    state.isbnLookupPreview = null;
+    renderIsbnPreviewBox();
+    if (statusEl) {
+      statusEl.className = 'isbn-lookup-status is-error';
+      statusEl.textContent = `⚠️ ${res.error}`;
+    }
+    return;
+  }
+
+  state.isbnLookupPreview = { book: res.book, extracted: res.extracted };
+  if (reqLink) {
+    reqLink.href = buildGitHubIssueRequestUrl(res.book.title, res.book.isbn || q);
+  }
+  if (statusEl) {
+    statusEl.className = 'isbn-lookup-status is-ok';
+    statusEl.textContent = '✅ 公式書誌と早め予約スコアを判定しました！下のボタンで即投入できます。';
+  }
+  renderIsbnPreviewBox();
+}
+
+function confirmIsbnImport() {
+  if (!state.isbnLookupPreview) return;
+  const { book, extracted } = state.isbnLookupPreview;
+  const memoInput = document.getElementById('isbnBonusMemoInput');
+  const dateInput = document.getElementById('isbnDateInput');
+  const bonusMemo = memoInput ? memoInput.value.trim() : '';
+  const overrideBook = {
+    ...book,
+    releaseDate: (dateInput && dateInput.value) || book.releaseDate || state.referenceDate,
+  };
+  const ts = Date.now();
+  const newItem = buildDraftItemFromOpenBd(overrideBook, extracted, bonusMemo, String(ts));
+
+  state.customItems.unshift(newItem);
+  saveJson(STORAGE_KEYS.customItems, state.customItems);
+
+  const primaryOffer = newItem.offers.find((o) => o.hasStoreExclusiveBonus) || newItem.offers[0];
+  if (primaryOffer) {
+    state.offerShelfMap[primaryOffer.id] = 'want';
+    saveJson(STORAGE_KEYS.offerShelf, state.offerShelfMap);
+  }
+
+  state.isbnLookupPreview = null;
+  renderIsbnPreviewBox();
+  const input = document.getElementById('isbnImportInput');
+  if (input) input.value = '';
+  const statusEl = document.getElementById('isbnLookupStatus');
+  if (statusEl) {
+    statusEl.className = 'isbn-lookup-status is-ok';
+    statusEl.textContent = `🎉 「${newItem.title}」をダッシュボード＆早め予約レーダーに投入しました！`;
+  }
+
+  renderAll();
+  openDetailSheet(newItem.id);
+}
+
 function renderAll() {
   applyPrivacyBlur();
   renderCountdownStrip();
@@ -3621,6 +3998,14 @@ function bindEvents() {
     });
   }
 
+  const newAutoOnlyToggle = document.getElementById('newAutoOnlyToggle');
+  if (newAutoOnlyToggle) {
+    newAutoOnlyToggle.addEventListener('change', (e) => {
+      state.newAutoOnly = e.target.checked;
+      renderMagazineGrid();
+    });
+  }
+
   document.getElementById('bonusOnlyToggle').addEventListener('change', (e) => {
     state.bonusOnly = e.target.checked;
     renderMagazineGrid();
@@ -3630,6 +4015,54 @@ function bindEvents() {
     state.hideSkipped = e.target.checked;
     renderMagazineGrid();
   });
+
+  const isbnLookupForm = document.getElementById('isbnLookupForm');
+  if (isbnLookupForm) {
+    isbnLookupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = document.getElementById('isbnImportInput');
+      handleIsbnLookup(input ? input.value : '');
+    });
+  }
+
+  const isbnSampleBtn = document.getElementById('isbnSampleBtn');
+  if (isbnSampleBtn) {
+    isbnSampleBtn.addEventListener('click', () => {
+      const input = document.getElementById('isbnImportInput');
+      const sampleUrl = 'https://www.amazon.co.jp/dp/4299065926';
+      if (input) input.value = sampleUrl;
+      handleIsbnLookup(sampleUrl);
+    });
+  }
+
+  const isbnPreviewBox = document.getElementById('isbnPreviewBox');
+  if (isbnPreviewBox) {
+    isbnPreviewBox.addEventListener('click', (e) => {
+      if (e.target.closest('#isbnConfirmImportBtn')) {
+        confirmIsbnImport();
+      }
+    });
+    const refreshLiveScore = () => {
+      if (!state.isbnLookupPreview) return;
+      const slot = document.getElementById('isbnLiveScoreSlot');
+      if (!slot) return;
+      const { book, extracted } = state.isbnLookupPreview;
+      const memoVal = document.getElementById('isbnBonusMemoInput')?.value || '';
+      const dateVal = document.getElementById('isbnDateInput')?.value || book.releaseDate || state.referenceDate;
+      const draft = buildDraftItemFromOpenBd({ ...book, releaseDate: dateVal }, extracted, memoVal);
+      slot.innerHTML = renderIsbnPreviewScoreHtml(draft);
+    };
+    isbnPreviewBox.addEventListener('input', (e) => {
+      if (e.target && (e.target.id === 'isbnBonusMemoInput' || e.target.id === 'isbnDateInput')) {
+        refreshLiveScore();
+      }
+    });
+    isbnPreviewBox.addEventListener('change', (e) => {
+      if (e.target && e.target.id === 'isbnDateInput') {
+        refreshLiveScore();
+      }
+    });
+  }
 
   const paletteSearchInput = document.getElementById('paletteSearchInput');
   if (paletteSearchInput) {
@@ -3737,6 +4170,17 @@ function bindEvents() {
     const oshiSubBtn = e.target.closest('[data-oshi-subtab]');
     if (oshiSubBtn) {
       switchOshiSubTab(oshiSubBtn.dataset.oshiSubtab);
+      return;
+    }
+
+    const jumpIsbnImport = e.target.closest('[data-jump-isbn-import]');
+    if (jumpIsbnImport) {
+      state.oshiSubTab = 'tools';
+      switchTab('oshi');
+      const input = document.getElementById('isbnImportInput');
+      if (input) {
+        setTimeout(() => input.focus(), 120);
+      }
       return;
     }
 
@@ -4227,7 +4671,7 @@ async function init() {
     const autoEl = document.getElementById('autoUpdateStatus');
     if (autoEl && state.lastAutoCheckedAt) {
       const checkedLabel = state.lastAutoCheckedAt.slice(0, 16).replace('T', ' ');
-      autoEl.textContent = `🤖 毎朝07:00 JST自動更新対応（最終チェック: ${checkedLabel}）`;
+      autoEl.textContent = `🤖 15出版社PR TIMES＋openBD 自動収集（最終チェック: ${checkedLabel}）`;
     }
   } catch (err) {
     console.error('Failed to load catalog.json:', err);

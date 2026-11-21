@@ -1,5 +1,5 @@
 /**
- * Scarcity & Early Pre-Order Priority Scoring Engine (v0.8)
+ * Scarcity & Early Pre-Order Priority Scoring Engine (v0.9)
  *
  * Evaluates catalog titles within the active 2-3 month window (-14 to +100 days)
  * using transparent, rule-based factors plus user-customizable VIP S-Rank talents
@@ -46,6 +46,8 @@ export const POPULAR_TALENT_PRESETS = [
   { name: '瀬戸口心月', group: 'idol', tag: '乃木坂46' },
   { name: '五百城茉央', group: 'idol', tag: '乃木坂46' },
   { name: '遠藤さくら', group: 'idol', tag: '乃木坂46' },
+  { name: '賀喜遥香', group: 'idol', tag: '乃木坂46' },
+  { name: '井上和', group: 'idol', tag: '乃木坂46' },
   { name: '池田瑛紗', group: 'idol', tag: '乃木坂46' },
   { name: '一ノ瀬美空', group: 'idol', tag: '乃木坂46' },
   { name: '小川彩', group: 'idol', tag: '乃木坂46' },
@@ -54,7 +56,10 @@ export const POPULAR_TALENT_PRESETS = [
   { name: '小栗有以', group: 'idol', tag: 'AKB48' },
   { name: '佐藤綺星', group: 'idol', tag: 'AKB48' },
   { name: '平田侑希', group: 'idol', tag: 'AKB48' },
+  { name: '松井珠理奈', group: 'idol', tag: '写真集' },
+  { name: '兒玉遥', group: 'idol', tag: '写真集' },
   { name: '出口夏希', group: 'idol', tag: '女優・モデル' },
+  { name: '芳根京子', group: 'idol', tag: '女優・カレンダー' },
   { name: '長濱ねる', group: 'idol', tag: 'タレント' },
   { name: '与田祐希', group: 'idol', tag: 'タレント' },
   { name: '金澤亜美', group: 'idol', tag: '僕青' },
@@ -68,6 +73,8 @@ export const POPULAR_TALENT_PRESETS = [
   { name: '東雲うみ', group: 'gravure', tag: '超人気' },
   { name: '伊織もえ', group: 'gravure', tag: '超人気' },
   { name: '田中美久', group: 'gravure', tag: '超人気' },
+  { name: '桃月なしこ', group: 'gravure', tag: '超人気' },
+  { name: '高崎かなみ', group: 'gravure', tag: '3rd写真集' },
   { name: '溝端葵', group: 'gravure', tag: '注目' },
   { name: '白濱美兎', group: 'gravure', tag: '注目' },
   { name: '一ノ瀬瑠菜', group: 'gravure', tag: '注目' },
@@ -77,6 +84,8 @@ export const POPULAR_TALENT_PRESETS = [
   { name: '本郷柚巴', group: 'gravure', tag: '注目' },
   { name: '菊地姫奈', group: 'gravure', tag: '注目' },
   { name: '豊島心桜', group: 'gravure', tag: '注目' },
+  { name: '新田妃奈', group: 'gravure', tag: '1st写真集' },
+  { name: '五百木いお', group: 'gravure', tag: '1st写真集' },
   { name: '井口裕香', group: 'gravure', tag: '声優グラビア' },
   { name: '姫野ひなの', group: 'gravure', tag: '注目' },
   { name: 'ちとせよしの', group: 'gravure', tag: '注目' },
@@ -137,6 +146,9 @@ export const TIER1_POPULAR_TALENTS = [
   '与田祐希',
   '小栗有以',
   '佐藤綺星',
+  '松井珠理奈',
+  '桃月なしこ',
+  '芳根京子',
   'えなこ',
   '沢口愛華',
   '東雲うみ',
@@ -165,6 +177,9 @@ export const TIER1_POPULAR_TALENTS = [
 ];
 
 export const TIER2_POPULAR_TALENTS = [
+  '兒玉遥',
+  '高崎かなみ',
+  'ちとせよしの',
   '本郷柚巴',
   '菊地姫奈',
   '豊島心桜',

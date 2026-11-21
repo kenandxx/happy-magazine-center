@@ -150,9 +150,15 @@ test('live data/catalog.json passes full structural, policy, and unique offer.id
   const report = validateCatalogStructure(catalog);
   assert.equal(report.nonAmazonNonBonus, 0);
   assert.deepEqual(report.errors, []);
-  assert.ok(report.totalItems >= 100);
+  assert.ok(report.totalItems >= 125, `Expected >=125 items, got ${report.totalItems}`);
   const r18Count = catalog.items.filter((i) => i.category === 'r18').length;
   assert.ok(r18Count >= 35, `Expected >=35 R18 items, got ${r18Count}`);
+  const autoCount = catalog.items.filter((i) => i.autoDiscovered === true).length;
+  assert.ok(autoCount >= 20, `Expected >=20 autoDiscovered items, got ${autoCount}`);
+  assert.ok(
+    catalog.items.some((i) => i.id === 'pb-matsui-jurina-aiwoshiru'),
+    'Expected Matsui Jurina photobook in catalog'
+  );
 });
 
 test('calculateScarcityScore ranks 3000-copy limited, signed, and exclusive-cover releases strictly above standard titles', async () => {
@@ -307,5 +313,125 @@ test('custom VIP S-Rank tier (+30pt) and configurable 3-step Oshi Boost (+14/+24
     assert.ok(POPULAR_TALENT_PRESETS.some((p) => p.group === grp), `Missing preset group ${grp}`);
   }
 });
+
+test('isbn-lookup extracts ISBN-13 from Amazon /dp/ URLs, ISBN-10, and hyphenated ISBN-13 and parses openBD records', async () => {
+  const { isbn10To13, extractIsbnFromInput, parseOpenBdRecord } = await import(
+    '../src/isbn-lookup.js'
+  );
+
+  assert.equal(isbn10To13('4299065926'), '9784299065926');
+  assert.deepEqual(extractIsbnFromInput('https://www.amazon.co.jp/dp/4299065926/ref=sr_1_1'), {
+    isbn13: '9784299065926',
+    isbn10: '4299065926',
+    sourceType: 'amazon_url',
+  });
+  assert.deepEqual(extractIsbnFromInput('978-4-334-11192-2'), {
+    isbn13: '9784334111922',
+    isbn10: '',
+    sourceType: 'isbn13',
+  });
+  assert.deepEqual(extractIsbnFromInput('4299065926'), {
+    isbn13: '9784299065926',
+    isbn10: '4299065926',
+    sourceType: 'isbn10',
+  });
+  assert.equal(extractIsbnFromInput('松井珠理奈写真集'), null);
+
+  const parsedPb = parseOpenBdRecord(
+    {
+      summary: {
+        isbn: '9784299065926',
+        title: '松井珠理奈写真集 アイヲシル',
+        publisher: '宝島社',
+        author: '松井珠理奈／著',
+        pubdate: '20250909',
+        cover: '',
+      },
+      onix: {
+        ProductSupply: {
+          SupplyDetail: { Price: [{ PriceAmount: '3500' }] },
+        },
+        CollateralDetail: {
+          TextContent: [{ Text: '10年ぶり待望の2nd写真集！' }],
+        },
+      },
+    },
+    '9784299065926'
+  );
+
+  assert.equal(parsedPb.isbn, '9784299065926');
+  assert.equal(parsedPb.talent, '松井珠理奈');
+  assert.equal(parsedPb.releaseDate, '2025-09-09');
+  assert.equal(parsedPb.price, 3850);
+  assert.equal(parsedPb.category, 'photobook');
+  assert.equal(parsedPb.coverImageUrl, 'https://img.hanmoto.com/bd/img/9784299065926.jpg');
+
+  const parsedR18 = parseOpenBdRecord({
+    summary: {
+      isbn: '9784775606896',
+      title: 'サンプル 豪華愛蔵版ヘアヌード写真集',
+      publisher: '彩文館出版',
+      pubdate: '20261225',
+    },
+  });
+  assert.equal(parsedR18.category, 'r18');
+
+  const parsedCal = parseOpenBdRecord({
+    summary: {
+      isbn: '9784000000000',
+      title: '芳根京子 2027年カレンダー',
+      publisher: 'ワニブックス',
+      pubdate: '20261207',
+    },
+  });
+  assert.equal(parsedCal.category, 'calendar');
+});
+
+test('prtimes-ingestor covers 15 publishers, filters noise accurately, and extracts release dates, prices, and exclusive bonuses', async () => {
+  const { PRTIMES_PUBLISHER_FEEDS, isTargetReleaseTitle, parsePrTimesArticleHtml } = await import(
+    './prtimes-ingestor.mjs'
+  );
+
+  assert.equal(PRTIMES_PUBLISHER_FEEDS.length, 15);
+  assert.equal(isTargetReleaseTitle('兒玉遥 3rd写真集『You will see』11月26日発売決定！'), true);
+  assert.equal(isTargetReleaseTitle('桃月なしこ『週刊少年チャンピオン』表紙＆巻頭グラビア'), true);
+  assert.equal(isTargetReleaseTitle('デジタル写真集『〇〇』電子書籍限定で配信開始'), false);
+  assert.equal(isTargetReleaseTitle('人気俳優〇〇 1st写真集発売＆お渡し会'), false);
+
+  const sampleHtml = `
+    <html><head>
+      <meta property="og:image" content="https://prcdn.freetls.fastly.net/release_image/21468/2000/21468-2000-1.jpg?width=1950" />
+    </head><body>
+      <p>発売日：2026年11月26日（木）</p>
+      <p>定価：3,850円（税込） ISBN 978-4-334-11192-2</p>
+      <p>セブンネットショッピングでは限定表紙版＆生写真1枚付きで予約受付中（https://7net.omni7.jp/detail/1107799999）。</p>
+      <p>楽天ブックス限定特典として限定ブロマイド1枚をプレゼント（https://books.rakuten.co.jp/rb/18400000/）。</p>
+    </body></html>
+  `;
+
+  const parsed = parsePrTimesArticleHtml(sampleHtml, {
+    title: '兒玉遥 3rd写真集『You will see』発売決定！',
+    publisher: '光文社',
+    url: 'https://prtimes.jp/main/html/rd/p/000002000.000021468.html',
+    pubDate: '2026-11-10',
+  });
+
+  assert.equal(parsed.title, 'You will see');
+  assert.equal(parsed.releaseDate, '2026-11-26');
+  assert.equal(parsed.price, 3850);
+  assert.equal(parsed.isbn, '9784334111922');
+  assert.equal(parsed.category, 'photobook');
+  assert.equal(
+    parsed.coverImageUrl,
+    'https://prcdn.freetls.fastly.net/release_image/21468/2000/21468-2000-1.jpg'
+  );
+  assert.deepEqual(
+    parsed.storeBonuses.map((b) => b.store),
+    ['7net', 'rakuten']
+  );
+  assert.ok(parsed.storeBonuses[0].bonusTypes.includes('cover'));
+  assert.ok(parsed.storeBonuses[0].bonusTypes.includes('photo'));
+});
+
 
 

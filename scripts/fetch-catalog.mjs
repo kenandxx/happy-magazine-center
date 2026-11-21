@@ -1,45 +1,32 @@
 /**
- * Multi-store catalog collection & daily auto-update pipeline (v0.9).
+ * Multi-store catalog collection & daily auto-update pipeline (v1.0).
  *
  * Usage:
  *   node scripts/fetch-catalog.mjs --dry-run    # Offline verification with sample records
  *   node scripts/fetch-catalog.mjs --update     # Live daily update (15-publisher PR TIMES RSS + openBD + optional Rakuten Books API)
  *
  * Environment variables (optional):
- *   RAKUTEN_APP_ID  Rakuten Books API applicationId (if set in GitHub Actions Secrets)
+ *   RAKUTEN_APP_ID  Rakuten Books API applicationId (set in GitHub Actions Secrets to unlock 100% Rakuten Books photobook/R18/bonus ingestion)
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { isbn13To10 } from '../src/isbn-lookup.js';
 import { filterOffersByPolicy, groupStoreOffers, normalizeIssueKey } from './normalizer.mjs';
 import {
   PRTIMES_PUBLISHER_FEEDS,
   isTargetReleaseTitle,
   parsePrTimesArticleHtml,
 } from './prtimes-ingestor.mjs';
+import {
+  buildCatalogItemFromRakuten,
+  fetchRakutenCatalogRecords,
+  isRelevantRakutenRecord,
+} from './rakuten-ingestor.mjs';
 import { validateCatalogStructure, verifyImageUrl } from './validate-catalog.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CATALOG_PATH = path.resolve(__dirname, '../data/catalog.json');
-
-const RAKUTEN_MAGAZINE_API =
-  'https://app.rakuten.co.jp/services/api/BooksMagazine/Search/20170404';
-const RAKUTEN_BOOK_API =
-  'https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404';
-
-const TARGET_KEYWORDS = [
-  'B.L.T.',
-  'BOMB',
-  'アップトゥボーイ',
-  'BUBKA',
-  'EX大衆',
-  '週刊プレイボーイ',
-  'FLASH',
-  'FRIDAY',
-  '週刊少年チャンピオン',
-  'ビッグコミックスピリッツ',
-  'グラビアザテレビジョン',
-];
 
 function getJstDateInfo() {
   const now = new Date();
@@ -51,8 +38,12 @@ function getJstDateInfo() {
   };
 }
 
-function buildAmazonSearchUrl(query) {
-  return `https://www.amazon.co.jp/s?k=${encodeURIComponent(query)}&i=stripbooks`;
+function buildAmazonUrlForBook(isbnOrTitle, fallbackTitle = '') {
+  const isbn10 = isbn13To10(isbnOrTitle);
+  if (isbn10) {
+    return `https://www.amazon.co.jp/dp/${isbn10}`;
+  }
+  return `https://www.amazon.co.jp/s?k=${encodeURIComponent(fallbackTitle || isbnOrTitle)}&i=stripbooks`;
 }
 
 function buildStoreFallbackSearchUrl(store, query) {
@@ -61,72 +52,13 @@ function buildStoreFallbackSearchUrl(store, query) {
   if (store === 'rakuten') return `https://books.rakuten.co.jp/search?sitem=${q}`;
   if (store === 'hmv') return `https://www.hmv.co.jp/search/keyword_${q}/target_ALL/type_sr/`;
   if (store === 'tsutaya') return `https://shop.tsutaya.co.jp/search_result.html?searchKeyword=${q}`;
-  return buildAmazonSearchUrl(query);
-}
-
-async function fetchRakutenBonuses(appId) {
-  const results = [];
-  for (const kw of TARGET_KEYWORDS) {
-    try {
-      const url = `${RAKUTEN_MAGAZINE_API}?applicationId=${encodeURIComponent(
-        appId
-      )}&title=${encodeURIComponent(kw)}&sort=-releaseDate&hits=5`;
-      const res = await fetch(url, { signal: AbortSignal.timeout(10000) });
-      if (!res.ok) continue;
-      const json = await res.json();
-      for (const entry of json.Items || []) {
-        const item = entry.Item;
-        results.push({
-          store: 'rakuten',
-          title: item.title,
-          description: item.itemCaption || '',
-          releaseDate: item.salesDate || '',
-          price: item.itemPrice || 0,
-          url: item.itemUrl,
-          imageUrl: item.largeImageUrl || '',
-        });
-      }
-    } catch {
-      // Ignore transient network errors per keyword
-    }
-  }
-
-  for (const genreId of ['001013001', '001014']) {
-    try {
-      const pbUrl = `${RAKUTEN_BOOK_API}?applicationId=${encodeURIComponent(
-        appId
-      )}&booksGenreId=${genreId}&sort=-releaseDate&hits=20`;
-      const pbRes = await fetch(pbUrl, { signal: AbortSignal.timeout(10000) });
-      if (pbRes.ok) {
-        const pbJson = await pbRes.json();
-        for (const entry of pbJson.Items || []) {
-          const item = entry.Item;
-          results.push({
-            store: 'rakuten',
-            title: item.title,
-            description: item.itemCaption || '',
-            releaseDate: item.salesDate || '',
-            price: item.itemPrice || 0,
-            url: item.itemUrl,
-            imageUrl: item.largeImageUrl || '',
-            isbn: item.isbn || '',
-            publisher: item.publisherName || '',
-            author: item.author || '',
-            isR18: genreId === '001014',
-          });
-        }
-      }
-    } catch {
-      // Non-fatal
-    }
-  }
-  return results;
+  return buildAmazonUrlForBook(query);
 }
 
 /**
  * Fetches public PR TIMES RSS across all 15 major publishers (no login required).
  */
-async function fetchPrTimesReleases(sinceDate = '2026-10-15') {
+async function fetchPrTimesReleases(sinceDate = '2026-11-01') {
   const discovered = [];
   for (const feed of PRTIMES_PUBLISHER_FEEDS) {
     try {
@@ -223,14 +155,25 @@ function makeAutoId(url) {
   return `auto-pr-${slug}`;
 }
 
+function writeGitHubStepSummary(lines) {
+  const summaryPath = process.env.GITHUB_STEP_SUMMARY;
+  if (!summaryPath) return;
+  try {
+    fs.appendFileSync(summaryPath, `${lines.join('\n')}\n`, 'utf8');
+  } catch {
+    // Non-fatal
+  }
+}
+
 async function runDailyCatalogUpdate() {
   const catalog = JSON.parse(fs.readFileSync(CATALOG_PATH, 'utf8'));
   const { dateStr, timestampJst } = getJstDateInfo();
-  const appId = process.env.RAKUTEN_APP_ID;
+  const appId = String(process.env.RAKUTEN_APP_ID || '').trim();
 
   let addedPressArticles = 0;
   let addedBonusOffers = 0;
-  let addedNewItems = 0;
+  let addedPrItems = 0;
+  let addedRakutenItems = 0;
 
   // 1) Sweep 15 publishers' public PR TIMES RSS feeds (no login required)
   const prItems = await fetchPrTimesReleases('2026-11-01');
@@ -240,9 +183,11 @@ async function runDailyCatalogUpdate() {
 
   const existingUrls = new Set();
   const existingKeys = new Set();
+  const existingIsbns = new Set();
   const existingImages = new Set();
   for (const item of catalog.items || []) {
     existingKeys.add(normalizeIssueKey(item.title));
+    if (item.isbn) existingIsbns.add(String(item.isbn).replace(/[^0-9]/g, ''));
     if (item.coverImageUrl) existingImages.add(item.coverImageUrl);
     for (const a of item.pressArticles || []) existingUrls.add(a.url);
   }
@@ -267,8 +212,8 @@ async function runDailyCatalogUpdate() {
       continue;
     }
 
-    // Auto-discover brand-new photobook / calendar / magazine releases (cap 8 per run to keep diff clean)
-    if (addedNewItems >= 8) continue;
+    // Auto-discover brand-new photobook / calendar / magazine releases (cap 8 per run)
+    if (addedPrItems >= 8) continue;
     if (!/(写真集|カレンダー|グラビア|表紙)/.test(pr.title)) continue;
 
     try {
@@ -283,6 +228,7 @@ async function runDailyCatalogUpdate() {
 
       const newKey = normalizeIssueKey(parsed.title);
       if (existingKeys.has(newKey)) continue;
+      if (parsed.isbn && existingIsbns.has(parsed.isbn)) continue;
 
       let verifiedCover = '';
       if (parsed.coverImageUrl && !existingImages.has(parsed.coverImageUrl)) {
@@ -296,6 +242,7 @@ async function runDailyCatalogUpdate() {
       const itemId = makeAutoId(pr.url);
       if ((catalog.items || []).some((i) => i.id === itemId)) continue;
 
+      const amazonUrl = buildAmazonUrlForBook(parsed.isbn || parsed.title, parsed.title);
       const offers = [];
       for (const sb of parsed.storeBonuses) {
         offers.push({
@@ -326,11 +273,12 @@ async function runDailyCatalogUpdate() {
         status: parsed.releaseDate > dateStr ? 'preorder' : 'available',
         artworkStatus: verifiedCover ? 'revealed' : 'pending',
         ...(verifiedCover ? { imageUrl: verifiedCover } : {}),
-        url: buildAmazonSearchUrl(parsed.isbn || parsed.title),
+        url: amazonUrl,
       });
 
       const newItem = {
         id: itemId,
+        ...(parsed.isbn ? { isbn: parsed.isbn } : {}),
         title: parsed.title,
         series: parsed.publisher,
         issueLabel: '自動発見新刊',
@@ -374,17 +322,20 @@ async function runDailyCatalogUpdate() {
 
       catalog.items.unshift(newItem);
       existingKeys.add(newKey);
+      if (parsed.isbn) existingIsbns.add(parsed.isbn);
       existingUrls.add(pr.url);
-      addedNewItems += 1;
+      addedPrItems += 1;
     } catch {
       // Skip transient article errors
     }
   }
 
-  // 2) If RAKUTEN_APP_ID is configured, check Rakuten Books for new exclusive-bonus editions & brand-new photobooks/R18
+  // 2) If RAKUTEN_APP_ID is configured, sweep Rakuten Books API (16 magazines + Photobooks + R18 + Calendars + Exclusive Bonuses)
   if (appId) {
-    console.log('[collect:update] Fetching live Rakuten Books records...');
-    const rawRecords = await fetchRakutenBonuses(appId);
+    console.log('[collect:update] Fetching live Rakuten Books API records...');
+    const rawRecords = await fetchRakutenCatalogRecords(appId);
+    console.log(`[collect:update] Rakuten Books API returned ${rawRecords.length} unique record(s)`);
+
     const grouped = groupStoreOffers(rawRecords).map((g) => ({
       ...g,
       offers: filterOffersByPolicy(g.offers),
@@ -432,15 +383,12 @@ async function runDailyCatalogUpdate() {
         continue;
       }
 
-      // Brand-new photobook / R18 auto-discovery from Rakuten Books (strictly policy-compliant!)
-      if (addedNewItems >= 16) continue;
+      // Brand-new photobook / R18 / calendar auto-discovery from Rakuten Books (strictly policy-compliant)
+      if (addedRakutenItems >= 15) continue;
       const sampleRaw = rawRecords.find((r) => normalizeIssueKey(r.title) === g.groupKey);
-      if (!sampleRaw || !sampleRaw.isbn || !isTargetReleaseTitle(sampleRaw.title)) continue;
-      const dateMatch = String(sampleRaw.releaseDate || '').match(/(202[567])年(\d{1,2})月(\d{1,2})日/);
-      if (!dateMatch) continue;
-      const relDate = `${dateMatch[1]}-${String(dateMatch[2]).padStart(2, '0')}-${String(dateMatch[3]).padStart(2, '0')}`;
-      const newId = `auto-rb-${sampleRaw.isbn}`;
-      if ((catalog.items || []).some((i) => i.id === newId)) continue;
+      if (!sampleRaw || !isRelevantRakutenRecord(sampleRaw)) continue;
+      const cleanIsbn = String(sampleRaw.isbn || '').replace(/[^0-9]/g, '');
+      if (cleanIsbn && existingIsbns.has(cleanIsbn)) continue;
 
       let verifiedCover = '';
       if (sampleRaw.imageUrl && !existingImages.has(sampleRaw.imageUrl)) {
@@ -451,84 +399,19 @@ async function runDailyCatalogUpdate() {
         }
       }
 
-      const category = sampleRaw.isR18
-        ? 'r18'
-        : /カレンダー/.test(sampleRaw.title)
-          ? 'calendar'
-          : 'photobook';
-      const talent = String(sampleRaw.author || sampleRaw.title.split(/\s+/)[0] || '注目タレント').trim();
-      const offers = [];
-      for (const bonusOffer of g.offers) {
-        if (bonusOffer.store === 'rakuten' && bonusOffer.hasStoreExclusiveBonus) {
-          offers.push({
-            id: `${newId}-rakuten`,
-            store: 'rakuten',
-            hasStoreExclusiveBonus: true,
-            edition: '楽天ブックス限定特典',
-            bonusTypes: bonusOffer.bonusTypes,
-            bonusText: bonusOffer.bonusText,
-            talent,
-            price: bonusOffer.price || sampleRaw.price || 3300,
-            status: relDate > dateStr ? 'preorder' : 'available',
-            artworkStatus: 'pending',
-            url: bonusOffer.url,
-          });
-        }
-      }
-      offers.push({
-        id: `${newId}-amazon`,
-        store: 'amazon',
-        hasStoreExclusiveBonus: false,
-        edition: 'Amazon 通常版',
-        bonusTypes: ['standard'],
-        bonusText: `Amazonで確認（ISBN ${sampleRaw.isbn}）`,
-        talent,
-        price: sampleRaw.price || 3300,
-        status: relDate > dateStr ? 'preorder' : 'available',
-        artworkStatus: verifiedCover ? 'revealed' : 'pending',
-        ...(verifiedCover ? { imageUrl: verifiedCover } : {}),
-        url: buildAmazonSearchUrl(sampleRaw.isbn),
+      const createdItem = buildCatalogItemFromRakuten({
+        raw: sampleRaw,
+        bonusOffers: g.offers,
+        verifiedCover,
+        dateStr,
       });
-
-      const createdItem = {
-        id: newId,
-        title: sampleRaw.title.replace(/【楽天ブックス限定特典】/g, '').trim(),
-        series: sampleRaw.publisher || '楽天ブックス新刊',
-        issueLabel: '自動発見新刊',
-        publisher: sampleRaw.publisher || '出版社公式',
-        category,
-        releaseDate: relDate,
-        price: sampleRaw.price || 3300,
-        coverTalents: [talent],
-        featuredTalents: [talent],
-        palette:
-          category === 'r18'
-            ? ['#881337', '#BE123C', '#FFE4E6']
-            : ['#E11D48', '#FB7185', '#FFE4E6'],
-        ...(verifiedCover ? { coverImageUrl: verifiedCover } : {}),
-        autoDiscovered: true,
-        discoveredAt: dateStr,
-        includedBonuses: [],
-        printOnlyNote: '楽天ブックス新刊APIより自動発見。基本購入先はAmazon、限定特典ありストアのみ表示。',
-        summary: sampleRaw.description ? sampleRaw.description.slice(0, 140) : sampleRaw.title,
-        gallery: verifiedCover
-          ? [
-              {
-                url: verifiedCover,
-                caption: `${sampleRaw.title} 公式書影`,
-                source: '楽天ブックス',
-                kind: 'cover',
-                articleUrl: buildAmazonSearchUrl(sampleRaw.isbn),
-              },
-            ]
-          : [],
-        pressArticles: [],
-        offers: filterOffersByPolicy(offers),
-      };
+      if (!createdItem) continue;
+      if ((catalog.items || []).some((i) => i.id === createdItem.id)) continue;
 
       catalog.items.unshift(createdItem);
       itemByKey.set(g.groupKey, createdItem);
-      addedNewItems += 1;
+      if (cleanIsbn) existingIsbns.add(cleanIsbn);
+      addedRakutenItems += 1;
     }
   } else {
     console.log(
@@ -541,9 +424,18 @@ async function runDailyCatalogUpdate() {
     item.offers = filterOffersByPolicy(item.offers || []);
   }
 
+  const totalNewItems = addedPrItems + addedRakutenItems;
   catalog.referenceDate = dateStr;
   catalog.lastAutoCheckedAt = timestampJst;
-  if (addedPressArticles > 0 || addedBonusOffers > 0 || addedNewItems > 0) {
+  catalog.autoSources = {
+    prtimesPublishers: PRTIMES_PUBLISHER_FEEDS.length,
+    rakutenApiConnected: Boolean(appId),
+    lastRunAt: timestampJst,
+    lastRunSummary: appId
+      ? `15出版社PR TIMES (+${addedPrItems}) ＋ 楽天ブックスAPI (+${addedRakutenItems}作品 / +${addedBonusOffers}特典)`
+      : `15出版社PR TIMES自動巡回 (+${addedPrItems}作品 / +${addedPressArticles}記事) ※楽天API未設定`,
+  };
+  if (addedPressArticles > 0 || addedBonusOffers > 0 || totalNewItems > 0) {
     catalog.updatedAt = timestampJst;
   }
 
@@ -555,8 +447,16 @@ async function runDailyCatalogUpdate() {
 
   fs.writeFileSync(CATALOG_PATH, `${JSON.stringify(catalog, null, 2)}\n`, 'utf8');
   console.log(
-    `[collect:update] Done! referenceDate=${dateStr}, +${addedNewItems} new items, +${addedPressArticles} press, +${addedBonusOffers} bonus offers, nonAmazonNonBonus=${report.nonAmazonNonBonus}`
+    `[collect:update] Done! referenceDate=${dateStr}, +${totalNewItems} new items (PR:${addedPrItems}, Rakuten:${addedRakutenItems}), +${addedPressArticles} press, +${addedBonusOffers} bonus offers, nonAmazonNonBonus=${report.nonAmazonNonBonus}`
   );
+
+  writeGitHubStepSummary([
+    '## 🤖 Happy Magazine Center Daily Auto-Update Summary',
+    `- **基準日 (JST)**: \`${dateStr}\``,
+    `- **PR TIMES 15出版社自動巡回**: +${addedPrItems} 新刊 / +${addedPressArticles} プレスリリース`,
+    `- **楽天ブックスAPI (\`RAKUTEN_APP_ID\`)**: ${appId ? `✅ 連携稼働中 (+${addedRakutenItems} 新刊 / +${addedBonusOffers} 限定特典)` : '🔑 未設定（任意で GitHub Secrets に登録すると全写真集・R18・限定特典を自動収集）'}`,
+    `- **カタログ総数**: **${report.totalItems} 作品** / **${report.totalOffers} オファー**（非Amazon無特典: **${report.nonAmazonNonBonus} 件**）`,
+  ]);
 }
 
 async function main() {
@@ -568,14 +468,14 @@ async function main() {
     return;
   }
 
-  const appId = process.env.RAKUTEN_APP_ID;
+  const appId = String(process.env.RAKUTEN_APP_ID || '').trim();
   let records = [];
   if (dryRun || !appId) {
     console.log('[collect] Running in dry-run verification mode (no external API key required).');
     records = getDryRunSamples();
   } else {
     console.log('[collect] Fetching live records from Rakuten Books API...');
-    records = await fetchRakutenBonuses(appId);
+    records = await fetchRakutenCatalogRecords(appId);
   }
 
   const grouped = groupStoreOffers(records).map((g) => ({

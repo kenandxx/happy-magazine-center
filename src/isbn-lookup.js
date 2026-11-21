@@ -1,10 +1,16 @@
 /**
- * Browser & Node ISBN / Amazon URL -> openBD Live Metadata Lookup (v0.9)
+ * Browser & Node ISBN / Amazon URL / Share-Sheet -> openBD Live Metadata Lookup (v1.0)
  *
- * Allows users to paste ANY Japanese Amazon book URL (e.g. amazon.co.jp/dp/4299065926),
- * ISBN-10, or ISBN-13 and automatically fetch official publisher metadata directly from
- * Japan's public openBD API (CORS enabled: Access-Control-Allow-Origin: *, zero login).
+ * Allows users to paste OR share ANY Japanese Amazon book URL (e.g. amazon.co.jp/dp/4299065921,
+ * amzn.asia short links, iOS Shortcuts / Android PWA Share Target / Bookmarklet), ISBN-10, or
+ * ISBN-13 and automatically fetch official publisher metadata directly from Japan's public
+ * openBD API (CORS enabled: Access-Control-Allow-Origin: *, zero login).
  */
+
+export const SHARE_BASE_URL = 'https://kenandxx.github.io/happy-magazine-center/?import=';
+
+export const BOOKMARKLET_CODE =
+  "javascript:(()=>{location.href='https://kenandxx.github.io/happy-magazine-center/?import='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)})();";
 
 /**
  * Converts a valid 10-digit Japanese ISBN-10 / Amazon book ASIN to ISBN-13.
@@ -24,7 +30,32 @@ export function isbn10To13(raw10) {
 }
 
 /**
- * Extracts a normalized 13-digit ISBN from an Amazon URL, ISBN-13, or ISBN-10 string.
+ * Converts a valid 13-digit 978-prefix ISBN-13 to 10-digit ISBN-10 (exact Amazon Japan book ASIN).
+ */
+export function isbn13To10(raw13) {
+  const clean = String(raw13 || '').replace(/[^0-9]/g, '');
+  if (clean.length !== 13 || !clean.startsWith('978')) return '';
+  const core = clean.slice(3, 12);
+  let sum = 0;
+  for (let i = 0; i < 9; i += 1) {
+    sum += Number(core[i]) * (10 - i);
+  }
+  const rem = (11 - (sum % 11)) % 11;
+  return `${core}${rem === 10 ? 'X' : String(rem)}`;
+}
+
+/**
+ * Extracts a safe https:// Amazon URL from arbitrary shared text (rejects non-Amazon / javascript: URLs).
+ */
+export function extractSafeAmazonUrl(rawText = '') {
+  const m = String(rawText || '').match(
+    /https:\/\/(?:www\.|m\.)?(?:amazon\.co\.jp|amzn\.asia|amzn\.to)\/[^\s"'<>）)\]]+/i
+  );
+  return m ? m[0] : '';
+}
+
+/**
+ * Extracts a normalized 13-digit ISBN from an Amazon URL, multiline share text, ISBN-13, or ISBN-10 string.
  * Returns { isbn13, isbn10, sourceType } or null if no valid ISBN is detected.
  */
 export function extractIsbnFromInput(input) {
@@ -36,12 +67,12 @@ export function extractIsbnFromInput(input) {
   if (m13) {
     const digits = m13[0].replace(/[^0-9]/g, '');
     if (digits.length === 13) {
-      return { isbn13: digits, isbn10: '', sourceType: 'isbn13' };
+      return { isbn13: digits, isbn10: isbn13To10(digits), sourceType: 'isbn13' };
     }
   }
 
-  // 2. Amazon URL /dp/ASIN or /gp/product/ASIN or /product/ASIN
-  const amzMatch = raw.match(/\/(?:dp|gp\/product|product|ASIN)\/([0-9]{9}[0-9Xx])(?:[/?#]|$)/i);
+  // 2. Amazon URL /dp/ASIN or /gp/product/ASIN or /product/ASIN (works even inside multiline share text!)
+  const amzMatch = raw.match(/\/(?:dp|gp\/product|product|ASIN)\/([0-9]{9}[0-9Xx])(?:[/?#\s]|$)/i);
   if (amzMatch) {
     const isbn10 = amzMatch[1].toUpperCase();
     const isbn13 = isbn10To13(isbn10);
@@ -60,6 +91,76 @@ export function extractIsbnFromInput(input) {
   }
 
   return null;
+}
+
+/**
+ * Cleans an Amazon page title or Share Sheet text into a concise Japanese book title.
+ */
+export function cleanSharedAmazonTitle(rawText = '', rawTitle = '') {
+  const candidate = String(rawTitle || rawText || '').trim();
+  if (!candidate) return '';
+  return candidate
+    .replace(/https?:\/\/\S+/gi, ' ')
+    .replace(/^Amazon\.co\.jp\s*[：:]\s*/i, '')
+    .replace(/\s*[|｜]\s*.*?(?:Amazon|通販|本).*$/i, '')
+    .replace(/\s*[：:]\s*本\s*$/i, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 90);
+}
+
+/**
+ * Parses incoming URL query parameters from:
+ *   - iOS Shortcuts / Bookmarklet (`?import=...&title=...`)
+ *   - Android PWA Web Share Target (`?title=...&text=...&url=...`)
+ *   - Direct ISBN links (`?isbn=...`)
+ *
+ * Returns:
+ *   - { mode: 'isbn', rawText, isbnInfo, cleanedTitle, safeAmazonUrl }
+ *   - { mode: 'title_only', rawText, cleanedTitle, safeAmazonUrl }
+ *   - { mode: 'empty' }
+ */
+export function parseIncomingSharePayload({
+  importParam = '',
+  urlParam = '',
+  textParam = '',
+  titleParam = '',
+  isbnParam = '',
+} = {}) {
+  const parts = [importParam, isbnParam, urlParam, textParam, titleParam]
+    .map((v) => String(v || '').trim())
+    .filter(Boolean);
+  if (!parts.length) return { mode: 'empty' };
+
+  const combined = parts.join('\n');
+  const safeAmazonUrl = extractSafeAmazonUrl(combined);
+  const cleanedTitle = cleanSharedAmazonTitle(textParam || importParam, titleParam);
+  const isbnInfo =
+    extractIsbnFromInput(isbnParam) ||
+    extractIsbnFromInput(importParam) ||
+    extractIsbnFromInput(urlParam) ||
+    extractIsbnFromInput(textParam);
+
+  if (isbnInfo) {
+    return {
+      mode: 'isbn',
+      rawText: safeAmazonUrl || importParam || urlParam || isbnInfo.isbn13,
+      isbnInfo,
+      cleanedTitle,
+      safeAmazonUrl,
+    };
+  }
+
+  if (cleanedTitle || safeAmazonUrl) {
+    return {
+      mode: 'title_only',
+      rawText: combined,
+      cleanedTitle: cleanedTitle || 'Amazon共有タイトル',
+      safeAmazonUrl,
+    };
+  }
+
+  return { mode: 'empty' };
 }
 
 function normalizePubDate(raw) {
@@ -153,7 +254,7 @@ export async function lookupBookByIsbnOrUrl(input) {
   if (!extracted) {
     return {
       ok: false,
-      error: 'Amazonの商品URL（/dp/4299065926 等）またはISBN（10桁/13桁）を入力してください。',
+      error: 'Amazonの商品URL（/dp/4299065921 等）またはISBN（10桁/13桁）を入力してください。',
     };
   }
 

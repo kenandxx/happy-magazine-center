@@ -4823,3 +4823,240 @@ body.privacy-blur-r18 .is-r18-media::after {
   }
 }
 
+/* =========================================================
+   v1.0 Proposal A (Rakuten API Auto-Sources) &
+   Proposal B (Smartphone Share-Sheet / Shortcut / Bookmarklet)
+   ========================================================= */
+.share-arrival-banner {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  line-height: 1.5;
+  border: 1.5px solid #93c5fd;
+  background: #eff6ff;
+  color: #1e3a8a;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.share-arrival-banner[hidden] {
+  display: none;
+}
+
+.share-arrival-banner.is-ok {
+  border-color: #6ee7b7;
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.share-arrival-banner.is-warn {
+  border-color: #fcd34d;
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.share-arrival-banner strong {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.share-arrival-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.share-setup-card {
+  background: linear-gradient(180deg, #eff6ff 0%, var(--surface) 38%);
+  border-color: #bfdbfe;
+}
+
+.share-ready-badge {
+  font-size: 10px;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #1d4ed8;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.share-test-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.setup-accordion {
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface);
+  margin-top: 7px;
+  overflow: hidden;
+}
+
+.setup-accordion summary {
+  padding: 9px 11px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.setup-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.setup-accordion summary::after {
+  content: '▾';
+  font-size: 12px;
+  color: var(--ink-muted);
+  transition: transform 0.16s ease;
+}
+
+.setup-accordion[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.setup-accordion-body {
+  padding: 0 11px 11px;
+  border-top: 1px dashed var(--border);
+  padding-top: 9px;
+}
+
+.setup-steps {
+  margin: 0 0 8px;
+  padding-left: 18px;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--ink-secondary);
+}
+
+.setup-steps li {
+  margin-bottom: 4px;
+}
+
+.setup-tip {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--ink-secondary);
+  margin: 6px 0 0;
+}
+
+.setup-ext-link {
+  color: var(--accent);
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.copy-code-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 6px 0 8px;
+}
+
+.copy-code-box {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 9px;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: var(--ink);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.bookmarklet-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: grab;
+}
+
+.rakuten-setup-card {
+  background: linear-gradient(180deg, #ecfdf5 0%, var(--surface) 38%);
+  border-color: #a7f3d0;
+}
+
+.auto-source-pill {
+  font-size: 10px;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #065f46;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.auto-source-pill.is-connected {
+  background: #047857;
+}
+
+.auto-sources-box {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 6px 0 8px;
+}
+
+.auto-source-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.auto-source-row strong {
+  display: block;
+  color: var(--ink);
+  font-size: 11px;
+}
+
+.auto-source-row span {
+  color: var(--ink-secondary);
+}
+
+.auto-source-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.auto-source-dot.is-on {
+  background: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.auto-source-dot.is-optional {
+  background: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.22);
+}

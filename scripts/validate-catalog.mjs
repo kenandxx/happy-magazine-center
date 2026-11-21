@@ -101,6 +101,20 @@ export function validateCatalogStructure(catalog) {
         errors.push(`[${item.id}] Policy violation: non-Amazon offer without exclusive bonus (${offer.id})`);
       }
 
+      if (offer.url) {
+        const dpMatch = String(offer.url).match(/amazon\.co\.jp\/dp\/(4[0-9]{8}[0-9X])(?:[/?#]|$)/i);
+        if (dpMatch) {
+          const code = dpMatch[1].toUpperCase();
+          let sum = 0;
+          for (let i = 0; i < 10; i += 1) {
+            sum += (code[i] === 'X' ? 10 : Number(code[i])) * (10 - i);
+          }
+          if (sum % 11 !== 0) {
+            errors.push(`[${item.id}/${offer.id}] Invalid ISBN-10 checksum in Amazon /dp/ URL: ${code}`);
+          }
+        }
+      }
+
       if (offer.imageUrl) {
         const bad = isSuspiciousImageUrl(offer.imageUrl);
         if (bad) errors.push(`[${item.id}/${offer.id}] Bad offer imageUrl (${bad})`);

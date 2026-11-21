@@ -314,25 +314,28 @@ test('custom VIP S-Rank tier (+30pt) and configurable 3-step Oshi Boost (+14/+24
   }
 });
 
-test('isbn-lookup extracts ISBN-13 from Amazon /dp/ URLs, ISBN-10, and hyphenated ISBN-13 and parses openBD records', async () => {
-  const { isbn10To13, extractIsbnFromInput, parseOpenBdRecord } = await import(
+test('isbn-lookup extracts ISBN-13/10 from Amazon /dp/ URLs, multiline share text, and hyphenated ISBN-13 and parses openBD records', async () => {
+  const { isbn10To13, isbn13To10, extractIsbnFromInput, parseOpenBdRecord } = await import(
     '../src/isbn-lookup.js'
   );
 
-  assert.equal(isbn10To13('4299065926'), '9784299065926');
-  assert.deepEqual(extractIsbnFromInput('https://www.amazon.co.jp/dp/4299065926/ref=sr_1_1'), {
+  assert.equal(isbn10To13('4299065921'), '9784299065926');
+  assert.equal(isbn13To10('9784299065926'), '4299065921');
+  assert.equal(isbn13To10('9784334111922'), '4334111920');
+
+  assert.deepEqual(extractIsbnFromInput('https://www.amazon.co.jp/dp/4299065921/ref=sr_1_1'), {
     isbn13: '9784299065926',
-    isbn10: '4299065926',
+    isbn10: '4299065921',
     sourceType: 'amazon_url',
   });
   assert.deepEqual(extractIsbnFromInput('978-4-334-11192-2'), {
     isbn13: '9784334111922',
-    isbn10: '',
+    isbn10: '4334111920',
     sourceType: 'isbn13',
   });
-  assert.deepEqual(extractIsbnFromInput('4299065926'), {
+  assert.deepEqual(extractIsbnFromInput('4299065921'), {
     isbn13: '9784299065926',
-    isbn10: '4299065926',
+    isbn10: '4299065921',
     sourceType: 'isbn10',
   });
   assert.equal(extractIsbnFromInput('松井珠理奈写真集'), null);
@@ -387,6 +390,44 @@ test('isbn-lookup extracts ISBN-13 from Amazon /dp/ URLs, ISBN-10, and hyphenate
   assert.equal(parsedCal.category, 'calendar');
 });
 
+test('parseIncomingSharePayload handles iOS Shortcut ?import, Android PWA Share Target, amzn.asia short links, and blocks unsafe URLs', async () => {
+  const { parseIncomingSharePayload, extractSafeAmazonUrl, SHARE_BASE_URL, BOOKMARKLET_CODE } =
+    await import('../src/isbn-lookup.js');
+
+  assert.ok(SHARE_BASE_URL.includes('?import='));
+  assert.ok(BOOKMARKLET_CODE.startsWith('javascript:'));
+
+  // 1) Safari / iOS Shortcut / Bookmarklet ?import=/dp/ASIN
+  const direct = parseIncomingSharePayload({
+    importParam: 'https://www.amazon.co.jp/dp/4334111920?ref_=cm_sw_r_cp',
+    titleParam: 'Amazon.co.jp: 兒玉遥 3rd写真集 You will see | 光文社 | 本 | 通販 | Amazon',
+  });
+  assert.equal(direct.mode, 'isbn');
+  assert.equal(direct.isbnInfo.isbn13, '9784334111922');
+  assert.equal(direct.isbnInfo.isbn10, '4334111920');
+  assert.equal(direct.cleanedTitle, '兒玉遥 3rd写真集 You will see');
+
+  // 2) Multiline Amazon app share with /dp/ URL
+  const multi = parseIncomingSharePayload({
+    textParam: '松井珠理奈写真集『アイヲシル』\nhttps://www.amazon.co.jp/dp/4299065921 \n',
+  });
+  assert.equal(multi.mode, 'isbn');
+  assert.equal(multi.isbnInfo.isbn13, '9784299065926');
+
+  // 3) Android PWA Share Target with amzn.asia short link (no ASIN -> title_only fallback)
+  const shortShare = parseIncomingSharePayload({
+    textParam: '高崎かなみ 3rd写真集 https://amzn.asia/d/9abcXYZ',
+  });
+  assert.equal(shortShare.mode, 'title_only');
+  assert.equal(shortShare.cleanedTitle, '高崎かなみ 3rd写真集');
+  assert.equal(shortShare.safeAmazonUrl, 'https://amzn.asia/d/9abcXYZ');
+
+  // 4) Unsafe javascript: / non-Amazon URL rejection
+  assert.equal(extractSafeAmazonUrl('javascript:alert(1)'), '');
+  assert.equal(extractSafeAmazonUrl('https://evil.example.com/dp/4299065921'), '');
+  assert.equal(parseIncomingSharePayload({}).mode, 'empty');
+});
+
 test('prtimes-ingestor covers 15 publishers, filters noise accurately, and extracts release dates, prices, and exclusive bonuses', async () => {
   const { PRTIMES_PUBLISHER_FEEDS, isTargetReleaseTitle, parsePrTimesArticleHtml } = await import(
     './prtimes-ingestor.mjs'
@@ -432,6 +473,116 @@ test('prtimes-ingestor covers 15 publishers, filters noise accurately, and extra
   assert.ok(parsed.storeBonuses[0].bonusTypes.includes('cover'));
   assert.ok(parsed.storeBonuses[0].bonusTypes.includes('photo'));
 });
+
+test('rakuten-ingestor normalizes Rakuten Books dates/images, filters noise, and enforces noise-free Amazon/Rakuten policy', async () => {
+  const {
+    RAKUTEN_MAGAZINE_KEYWORDS,
+    RAKUTEN_BOOK_QUERIES,
+    parseRakutenSalesDate,
+    upgradeRakutenImageUrl,
+    isRelevantRakutenRecord,
+    buildCatalogItemFromRakuten,
+  } = await import('./rakuten-ingestor.mjs');
+  const { validateCatalogStructure } = await import('./validate-catalog.mjs');
+
+  assert.ok(RAKUTEN_MAGAZINE_KEYWORDS.length >= 15);
+  assert.ok(RAKUTEN_BOOK_QUERIES.some((q) => q.isR18));
+
+  assert.equal(parseRakutenSalesDate('2026年12月25日頃'), '2026-12-25');
+  assert.equal(parseRakutenSalesDate('2026年12月下旬'), '2026-12-25');
+  assert.equal(parseRakutenSalesDate('2027年1月上旬'), '2027-01-05');
+  assert.equal(parseRakutenSalesDate('2027年2月'), '2027-02-01');
+  assert.equal(
+    upgradeRakutenImageUrl('https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/1234.jpg?_ex=200x200'),
+    'https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/1234.jpg?_ex=600x600'
+  );
+
+  assert.equal(
+    isRelevantRakutenRecord({
+      title: 'サンプルアイドル 1st写真集',
+      description: '待望の水着カット満載',
+      isR18: false,
+      isPhotobookGenre: true,
+    }),
+    true
+  );
+  assert.equal(
+    isRelevantRakutenRecord({
+      title: '人気女優R18 ヘアヌード写真集',
+      description: '',
+      isR18: true,
+      isPhotobookGenre: true,
+    }),
+    true
+  );
+  assert.equal(
+    isRelevantRakutenRecord({
+      title: '人気男性俳優 2027年カレンダー',
+      description: 'ボーイズフォトブック',
+      isR18: false,
+      isPhotobookGenre: true,
+    }),
+    false
+  );
+
+  // Case A: Non-bonus Rakuten book -> ONLY Amazon /dp/<ISBN10> offer created (zero Rakuten noise!)
+  const itemNoBonus = buildCatalogItemFromRakuten({
+    raw: {
+      title: '兒玉遥 写真集 You will see',
+      isbn: '9784334111922',
+      publisher: '光文社',
+      author: '兒玉遥',
+      releaseDate: '2026年11月26日',
+      price: 3850,
+      url: 'https://books.rakuten.co.jp/rb/18400001/',
+      isR18: false,
+    },
+    bonusOffers: [],
+    verifiedCover: 'https://img.hanmoto.com/bd/img/9784334111922.jpg',
+    dateStr: '2026-11-21',
+  });
+  assert.deepEqual(
+    itemNoBonus.offers.map((o) => o.store),
+    ['amazon']
+  );
+  assert.equal(itemNoBonus.offers[0].url, 'https://www.amazon.co.jp/dp/4334111920');
+
+  // Case B: Rakuten exclusive bonus book -> BOTH Rakuten bonus offer AND Amazon /dp/<ISBN10> offer
+  const itemWithBonus = buildCatalogItemFromRakuten({
+    raw: {
+      title: '【楽天ブックス限定特典】松井珠理奈写真集『アイヲシル』(A2ポスター)',
+      isbn: '9784299065926',
+      publisher: '宝島社',
+      author: '松井珠理奈',
+      releaseDate: '2026年12月10日',
+      price: 3850,
+      url: 'https://books.rakuten.co.jp/rb/18315524/',
+      isR18: false,
+    },
+    bonusOffers: [
+      {
+        store: 'rakuten',
+        hasStoreExclusiveBonus: true,
+        bonusTypes: ['poster'],
+        bonusText: '楽天ブックス限定A2ポスター付き',
+        price: 3850,
+        url: 'https://books.rakuten.co.jp/rb/18315524/',
+      },
+    ],
+    verifiedCover: 'https://img.hanmoto.com/bd/img/9784299065926.jpg',
+    dateStr: '2026-11-21',
+  });
+  assert.deepEqual(
+    itemWithBonus.offers.map((o) => o.store),
+    ['rakuten', 'amazon']
+  );
+  assert.equal(itemWithBonus.offers[1].url, 'https://www.amazon.co.jp/dp/4299065921');
+
+  const check = validateCatalogStructure({ items: [itemNoBonus, itemWithBonus] });
+  assert.equal(check.nonAmazonNonBonus, 0);
+  assert.deepEqual(check.errors, []);
+});
+
 
 
 

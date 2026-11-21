@@ -1,12 +1,21 @@
 {
   "name": "Happy Magazine Center",
   "short_name": "MagCenter",
-  "description": "アイドル雑誌・週刊誌・写真集の発売日＆ストア限定特典ダッシュボード",
+  "description": "アイドル雑誌・写真集・2027カレンダー・🔞R18の発売日＆限定特典・早め予約レーダー・Amazon共有1タップ自動取込ダッシュボード",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#FAF8F5",
   "theme_color": "#E11D48",
   "lang": "ja",
+  "share_target": {
+    "action": "./index.html",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
   "icons": [
     {
       "src": "./assets/icon.svg",

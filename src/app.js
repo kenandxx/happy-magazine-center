@@ -1,5 +1,12 @@
 import { createEditorialCoverDataUri, createGalleryPhotoFallbackDataUri } from './cover-art.js';
-import { lookupBookByIsbnOrUrl } from './isbn-lookup.js';
+import {
+  BOOKMARKLET_CODE,
+  SHARE_BASE_URL,
+  extractSafeAmazonUrl,
+  isbn13To10,
+  lookupBookByIsbnOrUrl,
+  parseIncomingSharePayload,
+} from './isbn-lookup.js';
 import {
   OSHI_BOOST_PRESETS,
   POPULAR_TALENT_PRESETS,
@@ -157,6 +164,7 @@ function loadValidBoostMode() {
 const state = {
   referenceDate: '2026-11-21',
   lastAutoCheckedAt: '',
+  autoSources: null,
   baseItems: [],
   customItems: loadJson(STORAGE_KEYS.customItems, []),
   oshiKeywords: loadJson(STORAGE_KEYS.oshi, [
@@ -3650,8 +3658,9 @@ function buildDraftItemFromOpenBd(book, extracted, bonusMemo = '', idSuffix = 'p
   if (memo.includes('DVD')) detectedTypes.push('dvd');
   if (!detectedTypes.length) detectedTypes.push('photo');
 
-  const amazonUrl = extracted?.isbn10
-    ? `https://www.amazon.co.jp/dp/${extracted.isbn10}`
+  const isbn10 = extracted?.isbn10 || isbn13To10(book.isbn);
+  const amazonUrl = isbn10
+    ? `https://www.amazon.co.jp/dp/${isbn10}`
     : `https://www.amazon.co.jp/s?k=${encodeURIComponent(book.isbn || book.title)}&i=stripbooks`;
 
   const storeLinks = buildAllStoreSearchLinks(book.title, true);
@@ -3947,9 +3956,244 @@ function confirmIsbnImport() {
     statusEl.className = 'isbn-lookup-status is-ok';
     statusEl.textContent = `🎉 「${newItem.title}」をダッシュボード＆早め予約レーダーに投入しました！`;
   }
+  const arrival = document.getElementById('shareArrivalBanner');
+  if (arrival) {
+    arrival.hidden = true;
+    arrival.innerHTML = '';
+  }
 
   renderAll();
   openDetailSheet(newItem.id);
+}
+
+/* =========================================================
+   Proposal A & B: Auto-Sources Telemetry & 1-Tap Share-Sheet Receiver
+   ========================================================= */
+function renderAutoSourcesStatus() {
+  const pill = document.getElementById('rakutenStatusPill');
+  const box = document.getElementById('autoSourcesSummaryBox');
+  const bmLink = document.getElementById('bookmarkletDragLink');
+  if (bmLink && bmLink.getAttribute('href') === '#') {
+    bmLink.setAttribute('href', BOOKMARKLET_CODE);
+  }
+  const baseCode = document.getElementById('shareBaseUrlCode');
+  if (baseCode) {
+    baseCode.textContent = SHARE_BASE_URL;
+  }
+
+  const src = state.autoSources || {
+    prtimesPublishers: 15,
+    rakutenApiConnected: false,
+    lastRunAt: state.lastAutoCheckedAt || '',
+    lastRunSummary: '',
+  };
+  const autoCount = getAllItems().filter((i) => Boolean(i.autoDiscovered)).length;
+
+  if (pill) {
+    pill.textContent = src.rakutenApiConnected
+      ? '✅ PR TIMES 15社＋楽天API稼働中'
+      : 'PR TIMES 15社稼働中 / 楽天API未設定';
+    pill.classList.toggle('is-connected', Boolean(src.rakutenApiConnected));
+  }
+
+  if (box) {
+    const checked = src.lastRunAt ? src.lastRunAt.slice(0, 16).replace('T', ' ') : '毎朝07:00 JST';
+    box.innerHTML = `
+      <div class="auto-source-row">
+        <span class="auto-source-dot is-on"></span>
+        <div>
+          <strong>PR TIMES 公式RSS（主要${src.prtimesPublishers || 15}出版社）</strong>
+          <span>稼働中 ・ 現在 🆕自動発見 <strong>${autoCount}作品</strong> 収録（最終チェック: ${escapeHtml(checked)}）</span>
+        </div>
+      </div>
+      <div class="auto-source-row">
+        <span class="auto-source-dot is-on"></span>
+        <div>
+          <strong>openBD ライブ書誌取得（Amazon URL / ISBN / 共有シート）</strong>
+          <span>稼働中 ・ ブラウザ直結で書影・定価・早め予約スコアを即判定</span>
+        </div>
+      </div>
+      <div class="auto-source-row">
+        <span class="auto-source-dot ${src.rakutenApiConnected ? 'is-on' : 'is-optional'}"></span>
+        <div>
+          <strong>楽天ブックスAPI（16主要誌・写真集・🔞R18・2027カレンダー・限定特典）</strong>
+          <span>${
+            src.rakutenApiConnected
+              ? '✅ 連携稼働中！毎朝07:00に楽天ブックス新刊＆限定特典を自動流入'
+              : '🔑 未設定（下の無料3ステップで RAKUTEN_APP_ID を入れるだけで自動有効化）'
+          }</span>
+        </div>
+      </div>
+    `;
+  }
+}
+
+async function copyTextToClipboard(text, label = 'コピー') {
+  const msg = document.getElementById('shareCopyStatus');
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    if (msg) {
+      msg.textContent = `✅ 「${label}」をクリップボードにコピーしました！`;
+    }
+  } catch {
+    if (msg) {
+      msg.textContent = `⚠️ 自動コピーできない環境です。上の枠内のテキストを長押ししてコピーしてください。`;
+    }
+  }
+}
+
+function findMatchingCatalogItemByTitle(cleanedTitle) {
+  const q = String(cleanedTitle || '')
+    .toLowerCase()
+    .replace(/[\s『』「」【】()（）・\-!！?？]/g, '');
+  if (q.length < 4) return null;
+  return (
+    getAllItems().find((it) => {
+      const norm = String(it.title || '')
+        .toLowerCase()
+        .replace(/[\s『』「」【】()（）・\-!！?？]/g, '');
+      return norm && (norm.includes(q) || q.includes(norm));
+    }) || null
+  );
+}
+
+async function processIncomingSharePayload(payload, { simulated = false } = {}) {
+  if (!payload || payload.mode === 'empty') return;
+
+  state.oshiSubTab = 'tools';
+  switchTab('oshi');
+
+  const banner = document.getElementById('shareArrivalBanner');
+  const importCard = document.getElementById('isbnImportCard');
+  if (importCard) {
+    setTimeout(() => importCard.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+  }
+
+  const prefix = simulated ? '🧪 共有着信デモ' : '📲 共有リンクを受信しました！';
+
+  if (payload.mode === 'isbn') {
+    if (banner) {
+      banner.hidden = false;
+      banner.className = 'share-arrival-banner is-loading';
+      banner.innerHTML = `<strong>${prefix}</strong>（ISBN <code>${escapeHtml(
+        payload.isbnInfo.isbn13
+      )}</code>）openBDから書影＆早め予約スコアを自動判定中...`;
+    }
+    const input = document.getElementById('isbnImportInput');
+    if (input) input.value = payload.rawText;
+
+    await handleIsbnLookup(payload.rawText);
+
+    if (banner) {
+      if (state.isbnLookupPreview) {
+        banner.className = 'share-arrival-banner is-ok';
+        banner.innerHTML = `
+          <div>
+            <strong>✅ ${simulated ? '共有着信デモ完了！' : '共有から自動取得＆スコア判定完了！'}</strong>
+            <span>下の「🚀 ダッシュボード＆早め予約に即投入！」を1タップで追加できます。</span>
+          </div>
+        `;
+      } else {
+        banner.className = 'share-arrival-banner is-warn';
+        banner.innerHTML = `
+          <div>
+            <strong>⚠️ ${prefix}（ISBN ${escapeHtml(payload.isbnInfo.isbn13)} はopenBD未登録）</strong>
+            <span>下のメモ登録フォームにタイトルを入力して保存するか、公式収録リクエストを送れます。</span>
+          </div>
+        `;
+        if (payload.cleanedTitle) {
+          const addTitle = document.getElementById('addTitle');
+          if (addTitle) addTitle.value = payload.cleanedTitle;
+        }
+        if (payload.safeAmazonUrl) {
+          const addAmz = document.getElementById('addAmazonUrl');
+          if (addAmz) addAmz.value = payload.safeAmazonUrl;
+        }
+      }
+    }
+    return;
+  }
+
+  // Case 2: Amazon app short link (amzn.asia / amzn.to) or title-only share without ASIN
+  const matchedExisting = findMatchingCatalogItemByTitle(payload.cleanedTitle);
+  const addTitle = document.getElementById('addTitle');
+  const addAmz = document.getElementById('addAmazonUrl');
+  if (addTitle && payload.cleanedTitle) addTitle.value = payload.cleanedTitle;
+  if (addAmz && payload.safeAmazonUrl) addAmz.value = payload.safeAmazonUrl;
+
+  const issueUrl = buildGitHubIssueRequestUrl(payload.cleanedTitle, payload.safeAmazonUrl || payload.rawText);
+
+  if (banner) {
+    banner.hidden = false;
+    banner.className = matchedExisting ? 'share-arrival-banner is-ok' : 'share-arrival-banner is-warn';
+    banner.innerHTML = matchedExisting
+      ? `
+        <div>
+          <strong>✅ ${prefix} すでにダッシュボードに収録済みでした！</strong>
+          <span>「${escapeHtml(matchedExisting.title)}」を1タップで開けます。</span>
+        </div>
+        <div class="share-arrival-actions">
+          <button class="primary-btn" type="button" data-open-id="${escapeHtml(matchedExisting.id)}">
+            📖 収録済み作品を開く →
+          </button>
+        </div>
+      `
+      : `
+        <div>
+          <strong>📲 ${prefix} 短縮URL（amzn.asia等）を受信しました</strong>
+          <span>「${escapeHtml(
+            payload.cleanedTitle
+          )}」は短縮URLのためISBNを含みません。下のメモ欄へ自動入力済みです（Safariで開いて <code>/dp/…</code> URLを共有すると書影まで自動取得できます）。</span>
+        </div>
+        <div class="share-arrival-actions">
+          <button class="primary-btn" type="button" data-hub-search-title="${escapeHtml(payload.cleanedTitle)}">
+            ⚡ 5ストア特典を横断検索
+          </button>
+          ${
+            payload.safeAmazonUrl
+              ? `<a class="quick-preview-icon-btn" href="${escapeHtml(
+                  payload.safeAmazonUrl
+                )}" target="_blank" rel="noopener noreferrer">SafariでAmazonを開く ↗</a>`
+              : ''
+          }
+          <a class="isbn-request-link" href="${escapeHtml(issueUrl)}" target="_blank" rel="noopener noreferrer">📮 公式収録依頼 ↗</a>
+        </div>
+      `;
+  }
+}
+
+function handleIncomingShareFromUrl() {
+  try {
+    const params = new URLSearchParams(window.location.search || '');
+    const payload = parseIncomingSharePayload({
+      importParam: params.get('import') || '',
+      urlParam: params.get('url') || '',
+      textParam: params.get('text') || '',
+      titleParam: params.get('title') || '',
+      isbnParam: params.get('isbn') || '',
+    });
+    if (payload.mode === 'empty') return;
+
+    // Clean query string so browser refresh does not re-trigger the share import
+    if (window.history && typeof window.history.replaceState === 'function') {
+      const cleanUrl = `${window.location.pathname}${window.location.hash || ''}`;
+      window.history.replaceState({}, '', cleanUrl);
+    }
+    processIncomingSharePayload(payload);
+  } catch {
+    // Ignore in restricted environments
+  }
 }
 
 function renderAll() {
@@ -3960,6 +4204,7 @@ function renderAll() {
   renderUrgentRadar();
   renderCalendar();
   renderOshiAndShelf();
+  renderAutoSourcesStatus();
   renderHubLauncher();
 }
 
@@ -4025,13 +4270,76 @@ function bindEvents() {
     });
   }
 
+  const isbnPasteBtn = document.getElementById('isbnPasteBtn');
+  if (isbnPasteBtn) {
+    isbnPasteBtn.addEventListener('click', async () => {
+      const statusEl = document.getElementById('isbnLookupStatus');
+      try {
+        if (!navigator.clipboard || !navigator.clipboard.readText) {
+          throw new Error('no-clipboard-api');
+        }
+        const text = (await navigator.clipboard.readText()).trim();
+        if (!text) {
+          if (statusEl) {
+            statusEl.className = 'isbn-lookup-status is-error';
+            statusEl.textContent = '⚠️ クリップボードが空です。AmazonでURLをコピーしてから押してください。';
+          }
+          return;
+        }
+        const input = document.getElementById('isbnImportInput');
+        if (input) input.value = text;
+        const parsed = parseIncomingSharePayload({ importParam: text });
+        if (parsed.mode === 'isbn') {
+          await handleIsbnLookup(text);
+        } else if (parsed.mode === 'title_only') {
+          await processIncomingSharePayload(parsed);
+        } else {
+          await handleIsbnLookup(text);
+        }
+      } catch {
+        if (statusEl) {
+          statusEl.className = 'isbn-lookup-status is-error';
+          statusEl.textContent = '⚠️ ブラウザ権限で自動貼付できませんでした。上の入力欄を長押しして「ペースト」してください。';
+        }
+      }
+    });
+  }
+
   const isbnSampleBtn = document.getElementById('isbnSampleBtn');
   if (isbnSampleBtn) {
     isbnSampleBtn.addEventListener('click', () => {
       const input = document.getElementById('isbnImportInput');
-      const sampleUrl = 'https://www.amazon.co.jp/dp/4299065926';
+      const sampleUrl = 'https://www.amazon.co.jp/dp/4299065921';
       if (input) input.value = sampleUrl;
       handleIsbnLookup(sampleUrl);
+    });
+  }
+
+  const testShareImportBtn = document.getElementById('testShareImportBtn');
+  if (testShareImportBtn) {
+    testShareImportBtn.addEventListener('click', () => {
+      const demo = parseIncomingSharePayload({
+        importParam: 'https://www.amazon.co.jp/dp/4334111920',
+        titleParam: '兒玉遥 3rd写真集 You will see | 光文社 | 本 | 通販 | Amazon',
+      });
+      processIncomingSharePayload(demo, { simulated: true });
+    });
+  }
+
+  const testShortShareBtn = document.getElementById('testShortShareBtn');
+  if (testShortShareBtn) {
+    testShortShareBtn.addEventListener('click', () => {
+      const demo = parseIncomingSharePayload({
+        textParam: '松井珠理奈 2nd写真集『アイヲシル』 https://amzn.asia/d/sampleDemoLink',
+      });
+      processIncomingSharePayload(demo, { simulated: true });
+    });
+  }
+
+  const copyBookmarkletBtn = document.getElementById('copyBookmarkletBtn');
+  if (copyBookmarkletBtn) {
+    copyBookmarkletBtn.addEventListener('click', () => {
+      copyTextToClipboard(BOOKMARKLET_CODE, 'Safari/PCブックマークレット');
     });
   }
 
@@ -4349,6 +4657,22 @@ function bindEvents() {
       return;
     }
 
+    const copyTextBtn = e.target.closest('[data-copy-text]');
+    if (copyTextBtn) {
+      e.stopPropagation();
+      const val = copyTextBtn.dataset.copyText || '';
+      copyTextToClipboard(val, val.length > 26 ? 'ベースURL' : val);
+      return;
+    }
+
+    const hubSearchTitleBtn = e.target.closest('[data-hub-search-title]');
+    if (hubSearchTitleBtn) {
+      document.getElementById('hubQueryInput').value = hubSearchTitleBtn.dataset.hubSearchTitle;
+      renderHubLauncher();
+      switchTab('hub');
+      return;
+    }
+
     const hubKwBtn = e.target.closest('[data-hub-kw]');
     if (hubKwBtn) {
       document.getElementById('hubQueryInput').value = hubKwBtn.dataset.hubKw;
@@ -4380,6 +4704,7 @@ function bindEvents() {
     const category = document.getElementById('addCategory').value;
     const bonusMemo = document.getElementById('addBonus').value.trim();
     const price = Number(document.getElementById('addPrice').value) || 1000;
+    const customAmazonUrl = extractSafeAmazonUrl(document.getElementById('addAmazonUrl')?.value || '');
 
     const detectedTypes = [];
     if (bonusMemo.includes('ポスター')) detectedTypes.push('poster');
@@ -4432,7 +4757,7 @@ function bindEvents() {
         price,
         status: 'preorder',
         artworkStatus: 'pending',
-        url: link.url,
+        url: link.id === 'amazon' && customAmazonUrl ? customAmazonUrl : link.url,
       })),
     };
 
@@ -4666,17 +4991,22 @@ async function init() {
     state.baseItems = data.items || [];
     state.referenceDate = data.referenceDate || state.referenceDate;
     state.lastAutoCheckedAt = data.lastAutoCheckedAt || data.updatedAt || '';
+    state.autoSources = data.autoSources || null;
     const refShort = state.referenceDate.slice(5).replace('-', '/');
     document.getElementById('referenceDateBadge').textContent = `基準日 ${refShort}`;
     const autoEl = document.getElementById('autoUpdateStatus');
     if (autoEl && state.lastAutoCheckedAt) {
       const checkedLabel = state.lastAutoCheckedAt.slice(0, 16).replace('T', ' ');
-      autoEl.textContent = `🤖 15出版社PR TIMES＋openBD 自動収集（最終チェック: ${checkedLabel}）`;
+      const sourceLabel = state.autoSources?.rakutenApiConnected
+        ? '15出版社PR TIMES＋楽天API＋openBD'
+        : '15出版社PR TIMES＋openBD';
+      autoEl.textContent = `🤖 ${sourceLabel} 自動収集（最終チェック: ${checkedLabel}）`;
     }
   } catch (err) {
     console.error('Failed to load catalog.json:', err);
   }
   renderAll();
+  handleIncomingShareFromUrl();
 }
 
 init();

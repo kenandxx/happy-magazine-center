@@ -247,26 +247,28 @@
           </div>
         </div>
 
-        <!-- Sub-panel C: ⚡ Amazon URL/ISBN自動取込 & ➕ 新刊メモ & 💾 バックアップ・復元 -->
+        <!-- Sub-panel C: ⚡ Amazon URL/ISBN自動取込 & 📲 共有連携 & 🛍 楽天API設定 & ➕ 新刊メモ & 💾 保存 -->
         <div id="oshiPaneTools" class="oshi-subpane">
           <div id="isbnImportCard" class="panel-card isbn-import-card">
+            <div id="shareArrivalBanner" class="share-arrival-banner" hidden></div>
             <div class="urgent-hero-top">
               <h2 class="panel-heading">⚡ Amazon URL / ISBN → 1タップ自動取込＆早め予約判定</h2>
               <span class="isbn-live-badge">openBD直結</span>
             </div>
             <p class="panel-desc">
-              Amazonで見つけた写真集・カレンダー・R18の商品URL（<code>/dp/…</code>）またはISBNを貼るだけ！書誌DB（openBD）から<strong>公式書影・発売日・定価を自動取得</strong>し、即「🔥 早め予約スコア」へ投入できます。
+              Amazonで見つけた写真集・カレンダー・R18の商品URL（<code>/dp/…</code>）や共有テキスト、ISBNを貼るだけ！書誌DB（openBD）から<strong>公式書影・発売日・定価を自動取得</strong>し、即「🔥 早め予約スコア」へ投入できます。
             </p>
             <form id="isbnLookupForm" class="isbn-lookup-form">
               <input
                 id="isbnImportInput"
                 class="text-input"
                 type="text"
-                placeholder="Amazon URL（例：https://www.amazon.co.jp/dp/4299065926）またはISBN13"
+                placeholder="Amazon URL（例：https://www.amazon.co.jp/dp/4299065921）またはISBN13"
                 autocomplete="off"
               />
               <div class="isbn-lookup-btns">
                 <button id="isbnLookupBtn" class="primary-btn" type="submit">🔍 書影＆書誌を自動取得</button>
+                <button id="isbnPasteBtn" class="quick-preview-icon-btn" type="button">📋 貼付＆即判定</button>
                 <button id="isbnSampleBtn" class="quick-preview-icon-btn" type="button">🧪 試す（松井珠理奈）</button>
               </div>
             </form>
@@ -282,6 +284,109 @@
                 rel="noopener noreferrer"
               >GitHub収録リクエスト ↗</a>
             </div>
+          </div>
+
+          <!-- Proposal B: Smartphone 1-Tap Share-Sheet / Shortcut / Bookmarklet Integration -->
+          <div id="shareQuickSetupCard" class="panel-card share-setup-card">
+            <div class="urgent-hero-top">
+              <h2 class="panel-heading">📲 Amazon画面から「共有 → 1タップ即自動取込」連携</h2>
+              <span class="share-ready-badge">?import 対応済</span>
+            </div>
+            <p class="panel-desc">
+              URLをコピー＆貼り付けしなくても、Amazonを見ている画面から<strong>「共有」を1回押すだけ</strong>で自動的にここが開き、書影＆早め予約スコア（S/A/B）が即判定されます！
+            </p>
+
+            <div class="share-test-row">
+              <button id="testShareImportBtn" class="quick-preview-icon-btn" type="button">
+                🧪 共有着信を体験（兒玉遥 /dp/ URL）
+              </button>
+              <button id="testShortShareBtn" class="quick-preview-icon-btn" type="button">
+                🧪 短縮URL共有を体験（amzn.asia）
+              </button>
+            </div>
+
+            <details class="setup-accordion">
+              <summary>📱 iPhone（Safari / Amazonアプリ）「共有シート」30秒設定レシピ</summary>
+              <div class="setup-accordion-body">
+                <ol class="setup-steps">
+                  <li>iPhone標準の<strong>「ショートカット」アプリ</strong>を開き、右上の<strong>「＋」</strong>で新規作成</li>
+                  <li>下部の「ⓘ（詳細）」から<strong>「共有シートに表示」をON</strong>（URL・テキストを受け取る）</li>
+                  <li>アクション「<strong>URL</strong>」を追加し、下のベースURL＋「ショートカットの入力」をつなぐ：</li>
+                </ol>
+                <div class="copy-code-row">
+                  <code id="shareBaseUrlCode" class="copy-code-box">https://kenandxx.github.io/happy-magazine-center/?import=</code>
+                  <button
+                    class="quick-preview-icon-btn"
+                    type="button"
+                    data-copy-text="https://kenandxx.github.io/happy-magazine-center/?import="
+                  >📋 コピー</button>
+                </div>
+                <ol class="setup-steps" start="4">
+                  <li>アクション「<strong>URLを開く</strong>」を追加し、名前を「<strong>MagCenterへ送る</strong>」にして完了！</li>
+                </ol>
+                <p class="setup-tip">
+                  💡 SafariでAmazon商品ページを開いて「共有 → MagCenterへ送る」を押すと、<code>/dp/ASIN</code> から自動で書影＆早め予約スコアが即出ます！
+                </p>
+              </div>
+            </details>
+
+            <details class="setup-accordion">
+              <summary>🤖 Android（Chrome）「共有」メニューにアプリを直接追加（設定不要）</summary>
+              <div class="setup-accordion-body">
+                <p class="setup-tip" style="margin:0;">
+                  Web Share Target（<code>manifest.json</code>）対応済みです。Chrome右上メニューから<strong>「ホーム画面に追加（アプリをインストール）」</strong>を行うだけで、Amazonやブラウザの「共有」先に <strong>Happy Magazine Center</strong> が自動表示されます！
+                </p>
+              </div>
+            </details>
+
+            <details class="setup-accordion">
+              <summary>🔖 Safari / PCブラウザ用 1タップ・ブックマークレット</summary>
+              <div class="setup-accordion-body">
+                <p class="setup-tip" style="margin:0 0 6px;">
+                  PCなら下のボタンをブックマークバーへドラッグ、スマホならコードをコピーして任意のブックマークのURL欄に貼り付けて保存すると、Amazon閲覧中に1タップで送信できます。
+                </p>
+                <div class="copy-code-row">
+                  <a id="bookmarkletDragLink" class="bookmarklet-pill" href="#">⚡ MagCenterへ送る</a>
+                  <button id="copyBookmarkletBtn" class="quick-preview-icon-btn" type="button">📋 コードをコピー</button>
+                </div>
+              </div>
+            </details>
+            <p id="shareCopyStatus" class="backup-status-msg" aria-live="polite"></p>
+          </div>
+
+          <!-- Proposal A: Auto-Collection Sources & Free Rakuten Books API Setup -->
+          <div id="rakutenSetupCard" class="panel-card rakuten-setup-card">
+            <div class="urgent-hero-top">
+              <h2 class="panel-heading">🤖 毎朝07:00 自動収集ソース＆楽天ブックスAPI連携（無料）</h2>
+              <span id="rakutenStatusPill" class="auto-source-pill">PR TIMES 15社稼働中</span>
+            </div>
+            <div id="autoSourcesSummaryBox" class="auto-sources-box"></div>
+
+            <details class="setup-accordion">
+              <summary>🔑 楽天ブックス全写真集・R18・限定特典を毎朝全自動流入させる（無料3ステップ）</summary>
+              <div class="setup-accordion-body">
+                <p class="setup-tip" style="margin:0 0 8px;">
+                  すでに収集エンジン（<code>scripts/rakuten-ingestor.mjs</code>）は実装済みです！無料の楽天アプリIDをGitHub Secretsに1つ登録するだけで、<strong>16主要誌＋写真集＋グラビア＋🔞R18＋2027カレンダー＋楽天限定特典</strong>が毎朝07:00に自動追加されます（Amazon基本＋特典ありストアのみのノイズゼロ基準厳守）。
+                </p>
+                <ol class="setup-steps">
+                  <li>
+                    <a class="setup-ext-link" href="https://webservice.rakuten.co.jp/app/create" target="_blank" rel="noopener noreferrer">楽天ウェブサービス（無料アプリ登録） ↗</a> で「アプリID（Application ID）」を発行（アプリ名・URLは何でもOK）
+                  </li>
+                  <li>
+                    <a class="setup-ext-link" href="https://github.com/kenandxx/happy-magazine-center/settings/secrets/actions/new" target="_blank" rel="noopener noreferrer">GitHub Actions Secret 追加画面を開く ↗</a> → Nameに下の名前、SecretにアプリIDを貼って保存：
+                  </li>
+                </ol>
+                <div class="copy-code-row">
+                  <code class="copy-code-box">RAKUTEN_APP_ID</code>
+                  <button class="quick-preview-icon-btn" type="button" data-copy-text="RAKUTEN_APP_ID">📋 Nameコピー</button>
+                </div>
+                <ol class="setup-steps" start="3">
+                  <li>
+                    <a class="setup-ext-link" href="https://github.com/kenandxx/happy-magazine-center/actions/workflows/daily-catalog-update.yml" target="_blank" rel="noopener noreferrer">Daily Catalog Auto-Update ↗</a> の「<strong>Run workflow</strong>」を押して即時テスト！
+                  </li>
+                </ol>
+              </div>
+            </details>
           </div>
 
           <div class="panel-card">
@@ -336,6 +441,10 @@
               <label class="field-label">
                 定価（税込・円）
                 <input id="addPrice" class="text-input" type="number" min="0" step="10" value="1400" />
+              </label>
+              <label class="field-label">
+                Amazon商品URL（任意・共有時自動入力）
+                <input id="addAmazonUrl" class="text-input" type="url" placeholder="https://www.amazon.co.jp/dp/... または https://amzn.asia/..." />
               </label>
               <div>
                 <button class="primary-btn" type="submit">ダッシュボードに追加</button>

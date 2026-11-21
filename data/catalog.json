@@ -8448,7 +8448,7 @@
           "caption": "松井珠理奈 2nd写真集『アイヲシル』通常表紙",
           "source": "宝島社 / 楽天ブックス",
           "kind": "cover",
-          "articleUrl": "https://www.amazon.co.jp/dp/4299065926"
+          "articleUrl": "https://www.amazon.co.jp/dp/4299065921"
         },
         {
           "url": "https://prcdn.freetls.fastly.net/release_image/5069/2300/5069-2300-2a764b7e16fbd64e244e07c2afcf77c8-1910x2700.jpg",
@@ -8511,7 +8511,7 @@
           "status": "available",
           "artworkStatus": "revealed",
           "imageUrl": "https://shop.r10s.jp/book/cabinet/5926/9784299065926_1_2.jpg",
-          "url": "https://www.amazon.co.jp/dp/4299065926"
+          "url": "https://www.amazon.co.jp/dp/4299065921"
         }
       ]
     },
@@ -9921,5 +9921,11 @@
       ]
     }
   ],
-  "lastAutoCheckedAt": "2026-11-21T17:20:00+09:00"
+  "lastAutoCheckedAt": "2026-11-21T17:20:00+09:00",
+  "autoSources": {
+    "prtimesPublishers": 15,
+    "rakutenApiConnected": false,
+    "lastRunAt": "2026-11-21T18:45:00+09:00",
+    "lastRunSummary": "15出版社PR TIMES自動巡回済（楽天ブックスAPIはRAKUTEN_APP_ID設定で自動有効化）"
+  }
 }

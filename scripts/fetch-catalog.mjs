@@ -31,6 +31,7 @@ import {
   fetchRakutenCatalogRecords,
   isRelevantRakutenRecord,
 } from './rakuten-ingestor.mjs';
+import { refreshMasterpiecesLiveStatus } from './masterpieces-checker.mjs';
 import { validateCatalogStructure, verifyImageUrl } from './validate-catalog.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -786,8 +787,25 @@ async function runDailyCatalogUpdate() {
     );
   }
 
-  // Enforce noise-free store policy across every item before saving
-  for (const item of catalog.items || []) {
+  // 6) Refresh live multi-store stock & review status for 2024-2026 Hall-of-Fame Masterpieces
+  let refreshedMasterpieces = 0;
+  if (Array.isArray(catalog.masterpieces) && catalog.masterpieces.length > 0) {
+    try {
+      const mpRes = await refreshMasterpiecesLiveStatus(catalog.masterpieces, { dateStr });
+      refreshedMasterpieces = mpRes.updatedCount || 0;
+      catalog.masterpiecesCheckedAt = timestampJst;
+      console.log(
+        `[collect:update] Masterpieces live stock check -> ${refreshedMasterpieces} title(s) refreshed${
+          mpRes.rakutenBackedOff ? ' (Rakuten backed off; used Maruzen/7net)' : ''
+        }`
+      );
+    } catch (err) {
+      console.warn('[collect:update] Masterpieces stock check non-fatal error:', err.message);
+    }
+  }
+
+  // Enforce noise-free store policy across every item and masterpiece before saving
+  for (const item of [...(catalog.items || []), ...(catalog.masterpieces || [])]) {
     item.offers = filterOffersByPolicy(item.offers || []);
   }
 
@@ -800,10 +818,11 @@ async function runDailyCatalogUpdate() {
     sevenNetLive: true,
     hmvRssLive: true,
     bltWebRssLive: true,
+    masterpiecesStockLive: refreshedMasterpieces > 0,
     rakutenApiConnected: Boolean(appId),
     rakutenOpenApi2026: rakutenReady,
     lastRunAt: timestampJst,
-    lastRunSummary: `PR TIMES 15社(+${addedPrItems}) / 版元ドットコム10社(+${addedHanmotoItems}) / 7net(+${addedSevenNetItems}作品・+${addedSevenNetOffers}特典) / HMV・BLT(+${addedPressArticles}記事)${
+    lastRunSummary: `PR TIMES 15社(+${addedPrItems}) / 版元ドットコム10社(+${addedHanmotoItems}) / 7net(+${addedSevenNetItems}作品・+${addedSevenNetOffers}特典) / HMV・BLT(+${addedPressArticles}記事) / 名作在庫(${refreshedMasterpieces}作品更新)${
       appId ? ` / 楽天API(+${addedRakutenItems})` : ''
     }`,
   };
@@ -819,7 +838,7 @@ async function runDailyCatalogUpdate() {
 
   fs.writeFileSync(CATALOG_PATH, `${JSON.stringify(catalog, null, 2)}\n`, 'utf8');
   console.log(
-    `[collect:update] Done! referenceDate=${dateStr}, +${totalNewItems} new items (PR:${addedPrItems}, Hanmoto:${addedHanmotoItems}, 7net:${addedSevenNetItems}, Rakuten:${addedRakutenItems}), +${addedBonusOffers} bonus offers (7net:${addedSevenNetOffers}), +${addedPressArticles} press, nonAmazonNonBonus=${report.nonAmazonNonBonus}`
+    `[collect:update] Done! referenceDate=${dateStr}, +${totalNewItems} new items (PR:${addedPrItems}, Hanmoto:${addedHanmotoItems}, 7net:${addedSevenNetItems}, Rakuten:${addedRakutenItems}), +${addedBonusOffers} bonus offers (7net:${addedSevenNetOffers}), +${addedPressArticles} press, masterpiecesChecked=${refreshedMasterpieces}, nonAmazonNonBonus=${report.nonAmazonNonBonus}`
   );
 
   writeGitHubStepSummary([
@@ -829,12 +848,13 @@ async function runDailyCatalogUpdate() {
     `- **版元ドットコム 10主要写真集・R18版元＋openBD**: +${addedHanmotoItems} 新刊`,
     `- **セブンネット限定表紙・サイン本・特典**: +${addedSevenNetItems} 新刊 / +${addedSevenNetOffers} 限定特典追加`,
     `- **HMV&BOOKS RSS ＋ B.L.T.web RSS**: +${addedPressArticles} 記事 / 合計 +${addedBonusOffers} 特典`,
+    `- **🏆 名作・殿堂（2024〜2026）ライブ在庫チェック**: ${refreshedMasterpieces} 作品を楽天・7net・丸善ジュンク堂で更新`,
     `- **楽天ブックスAPI (2026 OpenAPI)**: ${
       rakutenReady
         ? `✅ 連携稼働中 (+${addedRakutenItems} 新刊)`
         : '🔑 未設定（無料・任意で後日追加可能）'
     }`,
-    `- **カタログ総数**: **${report.totalItems} 作品** / **${report.totalOffers} オファー**（非Amazon無特典: **${report.nonAmazonNonBonus} 件**）`,
+    `- **カタログ総数**: **${report.totalItems} 新刊作品** ＋ **${report.totalMasterpieces || 0} 殿堂名作** / **${report.totalOffers} オファー**（非Amazon無特典: **${report.nonAmazonNonBonus} 件**）`,
   ]);
 }
 

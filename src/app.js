@@ -166,6 +166,8 @@ const state = {
   lastAutoCheckedAt: '',
   autoSources: null,
   baseItems: [],
+  masterpieceItems: [],
+  masterpiecesCheckedAt: '',
   customItems: loadJson(STORAGE_KEYS.customItems, []),
   oshiKeywords: loadJson(STORAGE_KEYS.oshi, [
     '乃木坂46',
@@ -201,6 +203,15 @@ const state = {
   urgentRankFilter: 'all', // 'all' | 'S' | 'A' | 'B' | 'secured'
   urgentTopicFilter: 'all', // 'all' | 'auto' | 'limited' | 'cover' | 'oshi' | 'r18' | 'calendar'
   urgentUnreservedOnly: true,
+  mpGroup: 'all', // 'all' | 'idol_pb' | 'gravure_pb' | 'r18_pb' | 'magazine_bn'
+  mpYear: 'all', // 'all' | '2026' | '2025' | '2024'
+  mpStock: 'all', // 'all' | 'in_stock' | 'low_stock' | 'out_of_stock'
+  mpSort: 'rank', // 'rank' | 'scarce' | 'newest' | 'oldest' | 'rating'
+  mpShowOwned: false,
+  mpConsideringOnly: false,
+  mpSearch: '',
+  undoToastTimer: null,
+  lastUndoAction: null,
   calendarMonth: 'upcoming', // 'upcoming' | '2026-11' | '2026-12' | '2027-01' | '2027-02' | 'past'
   calendarSubFilter: 'all', // 'all' | 'marked' | 'bonus' | 'pending' | 'calendar' | 'photobook' | 'r18'
   shelfFilter: 'all', // 'all' | 'considering' | 'want' | 'reserved' | 'owned' | 'skip'
@@ -227,8 +238,16 @@ function getAllItems() {
   return [...state.customItems, ...state.baseItems];
 }
 
+function getMasterpieceItems() {
+  return state.masterpieceItems || [];
+}
+
+function getAllTrackableItems() {
+  return [...state.customItems, ...state.baseItems, ...(state.masterpieceItems || [])];
+}
+
 function getItemById(itemId) {
-  return getAllItems().find((entry) => entry.id === itemId) || null;
+  return getAllTrackableItems().find((entry) => entry.id === itemId) || null;
 }
 
 function diffDays(dateStr, refDateStr = state.referenceDate) {
@@ -240,7 +259,7 @@ function diffDays(dateStr, refDateStr = state.referenceDate) {
 function formatDateLabel(dateStr) {
   const d = new Date(`${dateStr}T00:00:00`);
   const weekdays = ['日', '月', '火', '水', '木', '金', '土'];
-  const yPrefix = d.getFullYear() > 2026 ? `${d.getFullYear()}年` : '';
+  const yPrefix = d.getFullYear() !== 2026 ? `${d.getFullYear()}年` : '';
   return `${yPrefix}${d.getMonth() + 1}月${d.getDate()}日（${weekdays[d.getDay()]}）`;
 }
 
@@ -341,7 +360,7 @@ function isItemSecured(item) {
  */
 function getAllMarkedEntries() {
   const entries = [];
-  for (const item of getAllItems()) {
+  for (const item of getAllTrackableItems()) {
     const markedOffers = getItemMarkedOffers(item);
     if (markedOffers.length > 0) {
       for (const { offer, status } of markedOffers) {
@@ -376,6 +395,7 @@ function syncAfterStatusChange(affectedItemId) {
   renderFilterChips();
   renderMagazineGrid();
   renderUrgentRadar();
+  renderMasterpieces();
   renderCalendar();
   renderOshiAndShelf();
 
@@ -667,6 +687,7 @@ function syncAfterOshiOrVipChange() {
   renderFilterChips();
   renderMagazineGrid();
   renderUrgentRadar();
+  renderMasterpieces();
   renderOshiAndShelf();
   if (state.selectedItemId) {
     const item = getItemById(state.selectedItemId);
@@ -2003,6 +2024,607 @@ function getUpcomingPlannedEntries() {
     .sort((a, b) => new Date(a.item.releaseDate) - new Date(b.item.releaseDate));
 }
 
+/* =========================================================
+   Tab: 2024-2026 Must-Buy Masterpieces & Hall of Fame (v1.2)
+   ========================================================= */
+const MASTERPIECE_GROUP_META = {
+  all: { label: '🏆 すべて', short: 'すべて' },
+  idol_pb: { label: '👑 アイドル写真集', short: 'アイドル写真集' },
+  gravure_pb: { label: '✨ グラビア写真集', short: 'グラビア写真集' },
+  r18_pb: { label: '🔞 R18名作', short: '🔞 R18名作' },
+  magazine_bn: { label: '📰 伝説の雑誌BN', short: '伝説の雑誌BN' },
+};
+
+function getMasterpiecePrimaryOffer(item) {
+  const visible = getVisibleOffers(item);
+  return visible[0] || null;
+}
+
+function getMasterpieceStatus(item) {
+  return getItemStatusSummary(item).primaryStatus || '';
+}
+
+function isMasterpieceDismissed(item) {
+  const st = getMasterpieceStatus(item);
+  return st === 'owned' || st === 'skip';
+}
+
+function hideUndoToast() {
+  const el = document.getElementById('undoToast');
+  if (state.undoToastTimer) {
+    clearTimeout(state.undoToastTimer);
+    state.undoToastTimer = null;
+  }
+  state.lastUndoAction = null;
+  if (el) {
+    el.hidden = true;
+    el.innerHTML = '';
+  }
+}
+
+function showUndoToast(message, undoFn = null) {
+  const el = document.getElementById('undoToast');
+  if (!el) return;
+  if (state.undoToastTimer) {
+    clearTimeout(state.undoToastTimer);
+    state.undoToastTimer = null;
+  }
+  state.lastUndoAction = typeof undoFn === 'function' ? undoFn : null;
+  el.innerHTML = `
+    <span class="undo-toast-msg">${escapeHtml(message)}</span>
+    ${
+      state.lastUndoAction
+        ? `<button class="undo-toast-btn" type="button" data-undo-toast-action="1">↩ 戻す</button>`
+        : ''
+    }
+  `;
+  el.hidden = false;
+  state.undoToastTimer = setTimeout(() => {
+    hideUndoToast();
+  }, 6000);
+}
+
+function updateMasterpiecesNavBadge() {
+  const badge = document.getElementById('masterpiecesNavBadge');
+  if (!badge) return;
+  const items = getMasterpieceItems();
+  const unownedCount = items.filter((item) => !isMasterpieceDismissed(item)).length;
+  if (unownedCount > 0) {
+    badge.textContent = String(unownedCount);
+    badge.hidden = false;
+  } else {
+    badge.hidden = true;
+  }
+}
+
+function toggleMasterpieceOwned(itemId) {
+  const item = getItemById(itemId);
+  if (!item) return;
+  const offer = getMasterpiecePrimaryOffer(item);
+  const prevOfferStatus = offer ? state.offerShelfMap[offer.id] || '' : '';
+  const prevLegacyStatus = state.shelfMap[item.id] || '';
+  const wasOwned = getMasterpieceStatus(item) === 'owned';
+
+  const restorePrev = () => {
+    if (offer) {
+      if (prevOfferStatus) state.offerShelfMap[offer.id] = prevOfferStatus;
+      else delete state.offerShelfMap[offer.id];
+    }
+    if (prevLegacyStatus) state.shelfMap[item.id] = prevLegacyStatus;
+    else delete state.shelfMap[item.id];
+    syncAfterStatusChange(item.id);
+    hideUndoToast();
+  };
+
+  if (wasOwned) {
+    if (offer) delete state.offerShelfMap[offer.id];
+    delete state.shelfMap[item.id];
+    syncAfterStatusChange(item.id);
+    showUndoToast(`↩ 「${item.title}」の所持済を解除しました`, restorePrev);
+  } else {
+    if (offer) {
+      state.offerShelfMap[offer.id] = 'owned';
+      delete state.shelfMap[item.id];
+    } else {
+      state.shelfMap[item.id] = 'owned';
+    }
+    syncAfterStatusChange(item.id);
+    const hiddenHint = state.mpShowOwned ? '所持済にマークしました' : '所持済にして非表示にしました';
+    showUndoToast(`✅ 「${item.title}」を${hiddenHint}`, restorePrev);
+  }
+}
+
+function toggleMasterpieceConsidering(itemId) {
+  const item = getItemById(itemId);
+  if (!item) return;
+  const offer = getMasterpiecePrimaryOffer(item);
+  const prevOfferStatus = offer ? state.offerShelfMap[offer.id] || '' : '';
+  const prevLegacyStatus = state.shelfMap[item.id] || '';
+  const wasConsidering = getMasterpieceStatus(item) === 'considering';
+
+  const restorePrev = () => {
+    if (offer) {
+      if (prevOfferStatus) state.offerShelfMap[offer.id] = prevOfferStatus;
+      else delete state.offerShelfMap[offer.id];
+    }
+    if (prevLegacyStatus) state.shelfMap[item.id] = prevLegacyStatus;
+    else delete state.shelfMap[item.id];
+    syncAfterStatusChange(item.id);
+    hideUndoToast();
+  };
+
+  if (wasConsidering) {
+    if (offer) delete state.offerShelfMap[offer.id];
+    delete state.shelfMap[item.id];
+    syncAfterStatusChange(item.id);
+    showUndoToast(`「${item.title}」の検討中を解除しました`, restorePrev);
+  } else {
+    if (offer) {
+      state.offerShelfMap[offer.id] = 'considering';
+      delete state.shelfMap[item.id];
+    } else {
+      state.shelfMap[item.id] = 'considering';
+    }
+    syncAfterStatusChange(item.id);
+    showUndoToast(`🤔 「${item.title}」を検討中に保存しました（マーク棚連動）`, restorePrev);
+  }
+}
+
+function getMasterpieceStockOrder(status) {
+  if (status === 'out_of_stock') return 0;
+  if (status === 'low_stock') return 1;
+  return 2;
+}
+
+function getFilteredMasterpieces({ ignoreStock = false } = {}) {
+  const all = getMasterpieceItems();
+  const q = String(state.mpSearch || '').trim().toLowerCase();
+
+  const list = all
+    .map((item, idx) => ({ item, idx }))
+    .filter(({ item }) => {
+      const st = getMasterpieceStatus(item);
+      if (state.mpConsideringOnly) {
+        if (st !== 'considering' && st !== 'want') return false;
+      } else if (!state.mpShowOwned && isMasterpieceDismissed(item)) {
+        return false;
+      }
+
+      if (state.mpGroup !== 'all' && item.masterpieceGroup !== state.mpGroup) return false;
+      if (state.mpYear !== 'all' && String(item.releaseYear || item.releaseDate?.slice(0, 4)) !== state.mpYear) {
+        return false;
+      }
+      if (!ignoreStock && state.mpStock !== 'all' && (item.stockInfo?.status || 'in_stock') !== state.mpStock) {
+        return false;
+      }
+      if (q) {
+        const hay = [
+          item.title,
+          item.publisher,
+          item.acclaimBadge,
+          item.acclaimReason,
+          item.summary,
+          ...(item.coverTalents || []),
+          ...(item.featuredTalents || []),
+        ]
+          .join(' ')
+          .toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+
+  list.sort((a, b) => {
+    const ia = a.item;
+    const ib = b.item;
+    if (state.mpSort === 'scarce') {
+      const sa = getMasterpieceStockOrder(ia.stockInfo?.status);
+      const sb = getMasterpieceStockOrder(ib.stockInfo?.status);
+      if (sa !== sb) return sa - sb;
+      return a.idx - b.idx;
+    }
+    if (state.mpSort === 'newest') {
+      return String(ib.releaseDate || '').localeCompare(String(ia.releaseDate || '')) || a.idx - b.idx;
+    }
+    if (state.mpSort === 'oldest') {
+      return String(ia.releaseDate || '').localeCompare(String(ib.releaseDate || '')) || a.idx - b.idx;
+    }
+    if (state.mpSort === 'rating') {
+      const ra = (ia.reviewStats?.rating || 0) * 100 + Math.min(ia.reviewStats?.reviewCount || 0, 50);
+      const rb = (ib.reviewStats?.rating || 0) * 100 + Math.min(ib.reviewStats?.reviewCount || 0, 50);
+      if (rb !== ra) return rb - ra;
+      const ta = ia.masterpieceTier === 'S' ? 0 : 1;
+      const tb = ib.masterpieceTier === 'S' ? 0 : 1;
+      return ta - tb || a.idx - b.idx;
+    }
+    // Default 'rank': S-tier first, then curated Hall-of-Fame order
+    const ta = ia.masterpieceTier === 'S' ? 0 : 1;
+    const tb = ib.masterpieceTier === 'S' ? 0 : 1;
+    return ta - tb || a.idx - b.idx;
+  });
+
+  return list.map((x) => x.item);
+}
+
+function buildMasterpieceSecondhandUrls(item) {
+  const cleanTitle = String(item.title || '')
+    .replace(/[『』「」【】]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const q = encodeURIComponent(cleanTitle);
+  return {
+    surugaya: `https://www.suruga-ya.jp/search?category=&search_word=${q}`,
+    mercari: `https://jp.mercari.com/search?keyword=${q}`,
+  };
+}
+
+function renderMasterpieceCardHtml(item) {
+  const st = getMasterpieceStatus(item);
+  const isOwned = st === 'owned';
+  const isConsidering = st === 'considering';
+  const isWant = st === 'want';
+  const stockStatus = item.stockInfo?.status || 'in_stock';
+  const stockClass =
+    stockStatus === 'out_of_stock'
+      ? 'stock-out'
+      : stockStatus === 'low_stock'
+        ? 'stock-low'
+        : 'stock-in';
+  const stockLabel = item.stockInfo?.label || '✅ 新品在庫あり';
+  const stockDetail = item.stockInfo?.detail || '';
+  const groupInfo = MASTERPIECE_GROUP_META[item.masterpieceGroup] || { short: '名作' };
+  const groupClass =
+    item.masterpieceGroup === 'r18_pb'
+      ? 'is-r18'
+      : item.masterpieceGroup === 'magazine_bn'
+        ? 'is-mag'
+        : '';
+  const r18MediaClass = item.category === 'r18' ? 'is-r18-media' : '';
+  const coverUrl = item.coverImageUrl || createEditorialCoverDataUri(item);
+  const fallbackCover = createEditorialCoverDataUri(item);
+  const oshiHits = itemMatchesOshi(item);
+  const amazonOffer = getVisibleOffers(item).find((o) => o.store === 'amazon') || getVisibleOffers(item)[0];
+  const amazonUrl =
+    amazonOffer?.url ||
+    `https://www.amazon.co.jp/s?k=${encodeURIComponent(item.title)}&i=stripbooks`;
+  const needsSecondhand = stockStatus === 'out_of_stock' || stockStatus === 'low_stock';
+  const secondhand = needsSecondhand ? buildMasterpieceSecondhandUrls(item) : null;
+
+  const cardStateClass = isOwned
+    ? 'is-owned'
+    : isConsidering
+      ? 'is-considering'
+      : isWant
+        ? 'is-want'
+        : '';
+
+  const yearLabel = item.releaseYear || (item.releaseDate || '').slice(0, 4);
+  const statusMeta = st && SHELF_STATUS_META[st] ? SHELF_STATUS_META[st] : null;
+
+  return `
+    <article class="mp-card ${cardStateClass}" data-mp-card-id="${escapeHtml(item.id)}">
+      <div class="mp-card-main">
+        <button
+          class="mp-cover-btn ${r18MediaClass}"
+          type="button"
+          data-open-preview="${escapeHtml(item.id)}"
+          aria-label="${escapeHtml(item.title)}の表紙を拡大"
+        >
+          <img
+            class="mp-cover-img"
+            src="${escapeHtml(coverUrl)}"
+            alt="${escapeHtml(item.title)}"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='${fallbackCover}'"
+          />
+          <span class="mp-tier-badge ${item.masterpieceTier === 'S' ? '' : 'is-tier-a'}">
+            ${item.masterpieceTier === 'S' ? '👑 殿堂S' : '⭐ 名作A'}
+          </span>
+          <span class="mp-year-pill">${escapeHtml(yearLabel)}</span>
+        </button>
+
+        <div class="mp-info">
+          <div class="mp-meta-top">
+            <span class="mp-group-tag ${groupClass}">${escapeHtml(groupInfo.short)}</span>
+            ${
+              item.reviewStats && item.reviewStats.rating > 0 && item.reviewStats.reviewCount > 0
+                ? `<span class="mp-rating-pill">★${Number(item.reviewStats.rating).toFixed(1)} (${item.reviewStats.reviewCount}件)</span>`
+                : ''
+            }
+            ${
+              oshiHits.length
+                ? `<span class="oshi-hit-badge">💖 推し: ${escapeHtml(oshiHits[0])}</span>`
+                : ''
+            }
+            ${
+              statusMeta
+                ? `<span class="mp-status-tag ${statusMeta.colorClass}">${statusMeta.icon} ${escapeHtml(statusMeta.short)}</span>`
+                : ''
+            }
+          </div>
+
+          <button class="mp-title-btn" type="button" data-open-detail="${escapeHtml(item.id)}">
+            ${escapeHtml(item.title)}
+          </button>
+
+          ${
+            item.acclaimBadge
+              ? `<span class="mp-acclaim-badge">${escapeHtml(item.acclaimBadge)}</span>`
+              : ''
+          }
+
+          <p class="mp-reason">${escapeHtml(item.acclaimReason || item.summary || '')}</p>
+
+          <div class="mp-pub-line">
+            <span>📅 ${escapeHtml(formatDateLabel(item.releaseDate))}</span>
+            <span>🏢 ${escapeHtml(item.publisher || '')}</span>
+            ${item.price ? `<span>¥${Number(item.price).toLocaleString()}</span>` : ''}
+          </div>
+        </div>
+      </div>
+
+      <div class="mp-stock-box ${stockClass}">
+        <span class="mp-stock-label">${escapeHtml(stockLabel)}</span>
+        ${stockDetail ? `<span class="mp-stock-detail">${escapeHtml(stockDetail)}</span>` : ''}
+      </div>
+
+      <div class="mp-actions">
+        <button
+          class="mp-action-btn btn-owned ${isOwned ? 'is-active' : ''}"
+          type="button"
+          data-mp-owned="${escapeHtml(item.id)}"
+        >
+          ${isOwned ? '↩ 所持済を解除' : '✅ 持ってる（消す）'}
+        </button>
+        <button
+          class="mp-action-btn btn-consider ${isConsidering ? 'is-active' : ''}"
+          type="button"
+          data-mp-consider="${escapeHtml(item.id)}"
+        >
+          ${isConsidering ? '🤔 検討中 ✓' : '🤔 検討する'}
+        </button>
+      </div>
+
+      <div class="mp-links-row">
+        <a
+          class="mp-store-link is-amazon"
+          href="${escapeHtml(amazonUrl)}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Amazonで確認 ↗</a>
+        ${
+          needsSecondhand && secondhand
+            ? `
+              <a
+                class="mp-store-link is-secondhand"
+                href="${escapeHtml(secondhand.surugaya)}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >🔍 駿河屋・中古 ↗</a>
+              <a
+                class="mp-store-link"
+                href="${escapeHtml(secondhand.mercari)}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >メルカリ ↗</a>
+            `
+            : item.rakutenUrl
+              ? `
+                <a
+                  class="mp-store-link"
+                  href="${escapeHtml(item.rakutenUrl)}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >楽天レビュー ↗</a>
+              `
+              : ''
+        }
+        <button
+          class="mp-detail-mini-btn"
+          type="button"
+          data-open-detail="${escapeHtml(item.id)}"
+        >詳細</button>
+      </div>
+    </article>
+  `;
+}
+
+function renderMasterpiecesListOnly() {
+  const listHost = document.getElementById('mpListHost');
+  const countEl = document.getElementById('mpResultsLabel');
+  if (!listHost) return;
+
+  const all = getMasterpieceItems();
+  const filtered = getFilteredMasterpieces();
+  if (countEl) {
+    countEl.textContent = `表示中 ${filtered.length}冊 ／ 全${all.length}名作`;
+  }
+
+  if (filtered.length === 0) {
+    const ownedCount = all.filter((it) => isMasterpieceDismissed(it)).length;
+    const allCleared = !state.mpShowOwned && !state.mpConsideringOnly && ownedCount === all.length && all.length > 0;
+    listHost.innerHTML = `
+      <div class="mp-empty-state">
+        <strong>${allCleared ? '🎉 2024〜2026 名作・殿堂をすべてチェック完了しました！' : '該当する名作がありません'}</strong>
+        <p style="margin:0 0 10px;">
+          ${
+            allCleared
+              ? '「✅ 所持済も表示」をONにするといつでも振り返れます。'
+              : '絞り込み条件や検索ワードを変えるか、所持済の表示をONにしてみてください。'
+          }
+        </p>
+        <button class="detail-trigger-btn" type="button" data-mp-reset-filters="1">絞り込みをリセット</button>
+      </div>
+    `;
+    return;
+  }
+
+  listHost.innerHTML = `<div class="mp-list">${filtered.map(renderMasterpieceCardHtml).join('')}</div>`;
+}
+
+function renderMasterpieces() {
+  updateMasterpiecesNavBadge();
+
+  const progressEl = document.getElementById('masterpiecesProgressBar');
+  const container = document.getElementById('masterpiecesContainer');
+  if (!container) return;
+
+  const all = getMasterpieceItems();
+  const total = all.length;
+  const ownedCount = all.filter((it) => isMasterpieceDismissed(it)).length;
+  const consideringCount = all.filter((it) => {
+    const st = getMasterpieceStatus(it);
+    return st === 'considering' || st === 'want';
+  }).length;
+  const unownedCount = Math.max(0, total - ownedCount);
+  const ownedPct = total ? Math.round((ownedCount / total) * 100) : 0;
+  const considerPct = total ? Math.round((consideringCount / total) * 100) : 0;
+
+  const checkedShort = state.masterpiecesCheckedAt
+    ? state.masterpiecesCheckedAt.slice(0, 10)
+    : all[0]?.stockInfo?.checkedAt || state.referenceDate;
+
+  if (progressEl) {
+    progressEl.innerHTML = `
+      <div class="mp-progress-box">
+        <div class="mp-progress-top">
+          <div class="mp-progress-stats">
+            <span class="mp-stat-pill is-unowned">🏆 未所持 ${unownedCount}冊</span>
+            <button
+              type="button"
+              class="mp-stat-pill is-considering"
+              data-mp-toggle-considering-pill="1"
+              style="cursor:pointer;"
+            >🤔 検討中 ${consideringCount}冊</button>
+            <button
+              type="button"
+              class="mp-stat-pill is-owned"
+              data-mp-toggle-owned-pill="1"
+              style="cursor:pointer;"
+            >✅ 所持済 ${ownedCount}冊</button>
+          </div>
+          <span class="mp-checked-note">📦 在庫確認: ${escapeHtml(checkedShort)}</span>
+        </div>
+        <div class="mp-progress-track" aria-label="名作チェック進捗">
+          <div class="mp-progress-fill-owned" style="width:${ownedPct}%;"></div>
+          <div class="mp-progress-fill-considering" style="width:${Math.min(considerPct, 100 - ownedPct)}%;"></div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Stock counts calculated on current group/year/owned pool (ignoring stock filter itself)
+  const poolForStock = getFilteredMasterpieces({ ignoreStock: true });
+  const inStockCnt = poolForStock.filter((i) => (i.stockInfo?.status || 'in_stock') === 'in_stock').length;
+  const lowStockCnt = poolForStock.filter((i) => i.stockInfo?.status === 'low_stock').length;
+  const outStockCnt = poolForStock.filter((i) => i.stockInfo?.status === 'out_of_stock').length;
+
+  const groupKeys = ['all', 'idol_pb', 'gravure_pb', 'r18_pb', 'magazine_bn'];
+  const yearKeys = [
+    { key: 'all', label: '全期間 (2024〜2026)' },
+    { key: '2026', label: '2026年' },
+    { key: '2025', label: '2025年' },
+    { key: '2024', label: '2024年' },
+  ];
+
+  container.innerHTML = `
+    <div class="mp-controls-card">
+      <div class="mp-stock-filter-row" role="group" aria-label="在庫状況で絞り込み">
+        <button class="mp-stock-btn ${state.mpStock === 'all' ? 'active' : ''}" type="button" data-mp-stock="all">
+          <span>すべて</span>
+          <strong>${poolForStock.length}</strong>
+        </button>
+        <button class="mp-stock-btn is-in ${state.mpStock === 'in_stock' ? 'active' : ''}" type="button" data-mp-stock="in_stock">
+          <span>✅ 新品あり</span>
+          <strong>${inStockCnt}</strong>
+        </button>
+        <button class="mp-stock-btn is-low ${state.mpStock === 'low_stock' ? 'active' : ''}" type="button" data-mp-stock="low_stock">
+          <span>⚠️ 品薄</span>
+          <strong>${lowStockCnt}</strong>
+        </button>
+        <button class="mp-stock-btn is-out ${state.mpStock === 'out_of_stock' ? 'active' : ''}" type="button" data-mp-stock="out_of_stock">
+          <span>🔴 完売・中古</span>
+          <strong>${outStockCnt}</strong>
+        </button>
+      </div>
+
+      <div class="chip-scroll" aria-label="ジャンル絞り込み">
+        ${groupKeys
+          .map((gk) => {
+            const cnt =
+              gk === 'all'
+                ? all.filter((it) => state.mpShowOwned || !isMasterpieceDismissed(it)).length
+                : all.filter(
+                    (it) => it.masterpieceGroup === gk && (state.mpShowOwned || !isMasterpieceDismissed(it))
+                  ).length;
+            return `
+              <button
+                class="filter-chip ${state.mpGroup === gk ? 'active' : ''}"
+                type="button"
+                data-mp-group="${gk}"
+              >${escapeHtml(MASTERPIECE_GROUP_META[gk].label)} (${cnt})</button>
+            `;
+          })
+          .join('')}
+      </div>
+
+      <div class="chip-scroll" aria-label="発売年絞り込み">
+        ${yearKeys
+          .map(
+            (y) => `
+            <button
+              class="filter-chip ${state.mpYear === y.key ? 'active' : ''}"
+              type="button"
+              data-mp-year="${y.key}"
+            >${escapeHtml(y.label)}</button>
+          `
+          )
+          .join('')}
+      </div>
+
+      <div class="search-row">
+        <div class="search-input-wrap">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input
+            id="mpSearchInput"
+            class="search-input"
+            type="search"
+            value="${escapeHtml(state.mpSearch)}"
+            placeholder="名作タイトル・タレント名・出版社・10刷などで検索"
+            autocomplete="off"
+          />
+        </div>
+        <select class="sort-select" data-mp-sort-select="1" aria-label="名作の並び替え">
+          <option value="rank" ${state.mpSort === 'rank' ? 'selected' : ''}>👑 殿堂おすすめ順</option>
+          <option value="scarce" ${state.mpSort === 'scarce' ? 'selected' : ''}>⚠️ 品薄・完売優先</option>
+          <option value="newest" ${state.mpSort === 'newest' ? 'selected' : ''}>📅 新しい順</option>
+          <option value="oldest" ${state.mpSort === 'oldest' ? 'selected' : ''}>📅 2024年から古い順</option>
+          <option value="rating" ${state.mpSort === 'rating' ? 'selected' : ''}>⭐ 高評価・レビュー順</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mp-toggle-bar">
+      <div id="mpResultsLabel" class="results-count"></div>
+      <div class="mp-toggle-group">
+        <label class="toggle-inline">
+          <input type="checkbox" data-mp-considering-toggle="1" ${state.mpConsideringOnly ? 'checked' : ''} />
+          <span>🤔 検討中のみ (${consideringCount})</span>
+        </label>
+        <label class="toggle-inline">
+          <input type="checkbox" data-mp-show-owned-toggle="1" ${state.mpShowOwned ? 'checked' : ''} />
+          <span>✅ 所持済も表示 (${ownedCount})</span>
+        </label>
+      </div>
+    </div>
+
+    <div id="mpListHost"></div>
+  `;
+
+  renderMasterpiecesListOnly();
+}
+
 function renderCalendar() {
   const container = document.getElementById('calendarContainer');
   const allItems = getAllItems();
@@ -3310,11 +3932,47 @@ function renderDetailSheetBody(item) {
     ${pendingCheckHtml}
 
     ${
-      item.printOnlyNote
-        ? `<div style="font-size:11px;color:var(--ink-secondary);background:var(--bg);padding:8px 10px;border-radius:10px;margin-bottom:10px;">
-            ℹ️ ${escapeHtml(item.printOnlyNote)}
-          </div>`
-        : ''
+      item.isMasterpiece
+        ? (() => {
+            const st = item.stockInfo?.status || 'in_stock';
+            const stClass = st === 'out_of_stock' ? 'stock-out' : st === 'low_stock' ? 'stock-low' : 'stock-in';
+            const secondhand =
+              st === 'out_of_stock' || st === 'low_stock' ? buildMasterpieceSecondhandUrls(item) : null;
+            return `
+              <div class="sheet-mp-banner">
+                <div class="sheet-mp-banner-title">
+                  🏆 ${escapeHtml(item.acclaimBadge || '2024〜2026 殿堂名作')}
+                  ${
+                    item.reviewStats && item.reviewStats.rating > 0 && item.reviewStats.reviewCount > 0
+                      ? `<span class="mp-rating-pill" style="margin-left:4px;">★${Number(item.reviewStats.rating).toFixed(1)} (${item.reviewStats.reviewCount}件)</span>`
+                      : ''
+                  }
+                </div>
+                ${item.acclaimReason ? `<p class="sheet-mp-banner-desc">${escapeHtml(item.acclaimReason)}</p>` : ''}
+                ${
+                  item.stockInfo
+                    ? `<div class="mp-stock-box ${stClass}">
+                        <span class="mp-stock-label">${escapeHtml(item.stockInfo.label)}</span>
+                        <span class="mp-stock-detail">${escapeHtml(item.stockInfo.detail || '')}（確認日: ${escapeHtml(item.stockInfo.checkedAt || '')}）</span>
+                      </div>`
+                    : ''
+                }
+                ${
+                  secondhand
+                    ? `<div class="mp-links-row" style="margin-top:2px;">
+                        <a class="mp-store-link is-secondhand" href="${escapeHtml(secondhand.surugaya)}" target="_blank" rel="noopener noreferrer">🔍 駿河屋で中古を探す ↗</a>
+                        <a class="mp-store-link" href="${escapeHtml(secondhand.mercari)}" target="_blank" rel="noopener noreferrer">🔍 メルカリで相場を見る ↗</a>
+                      </div>`
+                    : ''
+                }
+              </div>
+            `;
+          })()
+        : item.printOnlyNote
+          ? `<div style="font-size:11px;color:var(--ink-secondary);background:var(--bg);padding:8px 10px;border-radius:10px;margin-bottom:10px;">
+              ℹ️ ${escapeHtml(item.printOnlyNote)}
+            </div>`
+          : ''
     }
 
     ${statusSummaryHtml}
@@ -3622,6 +4280,7 @@ function switchTab(tabId) {
   });
 
   if (tabId === 'urgent') renderUrgentRadar();
+  if (tabId === 'masterpieces') renderMasterpieces();
   if (tabId === 'calendar') renderCalendar();
   if (tabId === 'oshi') renderOshiAndShelf();
   if (tabId === 'hub') renderHubLauncher();
@@ -4261,6 +4920,7 @@ function renderAll() {
   renderFilterChips();
   renderMagazineGrid();
   renderUrgentRadar();
+  renderMasterpieces();
   renderCalendar();
   renderOshiAndShelf();
   renderAutoSourcesStatus();
@@ -4515,7 +5175,15 @@ function bindEvents() {
     renderMagazineGrid();
   });
 
-  // Delegated input changes (Budget input & Urgent Radar unreserved toggle)
+  // Delegated input events (Masterpieces search box — preserves IME focus!)
+  document.addEventListener('input', (e) => {
+    if (e.target && e.target.id === 'mpSearchInput') {
+      state.mpSearch = e.target.value;
+      renderMasterpiecesListOnly();
+    }
+  });
+
+  // Delegated input changes (Budget input, Urgent Radar & Masterpieces controls)
   document.addEventListener('change', (e) => {
     if (e.target && e.target.matches('[data-budget-input]')) {
       setMonthlyBudget(e.target.value);
@@ -4524,6 +5192,22 @@ function bindEvents() {
     if (e.target && e.target.matches('[data-urgent-unreserved-toggle]')) {
       state.urgentUnreservedOnly = e.target.checked;
       renderUrgentRadar();
+      return;
+    }
+    if (e.target && e.target.matches('[data-mp-show-owned-toggle]')) {
+      state.mpShowOwned = e.target.checked;
+      if (state.mpShowOwned) state.mpConsideringOnly = false;
+      renderMasterpieces();
+      return;
+    }
+    if (e.target && e.target.matches('[data-mp-considering-toggle]')) {
+      state.mpConsideringOnly = e.target.checked;
+      renderMasterpieces();
+      return;
+    }
+    if (e.target && e.target.matches('[data-mp-sort-select]')) {
+      state.mpSort = e.target.value;
+      renderMasterpiecesListOnly();
     }
   });
 
@@ -4531,6 +5215,78 @@ function bindEvents() {
   document.addEventListener('click', (e) => {
     if (e.target.closest('[data-stop-prop]')) {
       e.stopPropagation();
+      return;
+    }
+
+    const undoActionBtn = e.target.closest('[data-undo-toast-action]');
+    if (undoActionBtn) {
+      if (typeof state.lastUndoAction === 'function') {
+        state.lastUndoAction();
+      } else {
+        hideUndoToast();
+      }
+      return;
+    }
+
+    const mpOwnedBtn = e.target.closest('[data-mp-owned]');
+    if (mpOwnedBtn) {
+      e.stopPropagation();
+      toggleMasterpieceOwned(mpOwnedBtn.dataset.mpOwned);
+      return;
+    }
+
+    const mpConsiderBtn = e.target.closest('[data-mp-consider]');
+    if (mpConsiderBtn) {
+      e.stopPropagation();
+      toggleMasterpieceConsidering(mpConsiderBtn.dataset.mpConsider);
+      return;
+    }
+
+    const mpStockBtn = e.target.closest('[data-mp-stock]');
+    if (mpStockBtn) {
+      state.mpStock = mpStockBtn.dataset.mpStock;
+      renderMasterpieces();
+      return;
+    }
+
+    const mpGroupBtn = e.target.closest('[data-mp-group]');
+    if (mpGroupBtn) {
+      state.mpGroup = mpGroupBtn.dataset.mpGroup;
+      renderMasterpieces();
+      return;
+    }
+
+    const mpYearBtn = e.target.closest('[data-mp-year]');
+    if (mpYearBtn) {
+      state.mpYear = mpYearBtn.dataset.mpYear;
+      renderMasterpieces();
+      return;
+    }
+
+    const mpToggleOwnedPill = e.target.closest('[data-mp-toggle-owned-pill]');
+    if (mpToggleOwnedPill) {
+      state.mpShowOwned = !state.mpShowOwned;
+      if (state.mpShowOwned) state.mpConsideringOnly = false;
+      renderMasterpieces();
+      return;
+    }
+
+    const mpToggleConsiderPill = e.target.closest('[data-mp-toggle-considering-pill]');
+    if (mpToggleConsiderPill) {
+      state.mpConsideringOnly = !state.mpConsideringOnly;
+      renderMasterpieces();
+      return;
+    }
+
+    const mpResetBtn = e.target.closest('[data-mp-reset-filters]');
+    if (mpResetBtn) {
+      state.mpGroup = 'all';
+      state.mpYear = 'all';
+      state.mpStock = 'all';
+      state.mpSearch = '';
+      state.mpConsideringOnly = false;
+      state.mpShowOwned = false;
+      renderMasterpieces();
       return;
     }
 
@@ -5048,6 +5804,8 @@ async function init() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     state.baseItems = data.items || [];
+    state.masterpieceItems = data.masterpieces || [];
+    state.masterpiecesCheckedAt = data.masterpiecesCheckedAt || data.lastAutoCheckedAt || '';
     state.referenceDate = data.referenceDate || state.referenceDate;
     state.lastAutoCheckedAt = data.lastAutoCheckedAt || data.updatedAt || '';
     state.autoSources = data.autoSources || null;

@@ -750,6 +750,97 @@ test('multisite-ingestor parses Hanmoto RSS, 7net JSON-LD, HMV RSS, and B.L.T.we
   assert.deepEqual(check.errors, []);
 });
 
+test('masterpieces-checker parses Rakuten, 7net, Maruzen availability and computes unified stock status', async () => {
+  const fs = await import('node:fs');
+  const {
+    upgradeRakutenCoverUrl,
+    parseRakutenBookDetailHtml,
+    parseSevenNetProductAvailability,
+    parseMaruzenAvailability,
+    computeUnifiedStockStatus,
+  } = await import('./masterpieces-checker.mjs');
+  const { validateCatalogStructure } = await import('./validate-catalog.mjs');
+
+  assert.equal(
+    upgradeRakutenCoverUrl('https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/0613/9784065360613.jpg?_ex=200x200'),
+    'https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/0613/9784065360613.jpg?_ex=600x600'
+  );
+
+  const rakutenHtml = `
+    <html><head>
+      <meta property="og:title" content="乃木坂46 井上和 1st写真集 モノローグ" />
+      <meta property="og:image" content="https://thumbnail.image.rakuten.co.jp/test.jpg?_ex=200x200" />
+    </head><body>
+      <h1 itemprop="name">乃木坂46 井上和 1st写真集『モノローグ』</h1>
+      <span itemprop="price" content="2640"></span>
+      <span itemprop="ratingValue">4.82</span>
+      <span itemprop="reviewCount">28</span>
+      <span class="status-text">在庫あり</span>
+      <p>ISBN: 9784065360613 発売日 2025年4月22日</p>
+    </body></html>
+  `;
+  const rParsed = parseRakutenBookDetailHtml(rakutenHtml);
+  assert.equal(rParsed.isbn, '9784065360613');
+  assert.equal(rParsed.price, 2640);
+  assert.equal(rParsed.rating, 4.82);
+  assert.equal(rParsed.reviewCount, 28);
+  assert.equal(rParsed.statusText, '在庫あり');
+  assert.equal(rParsed.releaseDate, '2025-04-22');
+  assert.ok(rParsed.coverImageUrl.includes('_ex=600x600'));
+
+  const sevenHtml = `<script type="application/ld+json">{"@type":"Product","offers":{"availability":"https://schema.org/OutOfStock","price":2400}}</script>`;
+  assert.deepEqual(parseSevenNetProductAvailability(sevenHtml), {
+    availability: 'OutOfStock',
+    price: 2400,
+  });
+
+  assert.equal(parseMaruzenAvailability('{"product":{"available":true}}'), true);
+  assert.equal(parseMaruzenAvailability('{"product":{"available":false}}'), false);
+
+  const stIn = computeUnifiedStockStatus({
+    rakutenStatus: '在庫あり',
+    maruzenAvailable: true,
+    checkedAt: '2026-11-21',
+  });
+  assert.equal(stIn.status, 'in_stock');
+
+  const stLow = computeUnifiedStockStatus({
+    rakutenStatus: 'ご注文できない商品',
+    maruzenAvailable: true,
+    checkedAt: '2026-11-21',
+  });
+  assert.equal(stLow.status, 'low_stock');
+  assert.ok(stLow.detail.includes('楽天ブックス') && stLow.detail.includes('丸善ジュンク堂'));
+
+  const stOut = computeUnifiedStockStatus({
+    rakutenStatus: 'ご注文できない商品',
+    sevenNetStatus: 'OutOfStock',
+    maruzenAvailable: false,
+    checkedAt: '2026-11-21',
+  });
+  assert.equal(stOut.status, 'out_of_stock');
+
+  // Verify live catalog.masterpieces structure & audit fixes
+  const catalog = JSON.parse(fs.readFileSync(new URL('../data/catalog.json', import.meta.url), 'utf8'));
+  const mps = catalog.masterpieces || [];
+  assert.ok(mps.length >= 35, `Expected >=35 masterpieces, got ${mps.length}`);
+  assert.ok(
+    mps.every((m) => m.isMasterpiece === true && ['in_stock', 'low_stock', 'out_of_stock'].includes(m.stockInfo?.status)),
+    'Every masterpiece must have isMasterpiece=true and a valid stockInfo.status'
+  );
+  assert.ok(
+    mps.every((m) => m.releaseDate >= '2024-01-01' && m.releaseDate <= '2026-12-31'),
+    'Every masterpiece releaseDate must be within 2024-2026'
+  );
+  const tri02 = mps.find((m) => m.id === 'mp-triangle-02');
+  assert.equal(tri02?.isbn, '9784065347737');
+  assert.equal(tri02?.offers?.[0]?.url, 'https://www.amazon.co.jp/dp/4065347734');
+
+  const report = validateCatalogStructure(catalog);
+  assert.equal(report.nonAmazonNonBonus, 0);
+  assert.deepEqual(report.errors, []);
+});
+
 
 
 

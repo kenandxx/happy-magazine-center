@@ -11174,5 +11174,2804 @@
     "rakutenOpenApi2026": false,
     "lastRunAt": "2026-11-21T20:01:26+09:00",
     "lastRunSummary": "PR TIMES 15社(+0) / 版元ドットコム10社(+18) / 7net(+0作品・+6特典) / HMV・BLT(+10記事)"
-  }
+  },
+  "masterpieces": [
+    {
+      "id": "mp-inoue-monologue",
+      "isbn": "9784065360613",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2025,
+      "acclaimBadge": "👑 2025年オリコン年間1位・12.4万部",
+      "acclaimReason": "2025年写真集年間ランキング総合1位（期間内12.4万部）。イタリアロケ256Pの大ボリュームで“井上和図鑑”と絶賛された絶対必携の1冊。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 4,
+        "reviewCount": 2
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 7net: 品切れ ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "sevenNetStatus": "OutOfStock",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18152503/",
+      "sevenNetUrl": "https://7net.omni7.jp/detail/1107585520.html",
+      "title": "乃木坂46 井上和 1st写真集『モノローグ』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2025年名作",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2025-04-22",
+      "price": 2640,
+      "coverTalents": [
+        "井上和",
+        "乃木坂46"
+      ],
+      "featuredTalents": [
+        "井上和",
+        "乃木坂46"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/0613/9784065360613_1_4.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "👑 2025年オリコン年間1位・12.4万部。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 7net: 品切れ ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "2025年写真集年間ランキング総合1位（期間内12.4万部）。イタリアロケ256Pの大ボリュームで“井上和図鑑”と絶賛された絶対必携の1冊。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/0613/9784065360613_1_4.jpg?downsize=600:*",
+          "caption": "乃木坂46 井上和 1st写真集『モノローグ』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065360617"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-inoue-monologue-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065360613）",
+          "talent": "井上和",
+          "price": 2640,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/0613/9784065360613_1_4.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4065360617"
+        }
+      ]
+    },
+    {
+      "id": "mp-nogi5-anokoro",
+      "isbn": "9784838732623",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2024,
+      "acclaimBadge": "👑 2024年オリコン年間1位・11.6万部",
+      "acclaimReason": "2024年オリコン年間写真集総合1位（11.6万部）。5期生11人全員の輝きを閉じ込めた2024年最大の歴史的ベストセラー。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/17733083/",
+      "title": "乃木坂46 5期生写真集『あの頃、乃木坂にいた』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "マガジンハウス",
+      "category": "photobook",
+      "releaseDate": "2024-02-20",
+      "price": 2400,
+      "coverTalents": [
+        "乃木坂46 5期生",
+        "井上和",
+        "五百城茉央",
+        "川﨑桜"
+      ],
+      "featuredTalents": [
+        "乃木坂46 5期生",
+        "井上和",
+        "五百城茉央",
+        "川﨑桜"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/2623/9784838732623_1_6.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "👑 2024年オリコン年間1位・11.6万部。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "2024年オリコン年間写真集総合1位（11.6万部）。5期生11人全員の輝きを閉じ込めた2024年最大の歴史的ベストセラー。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/2623/9784838732623_1_6.jpg?downsize=600:*",
+          "caption": "乃木坂46 5期生写真集『あの頃、乃木坂にいた』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4838732627"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-nogi5-anokoro-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784838732623）",
+          "talent": "乃木坂46 5期生",
+          "price": 2400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/2623/9784838732623_1_6.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4838732627"
+        }
+      ]
+    },
+    {
+      "id": "mp-yamashita-heroine",
+      "isbn": "9784096824429",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2024,
+      "acclaimBadge": "👑 2024年年間女性ソロ1位・11.3万部",
+      "acclaimReason": "卒業記念の集大成としてロサンゼルスで撮り下ろし。2024年女性ソロ年間1位＆レビュー満点級の王道名作。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 5,
+        "reviewCount": 3
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 7net: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "sevenNetStatus": "InStock",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/17786458/",
+      "sevenNetUrl": "https://7net.omni7.jp/detail/1107480423.html",
+      "title": "乃木坂46 山下美月 2nd写真集『ヒロイン』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "小学館",
+      "category": "photobook",
+      "releaseDate": "2024-04-23",
+      "price": 2500,
+      "coverTalents": [
+        "山下美月",
+        "乃木坂46"
+      ],
+      "featuredTalents": [
+        "山下美月",
+        "乃木坂46"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/4429/9784096824429_1_3.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "👑 2024年年間女性ソロ1位・11.3万部。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 7net: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "卒業記念の集大成としてロサンゼルスで撮り下ろし。2024年女性ソロ年間1位＆レビュー満点級の王道名作。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/4429/9784096824429_1_3.jpg?downsize=600:*",
+          "caption": "乃木坂46 山下美月 2nd写真集『ヒロイン』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4096824429"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-yamashita-heroine-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784096824429）",
+          "talent": "山下美月",
+          "price": 2500,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/4429/9784096824429_1_3.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4096824429"
+        }
+      ]
+    },
+    {
+      "id": "mp-yoda-yoda",
+      "isbn": "9784334105518",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2025,
+      "acclaimBadge": "🥈 2025年オリコン年間2位・11.2万部",
+      "acclaimReason": "オーストラリアロケで等身大と大人の魅力を完全収録。2025年年間2位・累計11万部超の卒業集大成傑作。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18094417/",
+      "title": "乃木坂46 与田祐希 3rd写真集『ヨーダ』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2025年名作",
+      "publisher": "光文社",
+      "category": "photobook",
+      "releaseDate": "2025-02-12",
+      "price": 2500,
+      "coverTalents": [
+        "与田祐希",
+        "乃木坂46"
+      ],
+      "featuredTalents": [
+        "与田祐希",
+        "乃木坂46"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/5518/9784334105518_1_2.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🥈 2025年オリコン年間2位・11.2万部。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "オーストラリアロケで等身大と大人の魅力を完全収録。2025年年間2位・累計11万部超の卒業集大成傑作。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/5518/9784334105518_1_2.jpg?downsize=600:*",
+          "caption": "乃木坂46 与田祐希 3rd写真集『ヨーダ』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4334105513"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-yoda-yoda-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784334105518）",
+          "talent": "与田祐希",
+          "price": 2500,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/5518/9784334105518_1_2.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4334105513"
+        }
+      ]
+    },
+    {
+      "id": "mp-ioki-mirai",
+      "isbn": "9784096824795",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2025,
+      "acclaimBadge": "🥉 2025年オリコン年間3位・9.4万部",
+      "acclaimReason": "5期生ソロ1stトップバッターとしてポルトガルで撮影。9.4万部の特大ヒットを記録した珠玉の一冊。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 5,
+        "reviewCount": 1
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18064057/",
+      "title": "乃木坂46 五百城茉央 1st写真集『未来の作り方』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2025年名作",
+      "publisher": "小学館",
+      "category": "photobook",
+      "releaseDate": "2025-01-21",
+      "price": 2600,
+      "coverTalents": [
+        "五百城茉央",
+        "乃木坂46"
+      ],
+      "featuredTalents": [
+        "五百城茉央",
+        "乃木坂46"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/4795/9784096824795_1_2.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🥉 2025年オリコン年間3位・9.4万部。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "5期生ソロ1stトップバッターとしてポルトガルで撮影。9.4万部の特大ヒットを記録した珠玉の一冊。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/4795/9784096824795_1_2.jpg?downsize=600:*",
+          "caption": "乃木坂46 五百城茉央 1st写真集『未来の作り方』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4096824798"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-ioki-mirai-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784096824795）",
+          "talent": "五百城茉央",
+          "price": 2600,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/4795/9784096824795_1_2.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4096824798"
+        }
+      ]
+    },
+    {
+      "id": "mp-kawasaki-etude",
+      "isbn": "9784103568513",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2026,
+      "acclaimBadge": "👑 2026年上半期1位・9.2万部",
+      "acclaimReason": "発売わずか1ヶ月余りで2026年オリコン上半期写真集総合1位（9.2万部）！ニース＆パリで水着・ランジェリー初挑戦。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 3.5,
+        "reviewCount": 2
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18530495/",
+      "title": "乃木坂46 川﨑桜 1st写真集『エチュード』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2026年名作",
+      "publisher": "新潮社",
+      "category": "photobook",
+      "releaseDate": "2026-04-14",
+      "price": 2854,
+      "coverTalents": [
+        "川﨑桜",
+        "乃木坂46"
+      ],
+      "featuredTalents": [
+        "川﨑桜",
+        "乃木坂46"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/8513/9784103568513_1_3.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "👑 2026年上半期1位・9.2万部。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "発売わずか1ヶ月余りで2026年オリコン上半期写真集総合1位（9.2万部）！ニース＆パリで水着・ランジェリー初挑戦。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/8513/9784103568513_1_3.jpg?downsize=600:*",
+          "caption": "乃木坂46 川﨑桜 1st写真集『エチュード』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4103568518"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-kawasaki-etude-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784103568513）",
+          "talent": "川﨑桜",
+          "price": 2854,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/8513/9784103568513_1_3.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4103568518"
+        }
+      ]
+    },
+    {
+      "id": "mp-tsutsui-kanjou",
+      "isbn": "9784334106621",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2025,
+      "acclaimBadge": "🏅 2025年年間4位・9.0万部・高評価★4.9",
+      "acclaimReason": "スペイン・バルセロナ＆ジローナ撮影。乃木坂46の年間TOP4独占を完成させた超高評価名作。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 4.9,
+        "reviewCount": 10
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18192225/",
+      "title": "乃木坂46 筒井あやめ 1st写真集『感情の隙間』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2025年名作",
+      "publisher": "光文社",
+      "category": "photobook",
+      "releaseDate": "2025-06-03",
+      "price": 2600,
+      "coverTalents": [
+        "筒井あやめ",
+        "乃木坂46"
+      ],
+      "featuredTalents": [
+        "筒井あやめ",
+        "乃木坂46"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/6621/9784334106621_1_2.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🏅 2025年年間4位・9.0万部・高評価★4.9。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "スペイン・バルセロナ＆ジローナ撮影。乃木坂46の年間TOP4独占を完成させた超高評価名作。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/6621/9784334106621_1_2.jpg?downsize=600:*",
+          "caption": "乃木坂46 筒井あやめ 1st写真集『感情の隙間』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4334106625"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-tsutsui-kanjou-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784334106621）",
+          "talent": "筒井あやめ",
+          "price": 2600,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/6621/9784334106621_1_2.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4334106625"
+        }
+      ]
+    },
+    {
+      "id": "mp-iwamoto-itazura",
+      "isbn": "9784801941403",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2024,
+      "acclaimBadge": "🔥 2025年オリコン年間6位・7.1万部",
+      "acclaimReason": "マレーシア＆東京で撮影。大人になった魅力が爆発し7.1万部を記録したロングセラー。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 5,
+        "reviewCount": 1
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/17999305/",
+      "title": "乃木坂46 岩本蓮加 1st写真集『いたずらな風』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "竹書房",
+      "category": "photobook",
+      "releaseDate": "2024-11-19",
+      "price": 2500,
+      "coverTalents": [
+        "岩本蓮加",
+        "乃木坂46"
+      ],
+      "featuredTalents": [
+        "岩本蓮加",
+        "乃木坂46"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/1403/9784801941403_1_6.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🔥 2025年オリコン年間6位・7.1万部。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "マレーシア＆東京で撮影。大人になった魅力が爆発し7.1万部を記録したロングセラー。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/1403/9784801941403_1_6.jpg?downsize=600:*",
+          "caption": "乃木坂46 岩本蓮加 1st写真集『いたずらな風』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4801941400"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-iwamoto-itazura-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784801941403）",
+          "talent": "岩本蓮加",
+          "price": 2500,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/1403/9784801941403_1_6.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4801941400"
+        }
+      ]
+    },
+    {
+      "id": "mp-matsuda-furimuite",
+      "isbn": "9784065359099",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2024,
+      "acclaimBadge": "🏅 2024年年間7位・6.5万部・品薄注意",
+      "acclaimReason": "カナダ・バンクーバーロケ。2024年ソロ週間TOP3入りの大ヒット作で、新品入手が徐々に難しくなっている名作。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 5,
+        "reviewCount": 1
+      },
+      "stockInfo": {
+        "status": "low_stock",
+        "label": "⚠️ 品薄・一部ストアのみ",
+        "detail": "楽天ブックス: ご注文できない商品 ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "ご注文できない商品",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/17829144/",
+      "title": "日向坂46 松田好花 1st写真集『振り向いて』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2024-05-28",
+      "price": 2400,
+      "coverTalents": [
+        "松田好花",
+        "日向坂46"
+      ],
+      "featuredTalents": [
+        "松田好花",
+        "日向坂46"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/9099/9784065359099_1_8.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🏅 2024年年間7位・6.5万部・品薄注意。⚠️ 品薄・一部ストアのみ（楽天ブックス: ご注文できない商品 ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "カナダ・バンクーバーロケ。2024年ソロ週間TOP3入りの大ヒット作で、新品入手が徐々に難しくなっている名作。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/9099/9784065359099_1_8.jpg?downsize=600:*",
+          "caption": "日向坂46 松田好花 1st写真集『振り向いて』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065359090"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-matsuda-furimuite-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065359099）",
+          "talent": "松田好花",
+          "price": 2400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/9099/9784065359099_1_8.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4065359090"
+        }
+      ]
+    },
+    {
+      "id": "mp-nagahama-2nd",
+      "isbn": "9784065370124",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2025,
+      "acclaimBadge": "🔥 2025年オリコン年間7位・6.1万部",
+      "acclaimReason": "伝説的1stから8年ぶりの2nd写真集。アイスランド＆フィンランドで高橋ヨーコが撮り下ろしたアート傑作。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 5,
+        "reviewCount": 3
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18243924/",
+      "title": "長濱ねる 2nd写真集『長濱ねる』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2025年名作",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2025-07-15",
+      "price": 3300,
+      "coverTalents": [
+        "長濱ねる"
+      ],
+      "featuredTalents": [
+        "長濱ねる"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/0124/9784065370124_1_3.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🔥 2025年オリコン年間7位・6.1万部。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "伝説的1stから8年ぶりの2nd写真集。アイスランド＆フィンランドで高橋ヨーコが撮り下ろしたアート傑作。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/0124/9784065370124_1_3.jpg?downsize=600:*",
+          "caption": "長濱ねる 2nd写真集『長濱ねる』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065370124"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-nagahama-2nd-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065370124）",
+          "talent": "長濱ねる",
+          "price": 3300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/0124/9784065370124_1_3.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4065370124"
+        }
+      ]
+    },
+    {
+      "id": "mp-umezawa-toumei",
+      "isbn": "9784334108595",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2026,
+      "acclaimBadge": "🥈 2026年上半期女性2位・5.0万部",
+      "acclaimReason": "キャプテン梅澤美波の卒業前2nd写真集。2026年上半期女性部門2位に輝いた圧巻の美スタイル集大成。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "maruzenAvailable": true
+      },
+      "title": "乃木坂46 梅澤美波 2nd写真集『透明な覚悟』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2026年名作",
+      "publisher": "光文社",
+      "category": "photobook",
+      "releaseDate": "2026-02-03",
+      "price": 2800,
+      "coverTalents": [
+        "梅澤美波",
+        "乃木坂46"
+      ],
+      "featuredTalents": [
+        "梅澤美波",
+        "乃木坂46"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/8595/9784334108595_1_3.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🥈 2026年上半期女性2位・5.0万部。✅ 新品在庫あり（丸善ジュンク堂: 在庫あり）",
+      "summary": "キャプテン梅澤美波の卒業前2nd写真集。2026年上半期女性部門2位に輝いた圧巻の美スタイル集大成。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/8595/9784334108595_1_3.jpg?downsize=600:*",
+          "caption": "乃木坂46 梅澤美波 2nd写真集『透明な覚悟』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4334108598"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-umezawa-toumei-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784334108595）",
+          "talent": "梅澤美波",
+          "price": 2800,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/8595/9784334108595_1_3.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4334108598"
+        }
+      ]
+    },
+    {
+      "id": "mp-sakurasatsu-01",
+      "isbn": "9784065432143",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2026,
+      "acclaimBadge": "🥉 2026年上半期女性3位・4.7万部",
+      "acclaimReason": "メンバー同士で撮り合ったオフショット写真集シリーズ待望の櫻坂46第1弾。レビュー高評価＆必携の保存版。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 4.75,
+        "reviewCount": 4
+      },
+      "stockInfo": {
+        "status": "low_stock",
+        "label": "⚠️ 品薄・一部ストアのみ",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 品切れ",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": false
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18507785/",
+      "title": "櫻坂46写真集『櫻撮 VOL.01』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2026年名作",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2026-03-17",
+      "price": 2640,
+      "coverTalents": [
+        "櫻坂46",
+        "森田ひかる",
+        "田村保乃",
+        "山﨑天"
+      ],
+      "featuredTalents": [
+        "櫻坂46",
+        "森田ひかる",
+        "田村保乃",
+        "山﨑天"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/2143/9784065432143_1_4.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🥉 2026年上半期女性3位・4.7万部。⚠️ 品薄・一部ストアのみ（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 品切れ）",
+      "summary": "メンバー同士で撮り合ったオフショット写真集シリーズ待望の櫻坂46第1弾。レビュー高評価＆必携の保存版。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/2143/9784065432143_1_4.jpg?downsize=600:*",
+          "caption": "櫻坂46写真集『櫻撮 VOL.01』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065432146"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-sakurasatsu-01-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065432143）",
+          "talent": "櫻坂46",
+          "price": 2640,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/2143/9784065432143_1_4.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4065432146"
+        }
+      ]
+    },
+    {
+      "id": "mp-tamura-tonari",
+      "isbn": "9784065370834",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2024,
+      "acclaimBadge": "⭐ オリコン週間1位・高評価★4.8+",
+      "acclaimReason": "アメリカ・サンタフェで撮影。発売初週オリコン1位＆ファンから圧倒的支持を集める櫻坂代表作。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 5,
+        "reviewCount": 1
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/17968433/",
+      "title": "櫻坂46 田村保乃 2nd写真集『隣の席になりたい』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2024-10-22",
+      "price": 2500,
+      "coverTalents": [
+        "田村保乃",
+        "櫻坂46"
+      ],
+      "featuredTalents": [
+        "田村保乃",
+        "櫻坂46"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/0834/9784065370834_1_3.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "⭐ オリコン週間1位・高評価★4.8+。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "アメリカ・サンタフェで撮影。発売初週オリコン1位＆ファンから圧倒的支持を集める櫻坂代表作。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/0834/9784065370834_1_3.jpg?downsize=600:*",
+          "caption": "櫻坂46 田村保乃 2nd写真集『隣の席になりたい』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065370833"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-tamura-tonari-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065370834）",
+          "talent": "田村保乃",
+          "price": 2500,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/0834/9784065370834_1_3.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4065370833"
+        }
+      ]
+    },
+    {
+      "id": "mp-sasaki-hizashi",
+      "isbn": "9784087901818",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2024,
+      "acclaimBadge": "🏅 2025年オリコン年間10位・4.2万部",
+      "acclaimReason": "ベトナム・ダナンで撮影したハッピーオーラ全開の1st。オリコン週間1位＆年間TOP10入り。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 5,
+        "reviewCount": 1
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18033608/",
+      "title": "日向坂46 佐々木美玲 1st写真集『陽射しのパレード』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "集英社",
+      "category": "photobook",
+      "releaseDate": "2024-12-17",
+      "price": 2640,
+      "coverTalents": [
+        "佐々木美玲",
+        "日向坂46"
+      ],
+      "featuredTalents": [
+        "佐々木美玲",
+        "日向坂46"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/1818/9784087901818_1_18.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🏅 2025年オリコン年間10位・4.2万部。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "ベトナム・ダナンで撮影したハッピーオーラ全開の1st。オリコン週間1位＆年間TOP10入り。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/1818/9784087901818_1_18.jpg?downsize=600:*",
+          "caption": "日向坂46 佐々木美玲 1st写真集『陽射しのパレード』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4087901815"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-sasaki-hizashi-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784087901818）",
+          "talent": "佐々木美玲",
+          "price": 2640,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/1818/9784087901818_1_18.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4087901815"
+        }
+      ]
+    },
+    {
+      "id": "mp-fujishima-kajitsu",
+      "isbn": "9784087902235",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "idol_pb",
+      "releaseYear": 2026,
+      "acclaimBadge": "🔥 2026夏重版ヒット・注目4期生エース",
+      "acclaimReason": "日向坂46四期生エース待望の1st写真集。発売直後から重版御礼の2026年下半期注目作。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 4.33,
+        "reviewCount": 6
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18662545/",
+      "title": "日向坂46 藤嶌果歩 1st写真集『果実の歩幅』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2026年名作",
+      "publisher": "集英社",
+      "category": "photobook",
+      "releaseDate": "2026-08-04",
+      "price": 2640,
+      "coverTalents": [
+        "藤嶌果歩",
+        "日向坂46"
+      ],
+      "featuredTalents": [
+        "藤嶌果歩",
+        "日向坂46"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/2235/9784087902235_1_67.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🔥 2026夏重版ヒット・注目4期生エース。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "日向坂46四期生エース待望の1st写真集。発売直後から重版御礼の2026年下半期注目作。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/2235/9784087902235_1_67.jpg?downsize=600:*",
+          "caption": "日向坂46 藤嶌果歩 1st写真集『果実の歩幅』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4087902234"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-fujishima-kajitsu-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784087902235）",
+          "talent": "藤嶌果歩",
+          "price": 2640,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/2235/9784087902235_1_67.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4087902234"
+        }
+      ]
+    },
+    {
+      "id": "mp-goto-flos",
+      "isbn": "9784065359532",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "gravure_pb",
+      "releaseYear": 2024,
+      "acclaimBadge": "👑 重版10刷・写真集日本歴代1位記録",
+      "acclaimReason": "デビュー25周年記念作。紙版は発売即重版を重ね10刷突破、電子版は日本歴代No.1を記録した2024〜2025年最大の社会現象名作！",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 4.71,
+        "reviewCount": 17
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 7net: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "sevenNetStatus": "InStock",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18048271/",
+      "sevenNetUrl": "https://7net.omni7.jp/detail/1107555040.html",
+      "title": "後藤真希 写真集『flos』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2024-11-29",
+      "price": 3300,
+      "coverTalents": [
+        "後藤真希"
+      ],
+      "featuredTalents": [
+        "後藤真希"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/9532/9784065359532_1_3.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "👑 重版10刷・写真集日本歴代1位記録。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 7net: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "デビュー25周年記念作。紙版は発売即重版を重ね10刷突破、電子版は日本歴代No.1を記録した2024〜2025年最大の社会現象名作！",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/9532/9784065359532_1_3.jpg?downsize=600:*",
+          "caption": "後藤真希 写真集『flos』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065359538"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-goto-flos-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065359532）",
+          "talent": "後藤真希",
+          "price": 3300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/9532/9784065359532_1_3.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4065359538"
+        }
+      ]
+    },
+    {
+      "id": "mp-kikuchi-memory",
+      "isbn": "9784065379851",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "gravure_pb",
+      "releaseYear": 2025,
+      "acclaimBadge": "👑 発売即重版・シリーズ累計5万部突破",
+      "acclaimReason": "“令和の完売クイーン”菊地姫奈の20歳メモリアル集大成。グラビア写真集として異例の累計5万部超を記録した必携作。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 4.43,
+        "reviewCount": 7
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18111914/",
+      "title": "菊地姫奈 写真集『memory』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2025年名作",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2025-03-19",
+      "price": 2970,
+      "coverTalents": [
+        "菊地姫奈"
+      ],
+      "featuredTalents": [
+        "菊地姫奈"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/9851/9784065379851_1_3.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "👑 発売即重版・シリーズ累計5万部突破。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "“令和の完売クイーン”菊地姫奈の20歳メモリアル集大成。グラビア写真集として異例の累計5万部超を記録した必携作。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/9851/9784065379851_1_3.jpg?downsize=600:*",
+          "caption": "菊地姫奈 写真集『memory』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065379857"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-kikuchi-memory-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065379851）",
+          "talent": "菊地姫奈",
+          "price": 2970,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/9851/9784065379851_1_3.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4065379857"
+        }
+      ]
+    },
+    {
+      "id": "mp-enohara-inaism",
+      "isbn": "9784065369852",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "gravure_pb",
+      "releaseYear": 2024,
+      "acclaimBadge": "🏆 累計3万部突破・グラデミー賞大賞",
+      "acclaimReason": "“令和の国宝ボディ”としてグラビア界を席巻したデビュー年の1st写真集。重版を重ね累計3万部突破の伝説的デビュー作。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 5,
+        "reviewCount": 2
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/17970354/",
+      "title": "榎原依那 1st写真集『Inaism』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2024-10-23",
+      "price": 3300,
+      "coverTalents": [
+        "榎原依那"
+      ],
+      "featuredTalents": [
+        "榎原依那"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/9852/9784065369852_1_6.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🏆 累計3万部突破・グラデミー賞大賞。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "“令和の国宝ボディ”としてグラビア界を席巻したデビュー年の1st写真集。重版を重ね累計3万部突破の伝説的デビュー作。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/9852/9784065369852_1_6.jpg?downsize=600:*",
+          "caption": "榎原依那 1st写真集『Inaism』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065369851"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-enohara-inaism-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065369852）",
+          "talent": "榎原依那",
+          "price": 3300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/9852/9784065369852_1_6.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4065369851"
+        }
+      ]
+    },
+    {
+      "id": "mp-enohara-iamina",
+      "isbn": "9784065416549",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "gravure_pb",
+      "releaseYear": 2025,
+      "acclaimBadge": "🔥 20代ラスト集大成・フィジー＆シドニー",
+      "acclaimReason": "1stの特大ヒットに続く過去最大の大胆カット収録2nd。1stと並べて揃えたいグラビア金字塔。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18409096/",
+      "title": "榎原依那 2nd写真集『I am Ina』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2025年名作",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2025-12-03",
+      "price": 3300,
+      "coverTalents": [
+        "榎原依那"
+      ],
+      "featuredTalents": [
+        "榎原依那"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/6549/9784065416549_1_5.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🔥 20代ラスト集大成・フィジー＆シドニー。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "1stの特大ヒットに続く過去最大の大胆カット収録2nd。1stと並べて揃えたいグラビア金字塔。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/6549/9784065416549_1_5.jpg?downsize=600:*",
+          "caption": "榎原依那 2nd写真集『I am Ina』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/406541654X"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-enohara-iamina-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065416549）",
+          "talent": "榎原依那",
+          "price": 3300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/6549/9784065416549_1_5.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/406541654X"
+        }
+      ]
+    },
+    {
+      "id": "mp-tanaka-kimamani",
+      "isbn": "9784087901764",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "gravure_pb",
+      "releaseYear": 2024,
+      "acclaimBadge": "🔥 発売即重版・グラビア女王の代表作",
+      "acclaimReason": "HKT48卒業後初の2nd写真集。オーストラリアロケで圧倒的表現力を見せ発売直後に重版決定した大名作。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 4.25,
+        "reviewCount": 4
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/17933524/",
+      "title": "田中美久 2nd写真集『気ままに。』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "集英社",
+      "category": "photobook",
+      "releaseDate": "2024-09-12",
+      "price": 3300,
+      "coverTalents": [
+        "田中美久"
+      ],
+      "featuredTalents": [
+        "田中美久"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/1764/9784087901764_1_7.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🔥 発売即重版・グラビア女王の代表作。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "HKT48卒業後初の2nd写真集。オーストラリアロケで圧倒的表現力を見せ発売直後に重版決定した大名作。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/1764/9784087901764_1_7.jpg?downsize=600:*",
+          "caption": "田中美久 2nd写真集『気ままに。』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4087901769"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-tanaka-kimamani-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784087901764）",
+          "talent": "田中美久",
+          "price": 3300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/1764/9784087901764_1_7.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4087901769"
+        }
+      ]
+    },
+    {
+      "id": "mp-mori-sunokasumi",
+      "isbn": "9784344042247",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "gravure_pb",
+      "releaseYear": 2024,
+      "acclaimBadge": "👑 オリコン2週連続1位＆重版ヒット",
+      "acclaimReason": "サンフランシスコ撮影。オリコン写真集2週連続1位・重版を達成したフリーアナ写真集の新基準。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/17723395/",
+      "title": "森香澄 1st写真集『すのかすみ。』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "幻冬舎",
+      "category": "photobook",
+      "releaseDate": "2024-02-28",
+      "price": 3300,
+      "coverTalents": [
+        "森香澄"
+      ],
+      "featuredTalents": [
+        "森香澄"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/2247/9784344042247_1_5.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "👑 オリコン2週連続1位＆重版ヒット。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "サンフランシスコ撮影。オリコン写真集2週連続1位・重版を達成したフリーアナ写真集の新基準。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/2247/9784344042247_1_5.jpg?downsize=600:*",
+          "caption": "森香澄 1st写真集『すのかすみ。』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4344042247"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-mori-sunokasumi-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784344042247）",
+          "talent": "森香澄",
+          "price": 3300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/2247/9784344042247_1_5.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4344042247"
+        }
+      ]
+    },
+    {
+      "id": "mp-mizobata-aoimamade",
+      "isbn": "9784087902457",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "gravure_pb",
+      "releaseYear": 2026,
+      "acclaimBadge": "⭐ 2026年重版決定・レビュー満点★5.0",
+      "acclaimReason": "2026年最注目の新世代グラビアスター待望の1st。発売後すぐ重版決定＆高評価続出の注目名作。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 5,
+        "reviewCount": 3
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18609230/",
+      "title": "溝端葵 1st写真集『あおいままで。』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2026年名作",
+      "publisher": "集英社",
+      "category": "photobook",
+      "releaseDate": "2026-07-17",
+      "price": 3630,
+      "coverTalents": [
+        "溝端葵"
+      ],
+      "featuredTalents": [
+        "溝端葵"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/2457/9784087902457_1_89.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "⭐ 2026年重版決定・レビュー満点★5.0。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "2026年最注目の新世代グラビアスター待望の1st。発売後すぐ重版決定＆高評価続出の注目名作。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/2457/9784087902457_1_89.jpg?downsize=600:*",
+          "caption": "溝端葵 1st写真集『あおいままで。』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4087902455"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-mizobata-aoimamade-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784087902457）",
+          "talent": "溝端葵",
+          "price": 3630,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/2457/9784087902457_1_89.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4087902455"
+        }
+      ]
+    },
+    {
+      "id": "mp-maeda-beste",
+      "isbn": "9784065417737",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "gravure_pb",
+      "releaseYear": 2026,
+      "acclaimBadge": "🏅 2026上半期女性5位・高評価★4.88",
+      "acclaimReason": "14年ぶりの写真集にして2026年上半期TOP5＆高評価★4.88を記録した圧倒的完成度の大人傑作。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 4.88,
+        "reviewCount": 8
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18429446/",
+      "title": "前田敦子 写真集『Beste』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2026年名作",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2026-02-16",
+      "price": 3300,
+      "coverTalents": [
+        "前田敦子"
+      ],
+      "featuredTalents": [
+        "前田敦子"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/7737/9784065417737_1_2.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🏅 2026上半期女性5位・高評価★4.88。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "14年ぶりの写真集にして2026年上半期TOP5＆高評価★4.88を記録した圧倒的完成度の大人傑作。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/7737/9784065417737_1_2.jpg?downsize=600:*",
+          "caption": "前田敦子 写真集『Beste』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065417732"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-maeda-beste-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065417737）",
+          "talent": "前田敦子",
+          "price": 3300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/7737/9784065417737_1_2.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4065417732"
+        }
+      ]
+    },
+    {
+      "id": "mp-nomura-utsukushii",
+      "isbn": "9784047382497",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "gravure_pb",
+      "releaseYear": 2026,
+      "acclaimBadge": "🔥 3刷重版決定・2026ロングヒット",
+      "acclaimReason": "“アイカツ体型”と抜群のスタイルが話題を呼び2026年11月に3刷重版決定した大ヒット1st。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "maruzenAvailable": true
+      },
+      "title": "SKE48 野村実代 1st写真集『美しい方程式』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2026年名作",
+      "publisher": "KADOKAWA",
+      "category": "photobook",
+      "releaseDate": "2026-06-15",
+      "price": 3300,
+      "coverTalents": [
+        "野村実代",
+        "SKE48"
+      ],
+      "featuredTalents": [
+        "野村実代",
+        "SKE48"
+      ],
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784047382497.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "🔥 3刷重版決定・2026ロングヒット。✅ 新品在庫あり（丸善ジュンク堂: 在庫あり）",
+      "summary": "“アイカツ体型”と抜群のスタイルが話題を呼び2026年11月に3刷重版決定した大ヒット1st。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784047382497.jpg",
+          "caption": "SKE48 野村実代 1st写真集『美しい方程式』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4047382493"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-nomura-utsukushii-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784047382497）",
+          "talent": "野村実代",
+          "price": 3300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784047382497.jpg",
+          "url": "https://www.amazon.co.jp/dp/4047382493"
+        }
+      ]
+    },
+    {
+      "id": "mp-seto-emerald",
+      "isbn": "9784096824818",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "r18_pb",
+      "releaseYear": 2025,
+      "acclaimBadge": "👑 発売前重版・1000年に一人のJカップ",
+      "acclaimReason": "“セトカン旋風”の原点となった歴史的1st写真集。予約殺到で発売前重版となり、現在は新品入手困難・プレミア化が進行中！",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 3.67,
+        "reviewCount": 3
+      },
+      "stockInfo": {
+        "status": "low_stock",
+        "label": "⚠️ 品薄・一部ストアのみ",
+        "detail": "楽天ブックス: ご注文できない商品 ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "ご注文できない商品",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18106675/",
+      "title": "瀬戸環奈 1st写真集『emerald』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2025年名作",
+      "publisher": "小学館",
+      "category": "r18",
+      "releaseDate": "2025-01-28",
+      "price": 4180,
+      "coverTalents": [
+        "瀬戸環奈"
+      ],
+      "featuredTalents": [
+        "瀬戸環奈"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/4818/9784096824818_1_76.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "👑 発売前重版・1000年に一人のJカップ。⚠️ 品薄・一部ストアのみ（楽天ブックス: ご注文できない商品 ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "“セトカン旋風”の原点となった歴史的1st写真集。予約殺到で発売前重版となり、現在は新品入手困難・プレミア化が進行中！",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/4818/9784096824818_1_76.jpg?downsize=600:*",
+          "caption": "瀬戸環奈 1st写真集『emerald』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/409682481X"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-seto-emerald-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784096824818）",
+          "talent": "瀬戸環奈",
+          "price": 4180,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/4818/9784096824818_1_76.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/409682481X"
+        }
+      ]
+    },
+    {
+      "id": "mp-seto-suki",
+      "isbn": "9784575320039",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "r18_pb",
+      "releaseYear": 2025,
+      "acclaimBadge": "🔥 バリ島ロケ・R18最強ヒロイン2nd",
+      "acclaimReason": "デビュー半年でスターに駆け上がった瀬戸環奈のバリ島撮り下ろし。イベント即完・圧倒的満足度の2nd傑作。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18329491/",
+      "title": "瀬戸環奈 2nd写真集『好きになっちゃう』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2025年名作",
+      "publisher": "双葉社",
+      "category": "r18",
+      "releaseDate": "2025-09-17",
+      "price": 4400,
+      "coverTalents": [
+        "瀬戸環奈"
+      ],
+      "featuredTalents": [
+        "瀬戸環奈"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784575320039.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "🔥 バリ島ロケ・R18最強ヒロイン2nd。✅ 新品在庫あり（丸善ジュンク堂: 在庫あり）",
+      "summary": "デビュー半年でスターに駆け上がった瀬戸環奈のバリ島撮り下ろし。イベント即完・圧倒的満足度の2nd傑作。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784575320039.jpg",
+          "caption": "瀬戸環奈 2nd写真集『好きになっちゃう』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/457532003X"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-seto-suki-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784575320039）",
+          "talent": "瀬戸環奈",
+          "price": 4400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784575320039.jpg",
+          "url": "https://www.amazon.co.jp/dp/457532003X"
+        }
+      ]
+    },
+    {
+      "id": "mp-ishikawa-belleza",
+      "isbn": "9784198662882",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "r18_pb",
+      "releaseYear": 2026,
+      "acclaimBadge": "👑 5周年スペインロケ・トップ女優の金字塔",
+      "acclaimReason": "デビュー5周年記念日に発売された福島裕二撮影のスペインロケ大作。透明感と色香の極致を刻んだ2026年R18最高峰。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "maruzenAvailable": true
+      },
+      "title": "石川澪 5周年記念写真集『BELLEZA』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2026年名作",
+      "publisher": "徳間書店",
+      "category": "r18",
+      "releaseDate": "2026-10-05",
+      "price": 4620,
+      "coverTalents": [
+        "石川澪"
+      ],
+      "featuredTalents": [
+        "石川澪"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784198662882.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "👑 5周年スペインロケ・トップ女優の金字塔。✅ 新品在庫あり（丸善ジュンク堂: 在庫あり）",
+      "summary": "デビュー5周年記念日に発売された福島裕二撮影のスペインロケ大作。透明感と色香の極致を刻んだ2026年R18最高峰。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784198662882.jpg",
+          "caption": "石川澪 5周年記念写真集『BELLEZA』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4198662886"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-ishikawa-belleza-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784198662882）",
+          "talent": "石川澪",
+          "price": 4620,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784198662882.jpg",
+          "url": "https://www.amazon.co.jp/dp/4198662886"
+        }
+      ]
+    },
+    {
+      "id": "mp-kawakita-utakata",
+      "isbn": "9784823607509",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "r18_pb",
+      "releaseYear": 2024,
+      "acclaimBadge": "👑 改名後代表作・桑島智輝撮影の名作",
+      "acclaimReason": "トップ女王・河北彩伽が名匠・桑島智輝と組んだ美の結晶。サイン本即完・R18写真集史に残る名作。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/17990708/",
+      "title": "河北彩伽 写真集『うたかたの花』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "ジーオーティー",
+      "category": "r18",
+      "releaseDate": "2024-10-18",
+      "price": 3850,
+      "coverTalents": [
+        "河北彩伽",
+        "河北彩花"
+      ],
+      "featuredTalents": [
+        "河北彩伽",
+        "河北彩花"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/7509/9784823607509_1_3.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "👑 改名後代表作・桑島智輝撮影の名作。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "トップ女王・河北彩伽が名匠・桑島智輝と組んだ美の結晶。サイン本即完・R18写真集史に残る名作。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/7509/9784823607509_1_3.jpg?downsize=600:*",
+          "caption": "河北彩伽 写真集『うたかたの花』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4823607503"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-kawakita-utakata-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784823607509）",
+          "talent": "河北彩伽",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/7509/9784823607509_1_3.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4823607503"
+        }
+      ]
+    },
+    {
+      "id": "mp-kawakita-softnoise",
+      "isbn": "9784065415238",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "r18_pb",
+      "releaseYear": 2025,
+      "acclaimBadge": "🔥 講談社刊・松岡一哲撮影のアート傑作",
+      "acclaimReason": "講談社から刊行された河北彩伽の最新フェーズを刻む珠玉の写真集。写真作品としての完成度が極めて高い一冊。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18400936/",
+      "title": "河北彩伽 写真集『soft noise』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2025年名作",
+      "publisher": "講談社",
+      "category": "r18",
+      "releaseDate": "2025-11-20",
+      "price": 4180,
+      "coverTalents": [
+        "河北彩伽",
+        "河北彩花"
+      ],
+      "featuredTalents": [
+        "河北彩伽",
+        "河北彩花"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/5238/9784065415238_1_2.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🔥 講談社刊・松岡一哲撮影のアート傑作。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "講談社から刊行された河北彩伽の最新フェーズを刻む珠玉の写真集。写真作品としての完成度が極めて高い一冊。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/5238/9784065415238_1_2.jpg?downsize=600:*",
+          "caption": "河北彩伽 写真集『soft noise』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065415233"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-kawakita-softnoise-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065415238）",
+          "talent": "河北彩伽",
+          "price": 4180,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/5238/9784065415238_1_2.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4065415233"
+        }
+      ]
+    },
+    {
+      "id": "mp-ono-fivelive",
+      "isbn": "9784801944756",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "r18_pb",
+      "releaseYear": 2025,
+      "acclaimBadge": "🔥 デビュー5周年記念・竹書房名作",
+      "acclaimReason": "絶大な人気を誇る小野六花の5周年記念写真集。3000部限定作『365』と並ぶ必携コレクターズブック。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18145828/",
+      "title": "小野六花 写真集『FIVE LIVE』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2025年名作",
+      "publisher": "竹書房",
+      "category": "r18",
+      "releaseDate": "2025-05-30",
+      "price": 4400,
+      "coverTalents": [
+        "小野六花"
+      ],
+      "featuredTalents": [
+        "小野六花"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784801944756.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "🔥 デビュー5周年記念・竹書房名作。✅ 新品在庫あり（丸善ジュンク堂: 在庫あり）",
+      "summary": "絶大な人気を誇る小野六花の5周年記念写真集。3000部限定作『365』と並ぶ必携コレクターズブック。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784801944756.jpg",
+          "caption": "小野六花 写真集『FIVE LIVE』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4801944752"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-ono-fivelive-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784801944756）",
+          "talent": "小野六花",
+          "price": 4400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784801944756.jpg",
+          "url": "https://www.amazon.co.jp/dp/4801944752"
+        }
+      ]
+    },
+    {
+      "id": "mp-miyashita-muku",
+      "isbn": "9784823607820",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "r18_pb",
+      "releaseYear": 2024,
+      "acclaimBadge": "⭐ 写真展大盛況・透明感R18名作",
+      "acclaimReason": "渋谷ギャラリー・ルデコでの写真展も大盛況となった宮下玲奈の代表作。野澤亘伸撮影の瑞々しい名作。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "maruzenAvailable": true
+      },
+      "title": "宮下玲奈 写真集『無垢な季節』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "ジーオーティー",
+      "category": "r18",
+      "releaseDate": "2024-11-26",
+      "price": 3850,
+      "coverTalents": [
+        "宮下玲奈"
+      ],
+      "featuredTalents": [
+        "宮下玲奈"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://shop.r10s.jp/book/cabinet/7820/9784823607820_1_3.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "⭐ 写真展大盛況・透明感R18名作。✅ 新品在庫あり（丸善ジュンク堂: 在庫あり）",
+      "summary": "渋谷ギャラリー・ルデコでの写真展も大盛況となった宮下玲奈の代表作。野澤亘伸撮影の瑞々しい名作。",
+      "gallery": [
+        {
+          "url": "https://shop.r10s.jp/book/cabinet/7820/9784823607820_1_3.jpg",
+          "caption": "宮下玲奈 写真集『無垢な季節』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4823607821"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-miyashita-muku-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784823607820）",
+          "talent": "宮下玲奈",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://shop.r10s.jp/book/cabinet/7820/9784823607820_1_3.jpg",
+          "url": "https://www.amazon.co.jp/dp/4823607821"
+        }
+      ]
+    },
+    {
+      "id": "mp-triangle-02",
+      "isbn": "9784065347737",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "magazine_bn",
+      "releaseYear": 2024,
+      "acclaimBadge": "👑 2024年オリコン年間写真集4位・7.9万部",
+      "acclaimReason": "日向坂46エース3名を各50P・計150P超で撮り下ろした写真集級ビジュアル誌。年間7.9万部突破の伝説バックナンバー！",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "7net: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "sevenNetStatus": "InStock",
+        "maruzenAvailable": true
+      },
+      "sevenNetUrl": "https://7net.omni7.jp/detail/1107457092.html",
+      "title": "TRIANGLE magazine 02（日向坂46：小坂菜緒・金村美玖・正源司陽子）",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "講談社",
+      "category": "idol",
+      "releaseDate": "2024-01-23",
+      "price": 1980,
+      "coverTalents": [
+        "小坂菜緒",
+        "金村美玖",
+        "正源司陽子",
+        "日向坂46"
+      ],
+      "featuredTalents": [
+        "小坂菜緒",
+        "金村美玖",
+        "正源司陽子",
+        "日向坂46"
+      ],
+      "palette": [
+        "#1D4ED8",
+        "#3B82F6",
+        "#EFF6FF"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw3492ecf5/421699/1107457092.jpg?sw=1150",
+      "includedBonuses": [],
+      "printOnlyNote": "👑 2024年オリコン年間写真集4位・7.9万部。✅ 新品在庫あり（7net: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "日向坂46エース3名を各50P・計150P超で撮り下ろした写真集級ビジュアル誌。年間7.9万部突破の伝説バックナンバー！",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw3492ecf5/421699/1107457092.jpg?sw=1150",
+          "caption": "TRIANGLE magazine 02（日向坂46：小坂菜緒・金村美玖・正源司陽子） 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065345979"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-triangle-02-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065345979）",
+          "talent": "小坂菜緒",
+          "price": 1980,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw3492ecf5/421699/1107457092.jpg?sw=1150",
+          "url": "https://www.amazon.co.jp/dp/4065347734"
+        }
+      ]
+    },
+    {
+      "id": "mp-triangle-03",
+      "isbn": "9784065370759",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "magazine_bn",
+      "releaseYear": 2024,
+      "acclaimBadge": "🏅 2024年年間写真集8位・6.5万部・★4.6",
+      "acclaimReason": "乃木坂46の3世代エースを各50P大ボリューム撮り下ろし。通常写真集を超えるコスパで高評価レビュー多数の神号。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 4.6,
+        "reviewCount": 5
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/17981192/",
+      "title": "TRIANGLE magazine 03 乃木坂46（与田祐希・遠藤さくら・小川彩）",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "講談社",
+      "category": "idol",
+      "releaseDate": "2024-10-29",
+      "price": 1999,
+      "coverTalents": [
+        "与田祐希",
+        "遠藤さくら",
+        "小川彩",
+        "乃木坂46"
+      ],
+      "featuredTalents": [
+        "与田祐希",
+        "遠藤さくら",
+        "小川彩",
+        "乃木坂46"
+      ],
+      "palette": [
+        "#1D4ED8",
+        "#3B82F6",
+        "#EFF6FF"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/0759/9784065370759_1_5.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🏅 2024年年間写真集8位・6.5万部・★4.6。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "乃木坂46の3世代エースを各50P大ボリューム撮り下ろし。通常写真集を超えるコスパで高評価レビュー多数の神号。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/0759/9784065370759_1_5.jpg?downsize=600:*",
+          "caption": "TRIANGLE magazine 03 乃木坂46（与田祐希・遠藤さくら・小川彩） 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065370752"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-triangle-03-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065370759）",
+          "talent": "与田祐希",
+          "price": 1999,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/0759/9784065370759_1_5.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4065370752"
+        }
+      ]
+    },
+    {
+      "id": "mp-h46-mode-1",
+      "isbn": "9784334102555",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "magazine_bn",
+      "releaseYear": 2024,
+      "acclaimBadge": "📚 5周年記念永久保存ムック",
+      "acclaimReason": "日向坂46メンバー全員の撮り下ろし＆ロングインタビューを凝縮した5周年記念公式ブック。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "7net: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "sevenNetStatus": "InStock",
+        "maruzenAvailable": true
+      },
+      "sevenNetUrl": "https://7net.omni7.jp/detail/1107474512.html",
+      "title": "日向坂46 デビュー5周年記念公式BOOK『H46 MODE vol.1』",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "光文社",
+      "category": "idol",
+      "releaseDate": "2024-03-19",
+      "price": 2420,
+      "coverTalents": [
+        "日向坂46",
+        "小坂菜緒",
+        "金村美玖",
+        "正源司陽子"
+      ],
+      "featuredTalents": [
+        "日向坂46",
+        "小坂菜緒",
+        "金村美玖",
+        "正源司陽子"
+      ],
+      "palette": [
+        "#1D4ED8",
+        "#3B82F6",
+        "#EFF6FF"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784334102555.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "📚 5周年記念永久保存ムック。✅ 新品在庫あり（7net: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "日向坂46メンバー全員の撮り下ろし＆ロングインタビューを凝縮した5周年記念公式ブック。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784334102555.jpg",
+          "caption": "日向坂46 デビュー5周年記念公式BOOK『H46 MODE vol.1』 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4334102557"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-h46-mode-1-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784334102555）",
+          "talent": "日向坂46",
+          "price": 2420,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784334102555.jpg",
+          "url": "https://www.amazon.co.jp/dp/4334102557"
+        }
+      ]
+    },
+    {
+      "id": "mp-switch-sakamichi",
+      "isbn": "9784884186371",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "magazine_bn",
+      "releaseYear": 2024,
+      "acclaimBadge": "📖 坂道3グループ合同・伝説の特集号",
+      "acclaimReason": "乃木坂46・櫻坂46・日向坂46の現在地を総力取材した永久保存版バックナンバー。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "7net: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "sevenNetStatus": "InStock",
+        "maruzenAvailable": true
+      },
+      "sevenNetUrl": "https://7net.omni7.jp/detail/1107509099.html",
+      "title": "SWITCH Vol.42 No.7 特集：坂道白書",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "スイッチ・パブリッシング",
+      "category": "idol",
+      "releaseDate": "2024-06-20",
+      "price": 1650,
+      "coverTalents": [
+        "乃木坂46",
+        "櫻坂46",
+        "日向坂46"
+      ],
+      "featuredTalents": [
+        "乃木坂46",
+        "櫻坂46",
+        "日向坂46"
+      ],
+      "palette": [
+        "#1D4ED8",
+        "#3B82F6",
+        "#EFF6FF"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784884186371.jpg",
+      "includedBonuses": [],
+      "printOnlyNote": "📖 坂道3グループ合同・伝説の特集号。✅ 新品在庫あり（7net: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "乃木坂46・櫻坂46・日向坂46の現在地を総力取材した永久保存版バックナンバー。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784884186371.jpg",
+          "caption": "SWITCH Vol.42 No.7 特集：坂道白書 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4884186370"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-switch-sakamichi-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784884186371）",
+          "talent": "乃木坂46",
+          "price": 1650,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784884186371.jpg",
+          "url": "https://www.amazon.co.jp/dp/4884186370"
+        }
+      ]
+    },
+    {
+      "id": "mp-shupure-prem-2026h1",
+      "isMasterpiece": true,
+      "masterpieceTier": "S",
+      "masterpieceGroup": "magazine_bn",
+      "releaseYear": 2026,
+      "acclaimBadge": "🔴 半年間の神グラビア総集編・新品品薄",
+      "acclaimReason": "2026年上半期の週プレ名作グラビアを一冊に凝縮。雑誌バックナンバーは発売数ヶ月で新品完売するため見つけたら即確保推奨！",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 5,
+        "reviewCount": 1
+      },
+      "stockInfo": {
+        "status": "out_of_stock",
+        "label": "🔴 新品完売・中古/プレミア",
+        "detail": "楽天ブックス: ご注文できない商品",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "ご注文できない商品"
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18746613/",
+      "title": "週刊プレイボーイPREMIUM 2026上半期グラビア傑作選",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2026年名作",
+      "publisher": "集英社",
+      "category": "gravure",
+      "releaseDate": "2026-08-10",
+      "price": 1149,
+      "coverTalents": [
+        "週プレグラビア選抜",
+        "溝端葵",
+        "山田あい"
+      ],
+      "featuredTalents": [
+        "週プレグラビア選抜",
+        "溝端葵",
+        "山田あい"
+      ],
+      "palette": [
+        "#1D4ED8",
+        "#3B82F6",
+        "#EFF6FF"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/0960/4912206760960_1_3.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "🔴 半年間の神グラビア総集編・新品品薄。🔴 新品完売・中古/プレミア（楽天ブックス: ご注文できない商品）",
+      "summary": "2026年上半期の週プレ名作グラビアを一冊に凝縮。雑誌バックナンバーは発売数ヶ月で新品完売するため見つけたら即確保推奨！",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/0960/4912206760960_1_3.jpg?downsize=600:*",
+          "caption": "週刊プレイボーイPREMIUM 2026上半期グラビア傑作選 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8A%E3%83%97%E3%83%AC%E3%82%A4%E3%83%9C%E3%83%BC%E3%82%A4PREMIUM%202026%E4%B8%8A%E5%8D%8A%E6%9C%9F%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E5%82%91%E4%BD%9C%E9%81%B8&i=stripbooks"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-shupure-prem-2026h1-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・バックナンバー在庫を確認",
+          "talent": "週プレグラビア選抜",
+          "price": 1149,
+          "status": "ended",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/0960/4912206760960_1_3.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8A%E3%83%97%E3%83%AC%E3%82%A4%E3%83%9C%E3%83%BC%E3%82%A4PREMIUM%202026%E4%B8%8A%E5%8D%8A%E6%9C%9F%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E5%82%91%E4%BD%9C%E9%81%B8&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "mp-friday-gold-2025w",
+      "isbn": "9784065419663",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "magazine_bn",
+      "releaseYear": 2025,
+      "acclaimBadge": "📀 2025グラビア総決算ムック・高評価",
+      "acclaimReason": "2025年を彩った人気グラドルのベストグラビアを一挙収録した講談社ムック保存版。",
+      "reviewStats": {
+        "source": "rakuten",
+        "rating": 4.33,
+        "reviewCount": 3
+      },
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/18420157/",
+      "title": "FRIDAY GOLD グラビアムック 2025 Winter",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2025年名作",
+      "publisher": "講談社",
+      "category": "gravure",
+      "releaseDate": "2025-11-20",
+      "price": 1200,
+      "coverTalents": [
+        "FRIDAYグラビア選抜",
+        "榎原依那"
+      ],
+      "featuredTalents": [
+        "FRIDAYグラビア選抜",
+        "榎原依那"
+      ],
+      "palette": [
+        "#1D4ED8",
+        "#3B82F6",
+        "#EFF6FF"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/9663/9784065419663_1_2.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "📀 2025グラビア総決算ムック・高評価。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "2025年を彩った人気グラドルのベストグラビアを一挙収録した講談社ムック保存版。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/9663/9784065419663_1_2.jpg?downsize=600:*",
+          "caption": "FRIDAY GOLD グラビアムック 2025 Winter 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065419662"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-friday-gold-2025w-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065419663）",
+          "talent": "FRIDAYグラビア選抜",
+          "price": 1200,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/9663/9784065419663_1_2.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4065419662"
+        }
+      ]
+    },
+    {
+      "id": "mp-friday-prem-2024s",
+      "isbn": "9784065352267",
+      "isMasterpiece": true,
+      "masterpieceTier": "A",
+      "masterpieceGroup": "magazine_bn",
+      "releaseYear": 2024,
+      "acclaimBadge": "📖 2024春・豪華グラビア保存版ムック",
+      "acclaimReason": "2024年春の旬グラビアをまとめて振り返れるコスパ抜群のバックナンバームック。",
+      "stockInfo": {
+        "status": "in_stock",
+        "label": "✅ 新品在庫あり",
+        "detail": "楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり",
+        "checkedAt": "2026-11-21",
+        "rakutenStatus": "在庫あり",
+        "maruzenAvailable": true
+      },
+      "rakutenUrl": "https://books.rakuten.co.jp/rb/17829182/",
+      "title": "FRIDAY PREMIUM グラビアムック 2024年春号",
+      "series": "2024〜2026 殿堂名作",
+      "issueLabel": "2024年名作",
+      "publisher": "講談社",
+      "category": "gravure",
+      "releaseDate": "2024-04-23",
+      "price": 1200,
+      "coverTalents": [
+        "FRIDAYグラビア選抜"
+      ],
+      "featuredTalents": [
+        "FRIDAYグラビア選抜"
+      ],
+      "palette": [
+        "#1D4ED8",
+        "#3B82F6",
+        "#EFF6FF"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/2267/9784065352267_1_3.jpg?downsize=600:*",
+      "includedBonuses": [],
+      "printOnlyNote": "📖 2024春・豪華グラビア保存版ムック。✅ 新品在庫あり（楽天ブックス: 在庫あり ／ 丸善ジュンク堂: 在庫あり）",
+      "summary": "2024年春の旬グラビアをまとめて振り返れるコスパ抜群のバックナンバームック。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/2267/9784065352267_1_3.jpg?downsize=600:*",
+          "caption": "FRIDAY PREMIUM グラビアムック 2024年春号 公式表紙",
+          "source": "出版社公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065352266"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "mp-friday-prem-2024s-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版・中古相場",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonでレビュー・新品/中古在庫を確認（ISBN 9784065352267）",
+          "talent": "FRIDAYグラビア選抜",
+          "price": 1200,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/2267/9784065352267_1_3.jpg?downsize=600:*",
+          "url": "https://www.amazon.co.jp/dp/4065352266"
+        }
+      ]
+    }
+  ],
+  "masterpiecesCheckedAt": "2026-11-21T21:00:00+09:00"
 }

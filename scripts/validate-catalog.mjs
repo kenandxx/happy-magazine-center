@@ -63,13 +63,15 @@ export function validateCatalogStructure(catalog) {
   const errors = [];
   const warnings = [];
   const items = catalog?.items || [];
+  const masterpieces = catalog?.masterpieces || [];
+  const allEntries = [...items, ...masterpieces];
 
   let nonAmazonNonBonus = 0;
   const seenItemIds = new Set();
   const seenOfferIds = new Set();
   const coverUrlOwner = new Map();
 
-  for (const item of items) {
+  for (const item of allEntries) {
     if (!item.id) errors.push('Item missing id');
     if (seenItemIds.has(item.id)) errors.push(`Duplicate item.id: ${item.id}`);
     seenItemIds.add(item.id);
@@ -155,6 +157,7 @@ export function validateCatalogStructure(catalog) {
 
   return {
     totalItems: items.length,
+    totalMasterpieces: masterpieces.length,
     totalOffers: seenOfferIds.size,
     nonAmazonNonBonus,
     errors,
@@ -168,12 +171,12 @@ async function runCli() {
   const report = validateCatalogStructure(catalog);
 
   console.log(
-    `[validate] Items: ${report.totalItems}, Offers: ${report.totalOffers}, nonAmazonNonBonus: ${report.nonAmazonNonBonus}`
+    `[validate] Items: ${report.totalItems}, Masterpieces: ${report.totalMasterpieces}, Offers: ${report.totalOffers}, nonAmazonNonBonus: ${report.nonAmazonNonBonus}`
   );
 
   if (checkUrls) {
     const urlRefs = new Map();
-    for (const item of catalog.items || []) {
+    for (const item of [...(catalog.items || []), ...(catalog.masterpieces || [])]) {
       const add = (u, who) => {
         if (!u) return;
         if (!urlRefs.has(u)) urlRefs.set(u, []);

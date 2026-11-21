@@ -130,7 +130,22 @@
         <div id="urgentRadarContainer"></div>
       </section>
 
-      <!-- Tab 3: 3-Month Upcoming Excitement Corner -->
+      <!-- Tab 3: 2024-2026 Must-Buy Masterpieces & Hall of Fame -->
+      <section id="tab-masterpieces" class="tab-panel" aria-label="2024〜2026 必買名作・殿堂">
+        <div class="panel-card masterpieces-hero-card">
+          <div class="urgent-hero-top">
+            <h2 class="panel-heading">🏆 買わなきゃ損！名作・殿堂（2024〜2026）</h2>
+            <span class="masterpieces-hero-pill">在庫ライブ判定</span>
+          </div>
+          <p class="panel-desc">
+            2024年1月〜現在までの<strong>オリコン年間TOP・10刷重版・高評価レビュー写真集・🔞R18代表作・伝説の雑誌バックナンバー</strong>を厳選。すでに持っている本は<strong>「✅ 持ってる（消す）」</strong>で非表示、迷う本は<strong>「🤔 検討する」</strong>でマーク棚へ保存できます。
+          </p>
+          <div id="masterpiecesProgressBar"></div>
+        </div>
+        <div id="masterpiecesContainer"></div>
+      </section>
+
+      <!-- Tab 4: 3-Month Upcoming Excitement Corner -->
       <section id="tab-calendar" class="tab-panel" aria-label="これから3ヶ月のお楽しみコーナー">
         <div class="panel-card excitement-header-card">
           <h2 class="panel-heading">🎉 これから3ヶ月のお楽しみコーナー</h2>
@@ -517,8 +532,8 @@
           <div class="footer-spec-body">
             <dl class="footer-spec-list">
               <div>
-                <dt>更新タイミング</dt>
-                <dd>毎朝 07:00 JST に自動巡回（GitHub Actions）。新刊・限定特典を検出すると自動でサイト反映・公開されます（PR承認や手動操作は不要／上記リンクから即時実行も可）。</dd>
+                <dt>更新タイミング・名作在庫チェック</dt>
+                <dd>毎朝 07:00 JST に自動巡回（GitHub Actions）。新刊・限定特典の自動反映に加え、「🏆 名作・殿堂（2024〜2026）」の主要書店在庫（新品あり／品薄／完売・中古相場）もライブ更新されます（PR承認や手動操作は不要／上記リンクから即時実行も可）。</dd>
               </div>
               <div>
                 <dt>収集ソース（キー不要5系統＋任意）</dt>
@@ -530,7 +545,7 @@
               </div>
               <div>
                 <dt>手動取込・保存仕様</dt>
-                <dd>Amazon短縮URL（<code>amzn.asia</code>）や商品URLは「推し・棚 → 取込・保存」から1タップ追加＆即スコア判定可能。推し・VIP枠・表紙/特典別マーク棚・予算は端末内（<code>localStorage</code>）に保存されます（JSONでバックアップ／復元可）。</dd>
+                <dd>Amazon短縮URL（<code>amzn.asia</code>）や商品URLは「推し・棚 → 取込・保存」から1タップ追加＆即スコア判定可能。推し・VIP枠・名作の所持/検討状態・表紙/特典別マーク棚・予算は端末内（<code>localStorage</code>）に保存されます（JSONでバックアップ／復元可）。</dd>
               </div>
             </dl>
           </div>
@@ -538,7 +553,10 @@
       </footer>
     </main>
 
-    <!-- Bottom Navigation (5 Tabs) -->
+    <!-- Floating Undo Toast (for 1-tap Dismiss Owned on Masterpieces) -->
+    <div id="undoToast" class="undo-toast" role="status" aria-live="polite" hidden></div>
+
+    <!-- Bottom Navigation (6 Tabs) -->
     <nav class="bottom-nav" aria-label="メインナビゲーション">
       <div class="bottom-nav-inner">
         <button class="nav-btn active" data-tab="discover" type="button">
@@ -550,9 +568,14 @@
           <span id="urgentNavBadge" class="nav-alert-badge" hidden>0</span>
           <span>早め予約</span>
         </button>
+        <button class="nav-btn nav-btn-masterpieces" data-tab="masterpieces" type="button">
+          <span class="nav-icon" aria-hidden="true">🏆</span>
+          <span id="masterpiecesNavBadge" class="nav-alert-badge nav-gold-badge" hidden>0</span>
+          <span>名作</span>
+        </button>
         <button class="nav-btn" data-tab="calendar" type="button">
           <span class="nav-icon" aria-hidden="true">🎉</span>
-          <span>3ヶ月予定</span>
+          <span>3ヶ月</span>
         </button>
         <button class="nav-btn" data-tab="oshi" type="button">
           <span class="nav-icon" aria-hidden="true">💖</span>
@@ -560,7 +583,7 @@
         </button>
         <button class="nav-btn" data-tab="hub" type="button">
           <span class="nav-icon" aria-hidden="true">⚡</span>
-          <span>横断検索</span>
+          <span>検索</span>
         </button>
       </div>
     </nav>

@@ -503,13 +503,38 @@
       </section>
 
       <footer class="app-footer">
-        <span id="autoUpdateStatus">🤖 PR TIMES 15社＋版元10社＋7net＋HMV＋B.L.T.web 毎朝07:00 JST自動収集</span>
-        <a
-          class="footer-actions-link"
-          href="https://github.com/kenandxx/happy-magazine-center/actions/workflows/daily-catalog-update.yml"
-          target="_blank"
-          rel="noopener noreferrer"
-        >自動収集ログ・手動実行 ↗</a>
+        <div class="footer-main-row">
+          <span id="autoUpdateStatus">🤖 PR TIMES 15社＋版元10社＋7net＋HMV＋B.L.T.web 毎朝07:00 JST自動収集</span>
+          <a
+            class="footer-actions-link"
+            href="https://github.com/kenandxx/happy-magazine-center/actions/workflows/daily-catalog-update.yml"
+            target="_blank"
+            rel="noopener noreferrer"
+          >自動収集ログ・手動実行 ↗</a>
+        </div>
+        <details class="footer-spec-details">
+          <summary class="footer-spec-summary">更新ルール・収集仕様</summary>
+          <div class="footer-spec-body">
+            <dl class="footer-spec-list">
+              <div>
+                <dt>更新タイミング</dt>
+                <dd>毎朝 07:00 JST に自動巡回（GitHub Actions）。新刊・限定特典を検出すると自動でサイト反映・公開されます（PR承認や手動操作は不要／上記リンクから即時実行も可）。</dd>
+              </div>
+              <div>
+                <dt>収集ソース（キー不要5系統＋任意）</dt>
+                <dd>①PR TIMES 15出版社RSS ／ ②版元ドットコム 10主要版元（彩文館・ジーウォーク・ジーオーティー・双葉社・竹書房・ワニブックス・講談社・集英社・光文社・秋田書店）近刊RSS＋openBD ／ ③セブンネット限定表紙・サイン本・ポストカード直接抽出 ／ ④HMV&amp;BOOKS 書籍RSS ／ ⑤B.L.T.web 公式RSS（＋任意で2026年版楽天OpenAPI併用可）。</dd>
+              </div>
+              <div>
+                <dt>ノイズ除去・品質ガード</dt>
+                <dd>基本購入先は Amazon を常時表示し、他ストア（7net・楽天・HMV・TSUTAYA）は<strong>ストア限定特典ありのみ</strong>表示（無特典ノイズ0件）。電子版限定・男性タレント・一般コミック等を除外し、書影のライブ疎通（HTTP 200）・ISBN-10チェックサム・重複チェック通過分のみ反映します。</dd>
+              </div>
+              <div>
+                <dt>手動取込・保存仕様</dt>
+                <dd>Amazon短縮URL（<code>amzn.asia</code>）や商品URLは「推し・棚 → 取込・保存」から1タップ追加＆即スコア判定可能。推し・VIP枠・表紙/特典別マーク棚・予算は端末内（<code>localStorage</code>）に保存されます（JSONでバックアップ／復元可）。</dd>
+              </div>
+            </dl>
+          </div>
+        </details>
       </footer>
     </main>
 

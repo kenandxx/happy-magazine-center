@@ -3591,18 +3591,24 @@ body.privacy-blur-r18 .is-r18-media::after {
   color: var(--accent);
 }
 
-/* App Footer (Auto-Update Info) */
+/* App Footer (Auto-Update Info & Unobtrusive Spec) */
 .app-footer {
   margin-top: 20px;
   padding: 12px 14px;
   border-top: 1px solid var(--border);
   display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+.footer-main-row {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   flex-wrap: wrap;
-  font-size: 11px;
-  color: var(--ink-muted);
 }
 
 .footer-actions-link {
@@ -3617,6 +3623,80 @@ body.privacy-blur-r18 .is-r18-media::after {
 .footer-actions-link:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.footer-spec-details {
+  width: 100%;
+}
+
+.footer-spec-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 10.5px;
+  color: var(--ink-muted);
+  opacity: 0.78;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  user-select: none;
+}
+
+.footer-spec-summary::-webkit-details-marker {
+  display: none;
+}
+
+.footer-spec-summary::before {
+  content: '▸';
+  font-size: 9px;
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.footer-spec-details[open] .footer-spec-summary::before {
+  transform: rotate(90deg);
+}
+
+.footer-spec-summary:hover {
+  opacity: 1;
+  color: var(--ink-secondary);
+}
+
+.footer-spec-body {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--ink-secondary);
+  line-height: 1.55;
+}
+
+.footer-spec-list {
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.footer-spec-list dt {
+  font-weight: 800;
+  font-size: 10.5px;
+  color: var(--ink-primary);
+}
+
+.footer-spec-list dd {
+  margin: 1px 0 0;
+  font-size: 10.5px;
+  color: var(--ink-muted);
+}
+
+.footer-spec-list code {
+  font-size: 10px;
+  padding: 0 3px;
+  border-radius: 4px;
+  background: rgba(15, 23, 42, 0.06);
 }
 
 /* =========================================================

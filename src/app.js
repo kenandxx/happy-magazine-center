@@ -3883,21 +3883,28 @@ async function handleIsbnLookup(rawInput) {
   if (!q) {
     if (statusEl) {
       statusEl.className = 'isbn-lookup-status is-error';
-      statusEl.textContent = '⚠️ Amazonの商品URL（/dp/…）またはISBN（10桁/13桁）を貼り付けてください。';
+      statusEl.textContent = '⚠️ AmazonアプリURL（amzn.asia/d/...）、商品URL（/dp/…）、またはISBNを貼り付けてください。';
     }
-    return;
+    return null;
   }
 
   if (btn) {
     btn.disabled = true;
-    btn.textContent = '⏳ openBD照会中...';
+    btn.textContent = '⏳ 展開＆照会中...';
   }
   if (statusEl) {
     statusEl.className = 'isbn-lookup-status';
-    statusEl.textContent = '🔍 日本の公式書誌DB（openBD）から書影・発売日・定価を取得しています...';
+    statusEl.textContent = '🔍 URLを解析し、公式書誌DB（openBD）から書影・発売日・定価を取得しています...';
   }
 
-  const res = await lookupBookByIsbnOrUrl(q);
+  const res = await lookupBookByIsbnOrUrl(q, {
+    onProgress: (msg) => {
+      if (statusEl) {
+        statusEl.className = 'isbn-lookup-status';
+        statusEl.textContent = msg;
+      }
+    },
+  });
 
   if (btn) {
     btn.disabled = false;
@@ -3907,22 +3914,29 @@ async function handleIsbnLookup(rawInput) {
   if (!res.ok) {
     state.isbnLookupPreview = null;
     renderIsbnPreviewBox();
+    if (res.resolvedUrl) {
+      const addAmz = document.getElementById('addAmazonUrl');
+      if (addAmz && !addAmz.value) addAmz.value = res.resolvedUrl;
+    }
     if (statusEl) {
       statusEl.className = 'isbn-lookup-status is-error';
       statusEl.textContent = `⚠️ ${res.error}`;
     }
-    return;
+    return res;
   }
 
   state.isbnLookupPreview = { book: res.book, extracted: res.extracted };
   if (reqLink) {
-    reqLink.href = buildGitHubIssueRequestUrl(res.book.title, res.book.isbn || q);
+    reqLink.href = buildGitHubIssueRequestUrl(res.book.title, res.book.isbn || res.resolvedUrl || q);
   }
   if (statusEl) {
     statusEl.className = 'isbn-lookup-status is-ok';
-    statusEl.textContent = '✅ 公式書誌と早め予約スコアを判定しました！下のボタンで即投入できます。';
+    statusEl.textContent = res.expandedFromShortUrl
+      ? `✅ Amazonアプリ短縮URLを自動展開（ISBN ${res.book.isbn}）＆早め予約スコアを判定しました！`
+      : '✅ 公式書誌と早め予約スコアを判定しました！下のボタンで即投入できます。';
   }
   renderIsbnPreviewBox();
+  return res;
 }
 
 function confirmIsbnImport() {
@@ -4009,7 +4023,7 @@ function renderAutoSourcesStatus() {
       <div class="auto-source-row">
         <span class="auto-source-dot is-on"></span>
         <div>
-          <strong>openBD ライブ書誌取得（Amazon URL / ISBN / 共有シート）</strong>
+          <strong>openBD ライブ書誌取得（amzn.asia自動展開 / /dp/ URL / ISBN）</strong>
           <span>稼働中 ・ ブラウザ直結で書影・定価・早め予約スコアを即判定</span>
         </div>
       </div>
@@ -4082,50 +4096,77 @@ async function processIncomingSharePayload(payload, { simulated = false } = {}) 
 
   const prefix = simulated ? '🧪 共有着信デモ' : '📲 共有リンクを受信しました！';
 
-  if (payload.mode === 'isbn') {
+  if (payload.mode === 'isbn' || payload.mode === 'short_url') {
     if (banner) {
       banner.hidden = false;
       banner.className = 'share-arrival-banner is-loading';
-      banner.innerHTML = `<strong>${prefix}</strong>（ISBN <code>${escapeHtml(
-        payload.isbnInfo.isbn13
-      )}</code>）openBDから書影＆早め予約スコアを自動判定中...`;
+      banner.innerHTML =
+        payload.mode === 'short_url'
+          ? `<strong>${prefix}</strong> Amazonアプリ短縮URL（<code>${escapeHtml(
+              payload.shortUrl
+            )}</code>）を自動展開して openBD から書影＆早め予約スコアを判定中...`
+          : `<strong>${prefix}</strong>（ISBN <code>${escapeHtml(
+              payload.isbnInfo.isbn13
+            )}</code>）openBDから書影＆早め予約スコアを自動判定中...`;
     }
     const input = document.getElementById('isbnImportInput');
     if (input) input.value = payload.rawText;
 
-    await handleIsbnLookup(payload.rawText);
+    const lookupRes = await handleIsbnLookup(payload.rawText);
 
     if (banner) {
       if (state.isbnLookupPreview) {
         banner.className = 'share-arrival-banner is-ok';
         banner.innerHTML = `
           <div>
-            <strong>✅ ${simulated ? '共有着信デモ完了！' : '共有から自動取得＆スコア判定完了！'}</strong>
+            <strong>✅ ${
+              payload.mode === 'short_url'
+                ? 'Amazonアプリ短縮URLを自動展開＆スコア判定完了！'
+                : simulated
+                  ? '共有着信デモ完了！'
+                  : '共有から自動取得＆スコア判定完了！'
+            }</strong>
             <span>下の「🚀 ダッシュボード＆早め予約に即投入！」を1タップで追加できます。</span>
           </div>
         `;
       } else {
-        banner.className = 'share-arrival-banner is-warn';
-        banner.innerHTML = `
-          <div>
-            <strong>⚠️ ${prefix}（ISBN ${escapeHtml(payload.isbnInfo.isbn13)} はopenBD未登録）</strong>
-            <span>下のメモ登録フォームにタイトルを入力して保存するか、公式収録リクエストを送れます。</span>
-          </div>
-        `;
+        const matchedExisting = findMatchingCatalogItemByTitle(payload.cleanedTitle);
         if (payload.cleanedTitle) {
           const addTitle = document.getElementById('addTitle');
           if (addTitle) addTitle.value = payload.cleanedTitle;
         }
-        if (payload.safeAmazonUrl) {
+        const bestAmzUrl = lookupRes?.resolvedUrl || payload.safeAmazonUrl || '';
+        if (bestAmzUrl) {
           const addAmz = document.getElementById('addAmazonUrl');
-          if (addAmz) addAmz.value = payload.safeAmazonUrl;
+          if (addAmz) addAmz.value = bestAmzUrl;
         }
+        banner.className = matchedExisting ? 'share-arrival-banner is-ok' : 'share-arrival-banner is-warn';
+        banner.innerHTML = matchedExisting
+          ? `
+            <div>
+              <strong>✅ ${prefix} すでにダッシュボードに収録済みでした！</strong>
+              <span>「${escapeHtml(matchedExisting.title)}」を1タップで開けます。</span>
+            </div>
+            <div class="share-arrival-actions">
+              <button class="primary-btn" type="button" data-open-id="${escapeHtml(matchedExisting.id)}">
+                📖 収録済み作品を開く →
+              </button>
+            </div>
+          `
+          : `
+            <div>
+              <strong>⚠️ ${prefix} openBDに一致する紙書籍書誌がありませんでした</strong>
+              <span>${escapeHtml(
+                lookupRes?.error || '下のメモ登録フォームへAmazon URLを入力済みなので、そのまま保存できます。'
+              )}</span>
+            </div>
+          `;
       }
     }
     return;
   }
 
-  // Case 2: Amazon app short link (amzn.asia / amzn.to) or title-only share without ASIN
+  // Case 2: Title-only share without ISBN or Amazon short URL
   const matchedExisting = findMatchingCatalogItemByTitle(payload.cleanedTitle);
   const addTitle = document.getElementById('addTitle');
   const addAmz = document.getElementById('addAmazonUrl');
@@ -4151,10 +4192,10 @@ async function processIncomingSharePayload(payload, { simulated = false } = {}) 
       `
       : `
         <div>
-          <strong>📲 ${prefix} 短縮URL（amzn.asia等）を受信しました</strong>
+          <strong>📲 ${prefix} タイトル情報を受信しました</strong>
           <span>「${escapeHtml(
             payload.cleanedTitle
-          )}」は短縮URLのためISBNを含みません。下のメモ欄へ自動入力済みです（Safariで開いて <code>/dp/…</code> URLを共有すると書影まで自動取得できます）。</span>
+          )}」を下のメモ欄へ自動入力済みです。そのまま保存するか全5ストア横断検索できます。</span>
         </div>
         <div class="share-arrival-actions">
           <button class="primary-btn" type="button" data-hub-search-title="${escapeHtml(payload.cleanedTitle)}">
@@ -4164,7 +4205,7 @@ async function processIncomingSharePayload(payload, { simulated = false } = {}) 
             payload.safeAmazonUrl
               ? `<a class="quick-preview-icon-btn" href="${escapeHtml(
                   payload.safeAmazonUrl
-                )}" target="_blank" rel="noopener noreferrer">SafariでAmazonを開く ↗</a>`
+                )}" target="_blank" rel="noopener noreferrer">Amazonを開く ↗</a>`
               : ''
           }
           <a class="isbn-request-link" href="${escapeHtml(issueUrl)}" target="_blank" rel="noopener noreferrer">📮 公式収録依頼 ↗</a>
@@ -4289,7 +4330,7 @@ function bindEvents() {
         const input = document.getElementById('isbnImportInput');
         if (input) input.value = text;
         const parsed = parseIncomingSharePayload({ importParam: text });
-        if (parsed.mode === 'isbn') {
+        if (parsed.mode === 'isbn' || parsed.mode === 'short_url') {
           await handleIsbnLookup(text);
         } else if (parsed.mode === 'title_only') {
           await processIncomingSharePayload(parsed);
@@ -4330,7 +4371,7 @@ function bindEvents() {
   if (testShortShareBtn) {
     testShortShareBtn.addEventListener('click', () => {
       const demo = parseIncomingSharePayload({
-        textParam: '松井珠理奈 2nd写真集『アイヲシル』 https://amzn.asia/d/sampleDemoLink',
+        textParam: 'https://amzn.asia/d/0gDAl20j',
       });
       processIncomingSharePayload(demo, { simulated: true });
     });

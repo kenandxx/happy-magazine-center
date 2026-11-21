@@ -388,14 +388,34 @@ test('isbn-lookup extracts ISBN-13/10 from Amazon /dp/ URLs, multiline share tex
     },
   });
   assert.equal(parsedCal.category, 'calendar');
+  assert.equal(parsedCal.talent, '芳根京子');
+
+  // Photographer-listed openBD author ("長野,博文") should still extract photobook talent from title
+  const parsedPhotographer = parseOpenBdRecord({
+    summary: {
+      isbn: '9784065122501',
+      title: 'ぴ〈ゅ〉あ : 尾崎由香1st写真集',
+      publisher: '講談社',
+      author: '長野,博文',
+      pubdate: '201807',
+    },
+  });
+  assert.equal(parsedPhotographer.talent, '尾崎由香');
+  assert.equal(parsedPhotographer.category, 'photobook');
 });
 
-test('parseIncomingSharePayload handles iOS Shortcut ?import, Android PWA Share Target, amzn.asia short links, and blocks unsafe URLs', async () => {
-  const { parseIncomingSharePayload, extractSafeAmazonUrl, SHARE_BASE_URL, BOOKMARKLET_CODE } =
-    await import('../src/isbn-lookup.js');
+test('parseIncomingSharePayload handles iOS Shortcut ?import, amzn.asia short links, title-only shares, and blocks unsafe URLs', async () => {
+  const {
+    parseIncomingSharePayload,
+    extractSafeAmazonUrl,
+    extractAmazonShortUrl,
+    SHARE_BASE_URL,
+    BOOKMARKLET_CODE,
+  } = await import('../src/isbn-lookup.js');
 
   assert.ok(SHARE_BASE_URL.includes('?import='));
   assert.ok(BOOKMARKLET_CODE.startsWith('javascript:'));
+  assert.equal(extractAmazonShortUrl('https://amzn.asia/d/0gDAl20j'), 'https://amzn.asia/d/0gDAl20j');
 
   // 1) Safari / iOS Shortcut / Bookmarklet ?import=/dp/ASIN
   const direct = parseIncomingSharePayload({
@@ -414,15 +434,22 @@ test('parseIncomingSharePayload handles iOS Shortcut ?import, Android PWA Share 
   assert.equal(multi.mode, 'isbn');
   assert.equal(multi.isbnInfo.isbn13, '9784299065926');
 
-  // 3) Android PWA Share Target with amzn.asia short link (no ASIN -> title_only fallback)
+  // 3) Amazon app share with amzn.asia short link -> short_url mode (auto-expanded live!)
   const shortShare = parseIncomingSharePayload({
-    textParam: '高崎かなみ 3rd写真集 https://amzn.asia/d/9abcXYZ',
+    textParam: '尾崎由香1st写真集 https://amzn.asia/d/0gDAl20j',
   });
-  assert.equal(shortShare.mode, 'title_only');
-  assert.equal(shortShare.cleanedTitle, '高崎かなみ 3rd写真集');
-  assert.equal(shortShare.safeAmazonUrl, 'https://amzn.asia/d/9abcXYZ');
+  assert.equal(shortShare.mode, 'short_url');
+  assert.equal(shortShare.shortUrl, 'https://amzn.asia/d/0gDAl20j');
+  assert.equal(shortShare.cleanedTitle, '尾崎由香1st写真集');
 
-  // 4) Unsafe javascript: / non-Amazon URL rejection
+  // 4) Pure title-only share without URL -> title_only fallback
+  const titleOnly = parseIncomingSharePayload({
+    textParam: '高崎かなみ 3rd写真集',
+  });
+  assert.equal(titleOnly.mode, 'title_only');
+  assert.equal(titleOnly.cleanedTitle, '高崎かなみ 3rd写真集');
+
+  // 5) Unsafe javascript: / non-Amazon URL rejection
   assert.equal(extractSafeAmazonUrl('javascript:alert(1)'), '');
   assert.equal(extractSafeAmazonUrl('https://evil.example.com/dp/4299065921'), '');
   assert.equal(parseIncomingSharePayload({}).mode, 'empty');

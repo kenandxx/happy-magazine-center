@@ -134,6 +134,7 @@ export function parseIncomingSharePayload({
 
   const combined = parts.join('\n');
   const safeAmazonUrl = extractSafeAmazonUrl(combined);
+  const shortUrl = extractAmazonShortUrl(combined);
   const cleanedTitle = cleanSharedAmazonTitle(textParam || importParam, titleParam);
   const isbnInfo =
     extractIsbnFromInput(isbnParam) ||
@@ -151,6 +152,16 @@ export function parseIncomingSharePayload({
     };
   }
 
+  if (shortUrl) {
+    return {
+      mode: 'short_url',
+      rawText: shortUrl,
+      shortUrl,
+      cleanedTitle,
+      safeAmazonUrl: safeAmazonUrl || shortUrl,
+    };
+  }
+
   if (cleanedTitle || safeAmazonUrl) {
     return {
       mode: 'title_only',
@@ -161,6 +172,65 @@ export function parseIncomingSharePayload({
   }
 
   return { mode: 'empty' };
+}
+
+/**
+ * Extracts an Amazon app short link (https://amzn.asia/... or https://amzn.to/...).
+ */
+export function extractAmazonShortUrl(rawText = '') {
+  const m = String(rawText || '').match(
+    /https?:\/\/(?:www\.)?(?:amzn\.asia|amzn\.to)\/[A-Za-z0-9/_-]+/i
+  );
+  return m ? m[0].replace(/^http:/i, 'https:') : '';
+}
+
+/**
+ * Expands an Amazon app short URL (`amzn.asia` / `amzn.to`) into its full `amazon.co.jp/dp/...`
+ * destination directly from the browser using CORS-enabled public unshorten.me API (zero login).
+ */
+export async function expandAmazonShortUrl(shortUrl) {
+  const cleanShort = extractAmazonShortUrl(shortUrl);
+  if (!cleanShort) {
+    return { ok: false, error: '有効な amzn.asia / amzn.to URL ではありません。' };
+  }
+
+  // Primary: JSON endpoint (Access-Control-Allow-Origin: *)
+  try {
+    const res = await fetch(`https://unshorten.me/json/${encodeURIComponent(cleanShort)}`, {
+      signal: AbortSignal.timeout(9000),
+    });
+    if (res.ok) {
+      const data = await res.json();
+      const resolved = extractSafeAmazonUrl(data?.resolved_url || '');
+      if (data?.success && resolved) {
+        return { ok: true, resolvedUrl: resolved, shortUrl: cleanShort };
+      }
+    }
+  } catch {
+    // Fall through to plain-text endpoint
+  }
+
+  // Fallback: plain-text endpoint
+  try {
+    const res = await fetch(`https://unshorten.me/s/${cleanShort}`, {
+      signal: AbortSignal.timeout(9000),
+    });
+    if (res.ok) {
+      const txt = (await res.text()).trim();
+      const resolved = extractSafeAmazonUrl(txt);
+      if (resolved) {
+        return { ok: true, resolvedUrl: resolved, shortUrl: cleanShort };
+      }
+    }
+  } catch {
+    // Non-fatal
+  }
+
+  return {
+    ok: false,
+    shortUrl: cleanShort,
+    error: '短縮URLの自動展開がタイムアウトしました。Safariで一度開いて /dp/... のURLを貼るか、下のメモ欄から登録できます。',
+  };
 }
 
 function normalizePubDate(raw) {
@@ -188,6 +258,33 @@ function detectCategoryFromMetadata(title, publisher, description) {
   return 'gravure';
 }
 
+function extractTalentFromOpenBd(title, authorRaw) {
+  // 1. Photobook / Calendar title often contains exact talent name right before "1st写真集" / "写真集" / "カレンダー"
+  //    e.g. "ぴ〈ゅ〉あ : 尾崎由香1st写真集" -> "尾崎由香", "松井珠理奈写真集『アイヲシル』" -> "松井珠理奈"
+  const titleTalentMatch = String(title || '').match(
+    /(?:^|[:：／/\s『「【])([^\s:：／/『』「」【】()（）]{2,14}?)\s*(?:1st|2nd|3rd|4th|5th|ファースト|セカンド|サード|最新|待望の|メモリアル|卒業|202\d年)?\s*(?:写真集|フォトブック|フォトエッセイ|スタイルブック|カレンダー)/i
+  );
+  if (titleTalentMatch && titleTalentMatch[1]) {
+    const candidate = titleTalentMatch[1].trim();
+    if (candidate && !/^(豪華愛蔵版|完全|特別|限定|デジタル|ヘアヌード|ヌード)$/.test(candidate)) {
+      return candidate;
+    }
+  }
+
+  // 2. Clean openBD author ("長野,博文" -> "長野博文", "松井珠理奈／著" -> "松井珠理奈")
+  const cleanedAuthor = String(authorRaw || '')
+    .replace(/〔.*?〕|（.*?）|\(.*?\)/g, '')
+    .replace(/([\u3040-\u30ff\u4e00-\u9faf]),\s*([\u3040-\u30ff\u4e00-\u9faf])/g, '$1$2')
+    .trim();
+  const firstAuthor = cleanedAuthor
+    .split(/[、／/\s]+/)
+    .map((part) => part.trim())
+    .find((part) => part && !/^(著|写真|撮影|編集|監修)$/.test(part));
+
+  if (firstAuthor) return firstAuthor;
+  return String(title || '').split(/写真集|カレンダー|『|「|\s/)[0].trim() || '注目タレント';
+}
+
 /**
  * Parses an openBD record into a normalized preview object for Happy Magazine Center.
  */
@@ -205,14 +302,7 @@ export function parseOpenBdRecord(record, fallbackIsbn13 = '') {
         record.onix?.PublishingDetail?.Publisher?.PublisherName ||
         ''
     ).trim() || '出版社公式';
-  const authorRaw = String(s.author || '').trim();
-  const talent =
-    authorRaw
-      .split(/[,、／/\s]+/)
-      .map((part) => part.replace(/〔.*?〕|（.*?）|\(.*?\)/g, '').trim())
-      .filter((part) => part && !/^(著|写真|撮影|編集|監修)$/.test(part))[0] ||
-    title.split(/写真集|カレンダー|『|「|\s/)[0].trim() ||
-    '注目タレント';
+  const talent = extractTalentFromOpenBd(title, s.author || '');
 
   const onixDates = record.onix?.PublishingDetail?.PublishingDate || [];
   const rawDate =
@@ -248,14 +338,61 @@ export function parseOpenBdRecord(record, fallbackIsbn13 = '') {
 
 /**
  * Live lookup against Japan's public openBD API (CORS enabled, no login).
+ * Automatically expands Amazon app short links (`https://amzn.asia/d/...` / `amzn.to/...`) first!
  */
-export async function lookupBookByIsbnOrUrl(input) {
-  const extracted = extractIsbnFromInput(input);
+export async function lookupBookByIsbnOrUrl(input, { onProgress } = {}) {
+  let extracted = extractIsbnFromInput(input);
+  let expandedFromShortUrl = '';
+  let resolvedUrl = '';
+
+  if (!extracted) {
+    const shortUrl = extractAmazonShortUrl(input);
+    if (shortUrl) {
+      if (typeof onProgress === 'function') {
+        onProgress('🔗 Amazonアプリの短縮URL（amzn.asia）を自動展開中...');
+      }
+      const expanded = await expandAmazonShortUrl(shortUrl);
+      if (!expanded.ok) {
+        return {
+          ok: false,
+          shortUrl,
+          error: expanded.error,
+        };
+      }
+      expandedFromShortUrl = shortUrl;
+      resolvedUrl = expanded.resolvedUrl;
+      extracted = extractIsbnFromInput(resolvedUrl);
+
+      if (!extracted) {
+        const bAsinMatch = resolvedUrl.match(/\/(?:dp|gp\/product)\/(B0[A-Z0-9]{8})(?:[/?#]|$)/i);
+        if (bAsinMatch) {
+          return {
+            ok: false,
+            shortUrl,
+            resolvedUrl,
+            nonBookAsin: bAsinMatch[1].toUpperCase(),
+            error: `短縮URLを展開しました（ASIN: ${bAsinMatch[1].toUpperCase()}）が、Kindle電子版・雑誌コード・グッズ商品のためopenBD（紙書籍DB）に未登録です。Amazonで「単行本／大型本」に切り替えて共有するか、下のメモ欄からそのまま登録できます。`,
+          };
+        }
+        return {
+          ok: false,
+          shortUrl,
+          resolvedUrl,
+          error: '短縮URLを展開しましたが、書籍のISBN/ASINを検出できませんでした。下のメモ欄から直接登録できます。',
+        };
+      }
+    }
+  }
+
   if (!extracted) {
     return {
       ok: false,
-      error: 'Amazonの商品URL（/dp/4299065921 等）またはISBN（10桁/13桁）を入力してください。',
+      error: 'Amazonアプリ共有URL（amzn.asia/d/...）、商品URL（/dp/4299065921 等）、またはISBN（10桁/13桁）を入力してください。',
     };
+  }
+
+  if (typeof onProgress === 'function') {
+    onProgress(`🔍 ISBN ${extracted.isbn13} の公式書誌・書影を openBD から取得中...`);
   }
 
   try {
@@ -263,7 +400,7 @@ export async function lookupBookByIsbnOrUrl(input) {
       `https://api.openbd.jp/v1/get?isbn=${encodeURIComponent(extracted.isbn13)}`
     );
     if (!res.ok) {
-      return { ok: false, error: `openBD応答エラー (HTTP ${res.status})` };
+      return { ok: false, resolvedUrl, error: `openBD応答エラー (HTTP ${res.status})` };
     }
     const data = await res.json();
     const record = Array.isArray(data) ? data[0] : null;
@@ -271,18 +408,25 @@ export async function lookupBookByIsbnOrUrl(input) {
       return {
         ok: false,
         isbn13: extracted.isbn13,
+        resolvedUrl,
         error: `ISBN ${extracted.isbn13} はopenBDに未登録でした（雑誌コード・電子専用・予約解禁前の可能性があります）。下のフォームでそのまま手入力登録できます。`,
       };
     }
     const parsed = parseOpenBdRecord(record, extracted.isbn13);
     if (!parsed) {
-      return { ok: false, isbn13: extracted.isbn13, error: '書誌データを解析できませんでした。' };
+      return { ok: false, isbn13: extracted.isbn13, resolvedUrl, error: '書誌データを解析できませんでした。' };
     }
-    return { ok: true, book: parsed, extracted };
+    return {
+      ok: true,
+      book: parsed,
+      extracted,
+      ...(expandedFromShortUrl ? { expandedFromShortUrl, resolvedUrl } : {}),
+    };
   } catch (err) {
     return {
       ok: false,
       isbn13: extracted.isbn13,
+      resolvedUrl,
       error: `ネットワーク取得に失敗しました（${err?.message || 'offline'}）`,
     };
   }

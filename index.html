@@ -253,17 +253,17 @@
             <div id="shareArrivalBanner" class="share-arrival-banner" hidden></div>
             <div class="urgent-hero-top">
               <h2 class="panel-heading">⚡ Amazon URL / ISBN → 1タップ自動取込＆早め予約判定</h2>
-              <span class="isbn-live-badge">openBD直結</span>
+              <span class="isbn-live-badge">amzn.asia・openBD直結</span>
             </div>
             <p class="panel-desc">
-              Amazonで見つけた写真集・カレンダー・R18の商品URL（<code>/dp/…</code>）や共有テキスト、ISBNを貼るだけ！書誌DB（openBD）から<strong>公式書影・発売日・定価を自動取得</strong>し、即「🔥 早め予約スコア」へ投入できます。
+              <strong>Amazonアプリの短縮URL（<code>https://amzn.asia/d/…</code>）</strong>・商品URL（<code>/dp/…</code>）・ISBNのどれを貼っても<strong>自動展開＆openBDから公式書影・発売日・定価を取得</strong>し、即「🔥 早め予約スコア」へ投入できます！
             </p>
             <form id="isbnLookupForm" class="isbn-lookup-form">
               <input
                 id="isbnImportInput"
                 class="text-input"
                 type="text"
-                placeholder="Amazon URL（例：https://www.amazon.co.jp/dp/4299065921）またはISBN13"
+                placeholder="https://amzn.asia/d/... または /dp/4299065921 または ISBN13"
                 autocomplete="off"
               />
               <div class="isbn-lookup-btns">
@@ -290,10 +290,10 @@
           <div id="shareQuickSetupCard" class="panel-card share-setup-card">
             <div class="urgent-hero-top">
               <h2 class="panel-heading">📲 Amazon画面から「共有 → 1タップ即自動取込」連携</h2>
-              <span class="share-ready-badge">?import 対応済</span>
+              <span class="share-ready-badge">amzn.asia自動展開</span>
             </div>
             <p class="panel-desc">
-              URLをコピー＆貼り付けしなくても、Amazonを見ている画面から<strong>「共有」を1回押すだけ</strong>で自動的にここが開き、書影＆早め予約スコア（S/A/B）が即判定されます！
+              URLをコピー＆貼り付けしなくても、AmazonアプリやSafariの画面から<strong>「共有」を1回押すだけ</strong>で自動的にここが開き、<code>amzn.asia</code> 短縮URLも自動展開して書影＆早め予約スコア（S/A/B）が即判定されます！
             </p>
 
             <div class="share-test-row">
@@ -301,17 +301,18 @@
                 🧪 共有着信を体験（兒玉遥 /dp/ URL）
               </button>
               <button id="testShortShareBtn" class="quick-preview-icon-btn" type="button">
-                🧪 短縮URL共有を体験（amzn.asia）
+                🧪 Amazonアプリ短縮URLを体験（amzn.asia）
               </button>
             </div>
 
             <details class="setup-accordion">
-              <summary>📱 iPhone（Safari / Amazonアプリ）「共有シート」30秒設定レシピ</summary>
+              <summary>📱 iPhone（Amazonアプリ / Safari）「共有シート」30秒設定レシピ</summary>
               <div class="setup-accordion-body">
                 <ol class="setup-steps">
                   <li>iPhone標準の<strong>「ショートカット」アプリ</strong>を開き、右上の<strong>「＋」</strong>で新規作成</li>
                   <li>下部の「ⓘ（詳細）」から<strong>「共有シートに表示」をON</strong>（URL・テキストを受け取る）</li>
-                  <li>アクション「<strong>URL</strong>」を追加し、下のベースURL＋「ショートカットの入力」をつなぐ：</li>
+                  <li>（おすすめ）アクション「<strong>URLを展開</strong>（入力：ショートカットの入力）」を入れると、<code>amzn.asia</code> がiPhone内で爆速展開されます（省略してもアプリ側で自動展開します！）</li>
+                  <li>アクション「<strong>URL</strong>」を追加し、下のベースURL＋「展開されたURL（またはショートカットの入力）」をつなぐ：</li>
                 </ol>
                 <div class="copy-code-row">
                   <code id="shareBaseUrlCode" class="copy-code-box">https://kenandxx.github.io/happy-magazine-center/?import=</code>
@@ -321,11 +322,11 @@
                     data-copy-text="https://kenandxx.github.io/happy-magazine-center/?import="
                   >📋 コピー</button>
                 </div>
-                <ol class="setup-steps" start="4">
+                <ol class="setup-steps" start="5">
                   <li>アクション「<strong>URLを開く</strong>」を追加し、名前を「<strong>MagCenterへ送る</strong>」にして完了！</li>
                 </ol>
                 <p class="setup-tip">
-                  💡 SafariでAmazon商品ページを開いて「共有 → MagCenterへ送る」を押すと、<code>/dp/ASIN</code> から自動で書影＆早め予約スコアが即出ます！
+                  💡 これで <strong>Amazonアプリの共有ボタン →「MagCenterへ送る」</strong> を押すだけで、短縮URL（<code>amzn.asia</code>）も自動展開されて書影＆早め予約スコアが即表示されます！
                 </p>
               </div>
             </details>

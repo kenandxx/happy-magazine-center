@@ -1,0 +1,12 @@
+{
+  "name": "happy-magazine-center",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "アイドル雑誌・週刊誌ポスター・写真集のストア別限定特典＆発売日をスマホで一覧チェックできる情報センター",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "test": "node --test scripts/*.test.mjs",
+    "collect:dry": "node scripts/fetch-catalog.mjs --dry-run"
+  }
+}

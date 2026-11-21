@@ -1,0 +1,4515 @@
+{
+  "updatedAt": "2026-11-20T18:15:00+09:00",
+  "referenceDate": "2026-11-20",
+  "policy": "Amazonは基本購入先として常に表示。Amazon以外のストア（セブンネット・楽天ブックス・HMV・TSUTAYA）は確認済みのストア限定特典が付く場合のみ表示。",
+  "items": [
+    {
+      "id": "utb-2027-01",
+      "title": "アップトゥボーイ 2027年1月号",
+      "series": "アップトゥボーイ",
+      "issueLabel": "2027年1月号（Vol.369）",
+      "publisher": "ワニブックス",
+      "category": "idol",
+      "releaseDate": "2026-11-24",
+      "price": 1400,
+      "coverTalents": [
+        "川﨑桜（乃木坂46）",
+        "弓木奈於（乃木坂46）",
+        "金澤亜美（僕が見たかった青空）"
+      ],
+      "featuredTalents": [
+        "川﨑桜（乃木坂46）",
+        "弓木奈於（乃木坂46）",
+        "金澤亜美（僕が見たかった青空）",
+        "古畑奈和",
+        "川端晃菜（乃木坂46）",
+        "小森香乃",
+        "吉沢珠璃（22/7）"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwfbc33654/421699/1107785764.jpg?sw=1150",
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "本誌付録：乃木坂46 特大両面ポスター（表：川﨑桜 / 裏：弓木奈於）"
+        }
+      ],
+      "printOnlyNote": "特大両面ポスターは紙版のみ付属",
+      "summary": "表紙＆巻頭は乃木坂46・川﨑桜、巻末は弓木奈於。セブンネットは限定表紙（金澤亜美）＋ポストカード8種展開、TSUTAYAは古畑奈和の限定表紙版あり！",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwfbc33654/421699/1107785764.jpg?sw=1150",
+          "caption": "通常表紙・川﨑桜（乃木坂46）＆セブン特典ビジュアル",
+          "source": "セブンネット",
+          "kind": "cover",
+          "articleUrl": "https://7net.omni7.jp/search?q=%E3%82%A2%E3%83%83%E3%83%97%E3%83%88%E3%82%A5%E3%83%9C%E3%83%BC%E3%82%A4+2027%E5%B9%B41%E6%9C%88%E5%8F%B7"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw7be25d6e/421699/1107785770.jpg?sw=1150",
+          "caption": "セブンネット限定表紙：金澤亜美（僕が見たかった青空）ver.",
+          "source": "セブンネット",
+          "kind": "limited_cover",
+          "articleUrl": "https://7net.omni7.jp/detail/1107785770.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwfa300ce2/421699/1107785769.jpg?sw=1150",
+          "caption": "セブンネット限定特典：小森香乃 ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107785769.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw06310538/421699/1107785768_1.jpg?sw=1150",
+          "caption": "セブンネット限定特典：吉沢珠璃（22/7）ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107785768.html"
+        },
+        {
+          "url": "https://img.fujisan.co.jp/images/products/74_l.jpg",
+          "caption": "Fujisan 公式誌面イメージ",
+          "source": "Fujisan",
+          "kind": "preview",
+          "articleUrl": "https://www.fujisan.co.jp/product/74/next/"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "乃木坂46川﨑桜、“レトロさくたん”に変身 表紙・裏表紙・付録ポスターカット4枚公開",
+          "source": "BUBKA WEB",
+          "url": "https://www.idol-culture.jp/geinou/230538/",
+          "photoCountHint": "表紙・裏表紙・両面ポスター4枚"
+        },
+        {
+          "title": "古畑奈和さんが表紙を飾る『アップトゥボーイ 2027年1月号増刊 TSUTAYA限定表紙版』",
+          "source": "TSUTAYA公式",
+          "url": "https://tsutaya.tsite.jp/articles/book-comic-5993",
+          "photoCountHint": "TSUTAYA限定表紙・詳細"
+        }
+      ],
+      "offers": [
+        {
+          "id": "utb-2027-01-7net-kanazawa",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定表紙＋特典",
+          "bonusTypes": [
+            "cover",
+            "postcard"
+          ],
+          "bonusText": "限定表紙：金澤亜美（僕が見たかった青空）ver. ＋ 金澤亜美ポストカード1枚",
+          "talent": "金澤亜美",
+          "price": 1540,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107785770.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw7be25d6e/421699/1107785770.jpg?sw=1150"
+        },
+        {
+          "id": "utb-2027-01-7net-kawasaki-abc",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典（A/B/C選択）",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "川﨑桜（乃木坂46）ポストカード A / B / C（絵柄指定可）",
+          "talent": "川﨑桜",
+          "price": 1540,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/search?q=%E3%82%A2%E3%83%83%E3%83%97%E3%83%88%E3%82%A5%E3%83%9C%E3%83%BC%E3%82%A4+2027%E5%B9%B41%E6%9C%88%E5%8F%B7+%E5%B7%9D%EF%A8%91%E6%A1%9C",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwfbc33654/421699/1107785764.jpg?sw=1150"
+        },
+        {
+          "id": "utb-2027-01-7net-yumiki",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "弓木奈於 / 川端晃菜（乃木坂46）ポストカード1枚付き 各Ver.",
+          "talent": "弓木奈於・川端晃菜",
+          "price": 1540,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/search?q=%E3%82%A2%E3%83%83%E3%83%97%E3%83%88%E3%82%A5%E3%83%9C%E3%83%BC%E3%82%A4+2027%E5%B9%B41%E6%9C%88%E5%8F%B7"
+        },
+        {
+          "id": "utb-2027-01-7net-komori",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "小森香乃 ポストカード1枚付き",
+          "talent": "小森香乃",
+          "price": 1540,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107785769.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwfa300ce2/421699/1107785769.jpg?sw=1150"
+        },
+        {
+          "id": "utb-2027-01-7net-yoshizawa",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "吉沢珠璃（22/7）ポストカード1枚付き",
+          "talent": "吉沢珠璃",
+          "price": 1540,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107785768.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw06310538/421699/1107785768_1.jpg?sw=1150"
+        },
+        {
+          "id": "utb-2027-01-tsutaya",
+          "store": "tsutaya",
+          "hasStoreExclusiveBonus": true,
+          "edition": "TSUTAYA限定表紙版",
+          "bonusTypes": [
+            "cover"
+          ],
+          "bonusText": "TSUTAYA限定「古畑奈和」表紙Ver.（先着・なくなり次第終了）",
+          "talent": "古畑奈和",
+          "price": 1400,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://tsutaya.tsite.jp/articles/book-comic-5993"
+        },
+        {
+          "id": "utb-2027-01-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（本誌ポスター付）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（通常版＋本誌特大両面ポスター付）",
+          "talent": "川﨑桜",
+          "price": 1400,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E3%82%A2%E3%83%83%E3%83%97%E3%83%88%E3%82%A5%E3%83%9C%E3%83%BC%E3%82%A4+2027%E5%B9%B41%E6%9C%88%E5%8F%B7&i=stripbooks",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwfbc33654/421699/1107785764.jpg?sw=1150"
+        }
+      ]
+    },
+    {
+      "id": "blt-2027-01",
+      "title": "B.L.T. 2027年1月号",
+      "series": "B.L.T.",
+      "issueLabel": "2027年1月号",
+      "publisher": "東京ニュース通信社",
+      "category": "idol",
+      "releaseDate": "2026-11-28",
+      "price": 1430,
+      "coverTalents": [
+        "瀬戸口心月（乃木坂46）",
+        "金川紗耶（乃木坂46）",
+        "冨里奈央（乃木坂46）"
+      ],
+      "featuredTalents": [
+        "瀬戸口心月（乃木坂46）",
+        "金川紗耶（乃木坂46）",
+        "冨里奈央（乃木坂46）",
+        "勝又春＆目黒陽色（櫻坂46）",
+        "安納蒼衣（僕青）",
+        "水野Reta",
+        "兵頭百華",
+        "一ノ瀬ひかり"
+      ],
+      "coverImageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3579/6568-3579-0d9be26e1f492922b41543578acfdc9b-1800x2700.jpg?width=1200&quality=85&format=jpeg",
+      "palette": [
+        "#0F766E",
+        "#14B8A6",
+        "#CCFBF1"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "別冊付録：瀬戸口心月（乃木坂46）両面超ビッグポスター"
+        }
+      ],
+      "printOnlyNote": "別冊付録・両面超ビッグポスターは紙版のみ付属",
+      "summary": "表紙は乃木坂46・瀬戸口心月、裏表紙は金川紗耶！セブンネット限定ポストカード全9種＋HMV限定（櫻坂46 四期生）が確定。",
+      "gallery": [
+        {
+          "url": "https://prcdn.freetls.fastly.net/release_image/6568/3579/6568-3579-0d9be26e1f492922b41543578acfdc9b-1800x2700.jpg?width=1200&quality=85&format=jpeg",
+          "caption": "公式先行グラビア：瀬戸口心月（乃木坂46）富士山ロケーション",
+          "source": "PR TIMES / B.L.T.web",
+          "kind": "preview",
+          "articleUrl": "https://prtimes.jp/main/html/rd/p/000003579.000006568.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw3317ce10/421699/1107786574.jpg?sw=1150",
+          "caption": "セブン特典⑤：冨里奈央（乃木坂46）ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107786574.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1eb5629b/421699/1107786573.jpg?sw=1150",
+          "caption": "セブン特典④：金川紗耶（乃木坂46）ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107786573.html"
+        },
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000173/9/2/872.jpg",
+          "caption": "HMV限定特典：勝又春＆目黒陽色（櫻坂46）ポストカード対象",
+          "source": "HMV&BOOKS",
+          "kind": "bonus",
+          "articleUrl": "https://www.hmv.co.jp/product/detail/17392872"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "【公式】瀬戸口心月・金川紗耶・冨里奈央・安納蒼衣・水野Reta 先行グラビア大量公開＆全特典URL",
+          "source": "PR TIMES / 東京ニュース通信社",
+          "url": "https://prtimes.jp/main/html/rd/p/000003579.000006568.html",
+          "photoCountHint": "先行カット10枚以上・特典全URL"
+        },
+        {
+          "title": "B.L.T.web 公式ニュース＆オフショット記事",
+          "source": "B.L.T.web",
+          "url": "https://bltweb.jp/2026/11/13/blt01nogi_store/",
+          "photoCountHint": "公式高画質ギャラリー"
+        },
+        {
+          "title": "乃木坂46金川紗耶、“大人の魅力”あふれるグラビア解禁（フォトギャラリー8枚）",
+          "source": "ORICON NEWS",
+          "url": "https://www.oricon.co.jp/news/2492973/full/",
+          "photoCountHint": "関連写真 8枚"
+        },
+        {
+          "title": "『B.L.T.2027年1月号』先行誌面カット特集（9記事まとめ）",
+          "source": "ほんのひきだし",
+          "url": "https://hon-hikidashi.jp/tag/%E3%80%8Eb-l-t-2027%E5%B9%B41%E6%9C%88%E5%8F%B7%E3%80%8F/",
+          "photoCountHint": "カット特集 9記事"
+        }
+      ],
+      "offers": [
+        {
+          "id": "blt-2027-01-7net-1",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 ①",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "瀬戸口心月（乃木坂46）ポストカードA 1枚付き",
+          "talent": "瀬戸口心月",
+          "price": 1430,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107786570.html"
+        },
+        {
+          "id": "blt-2027-01-7net-2",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 ②",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "瀬戸口心月（乃木坂46）ポストカードB 1枚付き",
+          "talent": "瀬戸口心月",
+          "price": 1430,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107786571.html"
+        },
+        {
+          "id": "blt-2027-01-7net-3",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 ③",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "瀬戸口心月（乃木坂46）ポストカードC 1枚付き",
+          "talent": "瀬戸口心月",
+          "price": 1430,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107786572.html"
+        },
+        {
+          "id": "blt-2027-01-7net-4",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 ④",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "金川紗耶（乃木坂46）ポストカード 1枚付き",
+          "talent": "金川紗耶",
+          "price": 1430,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107786573.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1eb5629b/421699/1107786573.jpg?sw=1150"
+        },
+        {
+          "id": "blt-2027-01-7net-5",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 ⑤",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "冨里奈央（乃木坂46）ポストカード 1枚付き",
+          "talent": "冨里奈央",
+          "price": 1430,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107786574.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw3317ce10/421699/1107786574.jpg?sw=1150"
+        },
+        {
+          "id": "blt-2027-01-7net-6",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 ⑥",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "安納蒼衣（僕が見たかった青空）ポストカード 1枚付き",
+          "talent": "安納蒼衣",
+          "price": 1430,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107786575.html"
+        },
+        {
+          "id": "blt-2027-01-7net-7",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 ⑦",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "水野Reta（ミニワチャ）ポストカード 1枚付き",
+          "talent": "水野Reta",
+          "price": 1430,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107786576.html"
+        },
+        {
+          "id": "blt-2027-01-7net-8",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 ⑧",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "兵頭百華 ポストカード 1枚付き",
+          "talent": "兵頭百華",
+          "price": 1430,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107786577.html"
+        },
+        {
+          "id": "blt-2027-01-7net-9",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 ⑨",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "一ノ瀬ひかり ポストカード 1枚付き",
+          "talent": "一ノ瀬ひかり",
+          "price": 1430,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107786578.html"
+        },
+        {
+          "id": "blt-2027-01-hmv",
+          "store": "hmv",
+          "hasStoreExclusiveBonus": true,
+          "edition": "HMV限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "勝又春＆目黒陽色（櫻坂46 四期生）ポストカード 1枚付き",
+          "talent": "勝又春＆目黒陽色",
+          "price": 1430,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://www.hmv.co.jp/product/detail/17392872",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000173/9/2/872.jpg"
+        },
+        {
+          "id": "blt-2027-01-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（本誌ポスター付）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入（別冊付録ポスター付）",
+          "talent": "瀬戸口心月",
+          "price": 1430,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=B.L.T.+2027%E5%B9%B41%E6%9C%88%E5%8F%B7&i=stripbooks",
+          "imageUrl": "https://prcdn.freetls.fastly.net/release_image/6568/3579/6568-3579-0d9be26e1f492922b41543578acfdc9b-1800x2700.jpg?width=1200&quality=85&format=jpeg"
+        }
+      ]
+    },
+    {
+      "id": "bubka-2027-01",
+      "title": "BUBKA 2027年1月号",
+      "series": "BUBKA",
+      "issueLabel": "2027年1月号",
+      "publisher": "白夜書房",
+      "category": "idol",
+      "releaseDate": "2026-11-30",
+      "price": 1400,
+      "coverTalents": [
+        "乃木坂46 6期生",
+        "佐藤綺星（AKB48）"
+      ],
+      "featuredTalents": [
+        "乃木坂46 6期生",
+        "佐藤綺星（AKB48）"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw261d9df8/421699/1107790668.jpg?sw=1150",
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "本誌付録：特大両面ポスター付き"
+        }
+      ],
+      "printOnlyNote": "特大ポスターは紙版のみ付属",
+      "summary": "セブンネット本ランキング1位！乃木坂46・6期生11人全員表紙＋ポストカードA/B/C、さらにAKB48佐藤綺星のセブンネット限定表紙版＋ポストカードも展開！",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw261d9df8/421699/1107790668.jpg?sw=1150",
+          "caption": "セブン特典：乃木坂46 6期生 ポストカードA 絵柄",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107790668.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw3b6a9a89/421699/1107790669.jpg?sw=1150",
+          "caption": "セブン特典：乃木坂46 6期生 ポストカードB 絵柄",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107790669.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw4ddf0361/421699/1107790670.jpg?sw=1150",
+          "caption": "セブン特典：乃木坂46 6期生 ポストカードC 絵柄",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107790670.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe7f4f6f1/421699/1107790674.jpg?sw=1150",
+          "caption": "セブンネット限定表紙版「AKB48 佐藤綺星ver.」＋ポストカードC",
+          "source": "セブンネット",
+          "kind": "limited_cover",
+          "articleUrl": "https://7net.omni7.jp/detail/1107790674.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "乃木坂46・6期生11人全員が『BUBKA』表紙＆巻頭特集に登場（フォトギャラリー4枚）",
+          "source": "ORICON NEWS",
+          "url": "https://www.oricon.co.jp/news/2494322/photo/1/",
+          "photoCountHint": "表紙・特典カット 4枚"
+        },
+        {
+          "title": "乃木坂46・6期生全員がBUBKAに登場、11人の現在地と特典まとめ",
+          "source": "BEEEEM",
+          "url": "https://beeeem.com/article/994879099440",
+          "photoCountHint": "特典リンク・誌面詳細"
+        }
+      ],
+      "offers": [
+        {
+          "id": "bubka-2027-01-7net-a",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 A",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "乃木坂46 6期生 ポストカードA 1枚付き",
+          "talent": "乃木坂46 6期生",
+          "price": 1400,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107790668.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw261d9df8/421699/1107790668.jpg?sw=1150"
+        },
+        {
+          "id": "bubka-2027-01-7net-b",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 B",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "乃木坂46 6期生 ポストカードB 1枚付き",
+          "talent": "乃木坂46 6期生",
+          "price": 1400,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107790669.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw3b6a9a89/421699/1107790669.jpg?sw=1150"
+        },
+        {
+          "id": "bubka-2027-01-7net-c",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 C",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "乃木坂46 6期生 ポストカードC 1枚付き",
+          "talent": "乃木坂46 6期生",
+          "price": 1400,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107790670.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw4ddf0361/421699/1107790670.jpg?sw=1150"
+        },
+        {
+          "id": "bubka-2027-01-7net-sato",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定表紙版",
+          "bonusTypes": [
+            "cover",
+            "postcard"
+          ],
+          "bonusText": "限定表紙「AKB48 佐藤綺星ver.」＋ 佐藤綺星ポストカードA/C付き",
+          "talent": "佐藤綺星（AKB48）",
+          "price": 1400,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107790674.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe7f4f6f1/421699/1107790674.jpg?sw=1150"
+        },
+        {
+          "id": "bubka-2027-01-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "乃木坂46 6期生",
+          "price": 1400,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=BUBKA+2027%E5%B9%B41%E6%9C%88%E5%8F%B7&i=stripbooks",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw261d9df8/421699/1107790668.jpg?sw=1150"
+        }
+      ]
+    },
+    {
+      "id": "flash-sp-2026-winter",
+      "title": "FLASHスペシャル グラビアBEST 2026年 冬号",
+      "series": "FLASHスペシャル",
+      "issueLabel": "2026年 冬号（初冬号）",
+      "publisher": "光文社",
+      "category": "gravure",
+      "releaseDate": "2026-11-28",
+      "price": 1200,
+      "coverTalents": [
+        "伊織もえ"
+      ],
+      "featuredTalents": [
+        "伊織もえ"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw460592a0/421699/1107791204.jpg?sw=1150",
+      "palette": [
+        "#DC2626",
+        "#F43F5E",
+        "#FFE4E6"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "セブンネット限定で伊織もえポストカード付き予約がランキング上位！",
+      "summary": "人気グラビア増刊の冬号！セブンネット限定特典として伊織もえのポストカード1枚付きが登場。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw460592a0/421699/1107791204.jpg?sw=1150",
+          "caption": "セブン特典：伊織もえ ポストカード1枚付き（ビジュアル）",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107791204.html"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "flash-sp-2026-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "伊織もえ ポストカード 1枚付き",
+          "talent": "伊織もえ",
+          "price": 1200,
+          "status": "preorder",
+          "artworkStatus": "絵柄公開済",
+          "url": "https://7net.omni7.jp/detail/1107791204.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw460592a0/421699/1107791204.jpg?sw=1150"
+        },
+        {
+          "id": "flash-sp-2026-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "伊織もえ",
+          "price": 1200,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=FLASH%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AB+%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2BEST+2026&i=stripbooks",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw460592a0/421699/1107791204.jpg?sw=1150"
+        }
+      ]
+    },
+    {
+      "id": "bomb-2027-01",
+      "title": "BOMB 2027年1月号（通常版 / 限定版）",
+      "series": "BOMB",
+      "issueLabel": "2027年1月号",
+      "publisher": "ワン・パブリッシング",
+      "category": "idol",
+      "releaseDate": "2026-12-09",
+      "price": 1590,
+      "coverTalents": [
+        "NMB48 坂下真心＆坂田心咲",
+        "中西アルノ（乃木坂46）",
+        "大越ひなの"
+      ],
+      "featuredTalents": [
+        "坂下真心（NMB48）",
+        "坂田心咲（NMB48）",
+        "中西アルノ（乃木坂46）",
+        "大越ひなの",
+        "松本日向"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw7acf52d3/421699/1107786565.jpg?sw=1150",
+      "palette": [
+        "#DB2777",
+        "#F472B6",
+        "#FCE7F3"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "本誌付録：両面超BIGポスター（通常版・限定版で絵柄違い）"
+        }
+      ],
+      "printOnlyNote": "両面超BIGポスターは紙版のみ付属",
+      "summary": "セブンネット限定特典として中西アルノ（乃木坂46）・大越ひなの・NMB48（坂下真心＆坂田心咲）・松本日向のポストカード4展開が登場！",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw7acf52d3/421699/1107786565.jpg?sw=1150",
+          "caption": "限定版：NMB48 坂下真心＆坂田心咲 ポストカード付き",
+          "source": "セブンネット",
+          "kind": "limited_cover",
+          "articleUrl": "https://7net.omni7.jp/search?q=BOMB+2027%E5%B9%B41%E6%9C%88%E5%8F%B7"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwbf58ac4a/421699/1107786566.jpg?sw=1150",
+          "caption": "セブン特典：大越ひなの ポストカード付き",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107786566.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw4f460942/421699/1107786569.jpg?sw=1150",
+          "caption": "セブン特典：松本日向 ポストカード付き",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107786569.html"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "bomb-2027-01-7net-aruno",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "中西アルノ（乃木坂46）ポストカード 1枚付き",
+          "talent": "中西アルノ",
+          "price": 1590,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://7net.omni7.jp/search?q=BOMB+2027%E5%B9%B41%E6%9C%88%E5%8F%B7+%E4%B8%AD%E8%A5%BF%E3%82%A2%E3%83%AB%E3%83%8E"
+        },
+        {
+          "id": "bomb-2027-01-7net-ookoshi",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典（通常版）",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "大越ひなの ポストカード1枚付き",
+          "talent": "大越ひなの",
+          "price": 1590,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://7net.omni7.jp/detail/1107786566.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwbf58ac4a/421699/1107786566.jpg?sw=1150"
+        },
+        {
+          "id": "bomb-2027-01-7net-nmb",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典（限定版）",
+          "bonusTypes": [
+            "postcard",
+            "cover"
+          ],
+          "bonusText": "坂下真心＆坂田心咲（NMB48）ポストカード1枚付き（2種ランダム）",
+          "talent": "坂下真心＆坂田心咲",
+          "price": 1590,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://7net.omni7.jp/search?q=BOMB+2027%E5%B9%B41%E6%9C%88%E5%8F%B7+%E5%9D%82%E4%B8%8B%E7%9C%9F%E5%BF%83",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw7acf52d3/421699/1107786565.jpg?sw=1150"
+        },
+        {
+          "id": "bomb-2027-01-7net-matsumoto",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典（限定版）",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "松本日向 ポストカード1枚付き",
+          "talent": "松本日向",
+          "price": 1590,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://7net.omni7.jp/detail/1107786569.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw4f460942/421699/1107786569.jpg?sw=1150"
+        },
+        {
+          "id": "bomb-2027-01-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版/限定版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入（両面超BIGポスター付）",
+          "talent": "NMB48 ほか",
+          "price": 1590,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=BOMB+2027%E5%B9%B41%E6%9C%88%E5%8F%B7&i=stripbooks",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw7acf52d3/421699/1107786565.jpg?sw=1150"
+        }
+      ]
+    },
+    {
+      "id": "platinum-flash-26",
+      "title": "Platinum FLASH Vol.26",
+      "series": "Platinum FLASH",
+      "issueLabel": "Vol.26",
+      "publisher": "光文社",
+      "category": "gravure",
+      "releaseDate": "2026-11-13",
+      "price": 1980,
+      "coverTalents": [
+        "正源司陽子（日向坂46）",
+        "森本茉莉（日向坂46）",
+        "姫野ひなの（#Mooove!）"
+      ],
+      "featuredTalents": [
+        "正源司陽子（日向坂46）",
+        "森本茉莉（日向坂46）",
+        "姫野ひなの（#Mooove!）",
+        "大西桃香",
+        "大村杏（SKE48）"
+      ],
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000173/3/9/294.jpg",
+      "palette": [
+        "#7C3AED",
+        "#EC4899",
+        "#FCE7F3"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "大村杏（SKE48）表紙・裏表紙の特別版（B2サイズポスター付き）も発売"
+        }
+      ],
+      "printOnlyNote": "セブンネット・HMV・TSUTAYAの3ストアそれぞれで別タレントの限定特典を展開！",
+      "summary": "通常表紙は正源司陽子＆裏表紙は森本茉莉。セブンネットは姫野ひなの表紙違い版＋ポストカードA/B/C、HMVは日向坂46ポストカード、TSUTAYAは大西桃香ポストカード付き！",
+      "gallery": [
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000173/3/9/294.jpg",
+          "caption": "通常表紙：正源司陽子（日向坂46）",
+          "source": "HMV&BOOKS",
+          "kind": "cover",
+          "articleUrl": "https://www.hmv.co.jp/news/article/261028108/"
+        },
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000173/6/3/128.jpg",
+          "caption": "HMV限定特典：森本茉莉（日向坂46）ポストカード付き",
+          "source": "HMV&BOOKS",
+          "kind": "bonus",
+          "articleUrl": "https://www.hmv.co.jp/artist_%E3%82%A8%E3%83%B3%E3%82%BF%E3%83%86%E3%82%A4%E3%83%B3%E3%83%A1%E3%83%B3%E3%83%88%E7%B7%A8%E9%9B%86%E9%83%A8-%E5%85%89%E6%96%87%E7%A4%BE_000000000730835/item_%E3%80%8AHMV-BOOKS-online%E9%99%90%E5%AE%9A%E7%89%B9%E5%85%B8%EF%BC%9A%E6%A3%AE%E6%9C%AC%E8%8C%89%E8%8E%89%EF%BC%88%E6%97%A5%E5%90%91%E5%9D%8246%EF%BC%89%E3%83%9D%E3%82%B9%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89%E3%80%8BPlatinum-FLASH-Vol-26%E3%80%90%E8%A1%A8%E7%B4%99%EF%BC%9A%E6%AD%A3%E6%BA%90%E5%8F%B8%E9%99%BD%E5%AD%90%EF%BC%8F%E8%A3%8F%E8%A1%A8%E7%B4%99%EF%BC%9A%E6%A3%AE%E6%9C%AC%E8%8C%89%E8%8E%89%E3%80%91_17363128"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw69e132e4/421699/1107784935.jpg?sw=1150",
+          "caption": "セブン限定表紙版（姫野ひなの）＋ポストカードA",
+          "source": "セブンネット",
+          "kind": "limited_cover",
+          "articleUrl": "https://7net.omni7.jp/detail/1107784935.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw534f6f45/421699/1107784936.jpg?sw=1150",
+          "caption": "セブン限定特典：姫野ひなの ポストカードB",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107784936.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw0e6401c7/421699/1107784937.jpg?sw=1150",
+          "caption": "セブン限定特典：姫野ひなの ポストカードC",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107784937.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "正源司陽子（日向坂46）表紙『Platinum FLASH Vol.26』HMV限定特典詳細",
+          "source": "HMV&BOOKS ニュース",
+          "url": "https://www.hmv.co.jp/news/article/261028108/",
+          "photoCountHint": "表紙＆特典絵柄"
+        },
+        {
+          "title": "『Platinum FLASH VOL.26』TSUTAYA限定特典：元AKB48大西桃香ポストカード",
+          "source": "TSUTAYA公式",
+          "url": "https://tsutaya.tsite.jp/articles/book-comic-5976",
+          "photoCountHint": "TSUTAYA特典詳細"
+        }
+      ],
+      "offers": [
+        {
+          "id": "pflash26-7net-a",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定表紙＋ポストカードA",
+          "bonusTypes": [
+            "cover",
+            "postcard"
+          ],
+          "bonusText": "限定表紙（姫野ひなの）＋ ポストカードA 1枚付き",
+          "talent": "姫野ひなの（#Mooove!）",
+          "price": 1540,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw69e132e4/421699/1107784935.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107784935.html"
+        },
+        {
+          "id": "pflash26-7net-b",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定表紙＋ポストカードB",
+          "bonusTypes": [
+            "cover",
+            "postcard"
+          ],
+          "bonusText": "限定表紙（姫野ひなの）＋ ポストカードB 1枚付き",
+          "talent": "姫野ひなの（#Mooove!）",
+          "price": 1540,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwcf5b2651/421699/1107784936.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107784936.html"
+        },
+        {
+          "id": "pflash26-7net-c",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定表紙＋ポストカードC",
+          "bonusTypes": [
+            "cover",
+            "postcard"
+          ],
+          "bonusText": "限定表紙（姫野ひなの）＋ ポストカードC 1枚付き",
+          "talent": "姫野ひなの（#Mooove!）",
+          "price": 1540,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw351f60f9/421699/1107784937.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107784937.html"
+        },
+        {
+          "id": "pflash26-hmv",
+          "store": "hmv",
+          "hasStoreExclusiveBonus": true,
+          "edition": "HMV&BOOKS online限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "日向坂46（正源司陽子 / 森本茉莉）限定ポストカード付き",
+          "talent": "正源司陽子・森本茉莉（日向坂46）",
+          "price": 1430,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000173/6/3/128.jpg",
+          "url": "https://www.hmv.co.jp/news/article/261028108/"
+        },
+        {
+          "id": "pflash26-tsutaya",
+          "store": "tsutaya",
+          "hasStoreExclusiveBonus": true,
+          "edition": "TSUTAYA限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "大西桃香 限定ポストカード 1枚付き",
+          "talent": "大西桃香",
+          "price": 1430,
+          "status": "発売中",
+          "artworkStatus": "公開中",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000173/3/9/294.jpg",
+          "url": "https://tsutaya.tsite.jp/articles/book-comic-5976"
+        },
+        {
+          "id": "pflash26-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（通常表紙：正源司陽子）",
+          "talent": "正源司陽子（日向坂46）",
+          "price": 1430,
+          "status": "発売中",
+          "artworkStatus": "通常表紙",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000173/3/9/294.jpg",
+          "url": "https://www.amazon.co.jp/s?k=Platinum+FLASH+Vol.26&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "bltism-vol1",
+      "title": "BLTISM VOL.1（通常版 / 限定表紙版）",
+      "series": "BLTISM",
+      "issueLabel": "VOL.1",
+      "publisher": "東京ニュース通信社",
+      "category": "gravure",
+      "releaseDate": "2026-11-05",
+      "price": 1650,
+      "coverTalents": [
+        "沢口愛華",
+        "澄田綾乃"
+      ],
+      "featuredTalents": [
+        "沢口愛華",
+        "澄田綾乃",
+        "豊島心桜",
+        "岸みゆ"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw0fb5e4ef/421699/1107779439.jpg?sw=1150",
+      "palette": [
+        "#0EA5E9",
+        "#F43F5E",
+        "#FFE4E6"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "セブンネットは沢口愛華A/B・澄田綾乃ポストカード、楽天＆Amazonは限定表紙版あり！",
+      "summary": "B.L.T.編集部が贈る新水着グラビアムック創刊号！沢口愛華30P＆澄田綾乃20P。セブンネット限定ポストカードと楽天・Amazon限定表紙版のどちらも豪華。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw50b57f9d/421699/1107779438.jpg?sw=1150",
+          "caption": "セブン特典：沢口愛華 ポストカードA",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/search?q=bltism_vol_1"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw0fb5e4ef/421699/1107779439.jpg?sw=1150",
+          "caption": "セブン特典：沢口愛華 ポストカードB",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107779439.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe0e5ff94/421699/1107779441.jpg?sw=1150",
+          "caption": "セブン特典：澄田綾乃 ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107779441.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "新グラビアムック『BLTISM VOL.1』表紙・沢口愛華 裏表紙・澄田綾乃のアザーカット公開",
+          "source": "PR TIMES",
+          "url": "https://prtimes.jp/main/html/rd/p/000003574.000006568.html",
+          "photoCountHint": "公式先行水着カット多数"
+        },
+        {
+          "title": "沢口愛華のまっすぐな眼差し、澄田綾乃の鮮烈な色香『BLTISM VOL.1』特典＆表紙解禁",
+          "source": "PR TIMES",
+          "url": "https://prtimes.jp/main/html/rd/p/000003566.000006568.html",
+          "photoCountHint": "通常版＆限定表紙比較"
+        }
+      ],
+      "offers": [
+        {
+          "id": "bltism1-7net-sawaguchi-a",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定特典 A",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "沢口愛華 ポストカードA 1枚付き",
+          "talent": "沢口愛華",
+          "price": 1650,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw50b57f9d/421699/1107779438.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107779438.html"
+        },
+        {
+          "id": "bltism1-7net-sawaguchi-b",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定特典 B",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "沢口愛華 ポストカードB 1枚付き",
+          "talent": "沢口愛華",
+          "price": 1650,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd77012b2/421699/1107779439.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107779439.html"
+        },
+        {
+          "id": "bltism1-7net-sumida",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定特典（澄田綾乃）",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "澄田綾乃 ポストカード 1枚付き",
+          "talent": "澄田綾乃",
+          "price": 1650,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw0cc742a9/421699/1107779441.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107779441.html"
+        },
+        {
+          "id": "bltism1-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天・Amazon限定表紙版",
+          "bonusTypes": [
+            "cover"
+          ],
+          "bonusText": "楽天ブックス・Amazon限定表紙版",
+          "talent": "沢口愛華・澄田綾乃",
+          "price": 1650,
+          "status": "発売中",
+          "artworkStatus": "公開中",
+          "url": "https://books.rakuten.co.jp/search?sitem=BLTISM+VOL.1+%E9%99%90%E5%AE%9A&g=001"
+        },
+        {
+          "id": "bltism1-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": true,
+          "edition": "Amazon（限定表紙 / 通常版）",
+          "bonusTypes": [
+            "cover"
+          ],
+          "bonusText": "Amazon限定表紙版＆通常版",
+          "talent": "沢口愛華・澄田綾乃",
+          "price": 1650,
+          "status": "発売中",
+          "artworkStatus": "公開中",
+          "url": "https://www.amazon.co.jp/s?k=BLTISM+VOL.1&i=stripbooks",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw0fb5e4ef/421699/1107779439.jpg?sw=1150"
+        }
+      ]
+    },
+    {
+      "id": "blt-monster-10",
+      "title": "BLT MONSTER Round 10（通常版 / 限定表紙版）",
+      "series": "BLT MONSTER",
+      "issueLabel": "Round 10",
+      "publisher": "東京ニュース通信社",
+      "category": "gravure",
+      "releaseDate": "2026-11-10",
+      "price": 2400,
+      "coverTalents": [
+        "溝端葵",
+        "南みゆか（Sophià la Mode）"
+      ],
+      "featuredTalents": [
+        "溝端葵",
+        "南みゆか",
+        "麻倉瑞季",
+        "織莉叶（#Mooove!）",
+        "天野ちよ"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1eb5629b/421699/1107786573.jpg?sw=640",
+      "palette": [
+        "#F43F5E",
+        "#FB923C",
+        "#FFEDD5"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "Amazon＆楽天ブックス限定表紙版（オレンジニット水着）＋セブンネット限定2L判生写真あり",
+      "summary": "水着グラビアムック最新弾！通常表紙（溝端葵・白水着）とAmazon/楽天限定表紙（オレンジニット水着）、セブンネット限定で2L判生写真付き。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1eb5629b/421699/1107786573.jpg?sw=640",
+          "caption": "セブンネット限定特典：溝端葵 / 南みゆか 2L判生写真",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/search?q=BLT+MONSTER+Round+10"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "溝端葵＆南みゆか『BLT MONSTER Round 10』通常版・限定表紙・先行水着カット全公開",
+          "source": "MANGA Watch",
+          "url": "https://manga.watch.impress.co.jp/docs/news/2155077.html",
+          "photoCountHint": "表紙・裏表紙・限定表紙・水着カット大量"
+        }
+      ],
+      "offers": [
+        {
+          "id": "blt-monster-10-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "溝端葵 / 南みゆか 2L判生写真 1枚付き",
+          "talent": "溝端葵・南みゆか",
+          "price": 2400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/search?q=BLT+MONSTER+Round+10",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1eb5629b/421699/1107786573.jpg?sw=640"
+        },
+        {
+          "id": "blt-monster-10-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天ブックス限定表紙版",
+          "bonusTypes": [
+            "cover"
+          ],
+          "bonusText": "限定表紙（溝端葵オレンジニット水着 / 裏：南みゆか白レース）",
+          "talent": "溝端葵・南みゆか",
+          "price": 2400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://books.rakuten.co.jp/search?sitem=BLT+MONSTER+Round+10&g=001"
+        },
+        {
+          "id": "blt-monster-10-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": true,
+          "edition": "Amazon（限定表紙版 / 通常版）",
+          "bonusTypes": [
+            "cover"
+          ],
+          "bonusText": "Amazon限定表紙版（オレンジニット水着）＆通常版",
+          "talent": "溝端葵・南みゆか",
+          "price": 2400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=BLT+MONSTER+Round+10&i=stripbooks",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1eb5629b/421699/1107786573.jpg?sw=640"
+        }
+      ]
+    },
+    {
+      "id": "manga-action-2026-1117",
+      "title": "漫画アクション 2026年11月17日号",
+      "series": "漫画アクション",
+      "issueLabel": "2026年11月17日号",
+      "publisher": "双葉社",
+      "category": "weekly",
+      "releaseDate": "2026-11-04",
+      "price": 500,
+      "coverTalents": [
+        "榎原依那"
+      ],
+      "featuredTalents": [
+        "榎原依那",
+        "藤崎恋"
+      ],
+      "coverImageUrl": "https://cdn-manga-static-file-origin.ldf-static.net/a312b59ft1820b8a6/xxlarge",
+      "palette": [
+        "#EA580C",
+        "#F59E0B",
+        "#FEF3C7"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "本誌付録：榎原依那 両面クリアファイル（紙版限定）"
+        }
+      ],
+      "printOnlyNote": "コミック誌なのにセブンネット限定で榎原依那ポストカード付き！電子版は付録なし",
+      "summary": "大人気グラビア・榎原依那が表紙＆両面クリアファイル付録！セブンネット購入ならさらに限定ポストカード1枚付き。",
+      "gallery": [
+        {
+          "url": "https://cdn-manga-static-file-origin.ldf-static.net/a312b59ft1820b8a6/xxlarge",
+          "caption": "表紙：榎原依那（2026年11月17日号）",
+          "source": "双葉社 / LINEマンガ",
+          "kind": "cover",
+          "articleUrl": "https://7net.omni7.jp/detail/1107774766.html"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "action-1117-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "榎原依那 ポストカード 1枚付き（＋本誌付録クリアファイル）",
+          "talent": "榎原依那",
+          "price": 500,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107774766.html",
+          "imageUrl": "https://cdn-manga-static-file-origin.ldf-static.net/a312b59ft1820b8a6/xxlarge"
+        },
+        {
+          "id": "action-1117-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 紙版（クリアファイル付）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（紙版付録クリアファイル付）",
+          "talent": "榎原依那",
+          "price": 500,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E6%BC%AB%E7%94%BB%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3+2026%E5%B9%B411%E6%9C%8817%E6%97%A5%E5%8F%B7&i=stripbooks",
+          "imageUrl": "https://cdn-manga-static-file-origin.ldf-static.net/a312b59ft1820b8a6/xxlarge"
+        }
+      ]
+    },
+    {
+      "id": "spirits-2026-1207",
+      "title": "ビッグコミックスピリッツ 2026年12月7日号",
+      "series": "ビッグコミックスピリッツ",
+      "issueLabel": "2026年12月7日号",
+      "publisher": "小学館",
+      "category": "weekly",
+      "releaseDate": "2026-11-24",
+      "price": 500,
+      "coverTalents": [
+        "井口裕香"
+      ],
+      "featuredTalents": [
+        "井口裕香"
+      ],
+      "palette": [
+        "#1D4ED8",
+        "#3B82F6",
+        "#DBEAFE"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "週刊コミック誌の掘り出し特典！セブンネット限定生写真は紙版のみ",
+      "summary": "週刊コミック誌でも見逃せない！セブンネット限定特典として井口裕香の生写真付き予約が登場。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "spirits-2026-1207-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "井口裕香 生写真1枚付き（500円で生写真付き！）",
+          "talent": "井口裕香",
+          "price": 500,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/search?q=%E3%83%93%E3%83%83%E3%82%B0%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9%E3%83%94%E3%83%AA%E3%83%83%E3%83%84+%E4%BA%95%E5%8F%A3%E8%A3%95%E9%A6%99"
+        },
+        {
+          "id": "spirits-2026-1207-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで通常号を購入",
+          "talent": "井口裕香",
+          "price": 500,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E3%83%93%E3%83%83%E3%82%B0%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9%E3%83%94%E3%83%AA%E3%83%83%E3%83%84+2026%E5%B9%B412%E6%9C%887%E6%97%A5%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "ex-taishu-2026-12",
+      "title": "EX大衆 2026年12月号",
+      "series": "EX大衆",
+      "issueLabel": "2026年12月号",
+      "publisher": "双葉社",
+      "category": "idol",
+      "releaseDate": "2026-11-16",
+      "price": 1200,
+      "coverTalents": [
+        "佐藤綺星（AKB48）",
+        "八木愛月（AKB48）",
+        "伊藤百花（AKB48）",
+        "小栗有以（AKB48）"
+      ],
+      "featuredTalents": [
+        "AKB48",
+        "佐藤綺星",
+        "八木愛月",
+        "伊藤百花",
+        "小栗有以",
+        "山田あい",
+        "宇咲"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8e61929b/421699/1107782402.jpg?sw=1150",
+      "palette": [
+        "#D97706",
+        "#FBBF24",
+        "#FEF3C7"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "本誌付録：W面クリアファイル / ポスター企画号"
+        }
+      ],
+      "printOnlyNote": "セブンネット限定ポストカード全7種（AKB48 5種＋山田あい＋宇咲）確定！",
+      "summary": "AKB48大特集＆セブンネット限定ポストカード全7種を横並び比較！小栗有以・山田あい・宇咲ほか全直リンク収録。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8e61929b/421699/1107782402.jpg?sw=1150",
+          "caption": "セブン特典：小栗有以（AKB48）ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107782402.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw99c1749b/421699/1107782403.jpg?sw=1150",
+          "caption": "セブン特典：山田あい ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107782403.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw06153a08/421699/1107782404.jpg?sw=1150",
+          "caption": "セブン特典：宇咲 ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107782404.html"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "ext12-7net-trio",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：AKB48 3人ver.",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "佐藤綺星・八木愛月・伊藤百花（AKB48）ポストカード 1枚付き",
+          "talent": "佐藤綺星・八木愛月・伊藤百花",
+          "price": 1200,
+          "status": "発売中",
+          "artworkStatus": "公開中",
+          "url": "https://7net.omni7.jp/detail/1107782398.html"
+        },
+        {
+          "id": "ext12-7net-sato",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：佐藤綺星",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "佐藤綺星（AKB48）ポストカード 1枚付き",
+          "talent": "佐藤綺星（AKB48）",
+          "price": 1200,
+          "status": "発売中",
+          "artworkStatus": "公開中",
+          "url": "https://7net.omni7.jp/detail/1107782399.html"
+        },
+        {
+          "id": "ext12-7net-yagi",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：八木愛月",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "八木愛月（AKB48）ポストカード 1枚付き",
+          "talent": "八木愛月（AKB48）",
+          "price": 1200,
+          "status": "発売中",
+          "artworkStatus": "公開中",
+          "url": "https://7net.omni7.jp/detail/1107782400.html"
+        },
+        {
+          "id": "ext12-7net-ito",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：伊藤百花",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "伊藤百花（AKB48）ポストカード 1枚付き",
+          "talent": "伊藤百花（AKB48）",
+          "price": 1200,
+          "status": "発売中",
+          "artworkStatus": "公開中",
+          "url": "https://7net.omni7.jp/detail/1107782401.html"
+        },
+        {
+          "id": "ext12-7net-oguri",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：小栗有以",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "小栗有以（AKB48）ポストカード 1枚付き",
+          "talent": "小栗有以（AKB48）",
+          "price": 1200,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8e61929b/421699/1107782402.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107782402.html"
+        },
+        {
+          "id": "ext12-7net-yamada",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：山田あい",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "山田あい ポストカード 1枚付き",
+          "talent": "山田あい",
+          "price": 1200,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw99c1749b/421699/1107782403.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107782403.html"
+        },
+        {
+          "id": "ext12-7net-usa",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：宇咲",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "宇咲 ポストカード 1枚付き",
+          "talent": "宇咲",
+          "price": 1200,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw06153a08/421699/1107782404.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107782404.html"
+        },
+        {
+          "id": "ext12-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（本誌W付録クリアファイル＆ポスター付）",
+          "talent": "AKB48",
+          "price": 1200,
+          "status": "発売中",
+          "artworkStatus": "通常版",
+          "url": "https://www.amazon.co.jp/s?k=EX%E5%A4%A7%E8%A1%86+2026%E5%B9%B412%E6%9C%88%E5%8F%B7&i=stripbooks",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8e61929b/421699/1107782402.jpg?sw=1150"
+        }
+      ]
+    },
+    {
+      "id": "brody-2026-12",
+      "title": "BRODY（ブロディ）2026年12月号",
+      "series": "BRODY",
+      "issueLabel": "2026年12月号",
+      "publisher": "白夜書房",
+      "category": "idol",
+      "releaseDate": "2026-10-22",
+      "price": 1400,
+      "coverTalents": [
+        "五百城茉央（乃木坂46）",
+        "坂井新奈×下田衣珠季（日向坂46）"
+      ],
+      "featuredTalents": [
+        "五百城茉央（乃木坂46）",
+        "坂井新奈（日向坂46）",
+        "下田衣珠季（日向坂46）",
+        "小戸森穂花"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1b2a62fb/421699/1107778152.jpg?sw=1150",
+      "palette": [
+        "#1E40AF",
+        "#6366F1",
+        "#E0E7FF"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "本誌付録：特大ポスター付き"
+        }
+      ],
+      "printOnlyNote": "セブンネットは五百城茉央ポストカード3種、HMVは日向坂46ペアポストカード付き！",
+      "summary": "乃木坂46・五百城茉央のロンググラビア表紙号！セブンネット3絵柄＆HMV限定特典のどちらも高画質で絵柄公開済み。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1b2a62fb/421699/1107778152.jpg?sw=1150",
+          "caption": "セブン特典：五百城茉央（乃木坂46）ポストカードA",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107778152.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw7e994f0a/421699/1107778153.jpg?sw=1150",
+          "caption": "セブン特典：五百城茉央（乃木坂46）ポストカードB",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107778153.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw818a7918/421699/1107778154.jpg?sw=1150",
+          "caption": "セブン特典：五百城茉央（乃木坂46）ポストカードC",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107778154.html"
+        },
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000173/0/7/399.jpg",
+          "caption": "HMV限定特典：坂井新奈×下田衣珠季（日向坂46）ポストカード",
+          "source": "HMV&BOOKS",
+          "kind": "bonus",
+          "articleUrl": "https://www.hmv.co.jp/artist_BRODY%E7%B7%A8%E9%9B%86%E9%83%A8_000000000695605/item_%E3%80%8AHMV-BOOKS-online%E9%99%90%E5%AE%9A%E7%89%B9%E5%85%B8%EF%BC%9A%E5%9D%82%E4%BA%95%E6%96%B0%E5%A5%88%C3%97%E4%B8%8B%E7%94%B0%E8%A1%A3%E7%8F%A0%E5%AD%A3%EF%BC%88%E6%97%A5%E5%90%91%E5%9D%8246%EF%BC%89%E3%83%9D%E3%82%B9%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89%E3%80%8BBRODY-%E3%83%96%E3%83%AD%E3%83%87%E3%82%A3-2026%E5%B9%B4-12%E6%9C%88%E5%8F%B7%E3%80%90%E8%A1%A8%E7%B4%99%EF%BC%9A%E4%BA%94%E7%99%BE%E5%9F%8E%E8%8C%89%E5%A4%AE%EF%BC%88%E4%B9%83%E6%9C%A8%E5%9D%8246%EF%BC%89%E3%80%91_17307399"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "brody-12-7net-a",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 A",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "五百城茉央（乃木坂46）ポストカードA 1枚付き",
+          "talent": "五百城茉央",
+          "price": 1400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107778152.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1b2a62fb/421699/1107778152.jpg?sw=1150"
+        },
+        {
+          "id": "brody-12-7net-b",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 B",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "五百城茉央（乃木坂46）ポストカードB 1枚付き",
+          "talent": "五百城茉央",
+          "price": 1400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107778153.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw7e994f0a/421699/1107778153.jpg?sw=1150"
+        },
+        {
+          "id": "brody-12-7net-c",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典 C",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "五百城茉央（乃木坂46）ポストカードC 1枚付き",
+          "talent": "五百城茉央",
+          "price": 1400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/detail/1107778154.html",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw818a7918/421699/1107778154.jpg?sw=1150"
+        },
+        {
+          "id": "brody-12-hmv",
+          "store": "hmv",
+          "hasStoreExclusiveBonus": true,
+          "edition": "HMV&BOOKS online限定特典",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "坂井新奈×下田衣珠季（日向坂46）ポストカード1枚付き",
+          "talent": "坂井新奈×下田衣珠季",
+          "price": 1400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://www.hmv.co.jp/artist_BRODY%E7%B7%A8%E9%9B%86%E9%83%A8_000000000695605/item_%E3%80%8AHMV-BOOKS-online%E9%99%90%E5%AE%9A%E7%89%B9%E5%85%B8%EF%BC%9A%E5%9D%82%E4%BA%95%E6%96%B0%E5%A5%88%C3%97%E4%B8%8B%E7%94%B0%E8%A1%A3%E7%8F%A0%E5%AD%A3%EF%BC%88%E6%97%A5%E5%90%91%E5%9D%8246%EF%BC%89%E3%83%9D%E3%82%B9%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89%E3%80%8BBRODY-%E3%83%96%E3%83%AD%E3%83%87%E3%82%A3-2026%E5%B9%B4-12%E6%9C%88%E5%8F%B7%E3%80%90%E8%A1%A8%E7%B4%99%EF%BC%9A%E4%BA%94%E7%99%BE%E5%9F%8E%E8%8C%89%E5%A4%AE%EF%BC%88%E4%B9%83%E6%9C%A8%E5%9D%8246%EF%BC%89%E3%80%91_17307399",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000173/0/7/399.jpg"
+        },
+        {
+          "id": "brody-12-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入",
+          "talent": "五百城茉央",
+          "price": 1400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=BRODY+2026%E5%B9%B412%E6%9C%88%E5%8F%B7&i=stripbooks",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1b2a62fb/421699/1107778152.jpg?sw=1150"
+        }
+      ]
+    },
+    {
+      "id": "blt-graph-116",
+      "title": "blt graph. vol.116",
+      "series": "blt graph.",
+      "issueLabel": "vol.116",
+      "publisher": "東京ニュース通信社",
+      "category": "gravure",
+      "releaseDate": "2026-10-02",
+      "price": 1540,
+      "coverTalents": [
+        "岩本蓮加（乃木坂46）",
+        "伊藤理々杏（乃木坂46）"
+      ],
+      "featuredTalents": [
+        "岩本蓮加（乃木坂46）",
+        "伊藤理々杏（乃木坂46）",
+        "甲斐心愛（STU48）",
+        "櫻井おとの",
+        "早﨑すずき（僕青）"
+      ],
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/3/2/962.jpg",
+      "palette": [
+        "#0F766E",
+        "#06B6D4",
+        "#CFFAFE"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "別冊付録：特大ポスター3種セット（B.L.T. graph.定番）"
+        }
+      ],
+      "printOnlyNote": "セブンネット限定ポストカード全7種の高画質絵柄を一覧比較可能！",
+      "summary": "表紙は乃木坂46・岩本蓮加、裏表紙は伊藤理々杏。セブンネット限定で岩本蓮加3種＋出演メンバー4名の全7種ポストカードを展開。",
+      "gallery": [
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000172/3/2/962.jpg",
+          "caption": "表紙：岩本蓮加（乃木坂46）",
+          "source": "公式書影",
+          "kind": "cover",
+          "articleUrl": "https://7net.omni7.jp/detail/1107769632.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8981dcb1/421699/1107769632.jpg?sw=1150",
+          "caption": "セブン特典：岩本蓮加 ポストカードA",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107769632.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw3797eb9d/421699/1107769633.jpg?sw=1150",
+          "caption": "セブン特典：岩本蓮加 ポストカードB",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107769633.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe2b7bf11/421699/1107769634.jpg?sw=1150",
+          "caption": "セブン特典：岩本蓮加 ポストカードC",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107769634.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8bfc94ea/421699/1107769635.jpg?sw=1150",
+          "caption": "セブン特典：甲斐心愛（STU48）ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107769635.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwb94f599f/421699/1107769636.jpg?sw=1150",
+          "caption": "セブン特典：櫻井おとの ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107769636.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwc80b0090/421699/1107769637.jpg?sw=1150",
+          "caption": "セブン特典：早﨑すずき（僕青）ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107769637.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwbded963c/421699/1107769638.jpg?sw=1150",
+          "caption": "セブン特典：伊藤理々杏（乃木坂46）ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107769638.html"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "bltg116-7net-1",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：岩本蓮加 A",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "岩本蓮加（乃木坂46）ポストカードA 1枚付き",
+          "talent": "岩本蓮加",
+          "price": 1540,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8981dcb1/421699/1107769632.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107769632.html"
+        },
+        {
+          "id": "bltg116-7net-2",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：岩本蓮加 B",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "岩本蓮加（乃木坂46）ポストカードB 1枚付き",
+          "talent": "岩本蓮加",
+          "price": 1540,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw3797eb9d/421699/1107769633.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107769633.html"
+        },
+        {
+          "id": "bltg116-7net-3",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：岩本蓮加 C",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "岩本蓮加（乃木坂46）ポストカードC 1枚付き",
+          "talent": "岩本蓮加",
+          "price": 1540,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe2b7bf11/421699/1107769634.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107769634.html"
+        },
+        {
+          "id": "bltg116-7net-4",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：伊藤理々杏",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "伊藤理々杏（乃木坂46）ポストカード 1枚付き",
+          "talent": "伊藤理々杏",
+          "price": 1540,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwbded963c/421699/1107769638.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107769638.html"
+        },
+        {
+          "id": "bltg116-7net-5",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：甲斐心愛",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "甲斐心愛（STU48）ポストカード 1枚付き",
+          "talent": "甲斐心愛",
+          "price": 1540,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8bfc94ea/421699/1107769635.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107769635.html"
+        },
+        {
+          "id": "bltg116-7net-6",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：櫻井おとの",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "櫻井おとの ポストカード 1枚付き",
+          "talent": "櫻井おとの",
+          "price": 1540,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwb94f599f/421699/1107769636.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107769636.html"
+        },
+        {
+          "id": "bltg116-7net-7",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：早﨑すずき",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "早﨑すずき（僕青）ポストカード 1枚付き",
+          "talent": "早﨑すずき",
+          "price": 1540,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwc80b0090/421699/1107769637.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107769637.html"
+        },
+        {
+          "id": "bltg116-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（特大ポスター付）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（本誌特大ポスター付）",
+          "talent": "岩本蓮加",
+          "price": 1540,
+          "status": "発売中",
+          "artworkStatus": "通常表紙",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/3/2/962.jpg",
+          "url": "https://www.amazon.co.jp/s?k=blt+graph.+vol.116&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "gravure-thetv-82",
+      "title": "グラビアザテレビジョン vol.82",
+      "series": "グラビアザテレビジョン",
+      "issueLabel": "vol.82",
+      "publisher": "KADOKAWA",
+      "category": "gravure",
+      "releaseDate": "2026-11-26",
+      "price": 1760,
+      "coverTalents": [
+        "山田あい"
+      ],
+      "featuredTalents": [
+        "山田あい"
+      ],
+      "palette": [
+        "#0891B2",
+        "#22D3EE",
+        "#CFFAFE"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "楽天ブックス限定大判ブロマイド付き（予約優先）",
+      "summary": "大判サイズでグラビアを楽しめる人気ムック！楽天ブックス限定特典として「山田あい 大判ブロマイド」が付属。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "gravure-tv-82-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天ブックス限定特典",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "山田あい 大判ブロマイド 1枚付き",
+          "talent": "山田あい",
+          "price": 1760,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://books.rakuten.co.jp/search?sitem=%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%82%B6%E3%83%86%E3%83%AC%E3%83%93%E3%82%B8%E3%83%A7%E3%83%B3+vol.82&g=001"
+        },
+        {
+          "id": "gravure-tv-82-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "山田あい",
+          "price": 1760,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%82%B6%E3%83%86%E3%83%AC%E3%83%93%E3%82%B8%E3%83%A7%E3%83%B3+vol.82&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "nakajima-runa-luna",
+      "title": "中島瑠菜 1st写真集『Luna』",
+      "series": "写真集",
+      "issueLabel": "1st写真集",
+      "publisher": "集英社",
+      "category": "photobook",
+      "releaseDate": "2026-11-26",
+      "price": 3520,
+      "coverTalents": [
+        "中島瑠菜"
+      ],
+      "featuredTalents": [
+        "中島瑠菜"
+      ],
+      "coverImageUrl": "https://store.tsite.jp/article_img/daikanyama/2026/1793251483626/slider/9784087902600_%E4%B8%AD%E5%B3%B6%E7%91%A0%E8%8F%9C%E5%86%99%E7%9C%9F%E9%9B%86_%E5%B8%AF%E3%81%AA%E3%81%97.jpg_edited.jpg",
+      "palette": [
+        "#4F46E5",
+        "#818CF8",
+        "#E0E7FF"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "セブンネット限定生写真付き！通常購入はAmazon直リンクからどうぞ",
+      "summary": "“日本アカデミー賞新人賞”中島瑠菜が初水着に挑戦した1st写真集！帯なし高画質カバー・ORICON先行水着カット・セブンネット限定生写真版を収録。",
+      "gallery": [
+        {
+          "url": "https://store.tsite.jp/article_img/daikanyama/2026/1793251483626/slider/9784087902600_%E4%B8%AD%E5%B3%B6%E7%91%A0%E8%8F%9C%E5%86%99%E7%9C%9F%E9%9B%86_%E5%B8%AF%E3%81%AA%E3%81%97.jpg_edited.jpg",
+          "caption": "公式カバービジュアル（帯なし高画質）",
+          "source": "代官山蔦屋書店",
+          "kind": "cover",
+          "articleUrl": "https://store.tsite.jp/daikanyama/event/humanities/57764-1438221029.html"
+        },
+        {
+          "url": "https://contents.oricon.co.jp/upimg/news/2487000/2486719/20261015_184154_p_o_17905980.jpg",
+          "caption": "先行公開カット（撮影／花盛友里）",
+          "source": "ORICON NEWS",
+          "kind": "preview",
+          "articleUrl": "https://www.oricon.co.jp/news/2486719/full/"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw309c61a6/421699/1107778150.jpg?sw=1150",
+          "caption": "セブンネット限定特典：生写真1枚付き",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/search?q=%E4%B8%AD%E5%B3%B6%E7%91%A0%E8%8F%9C+Luna"
+        },
+        {
+          "url": "https://cdn.tower.jp/za/o/00/tem9784087902600.jpg",
+          "caption": "公式書影（帯あり）",
+          "source": "TOWER RECORDS",
+          "kind": "cover",
+          "articleUrl": "https://tower.jp/article/feature_item/2026/11/02/3004"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "中島瑠菜、1st写真集で水着に初挑戦 先行カット公開フォトギャラリー",
+          "source": "ORICON NEWS",
+          "url": "https://www.oricon.co.jp/news/2486719/full/",
+          "photoCountHint": "先行水着カット複数枚"
+        }
+      ],
+      "offers": [
+        {
+          "id": "nakajima-runa-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定特典",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "セブンネット限定 生写真 1枚付き",
+          "talent": "中島瑠菜",
+          "price": 3520,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/search?q=%E4%B8%AD%E5%B3%B6%E7%91%A0%E8%8F%9C+Luna"
+        },
+        {
+          "id": "nakajima-runa-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（ISBN直リンク）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazon商品ページへダイレクトアクセス",
+          "talent": "中島瑠菜",
+          "price": 3520,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/dp/4087902609",
+          "imageUrl": "https://store.tsite.jp/article_img/daikanyama/2026/1793251483626/slider/9784087902600_%E4%B8%AD%E5%B3%B6%E7%91%A0%E8%8F%9C%E5%86%99%E7%9C%9F%E9%9B%86_%E5%B8%AF%E3%81%AA%E3%81%97.jpg_edited.jpg"
+        }
+      ]
+    },
+    {
+      "id": "koga-rui-1st",
+      "title": "古賀瑠 1st写真集『WKGA 82.2FM』",
+      "series": "写真集",
+      "issueLabel": "1st写真集",
+      "publisher": "写真集",
+      "category": "photobook",
+      "releaseDate": "2026-11-17",
+      "price": 3300,
+      "coverTalents": [
+        "古賀瑠"
+      ],
+      "featuredTalents": [
+        "古賀瑠"
+      ],
+      "palette": [
+        "#059669",
+        "#34D399",
+        "#D1FAE5"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "セブンネット限定『直筆サイン本』＋楽天・Amazon限定表紙版あり！",
+      "summary": "発売中！セブンネット限定の直筆サイン本と、楽天ブックス・Amazon限定の別表紙版から選べます。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "koga-rui-7net-signed",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブンネット限定：直筆サイン本",
+          "bonusTypes": [
+            "signed"
+          ],
+          "bonusText": "セブンネット限定 直筆サイン本（¥3,960）",
+          "talent": "古賀瑠",
+          "price": 3960,
+          "status": "low_stock",
+          "artworkStatus": "revealed",
+          "url": "https://7net.omni7.jp/search?q=%E5%8F%A4%E8%B3%80%E7%91%A0+WKGA"
+        },
+        {
+          "id": "koga-rui-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天・Amazon限定表紙版",
+          "bonusTypes": [
+            "cover"
+          ],
+          "bonusText": "楽天ブックス・Amazon限定表紙版（通常版と別カット表紙）",
+          "talent": "古賀瑠",
+          "price": 3300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://books.rakuten.co.jp/search?sitem=%E5%8F%A4%E8%B3%80%E7%91%A0+WKGA&g=001"
+        },
+        {
+          "id": "koga-rui-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": true,
+          "edition": "Amazon（限定表紙版 / 通常版）",
+          "bonusTypes": [
+            "cover"
+          ],
+          "bonusText": "Amazon限定表紙版＆通常版",
+          "talent": "古賀瑠",
+          "price": 3300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E5%8F%A4%E8%B3%80%E7%91%A0+WKGA+82.2FM&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "iwasaki-aoi-1st",
+      "title": "岩崎碧 1st写真集『碧空』",
+      "series": "写真集",
+      "issueLabel": "1st写真集",
+      "publisher": "写真集",
+      "category": "photobook",
+      "releaseDate": "2026-11-20",
+      "price": 3300,
+      "coverTalents": [
+        "岩崎碧"
+      ],
+      "featuredTalents": [
+        "岩崎碧"
+      ],
+      "palette": [
+        "#0284C7",
+        "#38BDF8",
+        "#E0F2FE"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "楽天ブックス限定フォトグレイカード1枚付き",
+      "summary": "本日発売！楽天ブックス限定特典として「フォトグレイカード1枚」が付く注目1st写真集。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "iwasaki-aoi-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天ブックス限定特典",
+          "bonusTypes": [
+            "card"
+          ],
+          "bonusText": "楽天ブックス限定 フォトグレイカード 1枚付き",
+          "talent": "岩崎碧",
+          "price": 3300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://books.rakuten.co.jp/search?sitem=%E5%B2%A9%E5%B4%8E%E7%A2%A7+%E7%A2%A7%E7%A9%BA&g=001"
+        },
+        {
+          "id": "iwasaki-aoi-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入",
+          "talent": "岩崎碧",
+          "price": 3300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E5%B2%A9%E5%B4%8E%E7%A2%A7+%E7%A2%A7%E7%A9%BA&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "tsukine-kona-1st",
+      "title": "月音こな 1st写真集『ひととき』",
+      "series": "写真集",
+      "issueLabel": "1st写真集",
+      "publisher": "宝島社",
+      "category": "photobook",
+      "releaseDate": "2026-12-09",
+      "price": 4180,
+      "coverTalents": [
+        "月音こな"
+      ],
+      "featuredTalents": [
+        "月音こな"
+      ],
+      "palette": [
+        "#0EA5E9",
+        "#38BDF8",
+        "#E0F2FE"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "初の水着カット収録・楽天ブックス限定オンラインラッキードロー特典あり",
+      "summary": "人気声優・月音こな待望の1st写真集。沖縄ロケ＆初の水着カット収録、楽天ブックス限定抽選特典を展開。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "人気声優・月音こな 1st写真集『ひととき』表紙決定！初水着カット収録",
+          "source": "PR TIMES / 宝島社",
+          "url": "https://prtimes.jp/main/html/rd/p/000002537.000005069.html",
+          "photoCountHint": "表紙＋沖縄先行カット"
+        }
+      ],
+      "offers": [
+        {
+          "id": "tsukine-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天ブックス限定抽選特典",
+          "bonusTypes": [
+            "card"
+          ],
+          "bonusText": "オンラインラッキードロー抽選権付き",
+          "talent": "月音こな",
+          "price": 4180,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://books.rakuten.co.jp/rb/18773960/"
+        },
+        {
+          "id": "tsukine-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "月音こな",
+          "price": 4180,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E6%9C%88%E9%9F%B3%E3%81%93%E3%81%AA+%E3%81%B2%E3%81%A8%E3%81%A8%E3%81%8D&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "sakura-nao-1st",
+      "title": "咲良菜緒 1st写真集（仮）",
+      "series": "写真集",
+      "issueLabel": "1st写真集",
+      "publisher": "主婦の友社",
+      "category": "photobook",
+      "releaseDate": "2026-12-14",
+      "price": 3850,
+      "coverTalents": [
+        "咲良菜緒"
+      ],
+      "featuredTalents": [
+        "咲良菜緒"
+      ],
+      "palette": [
+        "#2563EB",
+        "#60A5FA",
+        "#DBEAFE"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "楽天ブックス限定ブロマイド1枚付き",
+      "summary": "待望の1st写真集！楽天ブックス限定特典としてブロマイド1枚付きで予約受付中。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "sakura-nao-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天ブックス限定特典",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "楽天ブックス限定 ブロマイド 1枚付き",
+          "talent": "咲良菜緒",
+          "price": 3850,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://books.rakuten.co.jp/search?sitem=%E5%92%B2%E8%89%AF%E8%8F%9C%E7%B7%92+1st%E5%86%99%E7%9C%9F%E9%9B%86&g=001"
+        },
+        {
+          "id": "sakura-nao-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "咲良菜緒",
+          "price": 3850,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=%E5%92%B2%E8%89%AF%E8%8F%9C%E7%B7%92+1st%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "tanaka-yuki-pb",
+      "title": "田中有紀 写真集『ゆきのとなり。』",
+      "series": "写真集",
+      "issueLabel": "サイン本・通常版",
+      "publisher": "東京ニュース通信社",
+      "category": "photobook",
+      "releaseDate": "2026-12-24",
+      "price": 3520,
+      "coverTalents": [
+        "田中有紀"
+      ],
+      "featuredTalents": [
+        "田中有紀"
+      ],
+      "palette": [
+        "#0F766E",
+        "#2DD4BF",
+        "#CCFBF1"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "セブン限定『直筆サイン本』＋楽天・Amazon限定表紙（メイキングDVD付）＋HMVオンライン限定特典！",
+      "summary": "3ストア以上で特典展開！セブン限定直筆サイン本、楽天・Amazon限定のメイキングDVD付き限定表紙版、HMVオンライン特典を比較。",
+      "gallery": [
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000174/2/6/303.jpg",
+          "caption": "通常版カバー：田中有紀『ゆきのとなり。』",
+          "source": "HMV&BOOKS",
+          "kind": "cover",
+          "articleUrl": "https://www.hmv.co.jp/product/detail/17426303"
+        },
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/1442/9784868361442.jpg?fitin=560:400&composite-to=*,*|560:400",
+          "caption": "楽天ブックス・Amazon限定表紙版（メイキングDVD付）",
+          "source": "楽天ブックス",
+          "kind": "limited_cover",
+          "articleUrl": "https://books.rakuten.co.jp/rb/18898224/"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "tanaka-7net-signed",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定：直筆サイン本",
+          "bonusTypes": [
+            "signed"
+          ],
+          "bonusText": "セブンネット限定 直筆サイン本（数量限定）",
+          "talent": "田中有紀",
+          "price": 3520,
+          "status": "残りわずか",
+          "artworkStatus": "限定枠",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000174/2/6/303.jpg",
+          "url": "https://7net.omni7.jp/search?q=%E7%94%B0%E4%B8%AD%E6%9C%89%E7%B4%80+%E3%82%86%E3%81%8D%E3%81%AE%E3%81%A8%E3%81%AA%E3%82%8A"
+        },
+        {
+          "id": "tanaka-rakuten-dvd",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天・Amazon限定表紙＋DVD版",
+          "bonusTypes": [
+            "cover",
+            "dvd"
+          ],
+          "bonusText": "メイキングDVD付き限定表紙版（楽天ブックス）",
+          "talent": "田中有紀",
+          "price": 4620,
+          "status": "予約受付中",
+          "artworkStatus": "限定表紙公開",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/1442/9784868361442.jpg?fitin=560:400&composite-to=*,*|560:400",
+          "url": "https://books.rakuten.co.jp/rb/18898224/"
+        },
+        {
+          "id": "tanaka-hmv",
+          "store": "hmv",
+          "hasStoreExclusiveBonus": true,
+          "edition": "HMVオンライン限定特典",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "HMV&BOOKS online限定特典付き",
+          "talent": "田中有紀",
+          "price": 3520,
+          "status": "予約受付中",
+          "artworkStatus": "公開中",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000174/2/6/303.jpg",
+          "url": "https://www.hmv.co.jp/product/detail/17426303"
+        },
+        {
+          "id": "tanaka-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": true,
+          "edition": "Amazon（限定表紙DVD版 / 通常版）",
+          "bonusTypes": [
+            "cover",
+            "dvd"
+          ],
+          "bonusText": "Amazonで予約・購入（限定表紙版＆通常版）",
+          "talent": "田中有紀",
+          "price": 3520,
+          "status": "予約受付中",
+          "artworkStatus": "公開中",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000174/2/6/303.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E7%94%B0%E4%B8%AD%E6%9C%89%E7%B4%80+%E3%82%86%E3%81%8D%E3%81%AE%E3%81%A8%E3%81%AA%E3%82%8A&i=stripbooks"
+        }
+      ],
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000174/2/6/303.jpg"
+    },
+    {
+      "id": "yuina-1st-pb",
+      "title": "結那 1st写真集",
+      "series": "写真集",
+      "issueLabel": "1st写真集",
+      "publisher": "写真集",
+      "category": "photobook",
+      "releaseDate": "2027-01-20",
+      "price": 3850,
+      "coverTalents": [
+        "結那（Liella!）"
+      ],
+      "featuredTalents": [
+        "結那"
+      ],
+      "palette": [
+        "#9333EA",
+        "#C084FC",
+        "#F3E8FF"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "マレーシア・ペナン島ロケ！楽天ブックス限定ブロマイド1枚付き",
+      "summary": "声優・結那待望の1st写真集！楽天ブックス限定特典としてオリジナルブロマイド1枚付きで予約受付中。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "yuina-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天ブックス限定特典",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "楽天ブックス限定 オリジナルブロマイド 1枚付き",
+          "talent": "結那",
+          "price": 3850,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://books.rakuten.co.jp/rb/18821985/"
+        },
+        {
+          "id": "yuina-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "結那",
+          "price": 3850,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=%E7%B5%90%E9%82%A3+1st%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "shirahama-miu-2nd",
+      "title": "白濱美兎 2nd写真集『ゆっくり恋をする』",
+      "series": "写真集",
+      "issueLabel": "2nd写真集",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2026-11-18",
+      "price": 3300,
+      "coverTalents": [
+        "白濱美兎"
+      ],
+      "featuredTalents": [
+        "白濱美兎"
+      ],
+      "palette": [
+        "#BE185D",
+        "#F472B6",
+        "#FCE7F3"
+      ],
+      "includedBonuses": [
+        {
+          "type": "card",
+          "label": "紙版・初版限定封入：10分超スペシャルメイキング動画QR付きフォトカード（3種ランダム）"
+        }
+      ],
+      "printOnlyNote": "初版限定QR動画フォトカードは紙版のみ（デジタル版対象外）／ストア独自特典なしのためAmazon直リンクを表示",
+      "summary": "FRIDAYグラデミー賞新人賞・白濱美兎の“過去最大露出”2nd写真集！初版限定QR動画フォトカードはAmazonの紙版でも付属。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "大胆な“腕ブラカット”で！白濱美兎2nd写真集『ゆっくり恋をする』発売＆先行カット",
+          "source": "ほんのひきだし",
+          "url": "https://hon-hikidashi.jp/news/225136/",
+          "photoCountHint": "先行カット・詳細"
+        },
+        {
+          "title": "白濱美兎2nd写真集 撮り下ろし先行カット特集",
+          "source": "まいどなニュース",
+          "url": "https://maidonanews.jp/article/17035673",
+          "photoCountHint": "先行グラビア特集"
+        }
+      ],
+      "offers": [
+        {
+          "id": "shirahama-miu-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 紙版（ISBN直リンク）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（紙の初版に動画QRフォトカード封入）",
+          "talent": "白濱美兎",
+          "price": 3300,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/dp/4065455081"
+        }
+      ]
+    },
+    {
+      "id": "hirata-yuki-1st",
+      "title": "AKB48 平田侑希 1st写真集『仮縫いの恋人』",
+      "series": "写真集",
+      "issueLabel": "1st写真集",
+      "publisher": "宝島社",
+      "category": "photobook",
+      "releaseDate": "2026-11-26",
+      "price": 3300,
+      "coverTalents": [
+        "平田侑希（AKB48）"
+      ],
+      "featuredTalents": [
+        "平田侑希（AKB48）"
+      ],
+      "palette": [
+        "#EC4899",
+        "#F472B6",
+        "#FCE7F3"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "オーストラリア撮影・表紙＆先行カット第2弾解禁済み",
+      "summary": "AKB48 17期生・平田侑希の待望1st写真集！公式プレス＆ほんのひきだしで先行カット公開中。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "AKB48 平田侑希さん 1st写真集 タイトル＆表紙決定！先行カット解禁",
+          "source": "PR TIMES / 宝島社",
+          "url": "https://prtimes.jp/main/html/rd/p/000002536.000005069.html",
+          "photoCountHint": "表紙＋先行カット多数"
+        },
+        {
+          "title": "あどけない顔がキュート！AKB48・平田侑希『仮縫いの恋人』表紙＆第2弾先行カット",
+          "source": "ほんのひきだし",
+          "url": "https://hon-hikidashi.jp/news/222941/",
+          "photoCountHint": "先行カットギャラリー"
+        }
+      ],
+      "offers": [
+        {
+          "id": "hirata-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "平田侑希",
+          "price": 3300,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E5%B9%B3%E7%94%B0%E4%BE%91%E5%B8%8C+%E4%BB%AE%E7%B8%AB%E3%81%84%E3%81%AE%E6%81%8B%E4%BA%BA&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "nara-miharu-2nd",
+      "title": "元NGT48 奈良未遥 2nd写真集『ぜんぶ私』",
+      "series": "写真集",
+      "issueLabel": "2nd写真集",
+      "publisher": "KADOKAWA",
+      "category": "photobook",
+      "releaseDate": "2026-12-09",
+      "price": 3520,
+      "coverTalents": [
+        "奈良未遥"
+      ],
+      "featuredTalents": [
+        "奈良未遥"
+      ],
+      "palette": [
+        "#E11D48",
+        "#F43F5E",
+        "#FFE4E6"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "PR TIMESにて未公開先行カット解禁中",
+      "summary": "元NGT48 1期生・奈良未遥の2nd写真集！未公開カットがPR TIMES＆ニュース記事で公開中。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "元NGT48・奈良未遥が2nd写真集『ぜんぶ私』を12月9日発売！先行カット＆コメント",
+          "source": "PR TIMES",
+          "url": "https://prtimes.jp/main/html/rd/p/000020672.000007006.html",
+          "photoCountHint": "未公開先行カット複数"
+        },
+        {
+          "title": "奈良未遥、2nd写真集『ぜんぶ私』未公開カット解禁記事",
+          "source": "RBB TODAY",
+          "url": "https://www.rbbtoday.com/article/2026/11/19/256173.html",
+          "photoCountHint": "最新ニュース写真"
+        }
+      ],
+      "offers": [
+        {
+          "id": "nara-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "奈良未遥",
+          "price": 3520,
+          "status": "preorder",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E5%A5%88%E8%89%AF%E6%9C%AA%E9%81%A5+%E3%81%9C%E3%82%93%E3%81%B6%E7%A7%81&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "champion-2026-51",
+      "title": "週刊少年チャンピオン 2026年12月3日号（51号）",
+      "series": "週刊少年チャンピオン",
+      "issueLabel": "2026年51号",
+      "publisher": "秋田書店",
+      "category": "weekly",
+      "releaseDate": "2026-11-19",
+      "price": 400,
+      "coverTalents": [
+        "姫野ひなの"
+      ],
+      "featuredTalents": [
+        "姫野ひなの"
+      ],
+      "coverImageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2864912_o.jpg",
+      "palette": [
+        "#EA580C",
+        "#FB923C",
+        "#FFEDD5"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "本誌付録：両面BIGポスター付き（紙版限定・400円でコスパ抜群！）"
+        }
+      ],
+      "printOnlyNote": "両面BIGポスターはどの書店でも付属（紙版のみ）／ストア独自特典なしのためAmazon表示",
+      "summary": "人気アイドルの表紙＆両面BIGポスター付録が毎週話題の週刊少年チャンピオン最新51号（表紙：姫野ひなの）。",
+      "gallery": [
+        {
+          "url": "https://img.fujisan.co.jp/images/products/backnumbers/2864912_o.jpg",
+          "caption": "表紙：姫野ひなの（51号）",
+          "source": "Fujisan",
+          "kind": "cover",
+          "articleUrl": "https://www.fujisan.co.jp/product/1131/new/"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "週刊少年チャンピオン最新号 表紙＆付録ポスター詳細",
+          "source": "Fujisan",
+          "url": "https://www.fujisan.co.jp/product/1131/new/",
+          "photoCountHint": "表紙プレビュー"
+        }
+      ],
+      "offers": [
+        {
+          "id": "champion-51-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 紙版（両面BIGポスター付）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（紙版・両面BIGポスター付）",
+          "talent": "姫野ひなの",
+          "price": 400,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8A%E5%B0%91%E5%B9%B4%E3%83%81%E3%83%A3%E3%83%B3%E3%83%94%E3%82%AA%E3%83%B3+2026%E5%B9%B412%E6%9C%883%E6%97%A5%E5%8F%B7&i=stripbooks",
+          "imageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2864912_o.jpg"
+        }
+      ]
+    },
+    {
+      "id": "flash-2026-1201",
+      "title": "FLASH 2026年12月1・8日合併号",
+      "series": "FLASH",
+      "issueLabel": "12月1・8日合併号",
+      "publisher": "光文社",
+      "category": "weekly",
+      "releaseDate": "2026-11-17",
+      "price": 620,
+      "coverTalents": [
+        "池田瑛紗（乃木坂46）",
+        "奥田いろは（乃木坂46）"
+      ],
+      "featuredTalents": [
+        "池田瑛紗（乃木坂46）",
+        "奥田いろは（乃木坂46）"
+      ],
+      "coverImageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2865000_o.jpg",
+      "palette": [
+        "#7C2D12",
+        "#EA580C",
+        "#FFEDD5"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "本誌付録：特別ポスター（池田瑛紗＆奥田いろは）"
+        }
+      ],
+      "printOnlyNote": "付録ポスターは紙版のみ（電子版には付属しません）",
+      "summary": "週刊誌ならではの人気アイドル付録ポスター回！ストア独自特典なしのためAmazon紙版でそのまま購入OK。",
+      "gallery": [
+        {
+          "url": "https://img.fujisan.co.jp/images/products/backnumbers/2865000_o.jpg",
+          "caption": "FLASH 12月1・8日合併号 表紙",
+          "source": "Fujisan",
+          "kind": "cover",
+          "articleUrl": "https://www.fujisan.co.jp/product/2308/new/"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "FLASH 最新号（2026年12月1・8日合併号）詳細",
+          "source": "Fujisan",
+          "url": "https://www.fujisan.co.jp/product/2308/new/",
+          "photoCountHint": "表紙・誌面詳細"
+        }
+      ],
+      "offers": [
+        {
+          "id": "flash-1201-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 紙版（付録ポスター付）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで紙版を購入（付録ポスター付）",
+          "talent": "池田瑛紗・奥田いろは",
+          "price": 620,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=FLASH+2026%E5%B9%B412%E6%9C%881%E6%97%A5&i=stripbooks",
+          "imageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2865000_o.jpg"
+        }
+      ]
+    },
+    {
+      "id": "friday-2026-1204",
+      "title": "FRIDAY 2026年12月4・11日合併号",
+      "series": "FRIDAY",
+      "issueLabel": "12月4・11日合併号",
+      "publisher": "講談社",
+      "category": "weekly",
+      "releaseDate": "2026-11-20",
+      "price": 660,
+      "coverTalents": [
+        "溝端葵"
+      ],
+      "featuredTalents": [
+        "溝端葵"
+      ],
+      "coverImageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2788731_o.jpg",
+      "palette": [
+        "#1E293B",
+        "#475569",
+        "#E2E8F0"
+      ],
+      "includedBonuses": [
+        {
+          "type": "dvd",
+          "label": "本誌付録：スペシャルDVD（紙版限定・電子版には未収録）"
+        }
+      ],
+      "printOnlyNote": "スペシャルDVDは紙版のみ付属（電子版対象外）",
+      "summary": "本日発売のFRIDAY合併号！溝端葵ほかグラビア＆紙版限定スペシャルDVD付録つき。",
+      "gallery": [
+        {
+          "url": "https://img.fujisan.co.jp/images/products/backnumbers/2788731_o.jpg",
+          "caption": "FRIDAY 最新号表紙",
+          "source": "Fujisan",
+          "kind": "cover",
+          "articleUrl": "https://www.fujisan.co.jp/product/2305/new/"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "FRIDAY 最新号（2026年12月4・11日号）誌面・付録詳細",
+          "source": "Fujisan",
+          "url": "https://www.fujisan.co.jp/product/2305/new/",
+          "photoCountHint": "表紙・目次プレビュー"
+        }
+      ],
+      "offers": [
+        {
+          "id": "friday-2026-1204-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 紙版（DVD付）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで紙版を購入（スペシャルDVD付）",
+          "talent": "溝端葵",
+          "price": 660,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "url": "https://www.amazon.co.jp/s?k=FRIDAY+2026%E5%B9%B412%E6%9C%884%E6%97%A5&i=stripbooks",
+          "imageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2788731_o.jpg"
+        }
+      ]
+    },
+    {
+      "id": "wpb-2026-48-49",
+      "title": "週刊プレイボーイ 2026年12月7日号（No.48＆49合併号）",
+      "series": "週刊プレイボーイ",
+      "issueLabel": "No.48＆49合併号",
+      "publisher": "集英社",
+      "category": "weekly",
+      "releaseDate": "2026-11-23",
+      "price": 680,
+      "coverTalents": [
+        "合併号スペシャルグラビア"
+      ],
+      "featuredTalents": [
+        "グラビアアイドル特集"
+      ],
+      "palette": [
+        "#DC2626",
+        "#F97316",
+        "#FFEDD5"
+      ],
+      "includedBonuses": [
+        {
+          "type": "dvd",
+          "label": "合併号グラビア＆紙版付録（DVD/袋とじ等は紙版限定）"
+        }
+      ],
+      "printOnlyNote": "DVDやピンナップ等の付録は紙版のみ付属",
+      "summary": "月曜発売の王道週刊グラビア誌・合併号。週プレNEWSの先行カット＆Amazon紙版でチェック。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "週プレNEWS 最新号グラビア・アザーカット一覧",
+          "source": "週プレNEWS",
+          "url": "https://wpb.shueisha.co.jp/gravure/",
+          "photoCountHint": "公式先行グラビア毎日更新"
+        }
+      ],
+      "offers": [
+        {
+          "id": "wpb-2026-48-49-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 紙版（合併号）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "最新号グラビア",
+          "price": 680,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8A%E3%83%97%E3%83%AC%E3%82%A4%E3%83%9C%E3%83%BC%E3%82%A4+2026%E5%B9%B4+12%E6%9C%887%E6%97%A5%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "fruits-zipper-4th",
+      "title": "FRUITS ZIPPER 4th Anniversary写真集",
+      "series": "写真集",
+      "issueLabel": "4周年記念写真集",
+      "publisher": "写真集",
+      "category": "photobook",
+      "releaseDate": "2026-12-22",
+      "price": 3300,
+      "coverTalents": [
+        "FRUITS ZIPPER"
+      ],
+      "featuredTalents": [
+        "FRUITS ZIPPER"
+      ],
+      "palette": [
+        "#EC4899",
+        "#F97316",
+        "#FEF08A"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "ストア限定特典が発表され次第、該当ストアのみ自動表示されます",
+      "summary": "大人気アイドルグループ FRUITS ZIPPER の4周年記念写真集！現時点では通常版Amazon表示。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "fz-4th-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "FRUITS ZIPPER",
+          "price": 3300,
+          "status": "preorder",
+          "artworkStatus": "pending",
+          "url": "https://www.amazon.co.jp/s?k=FRUITS+ZIPPER+4th+Anniversary+%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "gravure-action-1",
+      "title": "グラビアアクション vol.1",
+      "series": "グラビアアクション",
+      "issueLabel": "vol.1（創刊号）",
+      "publisher": "双葉社",
+      "category": "gravure",
+      "releaseDate": "2026-12-10",
+      "price": 1650,
+      "coverTalents": [
+        "一ノ瀬瑠菜",
+        "白濱美兎",
+        "山田あい",
+        "和田海佑"
+      ],
+      "featuredTalents": [
+        "一ノ瀬瑠菜",
+        "白濱美兎",
+        "高見奈央",
+        "和田海佑",
+        "山田あい",
+        "穂波あみ"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd242e966/421699/1107772367.jpg?sw=1150",
+      "palette": [
+        "#DB2777",
+        "#F472B6",
+        "#FBCFE8"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "話題の創刊号！セブンネット限定ポストカード全6種すべて高画質絵柄付きで横並び比較可能",
+      "summary": "表紙はグラビア界を席巻中の一ノ瀬瑠菜！セブンネット限定ポストカード6名（一ノ瀬瑠菜・白濱美兎・高見奈央・和田海佑・山田あい・穂波あみ）を高画質画像付きで収録。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd242e966/421699/1107772367.jpg?sw=1150",
+          "caption": "セブン特典：一ノ瀬瑠菜 ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107772367.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwa842d7ee/421699/1107784976.jpg?sw=1150",
+          "caption": "セブン特典：白濱美兎 ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107784976.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwcb599320/421699/1107784977.jpg?sw=1150",
+          "caption": "セブン特典：高見奈央 ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107784977.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw6bd3d103/421699/1107784978.jpg?sw=1150",
+          "caption": "セブン特典：和田海佑 ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107784978.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe98a76be/421699/1107784981.jpg?sw=1150",
+          "caption": "セブン特典：山田あい ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107784981.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw7f62aab7/421699/1107784982_1.jpg?sw=1150",
+          "caption": "セブン特典：穂波あみ ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107784982.html"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "ga1-7net-ichinose",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：一ノ瀬瑠菜",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "一ノ瀬瑠菜 ポストカード 1枚付き",
+          "talent": "一ノ瀬瑠菜",
+          "price": 1650,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd242e966/421699/1107772367.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107772367.html"
+        },
+        {
+          "id": "ga1-7net-shirahama",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：白濱美兎",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "白濱美兎 ポストカード 1枚付き",
+          "talent": "白濱美兎",
+          "price": 1650,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwa842d7ee/421699/1107784976.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107784976.html"
+        },
+        {
+          "id": "ga1-7net-takami",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：高見奈央",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "高見奈央 ポストカード 1枚付き",
+          "talent": "高見奈央",
+          "price": 1650,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwcb599320/421699/1107784977.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107784977.html"
+        },
+        {
+          "id": "ga1-7net-wada",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：和田海佑",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "和田海佑 ポストカード 1枚付き",
+          "talent": "和田海佑",
+          "price": 1650,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw6bd3d103/421699/1107784978.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107784978.html"
+        },
+        {
+          "id": "ga1-7net-yamada",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：山田あい",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "山田あい ポストカード 1枚付き",
+          "talent": "山田あい",
+          "price": 1650,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe98a76be/421699/1107784981.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107784981.html"
+        },
+        {
+          "id": "ga1-7net-honami",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：穂波あみ",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "穂波あみ ポストカード 1枚付き",
+          "talent": "穂波あみ",
+          "price": 1650,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw7f62aab7/421699/1107784982_1.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107784982.html"
+        },
+        {
+          "id": "ga1-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "一ノ瀬瑠菜",
+          "price": 1650,
+          "status": "予約受付中",
+          "artworkStatus": "通常版",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd242e966/421699/1107772367.jpg?sw=1150",
+          "url": "https://www.amazon.co.jp/s?k=%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3+vol.1&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "spa-2026-1216",
+      "title": "週刊SPA! 2026年12月16日号",
+      "series": "週刊SPA!",
+      "issueLabel": "2026年12月16日号",
+      "publisher": "扶桑社",
+      "category": "weekly",
+      "releaseDate": "2026-12-08",
+      "price": 770,
+      "coverTalents": [
+        "えなこ",
+        "東雲うみ"
+      ],
+      "featuredTalents": [
+        "えなこ",
+        "東雲うみ"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw905c17ab/421699/1107789431.jpg?sw=1150",
+      "palette": [
+        "#DC2626",
+        "#F97316",
+        "#FDE047"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "週刊SPA!でもセブンネット限定ポストカード2種（えなこ / 東雲うみ）確定！770円で狙い目",
+      "summary": "セブンネットのランキング急上昇！えなこ＆東雲うみのセブン限定ポストカード2種を同価格¥770で比較・予約可能。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw905c17ab/421699/1107789431.jpg?sw=1150",
+          "caption": "セブン特典：えなこ ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107789431.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw9eb76635/421699/1107789432.jpg?sw=1150",
+          "caption": "セブン特典：東雲うみ ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107789432.html"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "spa1216-7net-enako",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：えなこ",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "えなこ ポストカード 1枚付き",
+          "talent": "えなこ",
+          "price": 770,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw905c17ab/421699/1107789431.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107789431.html"
+        },
+        {
+          "id": "spa1216-7net-shinonome",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：東雲うみ",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "東雲うみ ポストカード 1枚付き",
+          "talent": "東雲うみ",
+          "price": 770,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw9eb76635/421699/1107789432.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107789432.html"
+        },
+        {
+          "id": "spa1216-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "えなこ・東雲うみ",
+          "price": 770,
+          "status": "予約受付中",
+          "artworkStatus": "通常版",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw905c17ab/421699/1107789431.jpg?sw=1150",
+          "url": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8ASPA+2026%E5%B9%B412%E6%9C%8816%E6%97%A5%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "dolce-24",
+      "title": "DOLCE Vol.24",
+      "series": "DOLCE",
+      "issueLabel": "Vol.24",
+      "publisher": "白夜書房",
+      "category": "gravure",
+      "releaseDate": "2026-11-10",
+      "price": 1650,
+      "coverTalents": [
+        "東雲うみ",
+        "ちとせよしの"
+      ],
+      "featuredTalents": [
+        "東雲うみ",
+        "ちとせよしの",
+        "江籠裕奈"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwcbed16a3/421699/1107784340.jpg?sw=1150",
+      "palette": [
+        "#0F766E",
+        "#14B8A6",
+        "#99F6E4"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "表紙：東雲うみ・裏表紙：ちとせよしの！セブン限定ポストカード4種（東雲うみA/B/C＋ちとせよしの）比較可能",
+      "summary": "白夜書房の人気グラビアムック最新号！東雲うみA/B/Cとちとせよしののセブン限定ポストカード4種すべて高画質画像付き。",
+      "gallery": [
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/400/0000173/3/8/881.jpg",
+          "caption": "通常表紙：東雲うみ（DOLCE Vol.24）",
+          "source": "HMV&BOOKS",
+          "kind": "cover",
+          "articleUrl": "https://www.byakuya-shobo.co.jp/book/b10210641.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwcbed16a3/421699/1107784340.jpg?sw=1150",
+          "caption": "セブン特典：東雲うみ ポストカードA",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107784340.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwa84d1a8b/421699/1107784341.jpg?sw=1150",
+          "caption": "セブン特典：東雲うみ ポストカードB",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107784341.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw73b2f91e/421699/1107784342.jpg?sw=1150",
+          "caption": "セブン特典：東雲うみ ポストカードC",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107784342.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwcab5fe80/421699/1107784343.jpg?sw=1150",
+          "caption": "セブン特典：ちとせよしの ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107784343.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "『DOLCE Vol.24』白夜書房 公式書誌・収録グラビア詳細",
+          "source": "白夜書房公式",
+          "url": "https://www.byakuya-shobo.co.jp/book/b10210641.html",
+          "photoCountHint": "東雲うみ・ちとせよしの"
+        }
+      ],
+      "offers": [
+        {
+          "id": "dolce24-7net-a",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：東雲うみ A",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "東雲うみ ポストカードA 1枚付き",
+          "talent": "東雲うみ",
+          "price": 1650,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwcbed16a3/421699/1107784340.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107784340.html"
+        },
+        {
+          "id": "dolce24-7net-b",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：東雲うみ B",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "東雲うみ ポストカードB 1枚付き",
+          "talent": "東雲うみ",
+          "price": 1650,
+          "status": "残りわずか",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwa84d1a8b/421699/1107784341.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107784341.html"
+        },
+        {
+          "id": "dolce24-7net-c",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：東雲うみ C",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "東雲うみ ポストカードC 1枚付き",
+          "talent": "東雲うみ",
+          "price": 1650,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw73b2f91e/421699/1107784342.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107784342.html"
+        },
+        {
+          "id": "dolce24-7net-chitose",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：ちとせよしの",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "ちとせよしの ポストカード 1枚付き",
+          "talent": "ちとせよしの",
+          "price": 1650,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwcab5fe80/421699/1107784343.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107784343.html"
+        },
+        {
+          "id": "dolce24-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（東雲うみ表紙）",
+          "talent": "東雲うみ",
+          "price": 1650,
+          "status": "発売中",
+          "artworkStatus": "通常表紙",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/400/0000173/3/8/881.jpg",
+          "url": "https://www.amazon.co.jp/s?k=DOLCE+Vol.24&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "entame36-08",
+      "title": "ENTAME36℃ vol.08（通常版 / 特別版）",
+      "series": "ENTAME36℃",
+      "issueLabel": "vol.08",
+      "publisher": "徳間書店",
+      "category": "gravure",
+      "releaseDate": "2026-11-28",
+      "price": 1870,
+      "coverTalents": [
+        "沢口愛華",
+        "小池里奈",
+        "織莉叶",
+        "水野Reta"
+      ],
+      "featuredTalents": [
+        "沢口愛華",
+        "小池里奈",
+        "織莉叶",
+        "水野Reta"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd5261dfb/421699/1107786579.jpg?sw=1150",
+      "palette": [
+        "#BE123C",
+        "#F43F5E",
+        "#FDA4AF"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "徳間書店グラビアムック！セブン限定ポストカード4種（通常版：沢口愛華A・織莉叶A / 特別版：小池里奈B・水野Reta B）",
+      "summary": "通常版と特別版の2形態展開！沢口愛華・小池里奈・織莉叶・水野Retaのセブン限定ポストカード絵柄を横並びで比較可能。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd5261dfb/421699/1107786579.jpg?sw=1150",
+          "caption": "セブン特典：沢口愛華 ポストカードA",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107786579.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw48a5bdef/421699/1107786585.jpg?sw=1150",
+          "caption": "特別版セブン特典：小池里奈 ポストカードB",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107786585.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw894cc219/421699/1107786581.jpg?sw=1150",
+          "caption": "セブン特典：織莉叶 ポストカードA",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107786581.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw46f9eeb6/421699/1107786587.jpg?sw=1150",
+          "caption": "特別版セブン特典：水野Reta ポストカードB",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107786587.html"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "e36-7net-sawaguchi",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "通常版・セブン特典：沢口愛華 A",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "沢口愛華 ポストカードA 1枚付き",
+          "talent": "沢口愛華",
+          "price": 1870,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd5261dfb/421699/1107786579.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107786579.html"
+        },
+        {
+          "id": "e36-7net-koike",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "特別版・セブン特典：小池里奈 B",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "特別版：小池里奈 ポストカードB 1枚付き",
+          "talent": "小池里奈",
+          "price": 1870,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw48a5bdef/421699/1107786585.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107786585.html"
+        },
+        {
+          "id": "e36-7net-orika",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "通常版・セブン特典：織莉叶 A",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "織莉叶 ポストカードA 1枚付き",
+          "talent": "織莉叶",
+          "price": 1870,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw894cc219/421699/1107786581.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107786581.html"
+        },
+        {
+          "id": "e36-7net-mizuno",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "特別版・セブン特典：水野Reta B",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "特別版：水野Reta ポストカードB 1枚付き",
+          "talent": "水野Reta",
+          "price": 1870,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw46f9eeb6/421699/1107786587.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107786587.html"
+        },
+        {
+          "id": "e36-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "沢口愛華",
+          "price": 1870,
+          "status": "予約受付中",
+          "artworkStatus": "通常版",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwd5261dfb/421699/1107786579.jpg?sw=1150",
+          "url": "https://www.amazon.co.jp/s?k=ENTAME36+vol.08&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "gravure-thetv-87",
+      "title": "グラビアザテレビジョン vol.87",
+      "series": "グラビアザテレビジョン",
+      "issueLabel": "vol.87",
+      "publisher": "KADOKAWA",
+      "category": "gravure",
+      "releaseDate": "2026-11-30",
+      "price": 1760,
+      "coverTalents": [
+        "髙野真央",
+        "山口結愛（AKB48）",
+        "近藤沙樹（AKB48）"
+      ],
+      "featuredTalents": [
+        "髙野真央",
+        "山口結愛",
+        "近藤沙樹",
+        "AKB48"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw74775da5/421699/1107784983.jpg?sw=1150",
+      "palette": [
+        "#0284C7",
+        "#38BDF8",
+        "#BAE6FD"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "セブンネット限定特典：髙野真央 大判ブロマイド 1枚付き！AKB48山口結愛＆近藤沙樹も登場",
+      "summary": "KADOKAWAの大型グラビアムック最新号！セブンネット限定・髙野真央の大判ブロマイド付きエディションを収録。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw74775da5/421699/1107784983.jpg?sw=1150",
+          "caption": "セブン特典：髙野真央 大判ブロマイド付き",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107784983.html"
+        },
+        {
+          "url": "https://store.kadokawa.co.jp/img/goods/5/322603001452.jpg",
+          "caption": "KADOKAWA公式書影（vol.87）",
+          "source": "KADOKAWA公式",
+          "kind": "cover",
+          "articleUrl": "https://www.kadokawa.co.jp/product/322603001452/"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "「グラビアザテレビジョン vol.87」AKB48山口結愛＆近藤沙樹が登場",
+          "source": "KADOKAWA公式",
+          "url": "https://group.kadokawa.co.jp/information/promotional_topics/article-16131.html",
+          "photoCountHint": "公式トピックス・先行カット"
+        }
+      ],
+      "offers": [
+        {
+          "id": "gtv87-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定：大判ブロマイド",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "髙野真央 大判ブロマイド 1枚付き",
+          "talent": "髙野真央",
+          "price": 1760,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw74775da5/421699/1107784983.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107784983.html"
+        },
+        {
+          "id": "gtv87-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "髙野真央・AKB48",
+          "price": 1760,
+          "status": "予約受付中",
+          "artworkStatus": "通常版",
+          "imageUrl": "https://store.kadokawa.co.jp/img/goods/5/322603001452.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%82%B6%E3%83%86%E3%83%AC%E3%83%93%E3%82%B8%E3%83%A7%E3%83%B3+vol.87&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "gravure-press-23",
+      "title": "グラビアプレス Vol.23",
+      "series": "グラビアプレス",
+      "issueLabel": "Vol.23",
+      "publisher": "秀麗出版",
+      "category": "gravure",
+      "releaseDate": "2026-11-27",
+      "price": 1500,
+      "coverTalents": [
+        "僕が見たかった青空",
+        "松本日向"
+      ],
+      "featuredTalents": [
+        "僕が見たかった青空",
+        "松本日向",
+        "依代かぐら"
+      ],
+      "coverImageUrl": "https://cdn.tower.jp/za/o/66/9784910031866.jpg",
+      "palette": [
+        "#2563EB",
+        "#3B82F6",
+        "#93C5FD"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "3ストア特典展開！HMV（僕青ポストカード）・TSUTAYA先着特典・楽天（松本日向ブロマイド）",
+      "summary": "W表紙：表1・僕が見たかった青空／表4・松本日向！HMV・TSUTAYA・楽天の3ストア特典を横並びで比較できます。",
+      "gallery": [
+        {
+          "url": "https://cdn.tower.jp/za/o/66/9784910031866.jpg",
+          "caption": "表紙：僕が見たかった青空（Vol.23）",
+          "source": "公式書影",
+          "kind": "cover",
+          "articleUrl": "https://tower.jp/item/8206331"
+        },
+        {
+          "url": "https://shibuyatsutaya.tsite.jp/menu_files/article/000/002/881/article_images/article_resize.gp_Vol.23_H1_fix_RGB.jpg",
+          "caption": "SHIBUYA TSUTAYA 先着特典キャンペーンビジュアル",
+          "source": "TSUTAYA公式",
+          "kind": "bonus",
+          "articleUrl": "https://shibuyatsutaya.tsite.jp/article/2881.html"
+        },
+        {
+          "url": "https://img.fujisan.co.jp/images/products/backnumbers/2879209_o.jpg",
+          "caption": "裏表紙＆松本日向ブロマイド特典案内",
+          "source": "Fujisan",
+          "kind": "preview",
+          "articleUrl": "https://www.fujisan.co.jp/product/1281706844/next/"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "雑誌『グラビアプレス』vol.23 11/27発売！SHIBUYA TSUTAYA先着特典詳細",
+          "source": "SHIBUYA TSUTAYA",
+          "url": "https://shibuyatsutaya.tsite.jp/article/2881.html",
+          "photoCountHint": "表紙＆先着特典案内"
+        }
+      ],
+      "offers": [
+        {
+          "id": "gp23-hmv",
+          "store": "hmv",
+          "hasStoreExclusiveBonus": true,
+          "edition": "HMV限定：僕青ポストカード",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "僕が見たかった青空 ポストカード付き",
+          "talent": "僕が見たかった青空",
+          "price": 1500,
+          "status": "予約受付中",
+          "artworkStatus": "公開中",
+          "imageUrl": "https://cdn.tower.jp/za/o/66/9784910031866.jpg",
+          "url": "https://www.hmv.co.jp/artist_%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%83%97%E3%83%AC%E3%82%B9%E7%B7%A8%E9%9B%86%E9%83%A8_000000000802220/item_%E3%80%90%E7%89%B9%E5%85%B8-%E5%83%95%E3%81%8C%E8%A6%8B%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F%E9%9D%92%E7%A9%BA-%E3%83%9D%E3%82%B9%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89%E3%80%91%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%83%97%E3%83%AC%E3%82%B9-Vol-23_17408732"
+        },
+        {
+          "id": "gp23-tsutaya",
+          "store": "tsutaya",
+          "hasStoreExclusiveBonus": true,
+          "edition": "TSUTAYA 先着特典",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "SHIBUYA TSUTAYA 店頭先着特典付き",
+          "talent": "僕が見たかった青空",
+          "price": 1500,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://shibuyatsutaya.tsite.jp/menu_files/article/000/002/881/article_images/article_resize.gp_Vol.23_H1_fix_RGB.jpg",
+          "url": "https://shibuyatsutaya.tsite.jp/article/2881.html"
+        },
+        {
+          "id": "gp23-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天特典：松本日向ブロマイド",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "松本日向 ブロマイド付きエディション",
+          "talent": "松本日向",
+          "price": 1500,
+          "status": "予約受付中",
+          "artworkStatus": "公開中",
+          "imageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2879209_o.jpg",
+          "url": "https://search.rakuten.co.jp/search/mall/%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%83%97%E3%83%AC%E3%82%B9+Vol.23+%E7%89%B9%E5%85%B8/"
+        },
+        {
+          "id": "gp23-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "僕が見たかった青空・松本日向",
+          "price": 1500,
+          "status": "予約受付中",
+          "artworkStatus": "通常表紙",
+          "imageUrl": "https://cdn.tower.jp/za/o/66/9784910031866.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%83%97%E3%83%AC%E3%82%B9+Vol.23&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "gravure-champion-14",
+      "title": "グラビアチャンピオン VOL.14",
+      "series": "グラビアチャンピオン",
+      "issueLabel": "VOL.14",
+      "publisher": "秋田書店",
+      "category": "gravure",
+      "releaseDate": "2026-10-30",
+      "price": 1760,
+      "coverTalents": [
+        "賀喜遥香（乃木坂46）",
+        "小川彩（乃木坂46）",
+        "瀬戸口心月（乃木坂46）"
+      ],
+      "featuredTalents": [
+        "乃木坂46",
+        "賀喜遥香",
+        "小川彩",
+        "瀬戸口心月"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw08919574/421699/1107781936.jpg?sw=1150",
+      "palette": [
+        "#7C3AED",
+        "#A855F7",
+        "#E9D5FF"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "乃木坂46超豪華号！セブン限定ポストカード4種（賀喜遥香A/B・瀬戸口心月・小川彩）全直リンク",
+      "summary": "秋田書店の人気グラビア専門誌！乃木坂46・賀喜遥香A/B、瀬戸口心月、小川彩のセブン限定ポストカード4種を並べてチェック。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw08919574/421699/1107781936.jpg?sw=1150",
+          "caption": "表紙：賀喜遥香（乃木坂46）",
+          "source": "セブンネット",
+          "kind": "cover",
+          "articleUrl": "https://7net.omni7.jp/detail/1107781936.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw5a381c42/421699/1107775360.jpg?sw=1150",
+          "caption": "セブン特典：賀喜遥香 ポストカードA",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107775360.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwa0bc67a0/421699/1107775361.jpg?sw=1150",
+          "caption": "セブン特典：賀喜遥香 ポストカードB",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107775361.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwa5cc9077/421699/1107775362.jpg?sw=1150",
+          "caption": "セブン特典：瀬戸口心月 ポストカード",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107775362.html"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "gc14-7net-kaki-a",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：賀喜遥香 A",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "賀喜遥香（乃木坂46）ポストカードA 1枚付き",
+          "talent": "賀喜遥香（乃木坂46）",
+          "price": 1760,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw5a381c42/421699/1107775360.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107775360.html"
+        },
+        {
+          "id": "gc14-7net-kaki-b",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：賀喜遥香 B",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "賀喜遥香（乃木坂46）ポストカードB 1枚付き",
+          "talent": "賀喜遥香（乃木坂46）",
+          "price": 1760,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwa0bc67a0/421699/1107775361.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107775361.html"
+        },
+        {
+          "id": "gc14-7net-setoguchi",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：瀬戸口心月",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "瀬戸口心月（乃木坂46）ポストカード 1枚付き",
+          "talent": "瀬戸口心月（乃木坂46）",
+          "price": 1760,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwa5cc9077/421699/1107775362.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107775362.html"
+        },
+        {
+          "id": "gc14-7net-ogawa",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン特典：小川彩",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "小川彩（乃木坂46）ポストカード 1枚付き",
+          "talent": "小川彩（乃木坂46）",
+          "price": 1760,
+          "status": "発売中",
+          "artworkStatus": "公開中",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw08919574/421699/1107781936.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107775363.html"
+        },
+        {
+          "id": "gc14-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（賀喜遥香表紙）",
+          "talent": "賀喜遥香（乃木坂46）",
+          "price": 1760,
+          "status": "発売中",
+          "artworkStatus": "通常表紙",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw08919574/421699/1107781936.jpg?sw=1150",
+          "url": "https://www.amazon.co.jp/s?k=%E3%82%B0%E3%83%A9%E3%83%93%E3%82%A2%E3%83%81%E3%83%A3%E3%83%B3%E3%83%94%E3%82%AA%E3%83%B3+VOL.14&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "superior-2026-1127",
+      "title": "ビッグコミックスペリオール 2026年11月27日号",
+      "series": "ビッグコミックスペリオール",
+      "issueLabel": "2026年11月27日号",
+      "publisher": "小学館",
+      "category": "weekly",
+      "releaseDate": "2026-11-13",
+      "price": 510,
+      "coverTalents": [
+        "えなこ"
+      ],
+      "featuredTalents": [
+        "えなこ"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1ba570c1/114036/1107778975.jpg?sw=1150",
+      "palette": [
+        "#B45309",
+        "#F59E0B",
+        "#FDE68A"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "青年コミック誌の隠れ特典！セブンネット限定「えなこ 生写真1枚付き」¥510",
+      "summary": "青年コミック誌でもセブンネット限定生写真が付く代表例！えなこ生写真付きが通常価格と同じ¥510。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1ba570c1/114036/1107778975.jpg?sw=1150",
+          "caption": "セブン限定：えなこ 生写真1枚付き",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107778975.html"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "sup1127-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定：えなこ生写真",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "セブンネット限定 えなこ生写真 1枚付き",
+          "talent": "えなこ",
+          "price": 510,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1ba570c1/114036/1107778975.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107778975.html"
+        },
+        {
+          "id": "sup1127-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入",
+          "talent": "えなこ",
+          "price": 510,
+          "status": "発売中",
+          "artworkStatus": "通常版",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw1ba570c1/114036/1107778975.jpg?sw=1150",
+          "url": "https://www.amazon.co.jp/s?k=%E3%83%93%E3%83%83%E3%82%B0%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%AA%E3%82%AA%E3%83%BC%E3%83%AB+2026%E5%B9%B411%E6%9C%8827%E6%97%A5%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "spa-2026-1202",
+      "title": "週刊SPA! 2026年12月2日号",
+      "series": "週刊SPA!",
+      "issueLabel": "2026年12月2日号",
+      "publisher": "扶桑社",
+      "category": "weekly",
+      "releaseDate": "2026-11-18",
+      "price": 770,
+      "coverTalents": [
+        "君に、胸キュン。",
+        "蓬莱舞",
+        "斎藤恭代",
+        "永尾まりや"
+      ],
+      "featuredTalents": [
+        "君に、胸キュン。",
+        "蓬莱舞",
+        "斎藤恭代",
+        "永尾まりや"
+      ],
+      "coverImageUrl": "https://mw-cds.akamaized.net/MW-Product/218/462/a0ec0c5a1718c5c6fe1b173bad917de895bd62bfa651193a2f596b800359ca16/RS4A/thumbnail/cover_l.jpg",
+      "palette": [
+        "#991B1B",
+        "#EF4444",
+        "#FCA5A5"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "美女地図（蓬莱舞）＋グラビアン魂（斎藤恭代）＋永尾まりや先行カット記事3本付き／Amazon基本表示",
+      "summary": "今週発売の週刊SPA!！蓬莱舞・斎藤恭代・永尾まりやの先行グラビア記事をまとめてチェック可能。",
+      "gallery": [
+        {
+          "url": "https://mw-cds.akamaized.net/MW-Product/218/462/a0ec0c5a1718c5c6fe1b173bad917de895bd62bfa651193a2f596b800359ca16/RS4A/thumbnail/cover_l.jpg",
+          "caption": "表紙：週刊SPA! 2026年12月2日号（君に、胸キュン。）",
+          "source": "公式書影",
+          "kind": "cover",
+          "articleUrl": "https://manga.watch.impress.co.jp/docs/news/2157734.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "美女地図に蓬莱舞さん、グラビアン魂に斎藤恭代さん！『週刊SPA! 12月2日号』",
+          "source": "MANGA Watch",
+          "url": "https://manga.watch.impress.co.jp/docs/news/2157734.html",
+          "photoCountHint": "グラビア先行カット"
+        },
+        {
+          "title": "黒の水着と陶器のように白い肌！蓬莱舞 撮り下ろしカット",
+          "source": "ほんのひきだし",
+          "url": "https://hon-hikidashi.jp/news/225518/",
+          "photoCountHint": "美女地図カット"
+        },
+        {
+          "title": "9頭身ボディ・斎藤恭代 ランジェリー＆水着カット公開",
+          "source": "ほんのひきだし",
+          "url": "https://hon-hikidashi.jp/news/225536/",
+          "photoCountHint": "グラビアン魂カット"
+        }
+      ],
+      "offers": [
+        {
+          "id": "spa1202-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 紙版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（¥770）",
+          "talent": "君に、胸キュン。・蓬莱舞・斎藤恭代",
+          "price": 770,
+          "status": "発売中",
+          "artworkStatus": "通常表紙",
+          "imageUrl": "https://mw-cds.akamaized.net/MW-Product/218/462/a0ec0c5a1718c5c6fe1b173bad917de895bd62bfa651193a2f596b800359ca16/RS4A/thumbnail/cover_l.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8ASPA+2026%E5%B9%B412%E6%9C%882%E6%97%A5%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "bessatsu-yc-2026-12",
+      "title": "別冊ヤングチャンピオン 2026年12月号",
+      "series": "別冊ヤングチャンピオン",
+      "issueLabel": "2026年12月号",
+      "publisher": "秋田書店",
+      "category": "weekly",
+      "releaseDate": "2026-11-02",
+      "price": 560,
+      "coverTalents": [
+        "一ノ瀬瑠菜"
+      ],
+      "featuredTalents": [
+        "一ノ瀬瑠菜"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-magazine-m-catalog/ja_JP/dw7c100296/900082/1270003853.jpg?sw=1150",
+      "palette": [
+        "#EA580C",
+        "#FB923C",
+        "#FED7AA"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "🗂 本誌別添：一ノ瀬瑠菜 両面クリアファイル付き（紙版限定）"
+        }
+      ],
+      "printOnlyNote": "別添クリアファイルは紙版のみ付属／ストア独自特典なしのためAmazon表示",
+      "summary": "一ノ瀬瑠菜が表紙＆巻頭グラビア！本誌別添の「一ノ瀬瑠菜 両面クリアファイル」がそのまま付いて¥560。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-magazine-m-catalog/ja_JP/dw7c100296/900082/1270003853.jpg?sw=1150",
+          "caption": "表紙：一ノ瀬瑠菜（別冊ヤングチャンピオン 12月号）",
+          "source": "公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E5%88%A5%E5%86%8A%E3%83%A4%E3%83%B3%E3%82%B0%E3%83%81%E3%83%A3%E3%83%B3%E3%83%94%E3%82%AA%E3%83%B3+2026%E5%B9%B412%E6%9C%88%E5%8F%B7&i=stripbooks"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "byc12-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 紙版（クリアファイル付）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（一ノ瀬瑠菜 両面クリアファイル付）",
+          "talent": "一ノ瀬瑠菜",
+          "price": 560,
+          "status": "発売中",
+          "artworkStatus": "通常表紙",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-magazine-m-catalog/ja_JP/dw7c100296/900082/1270003853.jpg?sw=1150",
+          "url": "https://www.amazon.co.jp/s?k=%E5%88%A5%E5%86%8A%E3%83%A4%E3%83%B3%E3%82%B0%E3%83%81%E3%83%A3%E3%83%B3%E3%83%94%E3%82%AA%E3%83%B3+2026%E5%B9%B412%E6%9C%88%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "yj-2026-1203",
+      "title": "週刊ヤングジャンプ 2026年12月3日号",
+      "series": "週刊ヤングジャンプ",
+      "issueLabel": "2026年12/3号",
+      "publisher": "集英社",
+      "category": "weekly",
+      "releaseDate": "2026-11-19",
+      "price": 490,
+      "coverTalents": [
+        "東雲うみ"
+      ],
+      "featuredTalents": [
+        "東雲うみ"
+      ],
+      "coverImageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2865018_o.jpg",
+      "palette": [
+        "#1D4ED8",
+        "#3B82F6",
+        "#BFDBFE"
+      ],
+      "includedBonuses": [
+        {
+          "type": "card",
+          "label": "📖 特別付録：東雲うみ グラビア小冊子（紙版）"
+        }
+      ],
+      "printOnlyNote": "昨日発売！特別小冊子付き・ストア独自特典なしのためAmazon紙版のみ表示",
+      "summary": "週刊ヤングジャンプ最新号！東雲うみのグラビア＆特別付録小冊子収録。",
+      "gallery": [
+        {
+          "url": "https://img.fujisan.co.jp/images/products/backnumbers/2865018_o.jpg",
+          "caption": "週刊ヤングジャンプ 2026年12/3号 表紙",
+          "source": "Fujisan",
+          "kind": "cover",
+          "articleUrl": "https://www.fujisan.co.jp/product/2680/new/"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "yj1203-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 紙版（小冊子付）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで紙版を購入（¥490）",
+          "talent": "東雲うみ",
+          "price": 490,
+          "status": "発売中",
+          "artworkStatus": "通常表紙",
+          "imageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2865018_o.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E9%80%B1%E5%88%8A%E3%83%A4%E3%83%B3%E3%82%B0%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%97+2026%E5%B9%B412%E6%9C%883%E6%97%A5%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "ym-2026-51",
+      "title": "週刊ヤングマガジン 2026年51号（11月30日号）",
+      "series": "週刊ヤングマガジン",
+      "issueLabel": "2026年51号",
+      "publisher": "講談社",
+      "category": "weekly",
+      "releaseDate": "2026-11-16",
+      "price": 510,
+      "coverTalents": [
+        "豊田ルナ"
+      ],
+      "featuredTalents": [
+        "豊田ルナ"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#047857",
+        "#10B981",
+        "#A7F3D0"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "表紙・巻頭グラビア：豊田ルナ！MANGA Watchに先行カット特集あり（Amazon基本表示）",
+      "summary": "週刊ヤングマガジン51号！豊田ルナが表紙＆巻頭グラビアに登場。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "【グラビア】表紙・巻頭は豊田ルナさん！「週刊ヤングマガジン51号」",
+          "source": "MANGA Watch",
+          "url": "https://manga.watch.impress.co.jp/docs/news/2156441.html",
+          "photoCountHint": "表紙＆巻頭グラビアカット"
+        }
+      ],
+      "offers": [
+        {
+          "id": "ym51-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 紙版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（¥510）",
+          "talent": "豊田ルナ",
+          "price": 510,
+          "status": "発売中",
+          "artworkStatus": "通常版",
+          "url": "https://www.amazon.co.jp/s?k=%E3%83%A4%E3%83%B3%E3%82%B0%E3%83%9E%E3%82%AC%E3%82%B8%E3%83%B3+2026%E5%B9%B411%E6%9C%8830%E6%97%A5%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "ar-2027-01",
+      "title": "ar（アール） 2027年1月号（通常版）",
+      "series": "ar",
+      "issueLabel": "2027年1月号",
+      "publisher": "主婦と生活社",
+      "category": "fashion",
+      "releaseDate": "2026-12-11",
+      "price": 810,
+      "coverTalents": [
+        "一ノ瀬美空（乃木坂46）",
+        "小川彩（乃木坂46）"
+      ],
+      "featuredTalents": [
+        "乃木坂46",
+        "一ノ瀬美空",
+        "小川彩"
+      ],
+      "coverImageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2854801_o.jpg",
+      "palette": [
+        "#EC4899",
+        "#F472B6",
+        "#FCE7F3"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "アイドル表紙の注目女性誌！乃木坂46 5期生ペア表紙（ストア独自特典なしのためAmazon基本表示）",
+      "summary": "乃木坂46の一ノ瀬美空×小川彩が女性ファッション誌『ar』表紙にペア登場！「愛がダダ漏れな2人」大特集。",
+      "gallery": [
+        {
+          "url": "https://img.fujisan.co.jp/images/products/backnumbers/2854801_o.jpg",
+          "caption": "ar（アール）誌面ビジュアル",
+          "source": "Fujisan",
+          "kind": "cover",
+          "articleUrl": "https://furoku.net/ar-2027-01/"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "ar（アール）2027年1月号 表紙：一ノ瀬美空×小川彩（乃木坂46）特集詳細",
+          "source": "付録ネット",
+          "url": "https://furoku.net/ar-2027-01/",
+          "photoCountHint": "表紙＆見どころ"
+        }
+      ],
+      "offers": [
+        {
+          "id": "ar2701-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（乃木坂46表紙）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入（¥810）",
+          "talent": "一ノ瀬美空・小川彩（乃木坂46）",
+          "price": 810,
+          "status": "予約受付中",
+          "artworkStatus": "予約受付中",
+          "imageUrl": "https://img.fujisan.co.jp/images/products/backnumbers/2854801_o.jpg",
+          "url": "https://www.amazon.co.jp/s?k=ar+2027%E5%B9%B41%E6%9C%88%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "cancam-2027-01",
+      "title": "CanCam 2027年1月号（通常版・創刊45周年号）",
+      "series": "CanCam",
+      "issueLabel": "2027年1月号",
+      "publisher": "小学館",
+      "category": "fashion",
+      "releaseDate": "2026-11-20",
+      "price": 890,
+      "coverTalents": [
+        "川﨑桜（乃木坂46）",
+        "大野愛実（日向坂46）",
+        "立花琴未（CANDY TUNE）"
+      ],
+      "featuredTalents": [
+        "乃木坂46",
+        "日向坂46",
+        "CANDY TUNE",
+        "川﨑桜",
+        "大野愛実",
+        "立花琴未"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#F43F5E",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "本日発売！創刊45周年・乃木坂46川﨑桜／日向坂46大野愛実／CANDY TUNE立花琴未ら専属モデル9人表紙",
+      "summary": "CanCam創刊45周年記念号！坂道＆KAWAII LAB.メンバーを含む専属モデル9人が通常版表紙に集結。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "日向坂46大野愛実、CANDY TUNE立花琴未、乃木坂46川﨑桜ら専属モデル9人が表紙集結",
+          "source": "音楽ナタリー",
+          "url": "https://natalie.mu/music/news/698019",
+          "photoCountHint": "表紙＆オフショット記事"
+        }
+      ],
+      "offers": [
+        {
+          "id": "cancam2701-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（モデル9人表紙）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（¥890）",
+          "talent": "川﨑桜・大野愛実・立花琴未 ほか",
+          "price": 890,
+          "status": "発売中",
+          "artworkStatus": "発売中",
+          "url": "https://www.amazon.co.jp/s?k=CanCam+2027%E5%B9%B41%E6%9C%88%E5%8F%B7+%E9%80%9A%E5%B8%B8%E7%89%88&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "nonno-2027-0102",
+      "title": "non-no 2027年1・2月合併号（通常版）",
+      "series": "non-no",
+      "issueLabel": "2027年1・2月合併号",
+      "publisher": "集英社",
+      "category": "fashion",
+      "releaseDate": "2026-11-19",
+      "price": 1070,
+      "coverTalents": [
+        "出口夏希",
+        "遠藤さくら（乃木坂46）",
+        "小坂菜緒（日向坂46）"
+      ],
+      "featuredTalents": [
+        "出口夏希",
+        "遠藤さくら",
+        "小坂菜緒",
+        "乃木坂46",
+        "日向坂46"
+      ],
+      "coverImageUrl": "https://img-nonno.hpplus.jp/wp-content/uploads/magazine_2601-02_cover1-1.png",
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FECDD3"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "昨日発売！遠藤さくら（乃木坂46）・小坂菜緒（日向坂46）ら専属モデル勢揃いの合併号",
+      "summary": "出口夏希表紙＆乃木坂46遠藤さくら・日向坂46小坂菜緒ら専属モデルの冬ファッション大特集。",
+      "gallery": [
+        {
+          "url": "https://img-nonno.hpplus.jp/wp-content/uploads/magazine_2601-02_cover1-1.png",
+          "caption": "公式表紙：non-no 2027年1・2月合併号",
+          "source": "non-no web",
+          "kind": "cover",
+          "articleUrl": "https://nonno.hpplus.jp/magazine/"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "non-no 2027年1・2月合併号 見どころ＆試し読み",
+          "source": "non-no web",
+          "url": "https://nonno.hpplus.jp/magazine/",
+          "photoCountHint": "公式表紙＆試し読み"
+        }
+      ],
+      "offers": [
+        {
+          "id": "nonno2701-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（¥1,070）",
+          "talent": "出口夏希・遠藤さくら・小坂菜緒",
+          "price": 1070,
+          "status": "発売中",
+          "artworkStatus": "通常表紙",
+          "imageUrl": "https://img-nonno.hpplus.jp/wp-content/uploads/magazine_2601-02_cover1-1.png",
+          "url": "https://www.amazon.co.jp/s?k=non-no+2027%E5%B9%B41%E3%83%BB2%E6%9C%88%E5%90%88%E4%BD%B5%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "maquia-2026-12",
+      "title": "MAQUIA（マキア） 2026年12月号（通常版）",
+      "series": "MAQUIA",
+      "issueLabel": "2026年12月号",
+      "publisher": "集英社",
+      "category": "fashion",
+      "releaseDate": "2026-10-22",
+      "price": 980,
+      "coverTalents": [
+        "与田祐希"
+      ],
+      "featuredTalents": [
+        "与田祐希"
+      ],
+      "coverImageUrl": "https://img.fujisan.co.jp/images/products/2734_l.jpg",
+      "palette": [
+        "#9D174D",
+        "#EC4899",
+        "#FBCFE8"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "与田祐希表紙の注目美容誌！MAQUIA公式に撮り下ろし表紙メイク特集あり",
+      "summary": "与田祐希が通常版表紙を飾るMAQUIA 12月号！公式Webに撮り下ろしビューティーカット公開中。",
+      "gallery": [
+        {
+          "url": "https://img.fujisan.co.jp/images/products/2734_l.jpg",
+          "caption": "表紙：与田祐希（MAQUIA 2026年12月号）",
+          "source": "Fujisan",
+          "kind": "cover",
+          "articleUrl": "https://maquia.hpplus.jp/life/news/maquia-magazine-202612/"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "【マキア12月号通常版】与田祐希さん表紙カット＆特集",
+          "source": "MAQUIA ONLINE",
+          "url": "https://maquia.hpplus.jp/makeup/news/123354/",
+          "photoCountHint": "撮り下ろしカット"
+        }
+      ],
+      "offers": [
+        {
+          "id": "maquia12-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（与田祐希表紙）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入（¥980）",
+          "talent": "与田祐希",
+          "price": 980,
+          "status": "発売中",
+          "artworkStatus": "通常表紙",
+          "imageUrl": "https://img.fujisan.co.jp/images/products/2734_l.jpg",
+          "url": "https://www.amazon.co.jp/s?k=MAQUIA+2026%E5%B9%B412%E6%9C%88%E5%8F%B7+%E4%B8%8E%E7%94%B0%E7%A5%90%E5%B8%8C&i=stripbooks"
+        }
+      ]
+    }
+  ]
+}

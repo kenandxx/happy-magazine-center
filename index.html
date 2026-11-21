@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Happy Magazine Center｜アイドル雑誌・週刊誌ポスター・写真集 特典＆発売日ダッシュボード</title>
+    <meta
+      name="description"
+      content="B.L.T.、BOMB、アップトゥボーイ、週刊プレイボーイ、週刊誌ポスター付録、写真集のセブンネット・楽天ブックス・HMV・Amazon・TSUTAYA限定特典と発売日をスマホで一括チェック。"
+    />
+    <meta name="theme-color" content="#E11D48" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-inner">
+        <div class="brand-row">
+          <div class="brand">
+            <div class="brand-mark" aria-hidden="true">M</div>
+            <div>
+              <h1 class="brand-title">Happy Magazine Center</h1>
+              <p class="brand-sub">Amazon基本＋限定特典ありストアのみ表示</p>
+            </div>
+          </div>
+          <span id="referenceDateBadge" class="header-pill">基準日 11/20</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <!-- Tab 1: Discover -->
+      <section id="tab-discover" class="tab-panel active" aria-label="雑誌・写真集を探す">
+        <div id="countdownStrip" class="countdown-strip" aria-label="発売カウントダウン"></div>
+
+        <div class="controls-card">
+          <div class="search-row">
+            <div class="search-input-wrap">
+              <span class="search-icon" aria-hidden="true">🔍</span>
+              <input
+                id="searchInput"
+                class="search-input"
+                type="search"
+                placeholder="雑誌名・タレント名・ポスター・ポストカードで検索"
+                autocomplete="off"
+              />
+              <button id="clearSearchBtn" class="clear-btn" type="button" aria-label="検索をクリア">✕</button>
+            </div>
+            <select id="sortSelect" class="sort-select" aria-label="並び替え">
+              <option value="soon">発売日が近い順</option>
+              <option value="bonuses">特典が多い順</option>
+              <option value="photos">写真が多い順</option>
+              <option value="newest">発売日が新しい順</option>
+            </select>
+          </div>
+
+          <div id="categoryChips" class="chip-scroll" role="tablist" aria-label="カテゴリ絞り込み"></div>
+          <div id="bonusChips" class="chip-scroll" aria-label="特典タイプ絞り込み"></div>
+          <div id="storeChips" class="chip-scroll" aria-label="ストア絞り込み"></div>
+        </div>
+
+        <div class="results-bar">
+          <div id="resultsCount" class="results-count"></div>
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <label class="toggle-inline">
+              <input id="bonusOnlyToggle" type="checkbox" />
+              <span>特典・ポスターのみ</span>
+            </label>
+            <div class="view-switch" role="group" aria-label="表示切替">
+              <button id="viewModeCompactBtn" class="view-switch-btn active" type="button" data-view-mode="compact">⊞ 写真グリッド</button>
+              <button id="viewModeCardsBtn" class="view-switch-btn" type="button" data-view-mode="cards">📋 詳細</button>
+              <button id="viewModeWallBtn" class="view-switch-btn" type="button" data-view-mode="wall">📸 全写真</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="magazineGrid" class="compact-grid"></div>
+      </section>
+
+      <!-- Tab 2: Calendar -->
+      <section id="tab-calendar" class="tab-panel" aria-label="発売カレンダー">
+        <div class="panel-card">
+          <h2 class="panel-heading">📅 発売日カウントダウン＆スケジュール</h2>
+          <p class="panel-desc">
+            これから発売されるアイドル誌・週刊誌・女性誌・写真集を日付順に整理しています。タップすると特典絵柄の横並び比較が開きます。
+          </p>
+        </div>
+        <div id="calendarContainer"></div>
+      </section>
+
+      <!-- Tab 3: Oshi & Shelf -->
+      <section id="tab-oshi" class="tab-panel" aria-label="推しワードとマイ棚">
+        <div class="panel-card">
+          <h2 class="panel-heading">🔥 推しワード・注目キーワード</h2>
+          <p class="panel-desc">
+            好きなタレント名・グループ名・雑誌名・特典（例：ポスター、乃木坂46、東雲うみ）を登録すると、一覧で自動ハイライトされます。
+          </p>
+          <form id="oshiForm" class="inline-form">
+            <input
+              id="oshiInput"
+              class="text-input"
+              type="text"
+              placeholder="例：乃木坂46 / 東雲うみ / 一ノ瀬瑠菜 / ポスター"
+            />
+            <button class="primary-btn" type="submit">追加</button>
+          </form>
+          <div id="oshiTagCloud" class="tag-cloud"></div>
+        </div>
+
+        <div class="panel-card">
+          <h2 class="panel-heading">🛒 予約・購入ステータス棚</h2>
+          <div id="shelfStats" class="stats-row"></div>
+          <div id="shelfList" class="timeline-list"></div>
+        </div>
+
+        <div class="panel-card">
+          <h2 class="panel-heading">➕ 見つけた雑誌・写真集をメモ登録</h2>
+          <p class="panel-desc">
+            Xやニュースで見つけた新刊をその場で追加できます（Amazon基本＋特典メモに書いたストアのみノイズゼロ登録）。
+          </p>
+          <form id="manualAddForm" class="form-grid">
+            <label class="field-label">
+              タイトル（必須）
+              <input id="addTitle" class="text-input" type="text" required placeholder="例：ヤングマガジン 2026年52号" />
+            </label>
+            <label class="field-label">
+              表紙・特典タレント
+              <input id="addTalent" class="text-input" type="text" placeholder="例：沢口愛華" />
+            </label>
+            <label class="field-label">
+              発売予定日
+              <input id="addDate" class="text-input" type="date" value="2026-12-01" />
+            </label>
+            <label class="field-label">
+              カテゴリ
+              <select id="addCategory" class="text-input">
+                <option value="idol">アイドル専門誌</option>
+                <option value="gravure">グラビア・ムック</option>
+                <option value="weekly">週刊誌・コミック誌</option>
+                <option value="fashion">女性誌・アイドル表紙</option>
+                <option value="photobook">写真集</option>
+              </select>
+            </label>
+            <label class="field-label">
+              特典・付録メモ
+              <input id="addBonus" class="text-input" type="text" placeholder="例：セブン限定ポストカード / 綴じ込みポスター" />
+            </label>
+            <label class="field-label">
+              定価（税込・円）
+              <input id="addPrice" class="text-input" type="number" min="0" step="10" value="1400" />
+            </label>
+            <div>
+              <button class="primary-btn" type="submit">ダッシュボードに追加</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Tab 4: Cross-Store Search Launcher -->
+      <section id="tab-hub" class="tab-panel" aria-label="全ストア横断検索ハブ">
+        <div class="panel-card">
+          <h2 class="panel-heading">⚡ 全ストア特典・横断検索ハブ</h2>
+          <p class="panel-desc">
+            週刊誌・コミック誌・マイナー誌・写真集など、ありとあらゆる雑誌名やタレント名を入れるだけで、セブンネット・楽天ブックス・HMV・Amazon・TSUTAYAの検索リンクを一括生成します。
+          </p>
+          <div class="inline-form">
+            <input
+              id="hubQueryInput"
+              class="text-input"
+              type="search"
+              placeholder="雑誌名・号数・アイドル名を入力"
+              value="アップトゥボーイ 2027年1月号"
+            />
+          </div>
+          <div style="margin-top: 10px;">
+            <label class="toggle-inline">
+              <input id="hubBonusOnly" type="checkbox" checked />
+              <span>「限定特典」キーワードを自動で付けて探す（Amazonは通常検索も併記）</span>
+            </label>
+          </div>
+          <div id="hubQuickKeywords" class="quick-keywords"></div>
+          <div id="hubLauncherGrid" class="launcher-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav" aria-label="メインナビゲーション">
+      <div class="bottom-nav-inner">
+        <button class="nav-btn active" data-tab="discover" type="button">
+          <span class="nav-icon" aria-hidden="true">📚</span>
+          <span>一覧・検索</span>
+        </button>
+        <button class="nav-btn" data-tab="calendar" type="button">
+          <span class="nav-icon" aria-hidden="true">📅</span>
+          <span>発売予定</span>
+        </button>
+        <button class="nav-btn" data-tab="oshi" type="button">
+          <span class="nav-icon" aria-hidden="true">★</span>
+          <span>推し・棚</span>
+        </button>
+        <button class="nav-btn" data-tab="hub" type="button">
+          <span class="nav-icon" aria-hidden="true">⚡</span>
+          <span>横断検索</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Detail Bottom Sheet -->
+    <div id="detailSheet" class="sheet-backdrop" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <div class="sheet-dialog">
+        <div class="sheet-header">
+          <h3 id="sheetTitle" class="sheet-header-title">特典＆ストア比較</h3>
+          <button id="sheetCloseBtn" class="sheet-close-btn" type="button" aria-label="閉じる">✕</button>
+        </div>
+        <div id="sheetBody" class="sheet-body"></div>
+      </div>
+    </div>
+
+    <!-- Fullscreen Photo Lightbox -->
+    <div id="photoLightbox" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="関連写真ビューア">
+      <div class="lightbox-top">
+        <span id="lightboxCounter" class="lightbox-counter">1 / 1</span>
+        <button id="lightboxCloseBtn" class="lightbox-close" type="button" aria-label="拡大表示を閉じる">✕</button>
+      </div>
+      <div class="lightbox-stage">
+        <button id="lightboxPrevBtn" class="lightbox-nav-btn prev" type="button" aria-label="前の写真">‹</button>
+        <img id="lightboxImg" src="" alt="" referrerpolicy="no-referrer" />
+        <button id="lightboxNextBtn" class="lightbox-nav-btn next" type="button" aria-label="次の写真">›</button>
+      </div>
+      <div class="lightbox-footer">
+        <p id="lightboxCaption" class="lightbox-caption"></p>
+        <div class="lightbox-actions">
+          <span id="lightboxSource" class="lightbox-source"></span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button id="lightboxOpenItemBtn" class="detail-trigger-btn" type="button">雑誌の詳細へ</button>
+            <a id="lightboxArticleLink" class="lightbox-open-btn" href="#" target="_blank" rel="noopener noreferrer">
+              出典・購入ページ ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

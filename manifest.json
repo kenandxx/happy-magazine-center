@@ -1,0 +1,18 @@
+{
+  "name": "Happy Magazine Center",
+  "short_name": "MagCenter",
+  "description": "アイドル雑誌・週刊誌・写真集の発売日＆ストア限定特典ダッシュボード",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FAF8F5",
+  "theme_color": "#E11D48",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

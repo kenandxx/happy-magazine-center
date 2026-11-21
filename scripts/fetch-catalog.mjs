@@ -169,6 +169,8 @@ async function runDailyCatalogUpdate() {
   const catalog = JSON.parse(fs.readFileSync(CATALOG_PATH, 'utf8'));
   const { dateStr, timestampJst } = getJstDateInfo();
   const appId = String(process.env.RAKUTEN_APP_ID || '').trim();
+  const accessKey = String(process.env.RAKUTEN_ACCESS_KEY || '').trim();
+  const allowedOrigin = String(process.env.RAKUTEN_ALLOWED_ORIGIN || 'https://kenandxx.github.io').trim();
 
   let addedPressArticles = 0;
   let addedBonusOffers = 0;
@@ -330,10 +332,13 @@ async function runDailyCatalogUpdate() {
     }
   }
 
-  // 2) If RAKUTEN_APP_ID is configured, sweep Rakuten Books API (16 magazines + Photobooks + R18 + Calendars + Exclusive Bonuses)
+  // 2) If RAKUTEN_APP_ID is configured, sweep Rakuten Books API (2026 OpenAPI: 16 magazines + Photobooks + R18 + Calendars + Exclusive Bonuses)
+  const rakutenReady = Boolean(appId && accessKey);
   if (appId) {
-    console.log('[collect:update] Fetching live Rakuten Books API records...');
-    const rawRecords = await fetchRakutenCatalogRecords(appId);
+    console.log(
+      `[collect:update] Fetching live Rakuten Books API records (mode=${accessKey ? 'openapi-2026' : 'legacy'}, origin=${allowedOrigin})...`
+    );
+    const rawRecords = await fetchRakutenCatalogRecords({ appId, accessKey, allowedOrigin });
     console.log(`[collect:update] Rakuten Books API returned ${rawRecords.length} unique record(s)`);
 
     const grouped = groupStoreOffers(rawRecords).map((g) => ({
@@ -430,6 +435,7 @@ async function runDailyCatalogUpdate() {
   catalog.autoSources = {
     prtimesPublishers: PRTIMES_PUBLISHER_FEEDS.length,
     rakutenApiConnected: Boolean(appId),
+    rakutenOpenApi2026: rakutenReady,
     lastRunAt: timestampJst,
     lastRunSummary: appId
       ? `15出版社PR TIMES (+${addedPrItems}) ＋ 楽天ブックスAPI (+${addedRakutenItems}作品 / +${addedBonusOffers}特典)`
@@ -454,7 +460,13 @@ async function runDailyCatalogUpdate() {
     '## 🤖 Happy Magazine Center Daily Auto-Update Summary',
     `- **基準日 (JST)**: \`${dateStr}\``,
     `- **PR TIMES 15出版社自動巡回**: +${addedPrItems} 新刊 / +${addedPressArticles} プレスリリース`,
-    `- **楽天ブックスAPI (\`RAKUTEN_APP_ID\`)**: ${appId ? `✅ 連携稼働中 (+${addedRakutenItems} 新刊 / +${addedBonusOffers} 限定特典)` : '🔑 未設定（任意で GitHub Secrets に登録すると全写真集・R18・限定特典を自動収集）'}`,
+    `- **楽天ブックスAPI (2026 OpenAPI)**: ${
+      rakutenReady
+        ? `✅ 連携稼働中 (+${addedRakutenItems} 新刊 / +${addedBonusOffers} 限定特典)`
+        : appId
+          ? '⚠️ RAKUTEN_APP_ID のみ設定済（2026年版は RAKUTEN_ACCESS_KEY も必要です）'
+          : '🔑 未設定（GitHub Secrets に RAKUTEN_APP_ID と RAKUTEN_ACCESS_KEY を登録すると有効化）'
+    }`,
     `- **カタログ総数**: **${report.totalItems} 作品** / **${report.totalOffers} オファー**（非Amazon無特典: **${report.nonAmazonNonBonus} 件**）`,
   ]);
 }
@@ -469,13 +481,15 @@ async function main() {
   }
 
   const appId = String(process.env.RAKUTEN_APP_ID || '').trim();
+  const accessKey = String(process.env.RAKUTEN_ACCESS_KEY || '').trim();
+  const allowedOrigin = String(process.env.RAKUTEN_ALLOWED_ORIGIN || 'https://kenandxx.github.io').trim();
   let records = [];
   if (dryRun || !appId) {
     console.log('[collect] Running in dry-run verification mode (no external API key required).');
     records = getDryRunSamples();
   } else {
-    console.log('[collect] Fetching live records from Rakuten Books API...');
-    records = await fetchRakutenCatalogRecords(appId);
+    console.log('[collect] Fetching live records from Rakuten Books API (2026 OpenAPI)...');
+    records = await fetchRakutenCatalogRecords({ appId, accessKey, allowedOrigin });
   }
 
   const grouped = groupStoreOffers(records).map((g) => ({

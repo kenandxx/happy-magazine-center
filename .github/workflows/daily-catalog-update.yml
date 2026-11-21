@@ -24,9 +24,11 @@ jobs:
       - name: Run unit tests
         run: npm test
 
-      - name: Fetch daily catalog updates (no-login public sources + optional Rakuten API)
+      - name: Fetch daily catalog updates (no-login public sources + optional Rakuten OpenAPI 2026)
         env:
           RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTEN_ALLOWED_ORIGIN: ${{ secrets.RAKUTEN_ALLOWED_ORIGIN }}
         run: node scripts/fetch-catalog.mjs --update
 
       - name: Validate catalog policy & image integrity

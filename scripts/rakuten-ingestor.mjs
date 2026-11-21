@@ -18,10 +18,54 @@ import { isbn13To10 } from '../src/isbn-lookup.js';
 import { filterOffersByPolicy } from './normalizer.mjs';
 import { isTargetReleaseTitle } from './prtimes-ingestor.mjs';
 
-export const RAKUTEN_MAGAZINE_API =
+export const RAKUTEN_OPENAPI_MAGAZINE =
+  'https://openapi.rakuten.co.jp/services/api/BooksMagazine/Search/20170404';
+export const RAKUTEN_OPENAPI_BOOK =
+  'https://openapi.rakuten.co.jp/services/api/BooksBook/Search/20170404';
+export const RAKUTEN_LEGACY_MAGAZINE =
   'https://app.rakuten.co.jp/services/api/BooksMagazine/Search/20170404';
-export const RAKUTEN_BOOK_API =
+export const RAKUTEN_LEGACY_BOOK =
   'https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404';
+export const DEFAULT_RAKUTEN_ORIGIN = 'https://kenandxx.github.io';
+
+/**
+ * Builds the 2026 Rakuten OpenAPI request URL & required Referer/Origin headers
+ * (automatically falls back to legacy app.rakuten.co.jp if accessKey is omitted).
+ */
+export function buildRakutenRequestConfig({
+  kind = 'book',
+  appId,
+  accessKey = '',
+  allowedOrigin = DEFAULT_RAKUTEN_ORIGIN,
+  params = {},
+}) {
+  const cleanOrigin = String(allowedOrigin || DEFAULT_RAKUTEN_ORIGIN).replace(/\/+$/, '');
+  const useOpenApi = Boolean(accessKey);
+  const baseUrl = useOpenApi
+    ? kind === 'magazine'
+      ? RAKUTEN_OPENAPI_MAGAZINE
+      : RAKUTEN_OPENAPI_BOOK
+    : kind === 'magazine'
+      ? RAKUTEN_LEGACY_MAGAZINE
+      : RAKUTEN_LEGACY_BOOK;
+
+  const qs = new URLSearchParams({
+    format: 'json',
+    applicationId: appId,
+    ...(useOpenApi ? { accessKey } : {}),
+    ...params,
+  });
+
+  return {
+    url: `${baseUrl}?${qs.toString()}`,
+    headers: {
+      Referer: `${cleanOrigin}/`,
+      Origin: cleanOrigin,
+      Accept: 'application/json',
+    },
+    apiMode: useOpenApi ? 'openapi-2026' : 'legacy',
+  };
+}
 
 export const RAKUTEN_MAGAZINE_KEYWORDS = [
   'B.L.T.',
@@ -229,12 +273,33 @@ export function buildCatalogItemFromRakuten({
 }
 
 /**
- * Fetches live magazine, photobook, calendar, and R18 records from Rakuten Books API.
+ * Fetches live magazine, photobook, calendar, and R18 records from Rakuten Books API (2026 OpenAPI).
  */
-export async function fetchRakutenCatalogRecords(appId) {
+export async function fetchRakutenCatalogRecords(authOrAppId) {
+  const auth =
+    typeof authOrAppId === 'string'
+      ? { appId: authOrAppId, accessKey: '', allowedOrigin: DEFAULT_RAKUTEN_ORIGIN }
+      : authOrAppId || {};
+  const appId = String(auth.appId || '').trim();
+  const accessKey = String(auth.accessKey || '').trim();
+  const allowedOrigin = String(auth.allowedOrigin || DEFAULT_RAKUTEN_ORIGIN).trim();
+
   if (!appId) return [];
   const results = [];
   const seenKeys = new Set();
+  let loggedErrorCount = 0;
+
+  const logErrorOnce = async (label, res) => {
+    if (loggedErrorCount >= 2) return;
+    loggedErrorCount += 1;
+    let bodySnippet = '';
+    try {
+      bodySnippet = (await res.text()).slice(0, 180).replace(/\s+/g, ' ');
+    } catch {
+      // Ignore
+    }
+    console.warn(`[rakuten] HTTP ${res.status} on ${label}: ${bodySnippet}`);
+  };
 
   const pushUnique = (rec) => {
     const key = `${rec.isbn || ''}|${rec.url || rec.title}`;
@@ -245,10 +310,17 @@ export async function fetchRakutenCatalogRecords(appId) {
 
   for (const kw of RAKUTEN_MAGAZINE_KEYWORDS) {
     try {
-      const url = `${RAKUTEN_MAGAZINE_API}?applicationId=${encodeURIComponent(
-        appId
-      )}&title=${encodeURIComponent(kw)}&sort=-releaseDate&hits=6`;
-      const res = await fetch(url, { signal: AbortSignal.timeout(10000) });
+      const req = buildRakutenRequestConfig({
+        kind: 'magazine',
+        appId,
+        accessKey,
+        allowedOrigin,
+        params: { title: kw, sort: '-releaseDate', hits: '6' },
+      });
+      const res = await fetch(req.url, {
+        headers: req.headers,
+        signal: AbortSignal.timeout(10000),
+      });
       if (res.ok) {
         const json = await res.json();
         for (const entry of json.Items || []) {
@@ -268,17 +340,26 @@ export async function fetchRakutenCatalogRecords(appId) {
             isPhotobookGenre: false,
           });
         }
+      } else {
+        await logErrorOnce(`magazine:${kw}`, res);
       }
     } catch {
       // Non-fatal network error per keyword
     }
-    await sleep(180);
+    await sleep(220);
   }
 
   for (const q of RAKUTEN_BOOK_QUERIES) {
     try {
-      const qs = new URLSearchParams({ applicationId: appId, ...q.params });
-      const res = await fetch(`${RAKUTEN_BOOK_API}?${qs.toString()}`, {
+      const req = buildRakutenRequestConfig({
+        kind: 'book',
+        appId,
+        accessKey,
+        allowedOrigin,
+        params: Object.fromEntries(Object.entries(q.params).map(([k, v]) => [k, String(v)])),
+      });
+      const res = await fetch(req.url, {
+        headers: req.headers,
         signal: AbortSignal.timeout(10000),
       });
       if (res.ok) {
@@ -300,11 +381,13 @@ export async function fetchRakutenCatalogRecords(appId) {
             isPhotobookGenre: q.isPhotobookGenre,
           });
         }
+      } else {
+        await logErrorOnce(`book:${q.label}`, res);
       }
     } catch {
       // Non-fatal network error per genre query
     }
-    await sleep(180);
+    await sleep(220);
   }
 
   return results;

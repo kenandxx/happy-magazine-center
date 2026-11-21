@@ -364,22 +364,32 @@
             <div id="autoSourcesSummaryBox" class="auto-sources-box"></div>
 
             <details class="setup-accordion">
-              <summary>🔑 楽天ブックス全写真集・R18・限定特典を毎朝全自動流入させる（無料3ステップ）</summary>
+              <summary>🔑 楽天ブックス全写真集・R18・限定特典を毎朝全自動流入させる（2026年版・無料3ステップ）</summary>
               <div class="setup-accordion-body">
                 <p class="setup-tip" style="margin:0 0 8px;">
-                  すでに収集エンジン（<code>scripts/rakuten-ingestor.mjs</code>）は実装済みです！無料の楽天アプリIDをGitHub Secretsに1つ登録するだけで、<strong>16主要誌＋写真集＋グラビア＋🔞R18＋2027カレンダー＋楽天限定特典</strong>が毎朝07:00に自動追加されます（Amazon基本＋特典ありストアのみのノイズゼロ基準厳守）。
+                  2026年新仕様（<code>openapi.rakuten.co.jp</code>＋<code>accessKey</code>＋<code>Referer</code>認証）に対応済みです！無料の楽天アプリ登録をしてGitHub Secretsに2つ登録するだけで、<strong>16主要誌＋写真集＋グラビア＋🔞R18＋2027カレンダー＋楽天限定特典</strong>が毎朝07:00に自動追加されます。
                 </p>
                 <ol class="setup-steps">
                   <li>
-                    <a class="setup-ext-link" href="https://webservice.rakuten.co.jp/app/create" target="_blank" rel="noopener noreferrer">楽天ウェブサービス（無料アプリ登録） ↗</a> で「アプリID（Application ID）」を発行（アプリ名・URLは何でもOK）
+                    <a class="setup-ext-link" href="https://webservice.rakuten.co.jp/app/create" target="_blank" rel="noopener noreferrer">楽天ウェブサービス（無料アプリ登録） ↗</a> でログインし「＋アプリID発行」を作成。<strong>「許可されたWebサイト」</strong>に下のドメインを入力（重要！）：
                   </li>
+                </ol>
+                <div class="copy-code-row">
+                  <code class="copy-code-box">kenandxx.github.io</code>
+                  <button class="quick-preview-icon-btn" type="button" data-copy-text="kenandxx.github.io">📋 ドメインコピー</button>
+                </div>
+                <ol class="setup-steps" start="2">
                   <li>
-                    <a class="setup-ext-link" href="https://github.com/kenandxx/happy-magazine-center/settings/secrets/actions/new" target="_blank" rel="noopener noreferrer">GitHub Actions Secret 追加画面を開く ↗</a> → Nameに下の名前、SecretにアプリIDを貼って保存：
+                    発行された<strong>「アプリケーションID」</strong>と<strong>「アクセスキー（pk_...）」</strong>の2つを、下のNameで <a class="setup-ext-link" href="https://github.com/kenandxx/happy-magazine-center/settings/secrets/actions/new" target="_blank" rel="noopener noreferrer">GitHub Actions Secrets ↗</a> に登録：
                   </li>
                 </ol>
                 <div class="copy-code-row">
                   <code class="copy-code-box">RAKUTEN_APP_ID</code>
-                  <button class="quick-preview-icon-btn" type="button" data-copy-text="RAKUTEN_APP_ID">📋 Nameコピー</button>
+                  <button class="quick-preview-icon-btn" type="button" data-copy-text="RAKUTEN_APP_ID">📋 コピー</button>
+                </div>
+                <div class="copy-code-row">
+                  <code class="copy-code-box">RAKUTEN_ACCESS_KEY</code>
+                  <button class="quick-preview-icon-btn" type="button" data-copy-text="RAKUTEN_ACCESS_KEY">📋 コピー</button>
                 </div>
                 <ol class="setup-steps" start="3">
                   <li>

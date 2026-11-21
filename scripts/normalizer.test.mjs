@@ -505,6 +505,7 @@ test('rakuten-ingestor normalizes Rakuten Books dates/images, filters noise, and
   const {
     RAKUTEN_MAGAZINE_KEYWORDS,
     RAKUTEN_BOOK_QUERIES,
+    buildRakutenRequestConfig,
     parseRakutenSalesDate,
     upgradeRakutenImageUrl,
     isRelevantRakutenRecord,
@@ -514,6 +515,18 @@ test('rakuten-ingestor normalizes Rakuten Books dates/images, filters noise, and
 
   assert.ok(RAKUTEN_MAGAZINE_KEYWORDS.length >= 15);
   assert.ok(RAKUTEN_BOOK_QUERIES.some((q) => q.isR18));
+
+  const openApiReq = buildRakutenRequestConfig({
+    kind: 'book',
+    appId: '11111111-2222-3333-4444-555555555555',
+    accessKey: 'pk_test_key',
+    params: { booksGenreId: '001013001' },
+  });
+  assert.equal(openApiReq.apiMode, 'openapi-2026');
+  assert.ok(openApiReq.url.startsWith('https://openapi.rakuten.co.jp/services/api/BooksBook/Search/20170404?'));
+  assert.ok(openApiReq.url.includes('accessKey=pk_test_key'));
+  assert.equal(openApiReq.headers.Origin, 'https://kenandxx.github.io');
+  assert.equal(openApiReq.headers.Referer, 'https://kenandxx.github.io/');
 
   assert.equal(parseRakutenSalesDate('2026年12月25日頃'), '2026-12-25');
   assert.equal(parseRakutenSalesDate('2026年12月下旬'), '2026-12-25');

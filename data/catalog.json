@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T18:15:00+09:00",
+  "updatedAt": "2026-11-20T20:38:00+09:00",
   "referenceDate": "2026-11-20",
   "policy": "Amazonは基本購入先として常に表示。Amazon以外のストア（セブンネット・楽天ブックス・HMV・TSUTAYA）は確認済みのストア限定特典が付く場合のみ表示。",
   "items": [
@@ -274,6 +274,18 @@
         }
       ],
       "pressArticles": [
+        {
+          "title": "乃木坂46・瀬戸口心月表紙『B.L.T.2027年1月号』店舗別特典絵柄まとめ（最新）",
+          "source": "B.L.T.web",
+          "url": "https://bltweb.jp/2026/11/21/blt202701_nogi_store/",
+          "photoCountHint": "全ストア特典絵柄公開"
+        },
+        {
+          "title": "新しい時代のヒロインが、ここから始まる。乃木坂46・瀬戸口心月 PR TIMES最新リリース",
+          "source": "PR TIMES",
+          "url": "https://prtimes.jp/main/html/rd/p/000003599.000006568.html",
+          "photoCountHint": "公式先行＆特典カット"
+        },
         {
           "title": "【公式】瀬戸口心月・金川紗耶・冨里奈央・安納蒼衣・水野Reta 先行グラビア大量公開＆全特典URL",
           "source": "PR TIMES / 東京ニュース通信社",
@@ -2099,7 +2111,8 @@
           "price": 3520,
           "status": "preorder",
           "artworkStatus": "revealed",
-          "url": "https://7net.omni7.jp/search?q=%E4%B8%AD%E5%B3%B6%E7%91%A0%E8%8F%9C+Luna"
+          "url": "https://7net.omni7.jp/search?q=%E4%B8%AD%E5%B3%B6%E7%91%A0%E8%8F%9C+Luna",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw309c61a6/421699/1107778150.jpg?sw=1150"
         },
         {
           "id": "nakajima-runa-amazon",
@@ -2142,7 +2155,15 @@
       "includedBonuses": [],
       "printOnlyNote": "セブンネット限定『直筆サイン本』＋楽天・Amazon限定表紙版あり！",
       "summary": "発売中！セブンネット限定の直筆サイン本と、楽天ブックス・Amazon限定の別表紙版から選べます。",
-      "gallery": [],
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/1121/9784868361121_1_2.jpg?downsize=600:*",
+          "caption": "楽天ブックス・Amazon限定表紙版：古賀瑠『WKGA 82.2FM』",
+          "source": "楽天ブックス",
+          "kind": "limited_cover",
+          "articleUrl": "https://books.rakuten.co.jp/rb/18805552/"
+        }
+      ],
       "pressArticles": [],
       "offers": [
         {
@@ -2158,7 +2179,8 @@
           "price": 3960,
           "status": "low_stock",
           "artworkStatus": "revealed",
-          "url": "https://7net.omni7.jp/search?q=%E5%8F%A4%E8%B3%80%E7%91%A0+WKGA"
+          "url": "https://7net.omni7.jp/search?q=%E5%8F%A4%E8%B3%80%E7%91%A0+WKGA",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/1121/9784868361121_1_2.jpg?downsize=600:*"
         },
         {
           "id": "koga-rui-rakuten",
@@ -2173,7 +2195,8 @@
           "price": 3300,
           "status": "available",
           "artworkStatus": "revealed",
-          "url": "https://books.rakuten.co.jp/search?sitem=%E5%8F%A4%E8%B3%80%E7%91%A0+WKGA&g=001"
+          "url": "https://books.rakuten.co.jp/rb/18805552/",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/1121/9784868361121_1_2.jpg?downsize=600:*"
         },
         {
           "id": "koga-rui-amazon",
@@ -2188,9 +2211,11 @@
           "price": 3300,
           "status": "available",
           "artworkStatus": "revealed",
-          "url": "https://www.amazon.co.jp/s?k=%E5%8F%A4%E8%B3%80%E7%91%A0+WKGA+82.2FM&i=stripbooks"
+          "url": "https://www.amazon.co.jp/s?k=%E5%8F%A4%E8%B3%80%E7%91%A0+WKGA+82.2FM&i=stripbooks",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/1121/9784868361121_1_2.jpg?downsize=600:*"
         }
-      ]
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/1121/9784868361121_1_2.jpg?downsize=600:*"
     },
     {
       "id": "iwasaki-aoi-1st",
@@ -2354,7 +2379,7 @@
           "price": 3850,
           "status": "preorder",
           "artworkStatus": "pending",
-          "url": "https://books.rakuten.co.jp/search?sitem=%E5%92%B2%E8%89%AF%E8%8F%9C%E7%B7%92+1st%E5%86%99%E7%9C%9F%E9%9B%86&g=001"
+          "url": "https://books.rakuten.co.jp/rb/18803102/"
         },
         {
           "id": "sakura-nao-amazon",
@@ -2569,7 +2594,22 @@
       ],
       "printOnlyNote": "初版限定QR動画フォトカードは紙版のみ（デジタル版対象外）／ストア独自特典なしのためAmazon直リンクを表示",
       "summary": "FRIDAYグラデミー賞新人賞・白濱美兎の“過去最大露出”2nd写真集！初版限定QR動画フォトカードはAmazonの紙版でも付属。",
-      "gallery": [],
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw63be6fea/421701/1107770746.jpg?sw=1150",
+          "caption": "表紙：白濱美兎 2nd写真集『ゆっくり恋をする』",
+          "source": "公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065455081"
+        },
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/5081/9784065455081_1_4.jpg?fitin=560:400&composite-to=*,*|560:400",
+          "caption": "先行公開ビジュアル（楽天ブックス）",
+          "source": "楽天ブックス",
+          "kind": "preview",
+          "articleUrl": "https://hon-hikidashi.jp/news/225135/"
+        }
+      ],
       "pressArticles": [
         {
           "title": "大胆な“腕ブラカット”で！白濱美兎2nd写真集『ゆっくり恋をする』発売＆先行カット",
@@ -2582,6 +2622,12 @@
           "source": "まいどなニュース",
           "url": "https://maidonanews.jp/article/17035673",
           "photoCountHint": "先行グラビア特集"
+        },
+        {
+          "title": "“全鳥取県民の妹”白濱美兎 2nd写真集『ゆっくり恋をする』先行グラビア",
+          "source": "MANGA Watch",
+          "url": "https://manga.watch.impress.co.jp/docs/news/2154446.html",
+          "photoCountHint": "先行カット特集"
         }
       ],
       "offers": [
@@ -2598,9 +2644,11 @@
           "price": 3300,
           "status": "available",
           "artworkStatus": "revealed",
-          "url": "https://www.amazon.co.jp/dp/4065455081"
+          "url": "https://www.amazon.co.jp/dp/4065455081",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw63be6fea/421701/1107770746.jpg?sw=1150"
         }
-      ]
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw63be6fea/421701/1107770746.jpg?sw=1150"
     },
     {
       "id": "hirata-yuki-1st",
@@ -2610,7 +2658,7 @@
       "publisher": "宝島社",
       "category": "photobook",
       "releaseDate": "2026-11-26",
-      "price": 3300,
+      "price": 3850,
       "coverTalents": [
         "平田侑希（AKB48）"
       ],
@@ -2623,9 +2671,17 @@
         "#FCE7F3"
       ],
       "includedBonuses": [],
-      "printOnlyNote": "オーストラリア撮影・表紙＆先行カット第2弾解禁済み",
+      "printOnlyNote": "楽天ブックス限定「オンラインラッキードロー抽選権付き」発掘！＋Amazon通常版",
       "summary": "AKB48 17期生・平田侑希の待望1st写真集！公式プレス＆ほんのひきだしで先行カット公開中。",
-      "gallery": [],
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/8286/9784299068286_2_3.jpg?fitin=560:400&composite-to=*,*|560:400",
+          "caption": "表紙：AKB48 平田侑希 1st写真集『仮縫いの恋人』",
+          "source": "公式書影",
+          "kind": "cover",
+          "articleUrl": "https://books.rakuten.co.jp/rb/18806132/"
+        }
+      ],
       "pressArticles": [
         {
           "title": "AKB48 平田侑希さん 1st写真集 タイトル＆表紙決定！先行カット解禁",
@@ -2642,6 +2698,22 @@
       ],
       "offers": [
         {
+          "id": "hirata-rakuten-lucky",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天限定：オンラインラッキードロー付",
+          "bonusTypes": [
+            "card"
+          ],
+          "bonusText": "楽天ブックス限定 オンラインラッキードロー抽選権付き",
+          "talent": "平田侑希（AKB48）",
+          "price": 3850,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/8286/9784299068286_2_3.jpg?fitin=560:400&composite-to=*,*|560:400",
+          "url": "https://books.rakuten.co.jp/rb/18806132/"
+        },
+        {
           "id": "hirata-amazon",
           "store": "amazon",
           "hasStoreExclusiveBonus": false,
@@ -2651,12 +2723,14 @@
           ],
           "bonusText": "Amazonで予約・購入",
           "talent": "平田侑希",
-          "price": 3300,
+          "price": 3850,
           "status": "preorder",
           "artworkStatus": "revealed",
-          "url": "https://www.amazon.co.jp/s?k=%E5%B9%B3%E7%94%B0%E4%BE%91%E5%B8%8C+%E4%BB%AE%E7%B8%AB%E3%81%84%E3%81%AE%E6%81%8B%E4%BA%BA&i=stripbooks"
+          "url": "https://www.amazon.co.jp/s?k=%E5%B9%B3%E7%94%B0%E4%BE%91%E5%B8%8C+%E4%BB%AE%E7%B8%AB%E3%81%84%E3%81%AE%E6%81%8B%E4%BA%BA&i=stripbooks",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/8286/9784299068286_2_3.jpg?fitin=560:400&composite-to=*,*|560:400"
         }
-      ]
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/8286/9784299068286_2_3.jpg?fitin=560:400&composite-to=*,*|560:400"
     },
     {
       "id": "nara-miharu-2nd",
@@ -2968,12 +3042,12 @@
     },
     {
       "id": "fruits-zipper-4th",
-      "title": "FRUITS ZIPPER 4th Anniversary写真集",
+      "title": "FRUITS ZIPPER 4th Anniversary写真集『SYNERGY』",
       "series": "写真集",
       "issueLabel": "4周年記念写真集",
       "publisher": "写真集",
       "category": "photobook",
-      "releaseDate": "2026-12-22",
+      "releaseDate": "2026-10-31",
       "price": 3300,
       "coverTalents": [
         "FRUITS ZIPPER"
@@ -2987,11 +3061,35 @@
         "#FEF08A"
       ],
       "includedBonuses": [],
-      "printOnlyNote": "ストア限定特典が発表され次第、該当ストアのみ自動表示されます",
+      "printOnlyNote": "HMV限定特典あり＋Amazon通常版",
       "summary": "大人気アイドルグループ FRUITS ZIPPER の4周年記念写真集！現時点では通常版Amazon表示。",
-      "gallery": [],
+      "gallery": [
+        {
+          "url": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8572/9784063528572.jpg",
+          "caption": "表紙：FRUITS ZIPPER 4th Anniversary写真集『SYNERGY』",
+          "source": "公式書影",
+          "kind": "cover",
+          "articleUrl": "https://books.rakuten.co.jp/rb/18725257/"
+        }
+      ],
       "pressArticles": [],
       "offers": [
+        {
+          "id": "fz4-hmv",
+          "store": "hmv",
+          "hasStoreExclusiveBonus": true,
+          "edition": "HMV限定特典付き",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "HMV&BOOKS online限定特典付き『SYNERGY』",
+          "talent": "FRUITS ZIPPER",
+          "price": 3300,
+          "status": "発売中",
+          "artworkStatus": "公開中",
+          "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8572/9784063528572.jpg",
+          "url": "https://www.hmv.co.jp/search/keyword_FRUITS+ZIPPER+SYNERGY/target_ALL/type_sr/"
+        },
         {
           "id": "fz-4th-amazon",
           "store": "amazon",
@@ -3005,9 +3103,11 @@
           "price": 3300,
           "status": "preorder",
           "artworkStatus": "pending",
-          "url": "https://www.amazon.co.jp/s?k=FRUITS+ZIPPER+4th+Anniversary+%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks"
+          "url": "https://www.amazon.co.jp/s?k=FRUITS+ZIPPER+4th+Anniversary+%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks",
+          "imageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8572/9784063528572.jpg"
         }
-      ]
+      ],
+      "coverImageUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8572/9784063528572.jpg"
     },
     {
       "id": "gravure-action-1",
@@ -4508,6 +4608,1499 @@
           "artworkStatus": "通常表紙",
           "imageUrl": "https://img.fujisan.co.jp/images/products/2734_l.jpg",
           "url": "https://www.amazon.co.jp/s?k=MAQUIA+2026%E5%B9%B412%E6%9C%88%E5%8F%B7+%E4%B8%8E%E7%94%B0%E7%A5%90%E5%B8%8C&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "cal-oguri-yui-2027",
+      "title": "小栗有以（AKB48） 2027年カレンダー（壁掛け / 卓上）",
+      "series": "2027年カレンダー",
+      "issueLabel": "壁掛け＆卓上",
+      "publisher": "トライエックス",
+      "category": "calendar",
+      "releaseDate": "2026-11-21",
+      "price": 3520,
+      "coverTalents": [
+        "小栗有以（AKB48）"
+      ],
+      "featuredTalents": [
+        "AKB48",
+        "小栗有以"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe3932815/212960/1107773305.jpg?sw=1150",
+      "palette": [
+        "#DB2777",
+        "#F472B6",
+        "#FBCFE8"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "明日発売！セブン限定（壁掛け柄/卓上柄ポストカード）＋楽天限定（ミニカレンダー）の豪華特典対決",
+      "summary": "AKB48・小栗有以の2027年カレンダー！壁掛けと卓上で別柄のセブン限定ポストカード＆楽天限定ミニカレンダーを横並び比較。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe3932815/212960/1107773305.jpg?sw=1150",
+          "caption": "壁掛け版＋セブン限定「壁掛け限定柄ポストカード」",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107773305.html"
+        },
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw646b36d2/212960/1107773306.jpg?sw=1150",
+          "caption": "卓上版＋セブン限定「卓上限定柄ポストカード」",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107773306.html"
+        },
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/1396/4900459571396_1_3.jpg?downsize=600:*",
+          "caption": "卓上版＋楽天ブックス限定ミニカレンダー",
+          "source": "楽天ブックス",
+          "kind": "bonus",
+          "articleUrl": "https://books.rakuten.co.jp/rb/18812654/"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "cal-oguri-7net-wall",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "壁掛け＋セブン特典ポストカード",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "壁掛け限定柄 ポストカード 1枚付き",
+          "talent": "小栗有以（AKB48）",
+          "price": 3520,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe3932815/212960/1107773305.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107773305.html"
+        },
+        {
+          "id": "cal-oguri-7net-desk",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "卓上＋セブン特典ポストカード",
+          "bonusTypes": [
+            "postcard"
+          ],
+          "bonusText": "卓上限定柄 ポストカード 1枚付き",
+          "talent": "小栗有以（AKB48）",
+          "price": 3300,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw646b36d2/212960/1107773306.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107773306.html"
+        },
+        {
+          "id": "cal-oguri-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "卓上＋楽天限定ミニカレンダー",
+          "bonusTypes": [
+            "card"
+          ],
+          "bonusText": "楽天ブックス限定 ミニカレンダー付き",
+          "talent": "小栗有以（AKB48）",
+          "price": 3300,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/1396/4900459571396_1_3.jpg?downsize=600:*",
+          "url": "https://books.rakuten.co.jp/rb/18812654/"
+        },
+        {
+          "id": "cal-oguri-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（壁掛け/卓上）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "小栗有以（AKB48）",
+          "price": 3520,
+          "status": "予約受付中",
+          "artworkStatus": "通常版",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dwe3932815/212960/1107773305.jpg?sw=1150",
+          "url": "https://www.amazon.co.jp/s?k=%E5%B0%8F%E6%A0%97%E6%9C%89%E4%BB%A5+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ]
+    },
+    {
+      "id": "cal-ego-yuna-2027",
+      "title": "江籠裕奈 2027年カレンダー",
+      "series": "2027年カレンダー",
+      "issueLabel": "2027年カレンダー",
+      "publisher": "わくわく製作所",
+      "category": "calendar",
+      "releaseDate": "2026-11-28",
+      "price": 4620,
+      "coverTalents": [
+        "江籠裕奈"
+      ],
+      "featuredTalents": [
+        "江籠裕奈"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw6ef0518b/212960/1107734481.jpg?sw=1150",
+      "palette": [
+        "#7C3AED",
+        "#A855F7",
+        "#DDD6FE"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "セブンネット限定ミニカレンダー1枚付き＋HMV限定ミニカレンダー付き！",
+      "summary": "元SKE48・江籠裕奈の2027年カレンダー！セブンネットとHMVの両ストアで限定ミニカレンダー特典が展開。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw6ef0518b/212960/1107734481.jpg?sw=1150",
+          "caption": "江籠裕奈 2027年カレンダー＋セブン限定ミニカレンダー",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/detail/1107734481.html"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "cal-ego-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定ミニカレンダー付",
+          "bonusTypes": [
+            "card"
+          ],
+          "bonusText": "セブンネット限定 ミニカレンダー 1枚付き",
+          "talent": "江籠裕奈",
+          "price": 4620,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw6ef0518b/212960/1107734481.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107734481.html"
+        },
+        {
+          "id": "cal-ego-hmv",
+          "store": "hmv",
+          "hasStoreExclusiveBonus": true,
+          "edition": "HMV限定ミニカレンダー付",
+          "bonusTypes": [
+            "card"
+          ],
+          "bonusText": "HMV&BOOKS online限定 ミニカレンダー付き",
+          "talent": "江籠裕奈",
+          "price": 4620,
+          "status": "予約受付中",
+          "artworkStatus": "公開中",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw6ef0518b/212960/1107734481.jpg?sw=1150",
+          "url": "https://www.hmv.co.jp/search/keyword_%E6%B1%9F%E7%B1%A0%E8%A3%95%E5%A5%88+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/target_ALL/type_sr/"
+        },
+        {
+          "id": "cal-ego-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "江籠裕奈",
+          "price": 4620,
+          "status": "予約受付中",
+          "artworkStatus": "通常版",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw6ef0518b/212960/1107734481.jpg?sw=1150",
+          "url": "https://www.amazon.co.jp/s?k=%E6%B1%9F%E7%B1%A0%E8%A3%95%E5%A5%88+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ]
+    },
+    {
+      "id": "cal-sawaguchi-aika-2027",
+      "title": "沢口愛華 2027年カレンダー（B2壁掛け）",
+      "series": "2027年カレンダー",
+      "issueLabel": "B2壁掛け（8枚）",
+      "publisher": "わくわく製作所",
+      "category": "calendar",
+      "releaseDate": "2026-11-21",
+      "price": 3850,
+      "coverTalents": [
+        "沢口愛華"
+      ],
+      "featuredTalents": [
+        "沢口愛華"
+      ],
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/6/2/509.jpg",
+      "palette": [
+        "#0D9488",
+        "#14B8A6",
+        "#99F6E4"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "明日発売！迫力のB2壁掛けカレンダー（紀伊國屋書店発売記念イベントも開催）",
+      "summary": "令和のグラビアクイーン・沢口愛華の2027年B2大判カレンダー！",
+      "gallery": [
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/800/0000172/6/2/509.jpg",
+          "caption": "表紙：沢口愛華 2027年カレンダー（B2壁掛け）",
+          "source": "HMV&BOOKS",
+          "kind": "cover",
+          "articleUrl": "https://www.hmv.co.jp/artist_%E6%B2%A2%E5%8F%A3%E6%84%9B%E8%8F%AF_000000000790419/item_%E6%B2%A2%E5%8F%A3%E6%84%9B%E8%8F%AF-2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC_17262509"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "『沢口愛華 2027カレンダー』発売記念イベント詳細",
+          "source": "紀伊國屋書店",
+          "url": "https://store.kinokuniya.co.jp/event/1789556064/",
+          "photoCountHint": "イベント・特典券案内"
+        }
+      ],
+      "offers": [
+        {
+          "id": "cal-sawaguchi-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（B2壁掛け）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入（¥3,850）",
+          "talent": "沢口愛華",
+          "price": 3850,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/800/0000172/6/2/509.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E6%B2%A2%E5%8F%A3%E6%84%9B%E8%8F%AF+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ]
+    },
+    {
+      "id": "cal-nagahama-neru-2027",
+      "title": "長濱ねる MEMORIAL CALENDAR 2027",
+      "series": "2027年カレンダー",
+      "issueLabel": "2027.1-2027.12",
+      "publisher": "カレンダー",
+      "category": "calendar",
+      "releaseDate": "2026-12-12",
+      "price": 3300,
+      "coverTalents": [
+        "長濱ねる"
+      ],
+      "featuredTalents": [
+        "長濱ねる"
+      ],
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/400/0000171/8/6/464.jpg",
+      "palette": [
+        "#0284C7",
+        "#38BDF8",
+        "#BAE6FD"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "HMV&BOOKS onlineにてイベント応募抽選対象あり＋Amazon通常版",
+      "summary": "長濱ねるの2027年メモリアルカレンダー！12月のお楽しみ予約アイテム。",
+      "gallery": [
+        {
+          "url": "https://img.hmv.co.jp/image/jacket/400/0000171/8/6/464.jpg",
+          "caption": "長濱ねる MEMORIAL CALENDAR 2027 ビジュアル",
+          "source": "HMV&BOOKS",
+          "kind": "cover",
+          "articleUrl": "https://www.hmv.co.jp/artist_%E9%95%B7%E6%BF%B1%E3%81%AD%E3%82%8B_000000000732828/item_%E3%80%8A%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%BF%9C%E5%8B%9F%E6%8A%BD%E9%81%B8%E3%80%8BNeru-Nagahama-MEMORIAL-CALENDAR-2027-1-2027-12-%E2%80%BB%E5%85%A8%E9%A1%8D%E5%86%85%E9%87%91_17186464"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "cal-neru-hmv",
+          "store": "hmv",
+          "hasStoreExclusiveBonus": true,
+          "edition": "HMV限定：イベント応募抽選対象",
+          "bonusTypes": [
+            "card"
+          ],
+          "bonusText": "HMV&BOOKS online イベント応募抽選権付き",
+          "talent": "長濱ねる",
+          "price": 3300,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/400/0000171/8/6/464.jpg",
+          "url": "https://www.hmv.co.jp/artist_%E9%95%B7%E6%BF%B1%E3%81%AD%E3%82%8B_000000000732828/item_%E3%80%8A%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%BF%9C%E5%8B%9F%E6%8A%BD%E9%81%B8%E3%80%8BNeru-Nagahama-MEMORIAL-CALENDAR-2027-1-2027-12-%E2%80%BB%E5%85%A8%E9%A1%8D%E5%86%85%E9%87%91_17186464"
+        },
+        {
+          "id": "cal-neru-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "長濱ねる",
+          "price": 3300,
+          "status": "予約受付中",
+          "artworkStatus": "通常版",
+          "imageUrl": "https://img.hmv.co.jp/image/jacket/400/0000171/8/6/464.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E9%95%B7%E6%BF%B1%E3%81%AD%E3%82%8B+2027+%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ]
+    },
+    {
+      "id": "cal-furuhata-nao-2027",
+      "title": "古畑奈和 2027年カレンダー",
+      "series": "2027年カレンダー",
+      "issueLabel": "2027年カレンダー",
+      "publisher": "ハゴロモ",
+      "category": "calendar",
+      "releaseDate": "2026-12-05",
+      "price": 3520,
+      "coverTalents": [
+        "古畑奈和"
+      ],
+      "featuredTalents": [
+        "古畑奈和"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw64b2bcc7/212960/1107772320.jpg?sw=1150",
+      "palette": [
+        "#BE123C",
+        "#F43F5E",
+        "#FDA4AF"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "セブンネット限定特典：ミニカレンダー 1枚付き！",
+      "summary": "古畑奈和の2027年カレンダー。セブンネット限定ミニカレンダー1枚付きで予約受付中。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw64b2bcc7/212960/1107772320.jpg?sw=1150",
+          "caption": "古畑奈和 2027年カレンダー（セブン限定ミニカレンダー付）",
+          "source": "セブンネット",
+          "kind": "bonus",
+          "articleUrl": "https://7net.omni7.jp/search?q=%E5%8F%A4%E7%95%91%E5%A5%88%E5%92%8C+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "cal-furuhata-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定ミニカレンダー付",
+          "bonusTypes": [
+            "card"
+          ],
+          "bonusText": "セブンネット限定 ミニカレンダー 1枚付き",
+          "talent": "古畑奈和",
+          "price": 3520,
+          "status": "予約受付中",
+          "artworkStatus": "公開中",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw64b2bcc7/212960/1107772320.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/search?q=%E5%8F%A4%E7%95%91%E5%A5%88%E5%92%8C+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        },
+        {
+          "id": "cal-furuhata-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "古畑奈和",
+          "price": 3520,
+          "status": "予約受付中",
+          "artworkStatus": "通常版",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw64b2bcc7/212960/1107772320.jpg?sw=1150",
+          "url": "https://www.amazon.co.jp/s?k=%E5%8F%A4%E7%95%91%E5%A5%88%E5%92%8C+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ]
+    },
+    {
+      "id": "cal-wanai-rino-2027",
+      "title": "和内璃乃 2027年カレンダー",
+      "series": "2027年カレンダー",
+      "issueLabel": "2027年カレンダー",
+      "publisher": "カレンダー",
+      "category": "calendar",
+      "releaseDate": "2026-12-06",
+      "price": 3520,
+      "coverTalents": [
+        "和内璃乃"
+      ],
+      "featuredTalents": [
+        "和内璃乃"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#059669",
+        "#10B981",
+        "#A7F3D0"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "セブンネット限定特典：ブロマイド 1枚付き！",
+      "summary": "セブンネット2027年カレンダー特集ピックアップ！限定ブロマイド1枚付き。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "cal-wanai-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定ブロマイド付",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "セブンネット限定 ブロマイド 1枚付き",
+          "talent": "和内璃乃",
+          "price": 3520,
+          "status": "予約受付中",
+          "artworkStatus": "公開中",
+          "url": "https://7net.omni7.jp/search?q=%E5%92%8C%E5%86%85%E7%92%83%E4%B9%83+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        },
+        {
+          "id": "cal-wanai-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "和内璃乃",
+          "price": 3520,
+          "status": "予約受付中",
+          "artworkStatus": "通常版",
+          "url": "https://www.amazon.co.jp/s?k=%E5%92%8C%E5%86%85%E7%92%83%E4%B9%83+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ]
+    },
+    {
+      "id": "cal-tanida-rana-2027",
+      "title": "谷田ラナ 2027年カレンダー",
+      "series": "2027年カレンダー",
+      "issueLabel": "2027年カレンダー",
+      "publisher": "カレンダー",
+      "category": "calendar",
+      "releaseDate": "2026-12-06",
+      "price": 3520,
+      "coverTalents": [
+        "谷田ラナ"
+      ],
+      "featuredTalents": [
+        "谷田ラナ"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#D97706",
+        "#F59E0B",
+        "#FDE68A"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "セブンネット限定特典：ブロマイド 1枚付き！",
+      "summary": "セブンネット限定ブロマイド1枚付きで展開中の2027年カレンダー。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "cal-tanida-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定ブロマイド付",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "セブンネット限定 ブロマイド 1枚付き",
+          "talent": "谷田ラナ",
+          "price": 3520,
+          "status": "予約受付中",
+          "artworkStatus": "公開中",
+          "url": "https://7net.omni7.jp/search?q=%E8%B0%B7%E7%94%B0%E3%83%A9%E3%83%8A+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        },
+        {
+          "id": "cal-tanida-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "谷田ラナ",
+          "price": 3520,
+          "status": "予約受付中",
+          "artworkStatus": "通常版",
+          "url": "https://www.amazon.co.jp/s?k=%E8%B0%B7%E7%94%B0%E3%83%A9%E3%83%8A+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ]
+    },
+    {
+      "id": "cal-tanaka-miku-2027",
+      "title": "田中美久 2027年 卓上カレンダー",
+      "series": "2027年カレンダー",
+      "issueLabel": "卓上カレンダー",
+      "publisher": "ハゴロモ",
+      "category": "calendar",
+      "releaseDate": "2026-11-28",
+      "price": 3300,
+      "coverTalents": [
+        "田中美久"
+      ],
+      "featuredTalents": [
+        "田中美久"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/zokke/cabinet/27cl002/27cl-0263.jpg?fitin=208:208",
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FECDD3"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "来週11/28発売！デスクに置ける田中美久2027年卓上カレンダー",
+      "summary": "大人気グラビア女優・田中美久の2027年卓上カレンダー。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/zokke/cabinet/27cl002/27cl-0263.jpg?fitin=208:208",
+          "caption": "表紙：田中美久 2027年 卓上カレンダー",
+          "source": "公式書影",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/s?k=%E7%94%B0%E4%B8%AD%E7%BE%8E%E4%B9%85+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "cal-miku-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（卓上）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "田中美久",
+          "price": 3300,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://tshop.r10s.jp/zokke/cabinet/27cl002/27cl-0263.jpg?fitin=208:208",
+          "url": "https://www.amazon.co.jp/s?k=%E7%94%B0%E4%B8%AD%E7%BE%8E%E4%B9%85+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ]
+    },
+    {
+      "id": "cal-yamada-ai-2027",
+      "title": "山田あい 2027年 壁掛けカレンダー",
+      "series": "2027年カレンダー",
+      "issueLabel": "壁掛けカレンダー",
+      "publisher": "カレンダー",
+      "category": "calendar",
+      "releaseDate": "2026-11-21",
+      "price": 3520,
+      "coverTalents": [
+        "山田あい"
+      ],
+      "featuredTalents": [
+        "山田あい"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#0891B2",
+        "#06B6D4",
+        "#67E8F9"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "明日11/21発売！グラビア大注目・山田あいの2027年壁掛けカレンダー",
+      "summary": "EX大衆・グラビアアクションでも引っ張りだこの山田あい2027年壁掛けカレンダー！",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "cal-yamada-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版（壁掛け）",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "山田あい",
+          "price": 3520,
+          "status": "予約受付中",
+          "artworkStatus": "通常版",
+          "url": "https://www.amazon.co.jp/s?k=%E5%B1%B1%E7%94%B0%E3%81%82%E3%81%84+2027%E5%B9%B4%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"
+        }
+      ]
+    },
+    {
+      "id": "cal-sakurai-hinako-2027",
+      "title": "桜井日奈子 2027カレンダーブック",
+      "series": "2027年カレンダー",
+      "issueLabel": "限定表紙版あり",
+      "publisher": "東京ニュース通信社",
+      "category": "calendar",
+      "releaseDate": "2026-10-16",
+      "price": 3300,
+      "coverTalents": [
+        "桜井日奈子"
+      ],
+      "featuredTalents": [
+        "桜井日奈子"
+      ],
+      "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/3119/2100015123119_1_3.jpg?fitin=560:400&composite-to=*,*|560:400",
+      "palette": [
+        "#EC4899",
+        "#F472B6",
+        "#FCE7F3"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "楽天・Amazon・セブンネット限定表紙版＋楽天ブックス限定特典付き！",
+      "summary": "ブック型で飾りやすい桜井日奈子2027カレンダーブック！限定表紙＆楽天特典あり。",
+      "gallery": [
+        {
+          "url": "https://tshop.r10s.jp/book/cabinet/3119/2100015123119_1_3.jpg?fitin=560:400&composite-to=*,*|560:400",
+          "caption": "限定表紙版：桜井日奈子 2027カレンダーブック",
+          "source": "楽天ブックス",
+          "kind": "limited_cover",
+          "articleUrl": "https://books.rakuten.co.jp/rb/18747885/"
+        }
+      ],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "cal-sakurai-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天限定特典＋限定表紙版",
+          "bonusTypes": [
+            "cover",
+            "photo"
+          ],
+          "bonusText": "楽天ブックス限定特典＋楽天・Amazon・セブン限定表紙版",
+          "talent": "桜井日奈子",
+          "price": 3300,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/3119/2100015123119_1_3.jpg?fitin=560:400&composite-to=*,*|560:400",
+          "url": "https://books.rakuten.co.jp/rb/18747885/"
+        },
+        {
+          "id": "cal-sakurai-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": true,
+          "edition": "Amazon（限定表紙 / 通常版）",
+          "bonusTypes": [
+            "cover"
+          ],
+          "bonusText": "Amazon限定表紙版＆通常版",
+          "talent": "桜井日奈子",
+          "price": 3300,
+          "status": "発売中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://tshop.r10s.jp/book/cabinet/3119/2100015123119_1_3.jpg?fitin=560:400&composite-to=*,*|560:400",
+          "url": "https://www.amazon.co.jp/s?k=%E6%A1%9C%E4%BA%95%E6%97%A5%E5%A5%88%E5%AD%90+2027%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%E3%83%96%E3%83%83%E3%82%AF"
+        }
+      ]
+    },
+    {
+      "id": "seto-miruka-1st",
+      "title": "瀬戸みるか 1st写真集『TOYBOX』",
+      "series": "写真集",
+      "issueLabel": "1st写真集",
+      "publisher": "KADOKAWA",
+      "category": "photobook",
+      "releaseDate": "2026-12-09",
+      "price": 3850,
+      "coverTalents": [
+        "瀬戸みるか"
+      ],
+      "featuredTalents": [
+        "瀬戸みるか"
+      ],
+      "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8bb49499/421699/1107771491.jpg?sw=1150",
+      "palette": [
+        "#EC4899",
+        "#F97316",
+        "#FDE047"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "セブンネット限定ブロマイド＋楽天ブックス限定ブロマイドの2ストア特典対決！",
+      "summary": "「おもちゃ箱」がテーマの1st写真集！セブンネットと楽天ブックスでそれぞれ別絵柄の限定ブロマイド付き。",
+      "gallery": [
+        {
+          "url": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8bb49499/421699/1107771491.jpg?sw=1150",
+          "caption": "表紙＆セブン限定ブロマイド対象『TOYBOX』",
+          "source": "セブンネット",
+          "kind": "cover",
+          "articleUrl": "https://7net.omni7.jp/detail/1107771491.html"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "12月9日発売・瀬戸みるか1st写真集『TOYBOX』表紙＆タイトル解禁！",
+          "source": "PR TIMES",
+          "url": "https://prtimes.jp/main/html/rd/p/000000931.000040601.html",
+          "photoCountHint": "表紙＆公式リリース"
+        }
+      ],
+      "offers": [
+        {
+          "id": "seto-7net",
+          "store": "7net",
+          "hasStoreExclusiveBonus": true,
+          "edition": "セブン限定ブロマイド付",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "セブンネット限定 ブロマイド 1枚付き",
+          "talent": "瀬戸みるか",
+          "price": 3850,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8bb49499/421699/1107771491.jpg?sw=1150",
+          "url": "https://7net.omni7.jp/detail/1107771491.html"
+        },
+        {
+          "id": "seto-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天限定絵柄ブロマイド付",
+          "bonusTypes": [
+            "photo"
+          ],
+          "bonusText": "楽天ブックス限定絵柄 ブロマイド 1枚付き",
+          "talent": "瀬戸みるか",
+          "price": 3850,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄公開済",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8bb49499/421699/1107771491.jpg?sw=1150",
+          "url": "https://books.rakuten.co.jp/rb/18805768/"
+        },
+        {
+          "id": "seto-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入",
+          "talent": "瀬戸みるか",
+          "price": 3850,
+          "status": "予約受付中",
+          "artworkStatus": "通常表紙",
+          "imageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw8bb49499/421699/1107771491.jpg?sw=1150",
+          "url": "https://www.amazon.co.jp/s?k=%E7%80%AC%E6%88%B8%E3%81%BF%E3%82%8B%E3%81%8B+TOYBOX&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "kabashima-hikari-2nd",
+      "title": "椛島光 2nd写真集『Ortensia』",
+      "series": "写真集",
+      "issueLabel": "2nd写真集",
+      "publisher": "集英社",
+      "category": "photobook",
+      "releaseDate": "2026-10-30",
+      "price": 3850,
+      "coverTalents": [
+        "椛島光"
+      ],
+      "featuredTalents": [
+        "椛島光"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#4F46E5",
+        "#818CF8",
+        "#C7D2FE"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "楽天ブックス限定「プレミアムステッカー」付き＋Amazon通常版",
+      "summary": "椛島光の待望2nd写真集！楽天ブックス限定のプレミアムステッカー特典付き。",
+      "gallery": [],
+      "pressArticles": [],
+      "offers": [
+        {
+          "id": "kabashima-rakuten",
+          "store": "rakuten",
+          "hasStoreExclusiveBonus": true,
+          "edition": "楽天限定プレミアムステッカー付",
+          "bonusTypes": [
+            "card"
+          ],
+          "bonusText": "楽天ブックス限定 プレミアムステッカー付き",
+          "talent": "椛島光",
+          "price": 3850,
+          "status": "発売中",
+          "artworkStatus": "公開中",
+          "url": "https://books.rakuten.co.jp/rb/18748430/"
+        },
+        {
+          "id": "kabashima-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで購入",
+          "talent": "椛島光",
+          "price": 3850,
+          "status": "発売中",
+          "artworkStatus": "通常版",
+          "url": "https://www.amazon.co.jp/s?k=%E6%A4%9B%E5%B3%B6%E5%85%89+Ortensia&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "okuma-wakana-pb",
+      "title": "大熊和奏 写真集（仮）",
+      "series": "写真集",
+      "issueLabel": "2027年1月発売",
+      "publisher": "東京ニュース通信社",
+      "category": "photobook",
+      "releaseDate": "2027-01-16",
+      "price": 3850,
+      "coverTalents": [
+        "大熊和奏"
+      ],
+      "featuredTalents": [
+        "大熊和奏",
+        "Liella!"
+      ],
+      "coverImageUrl": "https://store.kinokuniya.co.jp/wp-content/uploads/2026/11/%E3%80%90%E5%85%88%E8%A1%8C%E3%82%AB%E3%83%83%E3%83%88%E2%91%A0%E3%80%91%E5%A4%A7%E7%86%8A%E5%92%8C%E5%A5%8F%E5%86%99%E7%9C%9F%E9%9B%86%E4%BB%AE.jpg",
+      "palette": [
+        "#0EA5E9",
+        "#38BDF8",
+        "#BAE6FD"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "2ヶ月先の1月お楽しみ枠！先行カット①公開中（特典解禁も随時ウォッチ）",
+      "summary": "2027年1月発売予定の注目写真集！紀伊國屋書店で発売記念イベント決定＆先行カット公開中。",
+      "gallery": [
+        {
+          "url": "https://store.kinokuniya.co.jp/wp-content/uploads/2026/11/%E3%80%90%E5%85%88%E8%A1%8C%E3%82%AB%E3%83%83%E3%83%88%E2%91%A0%E3%80%91%E5%A4%A7%E7%86%8A%E5%92%8C%E5%A5%8F%E5%86%99%E7%9C%9F%E9%9B%86%E4%BB%AE.jpg",
+          "caption": "公式先行カット①：大熊和奏 写真集（仮）",
+          "source": "紀伊國屋書店公式",
+          "kind": "preview",
+          "articleUrl": "https://store.kinokuniya.co.jp/event/1794877892/"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "『大熊和奏 写真集（仮）』発売記念イベント＆先行カット公開",
+          "source": "紀伊國屋書店",
+          "url": "https://store.kinokuniya.co.jp/event/1794877892/",
+          "photoCountHint": "先行カット公開中"
+        }
+      ],
+      "offers": [
+        {
+          "id": "okuma-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 予約枠",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約状況をチェック",
+          "talent": "大熊和奏",
+          "price": 3850,
+          "status": "予約受付中",
+          "artworkStatus": "先行カット公開",
+          "imageUrl": "https://store.kinokuniya.co.jp/wp-content/uploads/2026/11/%E3%80%90%E5%85%88%E8%A1%8C%E3%82%AB%E3%83%83%E3%83%88%E2%91%A0%E3%80%91%E5%A4%A7%E7%86%8A%E5%92%8C%E5%A5%8F%E5%86%99%E7%9C%9F%E9%9B%86%E4%BB%AE.jpg",
+          "url": "https://www.amazon.co.jp/s?k=%E5%A4%A7%E7%86%8A%E5%92%8C%E5%A5%8F+%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "deguchi-natsuki-2nd",
+      "title": "出口夏希 2nd写真集＆スクールカレンダー（同時発売）",
+      "series": "写真集",
+      "issueLabel": "2027年2月発売",
+      "publisher": "幻冬舎",
+      "category": "photobook",
+      "releaseDate": "2027-02-03",
+      "price": 3300,
+      "coverTalents": [
+        "出口夏希"
+      ],
+      "featuredTalents": [
+        "出口夏希"
+      ],
+      "coverImageUrl": "https://img.hmv.co.jp/image/jacket/800/0000136/5/2/147.jpg",
+      "palette": [
+        "#2563EB",
+        "#60A5FA",
+        "#DBEAFE"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "3ヶ月先の2月大目玉！フィンランドロケ2nd写真集＆カレンダー同時発売＋HMVイベント対象",
+      "summary": "25歳の出口夏希が熱望したフィンランドロケ！2027年2月3日に写真集＆スクールカレンダーが同時発売。HMVイベント応募対象あり。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "出口夏希、2nd写真集＆カレンダー同時発売決定 自然体な姿・大人の色気",
+          "source": "モデルプレス",
+          "url": "https://mdpr.jp/news/detail/4867650",
+          "photoCountHint": "解禁ニュース＆詳細"
+        },
+        {
+          "title": "幻冬舎 公式書誌ページ『出口夏希2nd写真集』",
+          "source": "幻冬舎公式",
+          "url": "https://www.gentosha.co.jp/book/detail/9784344046856/",
+          "photoCountHint": "公式情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "deguchi2-hmv",
+          "store": "hmv",
+          "hasStoreExclusiveBonus": true,
+          "edition": "HMVイベント抽選対象（写真集＋カレンダー）",
+          "bonusTypes": [
+            "card"
+          ],
+          "bonusText": "HMV&BOOKS 発売記念イベント応募抽選対象",
+          "talent": "出口夏希",
+          "price": 3300,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄解禁待ち",
+          "url": "https://www.hmv.co.jp/artist_%E5%87%BA%E5%8F%A3%E5%A4%8F%E5%B8%8C_000000000923663/item_%E5%87%BA%E5%8F%A3%E5%A4%8F%E5%B8%8C2nd%E5%86%99%E7%9C%9F%E9%9B%86%E3%80%8E%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E6%9C%AA%E5%AE%9A%E3%80%8F_17392707"
+        },
+        {
+          "id": "deguchi2-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約・購入（2/3発売）",
+          "talent": "出口夏希",
+          "price": 3300,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄解禁待ち",
+          "url": "https://www.amazon.co.jp/s?k=%E5%87%BA%E5%8F%A3%E5%A4%8F%E5%B8%8C+2nd%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "hayama-fuka-1st",
+      "title": "葉山風花 1st写真集（仮）",
+      "series": "写真集",
+      "issueLabel": "2027年2月発売",
+      "publisher": "写真集",
+      "category": "photobook",
+      "releaseDate": "2027-02-07",
+      "price": 3520,
+      "coverTalents": [
+        "葉山風花"
+      ],
+      "featuredTalents": [
+        "葉山風花"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#F43F5E",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "3ヶ月先の2月お楽しみ予約！HMV&BOOKS NAMBA発売記念イベント開催決定",
+      "summary": "2027年2月に発売記念イベント開催決定の1st写真集！今後の表紙＆特典解禁を先取りウォッチ。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "葉山風花 1st写真集（仮）HMV発売記念イベント詳細",
+          "source": "HMV&BOOKS",
+          "url": "https://www.hmv.co.jp/store/event/56692/",
+          "photoCountHint": "イベント・特典案内"
+        }
+      ],
+      "offers": [
+        {
+          "id": "hayama1-hmv",
+          "store": "hmv",
+          "hasStoreExclusiveBonus": true,
+          "edition": "HMV発売記念イベント対象",
+          "bonusTypes": [
+            "card"
+          ],
+          "bonusText": "HMV&BOOKS 発売記念イベント対象",
+          "talent": "葉山風花",
+          "price": 3520,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄解禁待ち",
+          "url": "https://www.hmv.co.jp/store/event/56692/"
+        },
+        {
+          "id": "hayama1-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 予約枠",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約をチェック",
+          "talent": "葉山風花",
+          "price": 3520,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄解禁待ち",
+          "url": "https://www.amazon.co.jp/s?k=%E8%91%89%E5%B1%B1%E9%A2%A8%E8%8A%B1+1st%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "shizuki-azusa-1st",
+      "title": "紫月杏朱彩 1st写真集（仮）",
+      "series": "写真集",
+      "issueLabel": "2027年2月発売",
+      "publisher": "イマジカインフォス",
+      "category": "photobook",
+      "releaseDate": "2027-02-27",
+      "price": 3850,
+      "coverTalents": [
+        "紫月杏朱彩"
+      ],
+      "featuredTalents": [
+        "紫月杏朱彩"
+      ],
+      "coverImageUrl": "https://img07.shop-pro.jp/PA01394/937/product/194324090.png?cmsp_timestamp=20261111153506",
+      "palette": [
+        "#7E22CE",
+        "#A855F7",
+        "#F3E8FF"
+      ],
+      "includedBonuses": [],
+      "printOnlyNote": "3ヶ月先の2月末お楽しみ枠！声優グランプリ公式にてイベント・続報掲載中",
+      "summary": "2027年2月27日発売決定の1st写真集！今後の表紙＆ストア別特典解禁を楽しみにお待ちください。",
+      "gallery": [
+        {
+          "url": "https://img07.shop-pro.jp/PA01394/937/product/194324090.png?cmsp_timestamp=20261111153506",
+          "caption": "紫月杏朱彩 1st写真集（仮）告知ビジュアル",
+          "source": "イマジカインフォス",
+          "kind": "preview",
+          "articleUrl": "https://seigura.com/magazine_books/176989/"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "紫月杏朱彩 1st写真集（仮）2027年2月27日発売決定！",
+          "source": "seigura.com",
+          "url": "https://seigura.com/magazine_books/176989/",
+          "photoCountHint": "公式告知＆イベント"
+        }
+      ],
+      "offers": [
+        {
+          "id": "shizuki1-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 予約枠",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約をチェック",
+          "talent": "紫月杏朱彩",
+          "price": 3850,
+          "status": "予約受付中",
+          "artworkStatus": "絵柄解禁待ち",
+          "imageUrl": "https://img07.shop-pro.jp/PA01394/937/product/194324090.png?cmsp_timestamp=20261111153506",
+          "url": "https://www.amazon.co.jp/s?k=%E7%B4%AB%E6%9C%88%E6%9D%8F%E6%9C%B1%E5%BD%A9+%E5%86%99%E7%9C%9F%E9%9B%86&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "utb-2027-02-forecast",
+      "title": "アップトゥボーイ 2027年2月号【次号解禁ウォッチ】",
+      "series": "アップトゥボーイ",
+      "issueLabel": "2027年2月号（予定）",
+      "publisher": "ワニブックス",
+      "category": "idol",
+      "releaseDate": "2026-12-23",
+      "price": 1400,
+      "coverTalents": [
+        "表紙・特典解禁待ち（例月23日発売）"
+      ],
+      "featuredTalents": [
+        "アップトゥボーイ",
+        "ポスター"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FDA4AF"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "⏳ 恒例：本誌特大両面ポスター付録（解禁待ち）"
+        }
+      ],
+      "printOnlyNote": "毎月23日発売の定番号！表紙＆セブンネット限定表紙・ポストカード解禁前の先取りお楽しみ枠",
+      "summary": "来月12月23日発売予定のアップトゥボーイ次号！解禁され次第セブン限定表紙やポストカード絵柄をチェックできます。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "セブンネットで「アップトゥボーイ 2027年2月号」特典解禁を今すぐチェック",
+          "source": "セブンネット検索",
+          "url": "https://7net.omni7.jp/search?q=%E3%82%A2%E3%83%83%E3%83%97%E3%83%88%E3%82%A5%E3%83%9C%E3%83%BC%E3%82%A4+2027%E5%B9%B42%E6%9C%88%E5%8F%B7+%E7%89%B9%E5%85%B8",
+          "photoCountHint": "解禁チェッカー"
+        }
+      ],
+      "offers": [
+        {
+          "id": "utb2702-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 予約チェック",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約開始をチェック（12/23発売予定）",
+          "talent": "解禁待ち",
+          "price": 1400,
+          "status": "解禁待ち",
+          "artworkStatus": "絵柄解禁待ち",
+          "url": "https://www.amazon.co.jp/s?k=%E3%82%A2%E3%83%83%E3%83%97%E3%83%88%E3%82%A5%E3%83%9C%E3%83%BC%E3%82%A4+2027%E5%B9%B42%E6%9C%88%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "blt-2027-02-forecast",
+      "title": "B.L.T. 2027年2月号【次号解禁ウォッチ】",
+      "series": "B.L.T.",
+      "issueLabel": "2027年2月号（予定）",
+      "publisher": "東京ニュース通信社",
+      "category": "idol",
+      "releaseDate": "2026-12-24",
+      "price": 1430,
+      "coverTalents": [
+        "表紙・特典解禁待ち（例月24日発売）"
+      ],
+      "featuredTalents": [
+        "B.L.T.",
+        "ポスター"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#0F766E",
+        "#14B8A6",
+        "#5EEAD4"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "⏳ 恒例：別冊両面超ビッグポスター（解禁待ち）"
+        }
+      ],
+      "printOnlyNote": "毎月24日発売！例年セブンネット限定ポストカード複数種＆HMV特典が出る超人気号の先取り枠",
+      "summary": "年末12月24日発売予定のB.L.T. 2月号！表紙＆7net/HMV特典の解禁をお楽しみに。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "セブンネットで「B.L.T. 2027年2月号」特典解禁を今すぐチェック",
+          "source": "セブンネット検索",
+          "url": "https://7net.omni7.jp/search?q=B.L.T.+2027%E5%B9%B42%E6%9C%88%E5%8F%B7+%E7%89%B9%E5%85%B8",
+          "photoCountHint": "解禁チェッカー"
+        }
+      ],
+      "offers": [
+        {
+          "id": "blt2702-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 予約チェック",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約開始をチェック（12/24発売予定）",
+          "talent": "解禁待ち",
+          "price": 1430,
+          "status": "解禁待ち",
+          "artworkStatus": "絵柄解禁待ち",
+          "url": "https://www.amazon.co.jp/s?k=B.L.T.+2027%E5%B9%B42%E6%9C%88%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "bomb-2027-02-forecast",
+      "title": "BOMB 2027年2月号【1月お楽しみ・解禁ウォッチ】",
+      "series": "BOMB",
+      "issueLabel": "2027年2月号（予定）",
+      "publisher": "ワン・パブリッシング",
+      "category": "idol",
+      "releaseDate": "2027-01-09",
+      "price": 1430,
+      "coverTalents": [
+        "表紙・特典解禁待ち（例月9日発売）"
+      ],
+      "featuredTalents": [
+        "BOMB",
+        "ポスター"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#DB2777",
+        "#F472B6",
+        "#FBCFE8"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "⏳ 恒例：B2両面超ビッグポスター（解禁待ち）"
+        }
+      ],
+      "printOnlyNote": "年明け1月9日発売予定！TSUTAYA/セブン限定版やポストカード解禁前の先取りウォッチ枠",
+      "summary": "2027年新年最初のBOMB！表紙解禁＆特典発表を楽しみに待てる2ヶ月先枠です。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "セブンネットで「BOMB 2027年2月号」特典解禁をチェック",
+          "source": "セブンネット検索",
+          "url": "https://7net.omni7.jp/search?q=BOMB+2027%E5%B9%B42%E6%9C%88%E5%8F%B7+%E7%89%B9%E5%85%B8",
+          "photoCountHint": "解禁チェッカー"
+        }
+      ],
+      "offers": [
+        {
+          "id": "bomb2702-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 予約チェック",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約開始をチェック（1/9発売予定）",
+          "talent": "解禁待ち",
+          "price": 1430,
+          "status": "解禁待ち",
+          "artworkStatus": "絵柄解禁待ち",
+          "url": "https://www.amazon.co.jp/s?k=BOMB+2027%E5%B9%B42%E6%9C%88%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "utb-2027-03-forecast",
+      "title": "アップトゥボーイ 2027年3月号【1月お楽しみ・解禁ウォッチ】",
+      "series": "アップトゥボーイ",
+      "issueLabel": "2027年3月号（予定）",
+      "publisher": "ワニブックス",
+      "category": "idol",
+      "releaseDate": "2027-01-23",
+      "price": 1400,
+      "coverTalents": [
+        "表紙・特典解禁待ち（例月23日発売）"
+      ],
+      "featuredTalents": [
+        "アップトゥボーイ",
+        "ポスター"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FDA4AF"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "⏳ 恒例：本誌特大両面ポスター付録（解禁待ち）"
+        }
+      ],
+      "printOnlyNote": "2ヶ月先の1月23日発売予定！例月セブン限定表紙＆ポストカード8種前後の豪華号",
+      "summary": "2027年1月下旬のアップトゥボーイ！発売2週間前ごろの特典解禁をワンタップ監視。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "セブンネットで「アップトゥボーイ 2027年3月号」特典解禁をチェック",
+          "source": "セブンネット検索",
+          "url": "https://7net.omni7.jp/search?q=%E3%82%A2%E3%83%83%E3%83%97%E3%83%88%E3%82%A5%E3%83%9C%E3%83%BC%E3%82%A4+2027%E5%B9%B43%E6%9C%88%E5%8F%B7+%E7%89%B9%E5%85%B8",
+          "photoCountHint": "解禁チェッカー"
+        }
+      ],
+      "offers": [
+        {
+          "id": "utb2703-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 予約チェック",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約開始をチェック（1/23発売予定）",
+          "talent": "解禁待ち",
+          "price": 1400,
+          "status": "解禁待ち",
+          "artworkStatus": "絵柄解禁待ち",
+          "url": "https://www.amazon.co.jp/s?k=%E3%82%A2%E3%83%83%E3%83%97%E3%83%88%E3%82%A5%E3%83%9C%E3%83%BC%E3%82%A4+2027%E5%B9%B43%E6%9C%88%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "blt-2027-03-forecast",
+      "title": "B.L.T. 2027年3月号【1月お楽しみ・解禁ウォッチ】",
+      "series": "B.L.T.",
+      "issueLabel": "2027年3月号（予定）",
+      "publisher": "東京ニュース通信社",
+      "category": "idol",
+      "releaseDate": "2027-01-24",
+      "price": 1430,
+      "coverTalents": [
+        "表紙・特典解禁待ち（例月24日発売）"
+      ],
+      "featuredTalents": [
+        "B.L.T.",
+        "ポスター"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#0F766E",
+        "#14B8A6",
+        "#5EEAD4"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "⏳ 恒例：別冊両面超ビッグポスター（解禁待ち）"
+        }
+      ],
+      "printOnlyNote": "2ヶ月先の1月24日発売予定！B.L.T.のセブン＆HMV特典解禁待ち枠",
+      "summary": "2027年1月下旬のB.L.T.！解禁され次第、特典ポストカード絵柄を横並び比較に追加できます。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "セブンネットで「B.L.T. 2027年3月号」特典解禁をチェック",
+          "source": "セブンネット検索",
+          "url": "https://7net.omni7.jp/search?q=B.L.T.+2027%E5%B9%B43%E6%9C%88%E5%8F%B7+%E7%89%B9%E5%85%B8",
+          "photoCountHint": "解禁チェッカー"
+        }
+      ],
+      "offers": [
+        {
+          "id": "blt2703-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 予約チェック",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約開始をチェック（1/24発売予定）",
+          "talent": "解禁待ち",
+          "price": 1430,
+          "status": "解禁待ち",
+          "artworkStatus": "絵柄解禁待ち",
+          "url": "https://www.amazon.co.jp/s?k=B.L.T.+2027%E5%B9%B43%E6%9C%88%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "bomb-2027-03-forecast",
+      "title": "BOMB 2027年3月号【2月お楽しみ・解禁ウォッチ】",
+      "series": "BOMB",
+      "issueLabel": "2027年3月号（予定）",
+      "publisher": "ワン・パブリッシング",
+      "category": "idol",
+      "releaseDate": "2027-02-09",
+      "price": 1430,
+      "coverTalents": [
+        "表紙・特典解禁待ち（例月9日発売）"
+      ],
+      "featuredTalents": [
+        "BOMB",
+        "ポスター"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#DB2777",
+        "#F472B6",
+        "#FBCFE8"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "⏳ 恒例：B2両面超ビッグポスター（解禁待ち）"
+        }
+      ],
+      "printOnlyNote": "3ヶ月先の2月9日発売予定！バレンタイン号の表紙＆限定特典解禁ウォッチ枠",
+      "summary": "2027年2月のBOMB！バレンタイン時期の恒例グラビア＆両面ポスター号の先取り枠です。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "セブンネットで「BOMB 2027年3月号」特典解禁をチェック",
+          "source": "セブンネット検索",
+          "url": "https://7net.omni7.jp/search?q=BOMB+2027%E5%B9%B43%E6%9C%88%E5%8F%B7+%E7%89%B9%E5%85%B8",
+          "photoCountHint": "解禁チェッカー"
+        }
+      ],
+      "offers": [
+        {
+          "id": "bomb2703-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 予約チェック",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約開始をチェック（2/9発売予定）",
+          "talent": "解禁待ち",
+          "price": 1430,
+          "status": "解禁待ち",
+          "artworkStatus": "絵柄解禁待ち",
+          "url": "https://www.amazon.co.jp/s?k=BOMB+2027%E5%B9%B43%E6%9C%88%E5%8F%B7&i=stripbooks"
+        }
+      ]
+    },
+    {
+      "id": "blt-2027-04-forecast",
+      "title": "B.L.T. 2027年4月号【2月お楽しみ・解禁ウォッチ】",
+      "series": "B.L.T.",
+      "issueLabel": "2027年4月号（予定）",
+      "publisher": "東京ニュース通信社",
+      "category": "idol",
+      "releaseDate": "2027-02-24",
+      "price": 1430,
+      "coverTalents": [
+        "表紙・特典解禁待ち（例月24日発売）"
+      ],
+      "featuredTalents": [
+        "B.L.T.",
+        "ポスター"
+      ],
+      "coverImageUrl": "",
+      "palette": [
+        "#0F766E",
+        "#14B8A6",
+        "#5EEAD4"
+      ],
+      "includedBonuses": [
+        {
+          "type": "poster",
+          "label": "⏳ 恒例：別冊両面超ビッグポスター（解禁待ち）"
+        }
+      ],
+      "printOnlyNote": "3ヶ月先の2月24日発売予定！春の大型特集＆ストア限定特典解禁ウォッチ枠",
+      "summary": "2027年2月下旬のB.L.T.！3ヶ月先までの楽しみスケジュールに登録しておけます。",
+      "gallery": [],
+      "pressArticles": [
+        {
+          "title": "セブンネットで「B.L.T. 2027年4月号」特典解禁をチェック",
+          "source": "セブンネット検索",
+          "url": "https://7net.omni7.jp/search?q=B.L.T.+2027%E5%B9%B44%E6%9C%88%E5%8F%B7+%E7%89%B9%E5%85%B8",
+          "photoCountHint": "解禁チェッカー"
+        }
+      ],
+      "offers": [
+        {
+          "id": "blt2704-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 予約チェック",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで予約開始をチェック（2/24発売予定）",
+          "talent": "解禁待ち",
+          "price": 1430,
+          "status": "解禁待ち",
+          "artworkStatus": "絵柄解禁待ち",
+          "url": "https://www.amazon.co.jp/s?k=B.L.T.+2027%E5%B9%B44%E6%9C%88%E5%8F%B7&i=stripbooks"
         }
       ]
     }

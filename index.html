@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Happy Magazine Center｜アイドル雑誌・週刊誌ポスター・写真集 特典＆発売日ダッシュボード</title>
+    <title>Happy Magazine Center｜アイドル雑誌・写真集・カレンダー 特典＆3ヶ月発売予定ダッシュボード</title>
     <meta
       name="description"
-      content="B.L.T.、BOMB、アップトゥボーイ、週刊プレイボーイ、週刊誌ポスター付録、写真集のセブンネット・楽天ブックス・HMV・Amazon・TSUTAYA限定特典と発売日をスマホで一括チェック。"
+      content="B.L.T.、BOMB、アップトゥボーイ、週刊誌ポスター、写真集、2027年カレンダーのセブンネット・楽天ブックス・HMV・Amazon限定特典と3ヶ月先までの発売予定をスマホでワンタップ確認。"
     />
     <meta name="theme-color" content="#E11D48" />
     <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
@@ -31,7 +31,7 @@
 
     <main class="app-main">
       <!-- Tab 1: Discover -->
-      <section id="tab-discover" class="tab-panel active" aria-label="雑誌・写真集を探す">
+      <section id="tab-discover" class="tab-panel active" aria-label="雑誌・写真集・カレンダーを探す">
         <div id="countdownStrip" class="countdown-strip" aria-label="発売カウントダウン"></div>
 
         <div class="controls-card">
@@ -42,7 +42,7 @@
                 id="searchInput"
                 class="search-input"
                 type="search"
-                placeholder="雑誌名・タレント名・ポスター・ポストカードで検索"
+                placeholder="雑誌名・タレント名・カレンダー・ポスター・特典で検索"
                 autocomplete="off"
               />
               <button id="clearSearchBtn" class="clear-btn" type="button" aria-label="検索をクリア">✕</button>
@@ -58,14 +58,19 @@
           <div id="categoryChips" class="chip-scroll" role="tablist" aria-label="カテゴリ絞り込み"></div>
           <div id="bonusChips" class="chip-scroll" aria-label="特典タイプ絞り込み"></div>
           <div id="storeChips" class="chip-scroll" aria-label="ストア絞り込み"></div>
+          <div id="statusChips" class="chip-scroll" aria-label="ステータス絞り込み"></div>
         </div>
 
         <div class="results-bar">
           <div id="resultsCount" class="results-count"></div>
-          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <div class="results-controls">
             <label class="toggle-inline">
               <input id="bonusOnlyToggle" type="checkbox" />
               <span>特典・ポスターのみ</span>
+            </label>
+            <label class="toggle-inline">
+              <input id="hideSkippedToggle" type="checkbox" />
+              <span>🙅買わないを隠す</span>
             </label>
             <div class="view-switch" role="group" aria-label="表示切替">
               <button id="viewModeCompactBtn" class="view-switch-btn active" type="button" data-view-mode="compact">⊞ 写真グリッド</button>
@@ -78,19 +83,29 @@
         <div id="magazineGrid" class="compact-grid"></div>
       </section>
 
-      <!-- Tab 2: Calendar -->
-      <section id="tab-calendar" class="tab-panel" aria-label="発売カレンダー">
-        <div class="panel-card">
-          <h2 class="panel-heading">📅 発売日カウントダウン＆スケジュール</h2>
+      <!-- Tab 2: 3-Month Upcoming Excitement Corner -->
+      <section id="tab-calendar" class="tab-panel" aria-label="これから3ヶ月のお楽しみコーナー">
+        <div class="panel-card excitement-header-card">
+          <h2 class="panel-heading">🎉 これから3ヶ月のお楽しみコーナー</h2>
           <p class="panel-desc">
-            これから発売されるアイドル誌・週刊誌・女性誌・写真集を日付順に整理しています。タップすると特典絵柄の横並び比較が開きます。
+            今月〜3ヶ月先（2027年2月）までの発売予定を月別ロードマップでチェック！各カードの<strong>🔍</strong>でワンタップ写真＆特典確認、<strong>マークボタン</strong>で「検討中・買う予定・買わない」をすぐ仕分けできます。
           </p>
         </div>
         <div id="calendarContainer"></div>
       </section>
 
-      <!-- Tab 3: Oshi & Shelf -->
-      <section id="tab-oshi" class="tab-panel" aria-label="推しワードとマイ棚">
+      <!-- Tab 3: Oshi & Status Corner Shelf -->
+      <section id="tab-oshi" class="tab-panel" aria-label="推しワードとマークコーナー">
+        <div class="panel-card">
+          <h2 class="panel-heading">🏷 マークコーナー＆マイ棚</h2>
+          <p class="panel-desc">
+            「🤔 検討中」「👀 買う予定」「🛒 予約済」「✅ 購入済」「🙅 買わない」をひと目で管理。下のパネルをタップするとステータス別に絞り込めます。
+          </p>
+          <div id="shelfCornerGrid" class="status-corner-grid"></div>
+          <div id="shelfStats" class="stats-row"></div>
+          <div id="shelfList" class="timeline-list"></div>
+        </div>
+
         <div class="panel-card">
           <h2 class="panel-heading">🔥 推しワード・注目キーワード</h2>
           <p class="panel-desc">
@@ -109,13 +124,7 @@
         </div>
 
         <div class="panel-card">
-          <h2 class="panel-heading">🛒 予約・購入ステータス棚</h2>
-          <div id="shelfStats" class="stats-row"></div>
-          <div id="shelfList" class="timeline-list"></div>
-        </div>
-
-        <div class="panel-card">
-          <h2 class="panel-heading">➕ 見つけた雑誌・写真集をメモ登録</h2>
+          <h2 class="panel-heading">➕ 見つけた雑誌・写真集・カレンダーをメモ登録</h2>
           <p class="panel-desc">
             Xやニュースで見つけた新刊をその場で追加できます（Amazon基本＋特典メモに書いたストアのみノイズゼロ登録）。
           </p>
@@ -140,6 +149,7 @@
                 <option value="weekly">週刊誌・コミック誌</option>
                 <option value="fashion">女性誌・アイドル表紙</option>
                 <option value="photobook">写真集</option>
+                <option value="calendar">🗓 カレンダー</option>
               </select>
             </label>
             <label class="field-label">
@@ -162,14 +172,14 @@
         <div class="panel-card">
           <h2 class="panel-heading">⚡ 全ストア特典・横断検索ハブ</h2>
           <p class="panel-desc">
-            週刊誌・コミック誌・マイナー誌・写真集など、ありとあらゆる雑誌名やタレント名を入れるだけで、セブンネット・楽天ブックス・HMV・Amazon・TSUTAYAの検索リンクを一括生成します。
+            週刊誌・コミック誌・マイナー誌・写真集・カレンダーなど、ありとあらゆるタイトルやタレント名を入れるだけで、セブンネット・楽天ブックス・HMV・Amazon・TSUTAYAの検索リンクを一括生成します。
           </p>
           <div class="inline-form">
             <input
               id="hubQueryInput"
               class="text-input"
               type="search"
-              placeholder="雑誌名・号数・アイドル名を入力"
+              placeholder="雑誌名・号数・アイドル名・カレンダーを入力"
               value="アップトゥボーイ 2027年1月号"
             />
           </div>
@@ -193,12 +203,12 @@
           <span>一覧・検索</span>
         </button>
         <button class="nav-btn" data-tab="calendar" type="button">
-          <span class="nav-icon" aria-hidden="true">📅</span>
-          <span>発売予定</span>
+          <span class="nav-icon" aria-hidden="true">🎉</span>
+          <span>3ヶ月予定</span>
         </button>
         <button class="nav-btn" data-tab="oshi" type="button">
-          <span class="nav-icon" aria-hidden="true">★</span>
-          <span>推し・棚</span>
+          <span class="nav-icon" aria-hidden="true">🏷</span>
+          <span>マーク・棚</span>
         </button>
         <button class="nav-btn" data-tab="hub" type="button">
           <span class="nav-icon" aria-hidden="true">⚡</span>
@@ -218,25 +228,50 @@
       </div>
     </div>
 
-    <!-- Fullscreen Photo Lightbox -->
-    <div id="photoLightbox" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="関連写真ビューア">
+    <!-- Quick 1-Tap Status Picker Sheet -->
+    <div id="statusPickerSheet" class="sheet-backdrop status-picker-backdrop" role="dialog" aria-modal="true" aria-labelledby="statusPickerTitle">
+      <div class="quick-status-dialog">
+        <div class="quick-status-header">
+          <div id="statusPickerItemMeta" class="quick-status-item-meta">
+            <h3 id="statusPickerTitle" class="sheet-header-title">ステータスを選択</h3>
+          </div>
+          <button id="statusPickerCloseBtn" class="sheet-close-btn" type="button" aria-label="閉じる">✕</button>
+        </div>
+        <div id="statusPickerGrid" class="quick-status-grid"></div>
+        <div class="quick-status-footer">
+          <button id="statusPickerClearBtn" class="quick-status-clear-btn" type="button">マーク解除</button>
+          <button id="statusPickerOpenDetailBtn" class="detail-trigger-btn" type="button">詳細・特典比較 →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fullscreen 1-Tap Quick-Check Photo Lightbox -->
+    <div id="photoLightbox" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="ワンタップ写真＆特典ビューア">
       <div class="lightbox-top">
-        <span id="lightboxCounter" class="lightbox-counter">1 / 1</span>
+        <div class="lightbox-top-left">
+          <span id="lightboxCounter" class="lightbox-counter">1 / 1</span>
+          <span id="lightboxTitleBadge" class="lightbox-title-badge"></span>
+        </div>
         <button id="lightboxCloseBtn" class="lightbox-close" type="button" aria-label="拡大表示を閉じる">✕</button>
       </div>
-      <div class="lightbox-stage">
+      <div id="lightboxStage" class="lightbox-stage">
         <button id="lightboxPrevBtn" class="lightbox-nav-btn prev" type="button" aria-label="前の写真">‹</button>
         <img id="lightboxImg" src="" alt="" referrerpolicy="no-referrer" />
         <button id="lightboxNextBtn" class="lightbox-nav-btn next" type="button" aria-label="次の写真">›</button>
       </div>
       <div class="lightbox-footer">
-        <p id="lightboxCaption" class="lightbox-caption"></p>
-        <div class="lightbox-actions">
-          <span id="lightboxSource" class="lightbox-source"></span>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <button id="lightboxOpenItemBtn" class="detail-trigger-btn" type="button">雑誌の詳細へ</button>
+        <div id="lightboxThumbs" class="lightbox-thumbs" aria-label="写真切替"></div>
+        <div id="lightboxOfferBar" class="lightbox-offer-bar"></div>
+        <div id="lightboxStatusBar" class="lightbox-status-row" aria-label="ワンタップステータス登録"></div>
+        <div class="lightbox-meta-row">
+          <div style="min-width:0;flex:1;">
+            <p id="lightboxCaption" class="lightbox-caption"></p>
+            <span id="lightboxSource" class="lightbox-source"></span>
+          </div>
+          <div class="lightbox-meta-btns">
+            <button id="lightboxOpenItemBtn" class="lightbox-detail-btn" type="button">全特典を比較</button>
             <a id="lightboxArticleLink" class="lightbox-open-btn" href="#" target="_blank" rel="noopener noreferrer">
-              出典・購入ページ ↗
+              販売ページ ↗
             </a>
           </div>
         </div>

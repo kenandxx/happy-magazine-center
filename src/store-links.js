@@ -76,6 +76,7 @@ export const CATEGORY_META = {
   weekly: { label: '週刊誌・コミック誌' },
   fashion: { label: '女性誌・アイドル表紙' },
   photobook: { label: '写真集' },
+  calendar: { label: '🗓 カレンダー' },
 };
 
 export function buildAllStoreSearchLinks(keyword, bonusOnly = true) {

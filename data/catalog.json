@@ -1,8 +1,648 @@
 {
-  "updatedAt": "2026-11-21 23:55 JST",
-  "referenceDate": "2026-11-21",
+  "updatedAt": "2026-11-22T10:54:23+09:00",
+  "referenceDate": "2026-11-22",
   "policy": "Amazonは基本購入先として常に表示。Amazon以外のストア（セブンネット・楽天ブックス・HMV・TSUTAYA）は確認済みのストア限定特典が付く場合のみ表示。",
   "items": [
+    {
+      "id": "auto-hm-9784334111625",
+      "isbn": "9784334111625",
+      "title": "冴木柚葉1st写真集 らしさの途中。",
+      "series": "光文社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "光文社",
+      "category": "photobook",
+      "releaseDate": "2026-10-15",
+      "price": 3630,
+      "coverTalents": [
+        "冴木柚葉"
+      ],
+      "featuredTalents": [
+        "冴木柚葉"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784334111625.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-22",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "光文社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "光文社より発売の注目写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784334111625.jpg",
+          "caption": "冴木柚葉1st写真集 らしさの途中。 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4334111629"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "冴木柚葉1st写真集 らしさの途中。（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784334111625",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784334111625-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784334111625）",
+          "talent": "冴木柚葉",
+          "price": 3630,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784334111625.jpg",
+          "url": "https://www.amazon.co.jp/dp/4334111629"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784334111632",
+      "isbn": "9784334111632",
+      "title": "ROAD AHEAD : 大谷亮平1st写真集",
+      "series": "光文社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "光文社",
+      "category": "photobook",
+      "releaseDate": "2026-10-17",
+      "price": 4500,
+      "coverTalents": [
+        "大谷亮平"
+      ],
+      "featuredTalents": [
+        "大谷亮平"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784334111632.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-22",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "光文社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "光文社より発売の注目写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784334111632.jpg",
+          "caption": "ROAD AHEAD : 大谷亮平1st写真集 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4334111637"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "ROAD AHEAD : 大谷亮平1st写真集（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784334111632",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784334111632-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784334111632）",
+          "talent": "大谷亮平",
+          "price": 4500,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784334111632.jpg",
+          "url": "https://www.amazon.co.jp/dp/4334111637"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784065459966",
+      "isbn": "9784065459966",
+      "title": "機微 : 日向坂46金村美玖2nd写真集",
+      "series": "講談社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "講談社",
+      "category": "photobook",
+      "releaseDate": "2026-10-20",
+      "price": 2750,
+      "coverTalents": [
+        "日向坂46金村美玖"
+      ],
+      "featuredTalents": [
+        "日向坂46金村美玖"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784065459966.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-22",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "講談社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "講談社より発売の注目写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784065459966.jpg",
+          "caption": "機微 : 日向坂46金村美玖2nd写真集 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4065459966"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "機微 : 日向坂46金村美玖2nd写真集（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784065459966",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784065459966-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784065459966）",
+          "talent": "日向坂46金村美玖",
+          "price": 2750,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784065459966.jpg",
+          "url": "https://www.amazon.co.jp/dp/4065459966"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784847087004",
+      "isbn": "9784847087004",
+      "title": "さくら : 小田さくら写真集",
+      "series": "ワニブックス",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "ワニブックス",
+      "category": "photobook",
+      "releaseDate": "2026-10-20",
+      "price": 3630,
+      "coverTalents": [
+        "小田さくら"
+      ],
+      "featuredTalents": [
+        "小田さくら"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784847087004.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-22",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "ワニブックス近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "ワニブックスより発売の注目写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784847087004.jpg",
+          "caption": "さくら : 小田さくら写真集 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4847087003"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "さくら : 小田さくら写真集（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784847087004",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784847087004-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784847087004）",
+          "talent": "小田さくら",
+          "price": 3630,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784847087004.jpg",
+          "url": "https://www.amazon.co.jp/dp/4847087003"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784847086922",
+      "isbn": "9784847086922",
+      "title": "一等星 : もものすけ写真集",
+      "series": "ワニブックス",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "ワニブックス",
+      "category": "photobook",
+      "releaseDate": "2026-10-20",
+      "price": 3850,
+      "coverTalents": [
+        "もものすけ"
+      ],
+      "featuredTalents": [
+        "もものすけ"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784847086922.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-22",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "ワニブックス近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "ワニブックスより発売の注目写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784847086922.jpg",
+          "caption": "一等星 : もものすけ写真集 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4847086929"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "一等星 : もものすけ写真集（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784847086922",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784847086922-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784847086922）",
+          "talent": "もものすけ",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784847086922.jpg",
+          "url": "https://www.amazon.co.jp/dp/4847086929"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784575321135",
+      "isbn": "9784575321135",
+      "title": "『ぜんぶキミのせい　緒方咲写真集』",
+      "series": "双葉社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "双葉社",
+      "category": "r18",
+      "releaseDate": "2026-10-21",
+      "price": 4180,
+      "coverTalents": [
+        "緒方咲"
+      ],
+      "featuredTalents": [
+        "緒方咲"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784575321135.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-22",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "双葉社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "双葉社より発売の注目R18写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784575321135.jpg",
+          "caption": "『ぜんぶキミのせい　緒方咲写真集』 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4575321133"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "『ぜんぶキミのせい　緒方咲写真集』（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784575321135",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784575321135-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784575321135）",
+          "talent": "緒方咲",
+          "price": 4180,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784575321135.jpg",
+          "url": "https://www.amazon.co.jp/dp/4575321133"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784575321128",
+      "isbn": "9784575321128",
+      "title": "あべみほ写真集（仮）",
+      "series": "双葉社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "双葉社",
+      "category": "photobook",
+      "releaseDate": "2026-10-21",
+      "price": 4180,
+      "coverTalents": [
+        "あべみほ"
+      ],
+      "featuredTalents": [
+        "あべみほ"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784575321128.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-22",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "双葉社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "双葉社より発売の注目写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784575321128.jpg",
+          "caption": "あべみほ写真集（仮） 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4575321125"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "あべみほ写真集（仮）（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784575321128",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784575321128-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784575321128）",
+          "talent": "あべみほ",
+          "price": 4180,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784575321128.jpg",
+          "url": "https://www.amazon.co.jp/dp/4575321125"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784334111649",
+      "isbn": "9784334111649",
+      "title": "三田悠貴　2nd写真集　Sweet Escape",
+      "series": "光文社",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "光文社",
+      "category": "photobook",
+      "releaseDate": "2026-10-23",
+      "price": 3850,
+      "coverTalents": [
+        "三田悠貴"
+      ],
+      "featuredTalents": [
+        "三田悠貴"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784334111649.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-22",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "光文社近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "光文社より発売の注目写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784334111649.jpg",
+          "caption": "三田悠貴　2nd写真集　Sweet Escape 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4334111645"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "三田悠貴　2nd写真集　Sweet Escape（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784334111649",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784334111649-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784334111649）",
+          "talent": "三田悠貴",
+          "price": 3850,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784334111649.jpg",
+          "url": "https://www.amazon.co.jp/dp/4334111645"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784847086915",
+      "isbn": "9784847086915",
+      "title": "新居歩美1st写真集 『 あゆちひとくち 』",
+      "series": "ワニブックス",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "ワニブックス",
+      "category": "photobook",
+      "releaseDate": "2026-10-23",
+      "price": 3520,
+      "coverTalents": [
+        "新居歩美"
+      ],
+      "featuredTalents": [
+        "新居歩美"
+      ],
+      "palette": [
+        "#E11D48",
+        "#FB7185",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784847086915.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-22",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "ワニブックス近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "重版出来予定 書店発売日 2026年10月23日 新居歩美1st写真集 『 あゆちひとくち 』 （ワニブックス） 唐木 貴央(写真) [ 芸能・タレント ]",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784847086915.jpg",
+          "caption": "新居歩美1st写真集 『 あゆちひとくち 』 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4847086910"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "新居歩美1st写真集 『 あゆちひとくち 』（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784847086915",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784847086915-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784847086915）",
+          "talent": "新居歩美",
+          "price": 3520,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784847086915.jpg",
+          "url": "https://www.amazon.co.jp/dp/4847086910"
+        }
+      ]
+    },
+    {
+      "id": "auto-hm-9784801995161",
+      "isbn": "9784801995161",
+      "title": "Mailani : 比留川マイ写真集",
+      "series": "竹書房",
+      "issueLabel": "版元ドットコム自動発見",
+      "publisher": "竹書房",
+      "category": "r18",
+      "releaseDate": "2026-10-23",
+      "price": 4620,
+      "coverTalents": [
+        "比留川マイ"
+      ],
+      "featuredTalents": [
+        "比留川マイ"
+      ],
+      "palette": [
+        "#881337",
+        "#BE123C",
+        "#FFE4E6"
+      ],
+      "coverImageUrl": "https://img.hanmoto.com/bd/img/9784801995161.jpg",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-22",
+      "discoveredSource": "hanmoto",
+      "includedBonuses": [],
+      "printOnlyNote": "竹書房近刊RSSより自動発見。基本購入先はAmazon（他ストアは限定特典確認時のみ表示）。",
+      "summary": "竹書房より発売の注目R18写真集。",
+      "gallery": [
+        {
+          "url": "https://img.hanmoto.com/bd/img/9784801995161.jpg",
+          "caption": "Mailani : 比留川マイ写真集 公式書影",
+          "source": "版元ドットコム / openBD",
+          "kind": "cover",
+          "articleUrl": "https://www.amazon.co.jp/dp/4801995160"
+        }
+      ],
+      "pressArticles": [
+        {
+          "title": "Mailani : 比留川マイ写真集（版元ドットコム書誌ページ）",
+          "source": "版元ドットコム",
+          "url": "https://www.hanmoto.com/bd/isbn/9784801995161",
+          "photoCountHint": "公式書誌情報"
+        }
+      ],
+      "offers": [
+        {
+          "id": "auto-hm-9784801995161-amazon",
+          "store": "amazon",
+          "hasStoreExclusiveBonus": false,
+          "edition": "Amazon 通常版",
+          "bonusTypes": [
+            "standard"
+          ],
+          "bonusText": "Amazonで確認（ISBN 9784801995161）",
+          "talent": "比留川マイ",
+          "price": 4620,
+          "status": "available",
+          "artworkStatus": "revealed",
+          "imageUrl": "https://img.hanmoto.com/bd/img/9784801995161.jpg",
+          "url": "https://www.amazon.co.jp/dp/4801995160"
+        }
+      ]
+    },
     {
       "id": "auto-hm-9784847087011",
       "isbn": "9784847087011",
@@ -11163,17 +11803,18 @@
       ]
     }
   ],
-  "lastAutoCheckedAt": "2026-11-21T20:01:26+09:00",
+  "lastAutoCheckedAt": "2026-11-22T10:54:23+09:00",
   "autoSources": {
     "prtimesPublishers": 15,
     "hanmotoPublishers": 10,
     "sevenNetLive": true,
     "hmvRssLive": true,
     "bltWebRssLive": true,
+    "masterpiecesStockLive": true,
     "rakutenApiConnected": false,
     "rakutenOpenApi2026": false,
-    "lastRunAt": "2026-11-21T20:01:26+09:00",
-    "lastRunSummary": "PR TIMES 15社(+0) / 版元ドットコム10社(+18) / 7net(+0作品・+6特典) / HMV・BLT(+10記事)"
+    "lastRunAt": "2026-11-22T10:54:23+09:00",
+    "lastRunSummary": "PR TIMES 15社(+0) / 版元ドットコム10社(+10) / 7net(+0作品・+0特典) / HMV・BLT(+0記事) / 名作在庫(71作品更新)"
   },
   "masterpieces": [
     {
@@ -11194,7 +11835,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫14冊 ／ 楽天ブックス: 在庫あり ／ 7net: 品切れ",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫14冊",
         "rakutenStatus": "在庫あり",
         "sevenNetStatus": "OutOfStock"
@@ -11267,7 +11908,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "在庫あり"
       },
@@ -11347,7 +11988,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫129冊 ／ 楽天ブックス: 在庫あり ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫129冊",
         "rakutenStatus": "在庫あり",
         "sevenNetStatus": "InStock"
@@ -11420,7 +12061,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫15冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫15冊",
         "rakutenStatus": "在庫あり"
       },
@@ -11496,7 +12137,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫あり ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫あり",
         "rakutenStatus": "在庫あり"
       },
@@ -11572,7 +12213,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "在庫あり"
       },
@@ -11648,7 +12289,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫48冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫48冊",
         "rakutenStatus": "在庫あり"
       },
@@ -11724,7 +12365,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫22冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫22冊",
         "rakutenStatus": "在庫あり"
       },
@@ -11800,7 +12441,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 在庫11冊 ／ 楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫11冊",
         "rakutenStatus": "ご注文できない商品"
       },
@@ -11876,7 +12517,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       },
@@ -11945,7 +12586,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫20冊",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫20冊"
       },
       "title": "乃木坂46 梅澤美波 2nd写真集『透明な覚悟』",
@@ -12019,7 +12660,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "rakutenStatus": "在庫あり"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18507785/",
@@ -12098,7 +12739,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫14冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫14冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12174,7 +12815,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫76冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫76冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12250,7 +12891,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫12冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫12冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12326,7 +12967,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り3冊",
         "rakutenStatus": "在庫あり",
         "sevenNetStatus": "InStock"
@@ -12402,7 +13043,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫26冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫26冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12476,7 +13117,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12545,7 +13186,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫あり ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫あり",
         "rakutenStatus": "在庫あり"
       },
@@ -12619,7 +13260,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り4冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り4冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12688,7 +13329,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫10冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫10冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12761,9 +13402,9 @@
       "stockInfo": {
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
-        "detail": "紀伊國屋: 在庫285冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
-        "kinokuniyaStatus": "在庫285冊",
+        "detail": "紀伊國屋: 在庫284冊 ／ 楽天ブックス: 在庫あり",
+        "checkedAt": "2026-11-22",
+        "kinokuniyaStatus": "在庫284冊",
         "rakutenStatus": "在庫あり"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18609230/",
@@ -12787,7 +13428,7 @@
       ],
       "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/2457/9784087902457_1_89.jpg?downsize=600:*",
       "includedBonuses": [],
-      "printOnlyNote": "⭐ 2026年重版決定・レビュー満点★5.0。✅ 新品在庫あり（紀伊國屋: 在庫285冊 ／ 楽天ブックス: 在庫あり）",
+      "printOnlyNote": "⭐ 2026年重版決定・レビュー満点★5.0。✅ 新品在庫あり（紀伊國屋: 在庫284冊 ／ 楽天ブックス: 在庫あり）",
       "summary": "2026年最注目の新世代グラビアスター待望の1st。発売後すぐ重版決定＆高評価続出の注目名作。",
       "gallery": [
         {
@@ -12836,7 +13477,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り3冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12905,7 +13546,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫26冊",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫26冊"
       },
       "title": "SKE48 野村実代 1st写真集『美しい方程式』",
@@ -12979,7 +13620,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "rakutenStatus": "ご注文できない商品"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18106675/",
@@ -13047,7 +13688,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-21"
+        "checkedAt": "2026-11-22"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18329491/",
       "title": "瀬戸環奈 2nd写真集『好きになっちゃう』",
@@ -13114,7 +13755,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-21"
+        "checkedAt": "2026-11-22"
       },
       "title": "石川澪 5周年記念写真集『BELLEZA』",
       "series": "2022〜2026 殿堂名作",
@@ -13180,7 +13821,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "rakutenStatus": "在庫あり"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/17990708/",
@@ -13250,7 +13891,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "rakutenStatus": "在庫あり"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18400936/",
@@ -13320,7 +13961,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "rakutenStatus": "在庫あり"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18145828/",
@@ -13388,7 +14029,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-21"
+        "checkedAt": "2026-11-22"
       },
       "title": "宮下玲奈 写真集『無垢な季節』",
       "series": "2022〜2026 殿堂名作",
@@ -13454,7 +14095,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り2冊",
         "sevenNetStatus": "InStock"
       },
@@ -13534,7 +14175,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "在庫あり"
       },
@@ -13609,7 +14250,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り2冊",
         "sevenNetStatus": "InStock"
       },
@@ -13684,7 +14325,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り2冊",
         "sevenNetStatus": "InStock"
       },
@@ -13761,7 +14402,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "rakutenStatus": "ご注文できない商品"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18746613/",
@@ -13838,7 +14479,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫6冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫6冊",
         "rakutenStatus": "在庫あり"
       },
@@ -13909,7 +14550,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       },
@@ -14036,7 +14677,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り3冊",
         "rakutenStatus": "在庫あり"
       }
@@ -14107,7 +14748,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫37冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫37冊",
         "rakutenStatus": "在庫あり"
       }
@@ -14176,7 +14817,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り3冊 ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り3冊",
         "sevenNetStatus": "InStock"
       }
@@ -14252,7 +14893,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫5冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫5冊",
         "rakutenStatus": "在庫あり"
       }
@@ -14328,7 +14969,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       }
@@ -14399,7 +15040,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫16冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫16冊",
         "rakutenStatus": "在庫あり"
       }
@@ -14475,7 +15116,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫24冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫24冊",
         "rakutenStatus": "在庫あり"
       }
@@ -14546,7 +15187,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫289冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫289冊",
         "rakutenStatus": "在庫あり"
       }
@@ -14616,7 +15257,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "紀伊國屋: 注文不可（在庫なし）",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "注文不可（在庫なし）"
       }
     },
@@ -14686,7 +15327,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り4冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り4冊",
         "rakutenStatus": "在庫あり"
       }
@@ -14762,7 +15403,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "在庫あり"
       }
@@ -14838,7 +15479,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫29冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫29冊",
         "rakutenStatus": "在庫あり"
       }
@@ -14909,7 +15550,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "在庫あり"
       }
@@ -14985,7 +15626,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       }
@@ -15056,7 +15697,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫あり ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫あり",
         "rakutenStatus": "在庫あり"
       }
@@ -15130,7 +15771,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り3冊",
         "rakutenStatus": "在庫あり"
       }
@@ -15204,7 +15845,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫7冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "在庫7冊",
         "rakutenStatus": "在庫あり"
       }
@@ -15279,7 +15920,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり",
         "sevenNetStatus": "InStock"
@@ -15348,7 +15989,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "紀伊國屋: 注文不可（在庫なし）",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "注文不可（在庫なし）"
       }
     },
@@ -15421,7 +16062,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "ご注文できない商品"
       }
@@ -15497,7 +16138,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "ご注文できない商品"
       }
@@ -15572,7 +16213,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り3冊",
         "rakutenStatus": "在庫あり",
         "sevenNetStatus": "InStock"
@@ -15647,7 +16288,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       }
@@ -15718,7 +16359,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-21"
+        "checkedAt": "2026-11-22"
       }
     },
     {
@@ -15784,7 +16425,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-21"
+        "checkedAt": "2026-11-22"
       }
     },
     {
@@ -15850,7 +16491,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-21"
+        "checkedAt": "2026-11-22"
       }
     },
     {
@@ -15917,7 +16558,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       }
@@ -15985,7 +16626,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-21"
+        "checkedAt": "2026-11-22"
       }
     },
     {
@@ -16052,7 +16693,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-21"
+        "checkedAt": "2026-11-22"
       }
     },
     {
@@ -16130,7 +16771,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       }
@@ -16204,7 +16845,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り1冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "残り1冊",
         "rakutenStatus": "在庫あり"
       }
@@ -16280,7 +16921,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "ご注文できない商品"
       }
@@ -16358,11 +16999,11 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-21",
+        "checkedAt": "2026-11-22",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "ご注文できない商品"
       }
     }
   ],
-  "masterpiecesCheckedAt": "2026-11-21 23:55 JST"
+  "masterpiecesCheckedAt": "2026-11-22T10:54:23+09:00"
 }

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-22T10:54:23+09:00",
-  "referenceDate": "2026-11-22",
+  "updatedAt": "2026-11-23T11:14:50+09:00",
+  "referenceDate": "2026-11-23",
   "policy": "Amazonは基本購入先として常に表示。Amazon以外のストア（セブンネット・楽天ブックス・HMV・TSUTAYA）は確認済みのストア限定特典が付く場合のみ表示。",
   "items": [
     {
@@ -4141,7 +4141,14 @@
           "articleUrl": "https://books.rakuten.co.jp/rb/18805552/"
         }
       ],
-      "pressArticles": [],
+      "pressArticles": [
+        {
+          "title": "ミュージカル「忍たま乱太郎」出演・古賀瑠の初写真集は自らデザインを手がけた意欲作！「“ジャケ買い”してもらえたらうれしい」",
+          "source": "PR TIMES（東京ニュース通信社）",
+          "url": "https://prtimes.jp/main/html/rd/p/000003601.000006568.html",
+          "photoCountHint": "自動検出プレスリリース"
+        }
+      ],
       "offers": [
         {
           "id": "koga-rui-7net-signed",
@@ -11803,7 +11810,7 @@
       ]
     }
   ],
-  "lastAutoCheckedAt": "2026-11-22T10:54:23+09:00",
+  "lastAutoCheckedAt": "2026-11-23T11:14:50+09:00",
   "autoSources": {
     "prtimesPublishers": 15,
     "hanmotoPublishers": 10,
@@ -11813,8 +11820,8 @@
     "masterpiecesStockLive": true,
     "rakutenApiConnected": false,
     "rakutenOpenApi2026": false,
-    "lastRunAt": "2026-11-22T10:54:23+09:00",
-    "lastRunSummary": "PR TIMES 15社(+0) / 版元ドットコム10社(+10) / 7net(+0作品・+0特典) / HMV・BLT(+0記事) / 名作在庫(71作品更新)"
+    "lastRunAt": "2026-11-23T11:14:50+09:00",
+    "lastRunSummary": "PR TIMES 15社(+0) / 版元ドットコム10社(+0) / 7net(+0作品・+0特典) / HMV・BLT(+1記事) / 名作在庫(71作品更新)"
   },
   "masterpieces": [
     {
@@ -11834,9 +11841,9 @@
       "stockInfo": {
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
-        "detail": "紀伊國屋: 在庫14冊 ／ 楽天ブックス: 在庫あり ／ 7net: 品切れ",
-        "checkedAt": "2026-11-22",
-        "kinokuniyaStatus": "在庫14冊",
+        "detail": "紀伊國屋: 在庫13冊 ／ 楽天ブックス: 在庫あり ／ 7net: 品切れ",
+        "checkedAt": "2026-11-23",
+        "kinokuniyaStatus": "在庫13冊",
         "rakutenStatus": "在庫あり",
         "sevenNetStatus": "OutOfStock"
       },
@@ -11864,7 +11871,7 @@
       ],
       "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/0613/9784065360613_1_4.jpg?downsize=600:*",
       "includedBonuses": [],
-      "printOnlyNote": "👑 2025年オリコン年間1位・12.4万部。✅ 新品在庫あり（紀伊國屋: 在庫14冊 ／ 楽天ブックス: 在庫あり ／ 7net: 品切れ）",
+      "printOnlyNote": "👑 2025年オリコン年間1位・12.4万部。✅ 新品在庫あり（紀伊國屋: 在庫13冊 ／ 楽天ブックス: 在庫あり ／ 7net: 品切れ）",
       "summary": "2025年写真集年間ランキング総合1位（期間内12.4万部）。イタリアロケ256Pの大ボリュームで“井上和図鑑”と絶賛された絶対必携の1冊。",
       "gallery": [
         {
@@ -11908,7 +11915,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "在庫あり"
       },
@@ -11988,7 +11995,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫129冊 ／ 楽天ブックス: 在庫あり ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫129冊",
         "rakutenStatus": "在庫あり",
         "sevenNetStatus": "InStock"
@@ -12061,7 +12068,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫15冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫15冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12134,11 +12141,11 @@
         "reviewCount": 1
       },
       "stockInfo": {
-        "status": "in_stock",
-        "label": "✅ 新品在庫あり",
-        "detail": "紀伊國屋: 在庫あり ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
-        "kinokuniyaStatus": "在庫あり",
+        "status": "low_stock",
+        "label": "⚠️ 品薄・一部ストアのみ",
+        "detail": "紀伊國屋: 残り4冊 ／ 楽天ブックス: 在庫あり",
+        "checkedAt": "2026-11-23",
+        "kinokuniyaStatus": "残り4冊",
         "rakutenStatus": "在庫あり"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18064057/",
@@ -12164,7 +12171,7 @@
       ],
       "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/4795/9784096824795_1_2.jpg?downsize=600:*",
       "includedBonuses": [],
-      "printOnlyNote": "🥉 2025年オリコン年間3位・9.4万部。✅ 新品在庫あり（紀伊國屋: 在庫あり ／ 楽天ブックス: 在庫あり）",
+      "printOnlyNote": "🥉 2025年オリコン年間3位・9.4万部。⚠️ 品薄・一部ストアのみ（紀伊國屋: 残り4冊 ／ 楽天ブックス: 在庫あり）",
       "summary": "5期生ソロ1stトップバッターとしてポルトガルで撮影。9.4万部の特大ヒットを記録した珠玉の一冊。",
       "gallery": [
         {
@@ -12213,7 +12220,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "在庫あり"
       },
@@ -12289,7 +12296,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫48冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫48冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12365,7 +12372,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫22冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫22冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12441,7 +12448,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 在庫11冊 ／ 楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫11冊",
         "rakutenStatus": "ご注文できない商品"
       },
@@ -12517,7 +12524,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12586,7 +12593,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫20冊",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫20冊"
       },
       "title": "乃木坂46 梅澤美波 2nd写真集『透明な覚悟』",
@@ -12660,7 +12667,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "rakutenStatus": "在庫あり"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18507785/",
@@ -12739,7 +12746,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫14冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫14冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12815,7 +12822,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫76冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫76冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12891,7 +12898,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫12冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫12冊",
         "rakutenStatus": "在庫あり"
       },
@@ -12967,7 +12974,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り3冊",
         "rakutenStatus": "在庫あり",
         "sevenNetStatus": "InStock"
@@ -13043,7 +13050,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫26冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫26冊",
         "rakutenStatus": "在庫あり"
       },
@@ -13117,7 +13124,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       },
@@ -13186,7 +13193,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫あり ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫あり",
         "rakutenStatus": "在庫あり"
       },
@@ -13260,7 +13267,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り4冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り4冊",
         "rakutenStatus": "在庫あり"
       },
@@ -13329,7 +13336,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫10冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫10冊",
         "rakutenStatus": "在庫あり"
       },
@@ -13403,7 +13410,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫284冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫284冊",
         "rakutenStatus": "在庫あり"
       },
@@ -13476,9 +13483,9 @@
       "stockInfo": {
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
-        "detail": "紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
-        "kinokuniyaStatus": "残り3冊",
+        "detail": "紀伊國屋: 残り4冊 ／ 楽天ブックス: 在庫あり",
+        "checkedAt": "2026-11-23",
+        "kinokuniyaStatus": "残り4冊",
         "rakutenStatus": "在庫あり"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18429446/",
@@ -13502,7 +13509,7 @@
       ],
       "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/7737/9784065417737_1_2.jpg?downsize=600:*",
       "includedBonuses": [],
-      "printOnlyNote": "🏅 2026上半期女性5位・高評価★4.88。⚠️ 品薄・一部ストアのみ（紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり）",
+      "printOnlyNote": "🏅 2026上半期女性5位・高評価★4.88。⚠️ 品薄・一部ストアのみ（紀伊國屋: 残り4冊 ／ 楽天ブックス: 在庫あり）",
       "summary": "14年ぶりの写真集にして2026年上半期TOP5＆高評価★4.88を記録した圧倒的完成度の大人傑作。",
       "gallery": [
         {
@@ -13545,9 +13552,9 @@
       "stockInfo": {
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
-        "detail": "紀伊國屋: 在庫26冊",
-        "checkedAt": "2026-11-22",
-        "kinokuniyaStatus": "在庫26冊"
+        "detail": "紀伊國屋: 在庫25冊",
+        "checkedAt": "2026-11-23",
+        "kinokuniyaStatus": "在庫25冊"
       },
       "title": "SKE48 野村実代 1st写真集『美しい方程式』",
       "series": "2022〜2026 殿堂名作",
@@ -13571,7 +13578,7 @@
       ],
       "coverImageUrl": "https://img.hanmoto.com/bd/img/9784047382497.jpg",
       "includedBonuses": [],
-      "printOnlyNote": "🔥 3刷重版決定・2026ロングヒット。✅ 新品在庫あり（紀伊國屋: 在庫26冊）",
+      "printOnlyNote": "🔥 3刷重版決定・2026ロングヒット。✅ 新品在庫あり（紀伊國屋: 在庫25冊）",
       "summary": "“アイカツ体型”と抜群のスタイルが話題を呼び2026年11月に3刷重版決定した大ヒット1st。",
       "gallery": [
         {
@@ -13620,7 +13627,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "rakutenStatus": "ご注文できない商品"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18106675/",
@@ -13688,7 +13695,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-22"
+        "checkedAt": "2026-11-23"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18329491/",
       "title": "瀬戸環奈 2nd写真集『好きになっちゃう』",
@@ -13755,7 +13762,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-22"
+        "checkedAt": "2026-11-23"
       },
       "title": "石川澪 5周年記念写真集『BELLEZA』",
       "series": "2022〜2026 殿堂名作",
@@ -13821,7 +13828,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "rakutenStatus": "在庫あり"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/17990708/",
@@ -13891,7 +13898,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "rakutenStatus": "在庫あり"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18400936/",
@@ -13961,7 +13968,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "rakutenStatus": "在庫あり"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18145828/",
@@ -14029,7 +14036,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-22"
+        "checkedAt": "2026-11-23"
       },
       "title": "宮下玲奈 写真集『無垢な季節』",
       "series": "2022〜2026 殿堂名作",
@@ -14094,9 +14101,9 @@
       "stockInfo": {
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
-        "detail": "紀伊國屋: 残り2冊 ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-22",
-        "kinokuniyaStatus": "残り2冊",
+        "detail": "紀伊國屋: 残り3冊 ／ 7net: 在庫あり",
+        "checkedAt": "2026-11-23",
+        "kinokuniyaStatus": "残り3冊",
         "sevenNetStatus": "InStock"
       },
       "sevenNetUrl": "https://7net.omni7.jp/detail/1107457092.html",
@@ -14126,7 +14133,7 @@
       ],
       "coverImageUrl": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-book-m-catalog/ja_JP/dw3492ecf5/421699/1107457092.jpg?sw=1150",
       "includedBonuses": [],
-      "printOnlyNote": "👑 2024年オリコン年間写真集4位・7.9万部。⚠️ 品薄・一部ストアのみ（紀伊國屋: 残り2冊 ／ 7net: 在庫あり）",
+      "printOnlyNote": "👑 2024年オリコン年間写真集4位・7.9万部。⚠️ 品薄・一部ストアのみ（紀伊國屋: 残り3冊 ／ 7net: 在庫あり）",
       "summary": "日向坂46エース3名を各50P・計150P超で撮り下ろした写真集級ビジュアル誌。年間7.9万部突破の伝説バックナンバー！",
       "gallery": [
         {
@@ -14175,7 +14182,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "在庫あり"
       },
@@ -14250,7 +14257,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り2冊",
         "sevenNetStatus": "InStock"
       },
@@ -14324,9 +14331,9 @@
       "stockInfo": {
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
-        "detail": "紀伊國屋: 残り2冊 ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-22",
-        "kinokuniyaStatus": "残り2冊",
+        "detail": "紀伊國屋: お取り寄せ（品薄） ／ 7net: 在庫あり",
+        "checkedAt": "2026-11-23",
+        "kinokuniyaStatus": "お取り寄せ（品薄）",
         "sevenNetStatus": "InStock"
       },
       "sevenNetUrl": "https://7net.omni7.jp/detail/1107509099.html",
@@ -14354,7 +14361,7 @@
       ],
       "coverImageUrl": "https://img.hanmoto.com/bd/img/9784884186371.jpg",
       "includedBonuses": [],
-      "printOnlyNote": "📖 坂道3グループ合同・伝説の特集号。⚠️ 品薄・一部ストアのみ（紀伊國屋: 残り2冊 ／ 7net: 在庫あり）",
+      "printOnlyNote": "📖 坂道3グループ合同・伝説の特集号。⚠️ 品薄・一部ストアのみ（紀伊國屋: お取り寄せ（品薄） ／ 7net: 在庫あり）",
       "summary": "乃木坂46・櫻坂46・日向坂46の現在地を総力取材した永久保存版バックナンバー。",
       "gallery": [
         {
@@ -14402,7 +14409,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "rakutenStatus": "ご注文できない商品"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18746613/",
@@ -14476,11 +14483,11 @@
         "reviewCount": 3
       },
       "stockInfo": {
-        "status": "in_stock",
-        "label": "✅ 新品在庫あり",
-        "detail": "紀伊國屋: 在庫6冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
-        "kinokuniyaStatus": "在庫6冊",
+        "status": "low_stock",
+        "label": "⚠️ 品薄・一部ストアのみ",
+        "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
+        "checkedAt": "2026-11-23",
+        "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       },
       "rakutenUrl": "https://books.rakuten.co.jp/rb/18420157/",
@@ -14506,7 +14513,7 @@
       ],
       "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/9663/9784065419663_1_2.jpg?downsize=600:*",
       "includedBonuses": [],
-      "printOnlyNote": "📀 2025グラビア総決算ムック・高評価。✅ 新品在庫あり（紀伊國屋: 在庫6冊 ／ 楽天ブックス: 在庫あり）",
+      "printOnlyNote": "📀 2025グラビア総決算ムック・高評価。⚠️ 品薄・一部ストアのみ（紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり）",
       "summary": "2025年を彩った人気グラドルのベストグラビアを一挙収録した講談社ムック保存版。",
       "gallery": [
         {
@@ -14550,7 +14557,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       },
@@ -14677,7 +14684,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り3冊",
         "rakutenStatus": "在庫あり"
       }
@@ -14748,7 +14755,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫37冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫37冊",
         "rakutenStatus": "在庫あり"
       }
@@ -14817,7 +14824,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り3冊 ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り3冊",
         "sevenNetStatus": "InStock"
       }
@@ -14893,7 +14900,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫5冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫5冊",
         "rakutenStatus": "在庫あり"
       }
@@ -14969,7 +14976,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       }
@@ -15040,7 +15047,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫16冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫16冊",
         "rakutenStatus": "在庫あり"
       }
@@ -15116,7 +15123,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫24冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫24冊",
         "rakutenStatus": "在庫あり"
       }
@@ -15187,7 +15194,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫289冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫289冊",
         "rakutenStatus": "在庫あり"
       }
@@ -15257,7 +15264,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "紀伊國屋: 注文不可（在庫なし）",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "注文不可（在庫なし）"
       }
     },
@@ -15293,7 +15300,7 @@
       ],
       "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/5712/9784103545712_1_3.jpg?downsize=600:*",
       "includedBonuses": [],
-      "printOnlyNote": "👑 2022年オリコン年間女性1位・累計20万部超。⚠️ 品薄・一部ストアのみ（紀伊國屋: 残り4冊 ／ 楽天ブックス: 在庫あり）",
+      "printOnlyNote": "👑 2022年オリコン年間女性1位・累計20万部超。⚠️ 品薄・一部ストアのみ（紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり）",
       "summary": "2022年オリコン年間女性写真集1位（期間内18.8万部・累計20万部超）。宮古島と東京で圧倒的な輝きを放った乃木坂4期生屈指のモンスターヒット名作。",
       "gallery": [
         {
@@ -15326,9 +15333,9 @@
       "stockInfo": {
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
-        "detail": "紀伊國屋: 残り4冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
-        "kinokuniyaStatus": "残り4冊",
+        "detail": "紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり",
+        "checkedAt": "2026-11-23",
+        "kinokuniyaStatus": "残り3冊",
         "rakutenStatus": "在庫あり"
       }
     },
@@ -15403,7 +15410,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "在庫あり"
       }
@@ -15479,7 +15486,7 @@
         "status": "in_stock",
         "label": "✅ 新品在庫あり",
         "detail": "紀伊國屋: 在庫29冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "在庫29冊",
         "rakutenStatus": "在庫あり"
       }
@@ -15550,7 +15557,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "在庫あり"
       }
@@ -15626,7 +15633,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       }
@@ -15663,7 +15670,7 @@
       ],
       "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/3729/9784096823729_1_20.jpg?downsize=600:*",
       "includedBonuses": [],
-      "printOnlyNote": "⭐ 2022上半期TOP10・AKBエース記念碑的1st。✅ 新品在庫あり（紀伊國屋: 在庫あり ／ 楽天ブックス: 在庫あり）",
+      "printOnlyNote": "⭐ 2022上半期TOP10・AKBエース記念碑的1st。⚠️ 品薄・一部ストアのみ（紀伊國屋: 残り1冊 ／ 楽天ブックス: 在庫あり）",
       "summary": "沖縄ロケで19歳の瑞々しさと初水着を収めたAKB48絶対的エースの記念碑的1st。初版から即重版となり、現在も高評価レビューを維持する定番作。",
       "gallery": [
         {
@@ -15694,11 +15701,11 @@
         }
       ],
       "stockInfo": {
-        "status": "in_stock",
-        "label": "✅ 新品在庫あり",
-        "detail": "紀伊國屋: 在庫あり ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
-        "kinokuniyaStatus": "在庫あり",
+        "status": "low_stock",
+        "label": "⚠️ 品薄・一部ストアのみ",
+        "detail": "紀伊國屋: 残り1冊 ／ 楽天ブックス: 在庫あり",
+        "checkedAt": "2026-11-23",
+        "kinokuniyaStatus": "残り1冊",
         "rakutenStatus": "在庫あり"
       }
     },
@@ -15771,7 +15778,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り3冊",
         "rakutenStatus": "在庫あり"
       }
@@ -15806,7 +15813,7 @@
       ],
       "coverImageUrl": "https://tshop.r10s.jp/book/cabinet/2289/9784838732289_1_4.jpg?downsize=600:*",
       "includedBonuses": [],
-      "printOnlyNote": "👑 2023タワレコ年間2位・芸能10周年名作。✅ 新品在庫あり（紀伊國屋: 在庫7冊 ／ 楽天ブックス: 在庫あり）",
+      "printOnlyNote": "👑 2023タワレコ年間2位・芸能10周年名作。⚠️ 品薄・一部ストアのみ（紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり）",
       "summary": "芸能生活10周年＆30歳の節目を長崎・五島列島で撮り下ろした傑作。自然体の笑顔と色気、エッセイまで高評価が絶えない2023年屈指のベストセラー。",
       "gallery": [
         {
@@ -15842,11 +15849,11 @@
         "reviewCount": 5
       },
       "stockInfo": {
-        "status": "in_stock",
-        "label": "✅ 新品在庫あり",
-        "detail": "紀伊國屋: 在庫7冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
-        "kinokuniyaStatus": "在庫7冊",
+        "status": "low_stock",
+        "label": "⚠️ 品薄・一部ストアのみ",
+        "detail": "紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり",
+        "checkedAt": "2026-11-23",
+        "kinokuniyaStatus": "残り3冊",
         "rakutenStatus": "在庫あり"
       }
     },
@@ -15920,7 +15927,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり",
         "sevenNetStatus": "InStock"
@@ -15989,7 +15996,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "紀伊國屋: 注文不可（在庫なし）",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "注文不可（在庫なし）"
       }
     },
@@ -16062,7 +16069,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "ご注文できない商品"
       }
@@ -16138,7 +16145,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "ご注文できない商品"
       }
@@ -16213,7 +16220,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り3冊 ／ 楽天ブックス: 在庫あり ／ 7net: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り3冊",
         "rakutenStatus": "在庫あり",
         "sevenNetStatus": "InStock"
@@ -16288,7 +16295,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       }
@@ -16359,7 +16366,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-22"
+        "checkedAt": "2026-11-23"
       }
     },
     {
@@ -16425,7 +16432,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-22"
+        "checkedAt": "2026-11-23"
       }
     },
     {
@@ -16491,7 +16498,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-22"
+        "checkedAt": "2026-11-23"
       }
     },
     {
@@ -16558,7 +16565,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       }
@@ -16626,7 +16633,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-22"
+        "checkedAt": "2026-11-23"
       }
     },
     {
@@ -16693,7 +16700,7 @@
         "status": "low_stock",
         "label": "⚠️ 在庫要確認（流通少）",
         "detail": "主要書店で最新在庫を確認してください",
-        "checkedAt": "2026-11-22"
+        "checkedAt": "2026-11-23"
       }
     },
     {
@@ -16771,7 +16778,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り2冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り2冊",
         "rakutenStatus": "在庫あり"
       }
@@ -16845,7 +16852,7 @@
         "status": "low_stock",
         "label": "⚠️ 品薄・一部ストアのみ",
         "detail": "紀伊國屋: 残り1冊 ／ 楽天ブックス: 在庫あり",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "残り1冊",
         "rakutenStatus": "在庫あり"
       }
@@ -16921,7 +16928,7 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "ご注文できない商品"
       }
@@ -16999,11 +17006,11 @@
         "status": "out_of_stock",
         "label": "🔴 新品完売・中古/プレミア",
         "detail": "紀伊國屋: 注文不可（在庫なし） ／ 楽天ブックス: ご注文できない商品",
-        "checkedAt": "2026-11-22",
+        "checkedAt": "2026-11-23",
         "kinokuniyaStatus": "注文不可（在庫なし）",
         "rakutenStatus": "ご注文できない商品"
       }
     }
   ],
-  "masterpiecesCheckedAt": "2026-11-22T10:54:23+09:00"
+  "masterpiecesCheckedAt": "2026-11-23T11:14:50+09:00"
 }

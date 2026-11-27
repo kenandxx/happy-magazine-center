@@ -1,7 +1,8 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "hub_source": "kenandxx/ob-life-hub",
-  "content_hash": "acabc437f026b7b3",
+  "content_hash": "c7a9e2674182c06d",
+  "mode": "public-safe-shielded",
   "project": "happy-magazine-center",
   "repo": "kenandxx/happy-magazine-center",
   "visibility": "public",
@@ -12,50 +13,8 @@
     "dev"
   ],
   "life_phase": "2026秋冬 · 高效生活自动化与个人定制工具链构建期",
-  "latest_note_date": "2026-11-26",
-  "recent_updates": [
-    {
-      "date": "2026-11-26",
-      "domains": [
-        "magazine"
-      ],
-      "text": "通勤电车上大约有 35–45 分钟整块阅读时间，个人杂志中心适合增加「电车一程 30 分钟精选特辑」视图",
-      "source": "01-Daily/2026-11-26.md"
-    },
-    {
-      "date": "2026-11-26",
-      "domains": [
-        "dev",
-        "ui"
-      ],
-      "text": "移动端交互改版实测结论：砍掉同屏堆叠的双面板，统一采用「顶部 3 步上手折叠提示 + STEP 1/2/3 分区卡片 + 底部收纳工具抽屉」，单手使用清爽度提升巨大",
-      "source": "01-Daily/2026-11-26.md"
-    },
-    {
-      "date": "2026-11-26",
-      "domains": [
-        "global"
-      ],
-      "text": "平日晚间外出活动统一以 **22:00 前回到滝不動駅** 作为硬死线，所有晚间交通或探店工具默认开启末班电车倒推与出租车兜底计算",
-      "source": "01-Daily/2026-11-26.md"
-    },
-    {
-      "date": "2026-11-26",
-      "domains": [
-        "magazine"
-      ],
-      "text": "个人杂志新口味：周末特辑优先推荐日本建筑与铁道文化深度长文",
-      "source": "00-Inbox/quick-notes.md"
-    },
-    {
-      "date": "2026-11-26",
-      "domains": [
-        "global"
-      ],
-      "text": "5G手机上传成功了",
-      "source": "00-Inbox/quick-notes.md"
-    }
-  ],
+  "latest_note_date": "2026-11-27",
+  "raw_notes_included": false,
   "playbooks": [
     {
       "title": "⚡ 当前生活习惯与实时进度（随生活动态演进）",

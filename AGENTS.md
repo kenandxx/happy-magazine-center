@@ -1,12 +1,14 @@
 # 🤖 AI Agent Instructions & Personal Life Context (`happy-magazine-center`)
+
 ## 🧠 Personal Life Context Sync (`kenandxx/ob-life-hub`)
 
-本项目已接入个人唯一私密 Obsidian 生活与习惯中枢 **`kenandxx/ob-life-hub`**（订阅领域：`global,magazine,ui,dev`）。**即使オーナー在对话中未主动提醒，所有 AI Agent（Antigravity / Claude Code / Gemini / Codex / Cursor）在每次会话开始时都必须自动执行以下流程**：
+本项目已接入个人唯一私密 Obsidian 生活与习惯中枢 **`kenandxx/ob-life-hub`**（v2.0 `#secret` 极简模式）。**即使オーナー在对话中未主动提醒，所有 AI Agent（Antigravity / Claude Code / Gemini / Codex / Cursor）在每次会话中都必须遵循以下机制**：
 
-1. **开工必读最新个人状态（Turn 1 强制）**：
-   - 先读取仓库内的 [`.context/PERSONAL_CONTEXT.md`](.context/PERSONAL_CONTEXT.md)（包含最新的作息死线、个人习惯、UI 3 步分区卡片偏好与近期 `#sync/*` 日常动态）。
-   - 若当前环境已授权 `gh` CLI 访问 `kenandxx/ob-life-hub`，开工前运行 `./scripts/sync-life-context.sh pull`（或执行 `gh api repos/kenandxx/ob-life-hub/contents/dist/spokes/happy-magazine-center/PERSONAL_CONTEXT.md -H "Accept: application/vnd.github.raw"`）拉取手机端刚刚上传的秒级最新笔记。
-2. **跨项目经验反向回流**：
-   - 当在本项目中沉淀出可复用的新习惯、交互偏好或避坑经验时，运行：
-     `./scripts/sync-life-context.sh push-insight "新总结的经验或偏好" "global,magazine,ui,dev"`
-     将其写回 `ob-life-hub/00-Inbox/quick-notes.md`，自动同步给名下其他所有项目。
+1. **开工必读最新个人全量上下文（Turn 1 强制）**：
+   - 先读取仓库内的 [`.context/PERSONAL_CONTEXT.md`](.context/PERSONAL_CONTEXT.md)（公开安全级准则）；若已授权 `gh` CLI，在内存中隔空读取 `gh api repos/kenandxx/ob-life-hub/contents/dist/MASTER_CONTEXT.md -H "Accept: application/vnd.github.raw"`（**严禁将私人笔记原文粘贴进公开仓库**）。
+2. **全项目共同维护未来新项目灵感池（`05-Projects/IDEA_BACKLOG.md`）**：
+   - 开发本项目过程中，一旦对话冒出**适合孵化为未来独立新项目或给其他兄弟仓库复用的新点子**，AI 必须主动运行：
+     `./scripts/sync-life-context.sh push-idea "新项目或跨界点子描述"`
+     将其直接登记进 `ob-life-hub/05-Projects/IDEA_BACKLOG.md`！
+   - 若沉淀出可跨项目复用的新习惯或交互经验，运行：
+     `./scripts/sync-life-context.sh push-insight "新总结的习惯或经验" "#it"`
